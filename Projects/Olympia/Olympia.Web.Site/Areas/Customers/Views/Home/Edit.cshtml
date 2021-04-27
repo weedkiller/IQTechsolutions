@@ -1,0 +1,425 @@
+﻿@model CustomerAddEditModel
+
+@{
+    ViewData["Title"] = "Edit Customer";
+}
+
+    <form asp-area="Customers" asp-controller="Home" asp-action="Edit" method="post" enctype="multipart/form-data">
+        <!-- begin profile-container -->
+        <div class="profile-container" style="padding: 20px 20px 0px 20px; margin-bottom: 20px;">
+
+            <!-- begin profile-section -->
+            <div class="profile-section">
+                <!-- begin profile-left -->
+                <div class="profile-left">
+                    <input asp-for="Customer.Id"/>
+                    <!-- begin profile-image -->
+                    <div class="previewd" style="overflow: hidden">
+                        <img src="@Model.Customer.GetPath("http://admin.metsi.co.za", ImageType.Cover, "/images/placeholders/profileImage128x128.png")" style="width: 100%;"/>
+                        <i class="fa fa-user hide"></i>
+                    </div>
+                    <!-- end profile-image -->
+                    <div class="m-b-10">
+                        <a for="CoverUpload" onclick="getImageFile()" class="btn btn-warning btn-block btn-sm">Edit Profile Image</a>
+                        <input asp-for="CoverUpload" style="display: none" onchange="loadFile(event)" accept="image/*" type="file"/>
+                        <input type="hidden" asp-for="CoverCropSettings.X"/>
+                        <input type="hidden" asp-for="CoverCropSettings.Y"/>
+                        <input type="hidden" asp-for="CoverCropSettings.Width"/>
+                        <input type="hidden" asp-for="CoverCropSettings.Height"/>
+                        <input type="hidden" asp-for="CoverCropSettings.Rotate"/>
+                        <input type="hidden" asp-for="CoverCropSettings.ScaleX"/>
+                        <input type="hidden" asp-for="CoverCropSettings.ScaleY"/>
+                    </div>
+                </div>
+                <!-- end profile-left -->
+                <!-- begin profile-right -->
+                <div class="profile-right">
+                    <!-- begin profile-info -->
+                    <div class="profile-info">
+                        <!-- begin table -->
+                        <div class="table-responsive">
+                            <table class="table table-profile">
+                                <thead>
+                                    <tr>
+                                        <th colspan="4">
+                                            <h4>@Model.Customer.Name</h4>
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="field"><label asp-for="Customer.Name" class="control-label">Name</label></td>
+                                        <td><input asp-for="Customer.Name" type="text" class="form-control" placeholder="Enter your first name" /></td>
+                                    </tr>
+
+                                    <tr class="divider">
+                                        <td colspan="2"></td>
+                                    </tr>
+                                <tr>
+                                    <td><label asp-for="Customer.Description" class="control-label">Description</label></td>
+                                    <td>
+                                        <textarea asp-for="Customer.Description" class="form-control" placeholder="Add your personal description" rows="4"></textarea>
+                                    </td>
+                                    
+                                    
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <!-- end table -->
+                    </div>
+                    <!-- end profile-info -->
+                </div>
+                <!-- end profile-right -->
+                <!-- begin row -->
+                <!-- end row -->
+            </div>
+            <!-- end profile-section -->
+
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <ul class="nav nav-tabs">
+                    <li class="active"><a href="#default-tab-2" data-toggle="tab">Contact Info</a></li>
+                    <li class=""><a href="#default-tab-3" data-toggle="tab">Roles & Permissions</a></li>
+                </ul>
+                <div class="tab-content">
+                    <div class="tab-pane fade active in" id="default-tab-2">
+                        <!-- begin profile-section -->
+                        <div class="profile-section">
+                            <!-- begin row -->
+                            <div class="row">
+                                <!-- begin col-4 -->
+                                <div class="col-md-4">
+                                    <h4 class="title">Contact Numbers</h4>
+                                    <!-- begin scrollbar -->
+                                    <div data-scrollbar="true" data-height="280px" class="bg-silver">
+                                        <!-- begin chats -->
+                                        <table class="table">
+                                            <thead>
+                                                <tr>
+                                                    <td>Number</td>
+                                                    <td>Default</td>
+                                                    <td></td>
+                                                </tr>
+                                            </thead>
+                                            <tbody id="contactNrTableBody">
+                                                @foreach (var item in Model.Customer.ContactNumbers)
+                                                {
+                                                    <tr id="row_@item.Id" class="row_@item.Id">
+                                                        <td id="contactNr_@item.Id">@item.Number</td>
+                                                        <td id="contactDefault_@item.Id">
+                                                            @if (item.Default)
+                                                            {
+                                                                <i class="fa fa-check"></i>
+                                                            }
+                                                            else
+                                                            {
+                                                                <i class="fa fa-close"></i>
+                                                            }
+                                                        </td>
+                                                        <td>
+                                                            <a href="javascript:;" onclick="ShowEditContactNumberModel('@item.Id')"><i class="fa fa-edit"></i></a>
+                                                            <a href="javascript:;" onclick="ShowDeleteContactNumberModel('@item.Id')" style="padding-left:5px"><i class="fa fa-trash"></i></a>
+                                                        </td>
+                                                    </tr>
+                                                }
+                                            </tbody>
+                                            <tfoot>
+                                                <tr>
+                                                    <td colspan="3">
+                                                        <a href="javascript:;" onclick="ShowAddContactNumberModel('@Model.Customer.Id')" class="btn btn-block btn-danger">Create New Contact Nr</a>
+                                                    </td>
+                                                </tr>
+                                            </tfoot>
+
+                                        </table>
+                                        <!-- end chats -->
+                                    </div>
+                                    <!-- end scrollbar -->
+                                </div>
+                                <!-- end col-4 -->
+                                <!-- begin col-4 -->
+                                <div class="col-md-4">
+                                    <h4 class="title">Email Addresses</h4>
+                                    <!-- begin scrollbar -->
+                                    <div data-scrollbar="true" data-height="280px" class="bg-silver">
+                                        <!-- begin chats -->
+                                        <table class="table">
+                                            <thead>
+                                                <tr>
+                                                    <td>Number</td>
+                                                    <td>Default</td>
+                                                    <td></td>
+                                                </tr>
+                                            </thead>
+                                            <tbody id="emailAddressTableBody">
+                                                @foreach (var item in Model.Customer.EmailAddresses)
+                                                {
+                                                    <tr id="row_@item.Id" class="row_@item.Id">
+                                                        <td id="emailAddress_@item.Id">@item.Address</td>
+                                                        <td id="emailDefault_@item.Id">
+                                                            @if (item.Default)
+                                                            {
+                                                                <i class="fa fa-check"></i>
+                                                            }
+                                                            else
+                                                            {
+                                                                <i class="fa fa-close"></i>
+                                                            }
+                                                        </td>
+                                                        <td>
+                                                            <a href="javascript:;" onclick="ShowEditEmailAddressModel('@item.Id')"><i class="fa fa-edit"></i></a>
+                                                            <a href="javascript:;" onclick="ShowDeleteEmailAddressModel('@item.Id')" style="padding-left:5px"><i class="fa fa-trash"></i></a>
+                                                        </td>
+                                                    </tr>
+                                                }
+                                            </tbody>
+                                            <tfoot>
+                                                <tr>
+                                                    <td colspan="3">
+                                                        <a href="javascript:;" onclick="ShowAddEmailAddressModel('@Model.Customer.Id')" class="btn btn-block btn-danger">Create New Email Address</a>
+                                                    </td>
+                                                </tr>
+                                            </tfoot>
+
+                                        </table>
+                                    </div>
+                                    <!-- end scrollbar -->
+                                </div>
+                                <!-- end col-4 -->
+                                <!-- begin col-4 -->
+                                <div class="col-md-4">
+                                    <h4 class="title">Addresses</h4>
+                                    <!-- begin scrollbar -->
+                                    <div data-scrollbar="true" data-height="280px" class="bg-silver">
+                                        <!-- begin chats -->
+                                        <table class="table">
+                                            <thead>
+                                                <tr>
+                                                    <td>Number</td>
+                                                    <td>Default</td>
+                                                    <td></td>
+                                                </tr>
+                                            </thead>
+                                            <tbody id="addressTableBody">
+                                                @foreach (var item in Model.Customer.Addresses)
+                                                {
+                                                    <tr id="row_@item.Id" class="row_@item.Id">
+                                                        <td id="address_@item.Id">@item.ToString()</td>
+                                                        <td id="addressDefault_@item.Id">
+                                                            @if (item.Default)
+                                                            {
+                                                                <i class="fa fa-check"></i>
+                                                            }
+                                                            else
+                                                            {
+                                                                <i class="fa fa-close"></i>
+                                                            }
+                                                        </td>
+                                                        <td>
+                                                            <a href="javascript:;" onclick="ShowEditAddressModel('@item.Id')"><i class="fa fa-edit"></i></a>
+                                                            <a href="javascript:;" onclick="ShowDeleteAddressModel('@item.Id')" style="padding-left:5px"><i class="fa fa-trash"></i></a>
+                                                        </td>
+                                                    </tr>
+                                                }
+                                            </tbody>
+                                            <tfoot>
+                                                <tr>
+                                                    <td colspan="3">
+                                                        <a href="javascript:;" onclick="ShowAddAddressModel('@Model.Customer.Id')" class="btn btn-block btn-danger">Create New Address</a>
+                                                    </td>
+                                                </tr>
+                                            </tfoot>
+
+                                        </table>
+                                    </div>
+                                    <!-- end scrollbar -->
+                                </div>
+                                <!-- end col-4 -->
+                            </div>
+                            <!-- end row -->
+                        </div>
+                        <!-- end profile-section -->
+                    </div>
+                    <div class="tab-pane fade" id="default-tab-3">
+                        <row>
+                            @*@if (string.IsNullOrEmpty(Model.Customer.ApplicationUserId))
+                            {
+                                <a asp-area="" asp-controller="Home" asp-action="ComingSoon" class="btn btn-block btn-danger">Register as Application User</a>
+                            }
+                            else
+                            {*@
+
+                                <table class="table">
+                                    <tbody>
+                                        <tr>
+                                                <td><label asp-for="UserName" class="control-label">Username</label></td>
+                                                <td>
+                                                    <input readonly asp-for="UserName" type="text" class="form-control" placeholder="Enter your username here" />
+                                                </td>
+                                                <td>
+                                                    <label asp-for="Password" class="control-label">Password</label>
+                                                </td>
+                                                <td>
+                                                    <input readonly asp-for="Password" type="text" class="form-control" placeholder="Enter your password here" />
+                                                </td>
+                                            </tr>
+                                        
+                                    </tbody>
+                                    <tfoot>
+                                        <tr>
+                                            <td colspan="4">
+                                                <a href="javascript:;" onclick="ShowRegisterEmployeeModel('@Model.Customer.Id')" class="btn btn-block btn-danger">Edit Login Details</a>
+                                            </td>
+                                        </tr>
+                                    </tfoot>
+                                </table>
+                            @*}*@
+                        </row>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="profile-container">
+            <div class="profile-section">
+                <div class="form-group">
+                    <div class="col-md-6">
+                        <input name="finnish" type="submit" value="Edit" class="btn btn-primary btn-block" />
+                    </div>
+                    <div class="col-md-6">
+                        <a asp-area="Customers" asp-controller="Home" asp-action="List" class="btn btn-danger btn-block">Cancel</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </form>
+
+@section Scripts{
+    <script>
+
+        function ShowAddContactNumberModel() {
+
+            var url = "/Customers/Home/CreateContactNumber?personId=" + '@Model.Customer.Id';
+
+            $("#ModalPlaceHolder").empty();
+            $("#ModalPlaceHolder").load(url,
+                function () {
+                    $("#ModalPlaceHolder").modal("show");
+                });
+        }
+
+        function ShowEditContactNumberModel(id) {
+
+            var url = "/Customers/Home/EditContactNumber?Id=" + id;
+
+            $("#ModalPlaceHolder").load(url,
+                function () {
+                    $("#ModalPlaceHolder").modal("show");
+                });
+        }
+
+        function ShowDeleteContactNumberModel(id) {
+
+            var url = "/Customers/Home/DeleteContactNumber?Id=" + id;
+
+            $("#ModalPlaceHolder").load(url,
+                function () {
+                    $("#ModalPlaceHolder").modal("show");
+                });
+        }
+
+        function ShowAddEmailAddressModel() {
+
+            var url = "/Customers/Home/CreateEmailAddress?personId=" + '@Model.Customer.Id';
+
+            $("#ModalPlaceHolder").empty();
+            $("#ModalPlaceHolder").load(url,
+                function () {
+                    $("#ModalPlaceHolder").modal("show");
+                });
+        }
+
+
+        function ShowEditEmailAddressModel(id) {
+
+            var url = "/Customers/Home/EditEmailAddress?id=" + id;
+
+            $("#ModalPlaceHolder").load(url,
+                function () {
+                    $("#ModalPlaceHolder").modal("show");
+                });
+        }
+
+    function ShowDeleteEmailAddressModel(id) {
+
+        var url = "/Customers/Home/DeleteEmailAddress?Id=" + id;
+
+            $("#ModalPlaceHolder").load(url,
+                function () {
+                    $("#ModalPlaceHolder").modal("show");
+                });
+        }
+
+        function ShowAddAddressModel() {
+
+            var url = "/Customers/Home/CreateAddress?personId=" + '@Model.Customer.Id';
+
+            $("#ModalPlaceHolder").empty();
+            $("#ModalPlaceHolder").load(url,
+                function () {
+                    $("#ModalPlaceHolder").modal("show");
+                });
+        }
+
+
+        function ShowEditAddressModel(id) {
+
+            var url = "/Customers/Home/EditAddress?id=" + id;
+
+            $("#ModalPlaceHolder").load(url,
+                function () {
+                    $("#ModalPlaceHolder").modal("show");
+                });
+        }
+
+        function ShowDeleteAddressModel() {
+
+            var url = "/Customers/Home/DeleteAddress?Id=" + '@Model.Customer.Id';
+
+            $("#ModalPlaceHolder").load(url,
+                function () {
+                    $("#ModalPlaceHolder").modal("show");
+                });
+        }
+
+        var loadFile = function (event) {
+            var output = document.getElementById('preview');
+            if (event.target.files.length !== 0) {
+
+                var oldstring = "";
+                if (output === null) {
+                    oldstring = "/images/placeholders/profileImage128x128.png";
+                } else {
+                    oldstring = output.src;
+                }
+
+                var url = "/Home/CropImage?cropUrl=" + URL.createObjectURL(event.target.files[0]) + "&originalUrl=" + oldstring + "&width=" + 300 + "&height=" + 300
+                    + "&previewClass=previewd" + "&uploadProperty=CoverUpload" + "&xTag=CoverCropSettings_X" + "&yTag=CoverCropSettings_Y"
+                    + "&widthTag=CoverCropSettings_Width" + "&heightTag=CoverCropSettings_Height" + "&rotateTag=CoverCropSettings_Rotate" + "&scaleXTag=CoverCropSettings_ScaleX"
+                    + "&scaleYTag=CoverCropSettings_ScaleY";
+
+                $("#CropModal").load(url,
+                    function () {
+                        $("#CropModal").modal("show");
+                    });
+            }
+        };
+        function getImageFile() {
+            document.getElementById("CoverUpload").click();
+        }
+    </script>
+}

@@ -1,0 +1,122 @@
+﻿@model CourseRegistrationModel
+
+<div class="modal-dialog">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h4 class="modal-title">Select Courses to Register this student for</h4>
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        </div>
+        <div class="modal-body">
+            <form id="RegisterCourseForm">
+                <input asp-for="StudentId" type="hidden"/>
+                <div style="overflow: scroll; height: 300px; overflow-x: hidden !important;">
+                    @if (Model != null)
+                    {
+                        @for (var i = 0; i < Model.AvailableCourses.Count(); i++)
+                        {
+                            <div id="checkboxrow_@Model.AvailableCourses[i].Entity.Id" class="row">
+                                <div class="col-md-1">
+                                    <input asp-for="@Model.AvailableCourses[i].IsSelected" type="checkbox" class="filled-in" style="opacity: 100 !important; position: relative; left: 0; height: 20px" />
+                                    <input asp-for="@Model.AvailableCourses[i].Entity.Id" type="hidden" />
+                                    <input asp-for="@Model.AvailableCourses[i].Entity.Name" type="hidden" />
+                                    <input asp-for="@Model.AvailableCourses[i].Entity.Description" type="hidden" />
+                                    <input asp-for="@Model.AvailableCourses[i].Entity.Modules" type="hidden" />
+                                </div>
+                                <div class="col-md-11">
+                                    @Model.AvailableCourses[i].Entity.Name
+                                </div>
+                            </div>
+                        }
+                    }
+                </div>
+            </form>
+        </div>
+        <div class="modal-footer">
+            <a href="javascript:;" class="btn btn-sm btn-white" data-dismiss="modal">Close</a>
+            <a href="javascript:;" onclick="ConfirmAddress()" class="btn btn-sm btn-primary">Register</a>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+    <script>
+        var loadFile = function (event) {
+            var output = document.getElementById('preview');
+            output.src = URL.createObjectURL(event.target.files[0]);
+        };
+    </script>
+
+    <!-- Summer Note JS -->
+    <script src="~/js/summernote/summernote.js"></script>
+
+    <script type="text/javascript" src="~/js/bs-filestyle.js"></script>
+
+    <script>
+
+        function ConfirmAddress() {
+
+            var myformdata = $("#RegisterCourseForm").serialize();
+            var url = "@Url.Action("ShowRegisterEmployeeModal", "Students", new {area = "Courses"})";
+
+            $.ajax({
+                type: "POST",
+                data: myformdata,
+                url: url,
+                success: function (data) {
+                    var ooo = JSON.stringify(data);
+                    console.log(data);
+                    for (index = 0; index < data.length; ++index) {
+                        console.log(data[index].name);
+
+                        var tableBody = document.getElementById("courseRegistrationsTableBody");
+
+                        var tableRow = document.createElement("tr");
+                        tableRow.id = "row_" + data[index].id;
+                        tableRow.classList.add("row_" + data[index].id);
+                        tableBody.append(tableRow);
+
+                        var courseNameColumn = document.createElement("td");
+                        var tableNameLink = document.createElement("a");
+                        tableNameLink.setAttribute('asp-action', 'Details');
+                        tableNameLink.setAttribute('asp-route-id', data[index].id);
+                        tableNameLink.innerHTML = data[index].name;
+                        courseNameColumn.append(tableNameLink);
+                        tableRow.append(courseNameColumn);
+
+                        var courseDescriptionColumn = document.createElement("td");
+                        courseDescriptionColumn.innerHTML = data[index].description;
+                        tableRow.append(courseDescriptionColumn);
+
+                        var moduleCountColumn = document.createElement("td");
+                        moduleCountColumn.innerHTML = data[index].modules.count;
+                        tableRow.append(moduleCountColumn);
+
+                        var courseButtonColumn = document.createElement("td");
+                        var courseDetailButton = document.createElement("a");
+                        var courseDetailIcon = document.createElement("i");
+                        courseDetailButton.append(courseDetailIcon);
+                        courseDetailButton.setAttribute('asp-action', 'Details');
+                        courseDetailButton.setAttribute('asp-route-id', data[index].id);
+                        courseButtonColumn.append(courseDetailButton);
+                        tableRow.append(courseButtonColumn);
+
+                        var removeCheckbox = document.getElementById("checkboxrow_" + data[index].id);
+                        removeCheckbox.remove();
+                    }
+
+                    $("#ModalPlaceHolder").modal("hide");
+                },
+                error: function (xhr, textStatus, err) {
+                    alert("An error with the following detials occured : "
+                        + "\r\n == readyState: " + xhr.readyState
+                        + "\r\n == responseText: " + xhr.responseText
+                        + "\r\n == status: " + xhr.status
+                        + "\r\n == text status: " + textStatus
+                        + "\r\n == error: " + err);
+                }
+            });
+        }
+    </script>

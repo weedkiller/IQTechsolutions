@@ -1,0 +1,13 @@
+﻿@using Identity.Base.Entities
+@model Education.Base.ApiModels.ModuleApiModel
+
+<div class="wrapper wrapper-content project-manager">
+    <h4>Project description</h4>
+    <img src="@Model.ImageUrl" alt="@Model.Name" class="img-responsive">
+    <p class="small">
+        @Model.Description
+    </p>
+    <p class="small font-bold">
+        <span><i class="fa fa-circle text-warning"></i> High priority</span>
+    </p>
+</div>

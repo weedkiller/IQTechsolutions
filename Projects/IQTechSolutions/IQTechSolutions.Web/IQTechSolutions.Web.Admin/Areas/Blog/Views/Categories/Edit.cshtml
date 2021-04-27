@@ -1,0 +1,150 @@
+﻿@using Iqt.Base.Interfaces
+@model CategoryAddEditModel<BlogPost>
+
+@inject IApplicationConfiguration Configuration
+
+@{
+    ViewData["Title"] = $"Edit {Model.Entity.Name} Category";
+    ViewData["Description"] = @Model.Entity.Name;
+}
+
+@section Styles
+{
+    <!-- Bootstrap File Upload CSS -->
+    <link rel="stylesheet" href="~/css/summernote.css" type="text/css" />
+    <link rel="stylesheet" href="~/css/bs-filestyle.css" type="text/css" />
+}
+
+<form asp-area="Blog" asp-controller="Categories" asp-action="Edit" enctype="multipart/form-data" method="post">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <input type="hidden" asp-for="Entity.Id" />
+    <input type="hidden" asp-for="Entity.ParentCategoryId" />
+    <div class="row">
+        <div class="col-md-4">
+            <div class="form-group">
+                <label asp-for="CoverUpload" class="control-label"></label>
+                <div class="previewd" style="overflow: hidden">
+                    <img id="preview" style="width: 100%" src="@Model.Entity.GetPath(Configuration.BaseImageUrl, ImageType.Cover,"/images/placeholders/NoImage.jpg")" alt="@Model.Entity.Name" />
+                </div>
+                <input asp-for="CoverUpload" class="form-control" onchange="loadFile(event)" />
+                <input type="hidden" asp-for="CoverCropSettings.X" />
+                <input type="hidden" asp-for="CoverCropSettings.Y" />
+                <input type="hidden" asp-for="CoverCropSettings.Width" />
+                <input type="hidden" asp-for="CoverCropSettings.Height" />
+                <input type="hidden" asp-for="CoverCropSettings.Rotate" />
+                <input type="hidden" asp-for="CoverCropSettings.ScaleX" />
+                <input type="hidden" asp-for="CoverCropSettings.ScaleY" />
+            </div>
+        </div>
+        <div class="col-md-8">
+            <div class="form-group">
+                <label asp-for="Entity.Name" class="control-label"></label>
+                <input asp-for="Entity.Name" class="form-control" />
+                <span asp-validation-for="Entity.Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Entity.Description" class="control-label"></label>
+                <textarea asp-for="Entity.Description" class="form-control" style="height: 150px"></textarea>
+                <span asp-validation-for="Entity.Description" class="text-danger"></span>
+            </div>
+            <div class="form-group text-right">
+                <input name="main" type="submit" value="Save" class="btn btn-primary" />
+                <input name="finnish" type="submit" value="Submit & Finnish" class="btn btn-primary" />
+                @if (Model.Entity.ParentCategoryId == null)
+                {
+                    <a asp-area="Blog" asp-controller="Categories" asp-action="List" class="btn btn-danger">Cancel</a>
+                }
+                else
+                {
+                    <a asp-area="Blog" asp-controller="Categories" asp-action="Edit" asp-route-id="@Model.Entity.ParentCategoryId" class="btn btn-danger">Cancel</a>
+                }
+            </div>
+        </div>
+    </div>
+
+    <hr />
+
+    <h3 class="m-t-10">Sub-Catgories</h3>
+    <table class="table">
+
+        <tr>
+            <th>
+                Name
+            </th>
+            <th>
+                Description
+            </th>
+            <th></th>
+        </tr>
+
+        @if (Model.Entity.SubCategories.Any())
+        {
+            foreach (var pack in Model.Entity.SubCategories)
+            {
+                <tr id="row_@pack.Id" class="row_@pack.Id">
+                    <td>
+                        @pack.Name
+                    </td>
+                    <td>
+                        @pack.Description.HtmlToPlainText().TruncateLongString(260)
+                    </td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@pack.Id" style="font-size: 18px; padding-right: 5px;"><i class="fa fa-edit"></i></a>
+                        <a href="javascript:;" onclick="ShowDeleteBlogCategoryModal('@pack.Id')" style="font-size: 18px;"><i class="fa fa-trash"></i></a>
+                    </td>
+                </tr>
+            }
+        }
+        else
+        {
+            <tr>
+                <td colspan="3">
+                    <h4>
+                        There are currently sub-categories available.
+                    </h4>
+                </td>
+            </tr>
+        }
+    </table>
+    <input name="sub" type="submit" value="Add New Sub-Category" class="btn btn-block btn-info" />
+    <hr />
+</form>
+
+@section Scripts
+{
+    <link rel="stylesheet" href="~/css/summernote.css" type="text/css" />
+    <script>
+        var loadFile = function (event) {
+            var output = document.getElementById('preview');
+            if (event.target.files.length !== 0) {
+
+                var oldstring = "";
+                if (output === null) {
+                    oldstring = "/images/placeholders/MetsiPlaceholder-800x533.jpg";
+                } else {
+                    oldstring = output.src;
+                }
+
+                var url = "/Home/CropImage?cropUrl=" + URL.createObjectURL(event.target.files[0]) + "&originalUrl=" + oldstring + "&width=" + 700 + "&height=" + 466
+                    + "&previewClass=previewd" + "&uploadProperty=CoverUpload" + "&xTag=CoverCropSettings_X" + "&yTag=CoverCropSettings_Y"
+                    + "&widthTag=CoverCropSettings_Width" + "&heightTag=CoverCropSettings_Height" + "&rotateTag=CoverCropSettings_Rotate" + "&scaleXTag=CoverCropSettings_ScaleX"
+                    + "&scaleYTag=CoverCropSettings_ScaleY";
+
+                $("#CropModal").load(url,
+                    function () {
+                        $("#CropModal").modal("show");
+                    });
+            }
+        };
+
+        function ShowDeleteBlogCategoryModal(numberId) {
+
+            var url = "/Blog/Categories/Delete?id=" + numberId;
+
+            $("#ModalPlaceHolder").load(url,
+                function () {
+                    $("#ModalPlaceHolder").modal("show");
+                });
+        }
+    </script>
+}

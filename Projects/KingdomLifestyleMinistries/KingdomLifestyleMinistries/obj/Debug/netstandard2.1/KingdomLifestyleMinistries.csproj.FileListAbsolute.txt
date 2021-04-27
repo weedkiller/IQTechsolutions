@@ -1,0 +1,9 @@
+G:\Projects\KingdomLifestyleMinistries\KingdomLifestyleMinistries\bin\Debug\netstandard2.1\KingdomLifestyleMinistries.deps.json
+G:\Projects\KingdomLifestyleMinistries\KingdomLifestyleMinistries\bin\Debug\netstandard2.1\KingdomLifestyleMinistries.dll
+G:\Projects\KingdomLifestyleMinistries\KingdomLifestyleMinistries\bin\Debug\netstandard2.1\KingdomLifestyleMinistries.pdb
+G:\Projects\KingdomLifestyleMinistries\KingdomLifestyleMinistries\obj\Debug\netstandard2.1\KingdomLifestyleMinistries.csprojAssemblyReference.cache
+G:\Projects\KingdomLifestyleMinistries\KingdomLifestyleMinistries\obj\Debug\netstandard2.1\KingdomLifestyleMinistries.AssemblyInfoInputs.cache
+G:\Projects\KingdomLifestyleMinistries\KingdomLifestyleMinistries\obj\Debug\netstandard2.1\KingdomLifestyleMinistries.AssemblyInfo.cs
+G:\Projects\KingdomLifestyleMinistries\KingdomLifestyleMinistries\obj\Debug\netstandard2.1\KingdomLifestyleMinistries.csproj.CoreCompileInputs.cache
+G:\Projects\KingdomLifestyleMinistries\KingdomLifestyleMinistries\obj\Debug\netstandard2.1\KingdomLifestyleMinistries.dll
+G:\Projects\KingdomLifestyleMinistries\KingdomLifestyleMinistries\obj\Debug\netstandard2.1\KingdomLifestyleMinistries.pdb

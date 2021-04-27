@@ -1,0 +1,32 @@
+﻿@model IEnumerable<Category<Problem>>
+
+@{
+    ViewData["Title"] = "Trouble Shooting Category List";
+}
+
+<div class="profile-container">
+
+<div class="profile-section">
+
+    @await Component.InvokeAsync("ProblemCategoryList")
+
+</div>
+
+</div>
+
+@section Scripts
+{
+    @await Html.PartialAsync("_ValidationScriptsPartial")
+
+    <script>
+        function ShowDeleteModal(ff) {
+
+            var url = "/Troubleshooting/Categories/Delete?id=" + ff;
+
+            $("#ModalPlaceHolder").load(url,
+                function () {
+                    $("#ModalPlaceHolder").modal("show");
+                });
+        }
+    </script>
+}

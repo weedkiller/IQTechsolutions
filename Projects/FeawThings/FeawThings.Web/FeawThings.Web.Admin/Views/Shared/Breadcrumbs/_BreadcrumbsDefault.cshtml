@@ -1,0 +1,31 @@
+﻿<ol class="breadcrumb">
+    <li><a href="@Url.Action("Index", "Home")">Home</a></li>
+    @if (ViewContext.RouteData.Values["area"] != null && ViewContext.RouteData.Values["area"].ToString().ToLower() != "")
+    {
+        <li>
+            <a href="@Url.Action(ViewContext.RouteData.Values["action"].ToString(), ViewContext.RouteData.Values["controller"].ToString(), new {area =ViewContext.RouteData.Values["area"].ToString()})">@ViewContext.RouteData.Values["area"].ToString()</a>
+        </li>
+    }
+    @if (ViewContext.RouteData.Values["controller"].ToString().ToLower() != "home")
+    {
+        @if (ViewContext.RouteData.Values["action"].ToString().ToLower() == "index")
+        {
+            <li class="active">
+                <a href="@Url.Action("Index", ViewContext.RouteData.Values["controller"].ToString())">@ViewContext.RouteData.Values["controller"].ToString()</a>
+            </li>
+        }
+        else
+        {
+            <li>
+                <a href="@Url.Action("Index", ViewContext.RouteData.Values["controller"].ToString())">@ViewContext.RouteData.Values["controller"].ToString()</a>
+            </li>
+        }
+
+    }
+    @if (ViewContext.RouteData.Values["action"].ToString().ToLower() != "index")
+    {
+        <li class="active">
+            <a href="@Url.Action(ViewContext.RouteData.Values["action"].ToString(), ViewContext.RouteData.Values["controller"].ToString())">@ViewContext.RouteData.Values["action"].ToString()</a>
+        </li>
+    }
+</ol>

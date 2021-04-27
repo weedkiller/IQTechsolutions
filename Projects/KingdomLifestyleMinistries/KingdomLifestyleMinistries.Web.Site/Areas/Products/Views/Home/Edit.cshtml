@@ -1,0 +1,348 @@
+﻿@model ProductAddEditModel
+
+@{
+    ViewData["Title"] = $"Edit {Model.Entity.Name}";
+}
+
+@section Styles
+    {
+    <!-- Bootstrap File Upload CSS -->
+    <link rel="stylesheet" href="~/css/summernote.css" type="text/css" />
+    <link rel="stylesheet" href="~/css/bs-filestyle.css" type="text/css" />
+}
+
+<form asp-area="Products" asp-controller="Home" asp-action="Edit" enctype="multipart/form-data" method="post">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="form-group">
+                <label asp-for="CoverUpload" class="control-label"></label>
+                <div class="previewd" style="overflow: hidden">
+                    <img id="preview" style="width: 100%" src="@Model.Entity.GetImage().GetImagePathFromAnotherWebsite(FrameworkDI.Configuration["Company:WebUrl"],FrameworkDI.Configuration["Placeholders:CoverImage"])" alt="@Model.Entity.Name" />
+                </div>
+                    <input asp-for="CoverUpload" class="form-control" onchange="loadFile(event)" />
+                    <input type="hidden" asp-for="CoverCropSettings.X" />
+                    <input type="hidden" asp-for="CoverCropSettings.Y" />
+                    <input type="hidden" asp-for="CoverCropSettings.Width" />
+                    <input type="hidden" asp-for="CoverCropSettings.Height" />
+                    <input type="hidden" asp-for="CoverCropSettings.Rotate" />
+                    <input type="hidden" asp-for="CoverCropSettings.ScaleX" />
+                    <input type="hidden" asp-for="CoverCropSettings.ScaleY" />
+                </div>
+            </div>
+        <div class="col-md-8">
+            <div class="form-group">
+                <label asp-for="Entity.Name" class="control-label"></label>
+                <input asp-for="Entity.Name" class="form-control" />
+                <span asp-validation-for="Entity.Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Entity.Barcode" class="control-label"></label>
+                <input asp-for="Entity.Barcode" class="form-control" />
+                <span asp-validation-for="Entity.Barcode" class="text-danger"></span>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="panel-group" id="accordion">
+                        @{ var cout = Convert.ToInt32(Math.Round((double)Model.AvailableCategories.Count / 2));}
+                        @if (Model.AvailableCategories != null)
+                        {
+                            for (var i = 0; i < cout; i++)
+                            {
+                                <div class="panel panel-default">
+                                    <div class="row" style="vert-align: middle">
+                                        <div class="col-md-1">
+                                            <input asp-for="@Model.AvailableCategories[i].IsSelected" type="checkbox" class="filled-in" style="opacity: 100 !important; position: relative; left: 0; height: 20px" />
+                                            <input asp-for="@Model.AvailableCategories[i].Identity" type="hidden" />
+                                            <input asp-for="@Model.AvailableCategories[i].Identity" type="hidden" />
+                                        </div>
+                                        <div class="col-md-2">
+                                            <span class="list-img"><img src="@Model.AvailableCategories[i].CoverImage" alt="@Model.AvailableCategories[i].Name"></span>
+                                        </div>
+                                        <div class="col-md-9">
+                                            <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#@Model.AvailableCategories[i].Identity">@Model.AvailableCategories[i].Name</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            }
+                        }
+                        else
+                        {
+                            <p>No categories currently available for this listing</p>
+                        }
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="panel-group" id="accordion">
+                        @if (Model.AvailableCategories != null)
+                        {
+                            for (var i = cout; i < Model.AvailableCategories.Count(); i++)
+                            {
+                                <div class="panel panel-default">
+                                    <div class="row" style="vert-align: middle">
+                                        <div class="col-md-1">
+                                            <input asp-for="@Model.AvailableCategories[i].IsSelected" type="checkbox" class="filled-in" style="opacity: 100 !important; position: relative; left: 0; height: 20px" />
+                                            <input asp-for="@Model.AvailableCategories[i].Identity" type="hidden" />
+                                            <input asp-for="@Model.AvailableCategories[i].Identity" type="hidden" />
+                                        </div>
+                                        <div class="col-md-2">
+                                            <span class="list-img"><img src="@Model.AvailableCategories[i].CoverImage" alt="@Model.AvailableCategories[i].Name"></span>
+                                        </div>
+                                        <div class="col-md-9">
+                                            <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#@Model.AvailableCategories[i].Identity">@Model.AvailableCategories[i].Name</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            }
+                        }
+                        else
+                        {
+                            <p>No categories currently available for this listing</p>
+                        }
+                    </div>
+                </div>
+            </div>
+            <input type="hidden" asp-for="Entity.Id" />
+        </div>
+    </div>
+
+    <ul class="nav nav-pills">
+        <li class="active"><a href="#nav-pills-tab-3" data-toggle="tab">Images</a></li>
+        <li><a href="#nav-pills-tab-4" data-toggle="tab">Costing</a></li>
+        <li><a href="#nav-pills-tab-5" data-toggle="tab">Settings & Extra Info</a></li>
+    </ul>
+    <div class="tab-content">
+        <!-- ================== IMAGES TAB ================== -->
+        <div class="tab-pane fade active in" id="nav-pills-tab-3">
+            <h3 class="m-t-10">Images</h3>
+            <hr class="m_bottom_10">
+            <div class="row">
+                @if (Model.Entity.Images.Any(c => c.ImageType == ImageType.Image))
+                {
+                    foreach (var img in Model.Entity.Images.Where(c => c.ImageType == ImageType.Image))
+                    {
+                        <div id="@img.Id" class="col-md-2">
+                            <img id="preview2" style="width: 100%;" class="thumbnail" title="@img.FileName" alt="@img.FileName" src="@img.GetImagePathFromAnotherWebsite(FrameworkDI.Configuration["Company:WebUrl"],FrameworkDI.Configuration["Placeholders:CoverImage"])">
+                            <button type="button" data-toggle="Remote Image" onclick="removeImageFromObject('@img.Id')" title="Remove Image" class="btn btn-block btn-danger btn-sm">Delete</button>
+                        </div>
+                    }
+                }
+                else
+                {
+                    <h4>There are currently no images associated with this product</h4>
+                }
+            </div>
+            <div class="row" style="padding-bottom: 20px; padding-top: 20px;">
+                <div class="col-md-12 bottommargin text-center">
+                    <h5>Select Product Images:</h5><br>
+                    <input asp-for="ImagesUpload" type="file" class="file" multiple data-show-upload="false" data-show-caption="true" data-show-preview="true">
+                </div>
+            </div>
+        </div>
+        <!-- ================== END IMAGES TAB ================== -->
+        <!-- ================== COSTING TAB ================== -->
+        <div class="tab-pane fade" id="nav-pills-tab-4">
+            <h3 class="m-t-10">Costing</h3>
+            <hr class="m_bottom_10">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label asp-for="Entity.VatRate" class="control-label"></label>
+                        <input asp-for="Entity.VatRate" class="form-control" />
+                        <span asp-validation-for="Entity.VatRate" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label asp-for="Entity.PriceIncl" class="control-label"></label>
+                        <input asp-for="Entity.PriceIncl" class="form-control" />
+                        <span asp-validation-for="Entity.PriceIncl" class="text-danger"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- ================== END COSTING TAB ================== -->
+        <!-- ================== ADDITIONAL INFO TAB ================== -->
+        <div class="tab-pane fade" id="nav-pills-tab-5">
+            <h3 class="m-t-10">Additional Info</h3>
+            <hr class="m_bottom_10">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <label asp-for="Entity.AdditionalInfo" class="control-label"></label>
+                        <textarea asp-for="Entity.AdditionalInfo" class="form-control"></textarea>
+                        <span asp-validation-for="Entity.AdditionalInfo" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Entity.Description" class="control-label"></label>
+                        <textarea asp-for="Entity.Description" class="form-control"></textarea>
+                        <span asp-validation-for="Entity.Description" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <div class="checkbox">
+                            <label>
+                                <input asp-for="Entity.Active" /> @Html.DisplayNameFor(model => model.Entity.Active)
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+
+
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <div class="checkbox">
+                            <label>
+                                <input asp-for="Entity.Featured" /> @Html.DisplayNameFor(model => model.Entity.Featured)
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- ================== END ADDITIONAL INFO TAB ================== -->
+    </div>
+
+    <!-- ================== FORM BUTTON ================== -->
+    <div class="row" style="padding-bottom: 50px">
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10 text-right">
+                <input name="main" type="submit" value="Save" class="btn btn-default" />
+                <input name="finnish" type="submit" value="Submit" class="btn btn-default" />
+                <a asp-area="Products" asp-controller="Home" asp-action="List" class="btn btn-danger">Cancel</a>
+            </div>
+        </div>
+    </div>
+    <!-- ================== END FORM BUTTON ================== -->
+
+</form>
+
+<div class="modal modal-message fade" id="ModalPlaceHolder" z-index="-1" style="padding-top: 150px"></div>
+
+
+<script>
+    function ShowAddFeatureModel() {
+
+        var url = "/Features/Home/AddFeatureToProduct?productId=" + '@Model.Entity.Id';
+
+        $("#ModalPlaceHolder").empty();
+        $("#ModalPlaceHolder").load(url,
+            function () {
+                $("#ModalPlaceHolder").modal("show");
+            });
+    }
+    function ShowCreateFeatureModel() {
+
+        var url = "/Features/Home/Create?serviceId=" + '@Model.Entity.Id';
+
+        $("#ModalPlaceHolder").load(url,
+            function () {
+                $("#ModalPlaceHolder").modal("show");
+            });
+    }
+
+    function ShowEditFeatureModal(numberId, parentId) {
+
+        var url = "/Features/Home/Edit?id=" + numberId + "&parentId=" + parentId;
+
+        $("#ModalPlaceHolder").load(url,
+            function () {
+                $("#ModalPlaceHolder").modal("show");
+            });
+    }
+
+    function ShowDeleteFeatureModal(numberId) {
+
+        var url = "/Features/Home/Delete?id=" + numberId;
+
+        $("#ModalPlaceHolder").load(url,
+            function () {
+                $("#ModalPlaceHolder").modal("show");
+            });
+    }
+</script>
+
+@section Scripts
+    {
+
+
+    <script>
+        var loadFile = function (event) {
+            var output = document.getElementById('coverpreview');
+            if (event.target.files.length !== 0) {
+
+                var oldstring = "";
+                if (output === null) {
+                    oldstring = "/images/placeholders/img_475x320.jpg";
+                } else {
+                    oldstring = output.src;
+                }
+
+                var url = "/Home/CropImage?cropUrl=" + URL.createObjectURL(event.target.files[0]) + "&originalUrl=" + oldstring + "&width=" + 475 + "&height=" + 320
+                    + "&aspectRatio=475/320";
+    
+                $("#CropModal").load(url,
+                    function () {
+                        $("#CropModal").modal("show");
+                    });
+            }
+        };
+    </script>
+
+    <script src="~/js/summernote/summernote.js"></script>
+
+    <script type="text/javascript">
+        // Default
+        $(document).ready(function () {
+            var HomeIndex = function () {
+
+                var $this = this;
+                function initialize() {
+                    $('#Entity_AdditionalInfo').summernote({
+                        height: 250,
+                        codemirror: { // codemirror options
+                            theme: 'monokai'
+                        }
+                    });
+                    $('#Entity_Description').summernote({
+                        height: 250,
+                        codemirror: { // codemirror options
+                            theme: 'monokai'
+                        }
+                    });
+                }
+
+                $this.init = function () {
+                    initialize();
+                }
+            };
+            var self = new HomeIndex();
+            self.init();
+        });
+
+        function removeImageFromObject(image_id) {
+            $.ajax({
+                url: "/Products/Home/RemoveImageAjax",
+                type: "POST",
+                data: { id: image_id },
+                async: false,
+                dataType: "json",
+                success: function (data) {
+                    $('#' + image_id).empty();
+                },
+                error: function (error) {
+                    alert("Error : " + JSON.stringify(error, null, 2));
+                }
+            });
+        };
+
+    </script>
+
+    <script type="text/javascript" src="~/js/bs-filestyle.js"></script>
+}

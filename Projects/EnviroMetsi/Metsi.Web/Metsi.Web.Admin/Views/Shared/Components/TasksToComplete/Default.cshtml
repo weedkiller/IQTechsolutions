@@ -1,0 +1,29 @@
+﻿@model ICollection<Calendar.Base.Entities.RecurringTask>
+
+<h4 class="title">Tasks <small>@Model.Count pending tasks</small></h4>
+<!-- begin scrollbar -->
+<div data-scrollbar="true" data-height="280px" class="bg-silver">
+    <!-- begin todolist -->
+    <ul class="todolist">
+        @if (Model.Any())
+        {
+            foreach (var item in Model)
+            {
+                <li id="toDoListItem_@item.Id" class="active">
+                    <a id="toDoListStatusLink_@item.Id" onclick="changeToDoStatus('@item.Id')" class="todolist-container active">
+                        <div class="todolist-input"><i class="fa fa-square-o"></i></div>
+                        <div class="todolist-title">@item.Name</div>
+                    </a>
+                </li>
+            }
+        }
+        else
+        {
+            <li class="active">
+                <div class="todolist-title">No tasks available</div>
+            </li>
+        }
+    </ul>
+    <!-- end todolist -->
+</div>
+<!-- end scrollbar -->

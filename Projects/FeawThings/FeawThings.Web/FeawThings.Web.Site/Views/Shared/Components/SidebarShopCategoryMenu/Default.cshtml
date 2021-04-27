@@ -1,0 +1,97 @@
+﻿@using Iqt.Base.Interfaces
+
+@inject IApplicationConfiguration Configuration
+
+@model IEnumerable<Grouping.Base.Models.CategoryModel>
+
+<div class="responsive so-megamenu ">
+    <div class="so-vertical-menu no-gutter compact-hidden">
+        <nav class="navbar-default">
+            @if (Model.Any())
+            {
+                <div class="container-megamenu vertical open">
+                    <div id="menuHeading">
+                        <div class="megamenuToogle-wrapper">
+                            <div class="megamenuToogle-pattern">
+                                <div class="container">
+                                    <div>
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                    </div>
+                                    All Categories
+                                    <i class="fa pull-right arrow-circle fa-chevron-circle-up"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="navbar-header">
+                        <button type="button" id="show-verticalmenu" data-toggle="collapse" class="navbar-toggle fa fa-list-alt">
+                        </button>
+                        All Categories
+                    </div>
+                    <div class="vertical-wrapper">
+                        <span id="remove-verticalmenu" class="fa fa-times"></span>
+                        <div class="megamenu-pattern">
+                            <div class="container">
+                                <ul class="megamenu">
+                                    @*@foreach (var item in Model.Results)
+                                    {
+                                        var dropDownClass = "";
+
+                                        if (item.SubCategories.Any())
+                                        {
+                                            dropDownClass = "css-menu";
+
+                                            <li class="item-vertical @dropDownClass with-sub-menu hover">
+                                                <p class="close-menu"></p>
+                                                <a href="#" class="clearfix">
+                                                    <img src="@item.GetPath(Configuration.BaseImageUrl, ImageType.Icon, "/images/placeholders/iconHolder.png")" style="width: 10%;" alt="icon">
+                                                    <span>@item.Name</span>
+                                                    <b class="caret"></b>
+                                                </a>
+
+                                                @{
+                                                    var viewList = item.SubCategories.ToDictionary(subCategory => subCategory, subCategory => subCategory.SubCategories.Any() ? "SubCategoryDropDown" : "CategoryDropDown");
+                                                }
+
+                                                @foreach (var viewResult in viewList)
+                                                {
+                                                    if (viewResult.Value == "SubCategoryDropDown")
+                                                    {
+                                                    //    <partial name="~/Areas/Products/Views/Categories/_SubCategoryMenuDropDown.cshtml" model="@viewResult.Key" />
+                                                    }
+                                                    else
+                                                    {
+                                                        //     <partial name="~/Areas/Products/Views/Categories/_CategoryMenuDropDown.cshtml" model="@viewResult.Key" />}
+                                                    }
+                                            </li>
+                                        }
+                                        else
+                                        {
+                                            <li class="item-vertical">
+                                                <p class="close-menu"></p>
+                                                <a asp-area="Products" asp-controller="Home" asp-action="Index" asp-route-categoryId="@item.Id" class="clearfix">
+                                                    <img src="@item.GetPath(Configuration.BaseImageUrl, ImageType.Icon, "/images/placeholders/iconHolder.png")" style="width: 10%;" alt="icon">
+                                                    <span>@item.Name</span>
+                                                </a>
+                                            </li>
+
+                                        }
+                                    }*@
+                                    <li class="item-vertical">
+                                        <a asp-area="Products" asp-controller="Home" asp-action="Index" class="clearfix">
+                                            <i class="fa fa-plus-square-o"></i>
+                                            <span>View All Products</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            }
+        </nav>
+    </div>
+</div>

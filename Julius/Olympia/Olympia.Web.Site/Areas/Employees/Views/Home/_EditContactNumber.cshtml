@@ -1,0 +1,88 @@
+﻿@model Iqt.Base.Entities.ContactNumber<Employee>
+
+<div class="modal-dialog">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h4 class="modal-title">@ViewData["Title"]</h4>
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        </div>
+        <div class="modal-body">
+            <form id="EditContactNrForm">
+                <input type="hidden" asp-for="Id" />
+                <input type="hidden" asp-for="EntityId" />
+                <input type="hidden" asp-for="EntityId" />
+                <div class="form-group">
+                    <label asp-for="Name" class="control-label"></label>
+                    <input asp-for="Name" class="form-control" />
+                    <span asp-validation-for="Name" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Number" class="control-label"></label>
+                    <input asp-for="Number" class="form-control" />
+                    <span asp-validation-for="Number" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <div class="checkbox">
+                        <label>
+                            <input asp-for="Default" /> @Html.DisplayNameFor(model => model.Default)
+                        </label>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="modal-footer">
+            <a href="javascript:;" class="btn btn-sm btn-white" data-dismiss="modal">Close</a>
+            <a href="javascript:;" onclick="ConfirmContactNumber55()" class="btn btn-sm btn-primary">Submit</a>
+        </div>
+    </div>
+</div>
+
+
+    <script type="text/javascript">
+
+        function ConfirmContactNumber55() {
+
+            var myformdata = $("#EditContactNrForm").serialize();
+            var url = "@Url.Action("EditContactNumber", "Home", new { area="Employees", personId = Model.EntityId})";
+
+            $.ajax({
+                type: "POST",
+                data: myformdata,
+                url: url,
+                success: function (data) {
+
+                    $("#ModalPlaceHolder").modal("hide");
+
+                    $("#contactNr_" + data.id).html(data.number);
+                    if (data.defaultvalue) {
+                        $("#contactDefault_" + data.id).html('<i class="fa fa-check"></i>');
+                    } else {
+                        $("#contactDefault_" + data.id).html('<i class="fa fa-close"></i>');
+                    } 
+
+                },
+                error: function (xhr, textStatus, err) {
+                    alert("An error with the following detials occured : "
+                        + "\r\n == readyState: " + xhr.readyState
+                        + "\r\n == responseText: " + xhr.responseText
+                        + "\r\n == status: " + xhr.status
+                        + "\r\n == text status: " + textStatus
+                        + "\r\n == error: " + err);
+                }
+            });
+        }
+    </script>
+
+    <script>
+        var loadFile = function (event) {
+            var output = document.getElementById('preview');
+            output.src = URL.createObjectURL(event.target.files[0]);
+        };
+    </script>
+
+    <!-- Summer Note JS -->
+    <script src="~/js/summernote/summernote.js"></script>
+
+    <script type="text/javascript" src="~/js/bs-filestyle.js"></script>
+        
+    

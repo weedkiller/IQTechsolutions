@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ResourceDictionary
+    x:Class="Metsi.Mobile.Views.Application.Styles"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:graphics="clr-namespace:Syncfusion.XForms.Graphics;assembly=Syncfusion.Core.XForms"
+    xmlns:buttons="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms">
+
+    <Color x:Key="GradientStartColor">#012E8B</Color>
+    <Color x:Key="GradientEndColor">#3F0041</Color>
+    <Color x:Key="GradientStart">#713d74</Color>
+    <Color x:Key="GradientEnd">#221e60</Color>
+
+    <!--  Common label style  -->
+    <Style x:Key="LabelStyle" TargetType="Label">
+        <Setter Property="VerticalOptions" Value="Center" />
+        <Setter Property="HorizontalTextAlignment" Value="Center" />
+        <Setter Property="LineHeight" Value="{OnPlatform Android=1.25, Default=-1}" />
+        <Setter Property="TextColor" Value="{DynamicResource Gray-900}" />
+    </Style>
+
+    <!--  Common style for gradient view  -->
+    <Style x:Key="SfGradientViewStyle" TargetType="graphics:SfGradientView">
+        <Setter Property="Opacity" Value="0.82" />
+        <Setter Property="VerticalOptions" Value="FillAndExpand" />
+        <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+        <Setter Property="BackgroundBrush">
+            <Setter.Value>
+                <graphics:SfLinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                    <graphics:SfLinearGradientBrush.GradientStops>
+                        <graphics:SfGradientStop Offset="0.0" Color="{StaticResource GradientEndColor}" />
+                        <graphics:SfGradientStop Offset="1.0" Color="{StaticResource GradientStartColor}" />
+                    </graphics:SfLinearGradientBrush.GradientStops>
+                </graphics:SfLinearGradientBrush>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="SfGradientStyle" TargetType="graphics:SfGradientView">
+        <Setter Property="Opacity" Value="1" />
+        <Setter Property="VerticalOptions" Value="FillAndExpand" />
+        <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+        <Setter Property="BackgroundBrush">
+            <Setter.Value>
+                <graphics:SfLinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                    <graphics:SfLinearGradientBrush.GradientStops>
+
+                        <graphics:SfGradientStop Offset="0.0" Color="{StaticResource GradientStart}" />
+                        <graphics:SfGradientStop Offset="1.0" Color="{StaticResource GradientEnd}" />
+                    </graphics:SfLinearGradientBrush.GradientStops>
+                </graphics:SfLinearGradientBrush>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!--  Common style for buttons  -->
+    <Style x:Key="SfGradientButtonStyle" TargetType="buttons:SfButton">
+        <Setter Property="HorizontalOptions" Value="CenterAndExpand" />
+        <Setter Property="VerticalOptions" Value="EndAndExpand" />
+        <Setter Property="Margin" Value="0,10,0,24" />
+        <Setter Property="TextColor" Value="{DynamicResource Gray-White}" />
+        <Setter Property="FontFamily" Value="{StaticResource Montserrat-SemiBold}" />
+        <Setter Property="FontSize" Value="16" />
+        <Setter Property="HeightRequest" Value="40" />
+        <Setter Property="CornerRadius" Value="20" />
+        <Setter Property="WidthRequest" Value="245" />
+        <Setter Property="FontAttributes" Value="Bold" />
+        <Setter Property="BorderWidth" Value="0" />
+        <Setter Property="VerticalTextAlignment" Value="Center" />
+        <Setter Property="BackgroundGradient">
+            <Setter.Value>
+                <graphics:SfLinearGradientBrush StartPoint="0, 0" EndPoint="1, 1">
+                    <graphics:SfLinearGradientBrush.GradientStops>
+                        <graphics:SfGradientStop Offset="0" Color="{DynamicResource PrimaryColor}" />
+                        <graphics:SfGradientStop Offset="1" Color="{DynamicResource PrimaryGradient}" />
+                    </graphics:SfLinearGradientBrush.GradientStops>
+                </graphics:SfLinearGradientBrush>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!--  Common style for buttons  -->
+    <Style x:Key="SfButtonStyle" TargetType="buttons:SfButton">
+        <Setter Property="BackgroundGradient">
+            <Setter.Value>
+                <graphics:SfLinearGradientBrush>
+                    <graphics:SfLinearGradientBrush.GradientStops>
+                        <graphics:SfGradientStop Offset="0" Color="{DynamicResource PrimaryColor}" />
+                        <graphics:SfGradientStop Offset="1" Color="{DynamicResource PrimaryGradient}" />
+                    </graphics:SfLinearGradientBrush.GradientStops>
+                </graphics:SfLinearGradientBrush>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="TextColor" Value="{DynamicResource Gray-White}" />
+        <Setter Property="FontFamily" Value="{StaticResource Montserrat-SemiBold}" />
+        <Setter Property="BorderWidth" Value="0" />
+        <Setter Property="FontSize" Value="16" />
+        <Setter Property="HeightRequest" Value="40" />
+        <Setter Property="CornerRadius" Value="20" />
+        <Setter Property="VerticalTextAlignment" Value="Center" />
+    </Style>
+
+    <!--  Style for version label  -->
+    <Style x:Key="VersionLabelStyle" TargetType="Label">
+        <Setter Property="TextColor" Value="{DynamicResource Gray-700}" />
+        <Setter Property="FontFamily" Value="{StaticResource Montserrat-Medium}" />
+        <Setter Property="FontSize" Value="12" />
+        <Setter Property="LineHeight" Value="{OnPlatform Default=1.25, iOS=-1}"/>
+    </Style>
+
+    <!--  Style for header label  -->
+    <Style x:Key="HeaderLabelStyle" TargetType="Label">
+        <Setter Property="TextColor" Value="{DynamicResource Gray-900}" />
+        <Setter Property="FontFamily" Value="{StaticResource Montserrat-SemiBold}" />
+        <Setter Property="FontSize" Value="16" />
+        <Setter Property="HorizontalTextAlignment" Value="Center" />
+        <Setter Property="LineHeight" Value="1.25"/>
+        <Setter Property="Margin" Value="0,16,0,8"/>
+    </Style>
+
+    <!--  Style for description label  -->
+    <Style x:Key="DescriptionLabelStyle" TargetType="Label">
+        <Setter Property="TextColor" Value="{DynamicResource Gray-700}" />
+        <Setter Property="FontFamily" Value="{StaticResource Montserrat-Medium}" />
+        <Setter Property="FontSize" Value="14" />
+        <Setter Property="HorizontalTextAlignment" Value="Start" />
+        <Setter Property="LineHeight" Value="{OnPlatform Default=1.25}"/>
+    </Style>
+
+    <!--  Style for Images  -->
+    <Style x:Key="AboutUsImageStyle" TargetType="Image">
+        <Setter Property="HeightRequest" Value="64" />
+        <Setter Property="WidthRequest" Value="64" />
+    </Style>
+</ResourceDictionary>

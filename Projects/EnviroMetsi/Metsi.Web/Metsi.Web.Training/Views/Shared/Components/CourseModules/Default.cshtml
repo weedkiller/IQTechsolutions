@@ -1,0 +1,16 @@
+﻿@model IEnumerable<Education.Base.ApiModels.ModuleApiModel>
+
+<h4>Course Modules</h4>
+<div>
+    <ul class="list-group">
+        @foreach(var item in @Model)
+        {
+            <li class="list-group-item">
+                <a asp-area="Courses" asp-controller="Module" asp-action="Index" asp-route-id="@item.CourseId">
+                    <span class="badge badge-primary">@item.SectionCount</span>
+                    @item.Name
+                </a>
+            </li>
+        }
+    </ul>
+</div>

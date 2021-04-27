@@ -1,0 +1,9 @@
+G:\Projects\KingdomLifestyleMinistries\KingdomLifestyleMinistries.Web.Site\obj\Debug\net5.0\KingdomLifestyleMinistries.Web.Site.csprojAssemblyReference.cache
+G:\Projects\KingdomLifestyleMinistries\KingdomLifestyleMinistries.Web.Site\obj\Debug\net5.0\KingdomLifestyleMinistries.Web.Site.GeneratedMSBuildEditorConfig.editorconfig
+G:\Projects\KingdomLifestyleMinistries\KingdomLifestyleMinistries.Web.Site\obj\Debug\net5.0\KingdomLifestyleMinistries.Web.Site.AssemblyInfoInputs.cache
+G:\Projects\KingdomLifestyleMinistries\KingdomLifestyleMinistries.Web.Site\obj\Debug\net5.0\KingdomLifestyleMinistries.Web.Site.AssemblyInfo.cs
+G:\Projects\KingdomLifestyleMinistries\KingdomLifestyleMinistries.Web.Site\obj\Debug\net5.0\KingdomLifestyleMinistries.Web.Site.csproj.CoreCompileInputs.cache
+G:\Projects\KingdomLifestyleMinistries\KingdomLifestyleMinistries.Web.Site\obj\Debug\net5.0\KingdomLifestyleMinistries.Web.Site.MvcApplicationPartsAssemblyInfo.cs
+G:\Projects\KingdomLifestyleMinistries\KingdomLifestyleMinistries.Web.Site\obj\Debug\net5.0\KingdomLifestyleMinistries.Web.Site.MvcApplicationPartsAssemblyInfo.cache
+G:\Projects\KingdomLifestyleMinistries\KingdomLifestyleMinistries.Web.Site\obj\Debug\net5.0\KingdomLifestyleMinistries.Web.Site.RazorAssemblyInfo.cache
+G:\Projects\KingdomLifestyleMinistries\KingdomLifestyleMinistries.Web.Site\obj\Debug\net5.0\KingdomLifestyleMinistries.Web.Site.RazorAssemblyInfo.cs

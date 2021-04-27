@@ -1,0 +1,33 @@
+﻿@{
+    Layout = "Layouts/_Layout";
+}
+
+@section Styles
+{
+    <link rel="stylesheet" href="~/css/syncfusion/dropdowntreeview.css" />
+    <script src="~/js/syncfusion/dropdowntreeview.js"></script>
+
+    <!--page injected css-->
+    @RenderSection("Styles", required: false)
+}
+
+<div id="content" class="content">
+
+    <partial name="_Breadcrumbs" />
+
+    @RenderBody()
+
+</div>
+
+@section Scripts
+{
+    <ejs-scripts></ejs-scripts>
+
+    <script src="~/js/apps.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            App.init();
+        });
+    </script>
+    @RenderSection("Scripts", required: false)
+}

@@ -1,0 +1,29 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UserSecretsId>a1fc721d-d530-45bd-90b3-f68360a96fc0</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="3.1.9" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="3.1.9" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.9" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.9">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.4" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\IqtFramework\Iqt.Base\Iqt.Base.csproj" />
+    <ProjectReference Include="..\..\..\Modules\Grouping\Grouping.csproj" />
+    <ProjectReference Include="..\..\..\Modules\Troubleshooting\Troubleshooting.csproj" />
+    <ProjectReference Include="E:\IQTechSolutions\Iqt\Iqt.Troubleshooting\Iqt.Troubleshooting.csproj" />
+    <ProjectReference Include="E:\IQTechSolutions\Websites\Metsi\Metsi.Web.DataStore\Metsi.Web.DataStore.csproj" />
+    <ProjectReference Include="E:\IQTechSolutions\Websites\Metsi\Metsi.Web\Metsi.Web.csproj" />
+  </ItemGroup>
+
+
+</Project>

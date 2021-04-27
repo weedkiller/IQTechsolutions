@@ -1,0 +1,89 @@
+﻿
+@using Filing.Base.Enums
+@using Filing.Base.Extensions
+@using Iqt.Base.Interfaces
+
+@inject IApplicationConfiguration Configuration
+
+@model Projects.Core.Models.ProjectDetailsPageModel
+@{
+    ViewData["Title"] = "Details";
+    Layout = "Layouts/_Layout";
+}
+
+<section id="content" class="light_section">
+
+    <div class="container">
+        <div class="row">
+            <!-- main content -->
+            <div class="col-sm-8 col-md-8 col-lg-9">
+
+                <article class="page">
+                    <header class="entry-header">
+                        <div class="entry-thumbnail">
+                            <img width="100%" alt="" src="~/images/content/allservices.jpg">
+                        </div>
+                        <h2 class="entry-title">
+                            @Model.Entity.ProjectName
+                        </h2>
+                    </header>
+                    <!-- .entry-header -->
+
+                    <div class="entry-content">
+                        <div id="carousel-media" class="carousel slide testimonials-carousel" data-ride="carousel" style="float: left; width: 50%; padding-right: 20px;">
+
+                            <ol class="carousel-indicators">
+                                <li data-target="#carousel-media" data-slide-to="0" class="active"></li>
+                                @for (int i = 0; i < Model.Entity.Images.Count() + 1; i++)
+                                {
+                                    <li data-target="#carousel-media" data-slide-to="@i" class=""></li>
+                                }
+                            </ol>
+
+                            <!-- Wrapper for slides -->
+                            <div class="carousel-inner">
+
+
+                                <div class="item active">
+                                    <div class="media">
+                                        <div class="media-body">
+                                            <img src="@Model.Entity.GetPath(Configuration.BaseImageUrl)" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                @foreach (var item in Model.Entity.Images)
+                                {
+                                    <div class="item">
+                                        <div class="media">
+                                            <div class="media-body">
+                                                <img src="@item.GetPath(Configuration.BaseImageUrl)" alt="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                }
+
+                            </div>
+                            <a class="left carousel-control" href="#carousel-media" role="button" data-slide="prev">
+                                <span class="glyphicon glyphicon-chevron-left"></span>
+                            </a>
+                            <a class="right carousel-control" href="#carousel-media" role="button" data-slide="next">
+                                <span class="glyphicon glyphicon-chevron-right"></span>
+                            </a>
+
+                        </div>
+                        @Html.Raw(Model.Entity.LongDescription)
+                    </div>
+
+                </article>
+                <!-- .page -->
+            </div>
+            <partial name="SideBars/_SidebarDefault" />
+
+        </div>
+    </div>
+</section>
+
+@await Component.InvokeAsync("FaqsWidget")
+
+<partial name="_ContactUsNow" />

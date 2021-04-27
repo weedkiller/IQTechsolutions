@@ -1,0 +1,31 @@
+﻿@model Section
+<!-- Modal -->
+
+<div class="modal-dialog modal-dialog-centered">
+    <form asp-area="Courses" asp-controller="Sections" asp-action="Delete" enctype="multipart/form-data" method="post">
+        <input type="hidden" asp-for="Id" />
+        <input type="hidden" asp-for="ModuleId" />
+        <input type="hidden" asp-for="ParentSectionId" />
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Please confirm this action!</h4>
+                <button type="button" class="close" data-dismiss="modal">
+                    <span aria-hidden="true">×</span>
+                    <span class="sr-only">close</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <h4> Are you sure you want to delete this training section </h4>
+
+                <div style="text-align: center; display: none" id="loaderDiv">
+                    <img src="/images/loader2.gif" />
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <a href="javascript:;" class="btn btn-sm btn-white" data-dismiss="modal">Close</a>
+                <input type="submit" value="Delete" class="btn btn-sm btn-primary" />
+            </div>
+        </div>
+    </form>
+</div>

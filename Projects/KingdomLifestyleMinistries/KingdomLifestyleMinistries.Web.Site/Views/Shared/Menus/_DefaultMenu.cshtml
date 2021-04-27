@@ -1,0 +1,57 @@
+﻿@inject SignInManager<ApplicationUser> SignInManager
+@inject IRepositoryManager RepositoryManager
+
+    <nav id="menuzord" class="menuzord pull-left flip menuzord-responsive">
+        @if (SignInManager.IsSignedIn(User) && User.IsInRole("Admin"))
+        {
+            <div id="side-panel-trigger" class="side-panel-trigger"><a href="#"><i class="fa fa-bars font-24 text-gray"></i></a></div>
+        }
+        <ul class="menuzord-menu">
+            <li class="active"><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
+            <li>
+                <a href="#">About</a>
+                <ul class="dropdown">
+                    <li><a asp-area="" asp-controller="Home" asp-action="About">About Us</a></li>
+                    @if (RepositoryManager.Repository<GuestSpeaker>().GetAll().Any())
+                    {
+                        <li><a asp-area="GuestSpeakers" asp-controller="Home" asp-action="Index">Guest Speaker</a></li>
+                    }
+                    <li><a asp-area="" asp-controller="Home" asp-action="Mosselbay">Mossel Bay</a></li>
+                    <li><a asp-area="" asp-controller="Home" asp-action="Partnerships">Partnership</a></li>
+                </ul>
+            </li>
+            <li><a asp-area="Events" asp-controller="Home" asp-action="Index">Events</a></li>
+            <li>
+            <a href="#">Gallery</a>
+            <ul class="dropdown">
+                <li><a asp-area="Gallery" asp-controller="PhotoAlbum" asp-action="Index">Albums</a></li>
+                <li><a asp-area="Gallery" asp-controller="Video" asp-action="Index">Videos</a></li>
+            </ul>
+            </li>
+            <li><a asp-area="Products" asp-controller="Home" asp-action="Index">Shop</a></li>
+            <li><a asp-area="Blog" asp-controller="Home" asp-action="Index">Blog</a></li>
+            @*<li><a asp-area="" asp-controller="Home" asp-action="WealthCreation">Wealth Creation</a></li>*@
+            <li>
+                <a href="#">Contact Us</a>
+                <ul class="dropdown">
+                    <li><a asp-area="Support" asp-controller="Home" asp-action="Create">Contact Form</a></li>
+                    <li><a asp-area="Prayer" asp-controller="Home" asp-action="Create">Prayer Request</a></li>
+                </ul>
+            </li>
+        </ul>
+        <ul class="pull-right flip hidden-sm hidden-xs">
+            <li>
+                <!-- Ajax Popup form Starts -->
+                <a class="btn btn-colored btn-flat top-left-triangle bg-theme-colored text-white font-14 p-10 mt-15 pr-30 pl-15" asp-area="Donations" asp-controller="Home" asp-action="Create">Make a Donation</a>
+                <!-- Ajax Popup form End -->
+            </li>
+        </ul>
+        <div id="top-search-bar" class="collapse">
+            <div class="container">
+                <form role="search" action="#" class="search_form_top" method="get">
+                    <input type="text" placeholder="Type text and press Enter..." name="s" class="form-control" autocomplete="off">
+                    <span class="search-close"><i class="fa fa-search"></i></span>
+                </form>
+            </div>
+        </div>
+    </nav>

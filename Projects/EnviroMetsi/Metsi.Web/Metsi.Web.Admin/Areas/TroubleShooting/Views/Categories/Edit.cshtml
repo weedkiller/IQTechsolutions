@@ -1,0 +1,315 @@
+﻿@model CategoryAddEditModel<Problem>
+
+@{
+    ViewData["Title"] = $"Edit {Model.Entity.Name}";
+}
+
+@section Styles
+{
+    <link href='~/css/summernote.css' rel='stylesheet' type='text/css' />
+    <link rel="stylesheet" href="~/css/bs-filestyle.css">
+}
+
+<form asp-area="Troubleshooting" asp-controller="Categories" asp-action="Edit" enctype="multipart/form-data" method="post">
+
+<div class="col-md-12">
+    <div class="panel panel-success" data-sortable-id="ui-widget-11">
+        <div class="panel-heading">
+            <div class="panel-heading-btn">
+                <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-default" data-click="panel-expand"><i class="fa fa-expand"></i></a>
+                <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-success" data-click="panel-reload"><i class="fa fa-repeat"></i></a>
+                <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-warning" data-click="panel-collapse"><i class="fa fa-minus"></i></a>
+            </div>
+            <h4 class="panel-title"><strong>Category Details</strong> (Save to add attributes like sub-cateories, problems, etc.)</h4>
+        </div>
+        <div class="panel-body">
+
+
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Entity.Id" />
+            <input type="hidden" asp-for="Entity.ParentCategoryId" />
+            <div class="row">
+                <div class="col-lg-4 col-md-4 col-sm-12">
+                    <div class="form-group">
+                        <div class="previewd" style="overflow: hidden">
+                            <img id="preview" style="width: 100%" src="@Model.Entity.GetPath("http://admin.metsi.co.za", ImageType.Cover, "/images/placeholders/MetsiPlaceholder-800x533.jpg")" alt="@Model.Entity.Name Cover" />
+                        </div>
+                        <input asp-for="CoverUpload" type="file" class="form-control" onchange="loadFile(event)" />
+                        <input type="hidden" asp-for="CoverCropSettings.X" />
+                        <input type="hidden" asp-for="CoverCropSettings.Y" />
+                        <input type="hidden" asp-for="CoverCropSettings.Width" />
+                        <input type="hidden" asp-for="CoverCropSettings.Height" />
+                        <input type="hidden" asp-for="CoverCropSettings.Rotate" />
+                        <input type="hidden" asp-for="CoverCropSettings.ScaleX" />
+                        <input type="hidden" asp-for="CoverCropSettings.ScaleY" />
+                    </div>
+                </div>
+                <div class="col-lg-8 col-md-8 col-sm-12">
+                    <div class="col-lg-12">
+                        <div class="form-group">
+                            <label asp-for="Entity.Name" class="control-label"></label>
+                            <input asp-for="Entity.Name" class="form-control" />
+                            <span asp-validation-for="Entity.Name" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Entity.Description" class="control-label"></label>
+                            <textarea asp-for="Entity.Description" class="form-control" style="height: 150px"></textarea>
+                            <span asp-validation-for="Entity.Description" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <div class="checkbox">
+                                <label>
+                                    <input asp-for="Entity.Active" /> Active
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+
+
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <div class="checkbox">
+                                <label>
+                                    <input asp-for="Entity.Featured" /> Featured
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+                
+        </div>
+    </div>
+</div>
+
+<div class="col-md-12">
+    <div class="row">
+        <ul class="nav nav-pills">
+            @if (!Model.Entity.HasSubCategories)
+            {
+                <li class="active"><a href="#default-tab-1" data-toggle="tab">Problems</a></li>
+            }
+            else
+            {
+                <li class="active"><a href="#default-tab-3" data-toggle="tab">Sub-Categories</a></li>
+            }
+            
+            <li class=""><a href="#default-tab-2" data-toggle="tab">Images</a></li>
+        </ul>
+        <div class="tab-content">
+            @if (!Model.Entity.HasSubCategories)
+            {
+                <div class="tab-pane fade active in" id="default-tab-1">
+                    @await Component.InvokeAsync("CategoryProblemsList", new {categoryId = @Model.Entity.Id})
+                </div>
+            }
+            else
+            {
+                <div class="tab-pane fade active in" id="default-tab-3">
+                    @await Component.InvokeAsync("ProblemCategoryList", new {categoryId = @Model.Entity.Id})
+                </div>
+            }
+
+            <div class="tab-pane fade" id="default-tab-2">
+                <div class="row">
+                    <div class="col-md-4">
+                        <hr/>
+                        <h4>Icon Image</h4>
+                        <hr/>
+                        <div class="form-group">
+                            <div class="previewicon">
+                                <img id="iconPreview" style="width: 150px" src="@Model.Entity.GetPath("http://admin.metsi.co.za", ImageType.Icon, "/images/placeholders/iconHolder.png")" style="width: 150px" src="" alt="@Model.Entity.Name Icon"/>
+                            </div>
+
+                            <input asp-for="IconUpload" type="file" class="form-control" onchange="loadIcon(event)"/>
+                            <input type="hidden" asp-for="IconCropSettings.X"/>
+                            <input type="hidden" asp-for="IconCropSettings.Y"/>
+                            <input type="hidden" asp-for="IconCropSettings.Width"/>
+                            <input type="hidden" asp-for="IconCropSettings.Height"/>
+                            <input type="hidden" asp-for="IconCropSettings.Rotate"/>
+                            <input type="hidden" asp-for="IconCropSettings.ScaleX"/>
+                            <input type="hidden" asp-for="IconCropSettings.ScaleY"/>
+                        </div>
+                    </div>
+                    <div class="col-md-8">
+                        <hr/>
+                        <h4>Banner Image</h4>
+                        <hr/>
+                        <div class="form-group">
+                            <div class="previewbanner">
+                                <img id="bannerPreview" style="width: 100%" src="@Model.Entity.GetPath("http://admin.metsi.co.za", ImageType.Banner, "/images/placeholders/MetsiPlaceholder-2100x800.jpg")" alt="@Model.Entity.Name Banner"/>
+                            </div>
+                            <input asp-for="BannerUpload" type="file" class="form-control" onchange="loadBanner(event)"/>
+                            <input type="hidden" asp-for="BannerCropSettings.X"/>
+                            <input type="hidden" asp-for="BannerCropSettings.Y"/>
+                            <input type="hidden" asp-for="BannerCropSettings.Width"/>
+                            <input type="hidden" asp-for="BannerCropSettings.Height"/>
+                            <input type="hidden" asp-for="BannerCropSettings.Rotate"/>
+                            <input type="hidden" asp-for="BannerCropSettings.ScaleX"/>
+                            <input type="hidden" asp-for="BannerCropSettings.ScaleY"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="col-md-12">
+    <div class="row">
+        <div class="form-group">
+            <div class="col-md-4">
+                <input name="main" type="submit" value="Save" class="btn btn-primary btn-block" />
+            </div>
+            <div class="col-md-4">
+                <input name="finnish" type="submit" value="Submit & Finnish" class="btn btn-primary btn-block" />
+            </div>
+            <div class="col-md-4">
+                @if (Model.Entity.ParentCategoryId == null)
+                {
+                    <a asp-area="Troubleshooting" asp-controller="Categories" asp-action="List" class="btn btn-danger btn-block">Cancel</a>
+                }
+                else
+                {
+                    <a asp-area="Troubleshooting" asp-controller="Categories" asp-action="Edit" asp-route-id="@Model.Entity.ParentCategoryId" class="btn btn-danger btn-block">Cancel</a>
+                }
+            </div>
+        </div>
+        <hr />
+
+
+    </div>
+
+</div>
+
+</form>
+
+
+@section Scripts
+{
+
+    <script src="~/js/summernote/summernote.js"></script>
+    <script src="~/js/bs-filestyle.js"></script>
+
+    <script type="text/javascript">
+        // Default
+        $(document).ready(function () {
+            var HomeIndex = function () {
+
+                var $this = this;
+
+                function initialize() {
+                    $('#Entity_Description').summernote({
+                        height: 250,
+                        codemirror: { // codemirror options
+                            theme: 'monokai'
+                        }
+                    });
+                }
+
+                $this.init = function () {
+                    initialize();
+                }
+            };
+            var self = new HomeIndex();
+            self.init();
+        });
+
+        function ShowDeleteModal(ff) {
+
+            var url = "/Troubleshooting/Categories/Delete?id=" + ff;
+
+            $("#ModalPlaceHolder").load(url,
+                function () {
+                    $("#ModalPlaceHolder").modal("show");
+                });
+        }
+
+        function ShowDeleteProblemModal(ff) {
+
+            var url = "/Troubleshooting/Home/Delete?id=" + ff;
+
+            $("#ModalPlaceHolder").load(url,
+                function () {
+                    $("#ModalPlaceHolder").modal("show");
+                });
+        }
+
+    </script>
+    <script>
+        var loadFile = function (event) {
+            var output = document.getElementById('preview');
+            if (event.target.files.length !== 0) {
+
+                var oldstring = "";
+                if (output === null) {
+                    oldstring = "/images/placeholders/MetsiPlaceholder-800x533.jpg";
+                } else {
+                    oldstring = output.src;
+                }
+
+                var url = "/Home/CropImage?cropUrl=" + URL.createObjectURL(event.target.files[0]) + "&originalUrl=" + oldstring + "&width=" + 800 + "&height=" + 533
+                    + "&previewClass=previewd" + "&uploadProperty=CoverUpload" + "&xTag=CoverCropSettings_X" + "&yTag=CoverCropSettings_Y"
+                    + "&widthTag=CoverCropSettings_Width" + "&heightTag=CoverCropSettings_Height" + "&rotateTag=CoverCropSettings_Rotate" + "&scaleXTag=CoverCropSettings_ScaleX"
+                    + "&scaleYTag=CoverCropSettings_ScaleY";
+
+                $("#CropModal").load(url,
+                    function () {
+                        $("#CropModal").modal("show");
+                    });
+            }
+        };
+
+        var loadIcon = function (event) {
+            var output = document.getElementById('iconPreview');
+            if (event.target.files.length !== 0) {
+
+                var oldstring = "";
+                if (output === null) {
+                    oldstring = "/images/placeholders/iconHolder.png";
+                } else {
+                    oldstring = output.src;
+                }
+
+                var url = "/Home/CropImage?cropUrl=" + URL.createObjectURL(event.target.files[0]) + "&originalUrl=" + oldstring + "&width=" + 370 + "&height=" + 352
+                    + "&aspectRatio=370/352" + "&previewClass=previewicon" + "&uploadProperty=IconUpload" + "&xTag=IconCropSettings_X" + "&yTag=IconCropSettings_Y"
+                    + "&widthTag=IconCropSettings_Width" + "&heightTag=IconCropSettings_Height" + "&rotateTag=IconCropSettings_Rotate" + "&scaleXTag=IconCropSettings_ScaleX"
+                    + "&scaleYTag=IconCropSettings_ScaleY";
+
+                $("#CropModal").load(url,
+                    function () {
+                        $("#CropModal").modal("show");
+                    });
+            }
+        };
+        var loadBanner = function (event) {
+            var output = document.getElementById('bannerPreview');
+            if (event.target.files.length !== 0) {
+
+                var oldstring = "";
+                if (output === null) {
+                    oldstring = "/images/placeholders/MetsiPlaceholder-2100x800.jpg";
+                } else {
+                    oldstring = output.src;
+                }
+
+                var url = "/Home/CropImage?cropUrl=" + URL.createObjectURL(event.target.files[0]) + "&originalUrl=" + oldstring + "&width=" + 600 + "&height=" + 229
+                    + "&aspectRatio=2100/800" + "&previewClass=previewbanner" + "&uploadProperty=BannerUpload" + "&xTag=BannerCropSettings_X" + "&yTag=BannerCropSettings_Y"
+                    + "&widthTag=BannerCropSettings_Width" + "&heightTag=BannerCropSettings_Height" + "&rotateTag=BannerCropSettings_Rotate" + "&scaleXTag=BannerCropSettings_ScaleX"
+                    + "&scaleYTag=BannerCropSettings_ScaleY";
+
+                $("#CropModal").load(url,
+                    function () {
+                        $("#CropModal").modal("show");
+                    });
+            }
+        };
+    </script>
+}

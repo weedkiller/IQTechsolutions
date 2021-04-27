@@ -1,0 +1,26 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Google.Apis.YouTube.v3" Version="1.49.0.2140" />
+    <PackageReference Include="GoogleReCaptcha.V3" Version="1.3.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity" Version="2.2.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.ViewFeatures" Version="2.2.0" />
+    <PackageReference Include="Microsoft.Extensions.Identity.Core" Version="5.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Iqt.Filing\Iqt.Filing.csproj" />
+    <ProjectReference Include="E:\IQTechSolutions\Iqt\Iqt.Gallery\Iqt.Gallery.csproj" />
+    <ProjectReference Include="E:\IQTechSolutions\Iqt\Iqt.Identity\Iqt.Identity.csproj" />
+    <ProjectReference Include="E:\IQTechSolutions\Iqt\Iqt.Inventory\Iqt.Inventory.csproj" />
+    <ProjectReference Include="E:\IQTechSolutions\Iqt\Iqt.Social\Iqt.Social.csproj" />
+    <ProjectReference Include="E:\IQTechSolutions\Iqt\Iqt.Training\Iqt.Training.csproj" />
+    <ProjectReference Include="E:\IQTechSolutions\Iqt\Iqt.Troubleshooting\Iqt.Troubleshooting.csproj" />
+    <ProjectReference Include="E:\IQTechSolutions\Libraries\IQTechFramework\IQTechFramework.csproj" />
+  </ItemGroup>
+
+</Project>

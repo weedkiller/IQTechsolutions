@@ -1,0 +1,188 @@
+﻿@{
+    ViewData["Title"] = "File Manager";
+    string[] items = new string[] { "NewFolder", "Upload", "Delete", "Download", "Rename", "SortBy", "Refresh", "Selection", "View", "Details" , "Share", "Email Link"};
+    string[] files = new string[] { "Share", "Email Link", "Open", "|", "Delete", "Download", "Rename", "|", "Details" };
+    string[] folder = new string[] { "Share", "Email Link", "Open", "|", "Delete", "Download", "Rename", "|", "Details" };
+    string[] layout = new string[] { "Share", "Email Link", "SortBy", "View", "Refresh", "|", "NewFolder", "Upload", "|", "Details", "|", "SelectAll" };
+}
+
+<div class="row">
+    <div class=" control-section">
+        <div class="sample-container">
+            <!--  Filemanager element declaration -->
+            <ejs-filemanager id="file" allowMultiSelection="true" view="Details" allowDragAndDrop="true" menuOpen="menuOpen" menuClick="menuClick" toolbarClick="toolbarClick" toolbarCreate="onCreate">
+                <e-filemanager-ajaxsettings url="/FileManager/Home/FileOperations"
+                                            downloadUrl="/FileManager/Home/Download"
+                                            uploadUrl="/FileManager/Home/Upload"
+                                            getImageUrl="/FileManager/Home/GetImage">
+                </e-filemanager-ajaxsettings>
+                <e-filemanager-contextmenusettings visible="true" file="files" folder="folder" layout="layout"></e-filemanager-contextmenusettings>
+                <e-filemanager-navigationpanesettings visible="true" file="files" folder="folder" layout="layout"></e-filemanager-navigationpanesettings>
+                <e-filemanager-toolbarsettings visible="true" items="items"></e-filemanager-toolbarsettings>
+            </ejs-filemanager>
+            <!-- end of filemanager element -->
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    // event for custom toolbar item
+    function toolbarClick(args) {
+        if (args.item.text === 'Share') {
+            var fileDetails = document.getElementById('file').ej2_instances[0].getSelectedFiles();
+
+            if (fileDetails.length > 0) {
+                var obj = { data: fileDetails };
+                alert(JSON.stringify(obj));
+
+                $.ajax({
+                    type: "POST",
+                    contentType: "application/json; charset=utf-8",
+                    // Custom method the data passed 
+                    url: "/FileManager/Home/DoShareFileFolder",
+                    data: JSON.stringify(obj),
+                    dataType: "html",
+                    success: function(data) {
+                        $("#ModalPlaceHolder").html(data);
+                        $("#ModalPlaceHolder").modal("show");
+                    },
+                    error: function(xhr, textStatus, err) {
+                        alert("An error with the following detials occured : " +
+                            "\r\n == readyState: " +
+                            xhr.readyState +
+                            "\r\n == status: " +
+                            xhr.status +
+                            "\r\n == text status: " +
+                            textStatus +
+                            "\r\n == error: " +
+                            err);
+                    }
+                });
+            } else {
+                alert("Please select a file first")
+            }
+        }
+        else if (args.item.text === 'Email Link') {
+            var fileDetails = document.getElementById('file').ej2_instances[0].getSelectedFiles();
+            if (fileDetails.length > 0) {
+            var obj = { data: fileDetails };
+            alert(JSON.stringify(obj));
+
+            $.ajax({
+                type: "POST",
+                contentType: "application/json; charset=utf-8",
+                // Custom method the data passed 
+                url: "/FileManager/Home/ShareFileFolderByAddress",
+                data: JSON.stringify(obj),
+                dataType: "html",
+                success: function (data) {
+                    $("#ModalPlaceHolder").html(data);
+                    $("#ModalPlaceHolder").modal("show");
+                },
+                error: function (xhr, textStatus, err) {
+                    alert("An error with the following detials occured : "
+                        + "\r\n == readyState: " + xhr.readyState
+                        + "\r\n == status: " + xhr.status
+                        + "\r\n == text status: " + textStatus
+                        + "\r\n == error: " + err);
+                }
+            }); 
+            } else {
+                alert("Please select a file first")
+            }
+        }
+    }
+    function onCreate(args) {
+        for (var i = 0; i < args.items.length; i++) {
+            if (args.items[i].id === this.element.id + '_tb_share') {
+                args.items[i].prefixIcon = 'e-icons e-fe-share';
+            }
+            else if (args.items[i].id === this.element.id + '_tb_email link') {
+                args.items[i].prefixIcon = 'e-icons e-fe-mail';
+            }
+        }
+    }
+    // Icon added to custom menu item
+    function menuOpen(args) {
+        for (var i = 0; i < args.items.length; i++) {
+            if (args.items[i].id === this.element.id + '_cm_share') {
+                args.items[i].iconCss = 'e-icons e-fe-tick';
+            }
+            else if (args.items[i].id === this.element.id + '_cm_email link') {
+                args.items[i].prefixIcon = 'e-icons e-fe-mail';
+            }
+        }
+    }
+
+// event for custom menu item
+    function menuClick(args) {
+        if (args.item.text === 'Share') {
+            var fileDetails = document.getElementById('file').ej2_instances[0].getSelectedFiles(); 
+            var obj = { data: fileDetails }; 
+            $.ajax({ 
+                type: "POST", 
+                contentType: "application/json; charset=utf-8", 
+                // Custom method the data passed 
+                url: "/FileManager/Home/ShareFileFolder",             
+                data: JSON.stringify(obj), 
+                dataType: "html", 
+                success: function (data) { 
+                    $("#ModalPlaceHolder").html(data);
+                    $("#ModalPlaceHolder").modal("show");
+                },
+                error: function (xhr, textStatus, err) { 
+                    alert("An error with the following detials occured : "
+                        + "\r\n == readyState: " + xhr.readyState
+                        + "\r\n == status: " + xhr.status
+                        + "\r\n == text status: " + textStatus
+                        + "\r\n == error: " + err);
+                } 
+            }); 
+        }
+        else
+        if (args.item.text === 'Email Link') {
+            var fileDetails = document.getElementById('file').ej2_instances[0].getSelectedFiles();
+            var obj = { data: fileDetails };
+            alert(JSON.stringify(obj));
+
+            $.ajax({
+                type: "POST",
+                contentType: "application/json; charset=utf-8",
+                // Custom method the data passed 
+                url: "/FileManager/Home/ShareFileFolderByAddress",
+                data: JSON.stringify(obj),
+                dataType: "html",
+                success: function (data) {
+                        $("#ModalPlaceHolder").html(data);
+                        $("#ModalPlaceHolder").modal("show");
+                    },
+                error: function (xhr, textStatus, err) {
+                        alert("An error with the following detials occured : "
+                            + "\r\n == readyState: " + xhr.readyState
+                            + "\r\n == status: " + xhr.status
+                            + "\r\n == text status: " + textStatus
+                            + "\r\n == error: " + err);
+                    }
+            }); 
+        }
+    }
+
+</script>
+<style>
+    .e-fe-share:before {
+        content: '\e65b';
+    }
+    .e-fe-mail:before {
+        content: '\e711';
+    }
+</style>
+
+@section Scripts{
+    <script src="~/js/apps.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            App.init();
+        });
+    </script>
+    
+}

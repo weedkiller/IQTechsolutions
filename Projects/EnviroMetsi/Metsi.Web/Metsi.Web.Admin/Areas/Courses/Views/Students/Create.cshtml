@@ -1,0 +1,108 @@
+﻿
+@model StudentAddEditModel
+
+@{
+    ViewData["Title"] = "Create New Student";
+}
+
+<form asp-area="Courses" asp-controller="Students" asp-action="Create" enctype="multipart/form-data" method="post">
+    <input type="hidden" asp-for="Entity.Id"/>
+    <!-- begin profile-section -->
+    <div class="profile-section">
+        <!-- begin profile-right -->
+        <div>
+            <!-- begin profile-info -->
+            <div class="profile-info">
+                <!-- begin table -->
+                <div class="table-responsive">
+                    <table class="table table-profile">
+                        <tbody>
+                        <tr>
+                            <td colspan="4">
+                                <h5>Personal Details</h5>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="field"><label asp-for="Entity.Names.FirstName" class="control-label">Name</label></td>
+                            <td><input asp-for="Entity.Names.FirstName" type="text" class="form-control" placeholder="Enter your first name" required/></td>
+                            <td class="field"><label asp-for="Entity.Names.LastName" class="control-label">Surname</label></td>
+                            <td><input asp-for="Entity.Names.LastName" type="text" class="form-control" placeholder="Enter your last name" required/></td>
+                        </tr>
+                        <tr>
+                            <td class="field"><label asp-for="PhoneNr" class="control-label">Phone Nr</label></td>
+                            <td><input asp-for="PhoneNr" type="text" class="form-control" placeholder="Enter your phone nr" required/></td>
+                            <td class="field"><label asp-for="Email" class="control-label">Email Address</label></td>
+                            <td><input asp-for="Email" type="text" class="form-control" placeholder="Enter your email address" required/></td>
+                        </tr>
+                        <tr class="highlight">
+                            <td class="field"><label asp-for="Entity.Id" class="control-label">Student Nr</label></td>
+                            <td><input asp-for="Entity.Id" class="form-control" placeholder="Add the work title" rows="2"></input></td>
+                            <td><label asp-for="Entity.IdentityNr" class="control-label">Identity Nr</label></td>
+                            <td><input asp-for="Entity.IdentityNr" type="text" class="form-control" placeholder="Enter your identity number"/></td>
+                        </tr>
+                        <tr class="divider">
+                            <td colspan="4"></td>
+                        </tr>
+                        <tr class="divider">
+                            <td colspan="4"></td>
+                        </tr>
+                        <tr class="highlight">
+                            <td class="field"><label asp-for="Entity.Description" class="control-label">Description</label></td>
+                            <td colspan="3"><textarea asp-for="Entity.Description" class="form-control" placeholder="Add personal description" rows="4"></textarea></td>
+                        </tr>
+                        </tbody>
+                        <tfoot>
+                        <tr>
+                            <td colspan="4">
+                                <div class="form-group">
+                                    <div class="col-md-6">
+                                        <input name="finnish" type="submit" value="Create" class="btn btn-primary btn-block" />
+                                    </div>
+                                    <div class="col-md-6">
+                                        <a asp-area="Courses" asp-controller="Students" asp-action="List" class="btn btn-danger btn-block">Cancel</a>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        </tfoot>
+                    </table>
+                </div>
+                <!-- end table -->
+            </div>
+            <!-- end profile-info -->
+        </div>
+        <!-- end profile-right -->
+    </div>
+    <!-- end profile-section -->
+</form>
+
+@section Scripts{
+    <script>
+        var loadFile = function (event) {
+            var output = document.getElementById('preview');
+            if (event.target.files.length !== 0) {
+
+                var oldstring = "";
+                if (output === null) {
+                    oldstring = "/images/placeholders/MetsiPlaceholder-370x352.jpg";
+                } else {
+                    oldstring = output.src;
+                }
+
+                var url = "/Home/CropImage?cropUrl=" + URL.createObjectURL(event.target.files[0]) + "&originalUrl=" + oldstring + "&width=" + 300 + "&height=" + 300
+                    + "&previewClass=previewd" + "&uploadProperty=CoverUpload" + "&xTag=CoverCropSettings_X" + "&yTag=CoverCropSettings_Y"
+                    + "&widthTag=CoverCropSettings_Width" + "&heightTag=CoverCropSettings_Height" + "&rotateTag=CoverCropSettings_Rotate" + "&scaleXTag=CoverCropSettings_ScaleX"
+                    + "&scaleYTag=CoverCropSettings_ScaleY";
+
+                $("#CropModal").load(url,
+                    function () {
+                        $("#CropModal").modal("show");
+                    });
+            }
+        };
+
+        function getImageFile() {
+            document.getElementById("CoverUpload").click();
+        }
+    </script>
+}

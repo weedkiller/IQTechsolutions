@@ -1,0 +1,40 @@
+﻿@using Iqt.Base.Interfaces
+@inject IApplicationConfiguration Configuration
+
+<!-- Social widgets -->
+<section class="social-widgets visible-lg">
+    <ul class="items">
+        <li class="item item-01 facebook">
+            <a href="@Configuration.FacebookUrl" class="tab-icon"><span class="fa fa-facebook"></span></a>
+            <div class="tab-content">
+                <div class="title">
+                    <h5>FACEBOOK</h5>
+                </div>
+                <div class="loading">
+                    <img src="~/image/theme/lazy-loader.gif" class="ajaxloader" alt="loader">
+                </div>
+            </div>
+        </li>
+        <li class="item item-02 twitter">
+            <a href="@Configuration.TwitterUrl" class="tab-icon"><span class="fa fa-twitter"></span></a>
+            <div class="tab-content">
+                <div class="title">
+                    <h5>TWITTER FEEDS</h5>
+                </div>
+                <div class="loading">
+                    <img src="~/image/theme/lazy-loader.gif" class="ajaxloader" alt="loader">
+                </div>
+            </div>
+        </li>
+        <li class="item item-03 youtube">
+            <a href="@Configuration.LinkedInUrl" class="tab-icon"><span class="fa fa-linkedin"></span></a>
+            <div class="tab-content">
+                <div class="title">
+                    <h5>LinkedIn</h5>
+                </div>
+                <div class="loading"> <img src="~/image/theme/lazy-loader.gif" class="ajaxloader" alt="loader"></div>
+            </div>
+        </li>
+    </ul>
+</section>
+<!-- End Social widgets -->

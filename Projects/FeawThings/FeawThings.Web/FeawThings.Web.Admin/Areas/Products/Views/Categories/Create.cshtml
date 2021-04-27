@@ -1,0 +1,220 @@
+﻿@model CategoryAddEditModel<Product>
+
+@{
+    ViewData["Title"] = "Create New Category";
+    ViewData["Description"] = "A list of all the product categories";
+}
+
+<h2>Create New Blog Category</h2>
+<hr />
+<form asp-area="Products" asp-controller="Categories" asp-action="Create" enctype="multipart/form-data" method="post">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <input type="hidden" asp-for="Entity.Id" />
+    <input type="hidden" asp-for="Entity.ParentCategoryId" />
+    <div class="row">
+        <div class="col-lg-5 col-md-5 col-sm-12">
+            <h3>Cover Image</h3>
+            <hr />
+            <div class="form-group">
+                <div class="previewd" style="overflow: hidden">
+                    <img id="coverpreview" style="width: 100%" src="~/images/placeholders/NoImage600x400.png" alt="" />
+                </div>
+                <input asp-for="CoverUpload" class="form-control" onchange="loadFile(event)" />
+                <input type="hidden" asp-for="CoverCropSettings.X" />
+                <input type="hidden" asp-for="CoverCropSettings.Y" />
+                <input type="hidden" asp-for="CoverCropSettings.Width" />
+                <input type="hidden" asp-for="CoverCropSettings.Height" />
+                <input type="hidden" asp-for="CoverCropSettings.Rotate" />
+                <input type="hidden" asp-for="CoverCropSettings.ScaleX" />
+                <input type="hidden" asp-for="CoverCropSettings.ScaleY" />
+                </div>
+            </div>
+        <div class="col-lg-7 col-md-7 col-sm-12">
+            <div class="row">
+                <h3>Icon Image</h3>
+                <hr />
+                <div class="col-lg-3 col-md-3">
+                    <div class="previewicon" style="overflow: hidden">
+                        <img id="iconPreview" style="width: 100%" src="/images/placeholders/iconHolder.png" alt="" />
+                    </div>
+                    </div>
+                    <div class="col-lg-9 col-md-9">
+                        <input asp-for="IconUpload" type="file" class="form-control" onchange="loadIcon(event)" />
+                        <input type="hidden" asp-for="IconCropSettings.X" />
+                        <input type="hidden" asp-for="IconCropSettings.Y" />
+                        <input type="hidden" asp-for="IconCropSettings.Width" />
+                        <input type="hidden" asp-for="IconCropSettings.Height" />
+                        <input type="hidden" asp-for="IconCropSettings.Rotate" />
+                        <input type="hidden" asp-for="IconCropSettings.ScaleX" />
+                        <input type="hidden" asp-for="IconCropSettings.ScaleY" />
+                    </div>
+                </div>
+            <hr />
+            <h3>Banner Image</h3>
+            <hr />
+            <div class="form-group">
+                <div class="previewbanner" style="overflow: hidden">
+                    <img id="bannerPreview" style="width: 100%" src="~/images/placeholders/NoImage870x260.png" alt="" />
+                </div>
+                <input asp-for="BannerUpload" type="file" class="form-control" onchange="loadBanner(event)" />
+                <input type="hidden" asp-for="BannerCropSettings.X" />
+                <input type="hidden" asp-for="BannerCropSettings.Y" />
+                <input type="hidden" asp-for="BannerCropSettings.Width" />
+                <input type="hidden" asp-for="BannerCropSettings.Height" />
+                <input type="hidden" asp-for="BannerCropSettings.Rotate" />
+                <input type="hidden" asp-for="BannerCropSettings.ScaleX" />
+                <input type="hidden" asp-for="BannerCropSettings.ScaleY" />
+                </div>
+            </div>
+    </div>
+    <hr />
+    <div class="row">
+        <div class="col-lg-6 col-md-6 col-sm-12">
+            <div class="form-group">
+                <label asp-for="Entity.Name" class="control-label"></label>
+                <input asp-for="Entity.Name" class="form-control" />
+                <span asp-validation-for="Entity.Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Entity.Description" class="control-label"></label>
+                <textarea asp-for="Entity.Description" class="form-control" style="height: 150px"></textarea>
+                <span asp-validation-for="Entity.Description" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-12">
+
+            <h3 class="m-t-10">Sub-Categories</h3>
+            <table class="table">
+
+                <tr>
+                    <th>
+                        Name
+                    </th>
+                    <th>
+                        Description
+                    </th>
+                    <th></th>
+                </tr>
+
+                @if (Model.Entity.SubCategories.Any())
+                {
+                    foreach (var pack in Model.Entity.SubCategories)
+                    {
+                        <tr>
+                            <td>
+                                @pack.Name
+                            </td>
+                            <td>
+                                @pack.Description
+                            </td>
+                            <td>
+                                <a asp-area="Products" asp-controller="Categories" asp-action="Edit" asp-route-id="@pack.Id">Edit</a> |
+                                <a asp-area="Products" asp-controller="Categories" asp-action="Delete" asp-route-id="@pack.Id">Delete</a>
+                            </td>
+                        </tr>
+                    }
+                }
+                else
+                {
+                    <tr>
+                        <td colspan="3">
+                            <h4>
+                                There are currently sub-categories available.
+                            </h4>
+                        </td>
+                    </tr>
+                }
+            </table>
+            <input name="sub" type="submit" value="Add New Sub-Category" class="btn btn-block btn-info" />
+        </div>
+    </div>
+
+    <hr />
+    <div class="form-group text-right">
+        <input name="main" type="submit" value="Submit & Create" class="btn btn-primary" />
+        <input name="finnish" type="submit" value="Submit & Finnish" class="btn btn-primary" />
+        @if (Model.Entity.ParentCategoryId == null)
+        {
+            <a asp-area="Products" asp-controller="Categories" asp-action="List" class="btn btn-danger">Cancel</a>
+        }
+        else
+        {
+            <a asp-area="Products" asp-controller="Categories" asp-action="Edit" asp-route-id="@Model.Entity.ParentCategoryId" class="btn btn-danger">Cancel</a>
+        }
+    </div>
+    <hr />
+</form>
+
+@section Scripts
+{
+    <script>
+        var loadFile = function (event) {
+            var output = document.getElementById('coverpreview');
+            if (event.target.files.length !== 0) {
+
+                var oldstring = "";
+                if (output === null) {
+                    oldstring = "/images/placeholders/NoImage600x400.png";
+                } else {
+                    oldstring = output.src;
+                }
+
+                var url = "/Home/CropImage?cropUrl=" + URL.createObjectURL(event.target.files[0]) + "&originalUrl=" + oldstring + "&width=" + 600 + "&height=" + 400
+                    + "&previewClass=previewd" + "&uploadProperty=CoverUpload" + "&xTag=CoverCropSettings_X" + "&yTag=CoverCropSettings_Y"
+                    + "&widthTag=CoverCropSettings_Width" + "&heightTag=CoverCropSettings_Height" + "&rotateTag=CoverCropSettings_Rotate" + "&scaleXTag=CoverCropSettings_ScaleX"
+                    + "&scaleYTag=CoverCropSettings_ScaleY";
+
+                $("#CropModal").load(url,
+                    function () {
+                        $("#CropModal").modal("show");
+                    });
+            }
+        };
+
+        var loadIcon = function (event) {
+            var output = document.getElementById('iconPreview');
+            if (event.target.files.length !== 0) {
+
+                var oldstring = "";
+                if (output === null) {
+                    oldstring = "/images/placeholders/iconHolder.png";
+                } else {
+                    oldstring = output.src;
+                }
+
+                var url = "/Home/CropImage?cropUrl=" + URL.createObjectURL(event.target.files[0]) + "&originalUrl=" + oldstring + "&width=" + 150 + "&height=" + 150
+                    + "&previewClass=previewicon" + "&uploadProperty=IconUpload" + "&xTag=IconCropSettings_X" + "&yTag=IconCropSettings_Y"
+                    + "&widthTag=IconCropSettings_Width" + "&heightTag=IconCropSettings_Height" + "&rotateTag=IconCropSettings_Rotate" + "&scaleXTag=IconCropSettings_ScaleX"
+                    + "&scaleYTag=IconCropSettings_ScaleY";
+
+                $("#CropModal").load(url,
+                    function () {
+                        $("#CropModal").modal("show");
+                    });
+            }
+        };
+
+        var loadBanner = function (event) {
+            var output = document.getElementById('bannerPreview');
+            if (event.target.files.length !== 0) {
+
+                var oldstring = "";
+                if (output === null) {
+                    oldstring = "/images/placeholders/NoImage870x260.png";
+                } else {
+                    oldstring = output.src;
+                }
+
+                var url = "/Home/CropImage?cropUrl=" + URL.createObjectURL(event.target.files[0]) + "&originalUrl=" + oldstring + "&width=" + 600 + "&height=" + 195
+                    + "&aspectRatio=800/260" + "&previewClass=previewbanner" + "&uploadProperty=BannerUpload" + "&xTag=BannerCropSettings_X" + "&yTag=BannerCropSettings_Y"
+                    + "&widthTag=BannerCropSettings_Width" + "&heightTag=BannerCropSettings_Height" + "&rotateTag=BannerCropSettings_Rotate" + "&scaleXTag=BannerCropSettings_ScaleX"
+                    + "&scaleYTag=BannerCropSettings_ScaleY";
+
+                $("#CropModal").load(url,
+                    function () {
+                        $("#CropModal").modal("show");
+                    });
+            }
+        };
+    </script>
+}

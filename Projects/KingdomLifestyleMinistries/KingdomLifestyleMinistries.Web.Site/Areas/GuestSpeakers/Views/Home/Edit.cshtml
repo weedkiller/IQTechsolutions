@@ -1,0 +1,445 @@
+﻿@model GuestSpeakerAddEditModel
+
+@{
+    ViewData["Title"] = $"Edit {Model.Entity.Names.GetFullNames()} Profile";
+}
+
+<form asp-area="GuestSpeakers" asp-controller="Home" asp-action="Edit" enctype="multipart/form-data" method="post">
+<div class="form-horizontal">
+<input type="hidden" asp-for="Entity.Id" />
+<input type="hidden" asp-for="Entity.Addresses" />
+<input type="hidden" asp-for="Entity.ContactNumbers" />
+<input type="hidden" asp-for="Entity.EmailAddresses" />
+
+<div class="col-md-4">
+    <div class="form-group">
+        <div class="previewd" style="overflow: hidden">
+            <img id="preview" style="width: 100%" src="@Model.Entity.GetImage().GetImagePathFromAnotherWebsite(FrameworkDI.Configuration["Company:WebUrl"],FrameworkDI.Configuration["Placeholders:CoverImage"])" alt="" />
+        </div>
+            <input asp-for="CoverUpload" class="form-control" onchange="loadFile(event)" />
+            <input type="hidden" asp-for="CoverCropSettings.X" />
+            <input type="hidden" asp-for="CoverCropSettings.Y" />
+            <input type="hidden" asp-for="CoverCropSettings.Width" />
+            <input type="hidden" asp-for="CoverCropSettings.Height" />
+            <input type="hidden" asp-for="CoverCropSettings.Rotate" />
+            <input type="hidden" asp-for="CoverCropSettings.ScaleX" />
+            <input type="hidden" asp-for="CoverCropSettings.ScaleY" />
+        </div>
+    </div>
+
+<div class="col-md-8">
+    <h4>@ViewData["Title"]</h4>
+    <hr />
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <div class="form-group">
+        <label asp-for="Entity.Names.FirstName" class="control-label col-md-2"></label>
+        <div class="col-md-10">
+            <input asp-for="Entity.Names.FirstName" class="form-control" />
+            <span asp-validation-for="Entity.Names.FirstName" class="text-danger"></span>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Entity.Names.LastName" class="control-label col-md-2"></label>
+        <div class="col-md-10">
+            <input asp-for="Entity.Names.LastName" class="form-control" />
+            <span asp-validation-for="Entity.Names.LastName" class="text-danger"></span>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Entity.Bio" class="control-label col-md-2"></label>
+        <div class="col-md-10">
+            <textarea asp-for="Entity.Description" class="form-control"></textarea>
+            <span asp-validation-for="Entity.Description" class="text-danger"></span>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Entity.Bio" class="control-label col-md-2"></label>
+        <div class="col-md-10">
+            <textarea asp-for="Entity.Bio" class="form-control"></textarea>
+            <span asp-validation-for="Entity.Bio" class="text-danger"></span>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Entity.FeaturedEntry" class="control-label col-md-2"></label>
+        <div class="col-md-4">
+            <input asp-for="Entity.FeaturedEntry" type="checkbox" class="form-control" />
+        </div>
+        <label asp-for="Entity.ListedEntry" class="control-label col-md-2"></label>
+        <div class="col-md-4">
+            <input asp-for="Entity.ListedEntry" type="checkbox" class="form-control" />
+        </div>
+    </div>
+
+</div>
+
+<div class="col-lg-12" style="padding-top: 50px;">
+<div class="row">
+    <div class="col-lg-4">
+        <h3>Contact Details</h3>
+        <hr/>
+        <table id="ContactNrList" class="table" style="width: 100%">
+            <tbody>
+            @foreach (var item in Model.Entity.ContactNumbers)
+            {
+                <tr>
+                    <td id="row_@item.Id" class="row_@item.Id">
+                        @if (item.Default)
+                        {
+                            <strong>@item.Name</strong>
+                        }
+                        else
+                        {
+                            @item.Name
+                        }
+                    </td>
+                    <td>
+                        @if (item.Default)
+                        {
+                            <strong>@item.Number</strong>
+                        }
+                        else
+                        {
+                            @item.Number
+                        }
+                    </td>
+                    <td>
+                        <a href="javascript:;" onclick="ShowEditContactNumberModal('@item.Id', '@Model.Entity.Id')"><i class="fa fa-edit"></i></a>
+                        <a href="javascript:;" onclick="ShowDeleteContactNumberModal('@item.Id')"><i class="fa fa-trash"></i></a>
+                    </td>
+                </tr>
+            }
+            </tbody>
+        </table>
+        <hr />
+        <div>
+            <a href="javascript:;" onclick="ShowAddContactNumberModal('@Model.Entity.Id')" class="btn btn-primary btn-block btn-xs" data-toggle="modal">Add Contact Number</a>
+        </div>
+
+    </div>
+
+    <div class="col-lg-4">
+        <h3>Email Addresses</h3>
+        <hr/>
+        <table class="table" id="EmailAddressList" style="width: 100%">
+            <tbody>
+            @foreach (var item in Model.Entity.EmailAddresses)
+            {
+                <tr id="row_@item.Id">
+                    <td>
+                        @if (item.Default)
+                        {
+                            <strong>@item.Address</strong>
+                        }
+                        else
+                        {
+                            @item.Address
+                        }
+                    </td>
+                    <td>
+                        <a href="javascript:;" onclick="ShowEditEmailAddressModal('@item.Id')"><i class="fa fa-edit"></i></a>
+                        <a href="javascript:;" onclick="ShowDeleteEmailAddressModal('@item.Id')"><i class="fa fa-trash"></i></a>
+                    </td>
+                </tr>
+            }
+            </tbody>
+        </table>
+        <input type="hidden" id="emailAddressId" />
+        <hr />
+        <div>
+            <a href="javascript:;" onclick="ShowAddEmailAddressModel('@Model.Entity.Id')" class="btn btn-primary btn-block btn-xs" data-toggle="modal">Add new Email Address</a>
+        </div>
+    </div>
+    <div class="col-lg-4">
+        <h3>Social Account Details</h3>
+        <div class="form-group">
+            <label asp-for="Entity.SocialMedia.Facebook" class="control-label col-md-5"></label>
+            <div class="col-md-7">
+                <input asp-for="Entity.SocialMedia.Facebook" class="form-control" />
+                <span asp-validation-for="Entity.SocialMedia.Facebook" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="Entity.SocialMedia.Twitter" class="control-label col-md-5"></label>
+            <div class="col-md-7">
+                <input asp-for="Entity.SocialMedia.Twitter" class="form-control" />
+                <span asp-validation-for="Entity.SocialMedia.Twitter" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="Entity.SocialMedia.Google" class="control-label col-md-5"></label>
+            <div class="col-md-7">
+                <input asp-for="Entity.SocialMedia.Google" class="form-control" />
+                <span asp-validation-for="Entity.SocialMedia.Google" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="Entity.SocialMedia.Linkedin" class="control-label col-md-5"></label>
+            <div class="col-md-7">
+                <input asp-for="Entity.SocialMedia.Linkedin" class="form-control" />
+                <span asp-validation-for="Entity.SocialMedia.Linkedin" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="Entity.SocialMedia.Youtube" class="control-label col-md-5"></label>
+            <div class="col-md-7">
+                <input asp-for="Entity.SocialMedia.Youtube" class="form-control" />
+                <span asp-validation-for="Entity.SocialMedia.Youtube" class="text-danger"></span>
+            </div>
+        </div>
+    </div>
+
+</div>
+<div class="col-lg-12">
+    <h3>Address Details</h3>
+    <table style="width: 100%" id="AddressList">
+        <tr>
+            <th>
+                Number
+            </th>
+            <th>
+                Address
+            </th>
+            <th>
+                Suburb
+            </th>
+            <th>
+                Code
+            </th>
+            <th>
+                City
+            </th>
+            <th>
+                Province
+            </th>
+            <th>
+                Country
+            </th>
+            <th>
+                Default
+            </th>
+            <th></th>
+        </tr>
+        @foreach (var item in Model.Entity.Addresses)
+        {
+            <tr id="row_@item.Id">
+                <td>
+                    @if (item.Default)
+                    {
+                        <strong>@item.StreetNumber</strong>
+                    }
+                    else
+                    {
+                        @item.StreetNumber
+                    }
+                </td>
+                <td>
+                    @if (item.Default)
+                    {
+                        <strong>@item.AddressLine1</strong>
+                    }
+                    else
+                    {
+                        @item.AddressLine1
+                    }
+                </td>
+                <td>
+                    @if (item.Default)
+                    {
+                        <strong>@item.Suburb</strong>
+                    }
+                    else
+                    {
+                        @item.Suburb
+                    }
+                </td>
+                <td>
+                    @if (item.Default)
+                    {
+                        <strong>@item.PostalCode</strong>
+                    }
+                    else
+                    {
+                        @item.PostalCode
+                    }
+                </td>
+                <td>
+                    @if (item.Default)
+                    {
+                        <strong>@item.City</strong>
+                    }
+                    else
+                    {
+                        @item.City
+                    }
+                </td>
+                <td>
+                    @if (item.Default)
+                    {
+                        <strong>@item.Province</strong>
+                    }
+                    else
+                    {
+                        @item.Province
+                    }
+                </td>
+                <td>
+                    @if (item.Default)
+                    {
+                        <strong>@item.Country</strong>
+                    }
+                    else
+                    {
+                        @item.Country
+                    }
+                </td>
+                <td>
+                    <a href="javascript:;" onclick="ShowEditAddressModal('@item.Id')"><i class="fa fa-edit"></i></a>
+                    <a href="javascript:;" onclick="ShowDeleteAddressModal('@item.Id')"><i class="fa fa-trash"></i></a>
+                </td>
+            </tr>
+        }
+    </table>
+    <hr />
+    <div>
+        <a href="javascript:;" onclick="ShowAddAddressModel('@Model.Entity.Id')" class="btn btn-primary btn-block btn-xs" data-toggle="modal">Add New Address</a>
+    </div>
+    <hr/>
+</div>
+</div>
+    
+
+
+<div class="form-group" style="padding-bottom: 50px; padding-top: 35px;">
+    <div class="col-md-offset-2 col-md-10 text-right">
+        <input name="finnish" type="submit" value="Submit & Create" class="btn btn-primary" style="border: transparent" />
+        <input name="main" type="submit" value="Save" class="btn btn-info" style="border: transparent" />
+        <a asp-area="GuestSpeakers" asp-controller="Home" asp-action="List" class="btn btn-danger">Cancel</a>
+    </div>
+</div>
+</div>
+</form>
+
+
+
+
+@section Scripts
+    {
+    <script>
+        var loadFile = function (event) {
+            var output = document.getElementById('coverpreview');
+            if (event.target.files.length !== 0) {
+
+                var oldstring = "";
+                if (output === null) {
+                    oldstring = "/images/placeholders/img_475x320.jpg";
+                } else {
+                    oldstring = output.src;
+                }
+
+                var url = "/Home/CropImage?cropUrl=" + URL.createObjectURL(event.target.files[0]) + "&originalUrl=" + oldstring + "&width=" + 475 + "&height=" + 320
+                    + "&aspectRatio=475/320";
+
+                $("#CropModal").load(url,
+                    function () {
+                        $("#CropModal").modal("show");
+                    });
+            }
+        };
+
+        function ShowAddContactNumberModal(parentId) {
+
+            var url = "/GuestSpeakers/Home/CreateContactNumber?personId=" + parentId;
+
+            $("#ModalPlaceHolder").load(url,
+                function () {
+                    $("#ModalPlaceHolder").modal("show");
+                });
+        }
+
+        function ShowEditContactNumberModal(numberId, parentId) {
+
+            var url = "/GuestSpeakers/Home/EditContactNumber?id=" + numberId + "&parentId=" + parentId;
+
+            $("#ModalPlaceHolder").load(url,
+                function () {
+                    $("#ModalPlaceHolder").modal("show");
+                });
+        }
+
+        function ShowDeleteContactNumberModal(numberId) {
+
+            var url = "/GuestSpeakers/Home/DeleteContactNumber?id=" + numberId;
+
+            $("#ModalPlaceHolder").load(url,
+                function () {
+                    $("#ModalPlaceHolder").modal("show");
+                });
+        }
+
+
+        function ShowAddEmailAddressModel(parentId) {
+
+            var url = "/GuestSpeakers/Home/CreateEmailAddress?personId=" + parentId;
+
+            $("#ModalPlaceHolder").load(url,
+                function () {
+                    $("#ModalPlaceHolder").modal("show");
+                });
+        }
+
+        function ShowEditEmailAddressModal(numberId, parentId) {
+
+            var url = "/GuestSpeakers/Home/EditEmailAddress?id=" + numberId + "&parentId=" + parentId;
+
+            $("#ModalPlaceHolder").load(url,
+                function () {
+                    $("#ModalPlaceHolder").modal("show");
+                });
+        }
+
+        function ShowDeleteEmailAddressModal(numberId) {
+
+            var url = "/GuestSpeakers/Home/DeleteEmailAddress?id=" + numberId;
+
+            $("#ModalPlaceHolder").load(url,
+                function () {
+                    $("#ModalPlaceHolder").modal("show");
+                });
+        }
+
+
+        function ShowAddAddressModel(parentId) {
+
+            var url = "/GuestSpeakers/Home/CreateAddress?personId=" + parentId;
+
+            $("#ModalPlaceHolder").load(url,
+                function () {
+                    $("#ModalPlaceHolder").modal("show");
+                });
+        }
+
+        function ShowEditAddressModal(numberId, parentId) {
+
+            var url = "/GuestSpeakers/Home/EditAddress?id=" + numberId + "&parentId=" + parentId;
+
+            $("#ModalPlaceHolder").load(url,
+                function () {
+                    $("#ModalPlaceHolder").modal("show");
+                });
+        }
+
+        function ShowDeleteAddressModal(numberId) {
+
+            var url = "/GuestSpeakers/Home/DeleteAddress?id=" + numberId;
+
+            $("#ModalPlaceHolder").load(url,
+                function () {
+                    $("#ModalPlaceHolder").modal("show");
+                });
+        }
+    </script>
+}

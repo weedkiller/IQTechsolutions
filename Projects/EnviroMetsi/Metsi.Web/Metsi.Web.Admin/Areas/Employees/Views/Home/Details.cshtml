@@ -1,0 +1,43 @@
+﻿@model Employee
+
+@{
+    ViewData["Title"] = "Employee Details";
+}
+
+@section Scripts{
+    <script src="~/lib/signalr/signalr.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="~/js/newsfeed.js"></script>
+
+    <script>
+        var changeToDoStatus = function (id) {
+
+            var listItem = document.getElementById("toDoListItem_" + id)
+            var linkItem = document.getElementById("toDoListStatusLink" + id)
+            var url = '';
+
+            if (listItem.classList.contains("active")) {
+                url = '/Calendar/Home/ChangeToDoItemStatus/false';
+            }
+            else {
+                url = '/Calendar/Home/ChangeToDoItemStatus/true';
+            }
+
+            axios.post(url, null)
+                .then(res => {
+                    if (listItem.classList.contains("active")) {
+                        listItem.classList.remove("active");
+                        linkItem.classList.remove("active");
+                    }
+                    else {
+                        listItem.classList.add("active");
+                        linkItem.classList.add("active");
+                    }
+                    console.log("To Do Item Completed!", res);
+                })
+                .catch(err => {
+                    console.log("Failed to complete To Do Item!", res);
+                });
+        }
+    </script>
+}

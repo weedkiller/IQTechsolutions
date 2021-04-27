@@ -1,0 +1,45 @@
+﻿
+@model FormElement<Section>
+
+<div class="col-md-10">
+    <div class="form-group">
+        @Model.ElementName
+    </div>
+</div>
+<div class="col-md-2">
+    <a href="javascript:;" onclick="ShowEditAssessmentElementModel('@Model.Id')" class="btn btn-primary btn-xs btn-circle"><i class="fa fa-edit"></i></a>
+    <a href="javascript:;" onclick="ShowDeleteAssessmentModal('@Model.Id')" class="btn btn-danger btn-xs btn-circle"><i class="fa fa-trash"></i></a> 
+    <a href="javascript:;" onclick="ShowViewAssessmentElementsModal('@Model.Id')" class="btn btn-info btn-xs">View Answers </a>
+</div>
+
+<script>
+    function ShowEditAssessmentElementModel(ff) {
+
+        var url = "/Courses/Sections/EditAssessmentElement?id=" + ff;
+
+        $("#ModalPlaceHolder").load(url,
+            function () {
+                $("#ModalPlaceHolder").modal("show");
+            });
+    }
+
+    function ShowDeleteAssessmentModal(id) {
+
+        var url = "/Courses/Sections/DeleteAssessmentElement?id=" + studentId;
+
+        $("#ModalPlaceHolder").load(url,
+            function () {
+                $("#ModalPlaceHolder").modal("show");
+            });
+    }
+
+    function ShowViewAssessmentElementsModal(id) {
+
+        var url = "/Courses/Sections/ViewModuleAssessmentElementAnswers?parentId=" + id;
+
+        $("#ModalPlaceHolder").load(url,
+            function () {
+                $("#ModalPlaceHolder").modal("show");
+            });
+    }
+</script>

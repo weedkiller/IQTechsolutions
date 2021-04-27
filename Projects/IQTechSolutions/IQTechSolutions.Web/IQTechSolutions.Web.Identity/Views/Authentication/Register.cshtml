@@ -1,0 +1,113 @@
+﻿@page
+@model RegisterViewModel
+@{
+    ViewData["Title"] = "Register";
+}
+
+<!-- begin register -->
+<div class="register register-with-news-feed">
+    <!-- begin news-feed -->
+    <div class="news-feed">
+        <div class="news-image">
+            <img src="~/img/background/bg-8.jpg" alt="" />
+        </div>
+        <div class="news-caption">
+            <img data-in="fade"
+                 data-out="fade"
+                 style="width: 100%"
+                 src="~/img/Full-Logo-Banner-Website.png"
+                 alt="IC Web Design and Data Development Full Logo Banner">
+        </div>
+    </div>
+    <!-- end news-feed -->
+    <!-- begin right-content -->
+    <div class="right-content">
+        <!-- begin register-header -->
+        <h1 class="register-header">
+            Sign Up
+            <small>Create your IQ Tech Solutions Account.</small>
+        </h1>
+        <!-- end register-header -->
+        <!-- begin register-content -->
+        <div class="register-content">
+            <form asp-route-returnUrl="@Model.ReturnUrl" method="post">
+                <div asp-validation-summary="All" class="text-danger"></div>
+                <label class="control-label">Name</label>
+                <div class="row row-space-10">
+                    <div class="col-md-6 m-b-15">
+                        <input asp-for="Name" placeholder="First Name" class="form-control" />
+                        <span asp-validation-for="Name" class="text-danger"></span>
+                    </div>
+                    <div class="col-md-6 m-b-15">
+                        <input asp-for="Surname" placeholder="Last Name" class="form-control" />
+                        <span asp-validation-for="Surname" class="text-danger"></span>
+                    </div>
+                </div>
+                <label class="control-label">Username</label>
+                <div class="row m-b-15">
+                    <div class="col-md-12">
+                        <input asp-for="Username" placeholder="Username" class="form-control" />
+                        <span asp-validation-for="Username" class="text-danger"></span>
+                    </div>
+                </div>
+                <label class="control-label">Email</label>
+                <div class="row m-b-15">
+                    <div class="col-md-12">
+                        <input asp-for="Email" placeholder="Email Address" type="email" class="form-control" />
+                        <span asp-validation-for="Email" class="text-danger"></span>
+                    </div>
+                </div>
+                <label class="control-label">Phone Nr</label>
+                <div class="row m-b-15">
+                    <div class="col-md-12">
+                        <input asp-for="Cell" placeholder="Phone Nr" class="form-control" />
+                        <span asp-validation-for="Cell" class="text-danger"></span>
+                    </div>
+                </div>
+                <label class="control-label">Password</label>
+                <div class="row m-b-15">
+                    <div class="col-md-12">
+                        <input asp-for="Password" class="form-control" />
+                        <span asp-validation-for="Password" class="text-danger"></span>
+                    </div>
+                </div>
+                <label class="control-label">Confirm Password</label>
+                <div class="row m-b-15">
+                    <div class="col-md-12">
+                        <input asp-for="ConfirmPassword" class="form-control" />
+                        <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+                    </div>
+                </div>
+
+
+                <div class="checkbox m-b-30">
+                    <label>
+                        <input type="checkbox" />
+                        By clicking Sign Up, you agree to our <a href="https://www.iqtechsolutions.co.za/home/terms">Terms</a> and that you have read our
+                        <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy Policy</a>, including our <a asp-area="" asp-controller="Home" asp-action="CookieUse">Cookie Use</a>.
+                    </label>
+                </div>
+                <div class="register-buttons">
+                    <input type="submit" class="btn btn-primary btn-block btn-lg" value="Sign Up" onclick="return IsTermChecked();" />
+                </div>
+                <div class="m-t-20 m-b-40 p-b-40">
+                    Already a member?<a asp-area="" asp-controller="Authentication" asp-action="Login"> Click here to login.</a><br />
+                    <a href=@Url.Action("Index", "Home")>Back to Home Page</a>
+                </div>
+                <hr />
+                <p class="text-center text-inverse">
+                    &copy; Copyright @DateTime.Now.Year <br /> Created by <a href="https://www.iqtechsolutions.co.za" target="_blank">IQ Tech Solutions</a> <br /> Powered by ASP.NET
+                </p>
+            </form>
+        </div>
+        <!-- end register-content -->
+    </div>
+    <!-- end right-content -->
+</div>
+<!-- end register -->
+
+<h1>@ViewData["Title"]</h1>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

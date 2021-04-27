@@ -1,0 +1,55 @@
+﻿@model IndexModelBase<Contact<Event>>
+
+@{
+    ViewData["Title"] = "Contacts List";
+}
+
+<table class="table">
+    <h4>A list of all our Event Contacts</h4>
+    <tbody>
+        @if (Model.All.Any())
+        {
+            foreach (var item in Model.All)
+            {
+                <tr id="row_@item.Id" class="row_@item.Id">
+                    <td>
+                        <strong>@Html.DisplayFor(modelItem => item.FirstName) @Html.DisplayFor(modelItem => item.LastName)</strong>
+                    </td>
+                    <td>
+                        <strong>@Html.DisplayFor(modelItem => item.FirstName) @Html.DisplayFor(modelItem => item.LastName)</strong>
+                    </td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-xs btn-info"><i class="fa fa-edit"></i></a>
+                        <a href="javascript:;" onclick="ShowDeleteModal('@item.Id')" class="btn btn-xs btn-danger"><i class="fa fa-trash"></i></a>
+                    </td>
+                </tr>
+            }
+        }
+        else
+        {
+            <tr>
+                <td colspan="6"><h3>No Contacts currently available</h3></td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+
+<p class="text-right">
+    <a asp-area="Events" asp-controller="Contacts" asp-action="Create" class="btn btn-danger btn-block">Create New Contact</a>
+</p>
+
+@section Scripts
+{
+    <script>
+        function ShowDeleteModal(ff) {
+
+            var url = "/Events/Contacts/Delete?id=" + ff;
+
+            $("#ModalPlaceHolder").load(url,
+                function () {
+                    $("#ModalPlaceHolder").modal("show");
+                });
+        }
+    </script>
+}

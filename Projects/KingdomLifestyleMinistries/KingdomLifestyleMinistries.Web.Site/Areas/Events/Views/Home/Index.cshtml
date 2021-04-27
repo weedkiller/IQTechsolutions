@@ -1,0 +1,81 @@
+﻿
+@model EventIndexModel
+
+@{
+    ViewData["Title"] = "Upcomming Events";
+}
+
+<!-- Section: Facilities -->
+<section>
+    <div class="container">
+        <div class="section-content">
+            <div class="row">
+                @if (Model.All.Any(c => c.EndDate > DateTime.Now))
+                {
+                    foreach (var item in Model.All.Where(c => c.RecurrenceRule == Recurrance.None))
+                    {
+                        <div class="col-xs-6 col-sm-6 col-md-6 mb-40">
+                            <a class="image-popup-vertical-fit" title="@item.Heading" asp-area="Events" asp-controller="Home" asp-action="Details" asp-route-id="@item.Id"><img src="@item.GetImage().GetImagePathFromAnotherWebsite(FrameworkDI.Configuration["Company:WebUrl"],FrameworkDI.Configuration["Placeholders:CoverImage"])
+                                                                                                                                                                                " alt="@item.Heading"></a>
+                            <h3>@item.Heading</h3>
+                            <ul class="list theme-colored">
+                                <li>Date : @item.StartDate to @item.EndDate</li>
+                                <li>Start : @item.StartTime</li>
+                                <li>End : @item.EndTime</li>
+                                <li>Place : @item.Location</li>
+                            </ul>
+                            <p>@item.Description.HtmlToPlainText().TruncateLongString(150)</p>
+                            <a asp-area="Events" asp-controller="Home" asp-action="Details" asp-route-id="@item.Id" class="btn btn-sm btn-theme-colored">Read more</a>
+                        </div>
+                    }
+                }
+                else
+                {
+                    if (Model.All.Where(c => c.RecurrenceRule != Recurrance.None).Any())
+                    {
+                        foreach (var item in Model.All.Where(c => c.RecurrenceRule != Recurrance.None))
+                        {
+                            <div class="col-xs-6 col-sm-6 col-md-6 mb-40">
+                                <a class="image-popup-vertical-fit" title="@item.Heading" asp-area="Events" asp-controller="Home" asp-action="Details" asp-route-id="@item.Id"><img src="@item.GetImage().GetImagePathFromAnotherWebsite(FrameworkDI.Configuration["Company:WebUrl"],FrameworkDI.Configuration["Placeholders:CoverImage"])
+                                                                                                                                                                                " alt="@item.Heading"></a>
+                                <h3>@item.Heading</h3>
+                                <ul class="list theme-colored">
+                                    <li>Date : @item.CalculatedStartDate.ToShortDateString() to @item.CalculatedEndDate</li>
+                                    <li>Start : @item.StartTime</li>
+                                    <li>End : @item.EndTime</li>
+                                    <li>Place : @item.Location</li>
+                                </ul>
+                                <p>@item.Description.HtmlToPlainText().TruncateLongString(150)</p>
+                                <a asp-area="Events" asp-controller="Home" asp-action="Details" asp-route-id="@item.Id" class="btn btn-sm btn-theme-colored">Read more</a>
+                            </div>
+                        }
+                    }
+                    else
+                    {
+                        <div class="call-to-action pt-40 pb-40 bg-theme-colored">
+                            <div class="row">
+                                <div class="col-xs-12 col-sm-8 col-md-8">
+                                    <div class="icon-box icon-rounded-bordered left media mb-0 ml-60 ml-sm-0">
+                                        <a href="#" class="media-left pull-left flip"> <i class="pe-7s-culture text-white border-1px p-20"></i></a>
+                                        <div class="media-body">
+                                            <h3 class="media-heading heading text-white">No current events!</h3>
+                                            <p class="text-white">
+                                                There are currently no new events available, please check back later <br />
+                                                or check out our archives to see what we have been up to lately.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-4 col-md-4 text-center">
+                                    <a class="btn btn-gray btn-xl mt-20" asp-area="Events" asp-controller="Home" asp-action="Archives">View Archives</a>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                    
+                }
+            </div>
+        </div>
+    </div>
+</section>
+<!-- end main-content -->

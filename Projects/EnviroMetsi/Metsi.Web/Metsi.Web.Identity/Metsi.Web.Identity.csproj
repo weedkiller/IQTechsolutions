@@ -1,0 +1,26 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <UserSecretsId>8b1d06f1-fd41-4ed4-a15c-68f76cf39589</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\js\cropper-master\.github\CODE_OF_CONDUCT.md" />
+    <None Include="wwwroot\js\cropper-master\.github\CONTRIBUTING.md" />
+    <None Include="wwwroot\js\cropper-master\.github\ISSUE_TEMPLATE\bug_report.md" />
+    <None Include="wwwroot\js\cropper-master\.github\PULL_REQUEST_TEMPLATE.md" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="IdentityServer4" Version="4.1.2" />
+    <PackageReference Include="IdentityServer4.AspNetIdentity" Version="4.1.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\Modules\Identity\Identity.Base\Identity.Base.csproj" />
+    <ProjectReference Include="..\..\Metsi.Base\Metsi\Metsi.csproj" />
+    <ProjectReference Include="..\Metsi.Web.Datastore\Metsi.Web.Datastore.csproj" />
+  </ItemGroup>
+
+</Project>

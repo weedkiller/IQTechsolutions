@@ -1,0 +1,88 @@
+﻿@using Iqt.Base.Interfaces
+@model Feedback.Core.Models.TicketModel
+@inject IConfiguration Configuration
+@inject IApplicationConfiguration ApplicationConfiguration
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "Layouts/_Layout";
+}
+
+<section id="content" class="light_section">
+    <div class="container" style="padding-top: 0">
+        <div class="row">
+            <div class="col-sm-12 text-center">
+                <h2 class="section_header">Contact Us</h2>
+            </div>
+        </div>
+        <div class="row">
+
+            <div class="widget col-sm-6 to_animate">
+                <form asp-area="Support" asp-controller="Home" asp-action="Create" enctype="multipart/form-data" method="post">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <input type="hidden" asp-for="@Model.Captcha" id="captchaInput" />
+                    <p class="contact-form-name">
+                        <label asp-for="FirstName">Name <span class="required">*</span></label>
+                        <input type="text" aria-required="true" size="30" asp-for="FirstName" class="form-control" placeholder="First Name">
+                    </p>
+                    <p class="contact-form-name">
+                        <label asp-for="LastName">Name <span class="required">*</span></label>
+                        <input type="text" aria-required="true" size="30" asp-for="LastName" class="form-control" placeholder="Last Name">
+                    </p>
+                    <p class="contact-form-name">
+                        <label asp-for="PhoneNr">Name <span class="required">*</span></label>
+                        <input type="text" aria-required="true" size="30" asp-for="PhoneNr" class="form-control" placeholder="Telephone Number">
+                    </p>
+                    <p class="contact-form-email">
+                        <label asp-for="EmailAddress">Email <span class="required">*</span></label>
+                        <input type="email" aria-required="true" size="30" asp-for="EmailAddress" class="form-control" placeholder="Email Address">
+                    </p>
+                    <p class="contact-form-subject">
+                        <label asp-for="Subject">Subject <span class="required">*</span></label>
+                        <input type="text" aria-required="true" size="30" asp-for="Subject" class="form-control" placeholder="Subject">
+                    </p>
+                    <p class="contact-form-message">
+                        <label asp-for="Content">Message</label>
+                        <textarea aria-required="true" rows="8" cols="45" asp-for="Content" class="form-control" placeholder="Message"></textarea>
+                    </p>
+                    <p class="contact-form-submit vertical-margin-40">
+                        <!-- <input type="submit" value="Send" id="contact_form_submit" name="contact_submit" class="theme_button"> -->
+                        <button type="submit" id="contact_form_submit" name="contact_submit" class="theme_button"><i class="rt-icon-sent"></i> Send!</button>
+                    </p>
+                </form>
+            </div>
+
+            <div class="widget widget_contact col-sm-6 to_animate">
+                <h3>Contact Info</h3>
+                <p>
+                    Our friendly and professional representatives can’t wait for you to get in touch.  Please feel free to contact us now!
+                </p>
+                <p>
+                    <i class="rt-icon-device-phone"></i><strong>Phone:</strong> @ApplicationConfiguration.PhoneNr
+                </p>
+                <p>
+                    <i class="rt-icon-pencil"></i><strong>Email:</strong> <a href="@ApplicationConfiguration.InfoEmailAddress">@ApplicationConfiguration.InfoEmailAddress</a>
+                </p>
+                <p>
+                    <i class="rt-icon-globe-outline"></i><strong>Website: </strong><a href="http://www.metsi.co.za">http://www.metsi.co.za</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="grey_section">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3311.966425233818!2d18.703443215808047!3d-33.89051852761898!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1dcc51873d7b3deb%3A0xb8c4a3389aafd5fe!2sENVIRO%20METSI!5e0!3m2!1sen!2sza!4v1597511912015!5m2!1sen!2sza" width="100%" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+</section>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    <script src="https://www.google.com/recaptcha/api.js?render=@Configuration["googleReCaptcha:SiteKey"]"></script>
+    <script>
+        grecaptcha.ready(function() {
+            window.grecaptcha.execute('@Configuration["googleReCaptcha:SiteKey"]', { action: 'home' }).then(function (token) {
+                $("#captchaInput").val(token);
+            });
+        });
+    </script>
+
+}

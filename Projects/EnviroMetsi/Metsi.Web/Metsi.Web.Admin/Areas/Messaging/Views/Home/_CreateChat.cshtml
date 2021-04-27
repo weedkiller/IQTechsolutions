@@ -1,0 +1,47 @@
+﻿@model Messaging.Base.Entities.Chat
+<!-- Modal -->
+
+<div class="modal-dialog">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h4 class="modal-title">Create New Chat Group</h4>
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        </div>
+        <div class="modal-body" style="margin: 25px;">
+            <form asp-area="Chats" asp-controller="Home" asp-action="CreateChat" id="CreateChatGroupForm">
+                <div class="form-horizontal">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h4>Chat group details:</h4>
+                            <hr />
+                            <input type="hidden" asp-for="Type"/>
+                            <div class="form-group">
+                                <label class="control-label">Title</label>
+                                <input asp-for="Name" class="form-control"/>
+                                <span asp-validation-for="Name" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label">Short Description</label>
+                                    <textarea asp-for="Description" class="form-control" style="height:100px"></textarea>
+                                    <span asp-validation-for="Description" class="text-danger"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- ================== FORM BUTTON ================== -->
+                <div class="row" style="padding-bottom: 50px">
+                    <div class="form-group">
+                        <div class="text-right">
+                            <button type="submit" class="btn btn-sm btn-primary">Save Changes</button>
+                            <a href="javascript:;" class="btn btn-sm btn-danger" data-dismiss="modal">Close</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- ================== END FORM BUTTON ================== -->
+
+            </form>
+
+        </div>
+    </div>
+</div>
+

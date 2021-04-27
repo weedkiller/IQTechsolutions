@@ -1,0 +1,75 @@
+﻿@model ProductIndexModel
+
+@{
+    ViewData["Title"] = "Products";
+}
+
+@if (Model.All.Any())
+{
+    <section class="">
+        <div class="container mt-30 mb-30 p-30">
+            <div class="section-content">
+                <div class="row multi-row-clearfix">
+                    <div class="col-md-10 col-md-offset-1">
+                        <div class="products">
+                            @foreach (var item in Model.All)
+                            {
+                                <div class="col-sm-6 col-md-4 col-lg-4 mb-30">
+                                    <div class="product pb-0">
+                                        @if (item.Discount > 0)
+                                        {
+                                            <span class="tag-sale">Sale!</span>
+                                        }
+
+                                        <div class="product-thumb">
+                                            <img alt="" src="@item.GetImage().GetImagePathFromAnotherWebsite(FrameworkDI.Configuration["Company:WebUrl"],FrameworkDI.Configuration["Placeholders:CoverImage"])" class="img-responsive img-fullwidth">
+                                            <div class="overlay">
+                                                <div class="btn-add-to-cart-wrapper">
+                                                    <a class="btn btn-theme-colored btn-sm btn-flat pl-20 pr-20 btn-add-to-cart text-uppercase font-weight-700" href="javascript:;" onclick="cart.add('@item.Id', '1');">Add To Cart</a>
+                                                </div>
+                                                <div class="btn-product-view-details">
+                                                    <a class="btn btn-default btn-theme-colored btn-sm btn-flat pl-20 pr-20 btn-add-to-cart text-uppercase font-weight-700" asp-area="Products" asp-controller="Home" asp-action="Details" asp-route-id="@item.Id">View detail</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="product-details text-center bg-lighter pt-15 pb-10">
+                                            <a asp-area="Products" asp-controller="Home" asp-action="Details" asp-route-id="@item.Id"><h5 class="product-title mt-0">@item.Name</h5></a>
+                                            <div class="star-rating" title="Rated 3.50 out of 5">
+                                                <span style="width: 67%;">3.50</span>
+                                            </div>
+                                            <div class="price">
+                                                @if (item.Discount > 0)
+                                                {
+                                                    <del><span class="amount">R @item.PriceIncl</span></del>
+                                                    <ins><span class="amount">R @item.DiscountedPrice</span></ins>
+                                                }
+                                                else
+                                                {
+                                                    <ins><span class="amount">R @item.PriceIncl</span></ins>
+                                                }
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+}
+else
+{
+    <section class="">
+        <div class="container mt-30 mb-30 p-30">
+            <div class="section-content">
+                <div class="row multi-row-clearfix">
+                    <h4>There are currently no new products available, please check back later</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+
+}

@@ -1,0 +1,333 @@
+﻿@model EventAddEditModel
+
+@{
+    ViewData["Title"] = $"Edit {Model.Entity.Heading}";
+}
+
+@section Styles
+{
+    <link href="~/css/summernote.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="~/css/bs-filestyle.css" type="text/css" />
+}
+
+<form asp-area="Events" asp-controller="Home" asp-action="Edit" enctype="multipart/form-data" method="post">
+    <div asp-validation-summary="All" class="text-danger"></div>
+    <div class="row">
+        <div class="col-md-4">
+            <div class="form-group">
+                <label asp-for="CoverUpload" class="control-label"></label>
+                <div class="previewd" style="overflow: hidden;">
+                    <img id="preview" style="width: 100%" src="@Model.Entity.GetImage().GetImagePathFromAnotherWebsite(FrameworkDI.Configuration["Company:WebUrl"],FrameworkDI.Configuration["Placeholders:CoverImage"])" alt="@Model.Entity.Heading" />
+                </div>
+                <input asp-for="CoverUpload" class="form-control" onchange="loadFile(event)" />
+                <input type="hidden" asp-for="CoverCropSettings.X" />
+                <input type="hidden" asp-for="CoverCropSettings.Y" />
+                <input type="hidden" asp-for="CoverCropSettings.Width" />
+                <input type="hidden" asp-for="CoverCropSettings.Height" />
+                <input type="hidden" asp-for="CoverCropSettings.Rotate" />
+                <input type="hidden" asp-for="CoverCropSettings.ScaleX" />
+                <input type="hidden" asp-for="CoverCropSettings.ScaleY" />
+            </div>
+        </div>
+        <div class="col-md-8">
+            <div class="form-group">
+                <label asp-for="Entity.Heading" class="control-label"></label>
+                <input asp-for="Entity.Heading" class="form-control" />
+                <span asp-validation-for="Entity.Heading" class="text-danger"></span>
+            </div>
+            <input type="hidden" asp-for="Entity.Id" />
+            <input type="hidden" asp-for="Entity.LocationId" />
+        </div>
+    </div>
+
+    <ul class="nav nav-pills">
+        <li class="active"><a href="#nav-pills-tab-2" data-toggle="tab">Settings & Extra Info</a></li>
+        <li><a href="#nav-pills-tab-2" data-toggle="tab">Address</a></li>
+        <li><a href="#nav-pills-tab-3" data-toggle="tab">Images</a></li>
+        <li><a href="#nav-pills-tab-4" data-toggle="tab">Contact Info</a></li>
+    </ul>
+    <div class="tab-content">
+
+        <!-- ================== ADDITIONAL INFO TAB ================== -->
+        <div class="tab-pane fade active in" id="nav-pills-tab-1">
+            <h3 class="m-t-10">Settings & Extra Info</h3>
+            <hr class="m_bottom_10">
+            <div class="row">
+                <div class="col-md-12">
+                    <p id="jqueryExample">
+                        <label class="control-label">Times : </label>
+                        <input type="date" class="date start" asp-for="Entity.StartDate" />
+                        <input type="time" class="time start" asp-for="Entity.StartTime" /> to
+                        <input type="time" class="time end" asp-for="Entity.EndTime" />
+                        <input type="date" class="date end" asp-for="Entity.EndDate" />
+                    </p>
+
+                </div>
+
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <label asp-for="Entity.RecurrenceRule" class="control-label"></label>
+                        <select asp-for="Entity.RecurrenceRule" class="form-control" asp-items="Html.GetEnumSelectList<Recurrance>()">
+                            <option selected="selected" value="">Please select</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <label asp-for="Entity.Description" class="control-label"></label>
+                        <textarea asp-for="Entity.Description" class="form-control" style="min-height: 150px"></textarea>
+                        <span asp-validation-for="Entity.Description" class="text-danger"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- ================== END ADDITIONAL INFO TAB ================== -->
+        <!-- ================== ADDRESS TAB ================== -->
+        <div class="tab-pane fade" id="nav-pills-tab-2">
+            <h3 class="m-t-10">Address Info</h3>
+            <hr class="m_bottom_10">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="form-group col-md-12">
+                        <label asp-for="Entity.Location.Name" class="control-label col-md-2"></label>
+                        <div class="col-md-10">
+                            <input asp-for="Entity.Location.Name" class="form-control" />
+                            <span asp-validation-for="Entity.Location.Name" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="form-group col-md-12">
+                        <label asp-for="Entity.Location.AddressLine1" class="control-label col-md-2"></label>
+                        <div class="col-md-10">
+                            <input asp-for="Entity.Location.AddressLine1" class="form-control" />
+                            <span asp-validation-for="Entity.Location.AddressLine1" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="form-group col-md-12">
+                        <label asp-for="Entity.Location.Suburb" class="control-label col-md-2"></label>
+                        <div class="col-md-10">
+                            <input asp-for="Entity.Location.Suburb" class="form-control" />
+                            <span asp-validation-for="Entity.Location.Suburb" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="form-group col-md-12">
+                        <label asp-for="Entity.Location.City" class="control-label col-md-2"></label>
+                        <div class="col-md-10">
+                            <input asp-for="Entity.Location.City" class="form-control" />
+                            <span asp-validation-for="Entity.Location.City" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="form-group col-md-12">
+                        <label asp-for="Entity.Location.Province" class="control-label col-md-2"></label>
+                        <div class="col-md-10">
+                            <input asp-for="Entity.Location.Province" class="form-control" />
+                            <span asp-validation-for="Entity.Location.Province" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="form-group col-md-12">
+                        <label asp-for="Entity.Location.Country" class="control-label col-md-2"></label>
+                        <div class="col-md-10">
+                            <input asp-for="Entity.Location.Country" class="form-control" />
+                            <span asp-validation-for="Entity.Location.Country" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="form-group col-md-12">
+                        <label class="control-label col-md-2">Coordinates</label>
+                        <div class="col-md-5">
+                            <input asp-for="Entity.Location.Location.Longitude" class="form-control" />
+                            <span asp-validation-for="Entity.Location.Location.Longitude" class="text-danger"></span>
+                        </div>
+                        <div class="col-md-5">
+                            <input asp-for="Entity.Location.Location.Latitude" class="form-control" />
+                            <span asp-validation-for="Entity.Location.Location.Latitude" class="text-danger"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- ================== END ADDRESS TAB ================== -->
+        <!-- ================== IMAGES TAB ================== -->
+        <div class="tab-pane fade" id="nav-pills-tab-3">
+            <h3 class="m-t-10">Images</h3>
+            <hr class="m_bottom_10">
+            <div class="row">
+                @if (Model.Entity.Images.Any(c => c.ImageType == ImageType.Image))
+                {
+                    foreach (var img in Model.Entity.Images.Where(c => c.ImageType == ImageType.Image))
+                    {
+                        <div id="@img.Id" class="col-md-2">
+                            <img id="@img.Id preview" style="width: 100%;" class="thumbnail" title="@img.FileName" alt="@img.FileName" src="@img.GetImagePathFromAnotherWebsite(FrameworkDI.Configuration["Company:WebUrl"],FrameworkDI.Configuration["Placeholders:CoverImage"])">
+                            <button type="button" data-toggle="Remote Image" onclick="removeImageFromObject('@img.Id')" title="Remove Image" class="btn btn-block btn-danger btn-sm">Delete</button>
+                        </div>
+                    }
+                }
+                else
+                {
+                    <h4>There are currently no images associated with this product</h4>
+                }
+            </div>
+            <div class="row" style="padding-bottom: 20px;">
+                <div class="col-md-12 bottommargin text-center">
+                    <h5>Select Project Images:</h5><br>
+                    <input asp-for="ImagesUpload" id="input-3" name="ImagesUpload" type="file" class="file" multiple data-show-upload="false" data-show-caption="true" data-show-preview="true">
+                </div>
+            </div>
+        </div>
+        <!-- ================== CONTACT INFO TAB ================== -->
+        <div class="tab-pane fade" id="nav-pills-tab-4">
+            <h3 class="m-t-10">Contact Info</h3>
+            <hr class="m_bottom_10">
+            <div class="row">
+                <div class="col-md-12">
+                    <table class="table table-hover" id="ContactList">
+                        <thead>
+                            <tr>
+                                <td>Name</td>
+                                <td>Contact Nr</td>
+                                <td>Email Address</td>
+                                <td></td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var contact in Model.Entity.Contacts)
+                            {
+                                <tr id="row_@contact.Id" class="row_@contact.Id">
+                                    <td>@contact.Contact?.FirstName @contact.Contact?.LastName</td>
+                                    <td>@contact.Contact?.ContactNumbers.FirstOrDefault(c => c.Default)?.Number</td>
+                                    <td>@contact.Contact?.EmailAddresses.FirstOrDefault(c => c.Default)?.Address</td>
+                                    <td>
+                                        <a asp-area="Events" asp-controller="Contacts" asp-action="Edit" asp-route-id="@contact.Contact?.Id" asp-route-parentId="@contact.EntityId" class="btn btn-default"><i class="fa fa-edit"></i></a>
+                                        <a href="javascript:;" onclick="ShowDeleteContact('@contact.EntityId')" class="btn btn-danger"><i class="fa fa-trash"></i></a>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                    <a href="javascript:;" onclick="ShowAddContactModel()" class="btn btn-danger">Add Contact</a>
+                    <a asp-controller="Contacts" asp-action="Create"  asp-route-parentId="@Model.Entity.Id" class="btn btn-danger">Create New Contact</a>
+                </div>
+            </div>
+        </div>
+        <!-- ================== END CONTACT INFO TAB ================== -->
+    </div>
+
+    <!-- ================== FORM BUTTON ================== -->
+    <div class="row" style="padding-bottom: 50px">
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10 text-right">
+                <input name="finnish" type="submit" value="Submit & Finnish" class="btn btn-default" />
+                <input name="main" type="submit" value="Save" class="btn btn-default" />
+                <a asp-area="Events" asp-controller="Home" asp-action="List" class="btn btn-danger">Cancel</a>
+            </div>
+        </div>
+    </div>
+    <!-- ================== END FORM BUTTON ================== -->
+
+</form>
+
+
+@section Scripts
+{
+
+    @await Html.PartialAsync("_ValidationScriptsPartial")
+
+    <script type="text/javascript" src="~/js/bs-filestyle.js"></script>
+
+    <script src="~/js/summernote/summernote.js"></script>
+
+    <script>
+        var loadFile = function (event) {
+            var output = document.getElementById('preview');
+            if (event.target.files.length !== 0) {
+
+                var oldstring = "";
+                if (output === null) {
+                    oldstring = "/images/placeholders/img_475x320.jpg";
+                } else {
+                    oldstring = output.src;
+                }
+
+                var url = "/Home/CropImage?cropUrl=" + URL.createObjectURL(event.target.files[0]) + "&originalUrl=" + oldstring + "&width=" + 475 + "&height=" + 320
+                    + "&aspectRatio=475/320";
+
+                $("#CropModal").load(url,
+                    function () {
+                        $("#CropModal").modal("show");
+                    });
+            }
+        };
+    </script>
+
+    <script type="text/javascript">
+        // Default
+        $(document).ready(function () {
+            var HomeIndex = function () {
+
+                var $this = this;
+
+                function initialize() {
+                    $('#Entity_Description').summernote({
+                        height: 250,
+                        codemirror: { // codemirror options
+                            theme: 'monokai'
+                        }
+                    });
+                }
+
+                $this.init = function () {
+                    initialize();
+                }
+            };
+            var self = new HomeIndex();
+            self.init();
+        });
+
+
+    </script>
+
+    <script>
+        function ShowAddContactModel() {
+
+            var gggurl = "@Url.Action("AddEntityContact","Contacts", new { parentId = @Model.Entity.Id})";
+
+            $("#ModalPlaceHolder").empty();
+            $("#ModalPlaceHolder").load(gggurl,
+                function () {
+                    $("#ModalPlaceHolder").modal("show");
+                });
+        }
+
+        function ShowDeleteContact(id) {
+
+            var gggurl = "/Events/Contacts/Delete?id=" + id;
+
+            $("#ModalPlaceHolder").empty();
+            $("#ModalPlaceHolder").load(gggurl,
+                function () {
+                    $("#ModalPlaceHolder").modal("show");
+                });
+        }
+    </script>
+    <script type="text/javascript">
+        function removeImageFromObject(image_id) {
+            $.ajax({
+                url: "/Events/Home/RemoveImageAjax",
+                type: "POST",
+                data: { id: image_id },
+                async: false,
+                dataType: "json",
+                success: function (data) {
+                    $('#' + image_id).empty();
+                },
+                error: function (xhr, textStatus, err) {
+                    alert("An error with the following detials occured : "
+                        + "\r\n == readyState: " + xhr.readyState
+                        + "\r\n == responseText: " + xhr.responseText
+                        + "\r\n == status: " + xhr.status
+                        + "\r\n == text status: " + textStatus
+                        + "\r\n == error: " + err);
+                    $("#loaderDiv").hide();
+                }
+            });
+        };
+    </script>
+}

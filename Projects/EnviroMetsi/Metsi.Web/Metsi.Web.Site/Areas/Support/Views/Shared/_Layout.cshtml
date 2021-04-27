@@ -1,0 +1,20 @@
+﻿@{
+    Layout = "Layouts/_Layout";
+}
+
+@section Styles
+    {
+    <!--page injected css-->
+    @RenderSection("Styles", required: false)
+}
+<section class="light_section">
+    <div class="container">
+        <div class="row">
+            @RenderBody()
+        </div>
+    </div>
+</section>
+@section Scripts
+    {
+    @RenderSection("Scripts", required: false)
+}

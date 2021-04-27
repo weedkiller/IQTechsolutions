@@ -1,0 +1,63 @@
+﻿@using Filing.Base.Enums
+@using Filing.Base.Extensions
+@using Iqt.Base.Extensions
+@model List<Education.Base.Entities.StudentCourse>
+
+<div class="table-responsive">
+    <table class="table table-hover mb-0">
+        <thead>
+        <tr>
+            <th>
+                Name
+            </th>
+            <th>
+                Description
+            </th>
+            <th>
+                Modules
+            </th>
+            <th></th>
+        </tr>
+        </thead>
+        <tbody id="courseRegistrationsTableBody">
+        @if (Model.Any())
+        {
+            var x = 0;
+
+            foreach (var item in Model)
+            {
+                <tr id="row_@item.Course.Id" class="row_@item.Course.Id">
+                    <td>
+                        <a asp-action="Details" asp-route-id="@item.Course.Id">@Html.DisplayFor(modelItem => item.Course.Name)</a>
+                    </td>
+                    <td>
+                        @item.Course.Description.HtmlToPlainText().TruncateLongString(150)
+                    </td>
+                    <td>@item.Course.Modules.Count</td>
+                    <td style="width: 100px;">
+                        @*<a href="javascript:;" onclick="ShowDeleteStudentCourseModal('@item.StudentId', '@item.CourseId')" class="btn btn-warning btn-icon btn-circle"><i class="fa fa-trash"></i></a>*@
+                    </td>
+                </tr>
+            }
+        }
+        else
+        {
+            <tr>
+                <td colspan="6"><h4>No Courses currently available</h4></td>
+            </tr>
+        }
+
+        </tbody>
+    </table>
+</div>
+
+<script type="text/javascript">
+    function ShowDeleteStudentCourseModal(studentId, courseId) {
+        var url = "/Courses/Students/DeleteStudentCourse?studentId=" + studentId + "&courseId=" + courseId;
+
+        $("#ModalPlaceHolder").load(url,
+            function () {
+                $("#ModalPlaceHolder").modal("show");
+            });
+    }
+</script>

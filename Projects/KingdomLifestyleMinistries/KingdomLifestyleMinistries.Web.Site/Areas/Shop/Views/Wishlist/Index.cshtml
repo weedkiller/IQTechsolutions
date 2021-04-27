@@ -1,0 +1,120 @@
+﻿@model IndexModelBase<WishlistItem>
+
+@{
+    ViewData["Title"] = "My Wishlist Items";
+}
+
+<div class="row">
+    <!--Middle Part Start-->
+    <div id="content" class="col-sm-12">
+        <h2 class="title">My Wish List</h2>
+        <div class="table-responsive">
+            <table class="table table-bordered table-hover">
+                <thead>
+                    <tr>
+                        <td class="text-center">Image</td>
+                        <td class="text-left">Product Name</td>
+                        <td class="text-left">Model</td>
+                        <td class="text-right">Stock</td>
+                        <td class="text-right">Unit Price</td>
+                        <td class="text-right">Action</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    @if (Model.All.Any())
+                    {
+                        foreach (var item in Model.AllPaged.Results)
+                        {
+                            <tr>
+                                <td class="text-center">
+                                    <a asp-area="" asp-controller="" asp-action="" asp-route-id="">
+                                        <img width="70px" src="@item.Product.GetImage().GetImagePathFromAnotherWebsite(FrameworkDI.Configuration["Company:WebUrl"],FrameworkDI.Configuration["Placeholders:CoverImage"])" alt="@item.Product.Name" title="@item.Product.Name">
+                                    </a>
+                                </td>
+                                <td class="text-left">
+                                    <a asp-area="Products" asp-controller="Home" asp-action="Details" asp-route-id="@item.ProductId">@item.Product.Name</a>
+                                </td>
+                                <td class="text-left">@item.Product.ModelNr</td>
+                                @if (item.Product.QtyInStock > 0)
+                                {
+                                    <td class="text-right">In Stock</td>
+                                }
+                                else
+                                {
+                                    <td class="text-right">@item.Product.OutOfStockMessage</td>
+                                }
+                                
+                                <td class="text-right">
+                                    <div class="price"> R @item.Product.PriceIncl </div>
+                                </td>
+                                <td class="text-right">
+                                    <button class="btn btn-primary"
+                                            title="" data-toggle="tooltip"
+                                            onclick="cart.add('48');"
+                                            type="button" data-original-title="Add to Cart">
+                                        <i class="fa fa-shopping-cart"></i>
+                                    </button>
+                                    <button class="btn btn-danger btn-block" type="button" data-toggle="tooltip" title="Remove from Comparing List" onclick="wishlist.add('@item.Id');">Remove</button>
+                                </td>
+                            </tr>
+                        }
+                    }
+                    else
+                    {
+                        <tr>
+                            <td colspan="6">There are currently no products in your Wish List Basket, feel free to <a asp-area="" asp-controller="" asp-action="" asp-route-id="">add some products</a></td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+
+            @if (Model.AllPaged.PageCount > 0)
+            {
+                <!-- Filters -->
+                <div class="product-filter product-filter-bottom filters-panel">
+                    <div class="row">
+                        <div class="col-md-2 hidden-sm hidden-xs">
+                        </div>
+                        <div class="short-by-show text-center col-md-7 col-sm-8 col-xs-12">
+                            <div class="form-group" style="margin: 7px 10px">Showing @Model.AllPaged.FirstRowOnPage to @Model.AllPaged.LastRowOnPage of @Model.All.Count (@Model.AllPaged.PageCount Pages)</div>
+                        </div>
+                        <div class="box-pagination col-md-3 col-sm-4 text-right">
+                            <ul class="pagination">
+                                @if (Model.CurrentPage != 1)
+                                {
+                                    var previous = Model.CurrentPage - 1;
+                                    <li><a href="@Url.Action("Index", new {page = 1})">|&lt;</a></li>
+                                    <li><a href="@Url.Action("Index", new {page = previous})">&lt;</a></li>
+                                }
+                                @for (int p = 1; p <= Model.AllPaged.PageCount; p++)
+                                {
+                                    var active = "";
+                                    if (p == Model.AllPaged.CurrentPage)
+                                    {
+                                        active = "active";
+                                    }
+                                    <li class="@active">
+                                        <a asp-area="Services" asp-controller="Home" asp-action="List" asp-route-pagel="@p">
+                                            @p
+                                        </a>
+                                    </li>
+                                }
+                                @if (Model.CurrentPage != Model.AllPaged.PageCount)
+                                {
+                                    var next = Model.CurrentPage + 1;
+                                    <li><a @Url.Action("Index", new { page = next })>&gt;</a></li>
+                                    <li><a @Url.Action("Index", new { page = Model.AllPaged.PageCount })>&gt;|</a></li>
+                                }
+                            </ul>
+                        </div>
+
+                    </div>
+                </div>
+                <!-- //end Filters -->
+            }
+        </div>
+    </div>
+    <!--Middle Part End-->
+
+</div>
+

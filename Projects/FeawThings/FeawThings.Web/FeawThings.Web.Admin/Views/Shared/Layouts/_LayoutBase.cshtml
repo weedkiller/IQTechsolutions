@@ -1,0 +1,50 @@
+﻿
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <!-- ============================================ Basic page needs ============================================ -->
+    <title>@ViewData["Title"] - Feaw Things ClientZone</title>
+    <meta charset="utf-8">
+    <!-- ============================================ Google web fonts ============================================ -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700&amp;subset=latin" rel="stylesheet">
+
+    <!-- ============================================ Libs CSS ============================================ -->
+    <link rel="stylesheet" href="~/css/bootstrap.min.css">
+    <link href="~/css/nifty.min.css" rel="stylesheet">
+    <link href="~/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="~/plugins/animate-css/animate.min.css" rel="stylesheet">
+    <link href="~/plugins/morris-js/morris.min.css" rel="stylesheet">
+    <link href="~/plugins/switchery/switchery.min.css" rel="stylesheet">
+    <link href="~/plugins/bootstrap-select/bootstrap-select.min.css" rel="stylesheet">
+    <link href="~/css/demo/nifty-demo.min.css" rel="stylesheet">
+    <link href="~/plugins/pace/pace.min.css" rel="stylesheet">
+    <script src="~/plugins/pace/pace.min.js"></script>
+
+    @RenderSection("Styles", required: false)
+
+</head>
+
+<body class="">
+
+    <ejs-scripts></ejs-scripts>
+
+    @RenderBody()
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="~/js/bootstrap.min.js"></script>
+    <script src="~/plugins/fast-click/fastclick.min.js"></script>
+    <script src="~/js/nifty.min.js"></script>
+    <script src="~/plugins/morris-js/raphael-js/raphael.min.js"></script>
+    <script src="~/plugins/sparkline/jquery.sparkline.min.js"></script>
+    <script src="~/plugins/skycons/skycons.min.js"></script>
+    <script src="~/plugins/switchery/switchery.min.js"></script>
+    <script src="~/plugins/bootstrap-select/bootstrap-select.min.js"></script>
+    <script src="~/js/demo/nifty-demo.min.js"></script>
+    <script src="~/js/demo/dashboard.js"></script>
+
+    @RenderSection("Scripts", required: false)
+
+</body>
+</html>

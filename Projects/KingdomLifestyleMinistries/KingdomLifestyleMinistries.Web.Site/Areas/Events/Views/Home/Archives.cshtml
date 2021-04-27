@@ -1,0 +1,52 @@
+﻿@model EventIndexModel
+
+@{
+    ViewData["Title"] = "Archived Events";
+}
+
+<!-- Section: Facilities -->
+<section>
+    <div class="container">
+        <div class="section-content">
+            <div class="row">
+                @if (Model.All.Any(c => c.EndDate < DateTime.Now))
+                {
+                     foreach (var item in Model.All.Where(c => c.EndDate < DateTime.Now))
+                     {
+                         <div class="col-xs-6 col-sm-6 col-md-6 mb-40">
+                             <a class="image-popup-vertical-fit" title="@item.Heading" asp-area="Events" asp-controller="Home" asp-action="Details" asp-route-id="@item.Id"><img src="@item.GetImage().GetImagePathFromAnotherWebsite(FrameworkDI.Configuration["Company:WebUrl"],FrameworkDI.Configuration["Placeholders:CoverImage"])" alt="@item.Heading"><h3>@item.Heading</h3></a>
+                             <h4>@item.EventVideos.FirstOrDefault().Name</h4>
+                             <ul class="list theme-colored">
+                                 <li><strong>Date :</strong> @item.StartDate to @item.EndDate</li>
+                                 <li><strong>Start :</strong> @item.StartTime</li>
+                                 <li><strong>End :</strong> @item.EndTime</li>
+                                 <li><strong>Place :</strong> @item.Location</li>
+                             </ul>
+                             <hr/>
+                             <p>@item.Description.HtmlToPlainText().TruncateLongString(150)</p>
+                             <a asp-area="Events" asp-controller="Home" asp-action="Details" asp-route-id="@item.Id" class="btn btn-sm btn-theme-colored">Read more</a>
+                         </div>
+                     }
+                }
+                else
+                {
+                    <div class="call-to-action pt-40 pb-40 bg-theme-colored">
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-12 col-md-12">
+                                <div class="icon-box icon-rounded-bordered left media mb-0 ml-60 ml-sm-0"> <a href="#" class="media-left pull-left flip"> <i class="pe-7s-culture text-white border-1px p-20"></i></a>
+                                    <div class="media-body">
+                                        <h3 class="media-heading heading text-white">No current events!</h3>
+                                        <p class="text-white">
+                                            There are currently no archived events available, please check back later.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</section>
+<!-- end main-content -->

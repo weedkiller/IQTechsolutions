@@ -1,0 +1,24 @@
+﻿@model Troubleshooting.Base.Models.ApiModels.ProblemResultModel
+
+@{
+    ViewData["Title"] = $"Details - {Model.Heading}";
+}
+
+    <partial name="Sliders/_DefaultSliderPartialView" />
+<section id="features" class="container services">
+    <div class="row">
+        <div class="col-sm-12">
+            <h4>
+               Problem : @Model.Heading
+            </h4>
+            <hr />
+
+            @Html.Raw(Model.Description.Replace("../Images/RichTextEditor/", "http://admin.metsi.co.za/Images/RichTextEditor/"))
+
+            <hr />
+            
+            @await Component.InvokeAsync("CausesSection", new{ problemId = Model.Id})
+
+        </div>
+    </div>
+</section>

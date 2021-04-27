@@ -1,0 +1,79 @@
+﻿@model EmailAddress<Customer>
+
+<div class="modal-dialog">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h4 class="modal-title">Edit Email Address</h4>
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        </div>
+        <div class="modal-body">
+            <form id="CreateEmailAddressForm">
+                <input type="hidden" asp-for="Id" />
+                <input type="hidden" asp-for="EntityId" />
+                <div class="form-group">
+                    <label asp-for="Address" class="control-label"></label>
+                    <input asp-for="Address" class="form-control" />
+                    <span asp-validation-for="Address" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <div class="checkbox">
+                        <label>
+                            <input asp-for="Default" /> Default
+                        </label>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="modal-footer">
+            <a href="javascript:;" class="btn btn-sm btn-white" data-dismiss="modal">Close</a>
+            <a href="javascript:;" onclick="ConfirmContactNumber()" class="btn btn-sm btn-primary">Submit & Add</a>
+        </div>
+    </div>
+</div>
+
+    <script>
+        var loadFile = function (event) {
+            var output = document.getElementById('preview');
+            output.src = URL.createObjectURL(event.target.files[0]);
+        };
+    </script>
+
+    <!-- Summer Note JS -->
+    <script src="~/js/summernote/summernote.js"></script>
+
+    <script type="text/javascript" src="~/js/bs-filestyle.js"></script>
+        
+    <script>
+
+        function ConfirmContactNumber() {
+
+            var myformdata = $("#CreateEmailAddressForm").serialize();
+            var url = "@Url.Action("EditEmailAddress", "Home", new {area= "Customers" })";
+
+            $.ajax({
+                type: "POST",
+                data: myformdata,
+                url: url,
+                success: function (data) {
+
+                    $("#ModalPlaceHolder").modal("hide");
+
+                    $("#emailAddress_" + data.id).html(data.address);
+                    if (data.defaultvalue) {
+                        $("#emailDefault_" + data.id).html('<i class="fa fa-check"></i>');
+                    } else {
+                        $("#emailDefault_" + data.id).html('<i class="fa fa-close"></i>');
+                    } 
+
+                },
+                error: function (xhr, textStatus, err) {
+                    alert("An error with the following detials occured : "
+                        + "\r\n == readyState: " + xhr.readyState
+                        + "\r\n == responseText: " + xhr.responseText
+                        + "\r\n == status: " + xhr.status
+                        + "\r\n == text status: " + textStatus
+                        + "\r\n == error: " + err);
+                }
+            });
+        }
+    </script>

@@ -1,0 +1,56 @@
+﻿@using Identity.Base.Entities
+@using Microsoft.AspNetCore.Identity
+@inject SignInManager<ApplicationUser> SignInManager
+
+<div class="header-navigation-area two-layers-header header-middlee bt_stick bt_sticky">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <a class="navbar-brand logo f-left mrt-10 mrt-md-0" asp-controller="Home" asp-action="Index">
+                    <img id="logo-image" class="img-center" src="/images/Rectangular_Olympia_Logo.png" alt="">
+                </a>
+                <div class="mobile-menu-right"></div>
+                <div class="header-searchbox-style-two d-none d-xl-block">
+                    @if (SignInManager.IsSignedIn(User))
+                    {
+                        <div class="side-panel side-panel-trigger text-right d-none d-lg-block">
+                            <span class="bar1"></span>
+                            <span class="bar2"></span>
+                            <span class="bar3"></span>
+                        </div>
+                    }
+                    <div class="show-searchbox">
+                        <a href="#"><i class="webex-icon-Search"></i></a>
+                    </div>
+                    <div class="toggle-searchbox">
+                        <form action="#" id="searchform-all" method="get">
+                            <div>
+                                <input type="text" id="s" class="form-control" placeholder="Search...">
+                                <div class="input-box">
+                                    <input type="submit" value="" id="searchsubmit"><i class="fas fa-search"></i>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                
+                @Html.Partial("Menus/Admin")
+                
+                <div class="main-menu f-right">
+                    <nav id="mobile-menu-right">
+                        <nav id="mobile-menu-right">
+                            <ul>
+                                <li><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
+                                <li><a asp-page="/Engage">Engage</a></li>
+                                <li><a asp-page="/Digital">Digital</a></li>
+                                <li><a asp-page="/Who_we_are">Who are We</a></li>
+                                <li><a asp-page="/Locate-us">Locate Us</a></li>
+                                <li><a asp-page="/Contact">Get in Touch</a></li>
+                            </ul>
+                        </nav>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

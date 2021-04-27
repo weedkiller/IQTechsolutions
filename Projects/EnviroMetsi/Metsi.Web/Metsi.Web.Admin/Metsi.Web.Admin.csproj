@@ -1,0 +1,107 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <UserSecretsId>6e3aa538-e8c4-4439-bf3c-17360e44c3f5</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Content Remove="Views\Shared\Components\CourseCategories\Default.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="Areas\Calendar\Views\Appointments\Edit.cshtml" />
+    <None Include="Areas\Calendar\Views\Appointments\Index.cshtml" />
+    <None Include="Areas\Calendar\Views\Appointments\_AppointmentInfo.cshtml" />
+    <None Include="Areas\Calendar\Views\Appointments\_DeleteAppointment.cshtml" />
+    <None Include="Areas\Calendar\Views\Assessments\_Create.cshtml" />
+    <None Include="Areas\Calendar\Views\Assessments\_FormElement.cshtml" />
+    <None Include="Areas\Calendar\Views\Home\Index.cshtml" />
+    <None Include="Areas\Calendar\Views\Locations\Create.cshtml" />
+    <None Include="Areas\Calendar\Views\Locations\Edit.cshtml" />
+    <None Include="Areas\Calendar\Views\Locations\Index.cshtml" />
+    <None Include="Areas\Calendar\Views\Locations\_AddExistingTask.cshtml" />
+    <None Include="Areas\Calendar\Views\Locations\_AddMarkerLocation.cshtml" />
+    <None Include="Areas\Calendar\Views\Routes\Create.cshtml" />
+    <None Include="Areas\Calendar\Views\Routes\Edit.cshtml" />
+    <None Include="Areas\Calendar\Views\Routes\Index.cshtml" />
+    <None Include="Areas\Calendar\Views\Shared\_Layout.cshtml" />
+    <None Include="Areas\Calendar\Views\ToDo\Edit.cshtml" />
+    <None Include="Areas\Calendar\Views\ToDo\EditWorkItem.cshtml" />
+    <None Include="Areas\Calendar\Views\ToDo\Index.cshtml" />
+    <None Include="Areas\Calendar\Views\ToDo\_CreateToDoItem.cshtml" />
+    <None Include="Areas\Calendar\Views\Work\Create.cshtml" />
+    <None Include="Areas\Calendar\Views\Work\Edit.cshtml" />
+    <None Include="Areas\Calendar\Views\Work\Index.cshtml" />
+    <None Include="Areas\Calendar\Views\Work\_CreateWorkItem.cshtml" />
+    <None Include="Areas\Calendar\Views\Work\_EditWorkItem.cshtml" />
+    <None Include="Areas\Calendar\Views\_ViewImports.cshtml" />
+    <None Include="Areas\Calendar\Views\_ViewStart.cshtml" />
+    <None Include="Areas\Documents\Views\Home\Index.cshtml" />
+    <None Include="Areas\Documents\Views\Shared\_Layout.cshtml" />
+    <None Include="Areas\Documents\Views\_ViewImports.cshtml" />
+    <None Include="Areas\Documents\Views\_ViewStart.cshtml" />
+    <None Include="Areas\FileManager\Views\Home\Geust.cshtml" />
+    <None Include="Areas\FileManager\Views\Home\Index.cshtml" />
+    <None Include="Areas\FileManager\Views\Shared\_Layout.cshtml" />
+    <None Include="Areas\FileManager\Views\_ViewImports.cshtml" />
+    <None Include="Areas\FileManager\Views\_ViewStart.cshtml" />
+    <None Include="Areas\Messaging\Views\Home\Chat.cshtml" />
+    <None Include="Areas\Messaging\Views\Home\Contacts.cshtml" />
+    <None Include="Areas\Messaging\Views\Home\Friends.cshtml" />
+    <None Include="Areas\Messaging\Views\Home\Groups.cshtml" />
+    <None Include="Areas\Messaging\Views\Home\_CreateChat.cshtml" />
+    <None Include="Areas\Messaging\Views\Home\_EditChat.cshtml" />
+    <None Include="Areas\Messaging\Views\Shared\_Layout.cshtml" />
+    <None Include="Areas\Messaging\Views\_ViewImports.cshtml" />
+    <None Include="Areas\Messaging\Views\_ViewStart.cshtml" />
+    <None Include="Areas\Profile\Views\Shared\_Layout.cshtml" />
+    <None Include="Views\Shared\Components\ActiveChats\Default.cshtml" />
+    <None Include="Views\Shared\Components\CalendarTaskMenu\Default.cshtml" />
+    <None Include="Views\Shared\Components\CourseCategories\Default.cshtml" />
+    <None Include="Views\Shared\Components\Messages\Default.cshtml" />
+    <None Include="Views\Shared\Components\NewsFeed\Default.cshtml" />
+    <None Include="Views\Shared\Components\ProblemCategoryList\Default.cshtml" />
+    <None Include="Views\Shared\Components\TimeLine\Default.cshtml" />
+    <None Include="wwwroot\js\cropper-master\.github\CODE_OF_CONDUCT.md" />
+    <None Include="wwwroot\js\cropper-master\.github\CONTRIBUTING.md" />
+    <None Include="wwwroot\js\cropper-master\.github\ISSUE_TEMPLATE\bug_report.md" />
+    <None Include="wwwroot\js\cropper-master\.github\PULL_REQUEST_TEMPLATE.md" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="wwwroot\Courses\Advanced Water Treatment Control\Water Treatement Overview 1\Overview and basic principles and practices of the treatment processes in water services\" />
+    <Folder Include="wwwroot\images\mobile\content\" />
+    <Folder Include="wwwroot\Students\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.OpenIdConnect" Version="5.0.4" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="5.0.4" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="5.0.4">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+    <PackageReference Include="Syncfusion.EJ2.AspNet.Core" Version="19.1.0.54" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\Modules\Blogging\Blogging.Core\Blogging.Core.csproj" />
+    <ProjectReference Include="..\..\..\..\Modules\Customers\Customers.Base\Customers.Base.csproj" />
+    <ProjectReference Include="..\..\..\..\Modules\Customers\Customers.Core\Customers.Core.csproj" />
+    <ProjectReference Include="..\..\..\..\Modules\Education\Education.Base\Education.Base.csproj" />
+    <ProjectReference Include="..\..\..\..\Modules\Education\Education.Core\Education.Core.csproj" />
+    <ProjectReference Include="..\..\..\..\Modules\Employment\Employment.Core\Employment.Core.csproj" />
+    <ProjectReference Include="..\..\..\..\Modules\Feedback\Feedback.Core\Feedback.Core.csproj" />
+    <ProjectReference Include="..\..\..\..\Modules\Filing\Filing.Core\Filing.Core.csproj" />
+    <ProjectReference Include="..\..\..\..\Modules\Grouping\Grouping.Core\Grouping.Core.csproj" />
+    <ProjectReference Include="..\..\..\..\Modules\Messaging\Messaging.Base\Messaging.Base.csproj" />
+    <ProjectReference Include="..\..\..\..\Modules\Messaging\Messaging.Core\Messaging.Core.csproj" />
+    <ProjectReference Include="..\..\..\..\Modules\Projects\Projects.Core\Projects.Core.csproj" />
+    <ProjectReference Include="..\..\..\..\Modules\Services\Services.Core\Services.Core.csproj" />
+    <ProjectReference Include="..\..\Metsi.Base\Metsi\Metsi.csproj" />
+    <ProjectReference Include="..\Metsi.Web.Datastore\Metsi.Web.Datastore.csproj" />
+  </ItemGroup>
+
+</Project>

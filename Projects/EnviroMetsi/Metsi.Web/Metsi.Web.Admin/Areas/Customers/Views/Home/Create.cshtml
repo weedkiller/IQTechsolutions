@@ -1,0 +1,132 @@
+﻿@model Customers.Core.Models.CustomerAddEditModel
+
+@{
+    ViewData["Title"] = "Create New Employee";
+}
+
+<form asp-action="Create" enctype="multipart/form-data" method="post">
+    
+    <div class="col-md-12">
+        <div class="panel panel-success" data-sortable-id="ui-widget-11">
+            <div class="panel-heading">
+                <div class="panel-heading-btn">
+                    <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-default" data-click="panel-expand"><i class="fa fa-expand"></i></a>
+                    <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-success" data-click="panel-reload"><i class="fa fa-repeat"></i></a>
+                    <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-warning" data-click="panel-collapse"><i class="fa fa-minus"></i></a>
+                </div>
+                <h4 class="panel-title"><strong>Employee Details</strong></h4>
+            </div>
+            <div class="panel-body">
+                <!-- begin profile-section -->
+                <div class="profile-section">
+                    <!-- begin profile-left -->
+                    <div class="profile-left">
+                        <!-- begin profile-image -->
+                        <div class="previewd" style="overflow: hidden">
+                            <img id="preview" src="@Model.Customer.GetPath("http://admin.metsi.co.za", ImageType.Cover, "/images/placeholders/profileImage128x128.png")" style="width: 100%;" />
+                        </div>
+                        <!-- end profile-image -->
+                        <div class="m-b-10">
+                            <a for="coverUpload" onclick="getImageFile()" class="btn btn-warning btn-block btn-sm">Edit Profile Image</a>
+                            <input asp-for="CoverUpload" style="display: none" onchange="loadFile(event)" accept="image/*" type="file" />
+                            <input type="hidden" asp-for="CoverCropSettings.X" />
+                            <input type="hidden" asp-for="CoverCropSettings.Y" />
+                            <input type="hidden" asp-for="CoverCropSettings.Width" />
+                            <input type="hidden" asp-for="CoverCropSettings.Height" />
+                            <input type="hidden" asp-for="CoverCropSettings.Rotate" />
+                            <input type="hidden" asp-for="CoverCropSettings.ScaleX" />
+                            <input type="hidden" asp-for="CoverCropSettings.ScaleY" />
+                        </div>
+                    </div>
+                    <!-- end profile-left -->
+                    <!-- begin profile-right -->
+                    <div class="profile-right">
+                        <!-- begin profile-info -->
+                        <div class="profile-info">
+                            <!-- begin table -->
+                            <div class="table-responsive">
+                                <table class="table table-profile">
+                                    <thead>
+                                        <tr>
+                                            <th colspan="4">
+                                                <h4>@Model.Customer.Name</h4>
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td colspan="4">
+                                                <h5>Personal Details</h5>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="field"><label asp-for="Customer.Name" class="control-label">Company Name</label></td>
+                                            <td colspan="3"><input asp-for="Customer.Name" type="text" class="form-control" placeholder="Enter your first name" required /></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="field"><label asp-for="PhoneNr" class="control-label">Phone Nr</label></td>
+                                            <td><input asp-for="PhoneNr" type="text" class="form-control" placeholder="Enter your phone nr"/></td>
+                                            <td class="field"><label asp-for="Email" class="control-label">Email Address</label></td>
+                                            <td><input asp-for="Email" type="text" class="form-control" placeholder="Enter your email address"/></td>
+                                        </tr>
+                                        <tr class="divider">
+                                            <td colspan="4"></td>
+                                        </tr>
+                                        <tr class="divider">
+                                            <td colspan="4"></td>
+                                        </tr>
+                                        <tr class="highlight">
+                                            <td class="field"><label asp-for="Customer.Description" class="control-label">Description</label></td>
+                                            <td colspan="3"><textarea asp-for="Customer.Description" class="form-control" placeholder="Add personal description" rows="4"></textarea></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <!-- end table -->
+
+                        </div>
+                        <!-- end profile-info -->
+                    </div>
+                    <!-- end profile-right -->
+                </div>
+                <!-- end profile-section -->
+            </div>
+        </div>
+    </div>
+    
+    <div class="row">
+        <div class="col-lg-6"><input name="finnish" type="submit" value="Create" class="btn btn-primary btn-block" /></div>
+        <div class="col-lg-6"><a asp-area="Employees" asp-controller="Home" asp-action="List" class="btn btn-danger btn-block">Cancel</a></div>
+    </div>
+</form>
+
+@section Scripts{
+    <script>
+        var loadFile = function (event) {
+            var output = document.getElementById('preview');
+            if (event.target.files.length !== 0) {
+
+                var oldstring = "";
+                if (output === null) {
+                    oldstring = "/images/placeholders/MetsiPlaceholder-370x352.jpg";
+                } else {
+                    oldstring = output.src;
+                }
+
+                var url = "/Home/CropImage?cropUrl=" + URL.createObjectURL(event.target.files[0]) + "&originalUrl=" + oldstring + "&width=" + 300 + "&height=" + 300
+                    + "&previewClass=previewd" + "&uploadProperty=CoverUpload" + "&xTag=CoverCropSettings_X" + "&yTag=CoverCropSettings_Y"
+                    + "&widthTag=CoverCropSettings_Width" + "&heightTag=CoverCropSettings_Height" + "&rotateTag=CoverCropSettings_Rotate" + "&scaleXTag=CoverCropSettings_ScaleX"
+                    + "&scaleYTag=CoverCropSettings_ScaleY";
+
+                $("#CropModal").load(url,
+                    function () {
+                        $("#CropModal").modal("show");
+                    });
+            }
+        };
+
+        function getImageFile() {
+            document.getElementById("CoverUpload").click();
+        }
+    </script>
+}

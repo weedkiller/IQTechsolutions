@@ -1,0 +1,78 @@
+﻿@model Event
+
+@{
+    ViewData["Title"] = $"Registrations for {Model.Heading}";
+}
+
+<h3>There are @Model.Registrations.Count() registrations with @Model.Registrations.Sum(c => c.Attendees) attending @Model.Heading</h3>
+<h4>These are the registrations :</h4>
+
+<table class="table" style="min-height: 280px;">
+    <thead>
+        <tr>
+            <th>
+                Registrant
+            </th>
+            <th>
+                Email
+            </th>
+            <th>
+                Contact Nr
+            </th>
+            <th>
+                Attendees
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model.Registrations.Any())
+        {
+            foreach (var item in Model.Registrations)
+            {
+        <tr id="row_@item.Id" class="row_@item.Id">
+            <td>
+                @item.FirstName  @item.LastName
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EmailAddress)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ContactNr)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Attendees)
+            </td>
+            <td>
+                <a href="javascript:;" onclick="ShowDeleteModal('@item.Id')" class="btn btn-xs btn-danger"><i class="fa fa-trash"></i></a>
+            </td>
+        </tr>
+            }
+        }
+        else
+        {
+            <tr>
+                <td colspan="9">
+                    <h4>No registrations have been made for this event</h4>
+                </td>
+            </tr>
+        }
+
+    </tbody>
+</table>
+
+
+@section Scripts
+{
+    <script>
+        function ShowDeleteModal(ff) {
+
+            var url = "/Events/Home/DeleteEventRegistration?id=" + ff;
+
+            $("#ModalPlaceHolder").load(url,
+                function () {
+                    $("#ModalPlaceHolder").modal("show");
+                });
+        }
+    </script>
+}

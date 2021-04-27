@@ -1,0 +1,76 @@
+﻿@model FormElement<Course>
+
+<div class="col-md-9">
+
+    @if (Model.ElementType == FormElementType.SingleLineText)
+    {
+        <div class="form-group">
+            <label class="col-md-3 control-label">@Model.ElementName</label>
+            <div class="col-md-9">
+                <input type="text" id="@Model.Id" class="form-control" readonly="readonly" />
+            </div>
+        </div>
+    }
+    else if (Model.ElementType == FormElementType.MultiLineText)
+    {
+        <div class="form-group">
+            <label class="col-md-3 control-label">@Model.ElementName</label>
+            <div class="col-md-9">
+                <textarea type="text" id="@Model.Id" class="form-control" readonly="readonly" style="height: 100px;"></textarea>
+            </div>
+        </div>
+    }
+    else if (Model.ElementType == FormElementType.Decimal)
+    {
+        <div class="form-group">
+            <label class="col-md-3 control-label">@Model.ElementName</label>
+            <div class="col-md-9">
+                <input type="number" id="@Model.Id" class="form-control" readonly="readonly" />
+            </div>
+        </div>
+    }
+    else if (Model.ElementType == FormElementType.Number)
+    {
+        <div class="form-group">
+            <label class="col-md-3 control-label">@Model.ElementName</label>
+            <div class="col-md-9">
+                <input type="number" id="@Model.Id" class="form-control" readonly="readonly" />
+            </div>
+        </div>
+    }
+    else if (Model.ElementType == FormElementType.Image)
+    {
+        <div class="form-group">
+            <label class="col-md-3 control-label">@Model.ElementName</label>
+            <div class="col-md-9">
+                <input type="file" id="@Model.Id" class="form-control" />
+            </div>
+        </div>
+    }
+</div>
+<div class="col-md-3">
+    <a asp-area="Courses" asp-controller="Modules" asp-action="Edit" asp-route-id="@Model.Id"><i class="fa fa-edit"></i></a>
+    <a href="javascript:;" onclick="ShowDeleteAssessmentModal('@Model.Id')"><i class="fa fa-trash"></i></a>
+</div>
+
+<script>
+    function ShowEditAssessmentElementModel(ff) {
+
+        var url = "/Courses/Home/EditAssessmentElement?id=" + ff;
+
+        $("#ModalPlaceHolder").load(url,
+            function () {
+                $("#ModalPlaceHolder").modal("show");
+            });
+    }
+
+    function ShowDeleteAssessmentModal(id) {
+
+        var url = "/Courses/Home/DeleteAssessmentElement?id=" + studentId;
+
+        $("#ModalPlaceHolder").load(url,
+            function () {
+                $("#ModalPlaceHolder").modal("show");
+            });
+    }
+</script>

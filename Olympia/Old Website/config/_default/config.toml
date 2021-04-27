@@ -1,0 +1,6 @@
+baseURL = "https://www.olympia.team/"
+languageCode = "en-us"
+title = "Olympia Engagement Platform"
+theme = "custom-theme"
+[params]
+env = "development"

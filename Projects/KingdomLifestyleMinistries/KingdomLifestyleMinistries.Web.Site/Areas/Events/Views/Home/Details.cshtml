@@ -1,0 +1,62 @@
+﻿@model EventDetailsPageModel
+
+@{
+    ViewData["Title"] = $"{Model.Entity.Heading}";
+}
+
+<section>
+    <div class="container">
+        <div class="section-content">
+            <div class="row">
+                <div class="col-xs-6 col-sm-6 col-md-6">
+                    <img id="preview" style="height: auto;" class="img-thumbnail" title="@Model.Entity.Heading" alt="@Model.Entity.Heading" src="@Model.Entity.GetImage().GetImagePathFromAnotherWebsite(FrameworkDI.Configuration["Company:WebUrl"],FrameworkDI.Configuration["Placeholders:CoverImage"])">
+                </div>
+                <div class="col-xs-6 col-sm-6 col-md-6">
+                    <h3>@Model.Entity.Heading</h3>
+                    <hr />
+                    <ul class="list theme-colored">
+                        <li><strong>Date :</strong> @Model.Entity.StartDate.ToShortDateString() to @Model.Entity.EndDate.ToShortDateString()</li>
+                        <li><strong>Start :</strong> @Model.Entity.StartTime</li>
+                        <li><strong>End :</strong> @Model.Entity.EndTime</li>
+                        <li><strong>Place :</strong> @Model.Entity.Location</li>
+
+                        <li>
+                            <strong>Contacts :</strong>
+                            <ul>
+                                @foreach (var item in Model.Entity.Contacts)
+                                {
+                                <li>
+                                    @item.Contact?.FirstName @item.Contact?.LastName - @item.Contact?.ContactNumbers.Where(c => c.Default)?.FirstOrDefault()?.Number
+                                </li>
+
+                                }
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <h3 class="line-bottom">Description</h3>
+                    <p class="lead">@Html.Raw(Model.Entity.Description)</p>
+                </div>
+            </div>
+            <hr/>
+            <div class="row">
+                <a href="javascript:;" onclick="ShowEventRegistrationModel('@Model.Entity.Id')" class="btn btn-info btn-block btn-lg">Register for this Event</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+    function ShowEventRegistrationModel(ff) {
+
+        var url = "/Events/Home/EventRegistration?eventId=" + ff;
+
+        $("#ModalPlaceHolder").load(url,
+            function () {
+                $("#ModalPlaceHolder").modal("show");
+            });
+    }
+</script>

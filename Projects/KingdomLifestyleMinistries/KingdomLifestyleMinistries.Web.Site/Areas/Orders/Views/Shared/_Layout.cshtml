@@ -1,0 +1,26 @@
+﻿@inject SignInManager<ApplicationUser> SignInManager
+
+@{
+    Layout = "Layouts/_Layout";
+}
+
+@section Styles
+    {
+    <!--page injected css-->
+    @RenderSection("Styles", required: false)
+}
+
+<!-- begin panel -->
+<section id="about-us" class="page-section">
+    <div class="container">
+        <h4 class="text-center">@ViewData["Title"]</h4>
+        @RenderBody()
+    </div>
+</section>
+
+@section Scripts
+    {
+    @RenderSection("Scripts", required: false)
+
+    
+}

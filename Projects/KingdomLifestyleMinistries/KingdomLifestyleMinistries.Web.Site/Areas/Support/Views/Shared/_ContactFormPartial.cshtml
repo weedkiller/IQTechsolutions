@@ -1,0 +1,43 @@
+﻿@model TicketAddEditModel
+
+<form asp-area="Support" asp-controller="Home" asp-action="Create" enctype="multipart/form-data" method="post">
+
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="form-group mb-30">
+                <input asp-for="FirstName" class="form-control" type="text" placeholder="Enter First Name" required>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="form-group mb-30">
+                <input asp-for="LastName" class="form-control" type="text" placeholder="Enter Last Name" required>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="form-group mb-30">
+                <input asp-for="EmailAddress" class="form-control required email" type="email" placeholder="Enter Email" required>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="form-group mb-30">
+                <input asp-for="PhoneNr" class="form-control required email" placeholder="Enter Phone Nr" required>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="form-group mb-30">
+                <input asp-for="Subject" class="form-control required" type="text" placeholder="Enter Subject" required>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <textarea asp-for="Content" class="form-control required" rows="5" placeholder="Enter Message"></textarea>
+    </div>
+    <div class="form-group">
+        <input name="form_botcheck" class="form-control" type="hidden" value="" />
+        <button type="submit" class="btn btn-flat btn-theme-colored text-uppercase mt-10 mb-sm-30 border-left-theme-color-2-4px" data-loading-text="Please wait...">Send your message</button>
+        <button type="reset" class="btn btn-flat btn-theme-colored text-uppercase mt-10 mb-sm-30 border-left-theme-color-2-4px">Reset</button>
+    </div>
+</form>

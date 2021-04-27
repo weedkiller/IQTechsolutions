@@ -1,0 +1,52 @@
+﻿@model IEnumerable<Google.Apis.YouTube.v3.Data.SearchResult>
+@{
+    ViewData["Title"] = "Videos";
+}
+
+<section id="content" class="light_section blog no-sidebar">
+    <div class="container">
+        <div class="row">
+            <!-- main content -->
+            <div class="col-sm-10 col-sm-push-1">
+
+                @if (Model.Any())
+                {
+                    @foreach (var item in Model)
+                    {
+                        <div class="col-md-4" style="padding-bottom: 10px;">
+                            <article class="post format-video">
+                                <header class="entry-header">
+                                    <div class="entry-thumbnail">
+                                        <a href="https://www.youtube.com/watch?v=@item.Id.VideoId" target="_blank">
+                                            <img src="@item.Snippet.Thumbnails.Medium.Url" alt="@item.Snippet.Title" />
+                                        </a>
+                                    </div>
+                                    <h4 class="entry-title" style="min-height: 50px;">
+                                        <a href="https://www.youtube.com/watch?v=@item.Id.VideoId" target="_blank">
+                                            @item.Snippet.Title.TruncateLongString(60)
+                                        </a>
+                                    </h4>
+                                    <div>
+                                        <a href="https://www.youtube.com/watch?v=@item.Id.VideoId" class="btn btn-block btn-primary" target="_blank">
+                                            View
+                                        </a>
+                                    </div>
+                                    <!-- .entry-meta -->
+                                </header>
+                                <!-- .entry-header -->
+                            </article>
+                            <!-- .post -->
+                        </div>
+                    }
+                }
+                else
+                {
+                    <h3>There are currently no Videos available, please check back later</h3>
+                }
+
+            </div> <!--eof col-sm-10 (main content)-->
+
+
+        </div>
+    </div>
+</section>

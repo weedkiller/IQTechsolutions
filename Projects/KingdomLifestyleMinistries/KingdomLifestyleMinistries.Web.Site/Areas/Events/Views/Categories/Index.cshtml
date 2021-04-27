@@ -1,0 +1,55 @@
+﻿@model CategoryIndexModel<Category<Event>>
+
+@{
+    ViewData["Title"] = "Event Categories";
+}
+
+<table class="table">
+    <thead>
+    <tr>
+        <th style="width: 15%">
+            Cover Image
+        </th>
+        <th>
+            Name
+        </th>
+        <th>
+            Description
+        </th>
+        <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    @if (Model.All.Any())
+    {
+         foreach (var item in Model.All)
+         {
+             <tr>
+                 <td>
+                     <a href="@Url.Action("Details", "Categories", new {id = item.Id})">
+                         <img id="preview" style="height: auto;" class="img-thumbnail" title="@item.Name" alt="@item.Name" src="~/@item.GetImage().GetImagePathFromAnotherWebsite(FrameworkDI.Configuration["Company:WebUrl"],FrameworkDI.Configuration["Placeholders:CoverImage"])">
+                     </a>
+                 </td>
+                 <td>
+                     @Html.DisplayFor(modelItem => item.Name)
+                 </td>
+                 <td>
+                     @Html.DisplayFor(modelItem => item.Description)
+                 </td>
+                 <td>
+                     <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-xs btn-info"><i class="fa fa-edit"></i></a>
+                     <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-xs btn-info"><i class="fa fa-eye"></i></a>
+                     <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-xs btn-danger"><i class="fa fa-trash"></i></a>
+                 </td>
+             </tr>
+         }
+    }
+    else
+    {
+        <tr>
+            <td colspan="6"><h4>No Categories currently available, please check back later or <a asp-area="Services" asp-controller="Categories" asp-action="Create">Create a new Category</a></h4></td>
+        </tr>
+    }
+    
+    </tbody>
+</table>

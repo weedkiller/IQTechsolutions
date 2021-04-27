@@ -1,0 +1,253 @@
+﻿<nav id="mainnav-container">
+    <div id="mainnav">
+        <!--Menu-->
+        <!--================================-->
+        <div id="mainnav-menu-wrap">
+            <div class="nano">
+                <div class="nano-content">
+                    <ul id="mainnav-menu" class="list-group">
+
+                        <!--Category name-->
+                        <li class="list-header">Navigation</li>
+
+                        <!--Menu list item-->
+                        <li class="active-link">
+                            <a asp-area="Dashboard" asp-controller="Home" asp-action="Index">
+                                <i class="fa fa-dashboard"></i>
+                                <span class="menu-title">
+                                    <strong>Dashboard</strong>
+                                </span>
+                            </a>
+                        </li>
+
+                        <!--Menu list item-->
+                        <li class="">
+                            <a asp-area="" asp-controller="Home" asp-action="Index">
+                                <i class="fa fa-dashboard"></i>
+                                <span class="menu-title">
+                                    <strong>Main Site</strong>
+                                </span>
+                            </a>
+                        </li>
+
+                        <li class="list-header">Personal</li>
+
+
+
+                        <!--Menu list item-->
+                        <li>
+                            <a href="#">
+                                <i class="fa fa-plus-square"></i>
+                                <span class="menu-title">My Account</span>
+                                <i class="arrow"></i>
+                            </a>
+
+                            <!--Submenu-->
+                            <ul class="collapse">
+                                <li><a asp-area="Identity" asp-controller="Profile" asp-action="Index">Profile</a></li>
+                                <li><a asp-area="Identity" asp-controller="Profile" asp-action="Timeline">Timeline</a></li>
+                                <li><a asp-area="Orders" asp-controller="Invoice" asp-action="List">Invoices</a></li>
+                                <li class="list-divider"></li>
+                                <li>
+                                    <a href="#">Orders<i class="arrow"></i></a>
+
+                                    <!--Submenu-->
+                                    <ul class="collapse">
+                                        <li><a asp-area="" asp-controller="Home" asp-action="CommingSoon">Track</a></li>
+                                        <li><a asp-area="Orders" asp-controller="Home" asp-action="List">Open Orders</a></li>
+                                        <li><a asp-area="Orders" asp-controller="Home" asp-action="Archives">Archived</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            <a href="#">
+                                <i class="fa fa-users"></i>
+                                <span class="menu-title">Social</span>
+                                <i class="arrow"></i>
+                            </a>
+
+                            <!--Submenu-->
+                            <ul class="collapse">
+                                <li><a asp-area="Chats" asp-controller="Home" asp-action="Chat">Chat</a></li>
+                                <li><a asp-area="Chats" asp-controller="Home" asp-action="Groups">Chat Groups</a></li>
+                                <li><a asp-area="Feeds" asp-controller="Home" asp-action="Index">NewsFeed</a></li>
+                                <li><a asp-area="Chats" asp-controller="Home" asp-action="Friends">Friends</a></li>
+                                <li><a asp-area="Chats" asp-controller="Home" asp-action="Contacts">Contacts</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="list-divider"></li>
+
+                        <!--Category name-->
+                        <li class="list-header">Products & Services</li>
+
+
+                        <!--Menu list item-->
+                        <li>
+                            <a href="#">
+                                <i class="fa fa-th"></i>
+                                <span class="menu-title">
+                                    @if (User.IsInRole("Admin"))
+                                    {
+                                        <strong>Products</strong>
+                                    }
+                                    else
+                                    {
+                                        <strong>My Products</strong>
+                                    }
+
+                                </span>
+                                <i class="arrow"></i>
+                            </a>
+
+                            <!--Submenu-->
+                            <ul class="collapse">
+                                @if (User.IsInRole("Admin"))
+                                {
+                                    <li><a asp-area="Products" asp-controller="Categories" asp-action="List">Categories</a></li>
+                                }
+                                <li><a asp-area="Products" asp-controller="Home" asp-action="List">List</a></li>
+                                <li><a asp-area="Products" asp-controller="Home" asp-action="Create">Create</a></li>
+                            </ul>
+                        </li>
+
+                        <!--Menu list item-->
+                        <li>
+                            <a href="#">
+                                <i class="fa fa-flask"></i>
+                                <span class="menu-title">
+                                    <strong>Services</strong>
+                                </span>
+                                <i class="arrow"></i>
+                            </a>
+
+                            <!--Submenu-->
+                            <ul class="collapse">
+                                <li><a asp-area="Services" asp-controller="Home" asp-action="List">List</a></li>
+                                <li><a asp-area="Services" asp-controller="Home" asp-action="Create">Create</a></li>
+                            </ul>
+                        </li>
+
+                        @if (User.IsInRole("Admin"))
+                        {
+                            <li class="list-divider"></li>
+
+                            <!--Category name-->
+                            <li class="list-header">Administration</li>
+
+                            <!--Menu list item-->
+                            <li>
+                                <a href="#">
+                                    <i class="fa fa-briefcase"></i>
+                                    <span class="menu-title">Sellers</span>
+                                    <i class="arrow"></i>
+                                </a>
+
+                                <!--Submenu-->
+                                <ul class="collapse">
+                                    <li><a asp-area="Sellers" asp-controller="Home" asp-action="List" asp-route-confirmed="true">Approved</a></li>
+                                    <li><a asp-area="Sellers" asp-controller="Home" asp-action="List" asp-route-confirmed="false">Confirm Sellers</a></li>
+                                </ul>
+                            </li>
+
+                            <!--Menu list item-->
+                            <!--Menu list item-->
+                            <li>
+                                <a href="#">
+                                    <i class="fa fa-list"></i>
+                                    <span class="menu-title">Support Tickets</span>
+                                    <i class="arrow"></i>
+                                </a>
+
+                                <!--Submenu-->
+                                <ul class="collapse">
+                                    <li><a asp-area="Support" asp-controller="Home" asp-action="Index" asp-route-status="open">Open</a></li>
+                                    <li><a asp-area="Support" asp-controller="Home" asp-action="Index" asp-route-status="closed">Closed</a></li>
+                                </ul>
+                            </li>
+
+
+                            <li class="list-divider"></li>
+
+                            <!--Category name-->
+                            <li class="list-header">Extra</li>
+
+                            <li>
+                                <a asp-area="" asp-controller="Home" asp-action="CommingSoon">
+                                    <i class="fa fa-university"></i>
+                                    <span class="menu-title">
+                                        <strong>Affiliates</strong>
+                                    </span>
+                                </a>
+                            </li>
+
+                            <!--Menu list item-->
+                            <li>
+                                <a href="#">
+                                    <i class="fa fa-plug"></i>
+                                    <span class="menu-title">
+                                        FAQ's'
+                                        <span class="label label-mint pull-right">New</span>
+                                    </span>
+                                </a>
+
+                                <!--Submenu-->
+                                <ul class="collapse">
+                                    <li><a asp-area="Faqs" asp-controller="Home" asp-action="Index">List</a></li>
+                                    <li><a asp-area="Faqs" asp-controller="Home" asp-action="Create">Create</a></li>
+
+                                </ul>
+                            </li>
+                        }
+                    </ul>
+
+
+                    <!--Widget-->
+                    <!--================================-->
+                    <div class="mainnav-widget">
+
+                        <!-- Show the button on collapsed navigation -->
+                        <div class="show-small">
+                            <a href="#" data-toggle="menu-widget" data-target="#demo-wg-server">
+                                <i class="fa fa-desktop"></i>
+                            </a>
+                        </div>
+
+                        <!-- Hide the content on collapsed navigation -->
+                        <div id="demo-wg-server" class="hide-small mainnav-widget-content">
+                            <ul class="list-group">
+                                <li class="list-header pad-no pad-ver">Server Status</li>
+                                <li class="mar-btm">
+                                    <span class="label label-primary pull-right">15%</span>
+                                    <p>CPU Usage</p>
+                                    <div class="progress progress-sm">
+                                        <div class="progress-bar progress-bar-primary" style="width: 15%;">
+                                            <span class="sr-only">15%</span>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="mar-btm">
+                                    <span class="label label-purple pull-right">0%</span>
+                                    <p>Bandwidth</p>
+                                    <div class="progress progress-sm">
+                                        <div class="progress-bar progress-bar-purple" style="width: 0%;">
+                                            <span class="sr-only">75%</span>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="pad-ver"><a asp-area="" asp-controller="Home" asp-action="CommingSoon" class="btn btn-success btn-bock">View Details</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!--================================-->
+                    <!--End widget-->
+
+                </div>
+            </div>
+        </div>
+        <!--================================-->
+        <!--End menu-->
+    </div>
+</nav>

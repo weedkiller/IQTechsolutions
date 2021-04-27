@@ -1,0 +1,245 @@
+﻿@model ModuleAddEditModel
+
+@{
+    ViewData["Title"] = "Create New Module";
+    ViewData["Description"] = "Updates a current training course to the collection";
+
+    string[] items = new string[] { "Download", "SortBy", "Refresh", "Selection", "View", "Details" };
+    string[] files = new string[] { "Download", "|", "Details" };
+    string[] folder = new string[] { "Open", "|", "Download", "|", "Details" };
+    string[] layout = new string[] { "SortBy", "View", "Refresh", "|", "Details", "|", "SelectAll" };
+}
+
+@section Styles
+{
+    <!-- Bootstrap File Upload CSS -->
+    <link rel="stylesheet" href="~/css/summernote.css" type="text/css" />
+}
+
+<form asp-area="Courses" asp-controller="Modules" asp-action="Create" enctype="multipart/form-data" method="post">
+
+    <div class="col-md-12">
+        <div class="panel panel-success" data-sortable-id="ui-widget-11">
+            <div class="panel-heading">
+                <div class="panel-heading-btn">
+                    <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-default" data-click="panel-expand"><i class="fa fa-expand"></i></a>
+                    <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-success" data-click="panel-reload"><i class="fa fa-repeat"></i></a>
+                    <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-warning" data-click="panel-collapse"><i class="fa fa-minus"></i></a>
+                </div>
+                <h4 class="panel-title">Module Details (Save to add attributes like files, sections, etc.)</h4>
+            </div>
+            <div class="panel-body">
+
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <input type="hidden" asp-for="Entity.Id"/>
+                <input type="hidden" asp-for="Entity.CourseId"/>
+                <input type="hidden" asp-for="Entity.FolderPath"/>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label asp-for="Entity.Name" class="control-label col-md-2"></label>
+                            <div class="col-md-10" style="padding-left: 0;">
+                                <div class="form-group col-md-9">
+                                    <input asp-for="Entity.Name" class="form-control" />
+                                    <span asp-validation-for="Entity.Name" class="text-danger"></span>
+                                </div>
+                                <div class="form-group col-md-3">
+                                    <label asp-for="Entity.ModuleNr" class="control-label col-md-4"></label>
+                                    <div class="form-group col-md-8">
+                                        <input asp-for="Entity.ModuleNr" class="form-control" />
+                                        <span asp-validation-for="Entity.ModuleNr" class="text-danger"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        @if (!string.IsNullOrEmpty(Model.Entity.Course.FileFolder))
+                        {
+                            <div class="form-group">
+                                <label asp-for="Entity.FileFolder" class="control-label col-md-2"></label>
+                                <div class="col-md-10" style="padding-left: 0;">
+                                    <div class="form-group col-md-9">
+                                        <div class="input-group">
+                                            <span class="input-group-addon">Courses/@Model.Entity.Course.FileFolder/</span>
+                                            <input asp-for="Entity.FileFolder" class="form-control"/>
+                                            <span asp-validation-for="Entity.FileFolder" class="text-danger"></span>
+                                        </div>
+                                    </div>
+                                    <div class="form-group col-md-3">
+                                        <label class="checkbox-inline">
+                                            <input asp-for="DoNotCreateDocumentsFolder" type="checkbox"/>
+                                            Do Not Create Documents Folder
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                        <div class="form-group">
+                            <label asp-for="Entity.Description" class="control-label"></label>
+                            <textarea asp-for="Entity.Description" class="form-control" style="height: 150px"></textarea>
+                            <span asp-validation-for="Entity.Description" class="text-danger"></span>
+                        </div>
+                        <div class="form-group text-right">
+                            <input name="main" type="submit" value="Save" class="btn btn-primary" />
+                            <input name="finnish" type="submit" value="Submit & Finnish" class="btn btn-primary" />
+                            <a asp-area="Courses" asp-controller="Home" asp-action="Edit" asp-route-id="@Model.Entity.CourseId" class="btn btn-danger">Cancel</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-md-12">
+        <div class="row">
+
+            <ul class="nav nav-pills">
+                <li class="active"><a href="#nav-pills-tab-1" data-toggle="tab">Sections</a></li>
+                <li><a href="#nav-pills-tab-3" data-toggle="tab">Images</a></li>
+                <li><a href="#nav-pills-tab-5" data-toggle="tab">Slides</a></li>
+                <li><a href="#nav-pills-tab-6" data-toggle="tab">Assessment</a></li>
+                <li><a href="#nav-pills-tab-7" data-toggle="tab">Settings</a></li>
+            </ul>
+            <div class="tab-content">
+                <div class="tab-pane fade active in" id="nav-pills-tab-1">
+                    <h4 class="m-t-10">Section</h4>
+                    <table class="table">
+                        <tr>
+                            <th>
+                                Name
+                            </th>
+                            <th>
+                                Description
+                            </th>
+                            <th></th>
+                        </tr>
+                        <tr>
+                            <td colspan="3">
+                                <h4>
+                                    There are currently no sections available, please save this module to start adding sections.
+                                </h4>
+                            </td>
+                        </tr>
+
+                    </table>
+                    <a href="javascript:;" class="btn btn-block btn-info">Please Save to add New Section</a>
+                </div>
+                <div class="tab-pane fade" id="nav-pills-tab-3">
+                    <h4 class="m-t-10">Images</h4>
+                    <hr/>
+                    <div class="row" style="padding-bottom: 20px;">
+                        <div class="col-md-12 bottommargin text-center">
+                            <h5>Select your Images:</h5><br>
+                            <input asp-for="ImagesUpload" id="input-3" type="file" class="file" multiple data-show-upload="false" data-show-caption="true" data-show-preview="true">
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="nav-pills-tab-5">
+                    <h4 class="m-t-10">Slides</h4>
+                    <hr/>
+                    <table class="table">
+                        <tr>
+                            <th>
+                                Name
+                            </th>
+                            <th>
+                                Description
+                            </th>
+                            <th></th>
+                        </tr>
+                        <tr>
+                            <td colspan="3">
+                                <h4>
+                                    There are currently no sections available, please save this module to start adding sections.
+                                </h4>
+                            </td>
+                        </tr>
+                    </table>
+                    <a href="javascript:;" class="btn btn-block btn-info">Please Save to add New Section</a>
+                </div>
+                <div class="tab-pane fade" id="nav-pills-tab-6">
+                    <h4 class="m-t-10">Assessment</h4>
+                    <hr/>
+                </div>
+                <div class="tab-pane fade" id="nav-pills-tab-7">
+                    <h4 class="m-t-10">Settings</h4>
+                    <hr/>
+                    <div class="form-group">
+                        <label asp-for="Entity.FileFolder" class="control-label"></label>
+                        <input asp-for="Entity.FileFolder" class="form-control" disabled="disabled"/>
+                        <span asp-validation-for="Entity.FileFolder" class="text-danger"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</form>
+
+@section Scripts
+{
+    <script src="~/js/summernote/summernote.js"></script>
+
+    <script type="text/javascript">
+        // Default
+        $(document).ready(function () {
+            var HomeIndex = function () {
+
+                var $this = this;
+
+                function initialize() {
+                    $('#Entity_Description').summernote({
+                        height: 250,
+                        codemirror: { // codemirror options
+                            theme: 'monokai'
+                        }
+                    });
+                }
+
+                $this.init = function () {
+                    initialize();
+                }
+            };
+            var self = new HomeIndex();
+            self.init();
+        });
+
+
+    </script>
+    <script>
+        var loadFile = function (event) {
+            var output = document.getElementById('preview');
+            if (event.target.files.length !== 0) {
+
+                var oldstring = "";
+                if (output === null) {
+                    oldstring = "/images/placeholders/MetsiPlaceholder-800x533.jpg";
+                } else {
+                    oldstring = output.src;
+                }
+
+                var url = "/Home/CropImage?cropUrl=" + URL.createObjectURL(event.target.files[0]) + "&originalUrl=" + oldstring + "&width=" + 800 + "&height=" + 533
+                    + "&previewClass=previewd" + "&uploadProperty=CoverUpload" + "&xTag=CoverCropSettings_X" + "&yTag=CoverCropSettings_Y"
+                    + "&widthTag=CoverCropSettings_Width" + "&heightTag=CoverCropSettings_Height" + "&rotateTag=CoverCropSettings_Rotate" + "&scaleXTag=CoverCropSettings_ScaleX"
+                    + "&scaleYTag=CoverCropSettings_ScaleY";
+
+                $("#CropModal").load(url,
+                    function () {
+                        $("#CropModal").modal("show");
+                    });
+            }
+        };
+    </script>
+
+    <script>
+        function ShowDeleteBlogCategoryModal(numberId) {
+
+            var url = "/Courses/Home/Delete?id=" + numberId;
+
+            $("#ModalPlaceHolder").load(url,
+                function () {
+                    $("#ModalPlaceHolder").modal("show");
+                });
+        }
+    </script>
+}

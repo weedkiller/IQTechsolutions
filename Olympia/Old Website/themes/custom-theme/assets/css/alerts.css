@@ -1,0 +1,13 @@
+/* alerts */
+
+#alerts {
+  margin-top: 56px;
+}
+
+#alerts.has-alerts {
+  margin-top: 72px;
+}
+
+#alerts .alert {
+  margin-top: 16px;
+}

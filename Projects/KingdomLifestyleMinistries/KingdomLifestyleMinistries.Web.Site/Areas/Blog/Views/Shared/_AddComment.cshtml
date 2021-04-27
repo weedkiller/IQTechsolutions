@@ -1,0 +1,37 @@
+﻿@model CommentModel<BlogPost>
+
+@inject SignInManager<ApplicationUser> SignInManager
+
+@if (SignInManager.IsSignedIn(User))
+{
+    <div class="comment-box">
+    <div class="row">
+    <div class="col-sm-12">
+    <h5>Leave a Comment</h5>
+    <div class="row">
+    <form role="form" asp-area="Comments" asp-controller="Home" asp-action="Create" enctype="multipart/form-data" method="post" id="comment-form">
+        @*<div class="col-sm-6 pt-0 pb-0">
+            <div class="form-group">
+                <input type="text" class="form-control" required asp-for="@Model.Comment.CommentNames" placeholder="Enter Name">
+            </div>
+            <div class="form-group">
+                <input type="text" required class="form-control" asp-for="@Model.Comment.CommentEmail" placeholder="Enter Email">
+            </div>
+            <div class="form-group">
+                <input type="text" placeholder="Enter Website" required class="form-control" asp-for="@Model.Comment.Title">
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="form-group">
+                <textarea class="form-control" required asp-for="@Model.Comment.CommentString"  placeholder="Enter Message" rows="7"></textarea>
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn btn-dark btn-flat pull-right flip m-0" data-loading-text="Please wait...">Submit</button>
+            </div>
+        </div>*@
+    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+}

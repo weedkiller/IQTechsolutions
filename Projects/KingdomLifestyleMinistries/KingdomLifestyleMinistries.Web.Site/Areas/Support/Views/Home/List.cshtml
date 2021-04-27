@@ -1,0 +1,74 @@
+﻿@model IEnumerable<SupportTicket>
+
+@{
+    ViewData["Title"] = "Support Ticket List";
+}
+
+<table class="table">
+    <thead>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.EmailAddress)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FirstName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LastName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CellNr)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Subject)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Content)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Priority)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TicketStatus)
+        </th>
+        <th>
+            <a asp-action="Create"><strong>Create New Ticket</strong></a>
+        </th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.EmailAddress)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FirstName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LastName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CellNr)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Subject)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Content)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Priority)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TicketStatus)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id" style="padding-right:10px"><i class="fa fa-edit"></i></a>
+                <a asp-action="Details" asp-route-id="@item.Id" style="padding-right:10px"><i class="fa fa-eye"></i></a>
+                <a asp-action="Delete" asp-route-id="@item.Id"><i class="fa fa-trash"></i></a>
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>

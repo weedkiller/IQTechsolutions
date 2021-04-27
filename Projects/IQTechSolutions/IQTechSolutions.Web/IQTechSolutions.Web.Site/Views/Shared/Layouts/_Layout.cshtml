@@ -1,0 +1,144 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- ================== Google Analytics ================== -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-131857403-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-131857403-1');
+    </script>
+
+    <!-- ================== Google Tag Manager ================== -->
+    <script>
+        (function (w, d, s, l, i) {
+            w[l] = w[l] || [];
+            w[l].push({
+                'gtm.start':
+                    new Date().getTime(),
+                event: 'gtm.js'
+            });
+            var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s),
+                dl = l != 'dataLayer' ? '&l=' + l : '';
+            j.async = true;
+            j.src =
+                'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+            f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-TRFVCNW');
+    </script>
+
+    <title>@ViewData["Title"] - IQ Tech Solutions</title>
+
+    <!-- ================== Meta Data ================== -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="IQ Tech Solutions - www.iqtechsolutions.co.za">
+    <meta name="keywords" content="@ViewData["Keywords"]">
+    <meta name="description" content="@ViewData["Description"] ">
+
+    <link rel="shortcut icon" type="image/x-icon" href="~/images/logo/icon.ico">
+
+    <!-- ================== Stylesheets ================== -->
+    <link href='https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic' rel='stylesheet' type='text/css'>
+
+    <link rel="stylesheet" type="text/css" media="all" href="~/plugins/owl-carousel/owl.carousel.css">
+    <link rel="stylesheet" type="text/css" media="all" href="~/plugins/owl-carousel/owl.transitions.css">
+    <link rel="stylesheet" type="text/css" media="all" href="~/plugins/jackbox/css/jackbox.min.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="~/plugins/rs-plugin/css/settings.css">
+
+    <link rel="stylesheet" type="text/css" media="all" href="~/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" media="all" href="~/css/theme-animate.css">
+    <link rel="stylesheet" type="text/css" media="all" href="~/css/customstyle.css">
+
+    @RenderSection("Styles", required: false)
+
+    <!-- ================== Header Scripts ================== -->
+    <script src="~/js/jquery-2.1.0.min.js"></script>
+    <script src="~/plugins/jquery.queryloader2.min.js"></script>
+    <script src="~/plugins/modernizr.js"></script>
+    <script>
+        $('html').addClass('d_none');
+        $(document).ready(function () {
+            $('html').show();
+            $("body").queryLoader2({
+                backgroundColor: '#fff',
+                barColor: '#35eef6',
+                barHeight: 4,
+                percentage: true,
+                deepSearch: true,
+                minimumTime: 1000
+            });
+        });
+    </script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-56572683-2"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-56572683-2');
+    </script>
+    <script data-ad-client="ca-pub-3780614200294160" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+</head>
+
+<body class="sticky_menu">
+
+    <!-- ================== Google Tag Manager (noscript) ================== -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TRFVCNW" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+    <partial name="Menus/_SideMenuPartial" />
+
+    <div class="wide_layout bg_light">
+
+        <partial name="_CookieConsentPartial" />
+
+        <partial name="Headers/_DefaultPageHeader" />
+
+        @RenderBody()
+
+        <div class="modal modal-message fade" id="ModalPlaceHolder"></div>
+
+        <partial name="Footers/_DefaultPageFooter" />
+
+    </div>
+
+    <button id="back_to_top" class="circle icon_wrap_size_2 color_blue_hover color_grey_light_4 tr_all d_md_none">
+        <i class="icon-angle-up fs_large"></i>
+    </button>
+
+    <!-- ================== Script Libraries ================== -->
+    <script src="~/plugins/rs-plugin/js/jquery.themepunch.plugins.min.js"></script>
+    <script src="~/plugins/rs-plugin/js/jquery.themepunch.revolution.min.js"></script>
+    <script src="~/plugins/jquery.appear.js"></script>
+    <script src="~/plugins/afterresize.min.js"></script>
+    <script src="~/plugins/jquery.easing.1.3.js"></script>
+    <script src="~/plugins/jquery.easytabs.min.js"></script>
+    <script src="~/plugins/jackbox/js/jackbox-packed.min.js"></script>
+    <script src="~/plugins/twitter/jquery.tweet.min.js"></script>
+    <script src="~/plugins/owl-carousel/owl.carousel.min.js"></script>
+    <script src="~/plugins/flickr.js"></script>
+    <script src="~/plugins/flexslider/jquery.flexslider-min.js"></script>
+
+    <!-- ================== Theme Initializing Scripts ================== -->
+    <script src="~/js/theme.plugins.js"></script>
+    <script src="~/js/theme.js"></script>
+
+    <!-- ================== Scripts ================== -->
+    <script type="text/javascript">
+        $(".loader").each(function (index, ctrl) {
+            var url = $(ctrl).data("action");
+            if (url && url.length > 0) {
+                $(ctrl).load(url);
+            }
+        });
+    </script>
+
+    @RenderSection("Scripts", required: false)
+
+</body>
+</html>

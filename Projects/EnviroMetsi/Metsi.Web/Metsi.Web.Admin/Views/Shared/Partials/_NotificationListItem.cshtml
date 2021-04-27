@@ -1,0 +1,12 @@
+﻿@model Messaging.Base.Entities.Notification
+
+<li class="media">
+    <a href="javascript:;">
+        <div class="media-left"><img src="@Model.ImageUrl" class="media-object" alt="@Model.Name Image" /></div>
+        <div class="media-body">
+            <h6 class="media-heading">@Model.Name</h6>
+            <p>@Model.MessageString</p>
+            <div class="text-muted f-s-11">@Model.CreatedDateString</div>
+        </div>
+    </a>
+</li>

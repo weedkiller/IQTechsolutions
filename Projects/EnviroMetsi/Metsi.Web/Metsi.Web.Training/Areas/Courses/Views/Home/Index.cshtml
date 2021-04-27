@@ -1,0 +1,75 @@
+﻿@inject IApplicationConfiguration Configuration
+
+@using Filing.Base.Enums
+@using Filing.Base.Extensions
+@using Iqt.Base.Extensions
+@using Iqt.Base.Interfaces
+@model IEnumerable<Education.Base.ApiModels.StudentCourseApiModel>
+
+@{
+    ViewData["Title"] = "Training Courses";
+    ViewData["Description"] = "A list of all the training courses for the administrator";
+}
+
+<div class="profile-container">
+
+    <div class="profile-section">
+
+        <div class="table-responsive">
+            <table class="table table-hover mb-0">
+                <thead>
+                    <tr>
+                        <th style="width: 15%">
+                            Cover Image
+                        </th>
+                        <th>
+                            Name
+                        </th>
+                        <th>
+                            Description
+                        </th>
+                        <th>
+                            Completed
+                        </th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @if (Model.Any())
+                    {
+                        foreach (var item in Model)
+                        {
+                            <tr id="row_@item.CourseId" class="row_@item.CourseId">
+                                <td>
+                                    <a href="@Url.Action("Details", "Home", new {area="Courses", studentId = item.StudentId, courseId = item.CourseId})">
+                                        <img id="preview" style="height: auto; max-height: 100px;" class="img-thumbnail" title="@item.Name" alt="@item.Name" src="@item.ImageUrl">
+                                    </a>
+                                </td>
+                                <td>
+                                    <a asp-action="Details" asp-route-id="@item.CourseId">@Html.DisplayFor(modelItem => item.Name)</a>
+                                </td>
+                                <td>
+                                    @item.Description
+                                </td>
+                                <td>@item.CompletedPercentage</td>
+                                <td style="width: 150px;">
+                                    <a asp-action="Details" asp-route-studentId="@item.StudentId" asp-route-courseId="@item.CourseId" class="btn btn-success btn-icon btn-xs">View</a>
+                                    <a asp-area="Courses" asp-controller="Modules" asp-action="Index" asp-route-moduleId="@item.CurrentModuleId" class="btn btn-warning btn-icon btn-xs">Continue</a>
+                                </td>
+                            </tr>
+                        }
+                    }
+                    else
+                    {
+                        <tr>
+                            <td colspan="6"><h4>No Courses currently available please check back later</h4></td>
+                        </tr>
+                    }
+
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+
+</div>

@@ -1,0 +1,214 @@
+﻿@{
+    ViewData["Title"] = $"Edit {Model.Entity.Name}";
+}
+
+@using Calendar.Base.Enums
+@using Iqt.Base.Enums
+@model Metsi.Web.Admin.Areas.Calendar.Models.RecurringTaskAddEditModel
+
+<link href="~/css/summernote.css" rel="stylesheet" type="text/css" />
+
+<form class="" asp-area="Calendar" asp-controller="Work" asp-action="Edit" enctype="multipart/form-data" method="post" style="margin: 0 !important">
+    <input type="hidden" asp-for="RouteLocationId"/>
+    <div class="form-horizontal">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label asp-for="Entity.Name" class="control-label"></label>
+                    <input asp-for="Entity.Name" class="form-control" placeholder="Enter your heading here"/>
+                    <span asp-validation-for="Entity.Name" class="text-danger"></span>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <label asp-for="Entity.TaskPriority" class="control-label"></label>
+                        <select asp-for="Entity.TaskPriority" asp-items="Html.GetEnumSelectList<Priority>()" class="form-control">
+                            <option selected="selected" value="">Please select</option>
+                        </select>
+                        <span asp-validation-for="Entity.TaskPriority" class="text-danger"></span>
+                    </div>
+                    <div class="col-md-4">
+                        <label asp-for="Entity.EstimatedCompletionTime" class="control-label"></label>
+                        <input asp-for="Entity.EstimatedCompletionTime" class="form-control" placeholder="Enter your heading here" />
+                        <span asp-validation-for="Entity.EstimatedCompletionTime" class="text-danger"></span>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="col-md-10" style="padding-top: 20px;">
+                            <label asp-for="Entity.ListedCalendarItem" class="control-label"></label>
+                            <span asp-validation-for="Entity.ListedCalendarItem" class="text-danger"></span>
+                        </div>
+                        <div class="col-md-2" style="padding-top: 20px;">
+                            <input asp-for="Entity.ListedCalendarItem" class="checkbox" />
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label">Description</label>
+                    <textarea asp-for="Entity.Description" class="form-control" style="height: 150px" placeholder="Enter your description here"></textarea>
+                    <span asp-validation-for="Entity.Description" class="text-danger"></span>
+                </div>
+                <input type="hidden" asp-for="Entity.Id"/>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <ul class="nav nav-pills">
+                    <li class="active"><a href="#nav-pills-tab-1" data-toggle="tab">Tasks to Complete</a></li>
+                    <li><a href="#nav-pills-tab-2" data-toggle="tab">Form to be Completed</a></li>
+                    <li><a href="#nav-pills-tab-3" data-toggle="tab">Location Setup</a></li>
+                </ul>
+                <div class="tab-content">
+                    <div class="tab-pane fade active in" id="nav-pills-tab-1">
+                        <h4 class="m-t-10">Tasks to Complete</h4>
+                        <hr/>
+                        <table class="table">
+                            <thead>
+                            <tr>
+                                <th>
+                                    Name
+                                </th>
+                                <th>
+                                    Description
+                                </th>
+                                <th></th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            @if (Model.Entity.Tasks.Any())
+                            {
+                                foreach (var item in Model.Entity.Tasks)
+                                {
+                                    <tr id="row_@item.Id" class="row_@item.Id">
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Name)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Description)
+                                        </td>
+                                        <td style="width: 100px;">
+                                            <a asp-controller="Work" asp-action="EditWorkItem" asp-route-id="@item.Id" class="btn btn-success btn-icon btn-circle"><i class="fa fa-edit"></i></a>
+                                            <a href="javascript:;" onclick="ShowDeleteModal('@item.Id')" class="btn btn-warning btn-icon btn-circle"><i class="fa fa-trash"></i></a>
+                                        </td>
+                                    </tr>
+                                }
+                            }
+                            else
+                            {
+                                <tr>
+                                    <td colspan="6"><h4>No Tasks currently available, please check back later or <a asp-area="Calendar" asp-controller="Work" asp-action="Create">create a Task</a></h4></td>
+                                </tr>
+                            }
+                            </tbody>
+                        </table>
+                        <hr/>
+                        <a href="javascript:;" onclick="ShowCreateWorkItemModel('@Model.Entity.Id')" class="btn btn-primary btn-block">Create New Task</a>
+                    </div>
+                    <div class="tab-pane fade" id="nav-pills-tab-2">
+                        <h4 class="m-t-10">Form Collection</h4>
+                        <hr/>
+                        <table class="table">
+                            <thead>
+                            <tr>
+                                <th>
+                                    Name
+                                </th>
+                                <th></th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            @foreach (var item in Model.Entity.Tasks)
+                            {
+                                if (item.FormElements.Any())
+                                {
+                                    <tr>
+                                        <td>
+                                            <partial name="/Areas/Calendar/Views/Assessments/_FormElement.cshtml" model="item"/>
+                                        </td>
+                                        <td style="width: 100px;">
+                                            <a asp-controller="Work" asp-action="EditWorkItem" asp-route-id="@item.Id" class="btn btn-success btn-icon btn-circle"><i class="fa fa-edit"></i></a>
+                                            <a href="javascript:;" onclick="ShowDeleteAssessmentModal('@item.Id')" class="btn btn-warning btn-icon btn-circle"><i class="fa fa-trash"></i></a>
+                                        </td>
+                                    </tr>
+                                }
+                                else
+                                {
+                                    <tr>
+                                        <td colspan="6"><h4>No Forms currently available, please check back later or <a href="javascript:;" onclick="ShowCreateFormItemModel('@Model.Entity.Id')">create a new Form</a></h4></td>
+                                    </tr>
+                                }
+                            }
+                            </tbody>
+                        </table>
+                        <hr/>
+                        <button type="button" href="javascript:;" onclick="ShowCreateFormItemModel('@Model.Entity.Id')" class="btn btn-primary btn-block">Create New Form Element</button>
+                    </div>
+                    <div class="tab-pane fade" id="nav-pills-tab-3">
+                        <h4 class="m-t-10">Location Details</h4>
+                        <hr/>
+                        <h4>No Location Details currently available, please check back later!</h4>
+                        <hr/>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ================== FORM BUTTON ================== -->
+    <div class="row" style="padding-bottom: 50px">
+        <div class="form-group">
+            <div class="col-md-4">
+                @if (string.IsNullOrEmpty(Model.Entity.ParentTaskId))
+                {
+                    <a asp-area="Calendar" asp-controller="Work" asp-action="Index" class="btn btn-block btn-danger" data-dismiss="modal">Close</a>
+                }
+                else
+                {
+                    <a asp-area="Calendar" asp-controller="Work" asp-action="Edit" asp-route-id="@Model.Entity.Id" class="btn btn-block btn-danger" data-dismiss="modal">Close</a>
+                }
+            </div>
+            <div class="col-md-4">
+                <input name="main" type="submit" value="Save" class="btn btn-block btn-primary"/>
+            </div>
+            <div class="col-md-4">
+                <input name="finnish" type="submit" value="Submit & Exit" class="btn btn-block btn-primary"/>
+            </div>
+        </div>
+    </div>
+    <!-- ================== END FORM BUTTON ================== -->
+
+</form>
+
+@section Scripts{
+
+    <script type="text/javascript">
+
+        function ShowCreateWorkItemModel(ff) {
+
+            var url = "/Calendar/Work/CreateWorkItem?id=" + ff;
+
+            $("#ModalPlaceHolder").load(url,
+                function() {
+                    $("#ModalPlaceHolder").modal("show");
+                });
+        }
+
+        function ShowCreateFormItemModel(ff) {
+
+            var url = "/Calendar/Assessments/CreateElement?parentId=" + ff;
+
+            $("#ModalPlaceHolder").load(url,
+                function () {
+                    $("#ModalPlaceHolder").modal("show");
+                });
+        }
+
+        function ShowDeleteModal(ff) {
+
+            var url = "/Calendar/Work/Delete?id=" + ff;
+
+            $("#ModalPlaceHolder").load(url,
+                function () {
+                    $("#ModalPlaceHolder").modal("show");
+                });
+        }
+
+    </script>
+}

@@ -1,0 +1,27 @@
+﻿
+
+@model IEnumerable<GuestSpeaker>
+
+@{
+    ViewData["Title"] = "Our GuestSpeakers";
+}
+
+<div class="our-team">
+    @foreach (var item in Model)
+    {
+        <!--Team Box-->
+        <div class="col-md-3 col-sm-6">
+            <div class="team-box">
+                <a asp-area="GuestSpeakers" asp-controller="Home" asp-action="Details" asp-route-id="@item.Id">
+                    <div class="thumb"><img src="@item.GetImage().GetImagePathFromAnotherWebsite(FrameworkDI.Configuration["Company:WebUrl"],FrameworkDI.Configuration["Placeholders:CoverImage"])" alt="@item.Names.GetFullNames()"></div>
+                    <h4>@item.Names.GetFullNames()</h4>
+                    <small>@item</small>
+                    <div class="text">
+                        <p> @item.Bio </p>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <!--Team Box End-->
+    }
+</div>

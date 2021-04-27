@@ -1,0 +1,322 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:base="clr-namespace:Metsi.Mobile.ViewModels.Base;assembly=Metsi.Mobile"
+             xmlns:controls="clr-namespace:Metsi.Mobile.Controls;assembly=Metsi.Mobile"
+             xmlns:xForms="clr-namespace:Syncfusion.ListView.XForms;assembly=Syncfusion.SfListView.XForms"
+             xmlns:behaviors="clr-namespace:Metsi.Mobile.Behaviors;assembly=Metsi.Mobile"
+             xmlns:templates="clr-namespace:Metsi.Mobile.Views.Templates;assembly=Metsi.Mobile"
+             xmlns:buttons="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms"
+             xmlns:converters="clr-namespace:Metsi.Mobile.Converters;assembly=Metsi.Mobile"
+             xmlns:graphics="clr-namespace:Syncfusion.XForms.Graphics;assembly=Syncfusion.Core.XForms"
+             xmlns:border="clr-namespace:Syncfusion.XForms.Border;assembly=Syncfusion.Core.XForms"
+             NavigationPage.HasNavigationBar="False"
+             mc:Ignorable="d"
+             base:ViewModelLocator.AutoWireViewModel="true"
+             x:Class="Metsi.Mobile.Views.Troubleshooting.ProblemDetailsView">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Color x:Key="OrangeyYellow">#fcbc0f</Color>
+            <Color x:Key="Transparent">Transparent</Color>
+            <Color x:Key="Gold">#fcbc0f</Color>
+            <x:String x:Key="Cart">&#xe708;</x:String>
+            <x:String x:Key="Share">&#xe704;</x:String>
+            <x:String x:Key="Close">&#xe724;</x:String>
+            <x:String x:Key="Favourite">&#xe701;</x:String>
+            <x:String x:Key="ClearBookmark">&#xe734;</x:String>
+            <x:String x:Key="Search">&#xe705;</x:String>
+            <x:String x:Key="Back">&#xe709;</x:String>
+            <x:String x:Key="Settings">&#xe72b;</x:String>
+            <x:String x:Key="Messages">&#xe73b;</x:String>
+
+            <converters:DynamicResourceToColorConverter x:Key="DynamicResourceToColorConverter" />
+
+            <!--  Common style for Content pages  -->
+            <Style x:Key="ContentPageStyle" TargetType="ContentPage">
+                <Setter Property="BackgroundColor" Value="{OnIdiom Default={StaticResource Gray-White}, Desktop={StaticResource Gray-100}, Converter={StaticResource DynamicResourceToColorConverter}}" />
+            </Style>
+
+            <Style TargetType="controls:TitleView">
+                <Setter Property="BackgroundColor" Value="{DynamicResource Gray-White}" />
+            </Style>
+
+            <!--  Common style for labels  -->
+            <Style x:Key="LabelStyle" TargetType="Label">
+                <Setter Property="TextColor" Value="{DynamicResource Gray-700}" />
+                <Setter Property="FontFamily" Value="Montserrat-Regular" />
+                <Setter Property="FontSize" Value="14" />
+                <Setter Property="LineHeight" Value="{OnPlatform Android=1.5, Default=-1}" />
+                <Setter Property="HorizontalTextAlignment" Value="Start" />
+                <Setter Property="VerticalTextAlignment" Value="Center" />
+                <Setter Property="VerticalOptions" Value="Center" />
+                <Setter Property="HorizontalOptions" Value="Start" />
+            </Style>
+
+            <!--  Common style for icon buttons  -->
+            <Style x:Key="IconButtonStyle" TargetType="buttons:SfButton">
+                <Setter Property="TextColor" Value="{DynamicResource Gray-600}" />
+                <Setter Property="BackgroundColor" Value="{StaticResource Transparent}" />
+                <Setter Property="FontFamily" Value="{StaticResource FontIcons}" />
+                <Setter Property="FontSize" Value="18" />
+                <Setter Property="HorizontalTextAlignment" Value="Center" />
+                <Setter Property="VerticalTextAlignment" Value="Center" />
+                <Setter Property="HorizontalOptions" Value="Center" />
+                <Setter Property="VerticalOptions" Value="Center" />
+                <Setter Property="HeightRequest" Value="40" />
+                <Setter Property="WidthRequest" Value="40" />
+            </Style>
+
+            <!--  Common style for SfButtons  -->
+            <Style x:Key="SfButtonStyle" TargetType="buttons:SfButton">
+                <Setter Property="BackgroundColor" Value="Transparent" />
+                <Setter Property="TextColor" Value="{DynamicResource Gray-700}" />
+                <Setter Property="FontFamily" Value="Montserrat-Regular" />
+                <Setter Property="FontSize" Value="16" />
+            </Style>
+
+            <!--  Common style for rounded buttons  -->
+            <Style
+        x:Key="RoundButtonStyle"
+        BasedOn="{StaticResource SfButtonStyle}"
+        TargetType="buttons:SfButton">
+                <Setter Property="BorderColor" Value="{DynamicResource Gray-300}" />
+                <Setter Property="BorderWidth" Value="1" />
+                <Setter Property="CornerRadius" Value="22" />
+                <Setter Property="WidthRequest" Value="44" />
+                <Setter Property="HeightRequest" Value="44" />
+                <Setter Property="HorizontalOptions" Value="Center" />
+                <Setter Property="VerticalOptions" Value="Center" />
+                <Setter Property="BackgroundGradient">
+                    <Setter.Value>
+                        <graphics:SfLinearGradientBrush>
+                            <graphics:SfLinearGradientBrush.GradientStops>
+                                <graphics:SfGradientStop Offset="0" Color="{DynamicResource PrimaryColor}" />
+                                <graphics:SfGradientStop Offset="1" Color="{DynamicResource PrimaryGradient}" />
+                            </graphics:SfLinearGradientBrush.GradientStops>
+                        </graphics:SfLinearGradientBrush>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+
+            <!--  Common style for sfBorder  -->
+            <Style x:Key="SfBorderStyle" TargetType="border:SfBorder">
+                <Setter Property="BackgroundColor" Value="Transparent" />
+                <Setter Property="BorderWidth" Value="0" />
+            </Style>
+
+            <!--  Common style for BoxView  -->
+            <Style x:Key="BoxViewStyle" TargetType="BoxView">
+                <Setter Property="Color" Value="{DynamicResource Gray-200}" />
+                <Setter Property="VerticalOptions" Value="Center" />
+            </Style>
+
+            <!--  Common style for Navigation bar SfButton  -->
+            <Style x:Key="NavigationBarButtonStyle" TargetType="buttons:SfButton">
+                <Setter Property="TextColor" Value="{DynamicResource Gray-600}" />
+                <Setter Property="FontSize" Value="18" />
+                <Setter Property="VerticalOptions" Value="Center" />
+                <Setter Property="HorizontalOptions" Value="Fill" />
+                <Setter Property="BackgroundColor" Value="Transparent" />
+                <Setter Property="BorderWidth" Value="0" />
+                <Setter Property="FontFamily" Value="{StaticResource FontIcons}" />
+            </Style>
+
+            <Style x:Key="TitleLabelStyle" TargetType="Label">
+                <Setter Property="TextColor" Value="{DynamicResource Gray-900}" />
+                <Setter Property="FontFamily" Value="{StaticResource Montserrat-SemiBold}" />
+                <Setter Property="FontSize" Value="16" />
+                <Setter Property="LineHeight" Value="{OnPlatform Android=1.5, Default=-1}" />
+            </Style>
+
+            <Style x:Key="SpanStyle" TargetType="Span">
+                <Setter Property="TextColor" Value="{DynamicResource Gray-800}" />
+                <Setter Property="FontFamily" Value="{StaticResource Montserrat-Medium}" />
+                <Setter Property="FontSize" Value="12" />
+                <Setter Property="LineHeight" Value="{OnPlatform Android=1.5, Default=-1}" />
+            </Style>
+
+            <!--  Common style for SfListView  -->
+            <Style x:Key="SfListViewStyle" TargetType="xForms:SfListView">
+                <Setter Property="BackgroundColor" Value="{DynamicResource Gray-White}" />
+                <Setter Property="FocusBorderThickness" Value="0" />
+                <Setter Property="SelectionBackgroundColor" Value="Transparent" />
+                <Setter Property="IsScrollBarVisible" Value="False" />
+                <Setter Property="VerticalOptions" Value="FillAndExpand" />
+            </Style>
+            <!--  Style for version label  -->
+            <Style x:Key="VersionLabelStyle" TargetType="Label">
+                <Setter Property="TextColor" Value="{DynamicResource Gray-700}" />
+                <Setter Property="FontFamily" Value="{StaticResource Montserrat-Medium}" />
+                <Setter Property="FontSize" Value="12" />
+                <Setter Property="LineHeight" Value="{OnPlatform Default=1.25, iOS=-1}"/>
+            </Style>
+
+            <!--  Style for header label  -->
+            <Style x:Key="HeaderLabelStyle" TargetType="Label">
+                <Setter Property="TextColor" Value="{DynamicResource Gray-900}" />
+                <Setter Property="FontFamily" Value="{StaticResource Montserrat-SemiBold}" />
+                <Setter Property="FontSize" Value="16" />
+                <Setter Property="HorizontalTextAlignment" Value="Center" />
+                <Setter Property="LineHeight" Value="1.25"/>
+                <Setter Property="Margin" Value="0,16,0,8"/>
+            </Style>
+
+            <!--  Style for description label  -->
+            <Style x:Key="DescriptionLabelStyle" TargetType="Label">
+                <Setter Property="TextColor" Value="{DynamicResource Gray-700}" />
+                <Setter Property="FontFamily" Value="{StaticResource Montserrat-Medium}" />
+                <Setter Property="FontSize" Value="14" />
+                <Setter Property="HorizontalTextAlignment" Value="Start" />
+                <Setter Property="LineHeight" Value="{OnPlatform Default=1.25}"/>
+            </Style>
+
+            <!--  Style for Images  -->
+            <Style x:Key="AboutUsImageStyle" TargetType="Image">
+                <Setter Property="HeightRequest" Value="64" />
+                <Setter Property="WidthRequest" Value="64" />
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ContentPage.ControlTemplate>
+        <ControlTemplate>
+            <StackLayout Spacing="0">
+                <!--  Title View  -->
+                <controls:TitleView Title="Problem">
+                    <controls:TitleView.LeadingView>
+                        <buttons:SfButton
+                            x:Name="backButton"
+                            Command="{TemplateBinding BindingContext.BackButtonCommand}"
+                            CommandParameter="{x:Reference backButton}"
+                            CornerRadius="4"
+                            Style="{StaticResource IconButtonStyle}"
+                            Text="{StaticResource Back}" />
+                    </controls:TitleView.LeadingView>
+                    <controls:TitleView.TrailingView>
+                        <StackLayout Orientation="Horizontal">
+                            <!--  Favourite button  -->
+                            <buttons:SfButton
+                                x:Name="shareButton"
+                                Command="{TemplateBinding BindingContext.SettingsTappedCommand}"
+                                CommandParameter="{x:Reference shareButton}"
+                                CornerRadius="4"
+                                HeightRequest="40"
+                                Style="{StaticResource IconButtonStyle}"
+                                Text="{StaticResource Settings}"
+                                WidthRequest="40" />
+                            <!--  Bookmark button  -->
+                            <buttons:SfButton
+                                x:Name="bookmarkButton"
+                                Command="{TemplateBinding BindingContext.MessagesTappedCommand}"
+                                CommandParameter="{x:Reference bookmarkButton}"
+                                CornerRadius="4"
+                                HeightRequest="40"
+                                Style="{StaticResource NavigationBarButtonStyle}"
+                                Text="{StaticResource Messages}"
+                                WidthRequest="40" />
+                        </StackLayout>
+                    </controls:TitleView.TrailingView>
+                </controls:TitleView>
+                <ContentPresenter />
+            </StackLayout>
+        </ControlTemplate>
+    </ContentPage.ControlTemplate>
+
+    <ContentPage.Content>
+        <Grid ColumnSpacing="0" RowSpacing="0">
+            <ScrollView HorizontalOptions="Center" VerticalOptions="Start">
+                <StackLayout
+                    HorizontalOptions="Center"
+                    Spacing="0"
+                    VerticalOptions="Center">
+
+                    <!--  Product image  -->
+                    <Image HeightRequest="110" WidthRequest="124" Source="LogoEnviroMetsi.png">
+                        
+                    </Image>
+
+                    <!--  Product title  -->
+                    <Label
+                        FontFamily="{StaticResource Montserrat-SemiBold}"
+                        HorizontalOptions="CenterAndExpand"
+                        Style="{StaticResource HeaderLabelStyle}"
+                        Text="Problem Description">
+                        <Label.Margin>
+                            <OnIdiom
+                                x:TypeArguments="Thickness"
+                                Default="0, 32, 0, 8"
+                                Phone="0, 16, 0, 16" />
+                        </Label.Margin>
+                    </Label>
+
+                    <!--  Product description  -->
+                    <Label
+                        Margin="15,0,15,0"
+                        HorizontalOptions="Center"
+                        HorizontalTextAlignment="Center"
+                        Style="{StaticResource DescriptionLabelStyle}"
+                        Text="{Binding ProductDescription}" />
+                </StackLayout>
+            </ScrollView>
+
+            
+            <StackLayout Grid.Row="1" Spacing="0">
+                <StackLayout Margin="16,16,16,0" Orientation="Horizontal">
+                    <Label
+                        HorizontalOptions="StartAndExpand"
+                        Style="{StaticResource TitleLabelStyle}"
+                        Text="Causes"
+                        VerticalOptions="Center" />
+
+                    <!--  See all reviews Button  -->
+                    <buttons:SfButton
+                        x:Name="ShowButton"
+                        Padding="0"
+                        Command="{Binding LoadMoreCommand}"
+                        CommandParameter="{x:Reference ShowButton}"
+                        CornerRadius="4"
+                        FontFamily="{StaticResource Montserrat-SemiBold}"
+                        FontSize="{OnIdiom Default=12,
+                                                       Desktop=14}"
+                        HorizontalOptions="End"
+                        Style="{StaticResource SfButtonStyle}"
+                        Text="SHOW LESS"
+                        TextColor="{DynamicResource HyperLink}"
+                        VerticalOptions="Center" />
+
+                </StackLayout>
+                <xForms:SfListView
+                                    Padding="15,0,10,0"
+                                    AutoFitMode="Height"
+                                    IsScrollBarVisible="false"
+                                    ItemSpacing="0,27,0,0"
+                                    ItemsSource="{Binding Reviews}"
+                                    SelectionBackgroundColor="Transparent"
+                                    TapCommand="{Binding ItemSelectedCommand}"
+                                    VerticalOptions="FillAndExpand">
+                    <xForms:SfListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <!--  View of each card item  -->
+                                <controls:CustomShadowFrame
+                                                    Margin="0,2,5,5"
+                                                    Padding="0"
+                                                    BackgroundColor="{DynamicResource Gray-White}"
+                                                    BorderColor="{DynamicResource Gray-White}"
+                                                    BorderWidth="1"
+                                                    CornerRadius="4"
+                                                    HasShadow="True"
+                                                    HorizontalOptions="FillAndExpand"
+                                                    VerticalOptions="FillAndExpand">
+                                    <templates:CausesListTemplate />
+                                </controls:CustomShadowFrame>
+                            </ViewCell>
+                        </DataTemplate>
+                    </xForms:SfListView.ItemTemplate>
+                </xForms:SfListView>
+            </StackLayout>
+             </Grid>  
+    </ContentPage.Content>
+</ContentPage>

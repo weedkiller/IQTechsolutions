@@ -1,0 +1,53 @@
+﻿@using Iqt.Base.Extensions
+@model IEnumerable<Grouping.Base.Entities.EntityCategory<Troubleshooting.Base.Entities.Problem>>
+ 
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Heading
+            </th>
+            <th>
+                Description
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model.Any())
+        {
+            foreach (var pack in Model)
+            {
+                <tr id="row_@pack.EntityId" class="row_@pack.EntityId">
+                    <td>
+                        @pack.Entity.Heading
+                    </td>
+                    <td>
+                        @pack.Entity.Description.HtmlToPlainText().TruncateLongString(150)
+                    </td>
+                    <td>
+                        <a asp-area="Troubleshooting" asp-controller="Home" asp-action="Edit" asp-route-id="@pack.EntityId" class="btn btn-success btn-icon btn-circle"><i class="fa fa-edit"></i></a>
+                        <a href="javascript:;" onclick="ShowDeleteProblemModal('@pack.EntityId')" class="btn btn-warning btn-icon btn-circle"><i class="fa fa-trash"></i></a>
+                    </td>
+                </tr>
+            }
+        }
+        else
+        {
+            <tr>
+                <td colspan="3">
+                    <h4>
+                        There are currently problems available for this category.
+                    </h4>
+                </td>
+            </tr>
+        }
+    </tbody>
+    <tfoot>
+        <tr>
+            <td colspan="3">
+                <input name="prob" type="submit" value="Add New Problem" class="btn btn-block btn-info" />
+            </td>
+        </tr>
+    </tfoot>
+</table>

@@ -1,0 +1,244 @@
+﻿@model StudentDetailsModel
+
+@{
+    ViewData["Title"] = "Employee Details";
+}
+
+<!-- begin profile-container -->
+<div class="profile-container">
+    <!-- begin profile-section -->
+    <div class="profile-section">
+        <!-- begin profile-left -->
+        <div class="profile-left">
+            <!-- begin profile-image -->
+            <div class="profile-image">
+                <img src="@Model.Entity.UserInfo.GetPath("http://admin.metsi.co.za", ImageType.Cover, "/images/placeholders/profileImage128x128.png")" style="width:100%;" />
+                <i class="fa fa-user hide"></i>
+            </div>
+            <!-- end profile-image -->
+            <div class="m-b-10">
+                <a asp-area="Identity" asp-controller="Profile" asp-action="Edit" asp-route-id="@Model.Entity.Id" class="btn btn-warning btn-block btn-sm">Edit Profile</a>
+            </div>
+            <!-- end profile-highlight -->
+        </div>
+        <!-- end profile-left -->
+        <!-- begin profile-right -->
+        <div class="profile-right">
+            <!-- begin profile-info -->
+            <div class="profile-info">
+                <!-- begin table -->
+                <div class="table-responsive">
+                    <table class="table table-profile">
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th>
+                                    <h4>@Model.Entity.Names.FirstName @Model.Entity.Names.LastName <small>@Model.Entity.Id</small></h4>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="field">Phone Nr</td>
+                                @if (Model.Entity.ContactNumbers.FirstOrDefault() == null)
+                                {
+                                    <td><a asp-area="Feeds" asp-controller="Home" asp-action="Index" asp-route-id="@Model.Entity.Id">Add Phone Nr</a></td>
+                                }
+                                else
+                                {
+                                    <td><i class="fa fa-mobile fa-lg m-r-5"></i>@Model.Entity.ContactNumbers.FirstOrDefault()</td>
+                                }
+                            </tr>
+                            <tr>
+                                <td class="field">Email Address</td>
+                                @if (Model.Entity.EmailAddresses.FirstOrDefault() == null)
+                                {
+                                    <td><a asp-area="Feeds" asp-controller="Home" asp-action="Index" asp-route-id="@Model.Entity.Id">Add Email Address</a></td>
+                                }
+                                else
+                                {
+                                    <td><i class="fa fa-mail fa-lg m-r-5"></i>@Model.Entity.EmailAddresses.FirstOrDefault()</td>
+                                }
+                            </tr>
+                            <tr class="divider">
+                                <td colspan="2"></td>
+                            </tr>
+                            <tr class="highlight">
+                                <td class="field">About Me</td>
+                                @if (string.IsNullOrEmpty(Model.Entity.Description))
+                                {
+                                    <td><a asp-area="Feeds" asp-controller="Home" asp-action="Index" asp-route-id="@Model.Entity.Id">Add Description</a></td>
+                                }
+                                else
+                                {
+                                    <td><i class="fa fa-list fa-lg m-r-5"></i>@Model.Entity.Description</td>
+                                }
+                            </tr>
+                            <tr class="divider">
+                                <td colspan="2"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <!-- end table -->
+            </div>
+            <!-- end profile-info -->
+        </div>
+        <!-- end profile-right -->
+    </div>
+    <!-- end profile-section -->
+    <!-- begin profile-section -->
+    @*<div class="profile-section">
+         begin row 
+        <div class="row">
+             begin col-4 
+            <div class="col-md-4">
+                <h4 class="title">New Messages <small>@Model.UnreadMessages.Count new messages</small></h4>
+                 begin scrollbar 
+                <div data-scrollbar="true" data-height="280px" class="bg-silver">
+                     begin chats 
+                    <ul class="chats">
+                        @if (Model.NewNotifications.Any())
+                        {
+                            foreach (var item in Model.UnreadMessages)
+                            {
+                                <li class="left">
+                                    <a asp-area="Chats" asp-controller="Home" asp-action="Chat" asp-route-id="@item.Id">
+                                        <span class="date-time">@item.CreatedDateString</span>
+                                        <div class="name">@item.User.FirstName @item.User.LastName</div>
+                                        <div class="image">
+                                            <img alt="@item.User.FirstName @item.User.LastName Profile Image" src="@item.ImageUrl">
+                                        </div>
+                                        <div class="message">
+                                            @item.MessageString
+                                        </div>
+                                    </a>
+
+                                </li>
+                            }
+                        }
+                        else
+                        {
+                            <li class="active">
+                                <div class="todolist-title">No new messages</div>
+                            </li>
+                        }
+                    </ul>
+                     end chats 
+                </div>
+                 end scrollbar 
+            </div>
+             end col-4 
+             begin col-4 
+            <div class="col-md-4">
+                <h4 class="title">New Notifications <small>@Model.UnreadMessages.Count new notifications</small></h4>
+                 begin scrollbar 
+                <div data-scrollbar="true" data-height="280px" class="bg-silver">
+                     begin chats 
+                    <ul class="chats">
+                        @if (Model.NewNotifications.Any())
+                        {
+                            foreach (var item in Model.NewNotifications)
+                            {
+                                <li class="left">
+                                    <a asp-area="Notifications" asp-controller="Home" asp-action="Index" asp-route-id="@item.Id">
+                                        <span class="date-time">@item.CreatedDateString</span>
+                                        <div class="name">@item.User.FirstName @item.User.LastName</div>
+                                        <div class="image">
+                                            <img alt="@item.User.FirstName @item.User.LastName Profile Image" src="@item.ImageUrl">
+                                        </div>
+                                        <div class="message">
+                                            @item.MessageString
+                                        </div>
+                                    </a>
+
+                                </li>
+                            }
+                        }
+                        else
+                        {
+                            <li class="active">
+                                <div class="todolist-title">No new notifications</div>
+                            </li>
+                        }
+                    </ul>
+                     end chats 
+                </div>
+                 end scrollbar 
+            </div>
+             end col-4 
+             begin col-4 
+            <div class="col-md-4">
+                <h4 class="title">Tasks <small>@Model.Tasks.Count pending tasks</small></h4>
+                 begin scrollbar 
+                <div data-scrollbar="true" data-height="280px" class="bg-silver">
+                     begin todolist 
+                    <ul class="todolist">
+                        @if (Model.Tasks.Any())
+                        {
+                            foreach (var item in Model.Tasks)
+                            {
+                                <li id="toDoListItem_@item.Id" class="active">
+                                    <a id="toDoListStatusLink_@item.Id" onclick="changeToDoStatus('@item.Id')" class="todolist-container active">
+                                        <div class="todolist-input"><i class="fa fa-square-o"></i></div>
+                                        <div class="todolist-title">@item.Heading</div>
+                                    </a>
+                                </li>
+                            }
+                        }
+                        else
+                        {
+                            <li class="active">
+                                <div class="todolist-title">No tasks available</div>
+                            </li>
+                        }
+                    </ul>
+                     end todolist 
+                </div>
+                 end scrollbar 
+            </div>
+             end col-4 
+        </div>
+         end row 
+    </div>*@
+    <!-- end profile-section -->
+</div>
+<!-- end profile-container -->
+
+@section Scripts{
+    <script src="~/lib/signalr/signalr.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="~/js/newsfeed.js"></script>
+
+    <script>
+        var changeToDoStatus = function (id) {
+
+            var listItem = document.getElementById("toDoListItem_" + id)
+            var linkItem = document.getElementById("toDoListStatusLink" + id)
+            var url = '';
+
+            if (listItem.classList.contains("active")) {
+                url = '/Calendar/Home/ChangeToDoItemStatus/false';
+            }
+            else {
+                url = '/Calendar/Home/ChangeToDoItemStatus/true';
+            }
+
+            axios.post(url, null)
+                .then(res => {
+                    if (listItem.classList.contains("active")) {
+                        listItem.classList.remove("active");
+                        linkItem.classList.remove("active");
+                    }
+                    else {
+                        listItem.classList.add("active");
+                        linkItem.classList.add("active");
+                    }
+                    console.log("To Do Item Completed!", res);
+                })
+                .catch(err => {
+                    console.log("Failed to complete To Do Item!", res);
+                });
+        }
+    </script>
+}

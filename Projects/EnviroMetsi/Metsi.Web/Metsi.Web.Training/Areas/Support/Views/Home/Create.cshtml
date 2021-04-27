@@ -1,0 +1,130 @@
+﻿@model Feedback.Core.Models.TicketModel
+
+@inject Microsoft.Extensions.Configuration.IConfiguration Configuration
+
+@{
+    ViewData["Title"] = "Create";
+}
+<section id="content" class="light_section text-center" style="padding-top: 100px">
+    <div class="container">
+
+        <div class="row">
+            <div class="middle-box text-center loginscreen animated fadeInDown">
+                <div>
+                    <div>
+
+                        <img src="~/Images/logo/MetsiRoundLogo.png" alt="Metsi Round Logo" style="width: 20%" />
+                        <hr />
+                    </div>
+                    <h3>Contact us</h3>
+                    <p>Our friendly and professional representatives can't wait for you to get in touch. Please feel free to contact us now!</p>
+                    <form class="m-t" asp-area="Support" asp-controller="Home" asp-action="Create" enctype="multipart/form-data" method="post">
+                        <div asp-validation-summary="All" class="text-danger"></div>
+                        <input type="hidden" asp-for="@Model.Captcha" id="captchaInput" />
+                        <div class="col-md-6">
+                            <p class="contact-form-name">
+                                <input type="text" aria-required="true" size="30" asp-for="FirstName" class="form-control" placeholder="First Name" required="">
+                                <span asp-validation-for="FirstName" class="text-danger"></span>
+                            </p>
+                        </div>
+                        <div class="col-md-6">
+                            <p class="contact-form-name">
+                                <input type="text" aria-required="true" size="30" asp-for="LastName" class="form-control" placeholder="Last Name" required="">
+                                <span asp-validation-for="LastName" class="text-danger"></span>
+                            </p>
+                        </div>
+
+                        <div class="col-md-6">
+                            <p class="contact-form-name">
+                                <input type="text" aria-required="true" size="30" asp-for="PhoneNr" class="form-control" placeholder="Telephone Number" required="">
+                                <span asp-validation-for="PhoneNr" class="text-danger"></span>
+                            </p>
+                        </div>
+
+                        <div class="col-md-6">
+                            <p class="contact-form-email">
+                                <input type="email" aria-required="true" size="30" asp-for="EmailAddress" class="form-control" placeholder="Email Address" required="">
+                                <span asp-validation-for="EmailAddress" class="text-danger"></span>
+                            </p>
+                        </div>
+                        <p class="contact-form-subject">
+                            <input type="text" aria-required="true" size="30" asp-for="Subject" class="form-control" placeholder="Subject" required="">
+                            <span asp-validation-for="Subject" class="text-danger"></span>
+                        </p>
+                        <p class="contact-form-message">
+                            <textarea aria-required="true" rows="8" cols="45" asp-for="Content" class="form-control" placeholder="Message"></textarea>
+                        </p>
+                        <p class="contact-form-submit vertical-margin-40">
+                            <!-- <input type="submit" value="Send" id="contact_form_submit" name="contact_submit" class="theme_button"> -->
+                            <button type="submit" id="contact_form_submit" name="contact_submit" class="btn btn-primary"><i class="rt-icon-sent"></i> Submit!</button>
+                        </p>
+                    </form>
+                    <p class="m-t"><p style="color:black">&copy; Copyright @DateTime.Now.Year - Created by <a href="https://www.iqtechsolutions.co.za" target="_blank"><strong style="color: blue !important">IQ Tech Solutions</strong></a> All right reserved.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+
+    <script src="https://www.google.com/recaptcha/api.js?render=@Configuration["googleReCaptcha:SiteKey"]"></script>
+    <script>
+        grecaptcha.ready(function() {
+            window.grecaptcha.execute('@Configuration["googleReCaptcha:SiteKey"]', { action: 'home' }).then(function (token) {
+                $("#captchaInput").val(token);
+            });
+        });
+    </script>
+
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAtpPNg-JCpH9A7fzgsnkiz45nrJShhKrU"></script>
+    <script type="text/javascript">
+        var lat;
+        var lng;
+        var map;
+        var styles = [{ "stylers": [{ "saturation": -100 }, { "gamma": 1 }] }, { "elementType": "labels.text.stroke", "stylers": [{ "visibility": "off" }] }, { "featureType": "poi.business", "elementType": "labels.text", "stylers": [{ "visibility": "off" }] }, { "featureType": "poi.business", "elementType": "labels.icon", "stylers": [{ "visibility": "off" }] }, { "featureType": "poi.place_of_worship", "elementType": "labels.text", "stylers": [{ "visibility": "off" }] }, { "featureType": "poi.place_of_worship", "elementType": "labels.icon", "stylers": [{ "visibility": "off" }] }, { "featureType": "road", "elementType": "geometry", "stylers": [{ "visibility": "simplified" }] }, { "featureType": "water", "stylers": [{ "visibility": "on" }, { "saturation": 50 }, { "gamma": 0 }, { "hue": "#50a5d1" }] }, { "featureType": "administrative.neighborhood", "elementType": "labels.text.fill", "stylers": [{ "color": "#333333" }] }, { "featureType": "road.local", "elementType": "labels.text", "stylers": [{ "weight": 0.5 }, { "color": "#333333" }] }, { "featureType": "transit.station", "elementType": "labels.icon", "stylers": [{ "gamma": 1 }, { "saturation": 50 }] }];
+
+        //type your address after "address="
+        jQuery.getJSON('https://maps.googleapis.com/maps/api/geocode/json?address=Cape Town, Protea Heights', function (data) {
+            lat = '-33.890639';
+            lng = '18.705718';
+        }).complete(function () {
+            dxmapLoadMap();
+        });
+
+        function attachSecretMessage(marker, message) {
+            var infowindow = new google.maps.InfoWindow(
+                {
+                    content: message
+                });
+            google.maps.event.addListener(marker, 'click', function () {
+                infowindow.open(map, marker);
+            });
+        }
+
+        window.dxmapLoadMap = function () {
+            var center = new google.maps.LatLng(lat, lng);
+            var settings = {
+                mapTypeId: google.maps.MapTypeId.ROADMAP,
+                zoom: 16,
+                draggable: false,
+                scrollwheel: false,
+                center: center,
+                styles: styles
+            };
+            map = new google.maps.Map(document.getElementById('map'), settings);
+
+            var marker = new google.maps.Marker({
+                position: center,
+                title: 'Map title',
+                map: map
+            });
+            marker.setTitle('Map title'.toString());
+            //type your map title and description here
+            attachSecretMessage(marker, '<h3>Map title</h3>Map HTML description');
+        }
+    </script>
+}

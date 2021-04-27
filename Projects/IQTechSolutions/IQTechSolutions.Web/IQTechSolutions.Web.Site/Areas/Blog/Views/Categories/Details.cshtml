@@ -1,0 +1,158 @@
+﻿@using Filing.Base.Extensions
+@using Identity.Base.Entities
+@using Iqt.Base.Extensions
+@using Iqt.Base.Interfaces
+
+@inject IApplicationConfiguration Configuration;
+
+@model Grouping.Core.Models.CategoryDetailsModel<Blogging.Base.Entities.BlogPost>
+
+@{
+    ViewData["Title"] = @Model.Entity.Name + "Details";
+    ViewData["Description"] = @Model.Entity.Description;
+    ViewData["Keywords"] = "Web Design, Web Desing Cape Town, Web Design Prices, Web Design South Africa, Web Designers, Proffesional Web Design Company, Quality Web Design, Web Design Costs" +
+                           "Web Design Packages, Web Site Design, Website, Designing, Web Design Prices, Web Designer, Web Site Design, Affordable Website Designing, Web Development, Application Development" +
+                           "SEO, Search Engine Optimization, Cheap SEO, SEO Experts, Email Campaigns, Social Media Campaigns, Digital Marketing, Database Development, Database Developer, Database, " +
+                           "Database Architects, Cape Town, South Africa, Websites, E-Commerce, Web Hosting, Website Hosting, Adwords, Google Adwords, ASP.NET, DOTNET Core, SQL Server, Entity Framework, C#"
+                           + "CSharp, C-Sharp, Visual CSharp, Visual CSharp, Code First, Visual Basic, VB.Net, JAVA, JQeury, Ajaq, Razor";
+}
+
+Layout = "Layouts/_Layout";
+}
+
+<partial name="Breadcrumbs/_BreadcrumPartial" />
+
+<!--content-->
+<div class="section_offset">
+    <div class="container">
+        <div class="row">
+
+            @if (Model.Entity.EntityCollection.Any())
+            {
+                <partial name="SideBars/_DefaultLeftSideBar" />
+            }
+            <section class="col-lg-9 col-md-9 col-sm-9">
+
+                @if (Model.Entity.EntityCollection.Any())
+                {
+                    foreach (var list in ListExtensions.SplitList(Model.Entity.EntityCollection.ToList(), Convert.ToInt32(Math.Ceiling((double)Model.Entity.EntityCollection.Count() / 2))))
+                    {
+                        <div class="row">
+                            @foreach (var item in list)
+                            {
+                                <!--post-->
+                                <article>
+                                    <!--post content-->
+                                    <figure>
+                                        @*@if (item.Entity.HasVideo)
+                                        {
+                                            <div class="iframe_video_wrap m_bottom_20">
+                                                <iframe src="http://player.vimeo.com/video/78329678"></iframe>
+                                            </div>
+                                        }
+                                        else*@ if (item.Entity.GetImage() != null)
+                                        {
+                                            <div class="m_bottom_20 r_corners wrapper simple_slideshow relative">
+                                                <ul class="slides">
+                                                    <li><img src="@item.Entity.GetPath(Configuration.BaseImageUrl)" alt=""></li>
+                                                    @foreach (var image in item.Entity.Images.Take(5))
+                                                    {
+                                                        <li><img src="@image.GetPath(Configuration.BaseImageUrl)" alt=""></li>
+                                                    }
+                                                </ul>
+                                            </div>
+                                        }
+                                        else if (item.Entity.GetImage() != null)
+                                        {
+                                            <a asp-area="Blog" asp-controller="Home" asp-action="Details" asp-route-id="@item.CategoryId" class="d_block wrapper r_corners m_bottom_20">
+                                                <img src="@item.Entity.GetPath(Configuration.BaseImageUrl)" alt="">
+                                            </a>
+                                        }
+                                        else if (item.Entity.HasAudioFile)
+                                        {
+                                            <iframe height="120" class="w_full m_bottom_20" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/142827697&amp;color=ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_artwork=true"></iframe>
+                                        }
+                                        else if (item.Entity.HasAuthor)
+                                        {
+                                            <blockquote class="r_corners relative type_3 fs_large color_dark m_bottom_20 bg_light_3">
+                                                <p class="m_bottom_10">
+                                                    <i>Donec sit amet eros. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Mauris fermentum dictum magna. Sed laoreet aliquam leo. Ut tellus dolor, dapibus eget, elementum vel, cursus eleifend, elit. Aenean wisi urna. </i>
+                                                </p>
+                                                <b>John Doe</b>
+                                            </blockquote>
+                                        }
+                                        else if (item.Entity.HasUrl)
+                                        {
+                                            <a asp-area="Blog" asp-controller="Home" asp-action="Details" asp-route-id="@item.CategoryId" class="d_block wrapper r_corners m_bottom_20">
+                                                <img src="@item.Entity.GetPath(Configuration.BaseImageUrl)" alt="">
+                                            </a>
+                                        }
+
+                                        <figcaption>
+                                            <h4 class="fw_light fs_middle m_bottom_5"><a asp-area="Blog" asp-controller="Home" asp-action="Details" asp-route-id="@item.CategoryId" class="color_dark tr_all">@item.Entity.Title</a></h4>
+                                            <ul class="dotted_list m_bottom_8 color_grey_light_2 lh_ex_small">
+                                                <li class="m_right_15 relative d_inline_m">
+                                                    <a href="#" class="color_grey_light_2 fs_small">
+                                                        <i class="icon-picture-1"></i>
+                                                    </a>
+                                                </li>
+                                                <li class="m_right_15 relative d_inline_m">
+                                                    <a href="#" class="color_grey fs_small">
+                                                        <i>@item.Entity.Created.ToLongDateString()</i>
+                                                    </a>
+                                                </li>
+                                                @*<li class="m_right_15 relative d_inline_m">
+                                                    <a asp-area="ClientZone" asp-controller="Profile" asp-action="Index" asp-route-id="@item.Entity.ApplicationUserId" class="color_grey fs_small">
+                                                        <i>by @item.Entity.ApplicationUser.DisplayName</i>
+                                                    </a>
+                                                </li>*@
+                                                <li class="m_right_15 relative d_inline_m">
+                                                    @if (@item.CategoryId != null)
+                                                    {
+                                                        <a asp-area="Blog" asp-controller="Categories" asp-action="Details" asp-route-id="@item.CategoryId" class="fs_medium color_grey"><i>@item.Category.Name</i></a><span>,</span>
+                                                    }
+                                                    @if (@item.CategoryId != null)
+                                                    {
+                                                        <a asp-area="Blog" asp-controller="Categories" asp-action="Details" asp-route-id="@item.CategoryId" class="fs_medium color_grey"><i>@item.Category.Name</i></a>
+                                                    }
+                                                </li>
+                                                <li class="m_right_15 relative d_inline_m">
+                                                    <a asp-area="Blog" asp-controller="Home" asp-action="Details" asp-route-id="@item.CategoryId" class="color_scheme_hover">
+                                                        <i class="icon-chat-empty m_right_2 color_grey_light_2 tr_all"></i><i class="fs_medium color_grey tr_all">@*@item.Entity.Comments.Count()*@</i>
+                                                    </a>
+                                                </li>
+                                                <li class="m_right_15 relative d_inline_m">
+                                                    <a href="#" class="color_red_hover">
+                                                        <i class="icon-heart-empty-1 m_right_2 color_grey_light_2 tr_all"></i><i class="fs_medium color_grey tr_all">@item.Entity.Likes</i>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                            <p class="fw_light m_bottom_12">@item.Entity.ShortDescription</p>
+                                            <a asp-area="Blog" asp-controller="Home" asp-action="Details" asp-route-id="@item.CategoryId" class="color_purple d_inline_b color_pink_hover d_block m_right_20 fw_light">
+                                                <span class="d_inline_m m_right_5 icon_wrap_size_0 circle color_grey_light tr_all">
+                                                    <i class="icon-angle-right"></i>
+                                                </span>
+                                                Read More
+                                            </a>
+                                        </figcaption>
+                                    </figure>
+                                </article>
+                            }
+                        </div>
+                    }
+                }
+                else
+                {
+                    <h4>
+                        There currently are no posts available, please check back later
+                        @if (User.Identity.IsAuthenticated)
+                        {
+                            <span>or <a asp-area="Blog" asp-controller="Home" asp-action="Create"><strong> create your first post </strong></a></span>
+                        }
+                    </h4>
+                }
+            </section>
+        </div>
+    </div>
+</div>
+<hr class="divider_type_2">

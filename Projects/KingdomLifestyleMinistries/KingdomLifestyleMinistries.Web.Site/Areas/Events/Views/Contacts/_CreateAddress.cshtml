@@ -1,0 +1,203 @@
+﻿@model AddEditAddressDetailModel
+
+<div class="modal-dialog">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h4 class="modal-title">Add New Address</h4>
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        </div>
+        <div class="modal-body">
+            <form id="CreateAddressForm">
+                <input type="hidden" asp-for="Id" />
+                <input type="hidden" asp-for="ParentId" />
+                <div class="col-md-6">
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label asp-for="UnitNumber" class="control-label">Unit</label>
+                            <input asp-for="UnitNumber" class="form-control" />
+                            <span asp-validation-for="UnitNumber" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="col-md-9">
+                        <div class="form-group">
+                            <label asp-for="Complex" class="control-label"></label>
+                            <input asp-for="Complex" class="form-control" />
+                            <span asp-validation-for="Complex" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label asp-for="StreetNumber" class="control-label">Nr</label>
+                            <input asp-for="StreetNumber" class="form-control" />
+                            <span asp-validation-for="StreetNumber" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="col-md-9">
+                        <div class="form-group">
+                            <label asp-for="AddressLine" class="control-label"></label>
+                            <input asp-for="AddressLine" class="form-control" />
+                            <span asp-validation-for="AddressLine" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Suburb" class="control-label"></label>
+                        <input asp-for="Suburb" class="form-control" />
+                        <span asp-validation-for="Suburb" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="PostalCode" class="control-label"></label>
+                        <input asp-for="PostalCode" class="form-control" />
+                        <span asp-validation-for="PostalCode" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label asp-for="City" class="control-label"></label>
+                        <input asp-for="City" class="form-control" />
+                        <span asp-validation-for="City" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Province" class="control-label"></label>
+                        <input asp-for="Province" class="form-control" />
+                        <span asp-validation-for="Province" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Country" class="control-label"></label>
+                        <input asp-for="Country" class="form-control" />
+                        <span asp-validation-for="Country" class="text-danger"></span>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label asp-for="Longtitude" class="control-label"></label>
+                            <input asp-for="Longtitude" class="form-control" />
+                            <span asp-validation-for="Longtitude" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label asp-for="Latitude" class="control-label"></label>
+                            <input asp-for="Latitude" class="form-control" />
+                            <span asp-validation-for="Latitude" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="checkbox">
+                            <label>
+                                <input asp-for="Default" /> @Html.DisplayNameFor(model => model.Default)
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="modal-footer">
+            <a href="javascript:;" class="btn btn-sm btn-white" data-dismiss="modal">Close</a>
+            <a href="javascript:;" onclick="ConfirmAddress()" class="btn btn-sm btn-primary">Submit & Add</a>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+    <script>
+        var loadFile = function (event) {
+            var output = document.getElementById('preview');
+            output.src = URL.createObjectURL(event.target.files[0]);
+        };
+    </script>
+
+    <!-- Summer Note JS -->
+    <script src="~/js/summernote/summernote.js"></script>
+
+    <script type="text/javascript" src="~/js/bs-filestyle.js"></script>
+
+    <script>
+
+        function ConfirmAddress() {
+
+            var myformdata = $("#CreateAddressForm").serialize();
+            var url = "@Url.Action("CreateAddress", "Contacts", new { area = "Events"})";
+
+            $.ajax({
+                type: "POST",
+                data: myformdata,
+                url: url,
+                success: function (data) {
+
+                    $("#ModalPlaceHolder").modal("hide");
+
+                    var tableBody = document.getElementById("addressTableBody");
+
+                    var tableRow = document.createElement("tr");
+
+                    var tableAddressColumn = document.createElement("td");
+                    var tableAddressDefaultColumn = document.createElement("td");
+                    var tableAddressButtonColumn = document.createElement("td");
+
+                    var defaultIcon = document.createElement("i");
+
+                    var tableAddressEditButton = document.createElement("a");
+                    var tableAddressDeleteButton = document.createElement("a");
+
+                    var tableAddressEditButtonIcon = document.createElement("i");
+                    var tableAddressDeleteButtonIcon = document.createElement("i");
+
+
+                    tableBody.append(tableRow);
+                    tableRow.append(tableAddressColumn);
+                    tableRow.append(tableAddressDefaultColumn);
+                    tableRow.append(tableAddressDefaultColumn);
+                    tableRow.append(tableAddressButtonColumn);
+                    tableAddressDefaultColumn.append(defaultIcon);
+                    tableAddressButtonColumn.append(tableAddressEditButton);
+                    tableAddressEditButton.append(tableAddressEditButtonIcon);
+                    tableAddressButtonColumn.append(tableAddressDeleteButton);
+                    tableAddressDeleteButton.append(tableAddressDeleteButtonIcon);
+
+
+                    tableRow.id = "row_" + data.id;
+                    tableRow.classList.add("row_" + data.id);
+
+                    tableAddressColumn.id = "address_" + data.id;
+                    tableAddressColumn.innerHTML = data.addressLine;
+
+
+                    tableAddressColumn.id = "addressDefault_" + data.id;
+
+                    defaultIcon.classList.add("fa");
+                    if (data.defaultEntry) {
+                        defaultIcon.classList.add("fa-check");
+                    } else {
+                        defaultIcon.classList.add("fa-close");
+                    }
+
+                    tableAddressEditButton.classList.add("btn", "btn-xs", "btn-info");
+                    tableAddressEditButton.href = "javascript:;";
+                    tableAddressEditButton.onclick = function () { ShowEditAddressModel(data.id) };
+
+                    tableAddressEditButtonIcon.classList.add("fa", "fa-edit");
+
+                    tableAddressDeleteButton.classList.add("btn", "btn-xs", "btn-danger");
+                    tableAddressDeleteButton.href = "javascript:;";
+                    tableAddressDeleteButton.onclick = function () { ShowDeleteAddressModel(data.id) };
+
+
+                    tableAddressDeleteButtonIcon.classList.add("fa", "fa-trash");
+
+
+                    $("#AddressList").append(markup);
+
+                },
+                error: function (xhr, textStatus, err) {
+                    alert("An error with the following detials occured : "
+                        + "\r\n == readyState: " + xhr.readyState
+                        + "\r\n == responseText: " + xhr.responseText
+                        + "\r\n == status: " + xhr.status
+                        + "\r\n == text status: " + textStatus
+                        + "\r\n == error: " + err);
+                }
+            });
+        }
+    </script>

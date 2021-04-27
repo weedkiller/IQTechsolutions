@@ -1,0 +1,24 @@
+{{ $pageImages := .Resources.ByType "image" }}
+{{ if $pageImages }}
+<div id="{{ .UniqueID }}-carousel" class="carousel slide carousel-fade"
+    data-ride="carousel">
+    <ol class="carousel-indicators">
+        {{ range $ii, $iv := $pageImages }}
+        <li data-target="#one" data-slide-to="{{$ii}}" {{ if eq $ii 0 }}
+            class="active" {{ end }}></li>
+        {{ end }}
+    </ol>
+    <div class="carousel-inner">
+        {{ range $ii, $iv := $pageImages }}
+        <div class="carousel-item {{ if eq $ii 0 }}active{{ end }}">
+            <img src="{{ .Permalink }}" class="d-block w-100" alt="">
+            <div class="carousel-caption d-none d-md-block text-dark"
+                style="background-color: rgba(255,255,255, 0.5)">
+                <h5>{{ humanize .Title }}</h5>
+                <p>Etc.</p>
+            </div>
+        </div>
+        {{ end }}
+    </div>
+</div>
+{{ end }}

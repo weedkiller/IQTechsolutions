@@ -1,0 +1,46 @@
+﻿@using Microsoft.EntityFrameworkCore
+
+
+
+@*<li>
+    <a href="#" class="d_block color_dark relative">
+        Domains<i class="icon-angle-right"></i>
+    </a>
+    <ul class="sub_menu r_xs_corners bg_light vr_list tr_all tr_xs_none trf_xs_none bs_xs_none d_xs_none">
+        <li>
+            <a asp-area="Domains" asp-controller="Home" asp-action="DomainCheck" class="d_block color_dark relative">Domain Check</a>
+        </li>
+        <li>
+            <a asp-area="Domains" asp-controller="Home" asp-action="DomainCheck" class="d_block color_dark relative">Buy Domain</a>
+        </li>
+        <li>
+            <a asp-area="Domains" asp-controller="Home" asp-action="TransferDomain" class="d_block color_dark relative">Transfer Domain</a>
+        </li>
+    </ul>
+</li>*@
+
+@*@foreach (var item in RepositoryManager.Repository<Category<Service>>().GetAll().Include(c => c.SubCategories).Where(c => c.ParentCategoryId == null).OrderByDescending(c => c.SubCategories.Count))
+{
+    if (!item.SubCategories.Any() || item.SubCategories.Count() <= 1)
+    {
+        <li>
+            <a asp-area="Services" asp-controller="Home" asp-action="Index" asp-route-categoryId="@item.Id" class="d_block color_dark relative">@item.Name</a>
+        </li>
+    }
+    else
+    {
+        <li>
+            <a href="#" class="d_block color_dark relative">
+                @item.Name<i class="icon-angle-right"></i>
+            </a>
+            <ul class="sub_menu r_xs_corners bg_light vr_list tr_all tr_xs_none trf_xs_none bs_xs_none d_xs_none">
+                @foreach (var sub in item.SubCategories)
+                {
+                    <li>
+                        <a asp-area="Services" asp-controller="Home" asp-action="Index" asp-route-categoryId="@sub.Id" class="d_block color_dark relative">@sub.Name</a>
+                    </li>
+                }
+            </ul>
+        </li>
+    }
+}*@

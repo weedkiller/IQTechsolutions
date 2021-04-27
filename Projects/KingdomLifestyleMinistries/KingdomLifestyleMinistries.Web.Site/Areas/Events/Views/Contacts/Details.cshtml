@@ -1,0 +1,45 @@
+﻿@model ContactDetailsModel
+
+@{
+    ViewData["Title"] = $"{Model.Entity.FirstName} {Model.Entity.LastName} Details";
+}
+
+<div class="col-sm-12 col-md-4 col-lg-4">
+    <img src="@Model.Entity.GetImage().GetImagePathFromAnotherWebsite(FrameworkDI.Configuration["Company:WebUrl"],FrameworkDI.Configuration["Placeholders:CoverImage"])" alt="@Model.Entity.FirstName @Model.Entity.LastName Profile Image" class="r_corners m_bottom_20">
+</div>
+
+<div class="col-sm-12 col-md-8 col-lg-8">
+    <dl class="dl-horizontal">
+        <dt>
+            Names
+        </dt>
+        <dd>
+            @Model.Entity.FirstName @Model.Entity.LastName;
+        </dd>
+        <dt>
+            Description
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Entity.Bio)
+        </dd>
+        <dt>
+            Contact Number
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Entity.ContactNumbers.FirstOrDefault(c => c.Default))
+        </dd>
+        <dt>
+            Email Address
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Entity.EmailAddresses.FirstOrDefault(c => c.Default))
+        </dd>
+        <dt>
+            Address
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Entity.Addresses.FirstOrDefault(c => c.Default))
+        </dd>
+    </dl>
+
+</div>

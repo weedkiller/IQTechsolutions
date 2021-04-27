@@ -1,0 +1,28 @@
+﻿@using System.Security.Claims
+@model IEnumerable<Messaging.Base.Entities.Message>
+
+@foreach (var message in Model)
+{
+    if (message.SenderId == User.FindFirst(ClaimTypes.NameIdentifier).Value)
+    {
+        <li class="left">
+            <span class="date-time">@message.Created.ToShortTimeString()</span>
+            <a asp-area="Identity" asp-controller="Profile" asp-action="Index" asp-route-id="@message.SenderId" class="name">@message.Sender?.FirstName @message.Sender?.LastName</a>
+            <a asp-area="Identity" asp-controller="Profile" asp-action="Index" asp-route-id="@message.SenderId" class="image"><img alt="" src="" /></a>
+            <div class="message">
+                @message.MessageString
+            </div>
+        </li>
+    }
+    else
+    {
+        <li class="right">
+            <span class="date-time">yesterday 11:23pm</span>
+            <a asp-area="Identity" asp-controller="Profile" asp-action="Index" asp-route-id="@message.SenderId" class="name">@message.Sender?.FirstName @message.Sender?.LastName</a>
+            <a asp-area="Identity" asp-controller="Profile" asp-action="Index" asp-route-id="@message.SenderId" class="image"><img alt="" src="" /></a>
+            <div class="message">
+                @message.MessageString
+            </div>
+        </li>
+    }
+}

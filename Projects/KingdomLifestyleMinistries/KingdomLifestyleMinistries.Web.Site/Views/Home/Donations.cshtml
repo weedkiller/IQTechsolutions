@@ -1,0 +1,250 @@
+﻿@{
+    ViewData["Title"] = "About Us";
+}
+
+<partial name="_Breadcrums" />
+
+<!-- Section: inner-header -->
+<section class="inner-header divider parallax layer-overlay overlay-dark-6">
+    <div class="container pt-60 pb-60">
+        <!-- Section Content -->
+        <div class="section-content">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <h3 class="title text-white">Paypal Recurring Donation</h3>
+                    <ol class="breadcrumb text-center text-black mt-10">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Pages</a></li>
+                        <li class="active text-theme-colored">Page Title</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <ul class="nav nav-tabs">
+                    <li class="active"><a href="#recurring-tab" data-toggle="tab"><h4>Recurring Donation</h4></a></li>
+                    <li><a href="#onetime-tab" data-toggle="tab"><h4>One-Time Donation</h4></a></li>
+                </ul>
+                <div class="tab-content">
+                    <div class="tab-pane fade in active" id="recurring-tab">
+                        <p>Thank you for making a donation to our charitable organization. Please use the form below to pay your desired giving amount.</p>
+                        <hr>
+
+                        <!-- Paypal Form Starts -->
+                        <form id="paypal_donate_form-recurring" action="https://www.paypal.com/cgi-bin/webscr" method="post">
+                            <div class="row">
+                                <input type="hidden" name="cmd" value="_xclick-subscriptions">
+                                <input type="hidden" name="business" value="accounts@thememascot.com">
+                                <input type="hidden" name="currency_code" value="USD">
+                                <div class="col-sm-12">
+                                    <div class="form-group mb-20">
+                                        <label><strong>I Want to Donate for</strong></label>
+                                        <select name="item_name" class="form-control">
+                                            <option value="Educate Children">Educate Children</option>
+                                            <option value="Child Camps">Child Camps</option>
+                                            <option value="Clean Water for Life">Clean Water for Life</option>
+                                            <option value="Campaign for Child Poverty">Campaign for Child Poverty</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-sm-12">
+                                    <div class="form-group mb-20">
+                                        <label><strong>How much do you want to donate?</strong></label>
+                                        <select id="amount" name="a3" class="form-control">
+                                            <option value="20">$20</option>
+                                            <option value="50">$50</option>
+                                            <option value="100">$100</option>
+                                            <option value="200">$200</option>
+                                            <option value="500">$500</option>
+                                            <option value="other">Other Amount</option>
+                                        </select>
+                                        <div id="custom_other_amount">
+                                            <label><strong>Custom Amount:</strong></label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-12">
+                                    <div class="form-group mb-20">
+                                        <label><strong>Donation Type</strong></label>
+                                        <div class="radio mt-5">
+                                            <label class="radio-inline">
+                                                <input type="radio" value="D" name="t3">
+                                                Daily
+                                            </label>
+                                            <label class="radio-inline">
+                                                <input type="radio" value="W" name="t3">
+                                                Weekly
+                                            </label>
+                                            <label class="radio-inline">
+                                                <input type="radio" value="M" name="t3">
+                                                Monthly
+                                            </label>
+                                            <label class="radio-inline">
+                                                <input type="radio" value="Y" name="t3">
+                                                Yearly
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-12">
+                                    <div class="form-group mb-20">
+                                        <input type="hidden" name="p3" value="1">
+                                        <input type="hidden" name="rm" value="2">
+                                        <input type="hidden" name="src" value="1">
+                                        <input type="hidden" name="sra" value="1">
+                                        <input type="hidden" name="no_shipping" value="0">
+                                        <input type="hidden" name="no_note" value="1">
+                                        <input type="hidden" name="lc" value="US">
+                                        <input type="hidden" name="bn" value="PP-DonationsBF">
+                                        <input type="hidden" name="return" value="http://www.yoursite.com/thankyou.html">
+                                        <input type="hidden" name="cancel_return" value="http://www.yoursite.com/paymentcancel.html">
+                                        <input type="hidden" name="notify_url" value="http://www.yoursite.com/notifypayment.php">
+                                        <input type="image" src="https://www.paypal.com/en_US/i/btn/btn_donateCC_LG.gif" name="submit" alt="PayPal - The safer, easier way to pay online!">
+                                        <img alt="" src="https://www.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1">
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+
+                        <!-- Script for Donation Form Custom Amount -->
+                        <script type="text/javascript">
+                            $(document).ready(function (e) {
+                                var $recurring_form = $("#paypal_donate_form-recurring");
+                                var $custom_other_amount = $recurring_form.find("#custom_other_amount");
+                                $custom_other_amount.hide();
+                                $recurring_form.find("select[name='a3']").change(function () {
+                                    var $this = $(this);
+                                    if ($this.val() == 'other') {
+                                        $custom_other_amount.show().append('<div class="input-group"><span class="input-group-addon">$</span> <input type="text" name="a3" class="form-control" value="100"/></div>');
+                                    }
+                                    else {
+                                        $custom_other_amount.children(".input-group").remove();
+                                        $custom_other_amount.hide();
+                                    }
+                                });
+                            });
+                        </script>
+                        <!-- Paypal Form Ends -->
+
+                    </div>
+                    <div class="tab-pane fade in" id="onetime-tab">
+                        <p>Thank you for making a donation to our charitable organization. Please use the form below to pay your desired giving amount.</p>
+                        <hr>
+
+                        <!-- Paypal Form Starts -->
+                        <form id="paypal_donate_form-onetime" action="https://www.paypal.com/cgi-bin/webscr" method="post">
+                            <div class="form-group mb-20">
+                                <label><strong>I Want to Donate for</strong></label>
+                                <select class="form-control" name="item_name">
+                                    <option value="Educate Children">Educate Children</option>
+                                    <option value="Child Camps">Child Camps</option>
+                                    <option value="Clean Water for Life">Clean Water for Life</option>
+                                    <option value="Campaign for Child Poverty">Campaign for Child Poverty</option>
+                                </select>
+                            </div>
+                            <div class="form-group mb-20">
+                                <label><strong>How much do you want to donate?</strong></label>
+                                <select id="amount" name="amount" class="form-control">
+                                    <option value="20">$20</option>
+                                    <option value="50">$50</option>
+                                    <option value="100">$100</option>
+                                    <option value="200">$200</option>
+                                    <option value="500">$500</option>
+                                    <option value="other">Other Amount</option>
+                                </select>
+                                <div id="custom_other_amount">
+                                    <label><strong>Custom Amount:</strong></label>
+                                </div>
+                            </div>
+                            <input type="hidden" name="cmd" value="_donations">
+                            <input type="hidden" name="business" value="accounts@thememascot.com">
+                            <input type="hidden" name="no_shipping" value="1">
+                            <input type="hidden" name="cn" value="Comments...">
+                            <input type="hidden" name="currency_code" value="USD">
+                            <input type="hidden" name="tax" value="0">
+                            <input type="hidden" name="lc" value="US">
+                            <input type="hidden" name="bn" value="PP-DonationsBF">
+                            <input type="hidden" name="return" value="http://www.yoursite.com/thankyou.html">
+                            <input type="hidden" name="cancel_return" value="http://www.yoursite.com/paymentcancel.html">
+                            <input type="hidden" name="notify_url" value="http://www.yoursite.com/notifypayment.php">
+                            <input type="image" src="https://www.paypal.com/en_US/i/btn/btn_donateCC_LG.gif" name="submit" alt="PayPal - The safer, easier way to pay online!">
+                            <img alt="" src="https://www.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1">
+                        </form>
+
+                        <!-- Script for Donation Form Custom Amount -->
+                        <script type="text/javascript">
+                            $(document).ready(function (e) {
+                                var $onetime_form = $("#paypal_donate_form-onetime");
+                                var $custom_other_amount = $onetime_form.find("#custom_other_amount");
+                                $custom_other_amount.hide();
+                                $onetime_form.find("select[name='amount']").change(function () {
+                                    var $this = $(this);
+                                    if ($this.val() == 'other') {
+                                        $custom_other_amount.show().append('<div class="input-group"><span class="input-group-addon">$</span> <input type="text" name="amount" class="form-control" value="100"/></div>');
+                                    }
+                                    else {
+                                        $custom_other_amount.children(".input-group").remove();
+                                        $custom_other_amount.hide();
+                                    }
+                                });
+                            });
+                        </script>
+                        <!-- Paypal Form Ends -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Divider: Call To Action -->
+<section class="bg-theme-colored">
+    <div class="container pt-0 pb-0">
+        <div class="row">
+            <div class="call-to-action pt-20 pb-15">
+                <div class="col-md-6">
+                    <h3 class="mt-5 mb-5 text-white vertical-align-middle"><i class="pe-7s-mail mr-10 font-48 vertical-align-middle"></i> SUBSCRIBE TO OUR NEWSLETTER</h3>
+                </div>
+                <div class="col-md-6">
+                    <!-- Mailchimp Subscription Form Starts Here -->
+                    <form id="mailchimp-subscription-form-footer" class="newsletter-form mt-10">
+                        <div class="input-group">
+                            <input type="email" value="" name="EMAIL" placeholder="Your Email" class="form-control input-lg font-16" data-height="45px" id="mce-EMAIL-footer" style="height: 45px;">
+                            <span class="input-group-btn">
+                                <button data-height="45px" class="btn bg-gray-dimgray text-white btn-xs m-0 font-14" type="submit">Subscribe</button>
+                            </span>
+                        </div>
+                    </form>
+                    <!-- Mailchimp Subscription Form Validation-->
+                    <script type="text/javascript">
+                        $('#mailchimp-subscription-form-footer').ajaxChimp({
+                            callback: mailChimpCallBack,
+                            url: '//thememascot.us9.list-manage.com/subscribe/post?u=a01f440178e35febc8cf4e51f&amp;id=49d6d30e1e'
+                        });
+
+                        function mailChimpCallBack(resp) {
+                            // Hide any previous response text
+                            var $mailchimpform = $('#mailchimp-subscription-form-footer'),
+                                $response = '';
+                            $mailchimpform.children(".alert").remove();
+                            if (resp.result === 'success') {
+                                $response = '<div class="alert alert-success"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>' + resp.msg + '</div>';
+                            } else if (resp.result === 'error') {
+                                $response = '<div class="alert alert-danger"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>' + resp.msg + '</div>';
+                            }
+                            $mailchimpform.prepend($response);
+                        }
+                    </script>
+                    <!-- Mailchimp Subscription Form Ends Here -->
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- end main-content -->

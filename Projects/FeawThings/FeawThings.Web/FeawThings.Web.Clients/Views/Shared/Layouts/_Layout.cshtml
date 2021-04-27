@@ -1,0 +1,54 @@
+﻿@{
+    Layout = "Layouts/_LayoutBase";
+}
+
+@section Styles
+{
+    
+
+    @RenderSection("Styles", required: false)
+}
+
+<div id="container" class="effect">
+
+    <partial name="Headers/_HeaderDefault" />
+
+    <div class="boxed">
+
+        <!--CONTENT CONTAINER-->
+        <!--===================================================-->
+        <div id="content-container">
+
+            <!--Page Title-->
+            <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+            <div id="page-title">
+                <h1 class="page-header text-overflow">@ViewBag.Title</h1>
+
+                @await Component.InvokeAsync("SearhComponent")
+            </div>
+            <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+            <!--End page title-->
+
+            @RenderBody()
+
+        </div>
+
+        <partial name="Menus/_MainMenu" />
+
+        @RenderSection("AsideMenu", required: false)
+
+    </div>
+
+    <partial name="Footers/_FooterDefault" />
+
+    <button id="scroll-top" class="btn"><i class="fa fa-chevron-up"></i></button>
+
+    <div class="modal modal-message fade" id="ModalPlaceHolder"></div>
+    <div class="modal modal-message fade" id="CropModal" data-backdrop="static" data-keyboard="false"></div>
+
+</div>
+
+@section Scripts
+{
+    @RenderSection("Scripts", required: false)
+}

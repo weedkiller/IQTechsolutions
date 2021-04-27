@@ -1,0 +1,65 @@
+﻿@using Filing.Base.Extensions
+@using Iqt.Base.Interfaces
+
+@inject IApplicationConfiguration Configuration
+
+@model IEnumerable<List<Customers.Base.ApiModels.CustomerModel>>
+
+<h3>Our Customers</h3>
+
+
+<div id="carousel-media2" class="carousel slide customer-carousel" data-ride="carousel">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+        <li data-target="#carousel-media2" data-slide-to="0" class="active"></li>
+        @for (int i = 1; i < Model.Count(); i++)
+        {
+            <li data-target="#carousel-media2" data-slide-to="@i"></li>
+        }
+    </ol>
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner text-center">
+
+        @for (int i = 0; i < Model.Count(); i++)
+        {
+            var tt = "";
+            @if (i == 0)
+            {
+                tt = "active text-center";
+            }
+            
+            <div class="item @tt">
+                <div class="media">
+                    @foreach (var item in Model.ToList()[i])
+                    {
+                        <div style="float:left; width:120px;">
+                            <a href="javascript:;" onclick="ShowCustomerDetailsModal('@item.Id')" title="@item.Name">
+                                <img src="@item.ImageUrl" alt="@item.Name">
+                            </a>
+                        </div>
+                    }
+                </div>
+            </div>
+        }
+
+    </div>
+    <!-- Controls -->
+    <a class="left carousel-control" href="#carousel-media2" role="button" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left"></span>
+    </a>
+    <a class="right carousel-control" href="#carousel-media2" role="button" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right"></span>
+    </a>
+</div>
+
+<script>
+    function ShowCustomerDetailsModal(ff) {
+        var url = "/Home/CustomerDetails?id=" + ff;
+
+        $("#ModalPlaceHolder").load(url,
+            function () {
+                $("#ModalPlaceHolder").modal("show");
+            });
+    }
+</script>

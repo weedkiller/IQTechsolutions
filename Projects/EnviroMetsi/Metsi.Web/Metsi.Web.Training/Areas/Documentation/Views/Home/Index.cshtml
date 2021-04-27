@@ -1,0 +1,59 @@
+﻿@using Metsi
+@{
+    Layout = "Layouts/_LayoutHome";
+    ViewData["Title"] = "Documentation";
+}
+
+@section Styles
+{
+    <link rel="stylesheet" href="~/css/syncfusion/filemanager.css" />
+    <script src="~/js/syncfusion/filemanager.js"></script>
+}
+
+@{
+    ViewData["Title"] = "Documents Library";
+    string[] items = new string[] { "Download", "SortBy", "Refresh", "Selection", "View", "Details" };
+    string[] files = new string[] { "Open", "Download", "Details" };
+    string[] folder = new string[] { "Open", "Download", "Details" };
+    string[] layout = new string[] { "SortBy", "View", "Refresh", "|", "Details" };
+}
+
+<partial name="Sliders/_DefaultSliderPartialView" />
+
+<section id="features" class="container services">
+    <div class="row">
+        <div class="col-sm-12 text-center to_animate">
+            <h2 class="section_header">
+                <span class="highlight"><i class="fa fa-exclamation-triangle"></i></span>
+                Documents Library
+            </h2>
+            <p>Find manuals and trouble shooting guides to download</p>
+        </div>
+
+    </div>
+</section>
+
+<section id="features" class="container services">
+    <div class="row">
+        <div class=" control-section">
+            <div class="sample-container">
+                <!--  Filemanager element declaration -->
+                <ejs-filemanager id="file" allowMultiSelection="true" view="Details" allowDragAndDrop="true">
+                    <e-filemanager-ajaxsettings url="@ServerLocations.AdminServer/api/DocumentsApi/FileOperations"
+                                                downloadUrl="@ServerLocations.AdminServer/api/DocumentsApi/Download"
+                                                getImageUrl="@ServerLocations.AdminServer/api/DocumentsApi/GetImage">
+                    </e-filemanager-ajaxsettings>
+                    <e-filemanager-contextmenusettings visible="true" file="files" folder="folder" layout="layout"></e-filemanager-contextmenusettings>
+                    <e-filemanager-navigationpanesettings visible="true" file="files" folder="folder" layout="layout"></e-filemanager-navigationpanesettings>
+                    <e-filemanager-toolbarsettings visible="true" items="items"></e-filemanager-toolbarsettings>
+                </ejs-filemanager>
+                <!-- end of filemanager element -->
+            </div>
+        </div>
+    </div>
+</section>
+
+@section Scripts
+{
+    <ejs-scripts></ejs-scripts>
+}

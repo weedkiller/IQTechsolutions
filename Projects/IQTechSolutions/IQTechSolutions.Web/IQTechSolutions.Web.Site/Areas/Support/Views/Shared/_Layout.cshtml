@@ -1,0 +1,20 @@
+﻿@{
+    Layout = "Layouts/_Layout";
+}
+
+@section Styles
+{
+    @RenderSection("Styles", required: false)
+}
+
+<div class="row">
+    <div class="col-12">
+        @RenderBody()
+    </div>
+</div>
+
+@section Scripts
+{
+    <ejs-scripts></ejs-scripts>
+    @RenderSection("Scripts", required: false)
+}

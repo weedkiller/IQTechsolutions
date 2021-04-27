@@ -1,0 +1,20 @@
+﻿@model Troubleshooting.Base.ApiModels.CorrectiveActionResultModel
+
+@{
+        ViewData["Title"] = $"Corrective Actions";
+}
+
+    <partial name="Sliders/_DefaultSliderPartialView" />
+<section id="features" class="container services">
+    <div class="row">
+        <div class="col-sm-12">
+            <h4>
+                Corrective Action
+            </h4>
+            <hr />
+
+            @Html.Raw(Model.Description.Replace("../Images/RichTextEditor/", "http://admin.metsi.co.za/Images/RichTextEditor/"))
+
+        </div>
+    </div>
+</section>

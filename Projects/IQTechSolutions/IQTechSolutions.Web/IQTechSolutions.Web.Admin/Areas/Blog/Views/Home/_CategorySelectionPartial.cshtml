@@ -1,0 +1,34 @@
+﻿@model List<CheckBoxSelectionModel<Category<BlogPost>>>
+
+@if (Model != null)
+{
+
+    @for (var i = 0; i < Model.Count; i++)
+    {
+
+        <div class="row" style="vert-align: middle">
+            <div class="col-md-1">
+                <input asp-for="@Model[i].IsSelected" type="checkbox" class="checkbox filled-in" style="opacity: 100 !important; position: relative; left: 0; height: 20px" onchange="RunOnChange()"/>
+                <input asp-for="@Model[i].Identity" type="hidden" />
+            </div>
+            <div class="col-md-11">
+                <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#@Model[i].Identity">@Model[i].Name
+                @if (Model[i].ChildSelection != null && Model[i].ChildSelection.Any())
+                {
+                    <small>(Click to Open)</small>
+                }
+                </a>
+                <hr />
+                @if (Model[i].ChildSelection != null && Model[i].ChildSelection.Any())
+                {
+                    <div id="@Model[i].Identity" >
+                        <div class="panel-body">
+                            <partial name="_CategorySelectionPartial" for="@Model[i].ChildSelection" />
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    }
+
+}

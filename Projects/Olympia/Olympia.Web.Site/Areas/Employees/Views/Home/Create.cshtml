@@ -1,0 +1,163 @@
+﻿@model EmployeeAddEditModel
+
+@{
+    ViewData["Title"] = "Create New Employee";
+}
+
+<form asp-action="Create" enctype="multipart/form-data" method="post">
+    <!-- begin profile-section -->
+    <div class="profile-section">
+        <!-- begin profile-left -->
+        <div class="profile-left">
+            <!-- begin profile-image -->
+            <div class="previewd" style="overflow: hidden">
+                <img id="preview" src="@Model.Entity.GetPath("http://admin.metsi.co.za", ImageType.Cover, "/images/placeholders/profileImage128x128.png")" style="width:100%;" />
+            </div>
+            <!-- end profile-image -->
+            <div class="m-b-10">
+                <a for="coverUpload" onclick="getImageFile()" class="btn btn-warning btn-block btn-sm">Edit Profile Image</a>
+                <input asp-for="CoverUpload" style="display: none" onchange="loadFile(event)" accept="image/*" type="file" />
+                <input type="hidden" asp-for="CoverCropSettings.X" />
+                <input type="hidden" asp-for="CoverCropSettings.Y" />
+                <input type="hidden" asp-for="CoverCropSettings.Width" />
+                <input type="hidden" asp-for="CoverCropSettings.Height" />
+                <input type="hidden" asp-for="CoverCropSettings.Rotate" />
+                <input type="hidden" asp-for="CoverCropSettings.ScaleX" />
+                <input type="hidden" asp-for="CoverCropSettings.ScaleY" />
+            </div>
+            <!-- begin profile-highlight -->
+            <div class="profile-highlight">
+                <h4><i class="fa fa-cog"></i> User Settings</h4>
+            </div>
+            <!-- end profile-highlight -->
+        </div>
+        <!-- end profile-left -->
+        <!-- begin profile-right -->
+        <div class="profile-right">
+            <!-- begin profile-info -->
+            <div class="profile-info">
+                <!-- begin table -->
+                <div class="table-responsive">
+                    <table class="table table-profile">
+                        <thead>
+                            <tr>
+                                <th colspan="4">
+                                    <h4>@Model.Entity.Names.FirstName @Model.Entity.Names.LastName <small>@Model.Entity.UserName</small></h4>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td colspan="4">
+                                    <h5>Personal Details</h5>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="field"><label asp-for="Entity.Names.FirstName" class="control-label">Name</label></td>
+                                <td><input asp-for="Entity.Names.FirstName" type="text" class="form-control" placeholder="Enter your first name" required /></td>
+                                <td class="field"><label asp-for="Entity.Names.LastName" class="control-label">Surname</label></td>
+                                <td><input asp-for="Entity.Names.LastName" type="text" class="form-control" placeholder="Enter your last name" required  /></td>
+                            </tr>
+                            <tr>
+                                <td class="field"><label asp-for="PhoneNr" class="control-label">Phone Nr</label></td>
+                                <td><input asp-for="PhoneNr" type="text" class="form-control" placeholder="Enter your phone nr" required /></td>
+                                <td class="field"><label asp-for="Email" class="control-label">Email Address</label></td>
+                                <td><input asp-for="Email" type="text" class="form-control" placeholder="Enter your email address" required /></td>
+                            </tr>
+                            <tr class="highlight">
+                                <td class="field"><label asp-for="Entity.WorkTitle" class="control-label">Work Title</label></td>
+                                <td><input asp-for="Entity.WorkTitle" class="form-control" placeholder="Add the work title" rows="2"></input></td>
+                                <td><label asp-for="Entity.IdentityNr" class="control-label">Identity Nr</label></td>
+                                <td><input asp-for="Entity.IdentityNr" type="text" class="form-control" placeholder="Enter your identity number" /></td>
+                            </tr>
+                            <tr class="divider">
+                                <td colspan="4"></td>
+                            </tr>
+
+                            <tr>
+                                <td class="field"><label asp-for="UserName" class="control-label">Username</label></td>
+                                <td><input asp-for="UserName" type="text" class="form-control" placeholder="Enter your username here" /></td>
+                                <td class="field"><label asp-for="Password" class="control-label">Password</label></td>
+                                <td><input asp-for="Password" type="text" class="form-control" placeholder="Enter your password here" /></td>
+                            </tr>
+
+                            @*<tr>
+            <td class="field"><label asp-for="Employee.WorkTitle" class="control-label">Title</label></td>
+            <td>
+                <select asp-for="Employee.WorkTitle" asp-items="Html.GetEnumSelectList<IQTechSolutions.Base.Enums.Personal.Title>()" class="form-control"></select>
+            </td>
+            <td><label asp-for="PersonalDetails.IdentityNr" control-label">Username</label></td>
+            <td><input asp-for="PersonalDetails.IdentityNr" type="text" class="form-control" placeholder="Enter your identity number" /></td>
+        </tr>*@
+                            @*<tr>
+            <td class="field"><label asp-for="PersonalDetails.Gender" control-label">Gender</label></td>
+            <td><select asp-for="PersonalDetails.Gender" asp-items="Html.GetEnumSelectList<IQTechSolutions.Base.Enums.Personal.Title>()" class="form-control"></select></td>
+            <td class="field"><label asp-for="PersonalDetails.MaritalStatus" control-label">Marital Status</label></td>
+            <td><select asp-for="PersonalDetails.MaritalStatus" asp-items="Html.GetEnumSelectList<IQTechSolutions.Base.Enums.Personal.Title>()" class="form-control"></select></td>
+        </tr>*@
+                            @*<tr class="divider">
+            <td colspan="4"></td>
+        </tr>
+        <tr>
+            <td class="field"><label asp-for="PhoneNumber" control-label">Phone Nr</label></td>
+            <td><input asp-for="PhoneNumber" type="text" class="form-control" placeholder="+27 71 852 2658" /></td>
+        </tr>*@
+                            <tr class="divider">
+                                <td colspan="4"></td>
+                            </tr>
+                            <tr class="highlight">
+                                <td class="field"><label asp-for="Entity.Bio" class="control-label">Description</label></td>
+                                <td colspan="3"><textarea asp-for="Entity.Bio" class="form-control" placeholder="Add personal description" rows="4"></textarea></td>
+                            </tr>
+                        </tbody>
+                        <tfoot>
+                        <tr>
+                            <td colspan="2">
+                                <div class="form-group">
+                                    <input name="finnish" type="submit" value="Create" class="btn btn-primary" />
+                                    <a asp-area="Employees" asp-controller="Home" asp-action="List" class="btn btn-danger">Cancel</a>
+                                </div>
+                            </td>
+                        </tr>
+                        </tfoot>
+                    </table>
+                </div>
+                <!-- end table -->
+            </div>
+            <!-- end profile-info -->
+        </div>
+        <!-- end profile-right -->
+    </div>
+    <!-- end profile-section -->
+</form>
+
+@section Scripts{
+    <script>
+        var loadFile = function (event) {
+            var output = document.getElementById('preview');
+            if (event.target.files.length !== 0) {
+
+                var oldstring = "";
+                if (output === null) {
+                    oldstring = "/images/placeholders/MetsiPlaceholder-370x352.jpg";
+                } else {
+                    oldstring = output.src;
+                }
+
+                var url = "/Home/CropImage?cropUrl=" + URL.createObjectURL(event.target.files[0]) + "&originalUrl=" + oldstring + "&width=" + 300 + "&height=" + 300
+                    + "&previewClass=previewd" + "&uploadProperty=CoverUpload" + "&xTag=CoverCropSettings_X" + "&yTag=CoverCropSettings_Y"
+                    + "&widthTag=CoverCropSettings_Width" + "&heightTag=CoverCropSettings_Height" + "&rotateTag=CoverCropSettings_Rotate" + "&scaleXTag=CoverCropSettings_ScaleX"
+                    + "&scaleYTag=CoverCropSettings_ScaleY";
+
+                $("#CropModal").load(url,
+                    function () {
+                        $("#CropModal").modal("show");
+                    });
+            }
+        };
+
+        function getImageFile() {
+            document.getElementById("CoverUpload").click();
+        }
+    </script>
+}

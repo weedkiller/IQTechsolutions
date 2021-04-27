@@ -1,0 +1,81 @@
+﻿
+
+@inject IRepositoryManager Manager
+
+<footer id="footer" class="footer pb-0" data-bg-img="images/footer-bg.png" data-bg-color="#25272e">
+    <div class="container pt-60 pb-30">
+        <div class="row multi-row-clearfix">
+            <div class="col-sm-12 col-md-6">
+                <div class="widget dark">
+                    <h5 class="widget-title line-bottom">Latest News</h5>
+                    <div class="latest-posts">
+                        @foreach (var item in Manager.Repository<BlogPost>().GetAll(c => c.Images).Take(2))
+                        {
+                            <article class="post media-post clearfix pb-0 mb-10">
+                                <a class="post-thumb" style="width: 50%" asp-area="Blog" asp-controller="Home" asp-action="Details" asp-route-id="@item.Id"><img src="@item.GetImage().GetImagePathFromAnotherWebsite(FrameworkDI.Configuration["Company:WebUrl"],FrameworkDI.Configuration["Placeholders:CoverImage"])" alt=""></a>
+                                <div class="post-right">
+                                    <h5 class="post-title mt-0 mb-5"><a asp-area="Blog" asp-controller="Home" asp-action="Details" asp-route-id="@item.Id">@item.Title</a></h5>
+                                    <p class="post-date mb-0 font-12">@item.Created.ToLongDateString()</p>
+                                </div>
+                            </article>
+                        }
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-12 col-md-6">
+                <div class="widget dark">
+                    <img alt="" src="images/logo-wide-white.png">
+                    <p class="font-12 mt-10 mb-10">To develop a powerful, breakthrough, present truth, Word based church. To disciple and teach every person coming into the Kingdom and family of God how to live a Kingdom lifestyle (based on God's Word) that is full of God's power filled with signs, wonders, miracles, healings, His presence and glory, and equipping them for their work and calling. To break the spirit of poverty, lack and mediocrity over the lives of people through Biblical principles so that they may manifest that Kingdom life. To establish a Christian School (ACE) - Kingdom Lifestyle Academy - in our community and an “Adventure Camp \ Bible School” where young people between 18 - 24 can come for a year to be equipped in the Word and for the secular life.</p>
+                    <a class="btn btn-default btn-transparent btn-xs btn-flat mt-5" asp-area="" asp-controller="Home" asp-action="About">Read more</a>
+                    <ul class="styled-icons icon-sm icon-bordered icon-circled clearfix mt-20">
+                        <li><a href="@FrameworkDI.Configuration["Facebook:Url"]" target="_blank"><i class="fa fa-facebook"></i></a></li>
+                        <li><a href="mailto:@FrameworkDI.Configuration["EmailSettings:InfoAddress"]" target="_blank"><i class="fa fa-envelope"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="horizontal-contact-widget mt-30 pt-30 text-center">
+                    <div class="col-sm-12 col-sm-4">
+                        <div class="each-widget">
+                            <i class="pe-7s-phone font-36 mb-10"></i>
+                            <h5 class="text-white">Call Us</h5>
+                            <p>Phone: <a href="#"> @FrameworkDI.Configuration["Company:Tel"]</a></p>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-sm-4 mt-sm-50">
+                        <div class="each-widget">
+                            <i class="pe-7s-map font-36 mb-10"></i>
+                            <h5 class="text-white">Address</h5>
+                            <p>@FrameworkDI.Configuration["Address:City"] @FrameworkDI.Configuration["Address:Provice"]</p>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-sm-4 mt-sm-50">
+                        <div class="each-widget">
+                            <i class="pe-7s-mail font-36 mb-10"></i>
+                            <h5 class="text-white">Email</h5>
+                            <p><a href="mailto:@FrameworkDI.Configuration["EmailSettings:InfoAddress"]">@FrameworkDI.Configuration["EmailSettings:InfoAddress"]</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <ul class="list-inline styled-icons icon-hover-theme-colored icon-gray icon-circled text-center mt-30 mb-10">
+                    <li><a href="@FrameworkDI.Configuration["Facebook:Url"]" target="_blank"><i class="fa fa-facebook"></i></a> </li>
+                    <li><a href="mailto:@FrameworkDI.Configuration["EmailSettings:InfoAddress"]" target="_blank"><i class="fa fa-fa-envelope"></i></a> </li>
+                    <li><a href="@FrameworkDI.Configuration["YouTube:Url"]" target="_blank"><i class="fa fa-youtube"></i></a> </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid bg-theme-colored p-20">
+        <div class="row text-center">
+            <div class="col-md-12">
+                <p class="text-white font-11 m-0">copy; Copyright @DateTime.Now.Year - Created by <a href="http://www.iqtechsolutions.co.za" target="_blank">IQ Tech Solutions</a> - Powered by ASP.NET</p>
+            </div>
+        </div>
+    </div>
+</footer>

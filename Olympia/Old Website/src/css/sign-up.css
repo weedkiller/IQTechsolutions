@@ -1,0 +1,131 @@
+#sign-up {
+  background-color: rgba(205, 127, 50, 0.5);
+  color: #555;
+  position: relative;
+  overflow: hidden;
+}
+
+#sign-up .description, #sign-up .registration {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  z-index: 100;
+  position: relative;
+}
+
+#sign-up .description {
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+#sign-up article {
+  background-color: #fff;
+  padding: 16px;
+}
+
+#sign-up article p:last-of-type {
+  margin-bottom: 0;
+}
+
+#sign-up h1 {
+  color: rgba(205, 127, 50, 0.5);
+}
+
+#sign-up form {
+  border: 1px solid #fff;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 4px;
+  padding: 16px;
+  position: relative;
+}
+
+#sign-up form p:LAST-OF-TYPE {
+  margin-bottom: 0;
+}
+
+#sign-up .cloud {
+  position: absolute;
+}
+
+#sign-up .cloud-1 {
+  animation-delay: 0s;
+  animation-name: wind-1;
+  animation-duration: 60s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  width: 20%;
+  z-index: 4;
+  bottom: 55%;
+}
+
+@keyframes wind-1 {
+  from {
+    left: -20%;
+  }
+  to {
+    left: 120%;
+  }
+}
+
+#sign-up .cloud-2 {
+  animation-delay: 0s;
+  animation-name: wind-2;
+  animation-duration: 70s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  width: 15%;
+  z-index: 3;
+  opacity: 0.9;
+  bottom: 50%;
+}
+
+@keyframes wind-2 {
+  from {
+    left: -15%;
+  }
+  to {
+    left: 115%;
+  }
+}
+
+#sign-up .cloud-3 {
+  animation-delay: 0s;
+  animation-name: wind-3;
+  animation-duration: 80s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  width: 10%;
+  z-index: 2;
+  opacity: 0.8;
+  bottom: 45%;
+}
+
+@keyframes wind-3 {
+  from {
+    left: -10%;
+  }
+  to {
+    left: 110%;
+  }
+}
+
+#sign-up .cloud-4 {
+  animation-delay: 0s;
+  animation-name: wind-4;
+  animation-duration: 90s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  width: 5%;
+  z-index: 1;
+  opacity: 0.7;
+  bottom: 40%;
+}
+
+@keyframes wind-4 {
+  from {
+    left: -5%;
+  }
+  to {
+    left: 105%;
+  }
+}

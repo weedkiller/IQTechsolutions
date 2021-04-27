@@ -1,0 +1,135 @@
+﻿@inject IApplicationConfiguration Configuration
+@using Iqt.Base.Interfaces
+@model DepartmentAddEditModel<Course>
+
+@{
+    ViewData["Title"] = "Edit Department";
+    ViewData["Description"] = "A list of all the departments";
+}
+
+@section Styles
+{
+    <!-- Bootstrap File Upload CSS -->
+    <link rel="stylesheet" href="~/css/summernote.css" type="text/css" />
+}
+
+<div class="profile-container">
+
+<div class="profile-section">
+
+    <form asp-area="Courses" asp-controller="Departments" asp-action="Edit" enctype="multipart/form-data" method="post">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <input type="hidden" asp-for="Entity.Id" />
+        <div class="row">
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label asp-for="CoverUpload" class="control-label"></label>
+                    <div class="previewd" style="overflow: hidden">
+                        <img id="preview" style="width: 100%" src="@Model.Entity.GetPath(Configuration.BaseImageUrl, ImageType.Cover,"/images/placeholders/MetsiPlaceholder-800x533.jpg")" alt="" />
+                    </div>
+                    <input asp-for="CoverUpload" class="form-control" onchange="loadFile(event)" />
+                    <input type="hidden" asp-for="CoverCropSettings.X" />
+                    <input type="hidden" asp-for="CoverCropSettings.Y" />
+                    <input type="hidden" asp-for="CoverCropSettings.Width" />
+                    <input type="hidden" asp-for="CoverCropSettings.Height" />
+                    <input type="hidden" asp-for="CoverCropSettings.Rotate" />
+                    <input type="hidden" asp-for="CoverCropSettings.ScaleX" />
+                    <input type="hidden" asp-for="CoverCropSettings.ScaleY" />
+                </div>
+            </div>
+            <div class="col-md-8">
+                <div class="form-group">
+                    <label asp-for="Entity.Name" class="control-label"></label>
+                    <input asp-for="Entity.Name" class="form-control" />
+                    <span asp-validation-for="Entity.Name" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Entity.Description" class="control-label"></label>
+                    <textarea asp-for="Entity.Description" class="form-control" style="height: 150px"></textarea>
+                    <span asp-validation-for="Entity.Description" class="text-danger"></span>
+                </div>
+            </div>
+        </div>
+
+        <hr />
+
+        <h3 class="m-t-10">Catgories</h3>
+
+        @await Component.InvokeAsync("CourseCategories", new { departmentId = Model.Entity.Id})
+
+        <hr />
+        <div class="form-group text-right">
+            <input name="main" type="submit" value="Edit" class="btn btn-primary" />
+            <input name="finnish" type="submit" value="Submit & Finnish" class="btn btn-primary" />
+            <a asp-area="Courses" asp-controller="Departments" asp-action="List" class="btn btn-danger">Cancel</a>
+        </div>
+        <hr />
+    </form>
+
+</div>
+
+</div>
+
+@section Scripts
+{
+    <script src="~/js/summernote/summernote.js"></script>
+
+    <script type="text/javascript">
+        // Default
+        $(document).ready(function () {
+            var HomeIndex = function () {
+
+                var $this = this;
+
+                function initialize() {
+                    $('#Entity_Description').summernote({
+                        height: 250,
+                        codemirror: { // codemirror options
+                            theme: 'monokai'
+                        }
+                    });
+                }
+
+                $this.init = function () {
+                    initialize();
+                }
+            };
+            var self = new HomeIndex();
+            self.init();
+        });
+
+        function ShowDeleteBlogCategoryModal(numberId) {
+
+            var url = "/Courses/Departments/Delete?id=" + numberId;
+
+            $("#ModalPlaceHolder").load(url,
+                function () {
+                    $("#ModalPlaceHolder").modal("show");
+                });
+        }
+    </script>
+    <script>
+        var loadFile = function (event) {
+            var output = document.getElementById('preview');
+            if (event.target.files.length !== 0) {
+
+                var oldstring = "";
+                if (output === null) {
+                    oldstring = "/images/placeholders/MetsiPlaceholder-800x533.jpg";
+                } else {
+                    oldstring = output.src;
+                }
+
+                var url = "/Home/CropImage?cropUrl=" + URL.createObjectURL(event.target.files[0]) + "&originalUrl=" + oldstring + "&width=" + 800 + "&height=" + 533
+                    + "&previewClass=previewd" + "&uploadProperty=CoverUpload" + "&xTag=CoverCropSettings_X" + "&yTag=CoverCropSettings_Y"
+                    + "&widthTag=CoverCropSettings_Width" + "&heightTag=CoverCropSettings_Height" + "&rotateTag=CoverCropSettings_Rotate" + "&scaleXTag=CoverCropSettings_ScaleX"
+                    + "&scaleYTag=CoverCropSettings_ScaleY";
+
+                $("#CropModal").load(url,
+                    function () {
+                        $("#CropModal").modal("show");
+                    });
+            }
+        };
+    </script>
+}

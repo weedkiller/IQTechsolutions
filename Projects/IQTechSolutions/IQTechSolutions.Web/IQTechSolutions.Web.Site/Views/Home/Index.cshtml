@@ -1,0 +1,317 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+    Layout = "Layouts/_Layout";
+}
+
+<!--revolution slider-->
+<section class="relative w_full m_bottom_15">
+    <div class="r_slider">
+        <ul>
+            <li data-transition="fade" data-slotamount="10">
+                <img src="~/images/content/sliders/mainSlide.jpg" alt="" data-bgfit="cover" data-bgposition="center center">
+                <div class="caption sfl str" data-x="50" data-y="108" data-speed="700"><h1 style="color: whitesmoke" class="fw_light">The New Direction<br> for Your Success</h1></div>
+                <div class="caption sfl str" data-x="50" data-y="243" data-speed="700" data-start="1200" style="color: whitesmoke">The future is not a Man versus Machine saga<br> it’s in fact, Man with Machine synergy.<br>Innovative ideas combined with skill</div>
+                <div class="caption sfl str" data-x="50" data-y="339" data-speed="700" data-start="1400">
+                    <a asp-area="" asp-controller="Home" asp-action="About" role="button" class="tt_uppercase button_type_3 color_grey_light r_corners fs_medium d_block tr_all">Learn More</a>
+                </div>
+            </li>
+            <li data-transition="fade" data-slotamount="10">
+                <img src="~/images/content/sliders/slide_02.jpg" alt="" data-bgfit="cover" data-bgposition="center center">
+                <div class="caption lfb ltb" data-x="left" data-y="bottom" data-hoffset="-118" data-speed="600"><img src="~/images/content/sliders/slide_caption_01.png" alt="Second Slide Image"></div>
+                <div class="caption sfl str" data-x="755" data-y="109" data-speed="700" data-start="1500"><h1 class="color_light fw_light">The best<br>priced product!</h1></div>
+                <div class="caption sfl str color_light" data-x="755" data-y="244" data-speed="700" data-start="1700">We have the best priced products & services <br>and we will give you our best absolutely free!</div>
+                <div class="caption sfl str" data-x="755" data-y="339" data-speed="700" data-start="1900">
+                    <a asp-area="Products" asp-controller="Home" asp-action="Index" role="button" class="tt_uppercase button_type_3 color_purple r_corners fs_medium d_block tr_all">Shop Now!</a>
+                </div>
+            </li>
+        </ul>
+    </div>
+</section>
+<!--content-->
+
+<partial name="ContentSections/_WhoWeAre" />
+
+<partial name="ContentSections/_WhatWeDo" />
+
+@*<partial name="_ProjectSliderPartial" />*@
+
+<section class="section_offset image_bg_4">
+    <div class="container">
+        <div class="row">
+            <!--testimonials-->
+            <section class="col-lg-6 col-md-6 m_bottom_20" data-appear-animation="fadeInUp">
+                <h3 class="color_light t_align_c m_bottom_15 fw_light">Testimonials</h3>
+                <p class="m_bottom_35 t_align_c color_grey_light_2">What our customers have to say about our service and products.</p>
+                <div class="owl-carousel" data-nav="t_nav_" data-plugin-options='{"autoPlay":false,"autoHeight":true,"transitionStyle": "backSlide"}'>
+                    <!--item-->
+                    <div>
+                        <!--quote-->
+                        <blockquote class="r_corners relative type_2 fs_large color_dark m_bottom_20">
+                            <p class="m_bottom_15">
+                                <i>When I first made contact with Ivan and his team, I was taken with the ‘can-do’ attitude towards our entire project (it was a big one), and their willingness to meet our needs – both creative and budgetary!</i>
+                            </p>
+                            <p>
+                                <i>We had a fairly intense approval process on our end, but the IQ Tech Solutions' team always made working together easy; from new needs popping up, to last minute changes, the overall approach was hard-working but always positive.</i>
+                            </p>
+                        </blockquote>
+                        <div class="d_table w_full">
+                            <div class="d_table_cell">
+                                <!--author photo-->
+                                <div class="d_inline_m circle wrapper m_right_10">
+                                    <img src="~/images/testimonials/Teresa.png" alt="">
+                                </div>
+                                <!--author name-->
+                                <div class="d_inline_m">
+                                    <b class="fs_large d_block color_light">Teresa Barber</b>
+                                    <p class="fs_medium color_grey_light_2">Founder, Afternoon Drinks</p>
+                                </div>
+                            </div>
+                            <div class="d_table_cell t_align_r v_align_m d_mxs_none">
+                                <button class="circle icon_wrap_size_5 color_grey_light d_inline_m color_blue_hover m_right_5 tr_all t_nav_prev">
+                                    <i class="icon-left-open-big"></i>
+                                </button>
+                                <button class="circle icon_wrap_size_5 color_grey_light d_inline_m color_blue_hover tr_all t_nav_next">
+                                    <i class="icon-right-open-big"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <!--item-->
+                    <div>
+                        <!--quote-->
+                        <blockquote class="r_corners relative type_2 fs_large color_dark m_bottom_20">
+                            <p>
+                                <i>I am blessed with having found the best Web Hosting company ever. Great service, great hosting, and the staff are amazing. Everyone I refer to them loves them as much as I do. I have been with them so long I cannot remember when I was not.</i>
+                            </p>
+                        </blockquote>
+                        <div class="d_table w_full">
+                            <div class="d_table_cell">
+                                <!--author photo-->
+                                <div class="d_inline_m circle wrapper m_right_10">
+                                    <img src="~/images/testimonials/Amien.png" alt="">
+                                </div>
+                                <!--author name-->
+                                <div class="d_inline_m">
+                                    <b class="fs_large d_block color_light">Amien Mohammed</b>
+                                    <p class="fs_medium color_grey_light_2">CEO, Brilliant Math Solutions</p>
+                                </div>
+                            </div>
+                            <div class="d_table_cell t_align_r v_align_m d_mxs_none">
+                                <button class="circle icon_wrap_size_5 color_grey_light d_inline_m color_blue_hover m_right_5 tr_all t_nav_prev">
+                                    <i class="icon-left-open-big"></i>
+                                </button>
+                                <button class="circle icon_wrap_size_5 color_grey_light d_inline_m color_blue_hover tr_all t_nav_next">
+                                    <i class="icon-right-open-big"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <!--item-->
+                    <div>
+                        <!--quote-->
+                        <blockquote class="r_corners relative type_2 fs_large color_dark m_bottom_20">
+                            <p class="m_bottom_15">
+                                <i>just wanted to commend IQ Tech Solutions on the exceptional services provided to Chicken City over the last few years.</i>
+                            </p>
+                            <p>
+                                <i>Your support has been instantaneous and simply world-class.</i>
+                            </p>
+                        </blockquote>
+                        <div class="d_table w_full">
+                            <div class="d_table_cell">
+                                <!--author photo-->
+                                <div class="d_inline_m circle wrapper m_right_10">
+                                    <img src="~/images/testimonials/Pierre.png" alt="">
+                                </div>
+                                <!--author name-->
+                                <div class="d_inline_m">
+                                    <b class="fs_large d_block color_light">Pierre Olivier</b>
+                                    <p class="fs_medium color_grey_light_2">CEO, Chicken City</p>
+                                </div>
+                            </div>
+                            <div class="d_table_cell t_align_r v_align_m d_mxs_none">
+                                <button class="circle icon_wrap_size_5 color_grey_light d_inline_m color_blue_hover m_right_5 tr_all t_nav_prev">
+                                    <i class="icon-left-open-big"></i>
+                                </button>
+                                <button class="circle icon_wrap_size_5 color_grey_light d_inline_m color_blue_hover tr_all t_nav_next">
+                                    <i class="icon-right-open-big"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!--our clients-->
+            <section class="col-lg-6 col-md-6 t_sm_align_c" data-appear-animation="fadeInUp" data-appear-animation-delay="150">
+                <h3 class="color_light t_align_c m_bottom_15 fw_light">Our Clients</h3>
+                <p class="m_bottom_35 t_align_c color_grey_light_2">Our customers, you are our family.</p>
+                <!--carousel-->
+                <div class="owl-carousel m_bottom_15" data-plugin-options='{"pagination":true,"transitionStyle" : "backSlide"}' data-nav="c_nav_">
+                    <!--item-->
+                    <div>
+                        <div class="row">
+                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 m_bottom_30">
+                                <div class="clients_item db_xs_centered relative wrapper r_corners d_sm_inline_b d_xs_block">
+                                    <a href="#" class="d_block translucent tr_all wrapper r_corners">
+                                        <img src="~/images/customers/Arctex.png" alt="">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 m_bottom_30">
+                                <div class="clients_item db_xs_centered relative wrapper r_corners d_sm_inline_b d_xs_block">
+                                    <a href="#" class="d_block translucent tr_all wrapper r_corners">
+                                        <img src="~/images/customers/Bellcape.png" alt="">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 m_bottom_30">
+                                <div class="clients_item db_xs_centered relative wrapper r_corners d_sm_inline_b d_xs_block">
+                                    <a href="#" class="d_block translucent tr_all wrapper r_corners">
+                                        <img src="~/images/customers/ChickenCity.png" alt="">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                <div class="clients_item db_xs_centered relative wrapper r_corners d_sm_inline_b d_xs_block">
+                                    <a href="#" class="d_block translucent tr_all wrapper r_corners">
+                                        <img src="~/images/customers/GoggaParadys.png" alt="">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                <div class="clients_item db_xs_centered relative wrapper r_corners d_sm_inline_b d_xs_block">
+                                    <a href="#" class="d_block translucent tr_all wrapper r_corners">
+                                        <img src="~/images/customers/Pricemakers.png" alt="">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                <div class="clients_item db_xs_centered relative wrapper r_corners d_sm_inline_b d_xs_block">
+                                    <a href="#" class="d_block translucent tr_all wrapper r_corners">
+                                        <img src="~/images/customers/EntwinedRoots.png" alt="">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--item-->
+                    <div>
+                        <div class="row">
+                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                <div class="clients_item db_xs_centered relative wrapper r_corners d_sm_inline_b d_xs_block">
+                                    <a href="#" class="d_block translucent tr_all wrapper r_corners">
+                                        <img src="~/images/customers/AfternoonDrinks.png" alt="">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 m_bottom_30">
+                                <div class="clients_item db_xs_centered relative wrapper r_corners d_sm_inline_b d_xs_block">
+                                    <a href="#" class="d_block translucent tr_all wrapper r_corners">
+                                        <img src="~/images/customers/BrilliantMath.png" alt="">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 m_bottom_30 m_mxs_bottom_10">
+                                <div class="clients_item db_xs_centered relative wrapper r_corners d_sm_inline_b d_xs_block">
+                                    <a href="#" class="d_block translucent tr_all wrapper r_corners">
+                                        <img src="~/images/customers/CryptoBanker.png" alt="">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 m_mxs_bottom_10">
+                                <div class="clients_item db_xs_centered relative wrapper r_corners d_sm_inline_b d_xs_block">
+                                    <a href="#" class="d_block translucent tr_all wrapper r_corners">
+                                        <img src="~/images/customers/Neefi.png" alt="">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                <div class="clients_item db_xs_centered relative wrapper r_corners d_sm_inline_b d_xs_block">
+                                    <a href="#" class="d_block translucent tr_all wrapper r_corners">
+                                        <img src="~/images/customers/PulpCinema.png" alt="">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                <div class="clients_item db_xs_centered relative wrapper r_corners d_sm_inline_b d_xs_block">
+                                    <a href="#" class="d_block translucent tr_all wrapper r_corners">
+                                        <img src="~/images/customers/RiverPainters.png" alt="">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--item-->
+                    <div>
+                        <div class="row">
+                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 m_bottom_30">
+                                <div class="clients_item db_xs_centered relative wrapper r_corners d_sm_inline_b d_xs_block">
+                                    <a href="javascript:;" class="d_block translucent tr_all wrapper r_corners">
+                                        <img src="~/images/customers/SouthAfricanSolar.png" alt="">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 m_bottom_30">
+                                <div class="clients_item db_xs_centered relative wrapper r_corners d_sm_inline_b d_xs_block">
+                                    <a href="javascript:;" class="d_block translucent tr_all wrapper r_corners">
+                                        <img src="~/images/customers/WeCreativeOnline.png" alt="">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 m_bottom_30">
+                                <div class="clients_item db_xs_centered relative wrapper r_corners d_sm_inline_b d_xs_block">
+                                    <a href="javascript:;" class="d_block translucent tr_all wrapper r_corners">
+                                        <img src="~/images/customers/Damweld.png" alt="">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                <div class="clients_item db_xs_centered relative wrapper r_corners d_sm_inline_b d_xs_block">
+                                    <a href="javascript:;" class="d_block translucent tr_all wrapper r_corners">
+                                        <img src="~/images/customers/YellowCouponCompany.png" alt="">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                <div class="clients_item db_xs_centered relative wrapper r_corners d_sm_inline_b d_xs_block">
+                                    <a href="javascript:;" class="d_block translucent tr_all wrapper r_corners">
+                                        <img src="~/images/customers/ChickenCity.png" alt="">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                <div class="clients_item db_xs_centered relative wrapper r_corners d_sm_inline_b d_xs_block">
+                                    <a href="javascript:;" class="d_block translucent tr_all wrapper r_corners">
+                                        <img src="~/images/customers/CryptoBanker.png" alt="">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--clients carousel nav-->
+                <div class="d_table w_full clients_nav">
+                    <!--paginations container-->
+                    <div class="d_table_cell half_column clients_pags_container v_align_m"></div>
+                    <!--navigations-->
+                    <div class="d_table_cell half_column t_align_r v_align_m">
+                        <button class="circle icon_wrap_size_5 color_grey_light d_inline_m color_blue_hover m_right_5 tr_all c_nav_prev">
+                            <i class="icon-left-open-big"></i>
+                        </button>
+                        <button class="circle icon_wrap_size_5 color_grey_light d_inline_m color_blue_hover tr_all c_nav_next">
+                            <i class="icon-right-open-big"></i>
+                        </button>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+</section>
+
+<partial name="ContentSections/_ContactUsBanner" />

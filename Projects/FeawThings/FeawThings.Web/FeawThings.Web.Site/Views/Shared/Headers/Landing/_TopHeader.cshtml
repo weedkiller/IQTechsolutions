@@ -1,0 +1,86 @@
+﻿@inject IApplicationConfiguration Configuration
+
+@using System.Security.Claims
+@using FeawThings
+@using Iqt.Base.Interfaces
+@using Microsoft.AspNetCore.Http
+
+<!-- Header Top -->
+<div class="header-top">
+    <div class="container">
+        <div class="row">
+            <div class="header-top-left form-inline col-lg-4 col-md-4 col-sm-6 compact-hidden hidden-sm hidden-xs">
+                @if (User.Identity.IsAuthenticated)
+                {
+                    <div class="form-group navbar-welcome ">
+                        Welcome to Feaw Things <a href="@Configuration.GetRegistrationReturnUrl(Context.Request.Path)"><strong>Join Free</strong></a> or <a href="@Configuration.GetLoginReturnUrl(Context.Request.Path)"><strong>Sign in</strong></a>
+                    </div>
+                }
+                else
+                {
+                    <div class="form-group navbar-welcome ">
+                        Welcome to Feaw Things <a asp-area="Profile" asp-controller="Home" asp-action="Index" asp-route-id="@User.FindFirstValue(ClaimTypes.NameIdentifier)"><strong>@User.Identity.Name!</strong></a> 
+                    </div>
+                }
+            </div>
+            <div class="header-top-right collapsed-block text-right col-lg-8 col-md-8 col-sm-12 col-xs-12 compact-hidden">
+                <h5 class="tabBlockTitle visible-xs">More<a class="expander " href="#TabBlock-1"><i class="fa fa-angle-down"></i></a></h5>
+                <div class="tabBlock" id="TabBlock-1">
+                    <ul class="top-link list-inline">
+                        <li class="account btn-group" id="my_account">
+                            <a href="#" title="My Account" class="btn btn-xs dropdown-toggle" data-toggle="dropdown"> <span class="hidden-xs">My Account</span> <span class="fa fa-angle-down "></span></a>
+
+                            @if (!User.Identity.IsAuthenticated)
+                            {
+                                <ul class="dropdown-menu ">
+                                    <li><a href="@Configuration.GetRegistrationReturnUrl(Context.Request.Path)"><i class="fa fa-user"></i> Register</a></li>
+                                    <li><a href="@Configuration.GetLoginReturnUrl(Context.Request.Path)"><i class="fa fa-pencil-square-o"></i> Login</a></li>
+                                </ul>
+                            }
+                            else
+                            {
+                                <ul class="dropdown-menu ">
+                                    <li><a asp-area="Profile" asp-controller="Home" asp-action="Index" asp-route-id="@User.FindFirstValue(ClaimTypes.NameIdentifier)"><i class="fa fa-user"></i> Profile</a></li>
+                                    <li><a asp-area="" asp-controller="Home" asp-action="Logout"><i class="fa fa-pencil-square-o"></i> Sign Out</a></li>
+                                </ul>
+                            }
+                        </li>
+                        @if (User.Identity.IsAuthenticated)
+                        {
+                            <li class="wishlist"><a asp-area="Shop" asp-controller="Wishlist" asp-action="Index" id="wishlist-total" class="top-link-wishlist" title="Wish List (2)"><span class="hidden-xs">Wish List (2)</span></a></li>
+                        }
+                        <li class="checkout"><a asp-area="Shop" asp-controller="ShoppingCart" asp-action="Checkout" class="top-link-checkout" title="Checkout"><span class="hidden-xs">Checkout</span></a></li>
+                        @if (User.IsInRole("Seller") || User.IsInRole("Admin"))
+                        {
+                            <li class="wishlist"><a asp-area="Dashboard" asp-controller="Home" asp-action="Index" id="wishlist-total2" class="top-link-wishlist" title="Seller Panel"><span class="hidden-xs">Seller Panel</span></a></li>
+                        }
+                    </ul>
+                    <div class="form-group languages-block ">
+                        <form asp-area="" asp-controller="Home" asp-action="Index" method="post" enctype="multipart/form-data" id="bt-language">
+                            <a class="btn btn-xs dropdown-toggle" data-toggle="dropdown">
+                                <img src="~/image/demo/flags/gb.png" alt="English" title="English">
+                                <span class="">English</span>
+                                <span class="fa fa-angle-down"></span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a asp-area="" asp-controller="Home" asp-action="Index"><img class="image_flag" src="~/images/content/flags/gb.png" alt="English" title="English" /> English </a></li>
+                            </ul>
+                        </form>
+                    </div>
+
+                    <div class="form-group currencies-block">
+                        <form asp-area="" asp-controller="Home" asp-action="Index" method="post" enctype="multipart/form-data" id="currency">
+                            <a class="btn btn-xs dropdown-toggle" data-toggle="dropdown">
+                                <span class="icon icon-credit "></span> SA Rands <span class="fa fa-angle-down"></span>
+                            </a>
+                            <ul class="dropdown-menu btn-xs">
+                                <li> <a asp-area="" asp-controller="Home" asp-action="Index">(R)&nbsp;SA Rands</a></li>
+                            </ul>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- //Header Top -->

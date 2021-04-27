@@ -1,0 +1,53 @@
+﻿@using System.Security.Claims
+@model Messaging.Base.Entities.Chat
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+
+
+<div class="panel panel-inverse" data-sortable-id="index-2">
+    <!--Heading-->
+    <div class="panel-heading">
+        <div class="panel-heading-btn">
+            <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-default" data-click="panel-expand"><i class="fa fa-expand"></i></a>
+            <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-success" data-click="panel-reload"><i class="fa fa-repeat"></i></a>
+            <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-warning" data-click="panel-collapse"><i class="fa fa-minus"></i></a>
+            <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-danger" data-click="panel-remove"><i class="fa fa-times"></i></a>
+        </div>
+        <h4 class="panel-title">Messages</h4>
+    </div>
+
+    <!--Widget body-->
+    <div class="panel-body bg-silver">
+        <div data-scrollbar="true" style="height:500px">
+            <ul class="chats">
+                @await Component.InvokeAsync("Messages", new { chatId = Model?.Id })
+            </ul>
+        </div>
+    </div>
+    @if (Model != null)
+    {
+        <div class="panel-footer">
+            <form onsubmit="sendMessage()" method="post">
+                <div class="input-group">
+                    <input type="hidden" id="userInput" name="userId" value="@User.FindFirstValue(ClaimTypes.NameIdentifier)" />
+                    <input type="hidden" id="chatId" name="chatId" value="@Model.Id" />
+                    <input type="hidden" id="roomName" name="roomName" value="@Model.Name" />
+                    <input type="text" class="form-control input-sm" name="messageInput" id="messageInput" placeholder="Enter your message here.">
+                    <span class="input-group-btn">
+                        <button class="btn btn-primary btn-sm" id="sendButton" type="submit">Send</button>
+                    </span>
+                </div>
+            </form>
+        </div>
+    }
+</div>
+
+@section Scripts
+{
+    <script src="~/lib/signalr/signalr.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="~/js/chat.js"></script>
+}

@@ -1,0 +1,18 @@
+﻿@using Iqt.Base.Extensions
+@using Iqt.Base.Interfaces
+@model IEnumerable<Grouping.Base.Models.CategoryModel>
+@inject IApplicationConfiguration Configuration
+
+<section id="features" class="container services">
+    <div class="row">
+        @foreach (var item in Model)
+        {
+            <div class="col-md-3 col-sm-6" style="padding-bottom : 20px;">
+                <img src="@item.ImageUrl" alt="Trouble shooting" style="width: 100%" />
+                <h2>@item.Name</h2>
+                <p style="min-height:72px;">@item.Description.HtmlToPlainText().TruncateLongString(150)</p>
+                <a class="btn btn-primary btn-block" asp-area="Troubleshooting" asp-controller="Categories" asp-action="Details" asp-route-id="@item.Id">Troubleshoot</a>
+            </div>
+        }
+    </div>
+</section>

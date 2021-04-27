@@ -1,0 +1,105 @@
+﻿@model ProblemIndexModel
+
+@{
+    ViewData["Title"] = "Trouble Shooting Problems";
+}
+
+<div class="panel panel-inverse" data-sortable-id="ui-buttons-1"->
+    <div class="panel-heading">
+        <div class="panel-heading-btn">
+            <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-danger" data-click="panel-remove"><i class="fa fa-times"></i></a>
+        </div>
+        <h4 class="panel-title">Filter by Category</h4>
+    </div>
+    <div class="panel-body">
+        @foreach (var item in Model.Categories)
+        {
+            <a asp-area="Troubleshooting" asp-controller="Home" asp-action="List" asp-route-categoryId="@item.Id" type="button" class="btn btn-primary m-r-5 m-b-5">@item.Name</a>
+        }
+        <a asp-area="Troubleshooting" asp-controller="Home" asp-action="ListUncategorized" type="button" class="btn btn-info m-r-5 m-b-5">Uncategorized</a>
+        <a asp-area="Troubleshooting" asp-controller="Home" asp-action="List" type="button" class="btn btn-success m-r-5 m-b-5">All</a>
+    </div>
+</div>
+
+<div class="profile-container">
+
+    <div class="profile-section">
+
+        <table id="ProblemList" class="table">
+            <thead>
+                <tr>
+                    <th>
+                        Keywords
+                    </th>
+                    <th>
+                        Heading
+                    </th>
+                    <th>
+                        Short Description
+                    </th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @if (Model.All.Any())
+                {
+                    foreach (var item in Model.All)
+                    {
+                        <tr id="row_@item.Id" class="row_@item.Id">
+                            <td width="auto">
+                                @item.Keywords
+                            </td>
+                            <td width="auto">
+                                @item.Heading
+                            </td>
+                            <td width="auto">
+                                @item.Description.HtmlToPlainText().TruncateLongString(160)
+                            </td>
+                            <td width="100px">
+                                <a asp-action="Edit" asp-route-id="@item.Id" style="padding-right:10px"><i class="fa fa-edit"></i></a>
+                                <a href="javascript:;" onclick="ShowDeleteModal('@item.Id')"><i class="fa fa-trash"></i></a>
+                            </td>
+                        </tr>
+                    }
+                }
+                else
+                {
+                    <tr>
+                        <td colspan="9">
+                            <h3>No problems currently available, please check back later, or <a href="javascript:;" onclick="ShowCreateModal()">create a new problem with causes and solutions now</a></h3>
+                        </td>
+                    </tr>
+                }
+
+            </tbody>
+        </table>
+
+        <p class="text-right">
+            <a asp-action="Create" asp-route-returnUrl="@Url.Action("List", "Home")" class="btn btn-primary btn-block">Add New Problem</a>
+        </p>
+
+    </div>
+
+</div>
+
+<div class="modal modal-message fade" id="MyModal"></div>
+
+@section Scripts{
+
+    @await Html.PartialAsync("_ValidationScriptsPartial")
+
+    <script>
+
+        function ShowDeleteModal(numberId) {
+
+            var url = "/Troubleshooting/Home/Delete?id=" + numberId;
+
+            $("#ModalPlaceHolder").load(url,
+                function () {
+                    $("#ModalPlaceHolder").modal("show");
+                });
+        }
+
+    </script>
+
+}

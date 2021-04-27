@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>@ViewData["Title"] - Metsi.Web.Site.Admin</title>
+    <meta content="@ViewData["Description"]" name="description" />
+    <meta content="@ViewData["Author"]" name="author" />
+
+    <!-- ================== BEGIN BASE CSS STYLE ================== -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
+    <link href="~/plugins/jquery-ui/themes/base/minified/jquery-ui.min.css" rel="stylesheet" />
+    <link href="~/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="~/css/animate.min.css" rel="stylesheet" />
+    <link href="~/css/style.min.css" rel="stylesheet" />
+    <link href="~/css/style-responsive.min.css" rel="stylesheet" />
+    <link href="~/css/theme/default.css" rel="stylesheet" id="theme" />
+    <!-- ================== END BASE CSS STYLE ================== -->
+
+    @RenderSection("Styles", required: false)
+
+    <!-- ================== BEGIN BASE JS ================== -->
+    <script src="~/plugins/pace/pace.min.js"></script>
+    <!-- ================== END BASE JS ================== -->
+
+</head>
+<body>
+    <!-- begin #page-loader -->
+    <div id="page-loader" class="fade in"><span class="spinner"></span></div>
+    <!-- end #page-loader -->
+
+    @RenderBody()
+
+    <div class="modal modal-message fade" id="CropModal" data-backdrop="static" data-keyboard="false"></div>
+    <div class="modal modal-message fade" id="ModalPlaceHolder"></div>
+
+    <!-- ================== BEGIN BASE JS ================== -->
+    <script src="~/plugins/jquery/jquery-1.9.1.min.js"></script>
+    <script src="~/plugins/jquery/jquery-migrate-1.1.0.min.js"></script>
+    <script src="~/plugins/jquery-ui/ui/minified/jquery-ui.min.js"></script>
+    <script src="~/plugins/bootstrap/js/bootstrap.min.js"></script>
+    <script src="~/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+    <script src="~/plugins/jquery-cookie/jquery.cookie.js"></script>
+    <!-- ================== END BASE JS ================== -->
+
+    @RenderSection("Scripts", required: false)
+
+
+
+</body>
+</html>

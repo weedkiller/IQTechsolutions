@@ -1,0 +1,44 @@
+﻿<section id="breadcrumbs" class="">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                
+                <ol class="breadcrumb" style="background-color: transparent;">
+                    <li>
+                        <a asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                    </li>
+                    @if (ViewContext.RouteData.Values["area"] != null && ViewContext.RouteData.Values["area"].ToString().ToLower() != "")
+                    {
+                        <li class="active">
+                            <a href="@Url.Action(ViewContext.RouteData.Values["action"].ToString(), ViewContext.RouteData.Values["controller"].ToString(), new {area = ViewContext.RouteData.Values["area"].ToString()})" class="color_grey_light_3 d_inline_m m_right_10">@ViewContext.RouteData.Values["area"].ToString()</a>
+                        </li>
+                    }
+                    @if (ViewContext.RouteData.Values["controller"].ToString().ToLower() != "home")
+                    {
+                        if (ViewContext.RouteData.Values["action"].ToString().ToLower() == "index")
+                        {
+                            <li class="active">
+                                <a href="@Url.Action("Index", ViewContext.RouteData.Values["controller"].ToString())" class="color_grey_light_3 d_inline_m m_right_10">@ViewContext.RouteData.Values["controller"].ToString()</a>
+                                <i class="icon-angle-right d_inline_m color_grey_light_3 fs_small"></i>
+                            </li>
+                        }
+                        else
+                        {
+                            <li>
+                                <a href="@Url.Action("Index", ViewContext.RouteData.Values["controller"].ToString())" class="color_grey_light_3 d_inline_m m_right_10">@ViewContext.RouteData.Values["controller"].ToString()</a>
+                                <i class="icon-angle-right d_inline_m color_grey_light_3 fs_small"></i>
+                            </li>
+                        }
+
+                    }
+                    <li class="active"><h1>@ViewData["Title"]</h1></li>
+                </ol>
+                
+                <img alt="Enviro Metsi Devider" width: 100%; height: 100px; src="/images/content/Waveline.png" />
+
+            </div>
+        </div>
+    </div>
+</section>
+
+

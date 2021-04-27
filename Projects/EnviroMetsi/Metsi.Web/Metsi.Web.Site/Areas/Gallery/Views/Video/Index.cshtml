@@ -1,0 +1,59 @@
+﻿@model IEnumerable<SearchResult>
+@{
+    ViewData["Title"] = "Our Video Gallery";
+}
+
+<section id="content" class="light_section blog no-sidebar">
+    <div class="container" style="padding-top: 0">
+        <div class="row">
+            <!-- main content -->
+            <div class="col-sm-10 col-sm-push-1">
+
+                @if (Model.Any())
+                {
+                    foreach (var item in Model)
+                    {
+                        <div class="col-md-4">
+                            <article class="post format-video">
+                                <header class="entry-header">
+                                    <a href="https://www.youtube.com/watch?v=@item.Id.VideoId" target="_blank">
+                                        <img src="@item.Snippet.Thumbnails.Medium.Url" alt="@item.Snippet.Title" />
+                                    </a>
+                                    <h4 class="entry-title">
+                                        <a href="https://www.youtube.com/watch?v=@item.Id.VideoId" target="_blank">
+                                            @item.Snippet.Title.TruncateLongString(22)
+                                        </a>
+                                    </h4>
+                                    <p class="entry-content" style="min-height: 80px;">
+                                        @item.Snippet.Description.TruncateLongString(150)
+                                    </p>
+                                    <div>
+                                        <a href="https://www.youtube.com/watch?v=@item.Id.VideoId" class="btn btn-block btn-primary" target="_blank">
+                                            View
+                                        </a>
+                                    </div>
+                                    <div class="entry-meta">
+                                        <span class="date">
+                                            Published
+                                            <time datetime="@item.Snippet.PublishedAt" class="entry-date">@item.Snippet.PublishedAt</time>
+                                        </span>
+                                    </div>
+                                    <!-- .entry-meta -->
+                                </header>
+                                <!-- .entry-header -->
+                            </article>
+                            <!-- .post -->
+                        </div>
+                    }
+                }
+                else
+                {
+                    <h3>Unfortunately we do not have any videos loaded on the system yet, please check back later</h3>
+                }
+
+            </div> <!--eof col-sm-10 (main content)-->
+
+
+        </div>
+    </div>
+</section>

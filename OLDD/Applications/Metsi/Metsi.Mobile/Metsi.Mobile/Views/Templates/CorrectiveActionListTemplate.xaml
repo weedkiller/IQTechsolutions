@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Grid xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Metsi.Mobile.Views.Templates.CorrectiveActionListTemplate">
+    <Grid.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Styles.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Grid.Resources>
+
+    <Grid ColumnSpacing="0" RowSpacing="0">
+        <StackLayout
+            Grid.Column="0"
+            Padding="16"
+            HorizontalOptions="FillAndExpand"
+            Spacing="0"
+            VerticalOptions="FillAndExpand">
+
+            <!--  Name of the item  -->
+            <Label
+                FontFamily="{StaticResource Montserrat-SemiBold}"
+                FontSize="16"
+                LineHeight="{OnPlatform Android=1.5,
+                                        Default=-1}"
+                Text="{Binding Description}"
+                TextColor="{DynamicResource Gray-900}" />
+
+            <!--  Description about the item  -->
+            <Label
+                Margin="0,4,0,8"
+                FontFamily="{StaticResource Montserrat-Medium}"
+                FontSize="12"
+                LineHeight="{OnPlatform Android=1.25,
+                                        Default=-1}"
+                Text="{Binding ItemDescription}"
+                TextColor="{DynamicResource Gray-700}" />
+
+            <!--  Average rating from the overall rating  -->
+            <StackLayout
+                HorizontalOptions="FillAndExpand"
+                Orientation="Horizontal"
+                Spacing="0"
+                VerticalOptions="EndAndExpand">
+                <!--  Navigation icon  -->
+                <Label
+                    HorizontalOptions="EndAndExpand"
+                    Style="{StaticResource RightArrowLabelStyle}" />
+            </StackLayout>
+        </StackLayout>
+    </Grid>
+</Grid>

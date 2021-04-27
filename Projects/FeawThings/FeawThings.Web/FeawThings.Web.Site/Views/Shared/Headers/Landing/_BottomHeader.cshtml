@@ -1,0 +1,21 @@
+﻿
+    <div class="header-bottom compact-hidden">
+    <div class="container">
+        <div class="row">
+
+            <div class="sidebar-menu col-md-3 col-sm-6 col-xs-8 ">
+                <partial name="Menus/_SideBarMenu" />
+            </div>
+
+            <!-- Search -->
+            <div class="header-bottom-right  col-md-9 col-sm-6 col-xs-4 ">
+                <div id="sosearchpro" class="col-sm-7 search-pro">
+                    @await Component.InvokeAsync("SearhComponent")
+                </div>
+            </div>
+            <!-- //end Search -->
+
+        </div>
+    </div>
+
+</div>

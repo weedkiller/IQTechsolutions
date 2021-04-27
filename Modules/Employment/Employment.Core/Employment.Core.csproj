@@ -1,0 +1,22 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="Controllers\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Http.Features" Version="5.0.4" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="5.0.4" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Filing\Filing.Core\Filing.Core.csproj" />
+    <ProjectReference Include="..\..\Identity\Identity.Base\Identity.Base.csproj" />
+    <ProjectReference Include="..\Employment.Base\Employment.Base.csproj" />
+  </ItemGroup>
+
+</Project>

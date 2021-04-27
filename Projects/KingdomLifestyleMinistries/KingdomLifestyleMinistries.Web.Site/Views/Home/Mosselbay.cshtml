@@ -1,0 +1,122 @@
+﻿@{
+    ViewData["Title"] = "Mossel Bay";
+}
+
+<partial name="_Breadcrums" />
+
+<!-- Section: About -->
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h2 class="text-uppercase mt-0 text-theme-colored">Kingdom <em>Lifestyle</em> Ministries</h2>
+                <h3 class="text-gray-dimgray font-weight-400">We have expanded our vision and ministry to Mossel Bay</h3>
+                <p>
+                    KLSM is currently at Eden Office Park (next to the Diaz Museum), 8 Grave Street, Mossel Bay. As this venue might change, contact our offices for 
+                    details. Our meetings take place on Sundays at 09h30. Anybody is welcome to come and join us at any of our meetings.
+                </p>
+                <p>Get involved in helping us to establish a solid ministry that challanges old mindsets and doctrines, preaches life, and grace and that is hungry and 
+                    desperate to see the sons of God manifest the supernatural on this earth!</p>
+                
+                <div class="separator separator-rouned">
+                    <i class="fa fa-cog fa-spin"></i>
+                </div>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d412.58126599835754!2d22.1425012507759!3d-34.18086186779004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1dd669f622979695%3A0x6197b55b7d160459!2s8+Grave+St%2C+Mossel+Bay+Central%2C+Mossel+Bay%2C+6500!5e0!3m2!1sen!2sza!4v1566552730572!5m2!1sen!2sza" width="800" height="600" frameborder="0" style="border:0" allowfullscreen></iframe><div class="separator separator-rouned">
+                        <i class="fa fa-cog fa-spin"></i>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-6 col-md-3">
+                            <a class="thumbnail" href="#"> <img alt="..." src="~/images/content/AboutImage1.png" class="img-fullwidth"> </a>
+                        </div>
+                        <div class="col-xs-6 col-md-3">
+                            <a class="thumbnail" href="#"> <img alt="..." src="~/images/content/AboutImage2.png" class="img-fullwidth"> </a>
+                        </div>
+                        <div class="col-xs-6 col-md-3">
+                            <a class="thumbnail" href="#"> <img alt="..." src="~/images/content/AboutImage3.png" class="img-fullwidth"> </a>
+                        </div>
+                        <div class="col-xs-6 col-md-3">
+                            <a class="thumbnail" href="#"> <img alt="..." src="~/images/content/AboutImage4.png" class="img-fullwidth"> </a>
+                        </div>
+                    </div>
+                    <div class="separator separator-rouned">
+                        <i class="fa fa-cog"></i>
+                    </div>
+                    <h3 class="text-center">
+                        <strong>Our Vision</strong>
+                        <img style="width: 100%" src="~/images/content/PicsArt_05-14-12.20.51.jpg"/>
+                    </h3>
+                </div>
+        </div>
+    </div>
+</section>
+
+<!-- Divider: Call To Action -->
+<section class="bg-lighter">
+    <div class="container pt-0 pb-0">
+        <div class="row">
+            <div class="call-to-action pt-40 pb-40 mb-20 border-1px bg-lighter">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-8 col-md-8">
+                        <div class="icon-box icon-rounded-bordered left media mb-0 ml-60 ml-sm-0"> <a class="media-left pull-left flip" href="#"> <i class="pe-7s-culture text-theme-colored p-20"></i></a>
+                            <div class="media-body">
+                                <h3 class="media-heading heading">Need Assistance?</h3>
+                                <p>If you have any questions, if you would like to tell us something, if you need some advise or even if you just want to say hi.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4 col-md-4 text-center">
+                        <a asp-area="Support" asp-controller="Home" asp-action="Create" class="btn btn-dark btn-theme-colored btn-flat btn-xl mt-20">Contact Us Now</a> <br/>
+                        <a asp-area="Prayer" asp-controller="Home" asp-action="Create" class="btn btn-dark btn-theme-colored btn-flat btn-xl mt-20">Prayer Request</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+<!-- end main-content -->
+<!-- Divider: Call To Action -->
+<section class="bg-theme-colored">
+    <div class="container pt-0 pb-0">
+        <div class="row">
+            <div class="call-to-action pt-20 pb-15">
+                <div class="col-md-6">
+                    <h3 class="mt-5 mb-5 text-white vertical-align-middle"><i class="pe-7s-mail mr-10 font-48 vertical-align-middle"></i> SUBSCRIBE TO OUR NEWSLETTER</h3>
+                </div>
+                <div class="col-md-6">
+                    <!-- Mailchimp Subscription Form Starts Here -->
+                    <form id="mailchimp-subscription-form-footer" class="newsletter-form mt-10">
+                        <div class="input-group">
+                            <input type="email" value="" name="EMAIL" placeholder="Your Email" class="form-control input-lg font-16" data-height="45px" id="mce-EMAIL-footer" style="height: 45px;">
+                            <span class="input-group-btn">
+                                <button data-height="45px" class="btn bg-gray-dimgray text-white btn-xs m-0 font-14" type="submit">Subscribe</button>
+                            </span>
+                        </div>
+                    </form>
+                    <!-- Mailchimp Subscription Form Validation-->
+                    <script type="text/javascript">
+                        $('#mailchimp-subscription-form-footer').ajaxChimp({
+                            callback: mailChimpCallBack,
+                            url: '//thememascot.us9.list-manage.com/subscribe/post?u=a01f440178e35febc8cf4e51f&amp;id=49d6d30e1e'
+                        });
+
+                        function mailChimpCallBack(resp) {
+                            // Hide any previous response text
+                            var $mailchimpform = $('#mailchimp-subscription-form-footer'),
+                                $response = '';
+                            $mailchimpform.children(".alert").remove();
+                            if (resp.result === 'success') {
+                                $response = '<div class="alert alert-success"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>' + resp.msg + '</div>';
+                            } else if (resp.result === 'error') {
+                                $response = '<div class="alert alert-danger"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>' + resp.msg + '</div>';
+                            }
+                            $mailchimpform.prepend($response);
+                        }
+                    </script>
+                    <!-- Mailchimp Subscription Form Ends Here -->
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- end main-content -->

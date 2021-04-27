@@ -1,0 +1,5 @@
+G:\Projects\KingdomLifestyleMinistries\KingdomLifestyleMinistries.Datastore\obj\Debug\net5.0\KingdomLifestyleMinistries.Datastore.csprojAssemblyReference.cache
+G:\Projects\KingdomLifestyleMinistries\KingdomLifestyleMinistries.Datastore\obj\Debug\net5.0\KingdomLifestyleMinistries.Datastore.GeneratedMSBuildEditorConfig.editorconfig
+G:\Projects\KingdomLifestyleMinistries\KingdomLifestyleMinistries.Datastore\obj\Debug\net5.0\KingdomLifestyleMinistries.Datastore.AssemblyInfoInputs.cache
+G:\Projects\KingdomLifestyleMinistries\KingdomLifestyleMinistries.Datastore\obj\Debug\net5.0\KingdomLifestyleMinistries.Datastore.AssemblyInfo.cs
+G:\Projects\KingdomLifestyleMinistries\KingdomLifestyleMinistries.Datastore\obj\Debug\net5.0\KingdomLifestyleMinistries.Datastore.csproj.CoreCompileInputs.cache

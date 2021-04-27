@@ -1,0 +1,185 @@
+﻿@model ServiceAddEditModel
+
+@{
+    ViewData["Title"] = $"Edit {@Model.Entity.Name}";
+}
+
+@section Styles
+    {
+    <link href='~/css/summernote.css' rel='stylesheet' type='text/css' />
+    <link href='~/css/bs-filestyle.css' rel='stylesheet' type='text/css' />
+}
+
+<form class="" asp-area="Services" asp-controller="Home" asp-action="Edit" enctype="multipart/form-data" method="post" style="margin: 0 !important">
+    <div class="form-horizontal">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="form-group" style="padding: 0 25px">
+                    <div class="previewd" style="overflow: hidden">
+                        <img id="preview" style="width: 100%" src="@Model.Entity.GetPath("http://admin.metsi.co.za", ImageType.Cover, "/images/placeholders/MetsiPlaceholder-800x533.jpg")" alt="@Model.Entity.Name" />
+                    </div>
+                        <input asp-for="CoverUpload" class="form-control" onchange="loadFile(event)" />
+                        <input type="hidden" asp-for="CoverCropSettings.X" />
+                        <input type="hidden" asp-for="CoverCropSettings.Y" />
+                        <input type="hidden" asp-for="CoverCropSettings.Width" />
+                        <input type="hidden" asp-for="CoverCropSettings.Height" />
+                        <input type="hidden" asp-for="CoverCropSettings.Rotate" />
+                        <input type="hidden" asp-for="CoverCropSettings.ScaleX" />
+                        <input type="hidden" asp-for="CoverCropSettings.ScaleY" />
+                    </div>
+                </div>
+            <div class="col-md-8">
+                <h4>Service Details</h4>
+                <hr />
+                <div class="form-group">
+                    <label asp-for="Entity.Name" class="control-label col-md-2"></label>
+                    <div class="col-md-10">
+                        <input asp-for="Entity.Name" class="form-control" />
+                        <span asp-validation-for="Entity.Name" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-md-2">Short Description</label>
+                    <div class="col-md-10">
+                        <textarea asp-for="Entity.AdditionalInfo" class="form-control" style="height:100px"></textarea>
+                        <span asp-validation-for="Entity.AdditionalInfo" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <label asp-for="Entity.Featured" class="control-label col-md-2"></label>
+                    <div class="col-md-10">
+                        <input asp-for="Entity.Featured" class="form-control" />
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <label asp-for="Entity.Active" class="control-label col-md-2"></label>
+                    <div class="col-md-10">
+                        <input asp-for="Entity.Active" class="form-control" />
+                    </div>
+                </div>
+                <input type="hidden" asp-for="Entity.Id" />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="row" style="padding-bottom: 20px;">
+                    <div class="col-md-12 bottommargin text-center">
+                        <h5>Select your Images:</h5><br>
+                        <input asp-for="ImagesUpload" id="input-3" type="file" class="file" multiple data-show-upload="false" data-show-caption="true" data-show-preview="true">
+                    </div>
+                    <hr />
+                    <div class="col-md-12 bottommargin text-center" style=" margin-top: 25px;">
+                        @foreach (var image in Model.Entity.Images.Where(c => c.ImageType == ImageType.Image))
+                        {
+                            <div class="col-lg-2" id="@image.Id">
+                                <img src="@image.Entity.GetPath( "http://admin.metsi.co.za", ImageType.Cover, null)" alt="@image" />
+                                <button type="button" data-toggle="Remote Image" onclick="removeImageFromObject('@image.Id')" title="Remove Image" class="btn btn-block btn-danger btn-sm">Delete</button>
+                            </div>
+                        }
+                    </div>
+                    <hr />
+                </div>
+                <div class="form-group">
+                    <label asp-for="Entity.Description" class="control-label"></label>
+                    <textarea asp-for="Entity.Description" class="form-control"></textarea>
+                    <span asp-validation-for="Entity.Description" class="text-danger"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ================== FORM BUTTON ================== -->
+    <div class="row" style="padding-bottom: 50px">
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10 text-right">
+                <input name="main" type="submit" value="Submit & Create" class="btn btn-primary" />
+                <input name="finnish" type="submit" value="Submit & Finnish" class="btn btn-primary" />
+                <a asp-area="Services" asp-controller="Home" asp-action="List" class="btn btn-danger">Cancel</a>
+            </div>
+        </div>
+    </div>
+    <!-- ================== END FORM BUTTON ================== -->
+
+</form>
+
+
+@section Scripts
+{
+    @await Html.PartialAsync("_ValidationScriptsPartial")
+
+    <script>
+        var loadFile = function(event) {
+            var output = document.getElementById('preview');
+            if (event.target.files.length !== 0) {
+
+                var oldstring = "";
+                if (output === null) {
+                    oldstring = "/images/placeholders/MetsiPlaceholder-800x533.jpg";
+                } else {
+                    oldstring = output.src;
+                }
+
+                var url = "/Home/CropImage?cropUrl=" + URL.createObjectURL(event.target.files[0]) + "&originalUrl=" + oldstring + "&width=" + 800 + "&height=" + 533
+                    + "&previewClass=previewd" + "&uploadProperty=CoverUpload" + "&xTag=CoverCropSettings_X" + "&yTag=CoverCropSettings_Y"
+                    + "&widthTag=CoverCropSettings_Width" + "&heightTag=CoverCropSettings_Height" + "&rotateTag=CoverCropSettings_Rotate" + "&scaleXTag=CoverCropSettings_ScaleX"
+                    + "&scaleYTag=CoverCropSettings_ScaleY";
+
+                $("#CropModal").load(url,
+                    function () {
+                        $("#CropModal").modal("show");
+                    });
+            }
+        };
+    </script>
+
+    <!-- Summer Note JS -->
+    <script src="~/js/summernote/summernote.js"></script>
+    <script src="~/js/bs-filestyle.js"></script>
+
+    <script type="text/javascript">
+        // Default
+        $(document).ready(function() {
+            var HomeIndex = function() {
+
+                var $this = this;
+
+                function initialize() {
+                    $('#Entity_Description').summernote({
+                        height: 250,
+                        codemirror: { // codemirror options
+                            theme: 'monokai'
+                        }
+                    });
+                }
+
+                $this.init = function() {
+                    initialize();
+                }
+            };
+            var self = new HomeIndex();
+            self.init();
+        });
+
+        var fileimages = {
+            'removefromfile': function(image_id) {
+                removeImageFromObject(image_id);
+            }
+        };
+
+
+        function removeImageFromObject(image_id) {
+            $.ajax({
+                url: "/Services/Home/RemoveImageAjax",
+                type: "POST",
+                data: { id: image_id },
+                async: false,
+                dataType: "json",
+                success: function(data) {
+                    $('#' + image_id).empty();
+                },
+                error: function(error) {
+                    alert("Error : " + JSON.stringify(error, null, 2));
+                }
+            });
+        };
+    </script>
+}

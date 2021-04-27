@@ -1,0 +1,36 @@
+﻿@using Metsi.Web.Admin.ThemeSettings
+
+@model CalendarTaskMenuModel
+
+<div id="external-events" class="calendar-event">
+    <div id='external-events-list'>
+        <h4 class=" m-b-20">Task to Complete</h4>
+        @foreach (var item in Model.RecurringTasks)
+        {
+            <div class='fc-event fc-h-event fc-daygrid-event fc-daygrid-block-event external-event @ThemeColors.GetDragableTaskColor(item.TaskPriority)' 
+                 data-title="@item.Name" data-description="@item.Description" data-taskId="@item.Id">
+                <div class='fc-event-main' >
+                    <h5 class="eventHeading">@item.Name</h5>
+                    <p style="white-space: pre-wrap; font-size: 11px;">@item.Description</p>
+                </div>
+            </div>
+        }
+        <h4 class=" m-b-20">Draggable Routes</h4>
+        @foreach (var item in Model.Routes)
+        {
+            <div class='fc-event fc-h-event fc-daygrid-event fc-daygrid-block-event external-event bg-green' 
+                 data-title="@item.Name" data-description="@item.Description" data-routeId="@item.Id">
+                <div class='fc-event-main'>
+                    <h5>@item.Name</h5>
+                    <p style="white-space: pre-wrap; font-size: 11px;">@item.Description</p>
+                </div>
+            </div>
+        }
+    </div>
+    <div class="checkbox">
+        <label>
+            <input type="checkbox" id="drop-remove" />
+            remove after drop
+        </label>
+    </div>
+</div>

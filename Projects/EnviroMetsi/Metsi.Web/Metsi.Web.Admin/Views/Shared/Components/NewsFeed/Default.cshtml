@@ -1,0 +1,181 @@
+﻿@using Iqt.Base.Interfaces
+@using Filing.Base.Enums
+@using Feedback.Base.Enums
+
+@inject IApplicationConfiguration Configuration
+
+@using System.Security.Claims
+@using Feedback.Base.Entities
+@using Messaging.Base.Entities
+@using Filing.Base.Extensions
+
+@model IEnumerable<Feedback.Base.Entities.NewsFeed>
+
+@if (Model.Any())
+{
+    foreach (var item in Model)
+    {
+        <div class="media-block row_@item.Id">
+            <a class="media-left" asp-area="Identity" asp-controller="Profile" asp-action="Index" asp-route-id="@item.UserId"><img class="img-circle img-sm" alt="Profile Picture" src="@item.ImageUrl"></a>
+            <div class="media-body">
+                <div class="mar-btm">
+                    <a asp-area="Identity" asp-controller="Profile" asp-action="Index" asp-route-id="@item.UserId" class="btn-link text-semibold media-heading box-inline">@item.Subject</a>
+                    @if (item.FromDevice == "Mobile")
+                    {
+                        <p class="text-muted text-sm"><i class="fa fa-mobile fa-lg"></i> - From Mobile - @item.Created</p>
+                    }
+                    else if (item.FromDevice == "Web")
+                    {
+                        <p class="text-muted text-sm"><i class="fa fa-globe fa-lg"></i> - From Web - @item.Created</p>
+                    }
+                </div>
+                <p>@item.Content</p>
+                @if (item.Images.Any())
+                {
+                    <img class="img-responsive thumbnail" src="@item.GetPath(Configuration.BaseImageUrl, ImageType.Cover, null)" alt="Video" style="width: 100%">
+                }
+                @if (item.Videos.Any())
+                {
+                    <iframe style="width: 100%" class="img-responsive thumbnail" src="@item.GetPath(Configuration.BaseImageUrl, ImageType.Cover, null)" alt="Image"></iframe>
+                }
+                @if (item.AudioFiles.Any())
+                {
+                    <audio style="width: 100%" alt="Audio">
+                        <source src="@item.AudioFiles.FirstOrDefault().RelativePath" type="audio/@item.AudioFiles.FirstOrDefault().ContentType">
+                    </audio>
+                }
+                @*@if (item.Files.Any())
+                    {
+                        <a style="width: 100%" src="#" class="img-responsive thumbnail" src="" alt="Image">@item.Files.FirstOrDefault().FileName</a>
+                    }*@
+                @if (item.Videos.Any())
+                {
+                    <iframe style="width: 100%" class="img-responsive thumbnail" src="@item.GetPath(Configuration.BaseImageUrl, ImageType.Cover, null)" alt="Image"></iframe>
+                }
+                <div class="pad-ver">
+
+                    @if (item.FeedFeelings.Where(c => c.Feeling == Feeling.Like).Count() > 1)
+                    {
+                        <span id="countlikespan_@item.Id" class="tag tag-sm"><i class="fa fa-heart text-danger"></i> comment.FeedFeelings.Where(c => c.Feeling == Feeling.Like).Count() Likes</span>
+                    }
+                    else
+                    {
+                        <span id="countlikespan_@item.Id"></span>
+                    }
+                    @if (item.FeedFeelings.Where(c => c.Feeling == Feeling.Like).Count() > 1)
+                    {
+                        <span id="countlikespan_@item.Id" class="tag tag-sm"><i class="fa fa-heart text-danger"></i> comment.FeedFeelings.Where(c => c.Feeling == Feeling.Like).Count() Likes</span>
+                    }
+                    else
+                    {
+                        <span id="countlikespan_@item.Id"></span>
+                    }
+                    <div class="btn-group">
+                        @if (!item.FeedFeelings.Where(c => c.Feeling == Feeling.Like).Any())
+                        {
+                            <a id="likeButton_@item.Id" class="btn btn-sm btn-default btn-hover-success" onclick="clickLike('@item.Id')"><i class="fa fa-thumbs-up"></i></a>
+                        }
+                        else
+                        {
+                            <a id="likeButton_@item.Id" class="btn btn-sm btn-default btn-hover-success active" onclick="clickLike('@item.Id')"><i class="fa fa-thumbs-up"></i>You iked this!</a>
+                        }
+                        @if (!item.FeedFeelings.Where(c => c.Feeling == Feeling.Dislike).Any())
+                        {
+                            <a id="dislikeButton_@item.Id" class="btn btn-sm btn-default btn-hover-danger" onclick="clickDislike('@item.Id')"><i class="fa fa-thumbs-down"></i></a>
+                        }
+                        else
+                        {
+                            <a id="dislikeButton_@item.Id" class="btn btn-sm btn-default btn-hover-danger active" onclick="clickDislike('@item.Id')"><i class="fa fa-thumbs-down"></i>You DisLiked this!</a>
+                        }
+                    </div>
+                    <a class="btn btn-sm btn-default btn-hover-primary" onclick="ShowCreateCommentModal('@item.Id')">Comment</a>
+                    <div class="btn-group pull-right">
+                        @if (item.UserId == @User.FindFirstValue(ClaimTypes.NameIdentifier))
+                        {
+                            <a class="btn btn-sm btn-default btn-hover-info" onclick="ShowEditCommentModal('@item.Id')"><i class="fa fa-edit"></i></a>
+                        }
+                        <a class="btn btn-sm btn-default btn-hover-danger" onclick="ShowDeleteModal('@item.Id')"><i class="fa fa-trash"></i></a>
+                    </div>
+                </div>
+                <hr>
+                @if (item.Comments.Any())
+                {
+                    <div>
+                        @foreach (var comment in item.Comments)
+                        {
+                            <div class="media-block row_@comment.Id">
+                                <a class="media-left" asp-area="Identity" asp-controller="Profile" asp-action="Index" asp-route-id="@comment.UserId"><img class="img-circle img-sm" alt="Profile Picture" src="@comment.ImageUrl"></a>
+                                <div class="media-body">
+                                    <div class="mar-btm">
+                                        <a asp-area="Identity" asp-controller="Profile" asp-action="Index" asp-route-id="@comment.UserId" class="btn-link text-semibold media-heading box-inline">@comment.Subject</a>
+                                        @if (comment.FromDevice == "Mobile")
+                                        {
+                                            <p class="text-muted text-sm"><i class="fa fa-mobile fa-lg"></i> - From Mobile - @comment.Created</p>
+                                        }
+                                        else if (comment.FromDevice == "Web")
+                                        {
+                                            <p class="text-muted text-sm"><i class="fa fa-globe fa-lg"></i> - From Web - @comment.Created</p>
+                                        }
+                                    </div>
+                                    <p>@comment.Content</p>
+                                    <div class="pad-ver">
+                                        @if (comment.FeedFeelings.Where(c => c.Feeling == Feeling.Like).Count() > 1)
+                                        {
+                                            <span id="countspan_@comment.Id" class="tag tag-sm"><i class="fa fa-heart text-danger"></i> comment.FeedFeelings.Where(c => c.Feeling == Feeling.Like).Count() Likes</span>
+                                        }
+                                        else
+                                        {
+                                            <span></span>
+                                        }
+                                        @if (comment.FeedFeelings.Where(c => c.Feeling == Feeling.Dislike).Count() > 1)
+                                        {
+                                            <span id="countspan_@comment.Id" class="tag tag-sm"><i class="fa fa-d text-danger"></i> comment.FeedFeelings.Where(c => c.Feeling == Feeling.Like).Count() Likes</span>
+                                        }
+                                        else
+                                        {
+                                            <span></span>
+                                        }
+                                        <div class="btn-group">
+                                            @if (!comment.FeedFeelings.Where(c => c.Feeling == Feeling.Like).Any())
+                                            {
+                                                <a id="likeButton_@comment.Id" class="btn btn-sm btn-default btn-hover-success" onclick="clickLike('@comment.Id')"><i class="fa fa-thumbs-up"></i></a>
+                                            }
+                                            else
+                                            {
+                                                <a id="likeButton_@comment.Id" class="btn btn-sm btn-default btn-hover-success active" onclick="clickLike('@comment.Id')"><i class="fa fa-thumbs-up"></i>You Liked this!</a>
+                                            }
+                                            @if (!comment.FeedFeelings.Where(c => c.Feeling == Feeling.Dislike).Any())
+                                            {
+                                                <a id="dislikeButton_@comment.Id" class="btn btn-sm btn-default btn-hover-danger" onclick="clickDislike('@comment.Id')"><i class="fa fa-thumbs-down"></i></a>
+                                            }
+                                            else
+                                            {
+                                                <a id="dislikeButton_@comment.Id" class="btn btn-sm btn-default btn-hover-danger active" onclick="clickDislike('@comment.Id')"><i class="fa fa-thumbs-down"></i>You DisLiked this!</a>
+                                            }
+                                        </div>
+                                        <a class="btn btn-sm btn-default btn-hover-primary" onclick="ShowCreateCommentModal('@comment.Id')">Comment</a>
+                                        <div class="btn-group pull-right">
+                                            @if (comment.UserId == @User.FindFirstValue(ClaimTypes.NameIdentifier))
+                                            {
+                                                <a class="btn btn-sm btn-default btn-hover-info" onclick="ShowEditCommentModal('@comment.Id')"><i class="fa fa-edit"></i></a>
+                                            }
+                                            <a class="btn btn-sm btn-default btn-hover-danger" onclick="ShowDeleteModal('@comment.Id')"><i class="fa fa-trash"></i></a>
+                                        </div>
+                                    </div>
+                                    <hr>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                }
+            </div>
+        </div>
+    }
+}
+else
+{
+    <div class="media-block row_noitems">
+        <h4>No news feed available, please check back later!</h4>
+    </div>
+}
+

@@ -1,0 +1,38 @@
+﻿<section class="inner-header divider parallax layer-overlay overlay-dark-7" data-bg-img="/images/content/KnightBreadcrum.jpg">
+    <div class="container pt-90 pb-50">
+        <!-- Section Content -->
+        <div class="section-content pt-100">
+            <div class="row"> 
+                <div class="col-md-12">
+                    <h3 class="title text-white">@ViewData["Title"]</h3>
+                    <ul class="list-inline text-white">
+                        <li class="text-white"><a asp-area="" asp-controller="Home" asp-action="Index">Home </a> / </li>
+                        @if (ViewContext.RouteData.Values["area"] != null && ViewContext.RouteData.Values["area"].ToString().ToLower() != "")
+                        {
+                            <li>
+                                <a href="@Url.Action(ViewContext.RouteData.Values["action"].ToString(), ViewContext.RouteData.Values["controller"].ToString(), new {area = ViewContext.RouteData.Values["area"].ToString()})" class="text-white">@ViewContext.RouteData.Values["area"].ToString() / </a>
+                            </li>
+                        }
+                        @if (ViewContext.RouteData.Values["controller"].ToString().ToLower() != "home")
+                        {
+                            if (ViewContext.RouteData.Values["action"].ToString().ToLower() == "index")
+                            {
+                                <li>
+                                    <a href="@Url.Action("Index", ViewContext.RouteData.Values["controller"].ToString())" class="text-white">@ViewContext.RouteData.Values["controller"].ToString() / </a>
+                                </li>
+                            }
+                            else
+                            {
+                                <li>
+                                    <a href="@Url.Action("Index", ViewContext.RouteData.Values["controller"].ToString())" class="text-white">@ViewContext.RouteData.Values["controller"].ToString() / </a>
+                                </li>
+                            }
+
+                        }
+                        <li class="text-white">@ViewData["Title"]</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

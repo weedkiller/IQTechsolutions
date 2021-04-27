@@ -1,0 +1,30 @@
+﻿@using Iqt.Base.Interfaces
+@inject IApplicationConfiguration Configuration
+
+<div class="module clearfix modLine footer--social">
+    <h3 class="modtitle">Follow Us</h3>
+    <div class="modcontent">
+        <div class="icons-social">
+            <div class="list-inline">
+
+                <a title="Facebook" href="@Configuration.FacebookUrl" target="_blank">
+                    <span class="fa fa-facebook icon-circled icon-color"></span>
+                </a>
+
+                <a title="Twitter" href="@Configuration.TwitterUrl" target="_blank">
+                    <span class="fa fa-twitter icon-circled icon-color"></span>
+                </a>
+
+                <a title="LinkedIn" href="@Configuration.LinkedInUrl" target="_blank">
+                    <span class="fa fa-linkedin icon-circled icon-color"></span>
+                </a>
+
+
+                <a title="YouTube" href="@Configuration.YouTubeUrl" target="_blank">
+                    <span class="fa fa-youtube icon-circled icon-color"></span>
+                </a>
+
+            </div>
+        </div>
+    </div>
+</div>

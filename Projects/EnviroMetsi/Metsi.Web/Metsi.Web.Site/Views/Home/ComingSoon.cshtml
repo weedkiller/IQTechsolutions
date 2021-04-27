@@ -1,0 +1,100 @@
+﻿@{
+    ViewBag.Title = "Cookie Use";
+    Layout = "Layouts/_DefaultLayout";
+}
+
+<section class="light_section">
+    <a asp-area="" asp-controller="Home" asp-action="Index"><i class="arrow-icon-left-thin"></i> Back to Home Page</a>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6 col-sm-push-3 text-center">
+                <h2 class="section_header">Welcome after</h2>
+                <div id="countdown"></div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12 text-center">
+                <p>
+                    <a class="socialico-facebook" href="#" title="Facebook" data-toggle="tooltip">#</a>
+                    <a class="socialico-twitter" href="#" title="Twitter" data-toggle="tooltip">#</a>
+                    <a class="socialico-google" href="#" title="Google" data-toggle="tooltip">#</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="contact_parallax" class="grey_section parallax">
+    <div class="container">
+        <div class="row">
+            <div class="widget widget_contact col-sm-6 to_animate">
+                <h3>Contact Info</h3>
+                <p>
+                    Suspendisse pulvinar, augue ac venenatis condimentum, sem libero volutpat nibh, nec pellentesque velit pede quis nunc. Integer ante arcu, accumsan a, consectetuer eget, posuere ut, mauris. In ac felis quis tortor malesuada pretium. In hac habitasse platea dictumst curabitur nisi hac habitasse platea dictumst maecenas nec odio et ante tincidunt tempus morbi ac felis.
+                    <br><br>
+                    <i class="rt-icon-device-phone"></i><strong>Phone:</strong> +12 345 678 9123
+                </p>
+                <p>
+                    <i class="rt-icon-pencil"></i><strong>Email:</strong> <a href="mailto:info@company.com">info@company.com</a>
+                </p>
+                <p>
+                    <i class="rt-icon-globe-outline"></i><strong>Website: </strong><a href="./">www.company.com</a>
+                </p>
+                <p>
+                    <i class="rt-icon-location-arrow-outline"></i><strong>Address:</strong> 4321 Your Address, Country
+                </p>
+            </div>
+
+            <div class="widget col-sm-6 to_animate">
+                <h3>Contact Us</h3>
+                <form class="contact-form" method="post" action="/">
+                    <p class="contact-form-name">
+                        <label for="name">Name <span class="required">*</span></label>
+                        <input type="text" aria-required="true" size="30" value="" name="name" id="name" class="form-control" placeholder="Name">
+                    </p>
+                    <p class="contact-form-email">
+                        <label for="email">Email <span class="required">*</span></label>
+                        <input type="email" aria-required="true" size="30" value="" name="email" id="email" class="form-control" placeholder="Email">
+                    </p>
+                    <p class="contact-form-subject">
+                        <label for="subject">Subject <span class="required">*</span></label>
+                        <input type="text" aria-required="true" size="30" value="" name="subject" id="subject" class="form-control" placeholder="Subject">
+                    </p>
+                    <p class="contact-form-message">
+                        <label for="message">Message</label>
+                        <textarea aria-required="true" rows="8" cols="45" name="message" id="message" class="form-control" placeholder="Message"></textarea>
+                    </p>
+                    <p class="contact-form-submit vertical-margin-40">
+                        <!-- <input type="submit" value="Send" id="contact_form_submit" name="contact_submit" class="theme_button"> -->
+                        <button type="submit" id="contact_form_submit" name="contact_submit" class="theme_button"><i class="rt-icon-sent"></i> Send!</button>
+                    </p>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<section id="subscribe" class="color_section action_section">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 text-center">
+                <h3 class="section_header">Stay Tuned</h3>
+                <p>Please, subscribe to our latest news to be updated.</p>
+                <div class="widget widget_mailchimp">
+                    <form id="signup" action="/" method="get" class="form-inline">
+                        <div class="form-group">
+                            <input name="email" id="mailchimp_email" type="email" class="form-control" placeholder="your@email.com">
+                        </div>
+                        <button type="submit" class="theme_button">Send</button>
+                        <div id="response"></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+@section Scripts
+{
+
+}

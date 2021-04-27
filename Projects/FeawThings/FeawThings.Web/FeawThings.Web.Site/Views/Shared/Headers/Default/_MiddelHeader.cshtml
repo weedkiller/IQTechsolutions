@@ -1,0 +1,23 @@
+﻿    <div class="header-center left">
+        <div class="container">
+            <div class="row">
+                <!-- Logo -->
+                <div class="navbar-logo col-md-3 col-sm-12 col-xs-12">
+                    <a asp-area="" asp-controller="Home" asp-action="Index">
+                        <img src="~/images/logo/logoInEllipse.png" style="width: 70%; max-width: 250px" title="Feaw Things" alt="Feaw Things">
+                    </a>
+                </div>
+                <!-- //end Logo -->
+                <!-- Search -->
+                <div id="sosearchpro" class="col-sm-7 search-pro">
+                    @await Component.InvokeAsync("SearhComponent")
+                </div>
+                <!-- //end Search -->
+                <!-- Secondary menu -->
+                <div class="col-md-2 col-sm-5 col-xs-12 shopping_cart pull-right">
+                    @await Component.InvokeAsync("ShoppingCartMenu")
+                </div>
+            </div>
+
+        </div>
+    </div>

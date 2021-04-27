@@ -1,0 +1,106 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<partial name="Sliders/_DefaultSliderPartialView" />
+
+<section id="features" class="container services">
+    <div class="row">
+        <div class="col-md-3 col-sm-6">
+            <img src="~/Images/Content/Troubleshooting.jpg" alt="Troubleshooting" style="width: 100%" />
+            <h2>Troubleshooting</h2>
+            <p style="min-height:54px">Try our free Troubleshooting section for assistance with solving most of your water- and wastewater- related issues.</p>
+            <a class="btn btn-primary btn-block" asp-area="Troubleshooting" asp-controller="Categories" asp-action="Index">Troubleshoot</a>
+        </div>
+        <div class="col-md-3 col-sm-6">
+            <img src="~/Images/Content/StudyPace.jpg" alt="Study at your own Pace" style="width: 100%" />
+            <h2>Study at your own Pace</h2>
+            <p style="min-height:54px">Enviro Metsi offers you lifetime access to materials and results, obtained by subscribing to one of our awesome courses.</p>
+            <a class="btn btn-primary btn-block" asp-area="" asp-controller="Home" asp-action="Dashboard">Study Portal</a>
+        </div>
+        <div class="col-md-3 col-sm-6">
+            <img src="~/Images/Content/ExpertTeacher.jpg" alt="Expert Teachers" style="width: 100%" />
+            <h2>Short Courses</h2>
+            <p style="min-height:54px">Only want to brush up on a specific skill?  Subscrive to one of the Short Courses presented by one of our passionate industry experts. </p>
+            <a class="btn btn-primary btn-block" asp-area="" asp-controller="Home" asp-action="UnderConstruction">Read More</a>
+        </div>
+        <div class="col-md-3 col-sm-6">
+            <img src="~/Images/Content/TrustedContent.jpg" alt="Trusted Content" style="width: 100%" />
+            <h2>RPL Advisory Services</h2>
+            <p style="min-height:54px">Please contact us for assistance with Recognition of Prior Learning and/or the “Grand Parenting” of Process Controllers.</p>
+            <a class="btn btn-primary btn-block" href="mailto:dewald@metsi.co.za">Mail Us</a>
+        </div>
+    </div>
+</section>
+<section class="container features">
+    <div class="row">
+        <div class="col-lg-12 text-center">
+            <div class="navy-line"></div>
+            <h1>Visit your unique Student Portal<br /> <span class="navy"> with your own Custom Dashboard</span> </h1>
+            <p>Sign up with us and have access to seminars, extensive trouble shooting, signed up courses and lots more. </p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-3 text-center wow fadeInLeft">
+            <div>
+                <a href="https://allqs.saqa.org.za/">
+                    <img src="~/Images/Content/Coding.png" alt="dashboard" style="width: 20%">
+                    <h2>Search Qualifications</h2>
+                    <p>A link to the South African Qualification Authority’s database of registered Qualifications and Unit Standards.</p>
+                </a>
+            </div>
+            <div class="m-t-lg">
+                <a href="https://regqs.saqa.org.za/viewQualification.php?id=102255">
+                    <img src="~/Images/Content/document.png" alt="dashboard" style="width: 20%">
+                    <h2>Occupational Certificate Info</h2>
+                    <p>
+                        Please follow the link for details pertaining to the newly registered Occupational Certificate: Water Process Controller Additional information is also available directly from the QCTO website.
+                    </p>
+                </a>
+            </div>
+        </div>
+        <div class="col-md-6 text-center  wow zoomIn">
+            <img src="~/Images/Content/perspective.png" alt="dashboard" class="img-responsive">
+        </div>
+        <div class="col-md-3 text-center wow fadeInRight">
+            <div>
+                <a href="http://verisearch.octoplus.co.za/Individuals.aspx">
+                    <img src="~/Images/Content/Photography.png" alt="dashboard" style="width: 20%">
+                    <h2>Training Achievements Verification</h2>
+                    <p>This service is for individuals who need a verification letter confirming their tertiary qualifications obtained in South Africa.</p>
+                </a>
+            </div>
+            <div class="m-t-lg">
+                <a href="http://nadsc.dhet.gov.za/home">
+                    <img src="~/Images/Content/note.png" alt="dashboard" style="width: 20%">
+                    <h2>The 21st Century Artisan</h2>
+                    <p>Very insightful information as to what Apprenticeships are all about.  You can also gain in international perspective on the topic by clicking through the International Labour Organisation’s website.</p>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+@await Component.InvokeAsync("EmployeeSection")
+
+@*@if (Manager.Repository<Testimonial>().GetAll().Any())
+    {*@
+@*<section id="testimonials" class="navy-section testimonials">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center wow zoomIn">
+                    <i class="fa fa-comment big-icon"></i>
+                    <h1>
+                        What our users say
+                    </h1>
+                    <div class="testimonials-text">
+                        <i>"Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like)."</i>
+                    </div>
+                    <small>
+                        <strong>12.02.2014 - Andy Smith</strong>
+                    </small>
+                </div>
+            </div>
+        </div>
+    </section>*@
+@*}*@

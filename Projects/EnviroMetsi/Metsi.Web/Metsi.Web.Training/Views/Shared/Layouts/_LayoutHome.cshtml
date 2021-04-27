@@ -1,0 +1,25 @@
+﻿@{
+    Layout = "Layouts/_Layout";
+}
+
+@section Styles
+{
+    <link href="~/css/stylehome.css" rel="stylesheet">
+
+    @RenderSection("Styles", required: false)
+}
+
+<partial name="Menus/_MainMenuPartialView" />
+
+@RenderBody()
+
+<partial name="Footers/_DefaultFooterPartialView" />
+
+@section Scripts
+{
+    <script src="~/js/classie.js"></script>
+    <script src="~/js/cbpAnimatedHeader.js"></script>
+    <script src="~/js/wow.min.js"></script>
+
+    @RenderSection("Scripts", required: false)
+}

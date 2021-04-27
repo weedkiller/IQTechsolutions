@@ -1,0 +1,296 @@
+﻿@model AddEditModelBase<Route>
+
+@section Styles
+{
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD53dxhxeywbVuqd5TVyMka4d8okQUVIYA&callback=initMap&libraries=places&v=weekly" defer></script>
+}
+
+<form asp-area="Calendar" asp-controller="Routes" asp-action="Edit" method="post">
+    <div class="panel panel-inverse">
+        <div class="panel-heading">
+            <div class="panel-heading-btn">
+                <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-default" data-click="panel-expand"><i class="fa fa-expand"></i></a>
+                <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-success" data-click="panel-reload"><i class="fa fa-repeat"></i></a>
+                <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-warning" data-click="panel-collapse"><i class="fa fa-minus"></i></a>
+                <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-danger" data-click="panel-remove"><i class="fa fa-times"></i></a>
+            </div>
+            <h4 class="panel-title">Create Route</h4>
+        </div>
+        <div id="mainPanel" class="panel-body p-0">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Entity.Id"/>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="form-group" style="padding: 10px;">
+                        <label asp-for="Entity.Name" class="control-label"></label>
+                        <input asp-for="Entity.Name" class="form-control" style="width: 100%" />
+                        <span asp-validation-for="Entity.Name" class="text-danger"></span>
+                    </div>
+                    <div class="form-group" style="padding-bottom: 10px; padding-left: 10px; padding-right: 10px;">
+                        <label asp-for="Entity.Description" class="control-label"></label>
+                        <textarea asp-for="Entity.Description" class="form-control" rows="5"></textarea>
+                        <span asp-validation-for="Entity.Description" class="text-danger"></span>
+                    </div>
+                    <div class="form-group" style="padding-bottom: 10px; padding-left: 10px; padding-right: 10px;">
+                        <div class="input-group">
+                            <div class="input-group-btn">
+                                <button type="button" class="btn btn-primary">Create Location <small>(from address)</small></button>
+                            </div>
+                            <input id="autocomplete" class="form-control" placeholder="Address for new Location" type="text" />
+                            <div class="input-group-btn">
+                                <button onclick="waitForMarkerAddition()" type="button" class="btn btn-success">Add Marker</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="map" style="width: 100%; height: 400px;"></div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4">
+            <input type="submit" name="main" value="Save" class="btn btn-primary btn-block" />
+        </div>
+        <div class="col-md-4">
+            <input type="submit" name="finnish" value="Submit & Finnish" class="btn btn-primary btn-block" />
+        </div>
+        <div class="col-md-4">
+            <a name="main" asp-area="Calendar" asp-controller="Routes" asp-action="Index" asp-route-id="@Model.Entity.Id" class="btn btn-danger btn-block">Cancel</a>
+        </div>
+    </div>
+</form>
+
+<div style="display: none">
+    <div id="info-content">
+        <table>
+            <tr id="iw-url-row" class="iw_table_row">
+                <td id="iw-icon" class="iw_table_icon"></td>
+                <td id="iw-url"></td>
+            </tr>
+            <tr id="iw-address-row" class="iw_table_row">
+                <td class="iw_attribute_name">Address:</td>
+                <td id="iw-address"></td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <hr />
+                </td>
+            </tr>
+            <tr id="iw-button-row" class="iw_table_row" >
+                <td colspan="2"><a id="iw-button" href="#" class="btn btn-white btn-sm btn-block">Create Location</a></td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+
+@section Scripts
+{
+    <script type="text/javascript">
+        let map;
+        let places;
+        let autocomplete;
+        let temp;
+        let infoWindow;
+
+        const countryRestrict = { country: "za" };
+        const componentForm = {
+            street_number: "short_name",
+            route: "long_name",
+            locality: "long_name",
+            administrative_area_level_1: "short_name",
+            country: "long_name",
+            postal_code: "short_name",
+        };
+
+        function initMap() {
+
+            var metsi = { lat: -33.8904985, lng: 18.7041567 };
+
+            map = new google.maps.Map(document.getElementById("map"), {
+                center: metsi,
+                zoom: 7
+            });
+            infoWindow = new google.maps.InfoWindow({
+                content: document.getElementById("info-content"),
+            });
+
+            autocomplete = new google.maps.places.Autocomplete(
+                document.getElementById("autocomplete"),
+                {
+                    types: ["address"],
+                    componentRestrictions: countryRestrict,
+                }
+            );
+            places = new google.maps.places.PlacesService(map);
+
+            autocomplete.addListener("place_changed", onPlaceChanged);
+
+            var marker = new google.maps.Marker(
+                {
+                    position: metsi,
+                    title: "Enviro Metsi Head Office",
+                    icon: "/images/MetsiMapsMarker.png"
+                });
+
+            marker.setMap(map);
+
+            setupCurrentLocations();
+        }
+
+        function setupCurrentLocations() {
+            var list = JSON.parse('@Html.Raw(Json.Serialize(Model.Entity.RouteLocations))');
+            console.log(list);
+
+            for (var i = 0; i < list.length; i++) {
+
+                console.log(JSON.stringify(list[i]));
+                var name = JSON.stringify(list[i].name);
+
+                $.ajax({
+                    type: "GET",
+                    url: "/Calendar/Address/GetRouteLocationAddress?id=" + list[i].id,
+                    contentType: 'application/x-www-form-urlencoded',
+                    success: function (eventData) {
+                        console.log(JSON.stringify(eventData)); //just to give a visual on the data. From what you were doing in your example it looks like your data is already in a format suitable to be used by fullCalendar, so no need to push it all into another array
+
+                        var marker = new google.maps.Marker(
+                            {
+                                position: { lat: eventData.lat, lng: eventData.lng},
+                                title: eventData.name,
+                                animation: google.maps.Animation.DROP,
+                                draggable: true
+                            }
+                        );
+
+                        marker.setMap(map);
+
+                        google.maps.event.addListener(marker, "click", function() {
+                            const marker = this;
+                            infoWindow.open(map, marker);
+
+                            var lat = marker.getPosition().lat();
+                            var lng = marker.getPosition().lng();
+
+                            var url = "/Calendar/Locations/Edit?lat=" + lat + "&lng=" + lng + "&id=" + eventData.id;
+                            var button = document.getElementById("iw-button");
+
+                            document.getElementById("iw-icon").innerHTML = '<img class="hotelIcon" ' + 'src="/images/MetsiMapsMarker.png"/>';
+                            document.getElementById("iw-url").innerHTML = "<b><a href=\"" + url + "\">" + eventData.name + "</a></b>";
+                            document.getElementById("iw-address").textContent = "";
+                            button.innerHTML = "Edit " + eventData.name;
+                            button.setAttribute("href", url);
+                        });
+
+                        google.maps.event.addListener(marker, 'dragend', function (evt) {
+
+                            if (confirm('Would you like to save ?')) {
+
+                                var lat = marker.getPosition().lat();
+                                var lng = marker.getPosition().lng();
+
+                                window.location.href = "/Calendar/Locations/Edit?lat=" + lat + "&lng=" + lng + "&id=" + eventData.id;
+                            }
+                        });
+                    },
+                    error: function(req, status, error) {
+                        alert(error);
+                    }
+                });
+            }
+        }
+
+        function onPlaceChanged() {
+            const place = autocomplete.getPlace();
+
+            if (place.geometry) {
+                map.panTo(place.geometry.location);
+                map.setZoom(15);
+                search();
+            } else {
+                document.getElementById("autocomplete").placeholder = "Address for new Location";
+            }
+        }
+
+        function waitForMarkerAddition() {
+            temp = google.maps.event.addListener(map, 'click', addMarkerEventHandler);
+            map.setOptions({ draggableCursor: 'crosshair' });
+        }
+
+
+
+        var addMarkerEventHandler = function (e) {
+
+            var marker = new google.maps.Marker(
+                {
+                    position: e.latLng,
+                    title: "New Marker",
+                    animation: google.maps.Animation.DROP,
+                    draggable: true
+                }
+            );
+
+            var newInfo = new google.maps.InfoWindow({
+                content: document.getElementById("info-content"),
+            });
+
+            google.maps.event.addListener(marker, "click", function() {
+                const marker = this;
+                newInfo.open(map, marker);
+                buildIWContent(marker);
+            });
+
+            google.maps.event.addListener(marker, 'dragend', function (evt) {
+
+                var lat = marker.getPosition().lat();
+                var lng = marker.getPosition().lng();
+
+                if (confirm('Would you like to create this location ?')) {
+                    window.location.href = "/Calendar/Locations/Create?lat=" + lat + "&lng=" + lng + "&routeId=" + '@Model.Entity.Id';
+                }
+            });
+
+            marker.setMap(map);
+
+
+            google.maps.event.removeListener(temp);
+
+            map.setOptions({ draggableCursor: '' });
+
+            var lat = marker.getPosition().lat();
+            var lng = marker.getPosition().lng();
+
+            var url = "/Calendar/Locations/AddMarkerLocation?lat=" + lat + "&lng=" + lng + "&routeId=" + '@Model.Entity.Id';
+
+            $("#ModalPlaceHolder").load(url,
+                function () {
+                    $("#ModalPlaceHolder").modal("show");
+                });
+
+        };
+
+        function showInfoWindow() {
+            const marker = this;
+            infoWindow.open(map, marker);
+            buildIWContent(marker);
+        }
+
+        function buildIWContent(marker) {
+            var lat = marker.getPosition().lat();
+            var lng = marker.getPosition().lng();
+            var url = "/Calendar/Locations/Create?lat=" + lat + "&lng=" + lng + "&routeId=" + '@Model.Entity.Id';
+            var button = document.getElementById("iw-button");
+
+            document.getElementById("iw-icon").innerHTML = '<img class="hotelIcon" ' + 'src="/images/MetsiMapsMarker.png"/>';
+            document.getElementById("iw-url").innerHTML = "<b><a href=\"" + url +"\">" + marker.title +"</a></b>";
+            document.getElementById("iw-address").textContent = "";
+            button.innerHTML = "Create Location";
+            button.setAttribute("href", url);
+        }
+
+
+    </script>
+}

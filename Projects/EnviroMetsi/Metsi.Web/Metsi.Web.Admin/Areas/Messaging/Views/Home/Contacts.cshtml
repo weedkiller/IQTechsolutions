@@ -1,0 +1,43 @@
+﻿@inject ChatContext Service;
+@inject IApplicationConfiguration Configuration;
+
+@using Filing.Base.Enums
+@using Filing.Base.Extensions
+@using Iqt.Base.Interfaces
+@using Messaging.Core.Context.Services
+@model IEnumerable<Identity.Base.Entities.UserInfo>
+
+@{
+    ViewData["Title"] = "Contacts";
+}
+
+<div id="page-content">
+    <div class="row">
+        @foreach (var item in Model)
+        {
+            <div class="col-sm-6 col-md-4">
+                <!--Profile Widget-->
+                <!--===================================================-->
+                <div class="panel text-center">
+                    <div class="panel-body">
+                        <img alt="Avatar" class="img-md img-circle img-border mar-btm" src="@item.GetPath(Configuration.BaseImageUrl, ImageType.Cover, "/img/av1.png")">
+                        <h4 class="mar-no">@item.FirstName @item.LastName</h4>
+                        <p>@item</p>
+                        <p><small>@item.EmailAddresses.FirstOrDefault(c => c.Default)</small></p>
+                    </div>
+                    <div class="pad-all">
+                        <p class="text-muted">
+                            @item.Description
+                        </p>
+                        <div class="pad-btm">
+                            <a asp-area="Chats" asp-controller="Home" asp-action="AddFriend" asp-route-id="@item.Id" class="btn btn-primary">Add Friend</a>
+                            <button asp-area="Chats" asp-controller="Home" asp-action="CreatePrivateChat" asp-route-id="@item.Id" class="btn btn-success">Message</button>
+                        </div>
+                    </div>
+                </div>
+                <!--===================================================-->
+            </div>
+        }
+        
+    </div>
+</div>

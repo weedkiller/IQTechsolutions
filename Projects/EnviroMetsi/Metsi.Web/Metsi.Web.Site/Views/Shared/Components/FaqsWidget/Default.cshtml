@@ -1,0 +1,63 @@
+﻿@model Iqt.Base.Models.PagedResult<Troubleshooting.Base.ApiModels.QuestionModel>
+
+@if (Model.Results.Any())
+{
+
+    <section class="">
+        <div class="container">
+            <div class="row">
+                <h2>Frequently Asked <span class="highlight">Questions</span></h2>
+                <hr />
+
+                <div id="carousel-media3" class="slide faq-carousel" data-ride="carousel" data-interval="10000">
+
+                    <!-- Wrapper for slides -->
+                    <div class="carousel-inner">
+                        @{
+                            var count2 = 0;
+                            foreach (var item in Model.Results)
+                            {
+                                var classString = "";
+                                if (count2 == 0)
+                                {
+                                    classString = "active";
+                                }
+                                else
+                                {
+                                    classString = "";
+                                }
+                                count2 = count2 + 1;
+                                <div class="item @classString">
+                                    <div class="media">
+                                        <h3>@item.Question</h3>
+                                        <ul style="list-style:none">
+                                            @foreach (var ans in item.Answers)
+                                            {
+                                                <li>@Html.Raw(ans)</li>
+                                            }
+                                        </ul>
+                                    </div>
+                                </div>
+                            }
+
+
+
+                        }
+                    </div>
+                    <!-- Controls -->
+                    <a class="left carousel-control" href="#carousel-media3" role="button" data-slide="prev">
+                        <span class="glyphicon glyphicon-chevron-left"></span>
+                    </a>
+                    <a class="right carousel-control" href="#carousel-media3" role="button" data-slide="next">
+                        <span class="glyphicon glyphicon-chevron-right"></span>
+                    </a>
+                </div>
+
+                <div class="text-right">
+                    <a asp-area="Faqs" asp-controller="Home" asp-action="Index">Read More ...</a>
+                </div>
+            </div>
+        </div>
+    </section>
+}
+

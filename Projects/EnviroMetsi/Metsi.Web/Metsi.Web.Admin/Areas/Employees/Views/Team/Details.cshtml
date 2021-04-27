@@ -1,0 +1,64 @@
+﻿@model Employee
+
+@{
+    ViewData["Title"] = "Employee Details";
+}
+
+<section class="page-section-ptb">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <img class="img-fluid center-block bottom-m3" src="@Model.GetImage(ImageType.Profile).GetPath()" alt="">
+            </div>
+            <div class="col-md-8">
+                <div class="custom-content">
+                    <div class="clearfix">
+                        <div class="title pull-left mb-2">
+                            <h4 class="text-text">@Model.Names.GetFullNames()</h4>
+                            <span class="text-blue">@Model.WorkTitle</span>
+                        </div>
+                        <div class="social pull-right">
+                            <ul class="list-inline social-icon">
+                                <li><a href="#"><i class="fa fa-facebook"></i> </a></li>
+                                <li><a href="#"><i class="fa fa-twitter"></i> </a></li>
+                                <li><a href="#"><i class="fa fa-dribbble"></i> </a></li>
+                                <li><a href="#"><i class="fa fa-pinterest-p"></i> </a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="clearfix mb-2">
+                        <p>@Model.Description</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        @if (Model.Skills.Any())
+        {
+            <div class="row top-m3 mt-5">
+                <div class="col-md-6">
+                    <h4 class="mb-2">Powerful Skills</h4>
+                    <b>Habit is the intersection of knowledge (what to do), skill (how to do), and desire (want to do).</b>
+                    @if (Model.Bio != Model.Description)
+                    {
+                        <div class="clearfix pt-2">
+                            <p>
+                                @Model.Bio
+                            </p>
+                        </div>
+                    }
+                </div>
+                <div class="col-md-6">
+                    @foreach (var item in Model.Skills)
+                    {
+                        <div class="skill">
+                            <div class="skill-bar" data-percent="@item.Rating" data-delay="0" data-type="%">
+                                <div class="progress-title">@item.Name</div>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+        }
+
+    </div>
+</section>

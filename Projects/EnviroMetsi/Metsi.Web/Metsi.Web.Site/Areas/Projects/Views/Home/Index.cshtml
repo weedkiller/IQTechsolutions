@@ -1,0 +1,86 @@
+﻿@using Filing.Base.Enums
+@using Filing.Base.Extensions
+@using Iqt.Base.Interfaces
+
+@inject IApplicationConfiguration Configuration
+
+@model Iqt.Base.Models.PagedResult<Projects.Base.ApiModels.ProjectModel>
+@{
+    ViewData["Title"] = "Our Recent Projects";
+}
+
+<section id="content" class="light_section blog no-sidebar">
+    <div class="container" style="padding-top: 0">
+        <div class="row">
+            <!-- main content -->
+            <div class="col-sm-10 col-sm-push-1">
+
+                <article class="post format-standard">
+                    <header class="entry-header">
+                        <h3 class="entry-title">
+                            Some of our most recent projects
+                        </h3>
+                    </header>
+                    <!-- .entry-header -->
+
+                    <div class="entry-content">
+                        <p>
+                            Enviro Metsi is continuously looking for ways in which to assist municipalities and other Water Services Authorities with the daunting task that they face when it
+                            comes to managing, operating and maintaining the Water and Waste water Treatment Facilities they are responsible for.
+                        </p>
+                    </div>
+                </article>
+                <!-- .post -->
+            
+                @if (Model.Results.Any())
+                {
+                    foreach (var item in Model.Results)
+                    {
+                        <div class="side_teaser media with_border">
+                            <article class="post format-small-image">
+                                <header class="entry-header">
+                                    <h2 class="entry-title">
+                                        <a rel="bookmark">@item.ProjectName.TruncateLongString(35)</a>
+                                    </h2>
+                                    <div class="entry-meta">
+                                        @*For
+                                        <span class="author">
+                                            <a rel="author" href="#">@item.Customer.ApplicationUser.DisplayName</a>
+                                        </span>*@
+                                        <span class="date">
+                                            @item.ProjectName
+                                        </span>
+                                    </div>
+                                    <!-- .entry-meta -->
+                                </header>
+                                <div class="row">
+                                    <div class="entry-thumbnail col-sm-3">
+                                        <img alt="@item.ProjectName" src="@item.CoverImageUrl"/>
+                                    </div>
+                                    <div class="col-sm-9">
+
+                                        <!-- .entry-header -->
+
+                                        <div class="entry-content">
+                                            <p>
+                                                @Html.Raw(item.Description)
+                                            </p>
+                                        </div>
+                                        <!-- .entry-content -->
+                                    </div>
+                                </div>
+
+                            </article>
+                            <!-- .post -->
+                        </div>
+                    }
+                }
+                else
+                {
+                    <hr/>
+                    <h4>Unfortunately we do not have any projects loaded on our website yet, please check back later</h4>
+                }
+            </div> <!--eof col-sm-10 (main content)-->
+        </div>
+    </div>
+</section>

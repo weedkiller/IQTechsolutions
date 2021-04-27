@@ -1,0 +1,28 @@
+﻿@{
+    ViewData["Title"] = "Thank You for your support Ticket";
+    ViewData["Description"] = "Thank you for leaving your support ticket a service representative will get back to you shortly";
+    ViewData["Keywords"] = "Web Design, Web Desing Cape Town, Web Design Prices, Web Design South Africa, Web Designers, Proffesional Web Design Company, Quality Web Design, Web Design Costs" +
+                           "Web Design Packages, Web Site Design, Website, Designing, Web Design Prices, Web Designer, Web Site Design, Affordable Website Designing, Web Development, Application Development" +
+                           "SEO, Search Engine Optimization, Cheap SEO, SEO Experts, Email Campaigns, Social Media Campaigns, Digital Marketing, Database Development, Database Developer, Database, " +
+                           "Database Architects, Cape Town, South Africa, Websites, E-Commerce, Web Hosting, Website Hosting, Adwords, Google Adwords, ASP.NET, DOTNET Core, SQL Server, Entity Framework, C#"
+                           + "CSharp, C-Sharp, Visual CSharp, Visual CSharp, Code First, Visual Basic, VB.Net, JAVA, JQeury, Ajaq, Razor";
+
+    Layout = "Layouts/_Layout";
+}
+
+<section class="section_offset">
+    <main class="container t_align_c">
+        <div class="row">
+            <div class="col-md-12">
+                <h2 style="padding-bottom: 20px;">@ViewBag.Title</h2>
+                <hr />
+                <div>
+                    <h4 style="padding-top: 30px;">
+                        A @FrameworkDI.Configuration["Company:Name"] thanks you very much for your donation. <br />
+                    </h4>
+                    <a asp-area="" asp-controller="Home" asp-action="Index" class="btn btn-primary">Go back to the Homepage</a>
+                </div>
+            </div>
+        </div>
+    </main>
+</section>

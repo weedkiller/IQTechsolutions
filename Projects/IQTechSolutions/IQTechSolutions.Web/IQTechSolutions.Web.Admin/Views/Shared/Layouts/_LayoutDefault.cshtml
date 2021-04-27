@@ -1,0 +1,181 @@
+﻿@using System.Security.Claims
+@using Identity.Base.Entities
+@using Microsoft.EntityFrameworkCore
+
+
+@inject DbContext Context;
+@*@inject INotificationService NotificationService;*@
+
+@{
+    Layout = "Layouts/_Layout";
+    var user = await Context.Set<UserInfo>().Include(c => c.Images).FirstOrDefaultAsync(c => c.Id == User.FindFirstValue(ClaimTypes.NameIdentifier));
+}
+
+@section Styles
+    {
+
+    <link rel="stylesheet" href="~/css/owl-carousel/owl.carousel.min.css">
+    <link rel="stylesheet" href="~/css/owl-carousel/owl.theme.min.css">
+    <!--page injected css-->
+    @RenderSection("Styles", required: false)
+}
+
+
+    <div class="page">
+        <!-- Begin Header -->
+        <header class="header">
+            <nav class="navbar fixed-top">
+                <!-- Begin Search Box-->
+                <div class="search-box">
+                    <button class="dismiss"><i class="ion-close-round"></i></button>
+                    <form id="searchForm" action="#" role="search">
+                        <input type="search" placeholder="Search something ..." class="form-control">
+                    </form>
+                </div>
+                <!-- End Search Box-->
+                <!-- Begin Topbar -->
+                <div class="navbar-holder d-flex align-items-center align-middle justify-content-between">
+                    <!-- Begin Logo -->
+                    <div class="navbar-header">
+                        <a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand">
+                            <div class="brand-image brand-big">
+                                <img src="~/img/logo-big.png" alt="logo" class="logo-big">
+                            </div>
+                            <div class="brand-image brand-small">
+                                <img src="~/img/logo.png" alt="logo" class="logo-small">
+                            </div>
+                        </a>
+                        <!-- Toggle Button -->
+                        <a id="toggle-btn" href="#" class="menu-btn active">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </a>
+                        <!-- End Toggle -->
+                    </div>
+                    <!-- End Logo -->
+                    <!-- Begin Navbar Menu -->
+                    <ul class="nav-menu list-unstyled d-flex flex-md-row align-items-md-center pull-right">
+                        <!-- Search -->
+                        <li class="nav-item d-flex align-items-center"><a id="search" href="#"><i class="la la-search"></i></a></li>
+                        <!-- End Search -->
+                        <!-- Begin Notifications -->
+                        <li class="nav-item dropdown">
+                            <a id="notifications" rel="nofollow" data-target="#" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link">
+                                <i class="la la-bell animated infinite swing"></i>
+                                @*@if (@NotificationService.GetUnreadNotifications().Any())
+                                {
+                                    <span class="badge-pulse"></span>
+                                }*@
+                            </a>
+                            <ul aria-labelledby="notifications" class="dropdown-menu notification">
+                                @*<li>
+                                    <div class="notifications-header">
+                                        <div class="title">Notifications (@NotificationService.GetUnreadNotifications().Count())</div>
+                                        <div class="notifications-overlay"></div>
+                                        <img src="~/img/notifications/01.jpg" alt="IQ Tech Solutions Notification Image" class="img-fluid">
+                                    </div>
+                                </li>
+                                @foreach (var item in NotificationService.GetUnreadNotifications())
+                                {
+                                    <li>
+                                        <a href="#">
+                                            <div class="message-icon">
+                                                @if (item.Name == "User Registration")
+                                                {
+                                                    <i class="la la-user"></i>
+                                                }
+                                                else
+                                                {
+                                                    <i class="la la-calendar-check-o"></i>
+                                                }
+                                            </div>
+                                            <div class="message-body">
+                                                <div class="message-body-heading">
+                                                    @item.MessageString
+                                                </div>
+                                                <span class="date">@item.Created.DisplayDateTimeIntervalString()</span>
+                                            </div>
+                                        </a>
+                                    </li>
+                                }
+                                <li>
+                                    <a rel="nofollow" asp-area="Messaging" asp-controller="Notifications" asp-action="List" class="dropdown-item all-notifications text-center">View All Notifications</a>
+                                </li>*@
+                            </ul>
+                        </li>
+                        <!-- End Notifications -->
+                        <!-- User -->
+                        <li class="nav-item dropdown">
+                            <!--<a id="user" rel="nofollow" data-target="#" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link"><img src="@*@user.GetImage().GetImagePathFromAnotherWebsite("https://www.iqtechsolutions.co.za", "/images/placeholders/av2.png")*@" alt="" class="avatar rounded-circle"></a>
+                            <ul aria-labelledby="user" class="user-size dropdown-menu">
+                                <li class="welcome">
+                                    <a asp-area="" asp-controller="Home" asp-action="UnderConstruction" class="edit-profil"><i class="la la-gear"></i></a>-->
+                                    @*<img src="@user.GetImagePath("https://www.iqtechsolutions.co.za", "/images/placeholders/av2.png")" alt="@user.DisplayName" class="rounded-circle">*@
+                                <!--</li>
+                                <li>
+                                    <a asp-area="ClientZone" asp-controller="Profile" asp-action="Index" asp-route-id="" class="dropdown-item">
+                                        Profile
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a asp-area="Messaging" asp-controller="Chat" asp-action="Index" asp-route-id="" class="dropdown-item">
+                                        Social/Messaging
+                                    </a>
+                                </li>
+                                <li>
+                                    <a asp-area="" asp-controller="Home" asp-action="UnderConstruction" class="dropdown-item no-padding-bottom">
+                                        Settings
+                                    </a>
+                                </li>
+                                <li class="separator"></li>
+                                <li>
+                                    <a asp-area="Faqs" asp-controller="Home" asp-action="Index" class="dropdown-item no-padding-top">
+                                        Faq
+                                    </a>
+                                </li>
+                                <li><a rel="nofollow" href="javascript:document.getElementById('logoutForm').submit()" class="dropdown-item logout text-center"><i class="ti-power-off"></i></a></li>
+                            </ul>-->
+                        </li>
+                        <!-- End Quick Actions -->
+                    </ul>
+                    <!-- End Navbar Menu -->
+                </div>
+                <!-- End Topbar -->
+            </nav>
+        </header>
+        <!-- End Header -->
+        <!-- Begin Page Content -->
+    <div class="page-content d-flex align-items-stretch">
+        <div class="default-sidebar">
+            <partial name="Menus/_MainMenuPartial"/>
+        </div>
+
+        @RenderBody()
+
+    </div>
+</div>
+
+<div id="ModalPlaceHolder" class="modal fade"></div>
+<div class="modal modal-message fade" id="CropModal" data-backdrop="static" data-keyboard="false"></div>
+<div class="modal modal-message fade" id="LargeModalPlaceHolder"></div>
+<form style="display: inline-block;" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })" method="post" id="logoutForm"></form>
+
+@section Scripts
+{
+    <!-- Begin Page Vendor Js -->
+    <script src="~/vendors/js/nicescroll/nicescroll.min.js"></script>
+    <script src="~/vendors/js/chart/chart.min.js"></script>
+    <script src="~/vendors/js/progress/circle-progress.min.js"></script>
+    <script src="~/vendors/js/calendar/moment.min.js"></script>
+    <script src="~/vendors/js/owl-carousel/owl.carousel.min.js"></script>
+    <script src="~/vendors/js/app/app.js"></script>
+    <!-- End Page Vendor Js -->
+    <!-- Begin Page Snippets -->
+    <script src="~/js/dashboard/db-default.js"></script>
+
+    @RenderSection("Scripts", required: false)
+    <!-- end page level script libraries -->
+    <!-- ================== END SCRIPT LIBRARIES ================== -->
+}

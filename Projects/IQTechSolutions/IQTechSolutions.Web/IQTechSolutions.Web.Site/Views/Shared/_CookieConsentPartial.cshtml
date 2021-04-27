@@ -1,0 +1,45 @@
+﻿@using Microsoft.AspNetCore.Http.Features
+@inject IApplicationConfiguration ApplicationConfiguration;
+
+
+@{
+    var consentFeature = Context.Features.Get<ITrackingConsentFeature>();
+    var showBanner = !consentFeature?.CanTrack ?? false;
+    var cookieString = consentFeature?.CreateConsentCookie();
+}
+
+@if (showBanner)
+{
+    <nav id="cookieConsent" class="navbar navbar-default navbar-fixed-top" role="alert" style="background-color: aliceblue">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#cookieConsent .navbar-collapse">
+                    <span class="sr-only">Toggle cookie consent banner</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            <div class="collapse navbar-collapse">
+                <p class="navbar-text">
+                    <img src="~/images/logo/icon.ico" style="float: left; height: 50px; padding-right: 15px;" />
+                    @ApplicationConfiguration.FacebookUrl uses cookies and similar technologies for a vast range of purposes, from functionality and performance, to advertisements and
+                    measurements. To learn more about cookies, including how to disable them, please visit our
+                    <a href="@Url.Action("CookieUse", "Home", new {area = ""})">cookie policy</a>.
+                </p>
+                <div class="text-left" style="padding: 15px; text-align: right">
+                    <a asp-controller="Home" asp-action="CookieUse" class="button_type_1 t_align_c color_pink r_corners tr_all fs_medium d_inline_m">Cookie Policy</a>
+                    <button type="button" class="button_type_1 t_align_c color_red r_corners tr_all fs_medium d_inline_m tt_uppercase" data-cookie-string="@cookieString">Accept</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <script>
+        (function () {
+            document.querySelector("#cookieConsent button[data-cookie-string]").addEventListener("click", function (el) {
+                document.cookie = el.target.dataset.cookieString;
+                document.querySelector("#cookieConsent").classList.add("hidden");
+            }, false);
+        })();
+    </script>
+}

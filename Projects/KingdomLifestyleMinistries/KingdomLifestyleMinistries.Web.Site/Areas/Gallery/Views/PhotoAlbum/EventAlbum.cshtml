@@ -1,0 +1,30 @@
+﻿@model Event
+@{
+    ViewData["Title"] = $"{Model.Heading} Details";
+}
+
+<section id="content" class="light_section blog no-sidebar">
+    <div class="container">
+        <div class="row">
+            <div class="row">
+                <div class="col-md-4">
+                    <img class="img-fullwidth" src="@Model.GetImage().GetImagePathFromAnotherWebsite(FrameworkDI.Configuration["Company:WebUrl"],FrameworkDI.Configuration["Placeholders:CoverImage"])" alt="project">
+                </div>
+                <div class="col-md-8">
+                    <h2>@Model.Heading</h2>
+                    <p>@Model.Description</p>
+                </div>
+            </div>
+            <div class="row">
+                <!-- Portfolio Gallery Grid -->
+                <div id="grid" class="gallery-isotope grid-4 gutter clearfix">
+                    @foreach (var item in Model.Images)
+                    {
+                        <img id="@item" style="width: 20%;" title="@Model.Heading" alt="@Model.Heading" src="@item.GetImagePathFromAnotherWebsite(FrameworkDI.Configuration["Company:WebUrl"])">
+                    }
+                </div>
+                <!-- End Portfolio Gallery Grid -->
+            </div>
+        </div>
+    </div>
+</section>

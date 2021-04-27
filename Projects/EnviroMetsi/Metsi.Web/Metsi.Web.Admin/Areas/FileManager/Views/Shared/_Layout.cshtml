@@ -1,0 +1,39 @@
+﻿@{
+    Layout = "Layouts/_Layout";
+}
+
+@section Styles
+{
+    <link rel="stylesheet" href="~/css/syncfusion/filemanager.css" />
+    <script src="~/js/syncfusion/filemanager.js"></script>
+
+    <!--page injected css-->
+    @RenderSection("Styles", required: false)
+}
+
+<div id="content" class="content">
+
+    <partial name="_Breadcrumbs" />
+
+    <div class="profile-container">
+
+        <div class="profile-section">
+
+            <div class="col-md-3">
+                @await Component.InvokeAsync("SharedFolders")
+            </div>
+            <!-- end col-3 -->
+            <!-- begin col-9 -->
+            <div class="col-md-9">
+                @RenderBody()
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts
+{
+    <ejs-scripts></ejs-scripts>
+
+    @RenderSection("Scripts", required: false)
+}

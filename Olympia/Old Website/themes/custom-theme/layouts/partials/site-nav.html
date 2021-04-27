@@ -1,0 +1,42 @@
+<nav id="site-nav"
+    class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+        <a class="navbar-brand" href="#"> <img
+                src="{{ absURL "/img/diamond-logo.svg" }}" width="30"
+                height="30" class="d-inline-block align-top" alt="">
+            Olympia
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarResponsive" aria-controls="navbarResponsive"
+            aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item"><a class="nav-link"
+                        href="{{ if not .IsHome }}/{{ end }}#introduction">Introduction
+                        <span class="sr-only">(current)</span>
+                    </a></li>
+                <li class="nav-item"><a class="nav-link"
+                        href="{{ if not .IsHome }}/{{ end }}#benefits">Benefits</a>
+                </li>
+                <li class="nav-item"><a class="nav-link"
+                        href="{{ if not .IsHome }}/{{ end }}#leaderboards">Features</a>
+                </li>
+                <li class="nav-item"><a class="nav-link"
+                        href="{{ if not .IsHome }}/{{ end }}#pricing">Pricing</a>
+                </li>
+                <li class="nav-item"><a class="nav-link"
+                        href="{{ if not .IsHome }}/{{ end }}#sign-up">Sign
+                        Up</a></li>
+                <li class="nav-item {{ if not .IsHome }}active{{ end }}"><a
+                        class="nav-link"
+                        href="{{ if not .IsHome }}/{{ end }}#press">Press</a>
+                </li>
+                <li class="nav-item"><a class="nav-link"
+                        href="{{ if not .IsHome }}/{{ end }}#contact-us">Contact
+                        Us</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>

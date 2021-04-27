@@ -1,0 +1,312 @@
+﻿@model AddEditContactModel<Event>
+
+@{
+    ViewData["Title"] = "Create New Contact";
+}
+
+@section Styles
+    {
+    <link href="~/css/summernote.css" rel="stylesheet" type="text/css" />
+    <!-- Bootstrap File Upload CSS -->
+    <link rel="stylesheet" href="~/css/bs-filestyle.css" type="text/css" />
+
+
+}
+
+<form asp-area="Events" asp-controller="Contacts" asp-action="Create" enctype="multipart/form-data" method="post">
+    <div asp-validation-summary="All" class="text-danger"></div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="form-group">
+                <label asp-for="Entity.FirstName" class="control-label"></label>
+                <input asp-for="Entity.FirstName" class="form-control" />
+                <span asp-validation-for="Entity.FirstName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Entity.LastName" class="control-label"></label>
+                <input asp-for="Entity.LastName" class="form-control" />
+                <span asp-validation-for="Entity.LastName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Entity.Bio" class="control-label"></label>
+                <textarea asp-for="Entity.Bio" class="form-control"></textarea>
+                <span asp-validation-for="Entity.Bio" class="text-danger"></span>
+            </div>
+            <input type="hidden" asp-for="Entity.Id" />
+            <input type="hidden" asp-for="ParentId" />
+        </div>
+    </div>
+
+    <ul class="nav nav-pills">
+        <li class="active"><a href="#nav-pills-tab-2" data-toggle="tab">Contact Numbers</a></li>
+        <li><a href="#nav-pills-tab-3" data-toggle="tab">Email Addresses</a></li>
+        <li><a href="#nav-pills-tab-4" data-toggle="tab">Addresses</a></li>
+    </ul>
+    <div class="tab-content">
+        <!-- ================== CONTACT NUMBER TAB ================== -->
+        <div class="tab-pane fade active in" id="nav-pills-tab-2">
+            <h3 class="m-t-10">Contact Numbers</h3>
+            <hr class="m_bottom_10">
+            <div class="row">
+                <div class="col-md-12">
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <td>Type</td>
+                                <td>Number</td>
+                                <td>Default</td>
+                                <td></td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model.Entity.ContactNumbers)
+                            {
+                                <tr id="row_@item.Id" class="row_@item.Id">
+                                    <td>@item.Name</td>
+                                    <td>@item.Number</td>
+                                    <td>
+                                        @if (item.Default)
+                                        {
+                                            <i class="fa fa-check"></i>
+                                        }
+                                        else
+                                        {
+                                            <i class="fa fa-cross"></i>
+                                        }
+
+                                    </td>
+                                    <td>
+                                        <a href="javascript:;" onclick="ShowEditContactNumberModel('@item.Id')" class="btn btn-xs btn-info"><i class="fa fa-edit"></i></a>
+                                        <a href="javascript:;" onclick="ShowDeleteContactNumberModel('@item.Id')" class="btn btn-xs btn-danger"><i class="fa fa-trash"></i></a>
+                                    </td>
+                                </tr>
+                            }
+
+                        </tbody>
+                    </table>
+                    <a href="javascript:;" onclick="ShowAddContactNumberModel('@Model.Entity.Id')" class="btn btn-info btn-block btn-xs">Add Contact Number</a>
+                </div>
+            </div>
+        </div>
+        <!-- ================== END CONTACT NUMBER TAB ================== -->
+        <!-- ================== EMAIL ADDRESS TAB ================== -->
+        <div class="tab-pane fade" id="nav-pills-tab-3">
+            <h3 class="m-t-10">Email Addresses</h3>
+            <hr class="m_bottom_10">
+            <div class="row">
+                <div class="col-md-12">
+                    <table>
+                        <thead>
+                            <tr>
+                                <td>Address</td>
+                                <td>Default</td>
+                                <td></td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model.Entity.EmailAddresses)
+                            {
+                                <tr id="row2_@item.Id" class="row2_@item.Id">
+                                    <td>@item.Address</td>
+                                    <td>
+                                        @if (item.Default)
+                                        {
+                                            <i class="fa fa-check"></i>
+                                        }
+                                        else
+                                        {
+                                            <i class="fa fa-times"></i>
+                                        }
+
+                                    </td>
+                                    <td>
+                                        <a href="javascript:;" onclick="ShowEditEmailAddressModel('@item.Id')" class="btn btn-xs btn-info"><i class="fa fa-edit"></i></a>
+                                        <a href="javascript:;" onclick="ShowDeleteEmailAddressModel('@item.Id')" class="btn btn-xs btn-danger"><i class="fa fa-trash"></i></a>
+                                    </td>
+                                </tr>
+                            }
+
+                        </tbody>
+                    </table>
+                    <a href="javascript:;" onclick="ShowAddEmailAddressModel('@Model.Entity.Id')" class="btn btn-info btn-block btn-xs">Include a Service</a>
+                </div>
+            </div>
+        </div>
+        <!-- ================== END EMAIL ADDRESS TAB ================== -->
+        <!-- ================== ADDRESS TAB ================== -->
+        <div class="tab-pane fade" id="nav-pills-tab-4">
+            <h3 class="m-t-10">Addresses</h3>
+            <hr class="m_bottom_10">
+            <div class="row">
+                <div class="col-md-12">
+                    <table>
+                        <thead>
+                            <tr>
+                                <td>Type</td>
+                                <td>Number</td>
+                                <td>Default</td>
+                                <td></td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model.Entity.Addresses)
+                            {
+                                <tr id="row3_@item.Id" class="row3_@item.Id">
+                                    <td>@item.ToString()</td>
+                                    <td>
+                                        @if (item.Default)
+                                        {
+                                            <i class="fa fa-check"></i>
+                                        }
+                                        else
+                                        {
+                                            <i class="fa fa-cross"></i>
+                                        }
+
+                                    </td>
+                                    <td>
+                                        <a href="javascript:;" onclick="ShowEditAddressModel('@item.Id')" class="btn btn-xs btn-info"><i class="fa fa-edit"></i></a>
+                                        <a href="javascript:;" onclick="ShowDeleteAddressModel('@item.Id')" class="btn btn-xs btn-danger"><i class="fa fa-trash"></i></a>
+                                    </td>
+                                </tr>
+                            }
+
+                        </tbody>
+                    </table>
+                    <a href="javascript:;" onclick="ShowAddAddressModel('@Model.Entity.Id')" class="btn btn-info btn-block btn-xs">Include a Service</a>
+                </div>
+            </div>
+        </div>
+        <!-- ================== END ADDRESS TAB ================== -->
+    </div>
+
+    <!-- ================== FORM BUTTON ================== -->
+    <div class="row" style="padding-bottom: 50px">
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10 text-right">
+                <input name="finnish" type="submit" value="Submnit & Finnish" class="btn btn-default" />
+                <input name="main" type="submit" value="Save" class="btn btn-default" />
+                <a asp-area="Events" asp-controller="Contacts" asp-action="List" class="btn btn-danger">Cancel</a>
+            </div>
+        </div>
+    </div>
+    <!-- ================== END FORM BUTTON ================== -->
+
+</form>
+
+
+@section Scripts
+    {
+    @await Html.PartialAsync("_ValidationScriptsPartial")
+
+    <script>
+
+        function ShowAddContactNumberModel() {
+
+            var url = "/Events/Contacts/CreateContactNumber?personId=" + '@Model.Entity.Id';
+
+            $("#ModalPlaceHolder").empty();
+            $("#ModalPlaceHolder").load(url,
+                function () {
+                    $("#ModalPlaceHolder").modal("show");
+                });
+        }
+
+
+        function ShowEditContactNumberModel() {
+
+            var url = "/Events/Contacts/EditContactNumber?personId=" + '@Model.Entity.Id';
+
+            $("#ModalPlaceHolder").load(url,
+                function () {
+                    $("#ModalPlaceHolder").modal("show");
+                });
+    }
+
+        function ShowDeleteContactNumberModel() {
+
+            var url = "/Events/Contacts/DeleteContactNumber?Id=" + '@Model.Entity.Id';
+
+            $("#ModalPlaceHolder").load(url,
+                function () {
+                    $("#ModalPlaceHolder").modal("show");
+                });
+    }
+
+        function ShowAddEmailAddressModel() {
+
+            var url = "/Events/Contacts/CreateEmailAddress?personId=" + '@Model.Entity.Id';
+
+            $("#ModalPlaceHolder").empty();
+            $("#ModalPlaceHolder").load(url,
+                function () {
+                    $("#ModalPlaceHolder").modal("show");
+                });
+        }
+
+
+        function ShowEditEmailAddressModel() {
+
+            var url = "/Events/Contacts/EditEmailAddress?personId=" + '@Model.Entity.Id';
+
+            $("#ModalPlaceHolder").load(url,
+                function () {
+                    $("#ModalPlaceHolder").modal("show");
+                });
+        }
+
+    function ShowDeleteEmailAddressModel() {
+
+        var url = "/Events/Contacts/DeleteEmailAddress?Id=" + '@Model.Entity.Id';
+
+            $("#ModalPlaceHolder").load(url,
+                function () {
+                    $("#ModalPlaceHolder").modal("show");
+                });
+    }
+
+        function ShowAddAddressModel() {
+
+            var url = "/Events/Contacts/CreateAddress?personId=" + '@Model.Entity.Id';
+
+            $("#ModalPlaceHolder").empty();
+            $("#ModalPlaceHolder").load(url,
+                function () {
+                    $("#ModalPlaceHolder").modal("show");
+                });
+        }
+
+
+        function ShowEditAddressModel() {
+
+            var url = "/Events/Contacts/EditAddress?personId=" + '@Model.Entity.Id';
+
+            $("#ModalPlaceHolder").load(url,
+                function () {
+                    $("#ModalPlaceHolder").modal("show");
+                });
+        }
+
+        function ShowDeleteAddressModel() {
+
+            var url = "/Events/Contacts/DeleteAddress?Id=" + '@Model.Entity.Id';
+
+            $("#ModalPlaceHolder").load(url,
+                function () {
+                    $("#ModalPlaceHolder").modal("show");
+                });
+        }
+    </script>
+
+    <script>
+        var loadFile = function (event) {
+            var output = document.getElementById('preview');
+            output.src = URL.createObjectURL(event.target.files[0]);
+        };
+    </script>
+
+    <!-- Summer Note JS -->
+    <script src="~/js/summernote/summernote.js"></script>
+
+    <script type="text/javascript" src="~/js/bs-filestyle.js"></script>
+}

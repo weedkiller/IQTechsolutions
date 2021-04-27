@@ -1,0 +1,106 @@
+#leaderboards {
+  background: url('../img/user-profile-background.jpg') no-repeat center
+    center scroll;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+  color: #333;
+  position: relative;
+}
+
+#leaderboards .description, #leaderboards .visualization {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#leaderboards .description {
+  border-left: 1px solid #fff;
+  border-right: 1px solid #fff;
+  background-color: rgba(255,255,255,0.5);
+}
+
+#leaderboards .track-lables {
+}
+
+#leaderboards .track-lables:after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+#leaderboards .track-lables div {
+  display: inline-block;
+  width: 25%;
+  float:left;
+}
+
+#leaderboards .track {
+}
+
+#leaderboards .lane {
+  min-height: 96px;
+  background-color: rgba(255,255,255,0.5);
+  margin: 15px 0;
+  padding: 16px 80px 16px 16px;
+  border-radius: 4px;
+}
+
+#leaderboards .user {
+  background-color: rgb(255,255,255);
+  display: inline-block;
+  height: 64px;
+  width: 64px;
+  border-radius: 4px;
+  animation-name: run-user;
+  animation-direction: alternate;
+  animation-duration: 24s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+#leaderboards .user-1 {
+  animation-delay: 12s;
+}
+
+#leaderboards .user-2 {
+  animation-delay: 16s;
+}
+
+#leaderboards .user-3 {
+  animation-delay: 8s;
+}
+
+#leaderboards .user-4 {
+  animation-delay: 0s;
+}
+
+@keyframes run-user {
+  from {
+    margin-left: 0%;
+  }
+  24% {
+    background-color: rgb(255,255,255);
+  }
+  25% {
+    background-color: rgb(205, 127, 50);
+  }
+  49% {
+    background-color: rgb(205, 127, 50);
+  }
+  50% {
+    background-color: rgb(192, 192, 192);
+  }
+  74% {
+    background-color: rgb(192, 192, 192);
+  }
+  75% {
+    background-color: rgb(212, 175, 55);
+  }
+  to {
+    background-color: rgb(212, 175, 55);
+    margin-left: 100%;
+  }
+}

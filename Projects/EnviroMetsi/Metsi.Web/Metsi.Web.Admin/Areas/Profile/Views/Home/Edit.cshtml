@@ -1,0 +1,115 @@
+﻿@inject IApplicationConfiguration Configuration
+
+@model UserInfo
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<!-- begin profile-container -->
+<div class="profile-container">
+    <form asp-area="Profile" asp-controller="Home" asp-action="Edit" method="post"></form>
+    <!-- begin profile-section -->
+    <div class="profile-section">
+        <!-- begin profile-left -->
+        <div class="profile-left">
+            <!-- begin profile-image -->
+            <div class="profile-image">
+                <img src="@Model.GetPath(Configuration.BaseImageUrl,ImageType.Cover, "/images/placeholders/profileImage128x128.png")" style="width:100%;" />
+                <i class="fa fa-user hide"></i>
+            </div>
+            <!-- end profile-image -->
+            <div class="m-b-10">
+                <a for="coverUpload" onclick="getImageFile()" class="btn btn-warning btn-block btn-sm">Edit Profile Image</a>
+                <input name="coverUpload" id="coverUpload" style="display: none" onchange="loadImage(event)" accept="image/*" type="file" />
+            </div>
+            <!-- begin profile-highlight -->
+            <div class="profile-highlight">
+                <h4><i class="fa fa-cog"></i> User Settings</h4>
+                <div class="checkbox m-b-5 m-t-0">
+                    <label><input asp-for="@Model.ReceiveNotifications" type="checkbox" /> Receive Notifications</label>
+                </div>
+                <div class="checkbox m-b-5 m-b-0">
+                    <label><input asp-for="@Model.ReceiveNewsletters" type="checkbox" /> Receive Newsletters</label>
+                </div>
+                <div class="checkbox m-b-5 m-b-0">
+                    <label><input asp-for="@Model.ShowContactInfo" type="checkbox" /> Show Contact Info</label>
+                </div>
+            </div>
+            <!-- end profile-highlight -->
+        </div>
+        <!-- end profile-left -->
+        <!-- begin profile-right -->
+        <div class="profile-right">
+            <!-- begin profile-info -->
+            <div class="profile-info">
+                <!-- begin table -->
+                <div class="table-responsive">
+                    <table class="table table-profile">
+                        <thead>
+                            <tr>
+                                <th colspan="4">
+                                    <h4>@Model.FirstName @Model.LastName <small>@Model.EmailAddresses.FirstOrDefault(c => c.Default)</small></h4>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="highlight">
+                                <td class="field"><label asp-for="MoodStatus" class="control-label">Mood</label></td>
+                                <td colspan="3"><textarea asp-for="MoodStatus" class="form-control" placeholder="Add your status/mood message" rows="2"></textarea></td>
+                            </tr>
+                            <tr class="divider">
+                                <td colspan="4"></td>
+                            </tr>
+                            <tr>
+                                <td colspan="4">
+                                    <h5>Personal Details</h5>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="field"><label asp-for="FirstName" class="control-label">Name</label></td>
+                                <td><input asp-for="FirstName" type="text" class="form-control" placeholder="Enter your first name" /></td>
+                                <td class="field"><label asp-for="LastName" class="control-label">Surname</label></td>
+                                <td><input asp-for="LastName" type="text" class="form-control" placeholder="Enter your last name" /></td>
+                            </tr>
+                            <tr>
+                                <td class="field"><label asp-for="Title" class="control-label">Title</label></td>
+                                <td>
+                                    <select asp-for="Title" asp-items="Html.GetEnumSelectList<Iqt.Base.Enums.Personal.Title>()" class="form-control"></select>
+                                </td>
+                                <td><label asp-for="IdentityNr" class="control-label">Username</label></td>
+                                <td><input asp-for="IdentityNr" type="text" class="form-control" placeholder="Enter your identity number" /></td>
+                            </tr>
+                            <tr>
+                                <td class="field"><label asp-for="Gender" class="control-label">Gender</label></td>
+                                <td><select asp-for="Gender" asp-items="Html.GetEnumSelectList<Iqt.Base.Enums.Personal.Title>()" class="form-control"></select></td>
+                                <td class="field"><label asp-for="MaritalStatus" class="control-label">Marital Status</label></td>
+                                <td><select asp-for="MaritalStatus" asp-items="Html.GetEnumSelectList<Iqt.Base.Enums.Personal.Title>()" class="form-control"></select></td>
+                            </tr>
+                            <tr class="divider">
+                                <td colspan="4"></td>
+                            </tr>
+                            <tr class="highlight">
+                                <td class="field"><label asp-for="Description" class="control-label">About Me</label></td>
+                                <td colspan="3"><textarea asp-for="Description" class="form-control" placeholder="Add your personal description" rows="4"></textarea></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <!-- end table -->
+            </div>
+            <!-- end profile-info -->
+        </div>
+        <!-- end profile-right -->
+    </div>
+    <!-- end profile-section -->
+</div>
+<!-- end profile-container -->
+
+@section Scripts{
+    <script>
+        function getImageFile() {
+            document.getElementById("coverUpload").click();
+        }
+    </script>
+}

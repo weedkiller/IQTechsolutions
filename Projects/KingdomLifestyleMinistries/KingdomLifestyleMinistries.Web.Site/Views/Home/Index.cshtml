@@ -1,0 +1,301 @@
+﻿@model IndexPageModel
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<partial name="Sliders/_DefaultSlider" />
+
+<!-- Section: About -->
+<section id="about" class="layer-overlay overlay-white-9 sm-bg-img-cover" data-bg-img="~/images/content/sliders/IndexBg1.jpg">
+    <div class="container pt-50">
+        <div class="section-content text-center">
+            <div class="row">
+                <div class="col-md-12">
+                    <h2 class="text-uppercase mt-0 text-theme-colored">Some of the <em>Events</em> sponsored & hosted by us</h2>
+                    <h4 class="text-gray-dimgray font-weight-400">We cannot wait for you to join us, come and experience the presence of God</h4>
+                </div>
+            </div>
+            <div class="row mt-40">
+                @if (Model.Events.Any())
+                {
+                    foreach (var item in Model.Events)
+                    {
+                <div class="col-xs-12 col-sm-6 col-md-4 mb-sm-30">
+                    <img src="@item.GetImage().GetImagePathFromAnotherWebsite(FrameworkDI.Configuration["Company:WebUrl"],FrameworkDI.Configuration["Placeholders:CoverImage"])" alt="@item.Heading">
+                    <h3>@item.Heading</h3>
+                    <p>@item.Description.HtmlToPlainText().TruncateLongString(250)</p>
+                    <a asp-area="Events" asp-controller="Home" asp-action="Details" asp-route-id="@item.Id" class="btn btn-sm btn-theme-colored">Read more</a>
+                </div>
+                    }
+                }
+                else
+                {
+                <div class="col-sm-12">
+                    <h3>No events currently available, please check back later</h3>
+                    <p>if you want to check our archives please <a asp-area="Events" asp-controller="Home" asp-area="Index" asp-route-old="true">click here</a></p>
+                </div>
+                }
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Section: Divider Video -->
+<section class="divider layer-overlay overlay-white-8" data-bg-img="/images/content/VideoPlaceHolder.png">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <h3 class="text-black-333 font-28 mt-0">
+                    Every sermon and event we record is so that everyone can walk and live in their authority as anointed <span class="text-theme-colored">sons</span> and <span class="text-theme-colored">daughters, </span>of<span class="text-theme-colored"> God</span> and to get them to
+                    <strong>
+                        "... Nothing less than the standard height of Christ's own perfection, the measure of the stature of the fullness of the Christ and the completeness found
+                        in Him"
+                    </strong>
+                </h3>
+                <a class="btn btn-theme-colored btn-circled btn-lg mt-20 mb-sm-30" asp-area="Gallery" asp-controller="Video" asp-action="Index">Watch More</a>
+            </div>
+            <div class="col-md-6">
+                <div class="fluid-video-wrapper">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/mQQ8aCavjns" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>                    
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+@if (Model.Preachers.Any())
+{
+    <!-- Section: Trainers -->
+<section id="trainers" class="bg-lighter">
+    <div class="container pt-50">
+        <div class="section-title text-center">
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2">
+                    <h2 class="title text-uppercase text-theme-colored line-bottom-center">
+                        Our Christian <span class="text-theme-colored font-weight-300">Preachers</span>
+                    </h2>
+                    <p class="font-13 mt-10">Let our preachers tell you about the unlimmited grace of God?</p>
+                </div>
+            </div>
+        </div>
+        <div class="section-content">
+            <div class="row">
+                @foreach (var item in Model.Preachers)
+                    {
+                <div class="col-xs-12 col-sm-6 col-md-3">
+                    <div class="team-block-style2 maxwidth500 mb-sm-30">
+                        <div class="team-upper-block">
+                            <img class="img-fullwidth" src="~/@item.GetImage()" alt="">
+                            <ul class="styled-icons icon-sm icon-bordered icon-circled icon-theme-colored pt-10">
+                                <li><a href="@item.SocialMedia?.Facebook"><i class="fa fa-facebook"></i></a></li>
+                                <li><a href="@item.SocialMedia?.Twitter"><i class="fa fa-twitter"></i></a></li>
+                                <li><a href="@item.SocialMedia?.Linkedin"><i class="fa fa-linkedin"></i></a></li>
+                            </ul>
+                        </div>
+                        <div class="team-lower-block">
+                            <h3 class="mt-0">
+                                <a asp-area="Preachers" asp-controller="Home" asp-action="Details" asp-route-id="@item.Id">@item.Names.GetFullNames()</a>
+                            </h3>
+                            <p>@item.Description.TruncateLongString(250)</p>
+                            <a asp-area="Preachers" asp-controller="Home" asp-action="Details" asp-route-id="@item.Id" class="text-theme-colored font-13 font-weight-600">View Details →</a>
+                        </div>
+                    </div>
+                </div>
+                    }
+            </div>
+        </div>
+    </div>
+</section>
+}
+
+@*@if (Model.Testimonials.Any())
+{*@
+@*Section: Client Say
+    <section class="divider parallax layer-overlay overlay-white-9" data-background-ratio="0.5" data-bg-img="../../images/content/sliders/IndexBg1.jpg">
+        <div class="container pt-60 pb-60">
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2">
+                    <h2 class="line-bottom-center text-theme-colored text-center mt-0 mb-30">Lives we have Changed</h2>
+                    <div class="owl-carousel-1col" data-dots="true">
+                        @foreach (var item in Model.Testimonials)
+                        {
+                            <div class="item">
+                                <div class="testimonial-wrapper text-center">
+                                    <div class="thumb">
+                                        <img class="img-circle" alt="" src="@item.ApplicationUser.CoverImage.GetImage(UserImageSettings.StandardImage)">
+                                    </div>
+                                    <div class="content pt-10">
+                                        <p class="font-15 text-black-333">
+                                            <em>@item.CommentString</em>
+                                        </p>
+                                        <i class="fa fa-quote-right font-36 mt-10 text-gray-lightgray"></i>
+                                        <h4 class="author text-theme-colored mb-0">@item.ApplicationUser.DisplayName</h4>
+                                        <h6 class="title text-gray mt-0 mb-15">@item.ApplicationUser.UserName</h6>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>*@
+@*}*@
+
+
+
+@if (Model.BlogPosts.Any())
+{
+    <!-- Section: blog -->
+<section id="blog">
+    <div class="container">
+        <div class="section-title text-center">
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2">
+                    <h2 class="title text-uppercase text-theme-colored line-bottom-center">
+                        Latest <span class="text-theme-colored font-weight-300">Blogs</span>
+                    </h2>
+                    <p class="font-13 mt-10">
+                        Latest fresh ideas and experiences straight from our blog?
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="section-content">
+            <div class="row">
+                @foreach (var item in Model.BlogPosts)
+                    {
+                <div class="col-xs-12 col-sm-6 col-md-4">
+                    <article class="post text-center clearfix bg-lighter mb-sm-30">
+                        <div class="entry-header">
+                            <div class="post-thumb thumb">
+                                <img src="@item.GetImage().GetImagePathFromAnotherWebsite("http://www.klsm.co.za")" alt="@item.Title" class="img-responsive img-fullwidth">
+                            </div>
+                        </div>
+                        <div class="entry-content p-20">
+                            <div class="entry-meta">
+                                <ul class="list-inline font-11 mb-10">
+                                    @*<li><em><i class="fa fa-user text-gray mr-5"></i>By: @item.ApplicationUser?.DisplayName / </em></li>*@
+                                    <li><em><i class="fa fa-calendar mr-5"></i> @item.Created.ToLongDateString() / </em></li>
+                                    <li><em><i class="fa fa-comment-o mr-5"></i>Comments: @*@item.Comments.Count*@ </em></li>
+                                </ul>
+                            </div>
+                            <h4 class="entry-title line-bottom-center text-uppercase font-raleway font-18 font-weight-600 mb-10"><a href="blog-single-left-sidebar.html">@item.Title</a></h4>
+                            <p class="mt-5">@item.ShortDescription</p>
+                            <a class="btn btn-theme-colored btn-xs" asp-area="Blog" asp-controller="Home" asp-action="Details" asp-route-id="@item.Id"> View Details</a>
+                        </div>
+                    </article>
+                </div>
+                    }
+            </div>
+        </div>
+    </div>
+</section>
+}
+
+<!-- Divider: Contact -->
+<section id="contact" class="divider bg-silver-light">
+    <div class="container pt-60 pb-60">
+        <div class="section-title text-center">
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2">
+                    <h3 class="text-uppercase line-bottom-center mt-0">Contact <span class="text-theme-colored">Us</span></h3>
+                    <p>If there is something we can help with, you want to book an event<br> or you just want to say hi!</p>
+                </div>
+            </div>
+        </div>
+        <div class="row pt-10">
+            <div class="col-md-10 col-md-offset-1">
+                <!-- Contact Form -->
+                <partial name="../../Areas/Support/Views/Shared/_ContactFormPartial.cshtml" model="Model.ContactForm" />
+            </div>
+        </div>
+    </div>
+</section>
+
+@if (Model.PhotoAlbums.Any())
+{
+    <!-- Section: Horse Gallery -->
+<section id="gallery">
+    <div class="container-fluid pr-0 pt-30 pb-0 pl-0">
+        <div class="section-content">
+            <div class="row">
+                <div class="col-md-6 col-md-offset-3 text-center">
+                    <h3 class="line-bottom-center text-uppercase mb-10">
+                        Our <span class="text-theme-colored">Gallery</span>
+                    </h3>
+                    <p class="mb-40">Some of our greatest moments caught on camara, share these moments with us.</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="owl-carousel-4col" data-nav="true">
+                        @foreach (var item in Model.PhotoAlbums)
+                            {
+                        <div class="item">
+                            <div class="gallery-block">
+                                <div class="gallery-thumb">
+                                    <img alt="@item.Name" src="@item.GetImage().GetImagePathFromAnotherWebsite("http://www.klsm.co.za")">
+                                    <div class="gallery-details text-center">
+                                        <h3 class="line-bottom-center text-white mb-0">@item.Name</h3>
+                                        <h4 class="text-white mt-0">@item.Description</h4>
+                                        <a asp-area="Gallery" asp-controller="PhotoAlbum" asp-action="Details" asp-route-id="@item.Id" class="btn btn-theme-colored btn-sm mt-5">View Details</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                            }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+}
+<!-- Divider: Call To Action -->
+<section class="bg-theme-colored">
+    <div class="container pt-0 pb-0">
+        <div class="row">
+            <div class="call-to-action pt-20 pb-15">
+                <div class="col-md-6">
+                    <h3 class="mt-5 mb-5 text-white vertical-align-middle"><i class="pe-7s-mail mr-10 font-48 vertical-align-middle"></i> SUBSCRIBE TO OUR NEWSLETTER</h3>
+                </div>
+                <div class="col-md-6">
+                    <!-- Mailchimp Subscription Form Starts Here -->
+                    <form id="mailchimp-subscription-form-footer" class="newsletter-form mt-10">
+                        <div class="input-group">
+                            <input type="email" asp-for="NewsletterSubscriptionEmailAddress" placeholder="Your Email" class="form-control input-lg font-16" data-height="45px" style="height: 45px;">
+                            <span class="input-group-btn">
+                                <button data-height="45px" class="btn bg-gray-dimgray text-white btn-xs m-0 font-14" type="submit">Subscribe</button>
+                            </span>
+                        </div>
+                    </form>
+                    <!-- Mailchimp Subscription Form Validation-->
+                    <script type="text/javascript">
+                        $('#mailchimp-subscription-form-footer').ajaxChimp({
+                            callback: mailChimpCallBack,
+                            url: '//klsm.us4.list-manage.com/subscribe/post?u=ec40cb6eab12bca8b8bb47566&id=fbc2925b6f'
+                        });
+
+                        function mailChimpCallBack(resp) {
+                            // Hide any previous response text
+                            var $mailchimpform = $('#mailchimp-subscription-form-footer'),
+                                $response = '';
+                            $mailchimpform.children(".alert").remove();
+                            if (resp.result === 'success') {
+                                $response = '<div class="alert alert-success"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>' + resp.msg + '</div>';
+                            } else if (resp.result === 'error') {
+                                $response = '<div class="alert alert-danger"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>' + resp.msg + '</div>';
+                            }
+                            $mailchimpform.prepend($response);
+                        }
+                    </script>
+                    <!-- Mailchimp Subscription Form Ends Here -->
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- end main-content -->

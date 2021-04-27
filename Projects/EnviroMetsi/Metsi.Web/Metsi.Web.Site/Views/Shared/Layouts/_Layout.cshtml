@@ -1,0 +1,18 @@
+﻿@{
+    Layout = "Layouts/_DefaultLayout";
+}
+
+@section Styles
+    {
+    <!--page injected css-->
+    @RenderSection("Styles", required: false)
+}
+
+<partial name="_Breadcrumbs" />
+
+@RenderBody()
+
+@section Scripts
+    {
+    @RenderSection("Scripts", required: false)
+}

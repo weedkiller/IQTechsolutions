@@ -1,0 +1,33 @@
+﻿@using Iqt.Base.Interfaces
+@inject IApplicationConfiguration Configuration
+
+<footer id="footer" class="grey_section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3 col-sm-6 to_animate">
+                @await Component.InvokeAsync("PopularPostsFooterWidget")
+            </div>
+
+            <div class="col-md-3 col-sm-6 to_animate">
+                <div class="widget widget_twitter">
+                    <iframe style="width: 100%" src="https://www.youtube.com/embed/4pPN4QOUmAU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    
+                </div>
+            </div>
+
+            <div class="fb-page" data-href="https://www.facebook.com/envirometsi/" data-tabs="timeline" data-width="238" data-height="295" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/envirometsi/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/envirometsi/">Enviro Metsi</a></blockquote></div>
+
+            <div class="col-md-3 col-sm-6 to_animate">
+                <div class="widget widget_text">
+                    <h3 class="widget-title">Company Info</h3>
+                    <p>WE are committed to help YOU protect OUR most precious resource. This is not only our motto, but who we are.</p>
+                    <p>
+                        <a class="socialico-facebook" href="@Configuration.FacebookUrl" title="Facebook" data-toggle="tooltip">#</a>
+                        <a class="socialico-twitter" href="@Configuration.TwitterUrl" title="Twitter" data-toggle="tooltip">#</a>
+                        <a class="socialico-linkedin" href="@Configuration.LinkedInUrl" title="Linkin" data-toggle="tooltip">#</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>

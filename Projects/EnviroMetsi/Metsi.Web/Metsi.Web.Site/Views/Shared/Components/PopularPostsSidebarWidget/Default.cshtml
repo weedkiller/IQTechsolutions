@@ -1,0 +1,35 @@
+﻿@using Iqt.Base.Extensions
+@using Iqt.Base.Interfaces
+
+@inject IApplicationConfiguration Configuration
+
+@model IEnumerable<Blogging.Base.ApiModels.BlogPostModel>
+
+@if (Model.Any())
+{
+    <div class="widget widget_popular_entries">
+        <h3 class="widget-title">Popular Posts</h3>
+
+        <ul class="media-list">
+
+            @foreach (var item in Model.Take(2))
+            {
+                <li class="media">
+                    <a class="pull-left" asp-area="Blog" asp-controller="Home" asp-action="Details" asp-route-id="@item.Id">
+                        <img class="media-object" src="@item.ImageUrl" alt="@item.Title">
+                    </a>
+                    <div class="media-body">
+                        <p class="media-heading">
+                            <a asp-area="Blog" asp-controller="Home" asp-action="Details" asp-route-id="@item.Id">@item.Title</a>
+                        </p>
+                        <p class="excerpt">@item.Content.TruncateLongString(250)</p>
+                        <p class="post-date">@item.Created.ToLongDateString()</p>
+                    </div>
+                </li>
+            }
+
+        </ul>
+
+    </div>
+}
+

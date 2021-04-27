@@ -1,0 +1,100 @@
+﻿@inject IApplicationConfiguration ApplicationConfiguration;
+
+<!-- ================== DEFAULT HEADER MARKUP ================== -->
+<header role="banner" class="relative">
+
+    <span class="gradient_line"></span>
+
+    <!-- ================== HEADER TOP PART ================== -->
+    <section class="header_top_part">
+        <div class="container">
+            <div class="row">
+
+                <!-- ================== LOGO IMAGE ================== -->
+                <div class="col-lg-4 col-md-4 col-sm-4 t_xs_align_c">
+                    <a asp-area="" asp-action="Index" asp-controller="Home" class="d_inline_m">
+                        <img src="~/images/logo/WebsiteHeaderLogo.gif" alt="Website Header Logo">
+                    </a>
+                </div>
+                <!-- ================== END LOGO IMAGE ================== -->
+                <!-- ================== SOCIAL DETAILS ================== -->
+                <div class="col-lg-8 col-md-8 col-sm-8 t_align_r t_xs_align_c">
+
+                    <!-- ================== SOCIAL ICONS ================== -->
+                    <ul class="hr_list d_inline_b social_icons m_bottom_8">
+                        <li class="m_right_8"><a href="@ApplicationConfiguration.FacebookUrl" class="color_grey_light facebook circle icon_wrap_size_1 d_block"><i class="icon-facebook-1"></i></a></li>
+                        <li class="m_right_8"><a href="@ApplicationConfiguration.TwitterUrl" class="color_grey_light twitter circle icon_wrap_size_1 d_block"><i class="icon-twitter-1"></i></a></li>
+                        <li class="m_right_8"><a href="@ApplicationConfiguration.LinkedInUrl" class="color_grey_light linkedin circle icon_wrap_size_1 d_block"><i class="icon-linkedin-squared"></i></a></li>
+                        <li class="m_right_8"><a href="@ApplicationConfiguration.YouTubeUrl" class="color_grey_light youtube circle icon_wrap_size_1 d_block"><i class="icon-youtube-play"></i></a></li>
+                        <li class="m_right_8"><a href="@ApplicationConfiguration.PrinterestUrl" class="color_grey_light pinterest circle icon_wrap_size_1 d_block"><i class="icon-pinterest"></i></a></li>
+                        <li class="m_right_8"><a href="@ApplicationConfiguration.InstagramUrl" class="color_grey_light instagram circle icon_wrap_size_1 d_block"><i class="icon-instagramm"></i></a></li>
+                    </ul>
+                    <!-- ================== END SOCIAL DETAILS ================== -->
+
+                    <br />
+
+                    <!-- ================== CONTACT DETAILS ================== -->
+                    <ul class="hr_list fs_small color_grey_light d_inline_b">
+                        <li class="m_right_20 f_xs_none m_xs_right_0 m_xs_bottom_5">
+                            <span class="circle icon_wrap_size_1 d_inline_m m_right_8"><i class="icon-phone-1"></i></span>@ApplicationConfiguration.PhoneNr
+                        </li>
+                        <li class="m_right_20 f_xs_none m_xs_right_0 m_xs_bottom_5">
+                            <a href="mailto:@ApplicationConfiguration.InfoEmailAddress" class="color_grey_light d_inline_b color_black_hover"><span class="circle icon_wrap_size_1 d_inline_m m_right_8"><i class="icon-mail-alt"></i></span>@ApplicationConfiguration.InfoEmailAddress</a>
+                        </li>
+                        <li class="m_right_20 f_xs_none m_xs_right_0 m_xs_bottom_5">
+                            <span class="circle icon_wrap_size_1 d_inline_m m_right_8"><i class="icon-skype-1"></i></span>@ApplicationConfiguration.SkypeName
+                        </li>
+                    </ul>
+                    <!-- ================== END CONTACT DETAILS ================== -->
+
+                </div>
+                <!-- ================== END SOCIAL DETAILS ================== -->
+
+            </div>
+        </div>
+    </section>
+    <!-- ================== END HEADER TOP PART ================== -->
+
+    <hr>
+
+    <!-- ================== HEADER BOTTOM PART ================== -->
+    <section class="header_bottom_part bg_light">
+        <div class="container">
+            <div class="d_table w_full d_xs_block">
+                <div class="col-lg-10 col-md-10 col-sm-10 t_align_r d_table_cell d_xs_block f_none">
+                    <div class="relative clearfix t_align_r">
+
+                        <button id="menu_button" class="r_corners tr_all color_blue db_centered m_bottom_20 d_none d_xs_block">
+                            <i class="icon-menu"></i>
+                        </button>
+
+                        <!--main navigation-->
+                        <nav role="navigation" class="d_inline_m f_left f_xs_none d_xs_none m_xs_right_0 m_right_15 m_sm_right_5 t_align_l m_xs_bottom_15">
+                            @await Html.PartialAsync("Menus/_MenuMainPartialView")
+                        </nav>
+
+                        <!--searchform-->
+                        <div class="f_right m_top_8 f_xs_none">
+
+                            <!--searchform button-->
+                            <div class="relative d_inline_m search_buttons d_xs_none">
+                                <button class="icon_wrap_size_2 circle color_grey_light_2 tr_all color_purple_hover"><i class="icon-cancel"></i></button>
+                                <button class="icon_wrap_size_2 active circle color_grey_light_2 tr_all color_purple_hover"><i class="icon-search"></i></button>
+                            </div>
+
+                            <!--searchform-->
+                            <form role="search" class="bg_light animate_ vc_child t_align_r fw_light tr_all trf_xs_none">
+                                <input type="text" name="search" placeholder="Search" class="r_corners d_inline_m">
+                            </form>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ================== END HEADER BOTTOM PART ================== -->
+
+</header>
+<!-- ================== END DEFAULT HEADER MARKUP ================== -->

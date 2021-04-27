@@ -1,0 +1,21 @@
+﻿@model Calendar.Core.Models.AddLocationPartialModel
+<!-- Modal -->
+
+<div class="modal-dialog">
+    <div class="modal-content">
+        <input type="hidden" asp-for="RouteId" />
+        <input type="hidden" asp-for="Latitude" />
+        <input type="hidden" asp-for="Longitude" />
+        <div class="modal-header">
+            <h4 class="modal-title">Please Confirm</h4>
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        </div>
+        <div class="modal-body">
+            <h4> Would you like to add this marker (@Model.Latitude, @Model.Longitude) as a route location? </h4>
+        </div>
+        <div class="modal-footer">
+            <a asp-area="Calendar" asp-controller="Locations" asp-action="Create" asp-route-lat="@Model.Latitude" asp-route-lng="@Model.Longitude" asp-route-routeId="@Model.RouteId" class="btn btn-primary">Confirm</a>
+            <a href="javascript:;" class="btn btn-danger" data-dismiss="modal">Close</a>
+        </div>
+    </div>
+</div>

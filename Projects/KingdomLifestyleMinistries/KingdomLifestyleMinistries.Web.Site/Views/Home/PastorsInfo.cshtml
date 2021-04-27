@@ -1,0 +1,119 @@
+﻿
+@{
+    ViewData["Title"] = "Pastors & Church Leaders";
+}
+
+@inject IRepositoryManager Manager
+
+<partial name="_Breadcrums" />
+
+<!-- Section: About -->
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h2 class="text-uppercase mt-0 text-theme-colored">For <em>Pastors &</em> Church Leaders</h2>
+                <h4 class="text-gray-dimgray font-weight-400">The message that Kingdom Lifestyle Ministries bring, is different than your typical “guest speaker” message</h4>
+                <img style="width: 50%" class="pull-left mr-15 thumbnail" src="~/images/content/WillieDelport.jpg" alt="">
+                <p>
+                    The message that Kingdom Lifestyle Ministries bring, is different than your typical “guest speaker” message. The message that prophet Willie brings will challenge people to think differently, go
+                    for a higher level of life, opens up the hidden mysteries in God’s Word to present people with present truth and will create a hunger in people for the supernatural. Kingdom Lifestyle Ministries
+                    is targeted to reach <strong>hungry churches</strong> across South Africa and worldwide who are awake and looking for a fresh move of God to shake their city/town for God! The heart and passion of
+                    Kingdom Lifestyle Ministries is <strong>"The Kingdom, The Power and The Glory of God",</strong> which is the message of a <strong>Kingdom Lifestyle</strong>!
+                </p>
+                <p>
+                    Some churches cannot afford to invite guest speakers because of the lack of finances; therefore prophet Willie & Ansie do not charge a fee to 
+                    minister at your church. It will not cost your ministry anything, because traveling at their own expense, they will never request a set fee. Their 
+                    only request and requirement is that a love-offering be taken up during each meeting they minister at, for Kingdom Lifestyle Ministries. No city 
+                    or town is to big or to small for them to visit.
+                    Willie also has a heart for pastors, to encourage them, equip them and to impart anointing upon them and their ministry. Pastors give out so much, 
+                    go through hard times, etc. And then need someone that can impart back into their lives and encourage them; someone who knows and understands what 
+                    they are going through. Prophet Willie has more that 30 years of experience in ministry that can be a blessing to the body of Jesus Christ. If you 
+                    are a preacher and you can get other preachers together for a time around the Word, for impartation, anointing and encouragement, then you are 
+                    welcome to invite Willie for ministry.
+
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+@*@if (Manager.Repository<Testimonial>().GetAll().Any())
+{*@
+     @*Section: Client Say 
+    <section class="divider parallax layer-overlay overlay-white-9" data-background-ratio="0.5" data-bg-img="../../images/content/sliders/IndexBg1.jpg">
+        <div class="container pt-60 pb-60">
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2">
+                    <h2 class="line-bottom-center text-theme-colored text-center mt-0 mb-30">Lives we have Changed</h2>
+                    <div class="owl-carousel-1col" data-dots="true">
+                        @foreach (var item in Manager.Repository<Testimonial>().GetAll(c => c.i))
+                        {
+                            <div class="item">
+                                <div class="testimonial-wrapper text-center">
+                                    <div class="thumb">
+                                        <img class="img-circle" alt="" src="@item.ApplicationUser.CoverImage.GetImage(UserImageSettings.StandardImage)">
+                                    </div>
+                                    <div class="content pt-10">
+                                        <p class="font-15 text-black-333">
+                                            <em>@item.CommentString</em>
+                                        </p>
+                                        <i class="fa fa-quote-right font-36 mt-10 text-gray-lightgray"></i>
+                                        <h4 class="author text-theme-colored mb-0">@item.ApplicationUser.DisplayName</h4>
+                                        <h6 class="title text-gray mt-0 mb-15">@item.ApplicationUser.UserName</h6>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>*@
+@*}*@
+
+<!-- Divider: Call To Action -->
+<section class="bg-theme-colored">
+    <div class="container pt-0 pb-0">
+        <div class="row">
+            <div class="call-to-action pt-20 pb-15">
+                <div class="col-md-6">
+                    <h3 class="mt-5 mb-5 text-white vertical-align-middle"><i class="pe-7s-mail mr-10 font-48 vertical-align-middle"></i> SUBSCRIBE TO OUR NEWSLETTER</h3>
+                </div>
+                <div class="col-md-6">
+                    <!-- Mailchimp Subscription Form Starts Here -->
+                    <form id="mailchimp-subscription-form-footer" class="newsletter-form mt-10">
+                        <div class="input-group">
+                            <input type="email" value="" name="EMAIL" placeholder="Your Email" class="form-control input-lg font-16" data-height="45px" id="mce-EMAIL-footer" style="height: 45px;">
+                            <span class="input-group-btn">
+                                <button data-height="45px" class="btn bg-gray-dimgray text-white btn-xs m-0 font-14" type="submit">Subscribe</button>
+                            </span>
+                        </div>
+                    </form>
+                    <!-- Mailchimp Subscription Form Validation-->
+                    <script type="text/javascript">
+                        $('#mailchimp-subscription-form-footer').ajaxChimp({
+                            callback: mailChimpCallBack,
+                            url: '//thememascot.us9.list-manage.com/subscribe/post?u=a01f440178e35febc8cf4e51f&amp;id=49d6d30e1e'
+                        });
+
+                        function mailChimpCallBack(resp) {
+                            // Hide any previous response text
+                            var $mailchimpform = $('#mailchimp-subscription-form-footer'),
+                                $response = '';
+                            $mailchimpform.children(".alert").remove();
+                            if (resp.result === 'success') {
+                                $response = '<div class="alert alert-success"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>' + resp.msg + '</div>';
+                            } else if (resp.result === 'error') {
+                                $response = '<div class="alert alert-danger"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>' + resp.msg + '</div>';
+                            }
+                            $mailchimpform.prepend($response);
+                        }
+                    </script>
+                    <!-- Mailchimp Subscription Form Ends Here -->
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- end main-content -->

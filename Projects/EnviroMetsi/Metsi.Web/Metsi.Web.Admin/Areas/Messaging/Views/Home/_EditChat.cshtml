@@ -1,0 +1,110 @@
+﻿@model Messaging.Base.Entities.Chat
+
+<link href="~/css/summernote.css" rel="stylesheet" type="text/css" />
+
+<div class="modal-dialog">
+    <div class="modal-content">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+            <h4 class="modal-title">Edit Cause</h4>
+        </div>
+        <div class="modal-body" style="margin: 25px;">
+            <form id="EditCauseForm">
+                <div class="form-horizontal">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h4>Cause to a specific problem</h4>
+                            <hr />
+                            <div class="form-group">
+                            <label asp-for="Name" class="control-label"></label>
+                            <input asp-for="Name" class="form-control"/>
+                            <span asp-validation-for="Name" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="Description" class="control-label"></label>
+                                <textarea asp-for="Description" class="form-control"></textarea>
+                                <span asp-validation-for="Description" class="text-danger"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- ================== FORM BUTTON ================== -->
+                <div class="row" style="padding-bottom: 50px">
+                    <div class="form-group">
+                        <div class="col-md-offset-2 col-md-10 text-right">
+                            <a href="javascript:;" onclick="ConfirmEditCause()" class="btn btn-sm btn-primary">Save Changes</a>
+                            <a href="javascript:;" class="btn btn-sm btn-danger" data-dismiss="modal">Close</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- ================== END FORM BUTTON ================== -->
+
+            </form>
+
+        </div>
+    </div>
+</div>
+
+
+<!-- Summer Note JS -->
+<script src="~/js/summernote/summernote.js"></script>
+
+<script type="text/javascript">
+    // Default
+    $(document).ready(function () {
+        var HomeIndex = function () {
+
+            var $this = this;
+            function initialize() {
+                $('#Cause_Description').summernote({
+                    height: 250,
+                    codemirror: { // codemirror options
+                        theme: 'monokai'
+                    }
+                });
+            }
+
+            $this.init = function () {
+                initialize();
+            }
+        };
+        var self = new HomeIndex();
+        self.init();
+    });
+
+    function ConfirmEditCause() {
+
+        var code2 = $('#Cause_Description').code();
+        var myformdata2 = $("#EditCauseForm").serializeArray();
+        myformdata2.find(item => item.name === 'Cause.Description').value = code2;
+
+        var url = "/Troubleshooting/Causes/Edit";
+
+        $.ajax({
+            type: "POST",
+            data: $.param(myformdata2),
+            url: url,
+            dataType: "json",
+            success: function (data) {
+
+                var json_data = jQuery.parseJSON(data);
+
+               
+                $("#ModalPlaceHolder").modal("hide");
+
+                $('.replaceme').html(json_data.description);
+
+            },
+            error: function (xhr, textStatus, err) {
+
+                alert("An error with the following detials occured : "
+                    + "\r\n == readyState: " + xhr.readyState
+                    + "\r\n == responseText: " + xhr.responseText
+                    + "\r\n == status: " + xhr.status
+                    + "\r\n == text status: " + textStatus
+                    + "\r\n == error: " + err);
+            }
+        });
+    }
+
+</script>

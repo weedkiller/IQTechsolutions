@@ -1,0 +1,69 @@
+﻿@model ModalModel
+<!-- Modal -->
+
+<div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h4 class="modal-title">Please confirm this action!</h4>
+            <button type="button" class="close" data-dismiss="modal">
+                <span aria-hidden="true">×</span>
+                <span class="sr-only">close</span>
+            </button>
+        </div>
+        <div class="modal-body">
+            <h4> @Model.HeaderString </h4>
+
+            <div style="text-align: center; display: none" id="loaderDiv">
+                <img src="/images/loader2.gif" />
+            </div>
+
+        </div>
+        <div class="modal-footer">
+            <a href="javascript:;" class="btn btn-sm btn-white" data-dismiss="modal">Close</a>
+            <a href="javascript:;" onclick="ConfirmDelete()" class="btn btn-sm btn-primary">Delete</a>
+        </div>
+    </div>
+</div>
+
+<script>
+    function ConfirmDelete() {
+
+        $("#loaderDiv").show();
+
+        var contactId = '@Model.EntityId';
+
+        var url = '@Model.ControllerUrl';
+
+        $.ajax({
+            type: "POST",
+            data: { id: contactId },
+            url: '/Calendar/Appointments/Delete',
+            dataType: "JSON",
+            success: function (data) {
+
+                $("#ModalPlaceHolder").modal("hide");
+                $("#loaderDiv").hide();
+
+                var event = calendar.getEventById(data.id);
+                var srcEvent = srcCalendar.getEventById(data.id);
+
+                if (event != null) {
+                    event.remove();
+                }
+                if (srcEvent != null) {
+                    srcEvent.remove();
+                }
+                
+                console.log("successfull removal of event");
+            },
+            error: function (xhr, textStatus, err) {
+                alert("An error with the following detials occured : "
+                    + "\r\n == readyState: " + xhr.readyState
+                    + "\r\n == responseText: " + xhr.responseText
+                    + "\r\n == status: " + xhr.status
+                    + "\r\n == text status: " + textStatus
+                    + "\r\n == error: " + err);
+            }
+        });
+    }
+</script>

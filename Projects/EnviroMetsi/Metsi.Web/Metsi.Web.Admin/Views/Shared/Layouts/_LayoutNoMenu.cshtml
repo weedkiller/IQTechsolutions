@@ -1,0 +1,25 @@
+﻿@{
+    Layout = "Layouts/_LayoutBase";
+    ViewData["SubTitle"] = "Welcome to Enviro Metsi Administration";
+}
+    
+@section Styles
+{
+    @RenderSection("Styles", required: false)
+}
+
+<div id="page-container" class="fade page-header-fixed">
+
+    <partial name="Partials/_PublicTopBar" />
+
+    @RenderBody()
+
+    <a href="javascript:;" class="btn btn-icon btn-circle btn-success btn-scroll-to-top fade" data-click="scroll-top">
+        <i class="fa fa-angle-up"></i>
+    </a>
+</div>
+
+@section Scripts
+{
+    @RenderSection("Scripts", required: false)
+}

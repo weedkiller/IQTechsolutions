@@ -1,0 +1,97 @@
+﻿@model Donation
+
+@{
+    ViewData["Title"] = "Make Donation";
+}
+
+
+    <div class="col-md-5 col-md-5 border-1px p-20">
+        <h4 class="mt-0 pt-5">Recurring Donation</h4>
+        <p>Thank you for making a donation to our charitable organization. Please use the form below to pay your desired giving amount.</p>
+        <hr>
+
+        <!-- Paypal Form Starts -->
+        <form asp-area="Donations" asp-controller="Home" asp-action="CreateRecurring" enctype="multipart/form-data" method="post">
+            <div class="row">
+                <input type="hidden" name="cmd" value="_xclick-subscriptions">
+                <input type="hidden" name="business" value="accounts@thememascot.com">
+                <input type="hidden" name="currency_code" value="USD">
+                <div class="col-sm-12">
+                    <div class="form-group mb-20">
+                        <label><strong>How much do you want to donate?</strong></label>
+                        <input asp-for="Amount" class="form-control" />
+                        <span asp-validation-for="Amount" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="col-sm-12">
+                    <div class="form-group mb-20">
+                        <label><strong>Donation Type</strong></label>
+                        <div class="radio mt-5">
+                            <label class="radio-inline">
+                                <input type="radio" value="@DonationFrequency.Daily" name="t3">
+                                Daily
+                            </label>
+                            <label class="radio-inline">
+                                <input type="radio" value="@DonationFrequency.Weekly" name="t3">
+                                Weekly
+                            </label>
+                            <label class="radio-inline">
+                                <input type="radio" checked="checked" value="@DonationFrequency.Monthly" name="t3">
+                                Monthly
+                            </label>
+                            <label class="radio-inline">
+                                <input type="radio" value="@DonationFrequency.Yearly" name="t3">
+                                Yearly
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-12">
+                    <div class="form-group mb-20">
+                        <button type="submit" class="btn btn-primary">Donate Now!</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+
+        <!-- Script for Donation Form Custom Amount -->
+        <script type="text/javascript">
+            $(document).ready(function (e) {
+                var $recurring_form = $("#paypal_donate_form-recurring");
+                var $custom_other_amount = $recurring_form.find("#custom_other_amount");
+                $custom_other_amount.hide();
+                $recurring_form.find("select[name='a3']").change(function () {
+                    var $this = $(this);
+                    if ($this.val() == 'other') {
+                        $custom_other_amount.show().append('<div class="input-group"><span class="input-group-addon">$</span> <input type="text" name="a3" class="form-control" value="100"/></div>');
+                    }
+                    else {
+                        $custom_other_amount.children(".input-group").remove();
+                        $custom_other_amount.hide();
+                    }
+                });
+            });
+        </script>
+        <!-- Paypal Form Ends -->
+
+    </div>
+    <div class="col-md-5 col-md-offset-1 col-md-5 border-1px p-20">
+        <h4 class="mt-0 pt-5">One-Time Donation</h4>
+        <p>Thank you for making a donation to our charitable organization. Please use the form below to pay your desired giving amount.</p>
+        <hr>
+
+        <!-- Paypal Form Starts -->
+        <form asp-area="Donations" asp-controller="Home" asp-action="Create" enctype="multipart/form-data" method="post">
+            <div class="col-sm-12">
+                <div class="form-group mb-20">
+                    <label><strong>How much do you want to donate?</strong></label>
+                    <input asp-for="Amount" class="form-control" />
+                    <span asp-validation-for="Amount" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="col-sm-12">
+                <button type="submit" class="btn btn-primary">Donate Now!</button>
+            </div>
+        </form>
+
+    </div>

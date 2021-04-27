@@ -1,0 +1,112 @@
+﻿@using Iqt.Base.Interfaces
+@model BlogIndexPageModel
+
+@inject IApplicationConfiguration Configuration
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th style="width: 15%">
+                        Cover Image
+                    </th>
+                    <th>
+                        Title
+                    </th>
+                    <th>
+                        Description
+                    </th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+
+                @if (Model.All.Any())
+                {
+                    foreach (var item in Model.AllPaged.Results.OrderByDescending(c => c.Created))
+                    {
+                        <tr id="row_@item.Id" class="row_@item.Id">
+                            <td>
+                                <a href="@Url.Action("Edit", "Home", new {area = "Blog", id = item.Id})">
+                                    <img id="preview" style="height: auto;" class="img-thumbnail" title="@item.Title" alt="@item.GetImage()?.FileName" src="@item.GetPath(Configuration.BaseImageUrl, ImageType.Cover,"/images/placeholders/NoImage.jpg")">
+                                </a>
+                            </td>
+                            <td style="width:15%;">
+                                <a asp-action="Details" asp-route-id="@item.Id"><strong>@Html.DisplayFor(modelItem => item.Title)</strong></a>
+                            </td>
+                            <td>
+                                @item.Description.HtmlToPlainText().TruncateLongString(150);
+                            </td>
+                            <td style="width: 150px" class="text-right">
+                                <a asp-action="Edit" style="font-size: 18px; padding-right: 5px;" asp-route-id="@item.Id"><i class="fa fa-edit"></i></a>
+                                <a href="javascript:;" style="font-size: 18px;" onclick="ShowDeleteModal('@item.Id')"><i class="fa fa-trash"></i></a>
+                            </td>
+                        </tr>
+                    }
+                }
+                else
+                {
+                    <tr>
+                        <td colspan="3">
+                            <h4>
+                                No blog entries available, please check back later or <a asp-area="Blog" asp-controller="Home" asp-action="Create">Create a new Blog Entry</a> !!!
+                            </h4>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+
+        @if (Model.AllPaged.PageCount > 1)
+        {
+            <div class="pagination-nav text-center">
+                <ul class="pagination">
+                    @if (Model.CurrentPage != 1)
+                    {
+                        <li><a @Url.Action("List", new { page = 1 })>«</a></li>
+                    }
+                    @for (int p = 1; p <= Model.AllPaged.PageCount; p++)
+                    {
+                        if (p == Model.AllPaged.CurrentPage)
+                        {
+                            <li class="active"><a asp-area="Services" asp-controller="Home" asp-action="List" asp-route-pagel="@p">@p</a></li>
+                        }
+                        else
+                        {
+                            <li><a asp-area="Services" asp-controller="Home" asp-action="List" asp-route-pagel="@p">@p</a></li>
+                        }
+                    }
+                    @if (Model.CurrentPage != Model.AllPaged.PageCount)
+                    {
+                        <li><a @Url.Action("List", new { page = Model.AllPaged.PageCount })>»</a></li>
+                    }
+                </ul>
+            </div>
+        }
+
+<p class="text-right">
+    <a asp-area="Blog" asp-controller="Home" asp-action="Create" class="btn btn-info btn-block">Create New Blog Entry</a>
+</p>
+
+
+
+@section Scripts
+{
+    @await Html.PartialAsync("_ValidationScriptsPartial")
+
+    <script>
+        function ShowDeleteModal(ff) {
+
+            var url = "/Blog/Home/Delete?id=" + ff;
+
+            $("#ModalPlaceHolder").load(url,
+                function () {
+                    $("#ModalPlaceHolder").modal("show");
+                });
+        }
+    </script>
+}

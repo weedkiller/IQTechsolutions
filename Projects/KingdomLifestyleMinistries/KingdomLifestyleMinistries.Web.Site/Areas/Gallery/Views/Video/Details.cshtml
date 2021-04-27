@@ -1,0 +1,21 @@
+﻿@model Video
+@{
+    ViewData["Title"] = $"{Model.Name} Details";
+}
+
+
+
+<section>
+    <div class="container-fluid pb-0">
+        <div class="row">
+            <div class="courses-thumb">
+                <iframe width="560" height="315" src="@Model.IFrameString" allowfullscreen></iframe>
+            </div>
+            <div class="col-md-12 text-center">
+                <h2>@Model.Name</h2>
+                <hr/>
+                <p>@Model.Description</p>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,26 @@
+﻿@using Metsi.Web.Site.Helpers
+<nav id="mainmenu_wrapper" style="font-family: 'arial narrow';">
+    <ul id="mainmenu" class="nav sf-menu">
+        <li class="@Html.IsActive(areas : "" , actions: "Index", controllers: "Home")">
+            <a asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+        </li>
+        <li class="@Html.IsActive(areas : "" , actions: "About", controllers: "Home")">
+            <a asp-area="" asp-controller="Home" asp-action="About">About</a>
+        </li>
+        <li class="@Html.IsActive(areas : "Services" , actions: "Index", controllers: "Home")">
+            <a asp-area="Services" asp-controller="Home" asp-action="Index">Services</a>
+        </li>
+        <li class="@Html.IsActive(areas : "Projects" , actions: "Index", controllers: "Home")">
+            <a asp-area="Projects" asp-controller="Home" asp-action="Index">Projects</a>
+        </li>
+        <li class="@Html.IsActive(areas : "Gallery" , actions: "Index", controllers: "Video")">
+            <a asp-area="Gallery" asp-controller="Video" asp-action="Index">Videos</a>
+        </li>
+        <li class="@Html.IsActive(areas : "Blog" , actions: "Index", controllers: "Home")">
+            <a asp-area="Blog" asp-controller="Home" asp-action="Index">Blog</a>
+        </li>
+        <li class="@Html.IsActive(areas : "Support" , actions: "Create", controllers: "Home")">
+            <a asp-area="Support" asp-controller="Home" asp-action="Create">Contact Us</a>
+        </li>
+    </ul>
+</nav>

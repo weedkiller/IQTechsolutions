@@ -1,0 +1,166 @@
+﻿
+@model KlsmPhotoAlbumIndexModel
+
+
+@{
+    ViewData["Title"] = "Photo Albums";
+}
+
+<section id="content" class="light_section blog no-sidebar">
+    <div class="container">
+        <div class="row">
+            <!-- main content -->
+            <div class="col-sm-10 col-sm-push-1">
+
+                <div class="row">
+                    <h2 class="text-center">Event Albums</h2>
+                    <hr />
+                    @if (Model.Events.Any())
+                    {
+                        foreach (var item in Model.Events)
+                        {
+                            <div class="col-md-4">
+                                <article class="post format-gallery">
+                                    <header class="entry-header">
+                                        <div class="entry-thumbnail">
+                                            <div id="carousel-generic" class="carousel slide">
+                                                <!-- Indicators -->
+                                                <ol class="carousel-indicators">
+                                                    <li data-target="#carousel-generic" data-slide-to="0" class="active"></li>
+                                                    @for (int i = 1; i < item.Images.Take(5).Count(); i++)
+                                                    {
+                                                        <li data-target="#carousel-generic" data-slide-to="@i"></li>
+                                                    }
+                                                </ol>
+
+                                                <!-- Wrapper for slides -->
+                                                <div class="carousel-inner">
+                                                    <div class="item active">
+                                                        <img src="@item.GetImage().GetImagePathFromAnotherWebsite(FrameworkDI.Configuration["Company:WebUrl"],FrameworkDI.Configuration["Placeholders:CoverImage"])" alt="image">
+                                                    </div>
+                                                    @foreach (var imge in item.Images.Take(5))
+                                                    {
+                                                        <div class="item">
+                                                            <img src="@imge.GetImagePathFromAnotherWebsite(FrameworkDI.Configuration["Company:WebUrl"])" alt="image">
+                                                        </div>
+                                                    }
+                                                </div>
+
+                                                <!-- Controls -->
+                                                <a class="left carousel-control" href="#carousel-generic" data-slide="prev">
+                                                    <span class="icon-prev"></span>
+                                                </a>
+                                                <a class="right carousel-control" href="#carousel-generic" data-slide="next">
+                                                    <span class="icon-next"></span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <h3 class="entry-title">
+                                            <a asp-area="Gallery" asp-controller="PhotoAlbum" asp-action="EventAlbum" asp-route-id="@item.Id" rel="bookmark">@item.Heading.TruncateLongString(24)</a>
+                                        </h3>
+                                        <div class="entry-meta">
+                                            <span class="date">
+                                                Published <time datetime="2014-06-08T15:05:23+00:00" class="entry-date">@item.Created.ToLongDateString()</time>
+                                            </span>
+                                            <span class="comments-link">
+                                                <a asp-area="Gallery" asp-controller="PhotoAlbum" asp-action="EventAlbum" asp-route-id="@item.Id">@item.Images.Count() Images</a>
+                                            </span>
+
+                                        </div>
+                                        <div>
+                                            <a href="#" class="btn btn-primary btn-block">View Photos</a>
+                                        </div>
+                                        <!-- .entry-meta -->
+                                    </header>
+                                    <!-- .entry-header -->
+
+                                </article>
+                                <!-- .post -->
+                            </div>
+                        }
+                    }
+                    else
+                    {
+                        <h3>There are currently no event albums available, please check back later</h3>
+                    }
+                </div>
+            
+            <br/>
+
+            <div class="row">
+                <h2 class="text-center">Photo Albums</h2>
+                <hr />
+            @if (Model.All.Any())
+            {
+                foreach (var item in Model.All)
+                {
+
+                    <div class="col-md-4" style="padding-bottom: 50px">
+                        <article class="post format-gallery">
+                            <header class="entry-header">
+                                <div class="entry-thumbnail">
+                                    <div id="carousel-generic" class="carousel slide">
+                                        <!-- Indicators -->
+                                        <ol class="carousel-indicators">
+                                            <li data-target="#carousel-generic" data-slide-to="0" class="active"></li>
+                                            @for (int i = 1; i < item.Images.Take(5).Count(); i++)
+                                            {
+                                                <li data-target="#carousel-generic" data-slide-to="@i"></li>
+                                            }
+                                        </ol>
+
+                                        <!-- Wrapper for slides -->
+                                        <div class="carousel-inner">
+                                            <div class="item active">
+                                                <img src="@item.GetImage().GetImagePathFromAnotherWebsite(FrameworkDI.Configuration["Company:WebUrl"],FrameworkDI.Configuration["Placeholders:CoverImage"])" alt="image">
+                                            </div>
+                                            @foreach (var imge in item.Images.Take(5))
+                                            {
+                                                <div class="item">
+                                                    <img src="@imge.GetImagePathFromAnotherWebsite(FrameworkDI.Configuration["Company:WebUrl"],FrameworkDI.Configuration["Placeholders:CoverImage"])" alt="image">
+                                                </div>
+                                            }
+                                        </div>
+
+                                        <!-- Controls -->
+                                        <a class="left carousel-control" href="#carousel-generic" data-slide="prev">
+                                            <span class="icon-prev"></span>
+                                        </a>
+                                        <a class="right carousel-control" href="#carousel-generic" data-slide="next">
+                                            <span class="icon-next"></span>
+                                        </a>
+                                    </div>
+                                </div>
+                                <h3 class="entry-title">
+                                    <a asp-area="Gallery" asp-controller="PhotoAlbum" asp-action="Details" asp-route-id="@item.Id" rel="bookmark">@item.Name.TruncateLongString(19)</a>
+                                </h3>
+                                <div class="entry-meta">
+                                    <span class="date">
+                                        Published <time datetime="2014-06-08T15:05:23+00:00" class="entry-date">@item.Created.ToLongDateString()</time>
+                                    </span>
+                                    <span class="comments-link">
+                                        <a href="#">@item.Images.Count() Images</a>
+                                    </span>
+                                </div>
+                                <div>
+                                    <a asp-area="Gallery" asp-controller="PhotoAlbum" asp-action="Details" asp-route-id="@item.Id" class="btn btn-primary btn-block">View Photos</a>
+                                </div>
+                                <!-- .entry-meta -->
+                            </header>
+                            <!-- .entry-header -->
+
+                        </article>
+                        <!-- .post -->
+                    </div>
+                }
+            }
+            else
+            {
+                <h3>There are currently no photo albums available, please check back later</h3>
+            }
+            </div>
+
+            </div> <!--eof col-sm-10 (main content)-->
+        </div>
+    </div>
+</section>

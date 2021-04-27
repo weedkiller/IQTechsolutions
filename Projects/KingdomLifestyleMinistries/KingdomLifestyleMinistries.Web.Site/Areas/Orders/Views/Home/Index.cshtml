@@ -1,0 +1,106 @@
+﻿@model IEnumerable<Order>
+
+
+@{
+    ViewData["Title"] = "Orders";
+}
+
+<div class="row">
+    <!--Middle Part Start-->
+    <div id="content" class="col-sm-9">
+        <h2 class="title">Order History</h2>
+        <div class="table-responsive">
+            <table class="table table-bordered table-hover">
+                <thead>
+                    <tr>
+                        <td class="text-center">Image</td>
+                        <td class="text-left">Product Name</td>
+                        <td class="text-center">Order ID</td>
+                        <td class="text-center">Qty</td>
+                        <td class="text-center">Status</td>
+                        <td class="text-center">Date Added</td>
+                        <td class="text-right">Total</td>
+                        <td></td>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var order in Model)
+                    {
+                        foreach (var item in order.OrderDetails)
+                        {
+                            <tr>
+                                <td class="text-center">
+                                    @*<a asp-area="Products" asp-controller="Home" asp-action="Details" asp-route-id="@item.Product.Id">
+                                        <img width="85" class="img-thumbnail" title="@item.Product.Name" alt="@item.Product.Name" src="@item.Product.GetImage().GetImagePathFromAnotherWebsite(FrameworkDI.Configuration["Company:WebUrl"],FrameworkDI.Configuration["Placeholders:CoverImage"])">
+                                    </a>*@
+                                </td>
+                                <td class="text-left">
+                                    <a asp-area="Products" asp-controller="Home" asp-action="Details" asp-route-id="@item.Product.Id">@item.Product.Name</a>
+                                </td>
+                                <td class="text-center">#@order.OrderNr</td>
+                                <td class="text-center">@item.Quantity</td>
+                                <td class="text-center">@order.OrderStatus</td>
+                                <td class="text-center">@order.Created.ToShortDateString()</td>
+                                <td class="text-right">R @order.GrandTotal</td>
+                                <td class="text-center">
+                                    <a class="btn btn-info" title="" data-toggle="tooltip" asp-area="Orders" asp-controller="Home" asp-action="Details" asp-route-id="@order.Id" data-original-title="View"><i class="fa fa-eye"></i></a>
+                                </td>
+                            </tr>
+
+                        }
+                    }
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+    <!--Middle Part End-->
+    <!--Right Part Start -->
+    <aside class="col-sm-3 hidden-xs" id="column-right">
+        <h2 class="subtitle">Account</h2>
+        <div class="list-group">
+            <ul class="list-item">
+                <li>
+                    <a href="login.html">Login</a>
+                </li>
+                <li>
+                    <a href="register.html">Register</a>
+                </li>
+                <li>
+                    <a href="#">Forgotten Password</a>
+                </li>
+                <li>
+                    <a href="#">My Account</a>
+                </li>
+                <li>
+                    <a href="#">Address Books</a>
+                </li>
+                <li>
+                    <a href="wishlist.html">Wish List</a>
+                </li>
+                <li>
+                    <a href="#">Order History</a>
+                </li>
+                <li>
+                    <a href="#">Downloads</a>
+                </li>
+                <li>
+                    <a href="#">Reward Points</a>
+                </li>
+                <li>
+                    <a href="#">Returns</a>
+                </li>
+                <li>
+                    <a href="#">Transactions</a>
+                </li>
+                <li>
+                    <a href="#">Newsletter</a>
+                </li>
+                <li>
+                    <a href="#">Recurring payments</a>
+                </li>
+            </ul>
+        </div>
+    </aside>
+    <!--Right Part End -->
+</div>

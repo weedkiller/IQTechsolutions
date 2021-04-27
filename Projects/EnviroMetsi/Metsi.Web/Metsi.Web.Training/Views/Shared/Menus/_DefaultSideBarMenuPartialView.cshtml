@@ -1,0 +1,19 @@
+﻿@using System.Security.Claims
+<nav class="navbar-default navbar-static-side" role="navigation">
+    <div class="sidebar-collapse">
+        <ul class="nav" id="side-menu">
+            <li class="nav-header">
+                @await Component.InvokeAsync("MenuProfile")
+            </li>
+            <li>
+                <a asp-area="" asp-controller="Home" asp-action="Dashboard"><i class="fa fa-dashboard"></i> <span class="nav-label">Dashboard</span></a>
+            </li>
+            <li>
+                <a asp-area="Students" asp-controller="Home" asp-action="Index" asp-route-id="@User.FindFirstValue(ClaimTypes.NameIdentifier).ToString()"><i class="fa fa-user"></i> <span class="nav-label">Profile</span></a>
+            </li>
+            <li>
+                <a asp-area="Courses" asp-controller="Home" asp-action="Index" asp-route-studentId="@User.FindFirstValue(ClaimTypes.NameIdentifier).ToString()"><i class="fa fa-book"></i> <span class="nav-label">My Courses</span></a>
+            </li>
+        </ul>
+    </div>
+</nav>

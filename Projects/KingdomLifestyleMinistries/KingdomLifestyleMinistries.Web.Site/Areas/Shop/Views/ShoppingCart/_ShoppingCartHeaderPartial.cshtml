@@ -1,0 +1,58 @@
+﻿@inject ShoppingCart ShoppingCart
+
+@inject SignInManager<ApplicationUser> SignInManager
+
+@{
+    var cartItems = await ShoppingCart.GetCartItems();
+}
+
+<div class="top-dropdown-outer pt-5 pb-10">
+    <a class="top-cart-link has-dropdown text-white"><i class="fa fa-shopping-cart font-13"></i> (<span id="titleTotal">@cartItems.Count</span>)</a>
+    <ul class="dropdown">
+        
+            <li>
+                <!-- dropdown cart -->
+                <div class="dropdown-cart">
+                    <table class="table cart-table-list table-responsive">
+                        <tbody id="ShoppingCartHeaderBody">
+                        @if (cartItems.Any())
+                        {
+                            foreach (var item in cartItems)
+                            {
+                                <tr id="row_@item.Id">
+                                    <td><a asp-area="Products" asp-controller="Home" asp-action="Details" asp-route-id="@item.Id"><img alt="" src="@item.Product.GetImage().GetImagePathFromAnotherWebsite(FrameworkDI.Configuration["Company:WebUrl"], FrameworkDI.Configuration["Placeholders:CoverImage"])"></a></td>
+                                    <td><a asp-area="Products" asp-controller="Home" asp-action="Details" asp-route-id="@item.Id"> @item.Product.Name</a></td>
+                                    <td>X <span id="qty_@item.Id">@item.Qty</span></td>
+                                    <td>@item.Product.PriceIncl.ToString("c")</td>
+                                    <td><a class="close" href="javascript:;" onclick="cart.remove('@item.Id');"><i class="fa fa-close font-13"></i></a></td>
+                                </tr>
+                            }
+                        }
+                        </tbody>
+                    </table>
+                    <div class="total-cart text-right">
+                        <table class="table table-responsive">
+                            <tbody>
+                            <tr>
+                                <td>Order Total</td>
+                                <td id="grandTotal">
+                                    @{
+                                        var otot = await ShoppingCart.GetTotalDue();
+                                    }
+                                    <span>@otot.ToString("c")</span>
+                                    
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="cart-btn text-right">
+                        <a class="btn btn-theme-colored btn-xs" asp-area="Shop" asp-controller="ShoppingCart" asp-action="Index"> View cart</a>
+                        <a class="btn btn-dark btn-xs" asp-area="Shop" asp-controller="ShoppingCart" asp-action="Checkout"> Checkout</a>
+                    </div>
+                </div>
+                <!-- dropdown cart ends -->
+            </li>
+        
+    </ul>
+</div>

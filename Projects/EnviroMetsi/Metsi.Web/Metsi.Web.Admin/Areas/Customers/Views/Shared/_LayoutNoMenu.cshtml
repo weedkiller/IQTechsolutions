@@ -1,0 +1,28 @@
+﻿@{
+    Layout = "Layouts/_LayoutNoMenu";
+}
+
+@section Styles
+{
+    <!--page injected css-->
+    @RenderSection("Styles", required: false)
+}
+
+<div id="content" class="content" style="margin-left:0">
+    
+    <h1 class="page-header">@ViewData["Title"] <small>@ViewData["SubTitle"]</small></h1>
+
+            @RenderBody()
+
+</div>
+
+@section Scripts
+{
+    <script src="~/js/apps.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            App.init();
+        });
+    </script>
+    @RenderSection("Scripts", required: false)
+}

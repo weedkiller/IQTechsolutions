@@ -1,0 +1,218 @@
+﻿@{
+    Layout = "Layouts/_DefaultLayout";
+    ViewData["Title"] = "Home";
+}
+
+
+<div style="height: 40%">
+    <partial name="Sliders/_DefaultMainSlider" />
+</div>
+
+<section id="info" class="grey_section">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 text-center">
+                <h2 class="section_header to_animate">Thank You For Visiting<br /><span class="highlight"> Enviro Metsi</span></h2>
+                <p class="to_animate">We are committed to help you protect our most precious resource</p>
+                <p>
+                    Enviro Metsi (Pty) Ltd, a company which, since its founding in 1995, has been dedicated to contribute towards the protection and
+                    improvement of our environment through the Management, Operation & Maintenance of Water- and Wastewater Treatment Plants in both
+                    the industrial and domestic fields, welcomes you to our website
+                </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-4 to_animate" data-animation="fadeInLeft">
+                <div class="teaser">
+                    <div class="teaser_icon">
+                        <img src="~/images/content/images.png" />
+                    </div>
+                    <div class="teaser_description">
+                        <h3>Our <span class="highlight">Library</span></h3>
+                        <p>A quick link to our document library page where you can download general water & wastewater info.</p>
+                        <p><a target="_blank" href="http://training.metsi.co.za/documentation/home/index" class="theme_button">Know More</a></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-4 to_animate" data-animation="fadeInBottom">
+                <div class="teaser">
+                    <div class="teaser_icon">
+                        <img src="~/images/content/Troubleshooting-Image.png" />
+                    </div>
+                    <div class="teaser_description">
+                        <h3>Trouble<span class="highlight">shooting</span></h3>
+                        <p>Find answers to some of the most common issues experienced on a Water or Wastewater Treatment Works</p>
+                        <p><a target="_blank" href="http://training.metsi.co.za/Troubleshooting/home/index" class="theme_button">Troubleshoot</a></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-4 to_animate" data-animation="fadeInRight">
+                <div class="teaser">
+                    <div class="teaser_icon">
+                        <img src="~/images/content/calculation.png" />
+                    </div>
+                    <div class="teaser_description">
+                        <h3>Training<span class="highlight"> & Support</span></h3>
+                        <p>Your link to expanding your water and wastewater knowledge related skills, study at your own pace. </p>
+                        <p><a target="_blank" href="http://training.metsi.co.za" class="theme_button">Student Portal</a></p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+@await Component.InvokeAsync("ServicesWidget")
+
+<section id="partners" class="grey_section">
+    <div class="container">
+        <div class="row">
+            <!--<div class="col-sm-4 widget">
+                <h3>Testimonials</h3>
+
+                <div id="carousel-media" class="carousel slide testimonials-carousel" data-ride="carousel" data-interval="7000">-->
+            <!-- Indicators -->
+            <!--<ol class="carousel-indicators">
+                <li data-target="#carousel-media" data-slide-to="0" class="active"></li>
+                <li data-target="#carousel-media" data-slide-to="1"></li>
+                <li data-target="#carousel-media" data-slide-to="2"></li>
+            </ol>-->
+            <!-- Wrapper for slides -->
+            <!--<div class="carousel-inner">
+                <div class="item active">
+                    <div class="media">
+                        <a class="pull-left" href="#">
+                            <img class="media-object" src="~/images/clients/client7.jpg" alt="">
+                        </a>
+                        <div class="media-body">
+                            <h4>Bradley</h4>
+                            <p>
+                                Stellenbosch Minucipality
+                            </p>
+                            <div class="product-rating">
+                                <span class="fa fa-star"></span>
+                                <span class="fa fa-star"></span>
+                                <span class="fa fa-star"></span>
+                                <span class="fa fa-star"></span>
+                                <span class="fa fa-star-o"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <p>
+                        The team from Enviro Metsi is always willing to go the extra mile - it is an absolute pleasure doing business with them
+                    </p>
+                </div>
+
+                <div class="item">
+                    <div class="media">
+                        <a class="pull-left" href="#">
+                            <img class="media-object" src="~/images/clients/client13.png" alt="">
+                        </a>
+                        <div class="media-body">
+                            <h4>Nikki</h4>
+                            <p>
+                                Multinet Systems
+                            </p>
+                            <div class="product-rating">
+                                <span class="fa fa-star"></span>
+                                <span class="fa fa-star"></span>
+                                <span class="fa fa-star"></span>
+                                <span class="fa fa-star-o"></span>
+                                <span class="fa fa-star-o"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <p>
+                        Appointing Enviro Metsi allowed us to focus on our core business, what a great company
+                    </p>
+                </div>
+
+                <div class="item">
+                    <div class="media">
+                        <a class="pull-left" href="#">
+                            <img class="media-object" src="~/images/clients/client4.jpg" alt="">
+                        </a>
+                        <div class="media-body">
+                            <h4>Saskia</h4>
+                            <p>
+                                Breedevallei Municipality
+                            </p>
+                            <div class="product-rating">
+                                <span class="fa fa-star"></span>
+                                <span class="fa fa-star"></span>
+                                <span class="fa fa-star"></span>
+                                <span class="fa fa-star"></span>
+                                <span class="fa fa-star-o"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <p>
+                        It is always nice to have a consultant who understands your needs and delivers a value for money product or service
+                    </p>
+                </div>
+
+                <div class="item">
+                    <div class="media">
+                        <a class="pull-left" href="#">
+                            <img class="media-object" src="~/images/clients/client3.jpg" alt="">
+                        </a>
+                        <div class="media-body">
+                            <h4>Adrian</h4>
+                            <p>
+                                Oudtshoorn Municipality
+                            </p>
+                            <div class="product-rating">
+                                <span class="fa fa-star"></span>
+                                <span class="fa fa-star"></span>
+                                <span class="fa fa-star"></span>
+                                <span class="fa fa-star"></span>
+                                <span class="fa fa-star-o"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <p>
+                        What a pleasure to get trained by true experts in their field
+                    </p>
+                </div>
+
+            </div>-->
+            <!-- Controls -->
+            <!--<a class="left carousel-control" href="#carousel-media" role="button" data-slide="prev">
+                        <span class="glyphicon glyphicon-chevron-left"></span>
+                    </a>
+                    <a class="right carousel-control" href="#carousel-media" role="button" data-slide="next">
+                        <span class="glyphicon glyphicon-chevron-right"></span>
+                    </a>
+                </div>
+
+
+
+            </div>-->
+
+            <div class="col-sm-12 widget">
+                @await Component.InvokeAsync("CustomersWidget")
+            </div>
+        </div>
+    </div>
+</section>
+
+@await Component.InvokeAsync("FaqsWidget")
+
+<partial name="_ContactUsNow" />
+
+@*<partial name="_DownloadAppPartial" />*@
+
+<script>
+    function ShowCustomerDetailsModal(ff) {
+        var url = "/Home/CustomerDetails?id=" + ff;
+
+        $("#ModalPlaceHolder").load(url,
+            function () {
+                $("#ModalPlaceHolder").modal("show");
+            });
+    }
+</script>

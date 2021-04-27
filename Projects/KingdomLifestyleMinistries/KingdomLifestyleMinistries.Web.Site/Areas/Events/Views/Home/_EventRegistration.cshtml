@@ -1,0 +1,149 @@
+﻿@model EventRegistrationAddEditModel
+
+<div class="modal-dialog">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h4 class="modal-title">Create Email Address</h4>
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        </div>
+        <div class="modal-body">
+            <form id="EventRegistrationForm">
+                <input type="hidden" asp-for="EventId" />
+                
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label asp-for="Title" class="control-label"></label>
+                            <select asp-for="Title" style="width: 100%" class="form-control" asp-items="Html.GetEnumSelectList<Title>()"><option value=''>Select Title</option></select>
+                            <span asp-validation-for="Title" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="col-md-5">
+                        <div class="form-group">
+                            <label asp-for="FirstName" class="control-label"></label>
+                            <input asp-for="FirstName" style="width: 100%" class="form-control" />
+                            <span asp-validation-for="FirstName" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label asp-for="LastName" class="control-label"></label>
+                            <input asp-for="LastName" style="width: 100%" class="form-control" />
+                            <span asp-validation-for="LastName" class="text-danger"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label asp-for="ContactNr" class="control-label"></label>
+                            <input asp-for="ContactNr" style="width: 100%" class="form-control" />
+                            <span asp-validation-for="ContactNr" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label asp-for="EmailAddress" class="control-label"></label>
+                            <input asp-for="EmailAddress" style="width: 100%" class="form-control" />
+                            <span asp-validation-for="EmailAddress" class="text-danger"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-10">
+                        <div class="form-group">
+                            <label asp-for="Notes" class="control-label"></label>
+                            <textarea asp-for="Notes" style="width: 100%" class="form-control" />
+                            <span asp-validation-for="Notes" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="form-group">
+                            <label asp-for="Attendees" class="control-label"></label>
+                            <input asp-for="Attendees" style="width: 100%" class="form-control" />
+                            <span asp-validation-for="Attendees" class="text-danger"></span>
+                        </div>
+                    </div>
+                </div>
+                @*<div class="row">
+                    <div class="col-md-12">
+                        <hr />
+                        <div class="form-group">
+                            <a class="card-header collapsed d-flex align-items-center" data-toggle="collapse" href="#collapseOne">
+                                <div class="card-title">Select categories for Service?</div>
+                            </a>
+                            <div id="collapseOne" class="card-body collapse show pt-0" data-parent="#accordion">
+                                <p>
+                                    @{ var cout = Convert.ToInt32(Math.Round((double)Model.AvailableEventDay.Count / 2));}
+                                    @if (Model.AvailableEventDay != null)
+                                    {
+                                        <div class="panel panel-default">
+                                            <div class="row">
+                                                @for (var i = cout; i < Model.AvailableEventDay.Count(); i++)
+                                                {
+
+                                                    <div class="col-md-1">
+                                                        <input asp-for="@Model.AvailableEventDay[i].IsSelected" type="checkbox" class="filled-in" style="opacity: 100 !important; position: relative; left: 0; height: 20px" />
+                                                        <input asp-for="@Model.AvailableEventDay[i].Identity" type="hidden" />
+                                                    </div>
+                                                    <div class="col-md-5">
+                                                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" title="@Model.AvailableEventDay[i].Description" href="#@Model.AvailableEventDay[i].Identity">@Model.AvailableEventDay[i].Name</a>
+                                                    </div>
+
+                                                }
+                                                @for (var i = 0; i < cout; i++)
+                                                {
+                                                    <div class="col-md-1">
+                                                        <input asp-for="@Model.AvailableEventDay[i].IsSelected" type="checkbox" class="filled-in" style="opacity: 100 !important; position: relative; left: 0; height: 20px" />
+                                                        <input asp-for="@Model.AvailableEventDay[i].Identity" type="hidden" />
+                                                    </div>
+                                                    <div class="col-md-5">
+                                                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" title="@Model.AvailableEventDay[i].Description" href="#@Model.AvailableEventDay[i].Identity">@Model.AvailableEventDay[i].Name</a>
+                                                    </div>
+                                                }
+                                            </div>
+                                        </div>
+                                    }
+                                    else
+                                    {
+                                    <p>No event days available for this event</p>
+                                }
+                                    </p>
+                                    <hr />
+                                </div>
+                            </div>
+                        </div>
+                    </div>*@
+                </form>
+        </div>
+        <div class="modal-footer">
+            <a href="javascript:;" class="btn btn-sm btn-white" data-dismiss="modal">Close</a>
+            <a href="javascript:;" onclick="ConfirmEventRegistration()" class="btn btn-sm btn-primary">Register for this event</a>
+        </div>
+    </div>
+</div>
+<script>
+    function ConfirmEventRegistration() {
+
+        var myformdata = $("#EventRegistrationForm").serialize();
+        var url = "/Events/Home/EventRegistration";
+
+        $.ajax({
+            type: "POST",
+            data: myformdata,
+            url: url,
+            success: function (data) {
+
+                $("#ModalPlaceHolder").modal("hide");
+            },
+            error: function (xhr, textStatus, err) {
+                alert("An error with the following detials occured : "
+                    + "\r\n == readyState: " + xhr.readyState
+                    + "\r\n == responseText: " + xhr.responseText
+                    + "\r\n == status: " + xhr.status
+                    + "\r\n == text status: " + textStatus
+                    + "\r\n == error: " + err);
+            }
+        });
+    }
+</script>

@@ -1,0 +1,48 @@
+﻿@using Iqt.Base.Entities
+@model Iqt.Base.Entities.FormElement<RecurringTask>
+
+@if (Model.ElementType == FormElementType.SingleLineText)
+{
+    <div class="form-group">
+        <label class="col-md-3 control-label">@Model.ElementName</label>
+        <div class="col-md-9">
+            <input type="text" id="@Model.Id" class="form-control" readonly="readonly" />
+        </div>
+    </div>
+}
+else if (Model.ElementType == FormElementType.MultiLineText)
+{
+    <div class="form-group">
+        <label class="col-md-3 control-label">@Model.ElementName</label>
+        <div class="col-md-9">
+            <textarea type="text" id="@Model.Id" class="form-control" readonly="readonly" style="height: 100px;" ></textarea>
+        </div>
+    </div>
+}
+else if (Model.ElementType == FormElementType.Decimal)
+{
+    <div class="form-group">
+        <label class="col-md-3 control-label">@Model.ElementName</label>
+        <div class="col-md-9">
+            <input type="number" id="@Model.Id" class="form-control" readonly="readonly" />
+        </div>
+    </div>
+}
+else if (Model.ElementType == FormElementType.Number)
+{
+    <div class="form-group">
+        <label class="col-md-3 control-label">@Model.ElementName</label>
+        <div class="col-md-9">
+            <input type="number" id="@Model.Id" class="form-control" readonly="readonly" />
+        </div>
+    </div>
+}
+else if (Model.ElementType == FormElementType.Image)
+{
+    <div class="form-group">
+        <label class="col-md-3 control-label">@Model.ElementName</label>
+        <div class="col-md-9">
+            <input type="file" id="@Model.Id" class="form-control" />
+        </div>
+    </div>
+}

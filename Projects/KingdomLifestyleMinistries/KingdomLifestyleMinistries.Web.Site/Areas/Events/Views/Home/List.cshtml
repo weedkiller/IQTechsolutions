@@ -1,0 +1,79 @@
+﻿
+@model IEnumerable<Event>
+
+@{
+    ViewData["Title"] = "Event List";
+}
+
+<table class="table" style="min-height: 280px;">
+    <thead>
+        <tr>
+            <th style="width: 15%">
+                Cover Image
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Heading)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RecurrenceRule)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model.Any())
+        {
+            foreach (var item in Model)
+            {
+                <tr id="row_@item.Id" class="row_@item.Id">
+                    <td>
+                        <a href="@Url.Action("Details", "Categories", new {id = item.Id})">
+                            <img id="preview" style="height: auto;" class="img-thumbnail" title="@item.Heading" alt="@item.Heading" src="@item.GetImage().GetImagePathFromAnotherWebsite(FrameworkDI.Configuration["Company:WebUrl"],FrameworkDI.Configuration["Placeholders:CoverImage"])">
+                        </a>
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Heading)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.RecurrenceRule)
+                    </td>
+                    <td>
+                        <a asp-action="EventRegistrationList" asp-route-id="@item.Id" class="btn btn-xs btn-info">Registrations</a>
+                        <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-xs btn-info"><i class="fa fa-edit"></i></a>
+                        <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-xs btn-info"><i class="fa fa-eye"></i></a>
+                        <a href="javascript:;" onclick="ShowDeleteModal('@item.Id')" class="btn btn-xs btn-danger"><i class="fa fa-trash"></i></a>
+                    </td>
+                </tr>
+            }
+        }
+        else
+        {
+            <tr>
+                <td colspan="9">
+                    <h4>No events currently available, please check back later or <a asp-area="Events" asp-controller="Home" asp-action="Create">create a new event</a></h4>
+                </td>
+            </tr>
+        }
+
+    </tbody>
+</table>
+
+<p class="text-right">
+    <a asp-area="Events" asp-controller="Home" asp-action="Create" class="btn btn-danger btn-block">Create New Event</a>
+</p>
+
+
+@section Scripts
+{
+    <script>
+        function ShowDeleteModal(ff) {
+
+            var url = "/Events/Home/Delete?id=" + ff;
+
+            $("#ModalPlaceHolder").load(url,
+                function () {
+                    $("#ModalPlaceHolder").modal("show");
+                });
+        }
+    </script>
+}

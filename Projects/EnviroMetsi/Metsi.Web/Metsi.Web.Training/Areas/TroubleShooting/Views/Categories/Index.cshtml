@@ -1,0 +1,32 @@
+﻿@{
+    ViewData["Title"] = "Trouble Shooting Category List";
+}
+
+<partial name="Sliders/_DefaultSliderPartialView" />
+<section id="features" class="container services">
+    <div class="row">
+        <div class="col-sm-12 text-center to_animate">
+            <h2 class="section_header">
+                <span class="highlight"><i class="fa fa-exclamation-triangle"></i></span>
+                @ViewData["Title"]
+            </h2>
+        </div>
+        <div class="col-sm-12">
+            <form class="" asp-area="Troubleshooting" asp-controller="Home" asp-action="Index" enctype="multipart/form-data" method="post" style="margin: 0 !important">
+                <div class="form-group">
+                    <label for="searhtext" class="control-label col-md-2"><small>Seperate keywords with comma</small></label>
+                    <div class="col-md-8">
+                        <input id="searhtext" class="form-control" />
+                    </div>
+                    <div class="col-md-2">
+                        <input type="submit" value="Search Now" class="form-control" />
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+
+
+
+@await Component.InvokeAsync("ProblemCategorySection")

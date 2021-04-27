@@ -1,0 +1,185 @@
+﻿@model AddEditModelBase<RecurringTask>
+
+@{
+    ViewData["Title"] = $"Edit {Model.Entity.Name}" ;
+}
+
+@section Styles
+{
+    <link href="~/css/summernote.css" rel="stylesheet" type="text/css" />
+    <style>
+        /* Always set the map height explicitly to define the size of the div
+        * element that contains the map. */
+        #map {
+            height: 400px;
+        }
+        /* Optional: Makes the sample page fill the window. */
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+}
+
+<form class="" asp-area="Calendar" asp-controller="Work" asp-action="EditWorkItem" enctype="multipart/form-data" method="post">
+    <div class="form-horizontal">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label asp-for="Entity.Name" class="control-label"></label>
+                    <input asp-for="Entity.Name" class="form-control" placeholder="Enter your heading here" />
+                    <span asp-validation-for="Entity.Name" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label class="control-label">Description</label>
+                    <textarea asp-for="Entity.Description" class="form-control" style="height: 150px" placeholder="Enter your description here"></textarea>
+                    <span asp-validation-for="Entity.Description" class="text-danger"></span>
+                </div>
+                <input type="hidden" asp-for="Entity.Id" />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <ul class="nav nav-pills">
+                    <li class="active"><a href="#nav-pills-tab-1" data-toggle="tab">Location</a></li>
+                    <li><a href="#nav-pills-tab-2" data-toggle="tab">Administrations</a></li>
+                    <li><a href="#nav-pills-tab-3" data-toggle="tab">Settings</a></li>
+                </ul>
+                <div class="tab-content">
+                    <div class="tab-pane fade active in" id="nav-pills-tab-1">
+                        <h3 class="m-t-10">Location</h3>
+                        <hr />
+                        <div class="row">
+                            <div class="col-md-12">
+                                <!--The div element for the map -->
+                                <div id="map"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="nav-pills-tab-2">
+                        <h4 class="m-t-10">Form Details</h4>
+                        <hr />
+                            <div class="row">
+                                @foreach (var item in Model.Entity.FormElements)
+                                {
+                                    <partial name="/Areas/Calendar/Views/Forms/_FormElement.cshtml" model="item"/>
+                                }
+                            </div>
+                        <hr />
+                        <a href="javascript:;" onclick="ShowCreateFormElementModel('@Model.Entity.Id')" class="btn btn-primary btn-block">Add New Form Element</a>
+                    </div>
+                    <div class="tab-pane fade" id="nav-pills-tab-3">
+                        <h4 class="m-t-10">Task Setting</h4>
+                        <hr />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ================== FORM BUTTON ================== -->
+    <div class="row" style="padding-bottom: 50px">
+        <div class="form-group">
+            <div class="col-md-4">
+                <a href="javascript:;" class="btn btn-block btn-danger" data-dismiss="modal">Close</a>
+            </div>
+            <div class="col-md-4">
+                <input name="main" type="submit" value="Save" class="btn btn-block btn-primary" />
+            </div>
+            <div class="col-md-4">
+                <input name="finnish" type="submit" value="Submit & Exit" class="btn btn-block btn-primary" />
+            </div>
+        </div>
+    </div>
+    <!-- ================== END FORM BUTTON ================== -->
+
+</form>
+
+@section Scripts{
+
+<script type="text/javascript">
+
+    function ShowCreateFormElementModel(ff) {
+
+        var url = "/Calendar/Forms/CreateElement?parentId=" + ff;
+
+        $("#ModalPlaceHolder").load(url,
+            function () {
+                $("#ModalPlaceHolder").modal("show");
+            });
+    }
+
+</script>
+
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyAtpPNg-JCpH9A7fzgsnkiz45nrJShhKrU&sensor=false&libraries=places"></script>
+    <script>
+        initMap();
+
+        function initMap() {
+
+            var location = { lat: -33.88, lng: 19.0412341234 };
+
+            var map = new google.maps.Map(document.getElementById('map'), {
+                zoom: 8,
+                center: location
+            });
+
+            var coordInfoWindow = new google.maps.InfoWindow();
+            coordInfoWindow.setContent(createInfoWindowContent(location, map.getZoom()));
+            coordInfoWindow.setPosition(location);
+            coordInfoWindow.open(map);
+
+            map.addListener("zoom_changed", function () {
+                coordInfoWindow.setContent(createInfoWindowContent(location, map.getZoom()));
+                coordInfoWindow.open(map);
+            });
+        }
+
+        var TILE_SIZE = 256;
+
+        function createInfoWindowContent(latLng, zoom) {
+            var scale = 1 << zoom;
+
+            var worldCoordinate = project(latLng);
+
+            var pixelCoordinate = new google.maps.Point(
+                Math.floor(worldCoordinate.x * scale),
+                Math.floor(worldCoordinate.y * scale)
+            );
+
+            var tileCoordinate = new google.maps.Point(
+                Math.floor((worldCoordinate.x * scale) / TILE_SIZE),
+                Math.floor((worldCoordinate.y * scale) / TILE_SIZE)
+            );
+
+            return [
+                "Chicago, IL",
+                "LatLng: " + latLng,
+                "Zoom level: " + zoom,
+                "World Coordinate: " + worldCoordinate,
+                "Pixel Coordinate: " + pixelCoordinate,
+                "Tile Coordinate: " + tileCoordinate
+            ].join("<br>");
+        }
+
+        // The mapping between latitude, longitude and pixels is defined by the web
+        // mercator projection.
+        function project(latLng) {
+            var siny = Math.sin((latLng.lat() * Math.PI) / 180);
+
+            // Truncating to 0.9999 effectively limits latitude to 89.189. This is
+            // about a third of a tile past the edge of the world tile.
+            siny = Math.min(Math.max(siny, -0.9999), 0.9999);
+
+            return new google.maps.Point(
+                TILE_SIZE * (0.5 + latLng.lng() / 360),
+                TILE_SIZE * (0.5 - Math.log((1 + siny) / (1 - siny)) / (4 * Math.PI))
+            );
+        }
+
+    </script>
+
+    <script src="~/js/markerclusterer.js"></script>
+}

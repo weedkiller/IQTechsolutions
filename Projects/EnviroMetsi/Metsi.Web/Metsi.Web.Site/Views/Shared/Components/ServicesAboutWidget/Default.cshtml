@@ -1,0 +1,38 @@
+﻿@using Iqt.Base.Extensions
+@using Iqt.Base.Interfaces
+@model Iqt.Base.Models.PagedResult<Services.Base.ApiModels.ServiceModel>
+
+@inject IApplicationConfiguration Configuration
+
+<div class="widget widget_text">
+    <h3>Our Services</h3>
+    <div class="panel-group" id="accordion">
+        @foreach (var item in Model.Results)
+        {
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#@item.Id">
+                            <i class="rt-icon-briefcase"></i> @item.Name
+                        </a>
+                    </h4>
+                </div>
+                <div id="@item.Id" class="panel-collapse collapse">
+                    <div class="panel-body">
+                        <p>
+                            @item.Description.TruncateLongString(150)
+                        </p>
+                        <p class="text-right">
+                            <a asp-area="Services" asp-controller="Home" asp-action="Details" asp-route-id="@item.Id">Read More...</a>
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        }
+
+        <p class="text-right">
+            <a class="btn btn-primary btn-block" asp-area="Services" asp-controller="Home" asp-action="Index">View More...</a>
+        </p>
+    </div>
+</div>

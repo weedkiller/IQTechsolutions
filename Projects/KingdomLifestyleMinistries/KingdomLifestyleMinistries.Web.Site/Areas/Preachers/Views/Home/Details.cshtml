@@ -1,0 +1,102 @@
+﻿@model PreacherDetailsPageModel
+
+@{
+    ViewBag.Title = $"{Model.Entity.Names.GetFullNames()} Profile";}
+}
+
+<!--Main Content Start-->
+<div class="cp-page-content inner-page-content">
+    <div class="container">
+        
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="thumb">
+                        <img src="@Model.Entity.GetImage().GetImagePathFromAnotherWebsite(FrameworkDI.Configuration["Company:WebUrl"],FrameworkDI.Configuration["Placeholders:CoverImage"])" alt="">
+                    </div>
+                </div>
+                <div class="col-md-8">
+                    <h4 class="name font-24 mt-0 mb-0">@Model.Entity.Names.GetFullNames()</h4>
+                    <h5 class="mt-5">@Model.Entity</h5>
+                    <p>@Model.Entity.Bio</p>
+                    <hr />
+                    <div class="volunteer-address">
+                        <ul style="list-style:none">
+                            <li>
+                                <div class="bg-light media border-bottom p-15 mb-20">
+                                    <div class="media-left">
+                                        <i class="fa fa-map-marker text-theme-colored font-24 mt-5"></i>
+                                    </div>
+                                    @{
+                                        var address = Model.Entity.Addresses.FirstOrDefault(c => c.Default);
+                                    }
+                                    @if (address != null)
+                                    {
+                                        <div class="media-body">
+                                            <h5 class="mt-0 mb-0">Address:</h5>
+
+                                            <p>@address.AddressLine1 @address.Suburb @address.City @address.Country</p>
+                                        </div>
+                                    }
+                                </div>
+                            </li>
+                            <li>
+                                <div class="bg-light media border-bottom p-15">
+                                    <div class="media-left">
+                                        <i class="fa fa-phone text-theme-colored font-24 mt-5"></i>
+                                    </div>
+                                    <div class="media-body">
+                                        <h5 class="mt-0 mb-0">Contact:</h5>
+                                        <p>
+                                            <span>Phone:</span> @Model.Entity.ContactNumbers.FirstOrDefault(c => c.Default)?.Number<br><span>Email:</span> <a href="mailto:@Model.Entity.EmailAddresses.FirstOrDefault(c => c.Default)?.Address">@Model.Entity.EmailAddresses.FirstOrDefault(c => c.Default)?.Address</a>
+                                        </p>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <hr />
+                </div>
+            </div>
+            @*<div class="row mt-30">
+                <partial name="_QuickConnect"/>
+            </div>*@
+       
+    </div>
+</div>
+<!-- end main-content -->
+
+@if (Model.PreacherCategories.Any())
+{
+    <div class="clearfix"></div>
+    <section class="bg-theme-colored-lighter2">
+        <div class="container">
+            <div class="section-content">
+                <div class="row">
+                    <div class="heading-line-bottom">
+                        <h3 class="heading-title text-center">Contact Details for Prosional Therapists</h3>
+                    </div>
+                    <div class="panel-group toggle">
+                        @foreach (var item in Model.PreacherCategories)
+                        {
+                            <div class="panel">
+                                <div class="panel-heading">
+                                    <div class="panel-title">
+                                        <a data-toggle="collapse" href="#" class="active"><span class="open-sub"></span>@item.Category.Name </a>
+                                    </div>
+                                </div>
+                                <div id="#" class="panel-collapse collapse in">
+                                    <div class="panel-body">
+                                        <div class="list-group">
+                                            
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+}

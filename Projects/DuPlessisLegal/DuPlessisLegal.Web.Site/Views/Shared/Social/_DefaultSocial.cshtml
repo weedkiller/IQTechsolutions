@@ -1,0 +1,38 @@
+﻿@using DuPlessisLegal.Web.Site.Areas.Identity.Data
+@using Microsoft.AspNetCore.Identity
+
+@inject SignInManager<ApplicationUser> SignInManager
+@inject UserManager<ApplicationUser> UserManager
+
+<div class="container">
+    <ul class="dt-sc-social-icons">
+        <li><a href="#" title="Facebook"><span class="fa fa-facebook"></span></a></li>
+        <li><a href="#" title="Google Plus"><span class="fa fa-google-plus"></span></a></li>
+        <li><a href="#" title="Twitter"><span class="fa fa-twitter"></span></a></li>
+        <li><a href="#" title="Youtube"><span class="fa fa-youtube"></span></a></li>
+        <li><a href="#" title="Linkedin"><span class="fa fa-linkedin"></span></a></li>
+        @if (SignInManager.IsSignedIn(User))
+        {
+            <li class="nav-item">
+                <a id="manage" class="nav-link" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">Hello @UserManager.GetUserName(User)</a>
+            </li>
+            <li class="nav-item">
+                <form id="logoutform" class="form-inline">
+                    <a id="logout" type="submit" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home")">Logout</a>
+                </form>
+            </li>
+        }
+        else
+        {
+            <li class="nav-item">
+                <a id="Register" type="submit" asp-area="Identity" asp-page="/Account/Register">Register</a>
+            </li>
+            <li class="nav-item">
+                <a id="Login" type="submit" asp-area="Identity" asp-page="/Account/Login" asp-route-returnUrl="@Url.Action("Index", "Home")">Login</a>
+            </li>
+        }
+    </ul>
+    <div class="dt-sc-contact-number">
+        <span class="fa fa-phone"> </span> Call us: (212) 742 1414
+    </div>
+</div>

@@ -1,0 +1,22 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="5.0.3" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="5.0.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Modules\Blogging\Blogging.Core\Blogging.Core.csproj" />
+    <ProjectReference Include="..\..\..\Modules\Customers\Customers.Core\Customers.Core.csproj" />
+    <ProjectReference Include="..\..\..\Modules\Employment\Employment.Core\Employment.Core.csproj" />
+    <ProjectReference Include="..\..\..\Modules\Feedback\Feedback.Core\Feedback.Core.csproj" />
+    <ProjectReference Include="..\..\..\Modules\Identity\Identity.Base\Identity.Base.csproj" />
+    <ProjectReference Include="..\..\..\Modules\Services\Services.Core\Services.Core.csproj" />
+    <ProjectReference Include="..\..\..\Modules\Troubleshooting\Troubleshooting.Core\Troubleshooting.Core.csproj" />
+  </ItemGroup>
+
+</Project>

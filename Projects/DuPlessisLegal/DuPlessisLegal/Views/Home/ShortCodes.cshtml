@@ -1,0 +1,286 @@
+﻿@{
+    ViewData["Title"] = "Shortcodes";
+}
+<div id="main">
+
+    <div class="breadcrumb-section">
+        <div class="container">
+            <h1> Shortcodes </h1>
+            <div class="breadcrumb">
+                <a asp-area="" asp-controller="Home" asp-action="Index"> Home </a>
+                <span class="current"> Shortcodes </span>
+            </div>
+        </div>
+    </div>
+
+    <!--container starts-->
+    <div class="container">
+
+        <!--primary starts-->
+        <section id="primary" class="content-full-width">
+
+            <h2 class="dt-sc-hr-title"> Heading Styles </h2>
+
+            <div class="column dt-sc-one-half first">
+                <h1>Lorem ipsum dolor sit amet</h1>
+                <h2>Lorem ipsum dolor sit amet</h2>
+                <h3>Lorem ipsum dolor sit amet</h3>
+            </div>
+
+            <div class="column dt-sc-one-half">
+                <h4>Lorem ipsum dolor sit amet</h4>
+                <h5>Lorem ipsum dolor sit amet</h5>
+                <h6>Lorem ipsum dolor sit amet</h6>
+            </div>
+
+            <div class="dt-sc-hr-invisible"></div>
+
+            <h2 class="dt-sc-hr-title"> Callout Boxes </h2>
+
+            <div class="dt-sc-callout-box type1">
+                <div class="column dt-sc-four-fifth first">
+                    <h4> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do ex fb aute in esse </h4>
+                    <h5> Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris </h5>
+                </div>
+                <div class="column dt-sc-one-fifth">
+                    <a href="http://google.com" class="dt-sc-button small" target="_blank">Purchase Now</a>
+                </div>
+            </div>
+
+            <div class="dt-sc-hr-invisible-medium"></div>
+
+            <div class="dt-sc-callout-box type2">
+                <div class="column dt-sc-four-fifth first">
+                    <h4> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do ex fb aute in esse </h4>
+                    <h5> Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris </h5>
+                </div>
+                <div class="column dt-sc-one-fifth">
+                    <a href="http://google.com" class="dt-sc-button small" target="_blank">Purchase Now</a>
+                </div>
+            </div>
+
+            <div class="dt-sc-hr-invisible-medium"></div>
+
+            <div class="dt-sc-callout-box type3">
+                <div class="column dt-sc-four-fifth first">
+                    <h4> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do ex fb aute in esse </h4>
+                    <h5> Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris </h5>
+                </div>
+                <div class="column dt-sc-one-fifth">
+                    <a href="http://google.com" class="dt-sc-button small" target="_blank">Purchase Now</a>
+                </div>
+            </div>
+
+            <div class="dt-sc-hr-invisible-large"></div>
+
+            <h2 class="dt-sc-hr-title"> Table </h2>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Header1</th>
+                        <th>Header2</th>
+                        <th>Header3</th>
+                        <th>Header4</th>
+                        <th>Header5</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Division1</td>
+                        <td>Division2</td>
+                        <td>Division3</td>
+                        <td>Division4</td>
+                        <td>Division5</td>
+                    </tr>
+                    <tr>
+                        <td>Division1</td>
+                        <td>Division2</td>
+                        <td>Division3</td>
+                        <td>Division4</td>
+                        <td>Division5</td>
+                    </tr>
+                    <tr>
+                        <td>Division1</td>
+                        <td>Division2</td>
+                        <td>Division3</td>
+                        <td>Division4</td>
+                        <td>Division5</td>
+                    </tr>
+                    <tr>
+                        <td>Division1</td>
+                        <td>Division2</td>
+                        <td>Division3</td>
+                        <td>Division4</td>
+                        <td>Division5</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="dt-sc-hr-invisible-small"></div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Header1</th>
+                        <th>Header2</th>
+                        <th>Header3</th>
+                        <th>Header4</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Division1</td>
+                        <td>Division2</td>
+                        <td>Division3</td>
+                        <td>Division4</td>
+                    </tr>
+                    <tr>
+                        <td>Division1</td>
+                        <td>Division2</td>
+                        <td>Division3</td>
+                        <td>Division4</td>
+                    </tr>
+                    <tr>
+                        <td>Division1</td>
+                        <td>Division2</td>
+                        <td>Division3</td>
+                        <td>Division4</td>
+                    </tr>
+                    <tr>
+                        <td>Division1</td>
+                        <td>Division2</td>
+                        <td>Division3</td>
+                        <td>Division4</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="dt-sc-hr-invisible-large"></div>
+            <div class="mailchimp">
+                <p> <span class="fa fa-envelope-o"></span> Subscribe to Newsletter </p>
+                <form name="frmnewsletter" method="post" class="mailchimp-form" action="php/subscribe.php">
+                    <input type="email" placeholder="Email" name="mc_email" required />
+                    <input type="submit" value="Submit" class="nl-submit" name="btnsubscribe">
+                </form>
+                <div id="ajax_subscribe_msg"></div>
+            </div>
+
+        </section>
+        <!--primary ends-->
+
+    </div>
+    <!--container ends-->
+    <!--office_locations starts-->
+    <div class="office_locations">
+        <div class="container">
+            <p> Our Offices: </p>
+            <ul class="dt-sc-locations">
+                <li>
+                    <a href="#"> Princeton, NJ </a>
+                    <div class="dt-sc-text-overlay">
+                        <p class="address">
+                            <span class="fa fa-location-arrow"></span> 3rd Floor, Sedrik Street, <br>
+                            Princeton, PA 16103
+                        </p>
+                        <p> <span class="fa fa-envelope-o"></span> <a href="#"> abc@somemail.com </a> </p>
+                        <p> <span class="fa fa-phone"></span> Phone: 224-335-3654 </p>
+                        <p> <span class="fa fa-fax"></span> Fax: 112-223-2265 </p>
+                        <a href="#" class="dt-sc-button"> <span class="fa fa-map-marker"></span> View on Map </a>
+                    </div>
+                </li>
+                <li>
+                    <a href="#"> Flemington, NJ </a>
+                    <div class="dt-sc-text-overlay">
+                        <p class="address">
+                            <span class="fa fa-location-arrow"></span> 1rd Floor, Sedrik Street, <br>
+                            Flemington, PA 16103
+                        </p>
+                        <p> <span class="fa fa-envelope-o"></span> <a href="#"> abc@somemail.com </a> </p>
+                        <p> <span class="fa fa-phone"></span> Phone: 224-335-3654 </p>
+                        <p> <span class="fa fa-fax"></span> Fax: 112-223-2265 </p>
+                        <a href="#" class="dt-sc-button"> <span class="fa fa-map-marker"></span> View on Map </a>
+                    </div>
+                </li>
+                <li>
+                    <a href="#"> Red Bank, NJ </a>
+                    <div class="dt-sc-text-overlay">
+                        <p class="address">
+                            <span class="fa fa-location-arrow"></span> 3rd Floor, Aslan Street, <br>
+                            Red Bank, PA 16103
+                        </p>
+                        <p> <span class="fa fa-envelope-o"></span> <a href="#"> abc@somemail.com </a> </p>
+                        <p> <span class="fa fa-phone"></span> Phone: 224-335-3654 </p>
+                        <p> <span class="fa fa-fax"></span> Fax: 112-223-2265 </p>
+                        <a href="#" class="dt-sc-button"> <span class="fa fa-map-marker"></span> View on Map </a>
+                    </div>
+                </li>
+                <li>
+                    <a href="#"> Wilmington, DE </a>
+                    <div class="dt-sc-text-overlay">
+                        <p class="address">
+                            <span class="fa fa-location-arrow"></span> 3rd Floor, Sedrik Street, <br>
+                            Wilmington, PA 16103
+                        </p>
+                        <p> <span class="fa fa-envelope-o"></span> <a href="#"> abc@somemail.com </a> </p>
+                        <p> <span class="fa fa-phone"></span> Phone: 224-335-3654 </p>
+                        <p> <span class="fa fa-fax"></span> Fax: 112-223-2265 </p>
+                        <a href="#" class="dt-sc-button"> <span class="fa fa-map-marker"></span> View on Map </a>
+                    </div>
+                </li>
+                <li>
+                    <a href="#"> Georgetown, DE </a>
+                    <div class="dt-sc-text-overlay">
+                        <p class="address">
+                            <span class="fa fa-location-arrow"></span> 3rd Floor, Sedrik Street, <br>
+                            Georgetown, PA 16103
+                        </p>
+                        <p> <span class="fa fa-envelope-o"></span> <a href="#"> abc@somemail.com </a> </p>
+                        <p> <span class="fa fa-phone"></span> Phone: 224-335-3654 </p>
+                        <p> <span class="fa fa-fax"></span> Fax: 112-223-2265 </p>
+                        <a href="#" class="dt-sc-button"> <span class="fa fa-map-marker"></span> View on Map </a>
+                    </div>
+                </li>
+                <li>
+                    <a href="#"> New York, NY </a>
+                    <div class="dt-sc-text-overlay">
+                        <p class="address">
+                            <span class="fa fa-location-arrow"></span> 4th Floor, Moro Street, <br>
+                            New York, PA 16103
+                        </p>
+                        <p> <span class="fa fa-envelope-o"></span> <a href="#"> abc@somemail.com </a> </p>
+                        <p> <span class="fa fa-phone"></span> Phone: 224-335-3654 </p>
+                        <p> <span class="fa fa-fax"></span> Fax: 112-223-2265 </p>
+                        <a href="#" class="dt-sc-button"> <span class="fa fa-map-marker"></span> View on Map </a>
+                    </div>
+                </li>
+                <li>
+                    <a href="#"> Haddonfield, NJ </a>
+                    <div class="dt-sc-text-overlay">
+                        <p class="address">
+                            <span class="fa fa-location-arrow"></span> 3rd Floor, Sedrik Street, <br>
+                            Haddonfield, PA 16103
+                        </p>
+                        <p> <span class="fa fa-envelope-o"></span> <a href="#"> abc@somemail.com </a> </p>
+                        <p> <span class="fa fa-phone"></span> Phone: 224-335-3654 </p>
+                        <p> <span class="fa fa-fax"></span> Fax: 112-223-2265 </p>
+                        <a href="#" class="dt-sc-button"> <span class="fa fa-map-marker"></span> View on Map </a>
+                    </div>
+                </li>
+                <li>
+                    <a href="#"> Philadelphia, PA </a>
+                    <div class="dt-sc-text-overlay">
+                        <p class="address">
+                            <span class="fa fa-location-arrow"></span> 32nd Floor, Hagid Street, <br>
+                            Philadelphia, PA 16103
+                        </p>
+                        <p> <span class="fa fa-envelope-o"></span> <a href="#"> abc@somemail.com </a> </p>
+                        <p> <span class="fa fa-phone"></span> Phone: 224-335-3654 </p>
+                        <p> <span class="fa fa-fax"></span> Fax: 112-223-2265 </p>
+                        <a href="#" class="dt-sc-button"> <span class="fa fa-map-marker"></span> View on Map </a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!--office_locations ends-->
+
+</div>

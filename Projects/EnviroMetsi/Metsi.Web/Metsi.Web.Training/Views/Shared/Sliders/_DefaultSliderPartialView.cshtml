@@ -1,0 +1,63 @@
+﻿<div id="inSlider" class="carousel slide carousel-fade" data-ride="carousel">
+    <ol class="carousel-indicators">
+        <li data-target="#inSlider" data-slide-to="0" class="active"></li>
+        <li data-target="#inSlider" data-slide-to="1"></li>
+    </ol>
+    <div class="carousel-inner" role="listbox">
+        <div class="item active">
+            <div class="container">
+                <div class="carousel-caption">
+                    <h1 style="color: #1ab394; -webkit-text-stroke: 1px lightseagreen;">
+                        Welcome to<br />
+                        Enviro Metsi's<br />
+                        Online Training Centre
+                    </h1>
+                    <p>
+                        <a class="btn btn-lg btn-primary" asp-area="Support" asp-controller="Home" asp-action="Create" role="button">Contact Us</a>
+                    </p>
+                </div>
+                <div class="carousel-image wow zoomIn">
+                    <video style="position: fixed; opacity: 0.6;
+                                      right: 0;
+                                      bottom: 0;
+                                      min-width: 100%;
+                                      min-height: 100%;" autoplay muted loop>
+                        <source src="~/videos/SliderVideo1.mp4" type="video/mp4">
+                        Your browser does not support HTML5 video.
+                    </video>
+                </div>
+            </div>
+            <!-- Set background for slide in css -->
+            <div class="header-back one"></div>
+        </div>
+        <div class="item">
+            <div class="container">
+                <div class="carousel-caption blank">
+                    <h1 style="color: #1ab394;">Engage with any one <br />of our highly skilled Facilitators,<br /> Assessors or Moderators.</h1>
+                    <p style="color: #1ab394;">Sign up here and let us manage all your training and qualification needs.</p>
+                    <p>
+                        <a class="btn btn-lg btn-primary" asp-area="Support" asp-controller="Home" asp-action="Create" role="button">Contact Us</a>
+                    </p>
+                </div>
+            </div>
+            <div class="carousel-image wow zoomIn">
+                <video style="position: fixed; opacity: 0.6;
+                        right: 0;
+                        bottom: 0;
+                        min-width: 100%;
+                        min-height: 100%;" autoplay muted loop>
+                    <source src="~/videos/SliderVideo2.mp4" type="video/mp4">
+                    Your browser does not support HTML5 video.
+                </video>
+            </div>
+        </div>
+    </div>
+    <a class="left carousel-control" href="#inSlider" role="button" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#inSlider" role="button" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+    </a>
+</div>

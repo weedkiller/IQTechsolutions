@@ -1,0 +1,61 @@
+﻿
+@using Filing.Base.Extensions
+@using Iqt.Base.Interfaces
+@model Iqt.Base.Models.PagedResult<Services.Base.ApiModels.ServiceModel>
+
+@inject IApplicationConfiguration Configuration
+
+@{
+    ViewData["Title"] = "Our Services";
+}
+
+<section id="content" class="light_section">
+
+    <div class="container" style="padding-top: 0px;">
+        <div class="row">
+            <!-- main content -->
+            <div class="col-lg-12">
+
+                <div class="widget widget_text">
+                    <h3>Services</h3>
+                    <h4>How can we help you to protect our most precious resource?</h4>
+                    <p>
+                        South Africa, as the rest of the world, is becoming increasingly more aware of the need to protect our environment. Fortunately, numerous water and wastewater
+                        treatment processes exist specifically for this reason. There is however an enormous amount of pressure on the owners of water purification and sewage treatment
+                        works to ensure that the plants are operated and maintained at the highest possible standards to ensure its sustainable existence. This is where Enviro Metsi
+                        wishes to be of assistance.
+                    </p>
+                </div>
+                <hr style="padding-top: 30px;"/>
+                <div class="widget widget_text">
+                    <h3>What we do</h3>
+                    <div class="row">
+                        @foreach (var item in Model.Results)
+                        {
+                            <div class="col-sm-6" style="padding-bottom:10px;">
+                                <div class="teaser with_image">
+                                    <div class="teaser_image">
+                                        <a asp-area="Services" asp-controller="Home" asp-action="Details" asp-route-id="@item.Id"><img src="@item.ImageUrl" alt="@item.Name" /></a>
+                                    </div>
+                                    <div class="teaser_description">
+                                        <h3><a asp-area="Services" asp-controller="Home" asp-action="Details" asp-route-id="@item.Id">@item.Name</a></h3>
+                                        <p style="min-height: 80px">
+                                            @item.Description.TruncateLongString(220)
+                                        </p>
+                                        <a asp-area="Services" asp-controller="Home" asp-action="Details" asp-route-id="@item.Id">Read More...</a>
+                                        <hr />
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                </div>
+
+            </div> <!--eof col-sm-9 (main content)-->
+
+        </div>
+    </div>
+
+</section>
+
+<partial name="_ContactUsNow" />

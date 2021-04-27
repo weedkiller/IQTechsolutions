@@ -1,0 +1,95 @@
+﻿@inject IApplicationConfiguration Configuration
+
+@model IEnumerable<Education.Base.Entities.Student>
+
+@using Filing.Base.Extensions
+@using Iqt.Base.Interfaces
+
+@{
+    ViewData["Title"] = "Student List";
+}
+<div class="profile-container">
+    <div class="profile-section">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>
+                        Image
+                    </th>
+                    <th>
+                        Names
+                    </th>
+                    <th>
+                        Phone Number
+                    </th>
+                    <th>
+                        Email Address
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Active)
+                    </th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr id="row_@item.Id" class="row_@item.Id">
+                        <td>
+                        @{
+                            var source = "";
+                            if(item.UserInfo != null)
+                            {
+                                source = @item.UserInfo.GetPath(Configuration.BaseImageUrl, ImageType.Cover, Configuration.ImageProfilePlaceholder);
+                            }
+                            else
+                            {
+                                source = Configuration.ImageProfilePlaceholder;
+                            }
+                        }
+
+                        <img style="width:100px" id="preview" class="img-thumbnail" title="@item.Names.GetFullNames()" alt="@item.UserInfo?.GetImage()?.FileName" src="@source"/>
+                        <td>
+                            @item.DisplayName
+                        </td>
+                        <td>
+                            @item.ContactNumbers.FirstOrDefault(c => c.Default)?.Number
+                        </td>
+                        <td>
+                            @item.EmailAddresses.FirstOrDefault(c => c.Default)?.Address
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Active)
+                        </td>
+                        <td style="width: 100px">
+                            <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-primary btn-circle btn-xs"><i class="fa fa-edit"></i></a>
+                            <a href="javascript:;" onclick="ShowDeleteModal('@item.Id')" style="padding-left: 5px" class="btn btn-danger btn-circle btn-xs"><i class="fa fa-trash"></i></a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="6">
+                        <a asp-area="Courses" asp-controller="Students" asp-action="Create" class="btn btn-danger btn-block">Register New Student</a>
+                    </td>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+</div>
+
+
+@section Scripts
+{
+    <script>
+        function ShowDeleteModal(ff) {
+            var url = "/Courses/Students/Delete?id=" + ff;
+
+            $("#ModalPlaceHolder").load(url,
+                function () {
+                    $("#ModalPlaceHolder").modal("show");
+                });
+        }
+    </script>
+}

@@ -1,0 +1,81 @@
+﻿@model CauseAddEditViewModel
+
+@section Styles
+{
+    <link href="~/css/summernote.css" rel="stylesheet" type="text/css"/>
+}
+
+<div class="profile-container">
+
+<div class="profile-section">
+
+    <form asp-area="Troubleshooting" asp-controller="Causes" asp-action="Edit" enctype="multipart/form-data" method="post">
+        <input type="hidden" asp-for="ReturnUrl" />
+        <div class="form-horizontal">
+            <div class="row">
+                <div class="col-md-12">
+                    <hr />
+                    <h3>Problem</h3>
+                    <h4><strong>@Model.Entity.Problem.Heading</strong></h4>
+                    <h5>@Model.Entity.Problem.Description.HtmlToPlainText()</h5>
+                    <hr />
+                    <div class="form-group">
+                        <label asp-for="Entity.Description" class="control-label"></label>
+                        <textarea asp-for="Entity.Description" class="form-control"></textarea>
+                        <span asp-validation-for="Entity.Description" class="text-danger"></span>
+                    </div>
+                    <input type="hidden" asp-for="Entity.ProblemId" />
+                    <input type="hidden" asp-for="Entity.CorrectiveActions" />
+                    <input type="hidden" asp-for="Entity.Id" />
+                </div>
+            </div>
+        </div>
+        <!-- ================== FORM BUTTON ================== -->
+        <div class="row" style="padding-bottom: 50px">
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10 text-right">
+                    <input name="finnish" type="submit" value="Save" class="btn btn-primary" formmethod="post" />
+                    <a href="@Model.ReturnUrl" class="btn btn-sm btn-danger" data-dismiss="modal">Close</a>
+                </div>
+            </div>
+        </div>
+        <!-- ================== END FORM BUTTON ================== -->
+
+    </form>
+
+</div>
+
+</div>
+
+@section Scripts
+{
+
+        <!-- Summer Note JS -->
+        <script src="~/js/summernote/summernote.js"></script>
+
+        <script type="text/javascript">
+            // Default
+            $(document).ready(function () {
+                var HomeIndex = function () {
+
+                    var $this = this;
+
+                    function initialize() {
+                        $('#Entity_Description').summernote({
+                            height: 250,
+                            codemirror: { // codemirror options
+                                theme: 'monokai'
+                            }
+                        });
+                    }
+
+                    $this.init = function () {
+                        initialize();
+                    }
+                };
+                var self = new HomeIndex();
+                self.init();
+            });
+
+        </script>
+    }

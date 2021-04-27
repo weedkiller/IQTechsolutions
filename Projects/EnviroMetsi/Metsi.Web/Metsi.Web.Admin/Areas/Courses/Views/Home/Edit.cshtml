@@ -1,0 +1,383 @@
+﻿@inject IApplicationConfiguration Configuration
+
+@using Iqt.Base.Interfaces
+@model CourseAddEditModel
+
+@{
+    ViewData["Title"] = "Edit Training Course";
+    ViewData["Description"] = "Updates a current training course to the collection";
+
+    string[] items = new string[] { "Download", "SortBy", "Refresh", "Selection", "View", "Details" };
+    string[] files = new string[] { "Download", "|", "Details" };
+    string[] folder = new string[] { "Open", "|", "Download", "|", "Details" };
+    string[] layout = new string[] { "SortBy", "View", "Refresh", "|", "Details", "|", "SelectAll" };
+}
+
+@section Styles
+{
+    <!-- Bootstrap File Upload CSS -->
+    <link rel="stylesheet" href="~/css/summernote.css" type="text/css" />
+}
+
+<form asp-area="Courses" asp-controller="Home" asp-action="Edit" enctype="multipart/form-data" method="post">
+    <div class="col-md-8" id="editionEditorSection">
+        <div class="panel panel-success" data-sortable-id="ui-widget-11">
+            <div class="panel-heading">
+                <div class="panel-heading-btn">
+                    <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-default" data-click="panel-expand"><i class="fa fa-expand"></i></a>
+                    <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-success" data-click="panel-reload"><i class="fa fa-repeat"></i></a>
+                    <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-warning" data-click="panel-collapse"><i class="fa fa-minus"></i></a>
+                </div>
+                <h4 class="panel-title">Course Details</h4>
+            </div>
+            <div class="panel-body">
+
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <input type="hidden" asp-for="Entity.Id" />
+                <input type="hidden" asp-for="Entity.DoNotCreateDocumentsFolder" />
+                <input type="hidden" asp-for="Entity.Categories" />
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label asp-for="Entity.Name" class="control-label"></label>
+                            <input asp-for="Entity.Name" class="form-control" />
+                            <span asp-validation-for="Entity.Name" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Entity.Description" class="control-label"></label>
+                            <textarea asp-for="Entity.Description" class="form-control" style="height: 150px"></textarea>
+                            <span asp-validation-for="Entity.Description" class="text-danger"></span>
+                        </div>
+                        <div class="form-group text-right">
+                            @if (Model.Entity.DoNotCreateDocumentsFolder)
+                            {
+                                <a asp-area="Courses" asp-controller="Home" asp-action="ReCreateDocumentsFolder" class="btn btn-info">Create Documents Folder</a>
+                            }
+                            <input name="main" type="submit" value="Create" class="btn btn-primary" />
+                            <input name="finnish" type="submit" value="Submit & Finnish" class="btn btn-primary" />
+                            <a asp-area="Courses" asp-controller="Home" asp-action="List" class="btn btn-danger">Cancel</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    @if (Model.Entity.DoNotCreateDocumentsFolder == false)
+    {
+        <div class="col-md-4">
+            <div class="panel panel-success" data-sortable-id="ui-widget-11">
+                <div class="panel-heading">
+                    <div class="panel-heading-btn">
+                        <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-default" data-click="panel-expand"><i class="fa fa-expand"></i></a>
+                        <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-success" data-click="panel-reload"><i class="fa fa-repeat"></i></a>
+                        <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-warning" data-click="panel-collapse"><i class="fa fa-minus"></i></a>
+                    </div>
+                    <h4 class="panel-title">Documents</h4>
+                </div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class=" control-section">
+                            <div class="sample-container">
+                                <ejs-filemanager id="file" allowMultiSelection="true" path="/@Model.Entity.FullPath" view="Details" allowDragAndDrop="true">
+                                    <e-filemanager-ajaxsettings url="/Courses/Home/FileOperations"
+                                                                downloadUrl="/Courses/Home/Download"
+                                                                uploadUrl="/Courses/Home/Upload"
+                                                                getImageUrl="/Courses/Home/GetImage">
+                                    </e-filemanager-ajaxsettings>
+                                    <e-filemanager-contextmenusettings visible="false" file="files" folder="folder" layout="layout"></e-filemanager-contextmenusettings>
+                                    <e-filemanager-navigationpanesettings visible="false" file="files" folder="folder" layout="layout"></e-filemanager-navigationpanesettings>
+                                    <e-filemanager-toolbarsettings visible="true" items="items"></e-filemanager-toolbarsettings>
+                                </ejs-filemanager>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel-footer" style="text-align: center">
+                    <a asp-area="Courses" asp-controller="Home" asp-action="ReCreateDocumentsFolder" asp-route-id="@Model.Entity.Id">Re-Create Documents Folder</a>
+                </div>
+            </div>
+        </div>
+    }
+
+
+
+    <div class="col-md-12">
+        <div class="row">
+
+            <ul class="nav nav-pills">
+                <li class="active"><a href="#nav-pills-tab-1" data-toggle="tab">Modules</a></li>
+                <li><a href="#nav-pills-tab-3" data-toggle="tab">Images</a></li>
+                <li><a href="#nav-pills-tab-4" data-toggle="tab">Students</a></li>
+                @*<li><a href="#nav-pills-tab-6" data-toggle="tab">Assessment</a></li>*@
+                <li><a href="#nav-pills-tab-7" data-toggle="tab">Settings</a></li>
+            </ul>
+            <div class="tab-content">
+                <div class="tab-pane fade active in" id="nav-pills-tab-1">
+                    <h4 class="m-t-10">Modules</h4>
+                    <table class="table">
+                        <tr>
+                            <th>
+                                Module Nr
+                            </th>
+                            <th>
+                                Name
+                            </th>
+                            <th>
+                                Description
+                            </th>
+                            <th></th>
+                        </tr>
+                        @if (Model.Entity.Modules.Any())
+                        {
+                            foreach (var item in Model.Entity.Modules.OrderBy(c => c.ModuleNr))
+                            {
+                                <tr id="row_@item.Id" class="row_@item.Id">
+                                    <td>
+                                        @item.ModuleNr
+                                    </td>
+                                    <td>
+                                        @item.Name
+                                    </td>
+                                    <td>
+                                        @item.Description.HtmlToPlainText().TruncateLongString(150)
+                                    </td>
+                                    <td style="width: 100px;">
+                                        <a asp-area="Courses" asp-controller="Modules" asp-action="Edit" asp-route-id="@item.Id" class="btn btn-primary btn-xs btn-circle"><i class="fa fa-edit"></i></a>
+                                        <a href="javascript:;" onclick="ShowDeleteBlogCategoryModal('@item.Id')" class="btn btn-danger btn-xs btn-circle"><i class="fa fa-trash"></i></a>
+                                    </td>
+                                </tr>
+                            }
+                        }
+                        else
+                        {
+                            <tr>
+                                <td colspan="3">
+                                    <h4>
+                                        There are currently no modules available.
+                                    </h4>
+                                </td>
+                            </tr>
+                        }
+
+                    </table>
+                    <a asp-area="Courses" asp-controller="Modules" asp-action="Create" asp-route-parentId="@Model.Entity.Id" class="btn btn-block btn-info">Add New Module</a>
+                </div>
+                <div class="tab-pane fade" id="nav-pills-tab-3">
+                    <h4 class="m-t-10">Images</h4>
+                    <hr />
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label asp-for="CoverUpload" class="control-label"></label>
+                                <div class="previewd" style="overflow: hidden">
+                                    <img id="preview" style="width: 100%" src="@Model.Entity.GetPath(Configuration.BaseImageUrl, ImageType.Cover,"/images/placeholders/MetsiPlaceholder-800x533.jpg")" alt="" />
+                                </div>
+                                <input asp-for="CoverUpload" class="form-control" onchange="loadFile(event)" />
+                                <input type="hidden" asp-for="CoverCropSettings.X" />
+                                <input type="hidden" asp-for="CoverCropSettings.Y" />
+                                <input type="hidden" asp-for="CoverCropSettings.Width" />
+                                <input type="hidden" asp-for="CoverCropSettings.Height" />
+                                <input type="hidden" asp-for="CoverCropSettings.Rotate" />
+                                <input type="hidden" asp-for="CoverCropSettings.ScaleX" />
+                                <input type="hidden" asp-for="CoverCropSettings.ScaleY" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="nav-pills-tab-4">
+                    <h4 class="m-t-10">Signed-Up Students</h4>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>
+                                    Student Nr
+                                </th>
+                                <th>
+                                    Name
+                                </th>
+                                <th>
+                                    Signed In Courses
+                                </th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @if (Model.Entity.Students.Any())
+                            {
+                                foreach (var item in Model.Entity.Students)
+                                {
+                                    <tr id="row_@item.StudentId" class="row_@item.StudentId">
+                                        <td>@item.StudentId</td>
+                                        <td>@item.Student.DisplayName</td>
+                                        <td>@Model.Entity.Students.Where(c => c.StudentId == item.StudentId).Count()</td>
+                                        <td>
+                                            <a asp-area="Courses" asp-controller="Students" asp-action="Edit" asp-route-id="@item.StudentId" class="btn btn-primary btn-xs btn-circle"><i class="fa fa-edit"></i></a>
+                                            <a href="javascript:;" onclick="ShowDeleteStudentCourseModal('@item.StudentId', '@item.CourseId')" class="btn btn-danger btn-xs btn-circle"><i class="fa fa-trash"></i></a>
+                                        </td>
+                                    </tr>
+                                }
+                            }
+                            else
+                            {
+                                <tr>
+                                    <td colspan="4"><h5>There are currently no students registered for this course</h5></td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                    <a asp-area="" asp-controller="" asp-action="" asp-route-id="" class="btn btn-block btn-info">Add New Student</a>
+                </div>
+                @*<div class="tab-pane fade" id="nav-pills-tab-6">
+                    <h4 class="m-t-10">Assessment</h4>
+                    <hr />
+                    <table class="table">
+
+
+                        @if (Model.Entity.AssessmentElements.Any())
+                        {
+                            foreach (var item in Model.Entity.AssessmentElements)
+                            {
+                                <tr id="row_@item.Id" class="row_@item.Id">
+                                    <td>
+                                        <partial name="_CourseAssesmentElement" model="item" />
+                                    </td>
+                                </tr>
+                            }
+                        }
+                        else
+                        {
+                            <tr>
+                                <td>
+                                    <h5>There are currently no assesment elements for this course</h5>
+                                </td>
+                            </tr>
+                        }
+                        <tr>
+                            <td>
+                                <a href="javascript:;" onclick="ShowCreateAssessmentElementModel('@Model.Entity.Id')" class="btn btn-primary btn-block">Add New Form Element</a>
+                            </td>
+                        </tr>
+
+                    </table>
+                </div>*@
+                <div class="tab-pane fade" id="nav-pills-tab-7">
+                    <h4 class="m-t-10">Settings</h4>
+                    <hr />
+                    <div class="form-group">
+                        <label asp-for="Entity.FileFolder" class="control-label"></label>
+                        <input asp-for="Entity.FileFolder" class="form-control" disabled="disabled" />
+                        <span asp-validation-for="Entity.FileFolder" class="text-danger"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</form>
+
+@section Scripts
+{
+    <script src="~/js/summernote/summernote.js"></script>
+
+    <script type="text/javascript">
+        // Default
+        $(document).ready(function() {
+            var HomeIndex = function() {
+
+                var $this = this;
+
+                function initialize() {
+                    $('#Entity_Description').summernote({
+                        height: 250,
+                        codemirror: { // codemirror options
+                            theme: 'monokai'
+                        }
+                    });
+                }
+
+                $this.init = function() {
+                    initialize();
+                }
+            };
+            var self = new HomeIndex();
+            self.init();
+
+            var editSection = document.getElementById("editionEditorSection");
+            if ('@Model.Entity.DoNotCreateDocumentsFolder' === 'True') {
+                editSection.classList.remove('col-md-8');
+                editSection.classList.add('col-md-12');
+            }
+        });
+
+
+
+    </script>
+    <script>
+        var loadFile = function (event) {
+            var output = document.getElementById('preview');
+            if (event.target.files.length !== 0) {
+
+                var oldstring = "";
+                if (output === null) {
+                    oldstring = "/images/placeholders/MetsiPlaceholder-800x533.jpg";
+                } else {
+                    oldstring = output.src;
+                }
+
+                var url = "/Home/CropImage?cropUrl=" + URL.createObjectURL(event.target.files[0]) + "&originalUrl=" + oldstring + "&width=" + 800 + "&height=" + 533
+                    + "&previewClass=previewd" + "&uploadProperty=CoverUpload" + "&xTag=CoverCropSettings_X" + "&yTag=CoverCropSettings_Y"
+                    + "&widthTag=CoverCropSettings_Width" + "&heightTag=CoverCropSettings_Height" + "&rotateTag=CoverCropSettings_Rotate" + "&scaleXTag=CoverCropSettings_ScaleX"
+                    + "&scaleYTag=CoverCropSettings_ScaleY";
+
+                $("#CropModal").load(url,
+                    function () {
+                        $("#CropModal").modal("show");
+                    });
+            }
+        };
+    </script>
+
+    <script>
+        function ShowDeleteBlogCategoryModal(numberId) {
+
+            var url = "/Courses/Home/Delete?id=" + numberId;
+
+            $("#ModalPlaceHolder").load(url,
+                function () {
+                    $("#ModalPlaceHolder").modal("show");
+                });
+        }
+
+        function ShowDeleteStudentCourseModal(studentId, courseId) {
+
+            var url = "/Courses/Home/DeleteStudentCourse?studentId=" + studentId + "courseId=" + courseId;
+
+            $("#ModalPlaceHolder").load(url,
+                function () {
+                    $("#ModalPlaceHolder").modal("show");
+                });
+        }
+
+        function ShowCreateAssessmentElementModel(ff) {
+
+            var url = "/Courses/Home/CreateAssessmentElement?parentId=" + ff;
+
+            $("#ModalPlaceHolder").load(url,
+                function () {
+                    $("#ModalPlaceHolder").modal("show");
+                });
+        }
+
+        function ShowDeleteAssessmentModal(studentId) {
+
+            var url = "/Courses/Home/DeleteAssessmentElement?id=" + studentId;
+
+            $("#ModalPlaceHolder").load(url,
+                function () {
+                    $("#ModalPlaceHolder").modal("show");
+                });
+        }
+
+    </script>
+}

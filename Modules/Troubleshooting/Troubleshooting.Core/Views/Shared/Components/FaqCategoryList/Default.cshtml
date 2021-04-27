@@ -1,0 +1,69 @@
+﻿@using Filing.Base.Enums
+@using Filing.Base.Extensions
+@using Iqt.Base.Extensions
+@model Grouping.Core.Models.CategoryIndexModel<Troubleshooting.Base.Entities.Question>
+
+<input type="hidden" asp-for="ParentId"/>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th style="width: 15%">
+                Cover Image
+            </th>
+            <th>
+                Name
+            </th>
+            <th>
+                Description
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model.All.Any())
+        {
+            foreach (var item in Model.All)
+            {
+                <tr id="row_@item.Id" class="row_@item.Id">
+                    <td>
+                        <a asp-area="Faqs" asp-controller="Home" asp-action="Edit" asp-route-id="@item.Id">
+                            <img id="preview" style="height: auto;" class="img-thumbnail" title="@item.Name" alt="@item.GetImage()?.FileName" src="@item.GetPath("http://admin.metsi.co.za", ImageType.Cover,"/images/placeholders/MetsiPlaceholder-800x533.jpg")">
+                        </a>
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Name)
+                    </td>
+                    <td>
+                        @item.Description.HtmlToPlainText().TruncateLongString(260)
+                    </td>
+                    <td style="width: 100px">
+                        <a  asp-area="Faqs" asp-controller="Categories" asp-action="Edit" asp-route-id="@item.Id" class="btn btn-success btn-icon btn-circle"><i class="fa fa-edit"></i></a>
+                        <a href="javascript:;" onclick="ShowDeleteModal('@item.Id')" class="btn btn-warning btn-icon btn-circle"><i class="fa fa-trash"></i></a>
+                    </td>
+                </tr>
+            }
+        }
+        else
+        {
+            <tr id="row_nodata" class="row_nodata">
+                <td colspan="4"><h4>No Categories currently available, please check back later <a asp-area="Faqs" asp-controller="Categories" asp-action="Create" asp-route-parentId="@Model.ParentId">or create a category</a>  now!</h4></td>
+            </tr>
+        }
+
+    </tbody>
+    <tfoot>
+        <tr>
+            <td colspan="4">
+                @if (string.IsNullOrEmpty(Model.ParentId))
+                {
+                    <a asp-area="Faqs" asp-controller="Categories" asp-action="Create" asp-route-parentId="@Model.ParentId" class="btn btn-danger btn-block">Create New Category</a>
+                }
+                else
+                {
+                    <input name="sub" type="submit" value="Create New Category" class="btn btn-primary btn-block" />
+                }
+            </td>
+        </tr>
+    </tfoot>
+</table>

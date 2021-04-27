@@ -1,0 +1,185 @@
+﻿@{
+    ViewData["Title"] = "Quotes";
+}
+<div id="main">
+
+    <div class="breadcrumb-section">
+        <div class="container">
+            <h1> Quotes </h1>
+            <div class="breadcrumb">
+                <a asp-area="" asp-controller="Home" asp-action="Index"> Home </a>
+                <a asp-area="" asp-controller="Home" asp-action="ShortCodes"> Shortcodes </a>
+                <span class="current"> Quotes </span>
+            </div>
+        </div>
+    </div>
+
+    <!--container starts-->
+    <div class="container">
+
+        <!--primary starts-->
+        <section id="primary" class="content-full-width">
+
+            <h2 class="dt-sc-hr-title">Blockquotes</h2>
+            <div class="column dt-sc-one-half first">
+                <blockquote>
+                    <q>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do ex fb aute in esse eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex eafb aute in cd commodo consequat.</q>
+                </blockquote>
+            </div>
+
+            <div class="column dt-sc-one-half">
+                <blockquote class="lightblue">
+                    <q>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do ex fb aute in esse eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex eafb aute in cd commodo consequat.</q>
+                </blockquote>
+            </div>
+
+            <div class="dt-sc-hr-invisible"></div>
+            <div class="column dt-sc-one-half first">
+                <blockquote class="palebrown">
+                    <q>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do ex fb aute in esse eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex eafb aute in cd commodo consequat.</q>
+                </blockquote>
+            </div>
+
+            <div class="column dt-sc-one-half">
+                <blockquote class="brown">
+                    <q>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do ex fb aute in esse eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex eafb aute in cd commodo consequat.</q>
+                </blockquote>
+            </div>
+
+            <div class="dt-sc-hr-invisible-large"></div>
+            <h2 class="dt-sc-hr-title">Pullquotes</h2>
+
+            <p>
+                Donec porta, justo tincidunt vulputate adipiscing, risus tortor consequat lacus, ullamcorper consequat erat sem condimentum eros. Nunc congue et sem eget tincidunt. Nunc dapibus, odio nec porttitor euismod, elit odio condimentum velit, non dictum ligula dolor in tellus. Sed et ligula vehicula, bibendum enim non, pulvinar purus. Nullam scelerisque quam sit amet augue euismod, in congue enim varius. Curabitur elementum quam vel leo eleifend pharetra.&nbsp;<span class="dt-sc-pullquote alignleft"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ac luctus ligula. Phasellus a ligula blandit </span> Morbi pellentesque, turpis sollicitudin dictum aliquet, risus justo condimentum tortor, sed placerat nisl turpis at massa. Morbi ac enim commodo, mattis odio sit amet, faucibus mauris. In et facilisis lorem, quis fringilla erat. Nunc erat dui, volutpat ut leo quis, egestas mattis ipsum. Praesent ac rhoncus tortor. Duis et dolor tincidunt, ornare tortor eget, molestie massa. Curabitur sit amet cursus ligula. Sed ut massa eget nibh venenatis aliquet. <span class="dt-sc-pullquote alignright"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ac luctus ligula. Phasellus a ligula blandit </span>&nbsp; Interdum et malesuada fames ac ante ipsum primis in faucibus. Sed in velit augue. Vestibulum et elit id erat ullamcorper hendrerit eget nec neque. Cras aliquam libero lacus, quis laoreet velit elementum nec. Nulla facilisi. Ut tempus bibendum enim eu porta. Aenean sem ligula, molestie vel faucibus non, congue ut dui. Fusce convallis, sapien id interdum gravida, libero felis tempor quam, sed tincidunt nunc mauris ut enim. Nullam dolor dolor, dictum sed pharetra et, volutpat sit amet purus. Donec lobortis sodales augue nec molestie. Nullam faucibus sapien in lectus lobortis, at condimentum massa lobortis. Etiam vitae pellentesque massa. Interdum et malesuada fames ac ante ipsum primis in faucibus. Donec porta, justo tincidunt vulputate adipiscing. Etiam vitae pellentesque massa. Interdum et malesuada fames ac ante ipsum primis in faucibus. Donec porta, justo tincidunt vulputate adipiscing. <span class="dt-sc-pullquote aligncenter"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ac luctus ligula. Phasellus a ligula blandit </span>
+            </p>
+
+            <div class="dt-sc-hr-invisible-large"></div>
+            <div class="mailchimp">
+                <p> <span class="fa fa-envelope-o"></span> Subscribe to Newsletter </p>
+                <form name="frmnewsletter" method="post" class="mailchimp-form" action="php/subscribe.php">
+                    <input type="email" placeholder="Email" name="mc_email" required />
+                    <input type="submit" value="Submit" class="nl-submit" name="btnsubscribe">
+                </form>
+                <div id="ajax_subscribe_msg"></div>
+            </div>
+
+        </section>
+        <!--primary ends-->
+
+    </div>
+    <!--container ends-->
+    <!--office_locations starts-->
+    <div class="office_locations">
+        <div class="container">
+            <p> Our Offices: </p>
+            <ul class="dt-sc-locations">
+                <li>
+                    <a href="#"> Princeton, NJ </a>
+                    <div class="dt-sc-text-overlay">
+                        <p class="address">
+                            <span class="fa fa-location-arrow"></span> 3rd Floor, Sedrik Street, <br>
+                            Princeton, PA 16103
+                        </p>
+                        <p> <span class="fa fa-envelope-o"></span> <a href="#"> abc@somemail.com </a> </p>
+                        <p> <span class="fa fa-phone"></span> Phone: 224-335-3654 </p>
+                        <p> <span class="fa fa-fax"></span> Fax: 112-223-2265 </p>
+                        <a href="#" class="dt-sc-button"> <span class="fa fa-map-marker"></span> View on Map </a>
+                    </div>
+                </li>
+                <li>
+                    <a href="#"> Flemington, NJ </a>
+                    <div class="dt-sc-text-overlay">
+                        <p class="address">
+                            <span class="fa fa-location-arrow"></span> 1rd Floor, Sedrik Street, <br>
+                            Flemington, PA 16103
+                        </p>
+                        <p> <span class="fa fa-envelope-o"></span> <a href="#"> abc@somemail.com </a> </p>
+                        <p> <span class="fa fa-phone"></span> Phone: 224-335-3654 </p>
+                        <p> <span class="fa fa-fax"></span> Fax: 112-223-2265 </p>
+                        <a href="#" class="dt-sc-button"> <span class="fa fa-map-marker"></span> View on Map </a>
+                    </div>
+                </li>
+                <li>
+                    <a href="#"> Red Bank, NJ </a>
+                    <div class="dt-sc-text-overlay">
+                        <p class="address">
+                            <span class="fa fa-location-arrow"></span> 3rd Floor, Aslan Street, <br>
+                            Red Bank, PA 16103
+                        </p>
+                        <p> <span class="fa fa-envelope-o"></span> <a href="#"> abc@somemail.com </a> </p>
+                        <p> <span class="fa fa-phone"></span> Phone: 224-335-3654 </p>
+                        <p> <span class="fa fa-fax"></span> Fax: 112-223-2265 </p>
+                        <a href="#" class="dt-sc-button"> <span class="fa fa-map-marker"></span> View on Map </a>
+                    </div>
+                </li>
+                <li>
+                    <a href="#"> Wilmington, DE </a>
+                    <div class="dt-sc-text-overlay">
+                        <p class="address">
+                            <span class="fa fa-location-arrow"></span> 3rd Floor, Sedrik Street, <br>
+                            Wilmington, PA 16103
+                        </p>
+                        <p> <span class="fa fa-envelope-o"></span> <a href="#"> abc@somemail.com </a> </p>
+                        <p> <span class="fa fa-phone"></span> Phone: 224-335-3654 </p>
+                        <p> <span class="fa fa-fax"></span> Fax: 112-223-2265 </p>
+                        <a href="#" class="dt-sc-button"> <span class="fa fa-map-marker"></span> View on Map </a>
+                    </div>
+                </li>
+                <li>
+                    <a href="#"> Georgetown, DE </a>
+                    <div class="dt-sc-text-overlay">
+                        <p class="address">
+                            <span class="fa fa-location-arrow"></span> 3rd Floor, Sedrik Street, <br>
+                            Georgetown, PA 16103
+                        </p>
+                        <p> <span class="fa fa-envelope-o"></span> <a href="#"> abc@somemail.com </a> </p>
+                        <p> <span class="fa fa-phone"></span> Phone: 224-335-3654 </p>
+                        <p> <span class="fa fa-fax"></span> Fax: 112-223-2265 </p>
+                        <a href="#" class="dt-sc-button"> <span class="fa fa-map-marker"></span> View on Map </a>
+                    </div>
+                </li>
+                <li>
+                    <a href="#"> New York, NY </a>
+                    <div class="dt-sc-text-overlay">
+                        <p class="address">
+                            <span class="fa fa-location-arrow"></span> 4th Floor, Moro Street, <br>
+                            New York, PA 16103
+                        </p>
+                        <p> <span class="fa fa-envelope-o"></span> <a href="#"> abc@somemail.com </a> </p>
+                        <p> <span class="fa fa-phone"></span> Phone: 224-335-3654 </p>
+                        <p> <span class="fa fa-fax"></span> Fax: 112-223-2265 </p>
+                        <a href="#" class="dt-sc-button"> <span class="fa fa-map-marker"></span> View on Map </a>
+                    </div>
+                </li>
+                <li>
+                    <a href="#"> Haddonfield, NJ </a>
+                    <div class="dt-sc-text-overlay">
+                        <p class="address">
+                            <span class="fa fa-location-arrow"></span> 3rd Floor, Sedrik Street, <br>
+                            Haddonfield, PA 16103
+                        </p>
+                        <p> <span class="fa fa-envelope-o"></span> <a href="#"> abc@somemail.com </a> </p>
+                        <p> <span class="fa fa-phone"></span> Phone: 224-335-3654 </p>
+                        <p> <span class="fa fa-fax"></span> Fax: 112-223-2265 </p>
+                        <a href="#" class="dt-sc-button"> <span class="fa fa-map-marker"></span> View on Map </a>
+                    </div>
+                </li>
+                <li>
+                    <a href="#"> Philadelphia, PA </a>
+                    <div class="dt-sc-text-overlay">
+                        <p class="address">
+                            <span class="fa fa-location-arrow"></span> 32nd Floor, Hagid Street, <br>
+                            Philadelphia, PA 16103
+                        </p>
+                        <p> <span class="fa fa-envelope-o"></span> <a href="#"> abc@somemail.com </a> </p>
+                        <p> <span class="fa fa-phone"></span> Phone: 224-335-3654 </p>
+                        <p> <span class="fa fa-fax"></span> Fax: 112-223-2265 </p>
+                        <a href="#" class="dt-sc-button"> <span class="fa fa-map-marker"></span> View on Map </a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!--office_locations ends-->
+
+</div>

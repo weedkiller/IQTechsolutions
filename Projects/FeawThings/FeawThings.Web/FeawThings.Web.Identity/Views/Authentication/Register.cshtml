@@ -1,0 +1,60 @@
+﻿@model RegisterViewModel
+
+@{
+    ViewData["Title"] = "Register";
+}
+
+<form class="login100-form validate-form">
+    <input type="hidden" asp-for="CustomerId" />
+
+    <span class="login100-form-title p-b-37">
+        <img src="~/images/logo/logoInEllipse.png" style="width: 70%; max-width: 250px" title="Feaw Things" alt="Feaw Things">
+        Register Now
+    </span>
+    <div class="wrap-input100 validate-input m-b-20" data-validate="Enter First Name">
+        <input class="input100" type="text" asp-for="Name" placeholder="First Name">
+        <span class="focus-input100"></span>
+
+        <input class="input100" type="text" asp-for="Surname" placeholder="Last Name">
+        <span class="focus-input100"></span>
+
+        <input class="input100" type="text" asp-for="Username" placeholder="Username">
+        <span class="focus-input100"></span>
+
+        <input class="input100" type="text" asp-for="Email" placeholder="Email Address">
+        <span class="focus-input100"></span>
+
+        <input class="input100" type="text" asp-for="Cell" placeholder="Phone Nr">
+        <span class="focus-input100"></span>
+    </div>
+
+    <div class="wrap-input100 validate-input m-b-25" data-validate="Enter password">
+        <input class="input100" type="password" asp-for="Password" placeholder="Enter Password">
+        <span class="focus-input100"></span>
+    
+        <input class="input100" type="password" asp-for="ConfirmPassword" placeholder="Confirm Password">
+        <span class="focus-input100"></span>
+    </div>
+
+    <div class="wrap-input100 validate-input m-b-25" data-validate="Enter password">
+        <div class="checkbox">
+            <label asp-for="RememberMe">
+                <input asp-for="SubscribeToNewsletter" />
+                Subscribe for Newsletter
+            </label>
+        </div>
+    </div>
+
+    <div class="container-login100-form-btn">
+        <button class="login100-form-btn">
+            Register
+        </button>
+    </div>
+
+    <div class="text-center">
+        <a href="#" class="txt2 hov1">
+            Back to Login
+        </a>
+    </div>
+
+</form>

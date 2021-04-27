@@ -1,0 +1,286 @@
+﻿@model BlogIndexPageModel
+
+@{
+    ViewData["Title"] = "Blog Entries";
+}
+
+@inject IOptionsMonitor<BlogSettings> OptionsAccessor
+
+<section id="content" class="light_section blog right-sidebar">
+    <div class="container">
+        <div class="row">
+            <!-- main content -->
+            <div class="col-sm-12 col-md-12 col-lg-12">
+
+                @if (Model.All.Any())
+                {
+                    foreach (var item in Model.AllPaged.Results)
+                    {
+                        if (item.GetImage() != null)
+                        {
+                            if (OptionsAccessor.CurrentValue.LayoutStyle == BlogLayoutStyles.Default)
+                            {
+                                if (item.Images.Any())
+                                {
+                                    <article class="post format-gallery">
+                                        <header class="entry-header">
+                                            <div class="entry-thumbnail">
+                                                <div id="carousel-generic" class="carousel slide">
+                                                    <!-- Indicators -->
+                                                    <ol class="carousel-indicators">
+                                                        <li data-target="#carousel-generic" data-slide-to="0" class="active"></li>
+                                                        @for (int i = 1; i < item.Images.Take(3).Count(); i++)
+                                                        {
+                                                            <li data-target="#carousel-generic" data-slide-to="@i"></li>
+                                                        }
+                                                    </ol>
+
+                                                    <!-- Wrapper for slides -->
+                                                    <div class="carousel-inner">
+                                                        <div class="item active">
+                                                            <img src="@item.GetImage().GetImagePathFromAnotherWebsite(FrameworkDI.Configuration["Company:WebUrl"],FrameworkDI.Configuration["Placeholders:CoverImage"])" alt="@item.Title">
+                                                        </div>
+                                                        @foreach (var img in item.Images.Take(3))
+                                                        {
+                                                            <div class="item">
+                                                                <img src="@img" alt="image">
+                                                            </div>
+                                                        }
+                                                    </div>
+
+                                                    <!-- Controls -->
+                                                    <a class="left carousel-control" href="#carousel-generic" data-slide="prev">
+                                                        <span class="icon-prev"></span>
+                                                    </a>
+                                                    <a class="right carousel-control" href="#carousel-generic" data-slide="next">
+                                                        <span class="icon-next"></span>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <h2 class="entry-title">
+                                                <a asp-area="Blog" asp-controller="Home" asp-action="Details" asp-route-id="@item.Id" rel="bookmark">@item.Title</a>
+                                            </h2>
+                                            <div class="entry-meta">
+                                                By
+                                                @*<span class="author">
+                                                    <a rel="author" href="#" asp-route-id="@item.ApplicationUserId">@item.ApplicationUser.DisplayName</a>
+                                                </span>*@
+                                                <span class="date">
+                                                    Posted
+                                                    <time datetime="2014-06-08T15:05:23+00:00" class="entry-date">@item.Created.ToLongDateString()</time>
+                                                </span>
+                                                <span class="comments-link">
+                                                    <a asp-area="Blog" asp-controller="Home" asp-action="Details" asp-route-id="@item.Id">@*@item.Comments.Count() comments*@</a>
+                                                </span>
+                                            </div>
+                                            <!-- .entry-meta -->
+                                        </header>
+                                        <!-- .entry-header -->
+
+                                        <div class="entry-content">
+                                            <p>@item.Description.HtmlToPlainText().TruncateLongString(250)</p>
+
+                                        </div>
+                                        <!-- .entry-content -->
+                                        <div class="entry-tags">
+                                            @*<span class="tags-links">
+                                                @foreach (var tag in item.Tags)
+                                                {
+                                                    <a style="padding-right:5px" rel="tag" href="#">@tag.Name </a>
+                                                }
+                                            </span>*@
+                                            <span class="readmore pull-right">
+                                                <a asp-area="Blog" asp-controller="Home" asp-action="Details" asp-route-id="@item.Id">Read More...</a>
+                                            </span>
+                                        </div>
+                                        <!-- .entry-tags -->
+
+                                    </article>
+                                }
+                                else
+                                {
+                                    <article class="post format-standard">
+                                        <header class="entry-header">
+                                            <div class="entry-thumbnail">
+                                                <img width="100%" alt="@item.Title" src="@item.GetImage().GetImagePathFromAnotherWebsite(FrameworkDI.Configuration["Company:WebUrl"],FrameworkDI.Configuration["Placeholders:CoverImage"])">
+                                            </div>
+                                            <h2 class="entry-title">
+                                                <a asp-area="Blog" asp-controller="Home" asp-action="Details" asp-route-id="@item.Id" rel="bookmark">@item.Title</a>
+                                            </h2>
+                                            <div class="entry-meta">
+                                                @*By
+                                                <span class="author">
+                                                    <a rel="author" href="#">@item.ApplicationUser.DisplayName</a>
+                                                </span>*@
+                                                <span class="date">
+                                                    Posted
+                                                    <time datetime="2014-06-08T15:05:23+00:00" class="entry-date">@item.Created.ToLongDateString()</time>
+                                                </span>
+                                                <span class="comments-link">
+                                                    <a asp-area="Blog" asp-controller="Home" asp-action="Details" asp-route-id="@item.Id">@*@item.Comments.Count() comments*@</a>
+                                                </span>
+                                            </div>
+                                            <!-- .entry-meta -->
+
+                                        </header>
+                                        <!-- .entry-header -->
+
+
+
+                                        <div class="entry-content">
+                                            <p>@item.Description.HtmlToPlainText().TruncateLongString(250)</p>
+
+                                        </div>
+                                        <!-- .entry-content -->
+                                        <div class="entry-tags">
+                                            @*<span class="tags-links">
+                                                @foreach (var tag in item.Tags)
+                                                {
+                                                    <a style="padding-right:5px" rel="tag" href="#">@tag.Name </a>
+                                                }
+                                            </span>*@
+                                            <span class="readmore pull-right">
+                                                <a asp-area="Blog" asp-controller="Home" asp-action="Details" asp-route-id="@item.Id">Read More...</a>
+                                            </span>
+                                        </div>
+                                        <!-- .entry-tags -->
+                                    </article>
+                                }
+
+                            }
+                            else
+                            {
+                                <article class="post format-small-image">
+                                    <div class="row">
+                                        <div class="entry-thumbnail col-sm-5">
+                                            <img alt="@item.Title" src="@item.GetImage().GetImagePathFromAnotherWebsite(FrameworkDI.Configuration["Company:WebUrl"],FrameworkDI.Configuration["Placeholders:CoverImage"])">
+                                        </div>
+                                        <div class="col-sm-7">
+                                            <header class="entry-header">
+                                                <h2 class="entry-title">
+                                                    <a asp-area="Blog" asp-controller="Home" asp-action="Details" asp-route-id="@item.Id" rel="bookmark">@item.Title</a>
+                                                </h2>
+                                                <div class="entry-meta">
+                                                    @*By
+                                                    <span class="author">
+                                                        <a rel="author" href="#">@item.ApplicationUser.DisplayName</a>
+                                                    </span>*@
+                                                    <span class="date">
+                                                        Posted
+                                                        <time datetime="2014-06-08T15:05:23+00:00" class="entry-date">@item.Created.ToLongDateString()</time>
+                                                    </span>
+                                                    <span class="comments-link">
+                                                        <a asp-area="Blog" asp-controller="Home" asp-action="Details" asp-route-id="@item.Id">@*@item.Comments.Count() comments*@</a>
+                                                    </span>
+                                                </div>
+                                                <!-- .entry-meta -->
+                                            </header>
+                                            <!-- .entry-header -->
+
+                                            <div class="entry-content">
+                                                <p>@item.Description.HtmlToPlainText().TruncateLongString(250)</p>
+                                            </div>
+                                            <!-- .entry-content -->
+
+                                            <div class="entry-tags">
+                                                @*<span class="tags-links">
+                                                    @foreach (var tag in item.Tags)
+                                                    {
+                                                        <a style="padding-right:5px" rel="tag" href="#">@tag.Name </a>
+                                                    }
+                                                </span>*@
+                                                <span class="readmore pull-right">
+                                                    <a asp-area="Blog" asp-controller="Home" asp-action="Details" asp-route-id="@item.Id">Read More...</a>
+                                                </span>
+                                            </div>
+                                            <!-- .entry-tags -->
+                                        </div>
+                                    </div>
+
+                                </article>
+                            }
+                        }
+                        else
+                        {
+                            <article class="post format-small-image">
+                                <div class="row">
+                                    <div class="col-sm-7">
+                                        <header class="entry-header">
+                                            <h2 class="entry-title">
+                                                <a asp-area="Blog" asp-controller="Home" asp-action="Details" asp-route-id="@item.Id" rel="bookmark">@item.Title</a>
+                                            </h2>
+                                            <div class="entry-meta">
+                                                @*By
+                                                <span class="author">
+                                                    <a rel="author" href="#">@item.ApplicationUser.DisplayName</a>
+                                                </span>*@
+                                                <span class="date">
+                                                    Posted
+                                                    <time datetime="2014-06-08T15:05:23+00:00" class="entry-date">@item.Created.ToLongDateString()</time>
+                                                </span>
+                                                <span class="comments-link">
+                                                    <a asp-area="Blog" asp-controller="Home" asp-action="Details" asp-route-id="@item.Id">@*@item.Comments.Count() comments*@</a>
+                                                </span>
+                                            </div>
+                                            <!-- .entry-meta -->
+                                        </header>
+                                        <!-- .entry-header -->
+
+                                        <div class="entry-content">
+                                            <p>@item.Description.HtmlToPlainText().TruncateLongString(250)</p>
+                                        </div>
+                                        <!-- .entry-content -->
+
+                                        @*<div class="entry-tags">
+                                            @foreach (var tag in item.Tags)
+                                            {
+                                                <a style="padding-right:5px" rel="tag" href="#">@tag.Name </a>
+                                            }
+                                        </div>*@
+                                        <span class="readmore pull-right">
+                                            <a asp-area="Blog" asp-controller="Home" asp-action="Details" asp-route-id="@item.Id">Read More...</a>
+                                        </span>
+                                        <!-- .entry-tags -->
+                                    </div>
+                                </div>
+
+                            </article>
+                        }
+                    }
+                }
+                else
+                {
+                    <h3>Unfortunately there are no current blog entries, please check back later</h3>
+                }
+            </div> <!--eof col-sm-9 (main content)-->
+
+        </div>
+    </div>
+</section>
+
+@if (Model.AllPaged.PageCount > 1)
+{
+    <div class="pagination-nav text-center">
+        <ul class="pagination">
+            @if (Model.CurrentPage != 1)
+            {
+                <li><a @Url.Action("List", new { page = 1 })>«</a></li>
+            }
+            @for (int p = 1; p <= Model.AllPaged.PageCount; p++)
+            {
+                if (p == Model.AllPaged.CurrentPage)
+                {
+                    <li class="active"><a asp-area="Services" asp-controller="Home" asp-action="List" asp-route-pagel="@p">@p</a></li>
+                }
+                else
+                {
+                    <li><a asp-area="Services" asp-controller="Home" asp-action="List" asp-route-pagel="@p">@p</a></li>
+                }
+            }
+            @if (Model.CurrentPage != Model.AllPaged.PageCount)
+            {
+                <li><a @Url.Action("List", new { page = Model.AllPaged.PageCount })>»</a></li>
+            }
+        </ul>
+    </div>
+}

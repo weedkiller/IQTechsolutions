@@ -1,0 +1,45 @@
+﻿@using Filing.Base.Extensions
+@using Iqt.Base.Extensions
+@using Iqt.Base.Interfaces
+@model Iqt.Base.Models.PagedResult<Services.Base.ApiModels.ServiceModel>
+
+@inject IApplicationConfiguration Configuration
+
+<section id="services" class="light_section parallax">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 text-center to_animate">
+                <h2 class="section_header">
+                    <span class="highlight"><i class="fa fa-exclamation-triangle"></i></span>
+                    How can we assist you
+                </h2>
+                <p>How can we assist you in protecting our world's most precious resource?</p>
+            </div>
+        </div>
+
+        <div class="row">
+
+            @foreach (var item in Model.Results)
+            {
+                <div class="col-sm-6">
+
+                    <div class="side_teaser media with_border">
+                        <div style="width: 25%;" class="pull-left">
+                            <img src="@item.ImageUrl" alt="@item.Name" />
+                        </div>
+                        <div class="media-body">
+                            <h3 class="media-heading">@item.Name.TruncateLongString(20)</h3>
+                            <p style="min-height: 80px">
+                                @item.Description?.TruncateLongString(345)
+                            </p>
+                            <div class="text-right">
+                                <a asp-area="Services" asp-controller="Home" asp-action="Details" asp-route-id="@item.Id">Read More ...</a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            }
+        </div>
+    </div>
+</section>

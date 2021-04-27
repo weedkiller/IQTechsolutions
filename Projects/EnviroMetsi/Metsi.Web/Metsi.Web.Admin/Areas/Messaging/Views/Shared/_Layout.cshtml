@@ -1,0 +1,37 @@
+﻿@{
+    Layout = "Layouts/_Layout";
+}
+
+@section Styles
+{
+    <!--page injected css-->
+    @RenderSection("Styles", required: false)
+}
+
+<div id="content" class="content">
+    
+    <partial name="_Breadcrumbs"/>
+
+    <div class="profile-container">
+        <div class="col-lg-3">
+            @await Component.InvokeAsync("ActiveChats")
+        </div>
+        <div class="col-lg-9">
+
+            @RenderBody()
+
+        </div>
+    </div>
+
+</div>
+
+@section Scripts
+{
+    <script src="~/js/apps.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            App.init();
+        });
+    </script>
+    @RenderSection("Scripts", required: false)
+}

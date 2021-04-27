@@ -1,0 +1,140 @@
+﻿@model Answer
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<link href="~/css/summernote.css" rel="stylesheet" type="text/css" />
+
+<div class="modal-dialog">
+    <div class="modal-content">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+            <h4 class="modal-title">Create New Answer</h4>
+        </div>
+        <div class="modal-body" id="addContactNumberModelBodyDiv">
+            <form id="CreateAnswerForm">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div>
+                    <div class="row">
+                        <div class="form-group">
+                            <label asp-for="AnswerString" class="control-label"></label>
+                            <textarea asp-for="AnswerString" class="form-control"></textarea>
+                            <span asp-validation-for="AnswerString" class="text-danger"></span>
+                        </div>
+                        <input type="hidden" asp-for="QuestionId" />
+                        <input type="hidden" asp-for="Id" />
+
+                    </div>
+                </div>
+                <!-- ================== FORM BUTTON ================== -->
+                <div class="row" style="padding-bottom: 50px">
+                    <div class="form-group">
+                        <div class="col-md-offset-2 col-md-10 text-right">
+                            <a href="javascript:;" onclick="ConfirmCreateAnswer()" class="btn btn-sm btn-primary">Save Changes</a>
+                            <a href="javascript:;" class="btn btn-sm btn-danger" data-dismiss="modal">Close</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- ================== END FORM BUTTON ================== -->
+
+            </form>
+            <div style="text-align: center; display: none" id="EmailAddressAddEditloaderDiv">
+                <img src="~/images/loader2.gif" />
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Summer Note JS -->
+<script src="~/js/summernote/summernote.js"></script>
+
+<script type="text/javascript">
+    // Default
+    $(document).ready(function () {
+        var HomeIndex = function () {
+
+            var $this = this;
+            function initialize() {
+                $('#AnswerString').summernote({
+                    height: 250,
+                    codemirror: { // codemirror options
+                        theme: 'monokai'
+                    }
+                });
+            }
+
+            $this.init = function () {
+                initialize();
+            }
+        };
+        var self = new HomeIndex();
+        self.init();
+    });
+
+    function ConfirmCreateAnswer() {
+
+        var code2 = $('#AnswerString').code();
+        var myformdata2 = $("#CreateAnswerForm").serializeArray();
+        myformdata2.find(item => item.name === 'AnswerString').value = code2;
+        
+        var url = "/Faqs/Answers/Create";
+
+        $.ajax({
+            type: "POST",
+            data: $.param(myformdata2),
+            url: url,
+            success: function (data) {
+
+                $("#ModalPlaceHolder").modal("hide");
+
+                var tableBody = document.getElementById("AnswersList");
+
+                var tableRow = document.createElement("tr");
+                tableRow.id = "row_" + data.id;
+                tableRow.classList.add("row_" + data.id);
+
+                var tableAnswerColumn = document.createElement("td");
+                tableAnswerColumn.id = "answer_" + data.id;
+                tableAnswerColumn.innerHTML = data.answer;
+
+                var tableRowButtonColumn = document.createElement("td");
+
+                var tableRowEditButton = document.createElement("a");
+                tableRowEditButton.href = "javascript:;";
+                tableRowEditButton.onclick = function () { ShowEditAnswerModal(data.id) };
+                tableRowEditButton.classList.add("btn", "btn-success", "btn-icon", "btn-circle");
+                var tableRowEditButtonIcon = document.createElement("i");
+                tableRowEditButtonIcon.classList.add("fa", "fa-edit");
+                tableRowEditButton.append(tableRowEditButtonIcon);
+
+                var tableRowDeleteButton = document.createElement("a");
+                tableRowDeleteButton.href = "javascript:;";
+                tableRowDeleteButton.onclick = function () { ShowDeleteAnswerModal(data.id) };
+                tableRowDeleteButton.classList.add("btn", "btn-warning", "btn-icon", "btn-circle");
+                var tableRowDeleteButtonIcon = document.createElement("i");
+                tableRowDeleteButtonIcon.classList.add("fa", "fa-trash");
+                tableRowDeleteButton.append(tableRowDeleteButtonIcon);
+
+
+                tableRowButtonColumn.append(tableRowEditButton);
+                tableRowButtonColumn.append(tableRowDeleteButton);
+
+                tableRow.append(tableAnswerColumn);
+                tableRow.append(tableRowButtonColumn);
+
+                tableBody.append(tableRow);
+                $("#row_no_data").remove();
+            },
+            error: function (xhr, textStatus, err) {
+                alert("An error with the following detials occured : "
+                    + "\r\n == readyState: " + xhr.readyState
+                    + "\r\n == responseText: " + xhr.responseText
+                    + "\r\n == status: " + xhr.status
+                    + "\r\n == text status: " + textStatus
+                    + "\r\n == error: " + err);
+            }
+        });
+    }
+
+</script>

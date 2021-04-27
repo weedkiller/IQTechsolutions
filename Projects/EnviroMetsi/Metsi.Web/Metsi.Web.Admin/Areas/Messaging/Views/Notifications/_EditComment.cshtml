@@ -1,0 +1,43 @@
+﻿@model Feedback.Base.Entities.NewsFeed
+<!-- Modal -->
+
+<div class="modal-dialog">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h4 class="modal-title">Create New Comment</h4>
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        </div>
+        <div class="modal-body" style="margin: 25px;">
+            <form asp-area="Messaging" asp-controller="Notifications" asp-action="EditComment" id="EditCommentForm">
+                <div class="form-horizontal">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <input type="hidden" asp-for="ParentFeedId" />
+                            <input type="hidden" asp-for="UserId" />
+                            <input type="hidden" asp-for="Subject" />
+                            <input type="hidden" asp-for="ImageUrl" />
+                            <div class="form-group">
+                                <label class="control-label">Comment</label>
+                                <textarea asp-for="Content" class="form-control" style="height:100px" required></textarea>
+                                <span asp-validation-for="Content" class="text-danger"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- ================== FORM BUTTON ================== -->
+                <div class="row" style="padding-bottom: 50px">
+                    <div class="form-group">
+                        <div class="text-right">
+                            <button type="submit" class="btn btn-sm btn-primary">Save Changes</button>
+                            <a href="javascript:;" class="btn btn-sm btn-danger" data-dismiss="modal">Close</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- ================== END FORM BUTTON ================== -->
+
+            </form>
+
+        </div>
+    </div>
+</div>
+

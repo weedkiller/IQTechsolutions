@@ -1,0 +1,168 @@
+﻿@model BlogEntryDetailsPageModel
+
+@inject SignInManager<ApplicationUser> SignInManager
+
+@{
+    ViewData["Title"] = $"{Model.Entity.Title} Details";
+}
+
+<section>
+    <div class="container mt-30 mb-30 pt-30 pb-30">
+        <div class="row">
+            <div class="col-sm-12 col-md-3">
+                <div class="sidebar sidebar-left mt-sm-30">
+                    <div class="widget">
+                        <h5 class="widget-title line-bottom">Search box</h5>
+                        <div class="search-form">
+                            <form>
+                                <div class="input-group">
+                                    <input type="text" placeholder="Click to Search" class="form-control search-input">
+                                    <span class="input-group-btn">
+                                        <button type="submit" class="btn search-button"><i class="fa fa-search"></i></button>
+                                    </span>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    @if (Model.BlogCategories.Any())
+                    {
+                        <div class="widget">
+                            <h5 class="widget-title line-bottom">Categories</h5>
+                            <div class="categories">
+                                <ul class="list list-border angle-double-right">
+                                    @foreach (var item in Model.BlogCategories)
+                                    {
+                                        <li><a href="#">Creative<span>(19)</span></a></li>
+                                    }
+
+                                    <li><a href="#">Portfolio<span>(21)</span></a></li>
+                                    <li><a href="#">Fitness<span>(15)</span></a></li>
+                                    <li><a href="#">Gym<span>(35)</span></a></li>
+                                    <li><a href="#">Personal<span>(16)</span></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    }
+                    @if (Model.FeaturedBlogEntries.Any())
+                    {
+                        <div class="widget">
+                            <h5 class="widget-title line-bottom">Latest News</h5>
+                            <div class="latest-posts">
+                                @foreach (var item in Model.FeaturedBlogEntries.Take(3))
+                                {
+                                    <article class="post media-post clearfix pb-0 mb-10">
+                                        <a class="post-thumb" asp-area="Blog" asp-controller="Home" asp-action="Details" asp-route-id="@item.Id">
+                                            <img src="@item.GetImage().GetImagePathFromAnotherWebsite(FrameworkDI.Configuration["Company:WebUrl"],FrameworkDI.Configuration["Placeholders:CoverImage"])" alt="">
+                                        </a>
+                                        <div class="post-right">
+                                            <h5 class="post-title mt-0"><a asp-area="Blog" asp-controller="Home" asp-action="Details" asp-route-id="@item.Id">@item.Title</a></h5>
+                                            <p>@item.Title.HtmlToPlainText().TruncateLongString(40)</p>
+                                        </div>
+                                    </article>
+                                }
+
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+            <div class="col-md-9 blog-pull-right">
+                <div class="blog-posts single-post">
+                    <article class="post clearfix mb-0">
+                        <div class="entry-header">
+                            <div class="post-thumb thumb"> <img src="@Model.Entity.GetImage().GetImagePathFromAnotherWebsite(FrameworkDI.Configuration["Company:WebUrl"],FrameworkDI.Configuration["Placeholders:CoverImage"])" alt="@Model.Entity.Title" class="img-responsive img-fullwidth"> </div>
+                        </div>
+                        <div class="entry-title pt-10 pl-15">
+                            <h4><a class="text-uppercase" asp-area="Blog" asp-controller="Home" asp-action="Details" asp-route-id="@Model.Entity.Id">@Model.Entity.Title </a></h4>
+                        </div>
+                        <div class="entry-meta pl-15">
+                            <ul class="list-inline">
+                                <li>Posted: <span class="text-theme-colored"> @Model.Entity.Created.ToLongDateString()</span></li>
+                                <li>By: <span class="text-theme-colored">@Model.Entity.CreatedBy</span></li>
+                                <li><i class="fa fa-comments-o ml-5 mr-5"></i> @*@Model.Entity.Comments.Count() comments*@</li>
+                            </ul>
+                        </div>
+                        <div class="entry-content mt-10">
+                            @Html.Raw(Model.Entity.Description)
+                        </div>
+                    </article>
+                    @*<div class="tagline p-0 pt-20 mt-5">
+                        <div class="row">
+                            <div class="col-md-8">
+                                <div class="tags">
+                                    <p class="mb-0">
+                                        <i class="fa fa-tags text-theme-colored"></i> <span>Tags:</span>
+                                        @foreach (var item in Model.Entity.Tags)
+                                        {
+                                            @item.Name <span> - </span>
+                                        }
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>*@
+                    @*<div class="author-details media-post">
+                        <a href="#" class="post-thumb mb-0 pull-left flip pr-20">
+                            <img style="height: 120px; width: 120px;" class="img-thumbnail" alt="@Model.Entity.ApplicationUser.DisplayName" src="@Model.Entity.ApplicationUser.CoverImage.GetImage(UserImageSettings.ThumbnailImage)">
+                        </a>
+                        <div class="post-right">
+                            <h5 class="post-title mt-0 mb-0">
+                                <a href="#" class="font-18">@Model.Entity.ApplicationUser.DisplayName</a>
+                            </h5>
+                            <p>
+                                @Model.Entity.ApplicationUser.PersonalDetails.PersonalDescription
+                            </p>
+                            <ul class="styled-icons square-sm m-0">
+                                <li><a href="@Model.Entity.ApplicationUser.SocialMedia.Facebook"><i class="fa fa-facebook"></i></a></li>
+                                <li><a href="@Model.Entity.ApplicationUser.SocialMedia.Twitter"><i class="fa fa-twitter"></i></a></li>
+                                <li><a href="@Model.Entity.ApplicationUser.SocialMedia.Google"><i class="fa fa-google-plus"></i></a></li>
+                            </ul>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>*@
+                    @*@if (Model.Entity.Comments.Any())
+                    {*@
+
+                        @*<div class="comments-area">
+                            <h5 class="comments-title">Comments</h5>
+                            <ul class="comment-list">
+                                @foreach (var item in Model.Entity.Comments)
+                                {
+                                    <li>
+                                        <div class="media comment-author">
+                                            <a class="media-left pull-left flip" href="#"><img style="height: 85px; width: 85px;" class="img-thumbnail" src="@item.ApplicationUser.CoverImage.GetImage(UserImageSettings.ThumbnailImage)" alt="@item.ApplicationUser.DisplayName"></a>
+                                            <div class="media-body">
+                                                <h5 class="media-heading comment-heading">@item.ApplicationUser.DisplayName says:</h5>
+                                                <div class="comment-date">@item.Created.ToShortDateString()</div>
+                                                <p>@Html.Raw(item.Description)</p>
+                                                <a class="replay-icon pull-right flip text-theme-colored" asp-area="Comments" asp-controller="Home" asp-action="Create" asp-route-parentId="@item.Id"> <i class="fa fa-reply text-theme-colored"></i> Replay</a>
+                                                <div class="clearfix"></div>
+                                                @if (item.Comments.Any())
+                                                {
+                                                    foreach (var comment in item.Comments)
+                                                    {
+                                                        <div class="media comment-author nested-comment">
+                                                            <a href="#" class="media-left pull-left flip pt-20"><img style="height: 85px; width: 85px;" alt="@comment.ApplicationUser.DisplayName" src="@comment.ApplicationUser.CoverImage.GetImage(ImageSettings.StandardImage)" class="img-thumbnail"></a>
+                                                            <div class="media-body p-20 bg-lighter">
+                                                                <h5 class="media-heading comment-heading">@comment.ApplicationUser.DisplayName says:</h5>
+                                                                <div class="comment-date">@comment.Created.ToShortDateString()</div>
+                                                                <p>@Html.Raw(item.Description)</p>
+                                                                <a class="replay-icon pull-right flip text-theme-colored" asp-area="Comments" asp-controller="Home" asp-action="Create" asp-route-parentId="@comment.Id"> <i class="fa fa-reply text-theme-colored"></i> Replay</a>
+                                                            </div>
+                                                        </div>
+                                                    }
+                                                }
+                                            </div>
+                                        </div>
+                                    </li>
+                                }
+                            </ul>
+                        </div>*@
+                    @*}*@
+                    <hr/>
+                        @*<partial name="_AddComment" model="@Model.CommentModel" />*@
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

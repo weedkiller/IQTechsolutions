@@ -1,0 +1,14 @@
+﻿<!-- begin #header -->
+<div id="header" class="header navbar navbar-default navbar-fixed-top">
+    <!-- begin container-fluid -->
+    <div class="container-fluid">
+        <!-- begin mobile sidebar expand / collapse button -->
+        <div class="navbar-header">
+            <a href="/" class="navbar-brand"><img alt="Metsi Logo" src="/img/logo/MetsiLogoHorizontal.png" style="width: 100%"/></a>
+        </div>
+    </div>
+    <!-- end container-fluid -->
+</div>
+<!-- end #header -->
+
+<form style="display: inline-block;" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })" method="post" id="logoutForm"></form>

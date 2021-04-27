@@ -1,0 +1,45 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31005.135
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Source", "Source", "{4ECD2DAB-2C04-4528-9EC1-0BF7A6C7B0EE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Base", "Base", "{CD41E8C0-0063-4AD7-8B76-5CF8CD07DE9B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DataStores", "DataStores", "{584E47F0-0D30-426C-8A1E-BB7C3F1E938B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Iqt", "Iqt", "{AFE1E458-4A23-4C3F-B558-3DF89CCFABA7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Modules", "Modules", "{1F1D8272-11DD-43BF-879D-1A0FF73E784E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DuPlessisLegal.Web.Site", "DuPlessisLegal.Web.Site\DuPlessisLegal.Web.Site.csproj", "{1B96EF27-1CFF-49F7-908B-0E0479476DAB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DuPlessisLegal.Base", "DuPlessisLegal.Base\DuPlessisLegal.Base.csproj", "{5DD93CB7-469E-42CB-B376-784C93255FFC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1B96EF27-1CFF-49F7-908B-0E0479476DAB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1B96EF27-1CFF-49F7-908B-0E0479476DAB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1B96EF27-1CFF-49F7-908B-0E0479476DAB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1B96EF27-1CFF-49F7-908B-0E0479476DAB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5DD93CB7-469E-42CB-B376-784C93255FFC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5DD93CB7-469E-42CB-B376-784C93255FFC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5DD93CB7-469E-42CB-B376-784C93255FFC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5DD93CB7-469E-42CB-B376-784C93255FFC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{1B96EF27-1CFF-49F7-908B-0E0479476DAB} = {4ECD2DAB-2C04-4528-9EC1-0BF7A6C7B0EE}
+		{5DD93CB7-469E-42CB-B376-784C93255FFC} = {4ECD2DAB-2C04-4528-9EC1-0BF7A6C7B0EE}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3E7E3D53-FA46-4DB8-A30C-BBD663FE719F}
+	EndGlobalSection
+EndGlobal

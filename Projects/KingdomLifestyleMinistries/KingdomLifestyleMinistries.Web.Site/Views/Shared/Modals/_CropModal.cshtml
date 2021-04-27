@@ -1,0 +1,83 @@
+﻿@model CropModel
+<!-- Modal -->
+
+<link href="~/js/cropper-master/dist/cropper.css" rel="stylesheet" />
+<script type="text/javascript" src="~/js/cropper-master/dist/cropper.js"></script>
+
+<style>
+    img {
+        display: block;
+
+        /* This rule is very important, please don't ignore this */
+        max-width: 100%;
+    }
+</style>
+
+<div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h4 class="modal-title">Please confirm this action!</h4>
+            <button type="button" class="close" data-dismiss="modal">
+                <span aria-hidden="true">×</span>
+                <span class="sr-only">close</span>
+            </button>
+        </div>
+        <div class="modal-body">
+            <div class="row">
+                
+                <div class="col-md-12">
+                    
+                    <div>
+                        <img id="image" alt="Image To Crop" style="width: 100%" src="@Model.CropImageUrl">
+                    </div>
+                    <div style="text-align: center">
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="modal-footer">
+            <a href="javascript:;" class="btn btn-sm btn-white" onclick="ConfirmDelete()">Cancel</a>
+            <a href="javascript:;" data-dismiss="modal" class="btn btn-sm btn-primary" >Accept</a>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    $(function () {
+        var $image = $('#image');
+        $image.cropper({
+            viewMode: 3,
+            aspectRatio: parseInt(@Model.MinWidth)/parseInt(@Model.MinHeight),
+            dragMode: 'move',
+            responsive: true,
+            center: true,
+            preview:'.@Model.PreviewClass',
+            background: true,
+            minContainerWidth: @Model.MinWidth,
+            minContainerHeight:@Model.MinHeight,
+            crop: function (event) {
+
+                $('#@Model.XTag').val(Math.round(event.detail.x));
+                $('#@Model.YTag').val(Math.round(event.detail.y));
+                $('#@Model.WidthTag').val(Math.round(event.detail.width));
+                $('#@Model.HeightTag').val(Math.round(event.detail.height));
+                $('#@Model.RotateTag').val(Math.round(event.detail.rotate));
+                $('#@Model.ScaleXTag').val(Math.round(event.detail.scaleX));
+                $('#@Model.ScaleYTag').val(Math.round(event.detail.scaleY));
+            }
+        });
+    });
+
+    function ConfirmDelete() {
+
+        var output = $('.@Model.PreviewClass');
+        output.html('<img id="preview" style="width: 100%" src="@Model.OriginalImageUrl" alt="" />');
+
+        document.getElementById('@Model.UploadProperty').value = '';
+
+
+
+        $("#CropModal").modal("hide");
+    }
+</script>

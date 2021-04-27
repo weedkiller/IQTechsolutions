@@ -1,0 +1,117 @@
+﻿
+@using Calendar.Base.Enums
+@using Iqt.Base.Enums
+@model Metsi.Web.Admin.Areas.Calendar.Models.RecurringTaskAddEditModel
+
+@{
+    ViewData["Title"] = "Create a New Task";
+}
+
+<link href="~/css/summernote.css" rel="stylesheet" type="text/css" />
+
+
+<form class="" asp-area="Calendar" asp-controller="Work" asp-action="Create" enctype="multipart/form-data" method="post">
+    <input type="hidden" asp-for="Entity.Id" />
+    <input type="hidden" asp-for="RouteLocationId"/>
+    <div class="form-horizontal">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label asp-for="Entity.Name" class="control-label"></label>
+                    <input asp-for="Entity.Name" class="form-control" placeholder="Enter your heading here"/>
+                    <span asp-validation-for="Entity.Name" class="text-danger"></span>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <label asp-for="Entity.TaskPriority" class="control-label"></label>
+                        <select asp-for="Entity.TaskPriority" asp-items="Html.GetEnumSelectList<Priority>()" class="form-control">
+                            <option selected="selected" value="">Please select</option>
+                        </select>
+                        <span asp-validation-for="Entity.TaskPriority" class="text-danger"></span>
+                    </div>
+                    <div class="col-md-4">
+                        <label asp-for="Entity.EstimatedCompletionTime" class="control-label"></label>
+                        <input asp-for="Entity.EstimatedCompletionTime" class="form-control" placeholder="Enter your heading here" />
+                        <span asp-validation-for="Entity.EstimatedCompletionTime" class="text-danger"></span>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="col-md-10" style="padding-top: 20px;">
+                            <label asp-for="Entity.ListedCalendarItem" class="control-label"></label>
+                            <span asp-validation-for="Entity.ListedCalendarItem" class="text-danger"></span>
+                        </div>
+                        <div class="col-md-2" style="padding-top: 20px;">
+                            <input asp-for="Entity.ListedCalendarItem" class="checkbox" />
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label">Description</label>
+                    <textarea asp-for="Entity.Description" class="form-control" style="height: 150px" placeholder="Enter your description here"></textarea>
+                    <span asp-validation-for="Entity.Description" class="text-danger"></span>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <ul class="nav nav-pills">
+                    <li class="active"><a href="#nav-pills-tab-1" data-toggle="tab">Tasks to Complete</a></li>
+                    <li><a href="#nav-pills-tab-3" data-toggle="tab">Form Elements</a></li>
+                    <li><a href="#nav-pills-tab-2" data-toggle="tab">Location Setup</a></li>
+                </ul>
+                <div class="tab-content">
+                    <div class="tab-pane fade active in" id="nav-pills-tab-1">
+                        <h3 class="m-t-10">Tasks to Complete</h3>
+                        <hr/>
+                        <h4>No current tasks, please save before adding any</h4>
+                        <hr/>
+                        <a href="javascript:;" class="btn btn-primary btn-block">Please save before adding Tasks</a>
+                    </div>
+                    <div class="tab-pane fade" id="nav-pills-tab-2">
+                        <h3 class="m-t-10">Set Up New Route</h3>
+                        <hr/>
+                        <h4>No current routes available, please save before adding any</h4>
+                        <hr/>
+                        <button type="button" class="btn btn-primary btn-block">Please save before creating new routes</button>
+                    </div>
+                    <div class="tab-pane fade" id="nav-pills-tab-3">
+                        <h3 class="m-t-10">Set Up New Form</h3>
+                        <hr />
+                        <h4>No Form Elements added to this task form, please check back later!</h4>
+                        <hr />
+                        <a href="javascript:;" class="btn btn-primary btn-block">Please save before adding New Elements</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ================== FORM BUTTON ================== -->
+    <div class="row" style="padding-bottom: 50px">
+        <div class="form-group">
+            <div class="col-md-4">
+                @if (string.IsNullOrEmpty(Model.RouteLocationId))
+                {
+                    @if (string.IsNullOrEmpty(Model.Entity.ParentTaskId))
+                    {
+                        <a asp-area="Calendar" asp-controller="Work" asp-action="Index" class="btn btn-block btn-danger" data-dismiss="modal">Close</a>
+                    }
+                    else
+                    {
+                        <a asp-area="Calendar" asp-controller="Work" asp-action="Edit" asp-route-id="@Model.Entity.Id" class="btn btn-block btn-danger" data-dismiss="modal">Close</a>
+                    }
+                }
+                else
+                {
+                    <a asp-area="Calendar" asp-controller="Locations" asp-action="Edit" asp-route-id="@Model.RouteLocationId" class="btn btn-block btn-danger" >Close</a>
+                }
+            </div>
+            <div class="col-md-4">
+                <input name="main" type="submit" value="Save" class="btn btn-block btn-primary"/>
+            </div>
+            <div class="col-md-4">
+                <input name="finnish" type="submit" value="Submit & Exit" class="btn btn-block btn-primary"/>
+            </div>
+        </div>
+    </div>
+    <!-- ================== END FORM BUTTON ================== -->
+
+</form>

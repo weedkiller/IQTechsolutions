@@ -1,0 +1,138 @@
+﻿
+@model IndexModelBase<Product>
+
+@{
+    ViewData["Title"] = "Product List";
+}
+
+@section Styles
+    {
+
+}
+
+<<p class="text-right">
+    <a asp-action="Create" class="btn btn-danger">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th style="width: 15%">
+                Cover Image
+            </th>
+            <th>
+                Name
+            </th>
+            <th>
+                Price
+            </th>
+            <th>
+                Active
+            </th>
+            <th>
+                Featured
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model.All.Any())
+        {
+            foreach (var item in Model.AllPaged.Results)
+            {
+                <tr id="row_@item.Id" class="row_@item.Id">
+                    <td>
+                        <a asp-area="Products" asp-controller="Home" asp-action="Details" asp-route-id="@item.Id">
+                            <img id="preview" style="height: auto;" class="img-thumbnail" title="@item.Name" alt="@item.Name" src="@item.GetImage().GetImagePathFromAnotherWebsite(FrameworkDI.Configuration["Company:WebUrl"],FrameworkDI.Configuration["Placeholders:CoverImage"])">
+                        </a>
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.PriceIncl)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Active)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Featured)
+                    </td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.Id"><i class="fa fa-edit"></i></a>
+                        <a asp-action="Details" asp-route-id="@item.Id" style="padding-left: 5px"><i class="fa fa-eye"></i></a>
+                        <a href="javascript:;" onclick="ShowDeleteModal('@item.Id')"><i class="fa fa-trash"></i></a>
+                    </td>
+                </tr>
+            }
+        }
+        else
+        {
+            <tr>
+                <td colspan="9">
+                    <h3>No Products currently available, please check back later</h3>
+                </td>
+            </tr>
+        }
+
+    </tbody>
+</table>
+
+<hr />
+
+@if (Model.AllPaged.PageCount > 1)
+{
+
+    <div class="col d-flex align-items-center">
+        <div class="mr-auto p-2">
+            <span class="display-items">Showing @Model.AllPaged.FirstRowOnPage - @Model.AllPaged.LastRowOnPage / @Model.All.Count Item</span>
+        </div>
+        <div class="p-2">
+            <nav aria-label="...">
+                <ul class="pagination">
+                    <li class="page-item">
+                        <a class="page-link" href="@Url.Action("List", new {page = 1})"><i class="ion-chevron-left"></i></a>
+                    </li>
+                    @for (int p = 1; p <= Model.AllPaged.PageCount; p++)
+                    {
+                        var active = "";
+                        if (p == Model.AllPaged.CurrentPage)
+                        {
+                            active = "active";
+                        }
+                        <li class="page-item @active">
+                            <a class="page-link" asp-area="Services" asp-controller="Home" asp-action="List" asp-route-pagel="@p">
+                                @p
+
+                                @if (!string.IsNullOrEmpty(active))
+                                {
+                                    <span class="sr-only">(current)</span>
+                                }
+                            </a>
+                        </li>
+                    }
+                    <li class="page-item">
+                        <a class="page-link" href="@Url.Action("List", new {page = @Model.AllPaged.PageCount})"><i class="ion-chevron-right"></i></a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+    <hr />
+}
+
+@section Scripts
+    {
+    <script type="text/javascript">
+
+        function ShowDeleteModal(ff) {
+
+            var url = "/Products/Home/Delete?id=" + ff;
+
+            $("#ModalPlaceHolder").load(url,
+                function () {
+                    $("#ModalPlaceHolder").modal("show");
+                });
+        }
+
+    </script>
+}

@@ -1,0 +1,167 @@
+﻿@model BlogPostAddEditModel
+
+@{
+    ViewData["Title"] = "Create New Blog Entry";
+}
+
+@section Styles
+{
+    <link href='~/css/summernote.css' rel='stylesheet' type='text/css' />
+    <link rel="stylesheet" href="~/css/bs-filestyle.css">
+}
+
+<form asp-area="Blog" asp-controller="Home" asp-action="Create" enctype="multipart/form-data" method="post">
+    <input type="hidden" asp-for="Entity.Id" />
+
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <div class="row">
+        <div class="col-md-4">
+            <div class="form-group">
+                <label asp-for="CoverUpload" class="control-label"></label>
+                <div class="previewd" style="overflow: hidden">
+                    <img id="preview" style="width: 100%" src="~/images/placeholders/1500x996px.jpg" alt="" />
+                </div>
+                    <input asp-for="CoverUpload" class="form-control" onchange="loadFile(event)" />
+                    <input type="hidden" asp-for="CoverCropSettings.X" />
+                    <input type="hidden" asp-for="CoverCropSettings.Y" />
+                    <input type="hidden" asp-for="CoverCropSettings.Width" />
+                    <input type="hidden" asp-for="CoverCropSettings.Height" />
+                    <input type="hidden" asp-for="CoverCropSettings.Rotate" />
+                    <input type="hidden" asp-for="CoverCropSettings.ScaleX" />
+                    <input type="hidden" asp-for="CoverCropSettings.ScaleY" />
+                </div>
+                <div class="form-group">
+                    <label asp-for="AudioUpload" class="control-label"></label>
+                    <input asp-for="AudioUpload" class="form-control" />
+                    <span asp-validation-for="AudioUpload" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Author" class="control-label"></label>
+                    <input asp-for="Author" class="form-control" placeholder="Please add author name if this is a quote" />
+                    <span asp-validation-for="Author" class="text-danger"></span>
+                </div>
+            </div>
+        <div class="col-md-8">
+
+            <div class="form-group">
+                <label asp-for="Entity.Title" class="control-label"></label>
+                <input asp-for="Entity.Title" class="form-control" />
+                <span asp-validation-for="Entity.Title" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Entity.Description" class="control-label"></label>
+                <textarea asp-for="Entity.Description" class="form-control"></textarea>
+                <span asp-validation-for="Entity.Description" class="text-danger"></span>
+            </div>
+            <div class="col-md-6">
+                <label asp-for="Entity.Featured" class="control-label col-md-2"></label>
+                <div class="col-md-10">
+                    <input asp-for="Entity.Featured" class="form-control" />
+                </div>
+            </div>
+            <div class="col-md-6">
+                <label asp-for="Entity.Active" class="control-label col-md-2"></label>
+                <div class="col-md-10">
+                    <input asp-for="Entity.Active" class="form-control" />
+                </div>
+            </div>
+            <input type="hidden" asp-for="Entity.Id" />
+
+
+        </div>
+        <div class="row" style="padding-bottom: 20px">
+            <div class="col-md-12 bottommargin text-center">
+                <h5>Select Project Images:</h5><br>
+                <input id="input-3" asp-for="ImagesUpload" type="file" class="file" multiple data-show-upload="false" data-show-caption="true" data-show-preview="true">
+            </div>
+
+            <div class="col-md-12 bottommargin text-center">
+                <div class="row">
+                    @foreach (var item in Model.Entity.Images)
+                    {
+                        <img id="@item" style="width: 20%;" title="@Model.Entity.Title" alt="@Model.Entity.Title" src="@item.GetImagePathFromAnotherWebsite(FrameworkDI.Configuration["Company:WebUrl"])">
+                    }
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="form-group">
+                <input name="finnish" type="submit" value="Save Draft" class="btn btn-primary" />
+                <input name="finnish" type="submit" value="Submit & Finnish" class="btn btn-primary" />
+                <a asp-area="Blog" asp-controller="Home" asp-action="Index" class="btn btn-danger">Cancel</a>
+            </div>
+        </div>
+    </div>
+</form>
+
+@section Scripts
+{
+    <script src="~/js/summernote/summernote.js"></script>
+    <script src="~/js/bs-filestyle.js"></script>
+
+    <script>
+        var loadFile = function (event) {
+            var output = document.getElementById('coverpreview');
+            if (event.target.files.length !== 0) {
+
+                var oldstring = "";
+                if (output === null) {
+                    oldstring = "/images/placeholders/img_475x320.jpg";
+                } else {
+                    oldstring = output.src;
+                }
+
+                var url = "/Home/CropImage?cropUrl=" + URL.createObjectURL(event.target.files[0]) + "&originalUrl=" + oldstring + "&width=" + 475 + "&height=" + 320
+                    + "&aspectRatio=475/320";
+
+                $("#CropModal").load(url,
+                    function () {
+                        $("#CropModal").modal("show");
+                    });
+            }
+        };
+    </script>
+
+    <script type="text/javascript">
+        // Default
+        $(document).ready(function () {
+            var HomeIndex = function () {
+
+                var $this = this;
+
+                function initialize() {
+                    $('#Entity_Description').summernote({
+                        height: 250,
+                        codemirror: { // codemirror options
+                            theme: 'monokai'
+                        }
+                    });
+                }
+
+                $this.init = function () {
+                    initialize();
+                }
+            };
+            var self = new HomeIndex();
+            self.init();
+        });
+
+
+    </script>
+
+<script type="text/javascript">
+
+    function ShowCreateAnswerModel(ff) {
+
+        var url = "/Faqs/Answers/Create?parentId=" + ff;
+
+        $("#ModalPlaceHolder").load(url,
+            function () {
+                $("#ModalPlaceHolder").modal("show");
+            });
+    }
+
+</script>
+}
+

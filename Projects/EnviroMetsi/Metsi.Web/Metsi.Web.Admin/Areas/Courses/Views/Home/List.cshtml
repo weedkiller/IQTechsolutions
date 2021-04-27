@@ -1,0 +1,91 @@
+﻿@inject IApplicationConfiguration Configuration
+
+@using Iqt.Base.Interfaces
+@model IEnumerable<Course>
+
+@{
+    ViewData["Title"] = "Training Courses";
+    ViewData["Description"] = "A list of all the training courses for the administrator";
+}
+
+<div class="profile-container">
+
+<div class="profile-section">
+
+<div class="table-responsive">
+            <table class="table table-hover mb-0">
+                <thead>
+                    <tr>
+                        <th style="width: 15%">
+                            Cover Image
+                        </th>
+                        <th>
+                            Name
+                        </th>
+                        <th>
+                            Description
+                        </th>
+                        <th>
+                            Modules
+                        </th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @if (Model.Any())
+                    {
+                        foreach (var item in Model)
+                        {
+                            <tr id="row_@item.Id" class="row_@item.Id">
+                                <td>
+                                    <a href="@Url.Action("Edit", "Categories", new {area="Blog", id = item.Id})">
+                                        <img id="preview" style="height: auto;" class="img-thumbnail" title="@item.Name" alt="@item.GetImage()?.FileName" src="@item.GetPath(Configuration.BaseImageUrl, ImageType.Cover,"/images/placeholders/MetsiPlaceholder-800x533.jpg")">
+                                    </a>
+                                </td>
+                                <td>
+                                    <a asp-action="Details" asp-route-id="@item.Id">@Html.DisplayFor(modelItem => item.Name)</a>
+                                </td>
+                                <td>
+                                    @item.Description.HtmlToPlainText().TruncateLongString(150)
+                                </td>
+                                <td>@item.Modules.Count</td>
+                                <td style="width: 100px;">
+                                    <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-success btn-icon btn-circle"><i class="fa fa-edit"></i></a>
+                                    <a href="javascript:;" onclick="ShowDeleteBlogCategoryModal('@item.Id')" class="btn btn-warning btn-icon btn-circle"><i class="fa fa-trash"></i></a>
+                                </td>
+                            </tr>
+                        }
+                    }
+                    else
+                    {
+                        <tr>
+                            <td colspan="6"><h4>No Categories currently available, please check back later or <a asp-area="Courses" asp-controller="Home" asp-action="Create">Create a New Training Course</a></h4></td>
+                        </tr>
+                    }
+
+                </tbody>
+            </table>
+            <hr />
+            <p style="padding: 10px;">
+                <a asp-area="Courses" asp-controller="Home" asp-action="Create" class="btn btn-info btn-block">Create Training Course</a>
+            </p>
+        </div>
+
+</div>
+
+</div>
+
+@section Scripts
+    {
+    <script>
+        function ShowDeleteBlogCategoryModal(numberId) {
+
+            var url = "/Courses/Home/Delete?id=" + numberId;
+
+            $("#ModalPlaceHolder").load(url,
+                function () {
+                    $("#ModalPlaceHolder").modal("show");
+                });
+        }
+    </script>
+}

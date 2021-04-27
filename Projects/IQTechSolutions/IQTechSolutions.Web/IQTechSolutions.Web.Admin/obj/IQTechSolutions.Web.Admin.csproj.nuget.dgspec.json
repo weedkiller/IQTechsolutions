@@ -1,0 +1,1400 @@
+{
+  "format": 1,
+  "restore": {
+    "G:\\Projects\\IQTechSolutions\\IQTechSolutions.Web\\IQTechSolutions.Web.Admin\\IQTechSolutions.Web.Admin.csproj": {}
+  },
+  "projects": {
+    "G:\\IqtFramework\\Iqt.Base\\Iqt.Base.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "G:\\IqtFramework\\Iqt.Base\\Iqt.Base.csproj",
+        "projectName": "Iqt.Base",
+        "projectPath": "G:\\IqtFramework\\Iqt.Base\\Iqt.Base.csproj",
+        "packagesPath": "C:\\Users\\ivanr\\.nuget\\packages\\",
+        "outputPath": "G:\\IqtFramework\\Iqt.Base\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\ivanr\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.1": {
+            "targetAlias": "netstandard2.1",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.1": {
+          "targetAlias": "netstandard2.1",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            },
+            "System.ComponentModel.Annotations": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "NETStandard.Library": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.103\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "G:\\Modules\\Blogging\\Blogging.Base\\Blogging.Base.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "G:\\Modules\\Blogging\\Blogging.Base\\Blogging.Base.csproj",
+        "projectName": "Blogging.Base",
+        "projectPath": "G:\\Modules\\Blogging\\Blogging.Base\\Blogging.Base.csproj",
+        "packagesPath": "C:\\Users\\ivanr\\.nuget\\packages\\",
+        "outputPath": "G:\\Modules\\Blogging\\Blogging.Base\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\ivanr\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.1": {
+            "targetAlias": "netstandard2.1",
+            "projectReferences": {
+              "G:\\Modules\\Filing\\Filing.Base\\Filing.Base.csproj": {
+                "projectPath": "G:\\Modules\\Filing\\Filing.Base\\Filing.Base.csproj"
+              },
+              "G:\\Modules\\Grouping\\Grouping.Base\\Grouping.Base.csproj": {
+                "projectPath": "G:\\Modules\\Grouping\\Grouping.Base\\Grouping.Base.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.1": {
+          "targetAlias": "netstandard2.1",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "NETStandard.Library": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.103\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "G:\\Modules\\Blogging\\Blogging.Core\\Blogging.Core.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "G:\\Modules\\Blogging\\Blogging.Core\\Blogging.Core.csproj",
+        "projectName": "Blogging.Core",
+        "projectPath": "G:\\Modules\\Blogging\\Blogging.Core\\Blogging.Core.csproj",
+        "packagesPath": "C:\\Users\\ivanr\\.nuget\\packages\\",
+        "outputPath": "G:\\Modules\\Blogging\\Blogging.Core\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\ivanr\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "G:\\Modules\\Blogging\\Blogging.Base\\Blogging.Base.csproj": {
+                "projectPath": "G:\\Modules\\Blogging\\Blogging.Base\\Blogging.Base.csproj"
+              },
+              "G:\\Modules\\Grouping\\Grouping.Base\\Grouping.Base.csproj": {
+                "projectPath": "G:\\Modules\\Grouping\\Grouping.Base\\Grouping.Base.csproj"
+              },
+              "G:\\Modules\\Grouping\\Grouping.Core\\Grouping.Core.csproj": {
+                "projectPath": "G:\\Modules\\Grouping\\Grouping.Core\\Grouping.Core.csproj"
+              },
+              "G:\\Modules\\Identity\\Identity.Base\\Identity.Base.csproj": {
+                "projectPath": "G:\\Modules\\Identity\\Identity.Base\\Identity.Base.csproj"
+              },
+              "G:\\Modules\\Projects\\Projects.Core\\Projects.Core.csproj": {
+                "projectPath": "G:\\Modules\\Projects\\Projects.Core\\Projects.Core.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.Mvc": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            },
+            "Microsoft.Extensions.FileProviders.Embedded": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            },
+            "Microsoft.Extensions.Identity.Core": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.103\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "G:\\Modules\\Calendar\\Calendar.Base\\Calendar.Base.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "G:\\Modules\\Calendar\\Calendar.Base\\Calendar.Base.csproj",
+        "projectName": "Calendar.Base",
+        "projectPath": "G:\\Modules\\Calendar\\Calendar.Base\\Calendar.Base.csproj",
+        "packagesPath": "C:\\Users\\ivanr\\.nuget\\packages\\",
+        "outputPath": "G:\\Modules\\Calendar\\Calendar.Base\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\ivanr\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.1": {
+            "targetAlias": "netstandard2.1",
+            "projectReferences": {
+              "G:\\IqtFramework\\Iqt.Base\\Iqt.Base.csproj": {
+                "projectPath": "G:\\IqtFramework\\Iqt.Base\\Iqt.Base.csproj"
+              },
+              "G:\\Modules\\Filing\\Filing.Base\\Filing.Base.csproj": {
+                "projectPath": "G:\\Modules\\Filing\\Filing.Base\\Filing.Base.csproj"
+              },
+              "G:\\Modules\\Grouping\\Grouping.Base\\Grouping.Base.csproj": {
+                "projectPath": "G:\\Modules\\Grouping\\Grouping.Base\\Grouping.Base.csproj"
+              },
+              "G:\\Modules\\Identity\\Identity.Base\\Identity.Base.csproj": {
+                "projectPath": "G:\\Modules\\Identity\\Identity.Base\\Identity.Base.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.1": {
+          "targetAlias": "netstandard2.1",
+          "dependencies": {
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[12.0.3, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "NETStandard.Library": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.103\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "G:\\Modules\\Calendar\\Calendar.Core\\Calendar.Core.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "G:\\Modules\\Calendar\\Calendar.Core\\Calendar.Core.csproj",
+        "projectName": "Calendar.Core",
+        "projectPath": "G:\\Modules\\Calendar\\Calendar.Core\\Calendar.Core.csproj",
+        "packagesPath": "C:\\Users\\ivanr\\.nuget\\packages\\",
+        "outputPath": "G:\\Modules\\Calendar\\Calendar.Core\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\ivanr\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "G:\\Modules\\Calendar\\Calendar.Base\\Calendar.Base.csproj": {
+                "projectPath": "G:\\Modules\\Calendar\\Calendar.Base\\Calendar.Base.csproj"
+              },
+              "G:\\Modules\\Filing\\Filing.Core\\Filing.Core.csproj": {
+                "projectPath": "G:\\Modules\\Filing\\Filing.Core\\Filing.Core.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.Http.Features": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.103\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "G:\\Modules\\Feedback\\Feedback.Base\\Feedback.Base.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "G:\\Modules\\Feedback\\Feedback.Base\\Feedback.Base.csproj",
+        "projectName": "Feedback.Base",
+        "projectPath": "G:\\Modules\\Feedback\\Feedback.Base\\Feedback.Base.csproj",
+        "packagesPath": "C:\\Users\\ivanr\\.nuget\\packages\\",
+        "outputPath": "G:\\Modules\\Feedback\\Feedback.Base\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\ivanr\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.1": {
+            "targetAlias": "netstandard2.1",
+            "projectReferences": {
+              "G:\\IqtFramework\\Iqt.Base\\Iqt.Base.csproj": {
+                "projectPath": "G:\\IqtFramework\\Iqt.Base\\Iqt.Base.csproj"
+              },
+              "G:\\Modules\\Filing\\Filing.Base\\Filing.Base.csproj": {
+                "projectPath": "G:\\Modules\\Filing\\Filing.Base\\Filing.Base.csproj"
+              },
+              "G:\\Modules\\Identity\\Identity.Base\\Identity.Base.csproj": {
+                "projectPath": "G:\\Modules\\Identity\\Identity.Base\\Identity.Base.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.1": {
+          "targetAlias": "netstandard2.1",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "NETStandard.Library": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.103\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "G:\\Modules\\Feedback\\Feedback.Core\\Feedback.Core.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "G:\\Modules\\Feedback\\Feedback.Core\\Feedback.Core.csproj",
+        "projectName": "Feedback.Core",
+        "projectPath": "G:\\Modules\\Feedback\\Feedback.Core\\Feedback.Core.csproj",
+        "packagesPath": "C:\\Users\\ivanr\\.nuget\\packages\\",
+        "outputPath": "G:\\Modules\\Feedback\\Feedback.Core\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\ivanr\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "G:\\Modules\\Feedback\\Feedback.Base\\Feedback.Base.csproj": {
+                "projectPath": "G:\\Modules\\Feedback\\Feedback.Base\\Feedback.Base.csproj"
+              },
+              "G:\\Modules\\Filing\\Filing.Core\\Filing.Core.csproj": {
+                "projectPath": "G:\\Modules\\Filing\\Filing.Core\\Filing.Core.csproj"
+              },
+              "G:\\Modules\\Mailing\\Mailing.Base\\Mailing.Base.csproj": {
+                "projectPath": "G:\\Modules\\Mailing\\Mailing.Base\\Mailing.Base.csproj"
+              },
+              "G:\\Projects\\EnviroMetsi\\Metsi.Base\\Metsi.Web\\Metsi.Web.csproj": {
+                "projectPath": "G:\\Projects\\EnviroMetsi\\Metsi.Base\\Metsi.Web\\Metsi.Web.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "GoogleReCaptcha.V3": {
+              "target": "Package",
+              "version": "[1.3.0, )"
+            },
+            "Microsoft.AspNetCore.Http.Features": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.103\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "G:\\Modules\\Filing\\Filing.Base\\Filing.Base.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "G:\\Modules\\Filing\\Filing.Base\\Filing.Base.csproj",
+        "projectName": "Filing.Base",
+        "projectPath": "G:\\Modules\\Filing\\Filing.Base\\Filing.Base.csproj",
+        "packagesPath": "C:\\Users\\ivanr\\.nuget\\packages\\",
+        "outputPath": "G:\\Modules\\Filing\\Filing.Base\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\ivanr\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.1": {
+            "targetAlias": "netstandard2.1",
+            "projectReferences": {
+              "G:\\IqtFramework\\Iqt.Base\\Iqt.Base.csproj": {
+                "projectPath": "G:\\IqtFramework\\Iqt.Base\\Iqt.Base.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.1": {
+          "targetAlias": "netstandard2.1",
+          "dependencies": {
+            "System.ComponentModel.Annotations": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "NETStandard.Library": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.103\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "G:\\Modules\\Filing\\Filing.Core\\Filing.Core.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "G:\\Modules\\Filing\\Filing.Core\\Filing.Core.csproj",
+        "projectName": "Filing.Core",
+        "projectPath": "G:\\Modules\\Filing\\Filing.Core\\Filing.Core.csproj",
+        "packagesPath": "C:\\Users\\ivanr\\.nuget\\packages\\",
+        "outputPath": "G:\\Modules\\Filing\\Filing.Core\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\ivanr\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "G:\\Modules\\Filing\\Filing.Base\\Filing.Base.csproj": {
+                "projectPath": "G:\\Modules\\Filing\\Filing.Base\\Filing.Base.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "System.Drawing.Common": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.103\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "G:\\Modules\\Grouping\\Grouping.Base\\Grouping.Base.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "G:\\Modules\\Grouping\\Grouping.Base\\Grouping.Base.csproj",
+        "projectName": "Grouping.Base",
+        "projectPath": "G:\\Modules\\Grouping\\Grouping.Base\\Grouping.Base.csproj",
+        "packagesPath": "C:\\Users\\ivanr\\.nuget\\packages\\",
+        "outputPath": "G:\\Modules\\Grouping\\Grouping.Base\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\ivanr\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.1": {
+            "targetAlias": "netstandard2.1",
+            "projectReferences": {
+              "G:\\Modules\\Filing\\Filing.Base\\Filing.Base.csproj": {
+                "projectPath": "G:\\Modules\\Filing\\Filing.Base\\Filing.Base.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.1": {
+          "targetAlias": "netstandard2.1",
+          "dependencies": {
+            "System.ComponentModel.Annotations": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "NETStandard.Library": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.103\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "G:\\Modules\\Grouping\\Grouping.Core\\Grouping.Core.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "G:\\Modules\\Grouping\\Grouping.Core\\Grouping.Core.csproj",
+        "projectName": "Grouping.Core",
+        "projectPath": "G:\\Modules\\Grouping\\Grouping.Core\\Grouping.Core.csproj",
+        "packagesPath": "C:\\Users\\ivanr\\.nuget\\packages\\",
+        "outputPath": "G:\\Modules\\Grouping\\Grouping.Core\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\ivanr\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "G:\\IqtFramework\\Iqt.Base\\Iqt.Base.csproj": {
+                "projectPath": "G:\\IqtFramework\\Iqt.Base\\Iqt.Base.csproj"
+              },
+              "G:\\Modules\\Filing\\Filing.Core\\Filing.Core.csproj": {
+                "projectPath": "G:\\Modules\\Filing\\Filing.Core\\Filing.Core.csproj"
+              },
+              "G:\\Modules\\Grouping\\Grouping.Base\\Grouping.Base.csproj": {
+                "projectPath": "G:\\Modules\\Grouping\\Grouping.Base\\Grouping.Base.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.Http.Features": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.103\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "G:\\Modules\\Identity\\Identity.Base\\Identity.Base.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "G:\\Modules\\Identity\\Identity.Base\\Identity.Base.csproj",
+        "projectName": "Identity.Base",
+        "projectPath": "G:\\Modules\\Identity\\Identity.Base\\Identity.Base.csproj",
+        "packagesPath": "C:\\Users\\ivanr\\.nuget\\packages\\",
+        "outputPath": "G:\\Modules\\Identity\\Identity.Base\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\ivanr\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.1": {
+            "targetAlias": "netstandard2.1",
+            "projectReferences": {
+              "G:\\Modules\\Filing\\Filing.Base\\Filing.Base.csproj": {
+                "projectPath": "G:\\Modules\\Filing\\Filing.Base\\Filing.Base.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.1": {
+          "targetAlias": "netstandard2.1",
+          "dependencies": {
+            "Microsoft.Extensions.Identity.Stores": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            },
+            "System.ComponentModel.Annotations": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "NETStandard.Library": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.103\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "G:\\Modules\\Mailing\\Mailing.Base\\Mailing.Base.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "G:\\Modules\\Mailing\\Mailing.Base\\Mailing.Base.csproj",
+        "projectName": "Mailing.Base",
+        "projectPath": "G:\\Modules\\Mailing\\Mailing.Base\\Mailing.Base.csproj",
+        "packagesPath": "C:\\Users\\ivanr\\.nuget\\packages\\",
+        "outputPath": "G:\\Modules\\Mailing\\Mailing.Base\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\ivanr\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.1": {
+            "targetAlias": "netstandard2.1",
+            "projectReferences": {
+              "G:\\IqtFramework\\Iqt.Base\\Iqt.Base.csproj": {
+                "projectPath": "G:\\IqtFramework\\Iqt.Base\\Iqt.Base.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.1": {
+          "targetAlias": "netstandard2.1",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "NETStandard.Library": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.103\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "G:\\Modules\\Projects\\Projects.Base\\Projects.Base.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "G:\\Modules\\Projects\\Projects.Base\\Projects.Base.csproj",
+        "projectName": "Projects.Base",
+        "projectPath": "G:\\Modules\\Projects\\Projects.Base\\Projects.Base.csproj",
+        "packagesPath": "C:\\Users\\ivanr\\.nuget\\packages\\",
+        "outputPath": "G:\\Modules\\Projects\\Projects.Base\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\ivanr\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.1": {
+            "targetAlias": "netstandard2.1",
+            "projectReferences": {
+              "G:\\Modules\\Filing\\Filing.Base\\Filing.Base.csproj": {
+                "projectPath": "G:\\Modules\\Filing\\Filing.Base\\Filing.Base.csproj"
+              },
+              "G:\\Modules\\Grouping\\Grouping.Base\\Grouping.Base.csproj": {
+                "projectPath": "G:\\Modules\\Grouping\\Grouping.Base\\Grouping.Base.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.1": {
+          "targetAlias": "netstandard2.1",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "NETStandard.Library": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.103\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "G:\\Modules\\Projects\\Projects.Core\\Projects.Core.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "G:\\Modules\\Projects\\Projects.Core\\Projects.Core.csproj",
+        "projectName": "Projects.Core",
+        "projectPath": "G:\\Modules\\Projects\\Projects.Core\\Projects.Core.csproj",
+        "packagesPath": "C:\\Users\\ivanr\\.nuget\\packages\\",
+        "outputPath": "G:\\Modules\\Projects\\Projects.Core\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\ivanr\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "G:\\Modules\\Calendar\\Calendar.Base\\Calendar.Base.csproj": {
+                "projectPath": "G:\\Modules\\Calendar\\Calendar.Base\\Calendar.Base.csproj"
+              },
+              "G:\\Modules\\Calendar\\Calendar.Core\\Calendar.Core.csproj": {
+                "projectPath": "G:\\Modules\\Calendar\\Calendar.Core\\Calendar.Core.csproj"
+              },
+              "G:\\Modules\\Filing\\Filing.Core\\Filing.Core.csproj": {
+                "projectPath": "G:\\Modules\\Filing\\Filing.Core\\Filing.Core.csproj"
+              },
+              "G:\\Modules\\Grouping\\Grouping.Core\\Grouping.Core.csproj": {
+                "projectPath": "G:\\Modules\\Grouping\\Grouping.Core\\Grouping.Core.csproj"
+              },
+              "G:\\Modules\\Projects\\Projects.Base\\Projects.Base.csproj": {
+                "projectPath": "G:\\Modules\\Projects\\Projects.Base\\Projects.Base.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.103\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "G:\\Projects\\EnviroMetsi\\Metsi.Base\\Metsi.Web\\Metsi.Web.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "G:\\Projects\\EnviroMetsi\\Metsi.Base\\Metsi.Web\\Metsi.Web.csproj",
+        "projectName": "Metsi.Web",
+        "projectPath": "G:\\Projects\\EnviroMetsi\\Metsi.Base\\Metsi.Web\\Metsi.Web.csproj",
+        "packagesPath": "C:\\Users\\ivanr\\.nuget\\packages\\",
+        "outputPath": "G:\\Projects\\EnviroMetsi\\Metsi.Base\\Metsi.Web\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\ivanr\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.1": {
+            "targetAlias": "netstandard2.1",
+            "projectReferences": {
+              "G:\\IqtFramework\\Iqt.Base\\Iqt.Base.csproj": {
+                "projectPath": "G:\\IqtFramework\\Iqt.Base\\Iqt.Base.csproj"
+              },
+              "G:\\Modules\\Mailing\\Mailing.Base\\Mailing.Base.csproj": {
+                "projectPath": "G:\\Modules\\Mailing\\Mailing.Base\\Mailing.Base.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.1": {
+          "targetAlias": "netstandard2.1",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "NETStandard.Library": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.103\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "G:\\Projects\\IQTechSolutions\\IQTechSolutions.Base\\IQTechSolutions\\IQTechSolutions.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "G:\\Projects\\IQTechSolutions\\IQTechSolutions.Base\\IQTechSolutions\\IQTechSolutions.csproj",
+        "projectName": "IQTechSolutions",
+        "projectPath": "G:\\Projects\\IQTechSolutions\\IQTechSolutions.Base\\IQTechSolutions\\IQTechSolutions.csproj",
+        "packagesPath": "C:\\Users\\ivanr\\.nuget\\packages\\",
+        "outputPath": "G:\\Projects\\IQTechSolutions\\IQTechSolutions.Base\\IQTechSolutions\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\ivanr\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.1": {
+            "targetAlias": "netstandard2.1",
+            "projectReferences": {
+              "G:\\IqtFramework\\Iqt.Base\\Iqt.Base.csproj": {
+                "projectPath": "G:\\IqtFramework\\Iqt.Base\\Iqt.Base.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.1": {
+          "targetAlias": "netstandard2.1",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "NETStandard.Library": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.103\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "G:\\Projects\\IQTechSolutions\\IQTechSolutions.Web\\IQTechSolutions.DataStores\\IQTechSolutions.DataStores.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "G:\\Projects\\IQTechSolutions\\IQTechSolutions.Web\\IQTechSolutions.DataStores\\IQTechSolutions.DataStores.csproj",
+        "projectName": "IQTechSolutions.DataStores",
+        "projectPath": "G:\\Projects\\IQTechSolutions\\IQTechSolutions.Web\\IQTechSolutions.DataStores\\IQTechSolutions.DataStores.csproj",
+        "packagesPath": "C:\\Users\\ivanr\\.nuget\\packages\\",
+        "outputPath": "G:\\Projects\\IQTechSolutions\\IQTechSolutions.Web\\IQTechSolutions.DataStores\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\ivanr\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "G:\\Modules\\Blogging\\Blogging.Core\\Blogging.Core.csproj": {
+                "projectPath": "G:\\Modules\\Blogging\\Blogging.Core\\Blogging.Core.csproj"
+              },
+              "G:\\Modules\\Feedback\\Feedback.Core\\Feedback.Core.csproj": {
+                "projectPath": "G:\\Modules\\Feedback\\Feedback.Core\\Feedback.Core.csproj"
+              },
+              "G:\\Modules\\Filing\\Filing.Core\\Filing.Core.csproj": {
+                "projectPath": "G:\\Modules\\Filing\\Filing.Core\\Filing.Core.csproj"
+              },
+              "G:\\Modules\\Identity\\Identity.Base\\Identity.Base.csproj": {
+                "projectPath": "G:\\Modules\\Identity\\Identity.Base\\Identity.Base.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.103\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "G:\\Projects\\IQTechSolutions\\IQTechSolutions.Web\\IQTechSolutions.Web.Admin\\IQTechSolutions.Web.Admin.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "G:\\Projects\\IQTechSolutions\\IQTechSolutions.Web\\IQTechSolutions.Web.Admin\\IQTechSolutions.Web.Admin.csproj",
+        "projectName": "IQTechSolutions.Web.Admin",
+        "projectPath": "G:\\Projects\\IQTechSolutions\\IQTechSolutions.Web\\IQTechSolutions.Web.Admin\\IQTechSolutions.Web.Admin.csproj",
+        "packagesPath": "C:\\Users\\ivanr\\.nuget\\packages\\",
+        "outputPath": "G:\\Projects\\IQTechSolutions\\IQTechSolutions.Web\\IQTechSolutions.Web.Admin\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\ivanr\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "G:\\Modules\\Identity\\Identity.Base\\Identity.Base.csproj": {
+                "projectPath": "G:\\Modules\\Identity\\Identity.Base\\Identity.Base.csproj"
+              },
+              "G:\\Projects\\IQTechSolutions\\IQTechSolutions.Base\\IQTechSolutions\\IQTechSolutions.csproj": {
+                "projectPath": "G:\\Projects\\IQTechSolutions\\IQTechSolutions.Base\\IQTechSolutions\\IQTechSolutions.csproj"
+              },
+              "G:\\Projects\\IQTechSolutions\\IQTechSolutions.Web\\IQTechSolutions.DataStores\\IQTechSolutions.DataStores.csproj": {
+                "projectPath": "G:\\Projects\\IQTechSolutions\\IQTechSolutions.Web\\IQTechSolutions.DataStores\\IQTechSolutions.DataStores.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.Authentication.OpenIdConnect": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[5.0.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.103\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

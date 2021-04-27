@@ -1,0 +1,36 @@
+﻿@{
+    Layout = "Layouts/_Layout";
+}
+
+@section Styles
+    {
+    <!--page injected css-->
+    @RenderSection("Styles", required: false)
+}
+
+<div id="content" class="content">
+    
+    <partial name="_Breadcrumbs"/>
+
+    <div class="profile-container">
+
+        <div class="profile-section">
+
+            @RenderBody()
+
+        </div>
+
+    </div>
+
+</div>
+
+@section Scripts
+    {
+    <script src="~/js/apps.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            App.init();
+        });
+    </script>
+    @RenderSection("Scripts", required: false)
+}

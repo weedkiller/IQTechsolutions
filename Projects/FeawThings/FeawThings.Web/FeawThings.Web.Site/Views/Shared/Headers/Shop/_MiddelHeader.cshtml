@@ -1,0 +1,35 @@
+﻿@using Iqt.Base.Interfaces
+@inject IApplicationConfiguration Configuration
+
+<div class="header-center">
+    <div class="container">
+        <div class="row">
+            <!-- Logo -->
+            <div class="navbar-logo col-md-3 col-sm-12 col-xs-12">
+                <a asp-area="" asp-controller="Home" asp-action="Index"><img src="~/images/logo/logoInEllipse.png" style="width: 70%; max-width: 250px" title="Feaw Things" alt="Feaw Things"></a>
+            </div>
+            <!-- //end Logo -->
+            <!-- Search -->
+            <div id="sosearchpro" class="col-md-5 col-sm-7 search-pro">
+                @await Component.InvokeAsync("SearhComponent")
+            </div>
+            <!-- //Search -->
+            <!-- Main Menu -->
+            <div class="phone-contact col-md-2  hidden-md hidden-sm hidden-xs">
+                <div class="inner-info">
+                    <strong>Call us Now:</strong><br>
+                    <span>Tel:  @Configuration.PhoneNr</span>
+                </div>
+            </div>
+            <!-- //Main Menu -->
+            <!-- Shopping Cart -->
+            <div class="col-lg-2 col-md-3 col-sm-4 col-xs-12 shopping_cart pull-right">
+                <!--cart-->
+                @await Component.InvokeAsync("ShoppingCartMenu")
+                <!--//cart-->
+            </div>
+            <!-- //Shopping Cart -->
+        </div>
+
+    </div>
+</div>

@@ -1,0 +1,62 @@
+﻿@model FormElement<Course>
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<div class="modal-dialog">
+    <div class="modal-content">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+            <h4 class="modal-title">Create New Form Element</h4>
+        </div>
+        <div class="modal-body" id="addContactNumberModelBodyDiv">
+            <form asp-area="Courses" asp-controller="Home" asp-action="CreateAssessmentElement" method="post">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div>
+                    <div class="row">
+                        <div class="form-group" style="padding-bottom: 35px;">
+                            <label asp-for="ElementName" class="col-md-3 control-label">Label</label>
+                            <div class="col-md-9">
+                                <input asp-for="ElementName" class="form-control" />
+                                <span asp-validation-for="ElementName" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="form-group" style="padding-bottom: 35px;">
+                            <label asp-for="ElementType" class="col-md-3 control-label"></label>
+                            <div class="col-md-9">
+                                <select asp-for="ElementType" asp-items="Html.GetEnumSelectList<FormElementType>()" class="form-control">
+                                    <option selected="selected" value="">Please select</option>
+                                </select>
+                                <span asp-validation-for="ElementName" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Required" class="col-md-3 control-label"></label>
+                            <div class="col-md-9">
+                                <input type="checkbox" asp-for="Required" class="form-control" />
+                            </div>
+                        </div>
+                            <input type="hidden" asp-for="EntityId" />
+                            <input type="hidden" asp-for="Id" />
+
+                        </div>
+                </div>
+                <!-- ================== FORM BUTTON ================== -->
+                <div class="row" style="padding-bottom: 50px">
+                    <div class="form-group">
+                        <div class="col-md-offset-2 col-md-10 text-right">
+                            <button type="submit" class="btn btn-sm btn-primary">Save Changes</button>
+                            <a href="javascript:;" class="btn btn-sm btn-danger" data-dismiss="modal">Close</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- ================== END FORM BUTTON ================== -->
+
+            </form>
+            <div style="text-align: center; display: none" id="EmailAddressAddEditloaderDiv">
+                <img src="~/images/loader2.gif" />
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,31 @@
+﻿@using Iqt.Base.Extensions
+@using Iqt.Base.Interfaces
+@model Iqt.Base.Models.PagedResult<Troubleshooting.Base.Models.ApiModels.ProblemResultModel>
+@inject IApplicationConfiguration Configuration
+
+<section id="features" class="container services">
+    <div class="row">
+        <div class="col-sm-12">
+            <h4>
+                Problems that can be trouble shooted on this category!
+            </h4>
+            <hr />
+            @if (Model.Results.Any())
+            {
+                foreach (var item in Model.Results)
+                {
+                    <table style="width:100%">
+                        <tr>
+                            <td><p>@item.Description.TruncateLongString(150)</p></td>
+                            <td style="width:100px; float:right; padding-bottom:15px;"><a class="btn btn-primary" asp-area="Troubleshooting" asp-controller="Home" asp-action="Details" asp-route-id="@item.Id">View</a></td>
+                        </tr>
+                    </table>
+                }
+            }
+            else
+            {
+                <h5>There are currently no problems that can be trouble shooted associated with this category</h5>
+            }
+        </div>
+    </div>
+</section>

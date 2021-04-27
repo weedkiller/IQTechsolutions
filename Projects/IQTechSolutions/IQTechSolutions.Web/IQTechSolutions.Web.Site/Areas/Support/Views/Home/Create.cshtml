@@ -1,0 +1,132 @@
+﻿@using Iqt.Base.Interfaces
+@using Microsoft.Extensions.Configuration
+@model Feedback.Core.Models.TicketAddEditModel
+
+@inject IApplicationConfiguration ApplicationConfiguration;
+@inject IConfiguration Configuration;
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<!--content-->
+<section class="section_offset">
+    <div class="container clearfix">
+        <div class="row">
+
+            <form asp-area="Support" asp-controller="Home" asp-action="Create" enctype="multipart/form-data">
+                <input type="hidden" asp-for="Captcha" id="captchaInput" />
+                <div class="col-lg-6 col-md-6 col-sm-6 m_xs_bottom_30">
+                    <h3 class="color_dark fw_light m_bottom_15 heading_1 t_align_c">Contact Information</h3>
+                    <p class="m_bottom_35 heading_2 t_align_c">
+                        Please feel free to contact us with any queries, comments or just to say "Hi" <br /> An IQ Tech Solutions representative will get back to you as soon as possible.
+                    </p>
+                    <p class="fw_light m_bottom_23">
+                        Our Customer support and account management teams provide the best service in the industry. We're passionate about our products as well as our customers and it shows in the level of service that we provide. We are always happy to help you find the right solution for your needs. If the solution doesn't yet exist we'll create it for you.
+                    </p>
+                    <div class="row">
+                        <ul class="col-lg-6 col-md-6 col-sm-6 fw_light w_break m_bottom_45 m_xs_bottom_30">
+                            <li class="m_bottom_8">
+                                <div class="d_inline_m icon_wrap_size_1 color_pink circle m_right_10">
+                                    <i class="icon-phone-1"></i>
+                                </div>
+                                @ApplicationConfiguration.PhoneNr
+                            </li>
+                            <li class="m_bottom_8">
+                                <div class="d_inline_m icon_wrap_size_1 color_pink circle m_right_10">
+                                    <i class="icon-mail-alt"></i>
+                                </div>
+                                <a href="mailto:@ApplicationConfiguration.InfoEmailAddress" class="color_black color_pink_hover">@ApplicationConfiguration.InfoEmailAddress</a>
+                            </li>
+                            <li>
+                                <div class="d_inline_m icon_wrap_size_1 color_pink circle m_right_10">
+                                    <i class="icon-skype-1"></i>
+                                </div>
+                                @ApplicationConfiguration.SkypeName
+                            </li>
+                        </ul>
+                        <ul class="col-lg-6 col-md-6 col-sm-6 m_xs_bottom_30 vr_list_type_5">
+                            <li class="m_bottom_8 fw_light">
+                                <div class="f_left icon_wrap_size_1 color_pink circle">
+                                    <i class="icon-location"></i>
+                                </div>
+                                @ApplicationConfiguration.PhysicalAddress
+                            </li>
+                            <li class="fw_light">
+                                <div class="f_left icon_wrap_size_1 color_pink circle">
+                                    <i class="icon-lifebuoy"></i>
+                                </div>
+                                <a href="#" class="color_dark color_pink_hover">Support Center</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-6 m_xs_bottom_30">
+                    <h3 class="color_dark fw_light m_bottom_15 heading_1 t_align_c">Contact Form</h3>
+                    <div asp-validation-summary="All" style="color: #a94442 !important;"></div>
+                    <ul>
+                        <li class="row m_bottom_10">
+                            <div class="col-lg-6 col-md-6 col-sm-6 w_xs_full m_xs_bottom_10">
+                                <input asp-for="FirstName" placeholder="First Name*" class="w_full r_corners fw_light" />
+                                <span asp-validation-for="FirstName" class="text-danger"></span>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-6 w_xs_full">
+                                <input asp-for="LastName" placeholder="Last Name*" class="w_full r_corners fw_light" />
+                                <span asp-validation-for="LastName" class="text-danger"></span>
+                            </div>
+                        </li>
+                        <li class="m_bottom_10">
+                            <input asp-for="EmailAddress" placeholder="Email Address" class="w_full r_corners fw_light" />
+                            <span asp-validation-for="EmailAddress" class="text-danger"></span>
+                        </li>
+                        <li class="m_bottom_10">
+                            <input asp-for="PhoneNr" placeholder="Cellphone Nr" class="w_full r_corners fw_light" />
+                            <span asp-validation-for="PhoneNr" class="text-danger"></span>
+                        </li>
+                        <li class="m_bottom_10">
+                            <input asp-for="Subject" placeholder="Subject" class="w_full r_corners fw_light" />
+                            <span asp-validation-for="Subject" class="text-danger"></span>
+                        </li>
+                        @*<li class="m_bottom_20 m_xs_bottom_40">
+                                <label class="d_inline_m d_sm_block w_sm_auto m_sm_bottom_5">Priority:</label>
+                                <div class="custom_select d_inline_m w_sm_full inline_select">
+                                    <div class="select_title r_corners fw_light color_grey w_full"></div>
+                                    <ul class="select_list r_corners wrapper shadow_1 bg_light tr_all"></ul>
+                                    <select asp-for="Priority" asp-items="Html.GetEnumSelectList(typeof(IQTechFramework.Enums.Support.Priority))" class="d_none">
+                                    </select>
+                                </div>
+                            </li>*@
+                        <li class="m_bottom_5">
+                            <textarea asp-for="Content" class="w_full r_corners fw_light height_3" placeholder="Message"></textarea>
+                            <span asp-validation-for="Content" class="text-danger"></span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <ul>
+                            <li class="m_bottom_10">
+                                <button type="submit" class="button_type_5 color_blue transparent r_corners fs_medium tr_all m_right_10 m_sm_bottom_10">Submit</button>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+<iframe class="w_full" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1970.7638063705238!2d18.717029658205277!3d-33.827369601718786!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1dcc5418b4bd8a21%3A0x5f04ec2c396ae932!2sI+C+WEB+DESIGN+%26+DATA+DEVELOPMENT!5e0!3m2!1sen!2sza!4v1491880449145" height="400"></iframe>
+<hr class="divider_type_2">
+
+
+@section Scripts {
+    <script src="https://www.google.com/recaptcha/api.js?render=@Configuration["googleReCaptcha:SiteKey"]"></script>
+    <script>
+        grecaptcha.ready(function() {
+            window.grecaptcha.execute('@Configuration["googleReCaptcha:SiteKey"]', { action: 'home' }).then(function (token) {
+                $("#captchaInput").val(token);
+            });
+        });
+    </script>
+}

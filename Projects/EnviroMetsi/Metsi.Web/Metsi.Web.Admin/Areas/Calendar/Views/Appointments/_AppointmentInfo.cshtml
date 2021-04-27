@@ -1,0 +1,34 @@
+﻿@model Calendar.Core.Models.AppointmentInfoWindowModel
+<!-- Modal -->
+
+<div class="modal-dialog">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h4 class="modal-title">Appointment Info</h4>
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        </div>
+        <div class="modal-body">
+            <input type="hidden" asp-for="Id"/>
+            <h4>@Model.Title</h4>
+            <h5><strong>@Model.StartTime</strong> to <strong>@Model.EndTime</strong></h5>
+            <p>@Model.ShortDescription</p>
+        </div>
+        <div class="modal-footer">
+            <a asp-area="Calendar" asp-controller="Appointments" asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-sm btn-info">Edit</a>
+            <a href="javascript:;" onclick="ShowDeleteModal('@Model.Id')" class="btn btn-sm btn-danger">Delete</a>
+            <a href="javascript:;" class="btn btn-sm btn-white" data-dismiss="modal">Close</a>
+        </div>
+    </div>
+</div>
+
+<script>
+    function ShowDeleteModal(ff) {
+
+        var url = "/Calendar/Appointments/Delete?id=" + ff;
+
+        $("#ModalPlaceHolder").load(url,
+            function () {
+                $("#ModalPlaceHolder").modal("show");
+            });
+    }
+</script>

@@ -1,0 +1,122 @@
+﻿
+@model PhotoAlbumAddEditModel
+
+@{
+    ViewData["Title"] = $"Edit {Model.PhotoAlbum.Name}";
+}
+
+@section Styles
+    {
+    <link rel="stylesheet" href="~/css/bs-filestyle.css">
+}
+
+<form asp-area="Gallery" asp-controller="PhotoAlbum" asp-action="Edit" enctype="multipart/form-data" method="post">
+    <input type="hidden" asp-for="PhotoAlbum.Id" />
+    <div class="col-md-4">
+        <p class="text-left">
+            <div class="previewd" style="overflow: hidden">
+                <img id="preview" style="width: 100%" class="product-image-zoom" src="@Model.PhotoAlbum.GetImage().GetImagePathFromAnotherWebsite(FrameworkDI.Configuration["Company:WebUrl"],FrameworkDI.Configuration["Placeholders:CoverImage"])" alt="" /><br>
+            </div>
+        </p>
+        <div>
+            <input asp-for="CoverUpload" type="file" id="CoverPhoto" onchange="loadFile(event)" />
+            <input type="hidden" asp-for="CoverCropSettings.X" />
+            <input type="hidden" asp-for="CoverCropSettings.Y" />
+            <input type="hidden" asp-for="CoverCropSettings.Width" />
+            <input type="hidden" asp-for="CoverCropSettings.Height" />
+            <input type="hidden" asp-for="CoverCropSettings.Rotate" />
+            <input type="hidden" asp-for="CoverCropSettings.ScaleX" />
+            <input type="hidden" asp-for="CoverCropSettings.ScaleY" />
+        </div>
+    </div>
+    <div class="col-md-8" style="padding-bottom: 50px !important">
+        <div class="form-horizontal" style="padding-top: 15px">
+
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            <div class="form-group">
+                <label asp-for="PhotoAlbum.Name" class="control-label"></label>
+                <input asp-for="PhotoAlbum.Name" class="form-control" />
+                <span asp-validation-for="PhotoAlbum.Name" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="PhotoAlbum.Description" class="control-label"></label>
+                <textarea asp-for="PhotoAlbum.Description" class="form-control"></textarea>
+                <span asp-validation-for="PhotoAlbum.Description" class="text-danger"></span>
+            </div>
+        </div>
+
+    </div>
+    <div class="row" style="padding-bottom: 20px;">
+        <div class="col-md-12 bottommargin text-center">
+            <h5>Select Blog Images:</h5><br>
+            <input asp-for="ImagesUpload" id="input-3" type="file" class="file" multiple data-show-upload="false" data-show-caption="true" data-show-preview="true">
+        </div>
+    </div>
+    <div class="col-md-12 bottommargin text-center" style="padding-bottom: 50px;">
+        <div class="row">
+            @foreach (var item in Model.PhotoAlbum.Images)
+            {
+                <div id="@item.Id" class="col-md-2">
+                    <img id="preview2" style="width: 100%;" class="thumbnail" title="@item.FileName" alt="@item.FileName" src="@item.GetImagePathFromAnotherWebsite(FrameworkDI.Configuration["Company:WebUrl"])">
+                    <button type="button" data-toggle="Remote Image" onclick="removeImageFromObject('@item.Id')" title="Remove Image" class="btn btn-block btn-danger btn-sm">Delete</button>
+                </div>
+            }
+        </div>
+    </div>
+    <div class="form-group" style="padding-bottom: 50px;">
+        <div class="col-md-offset-2 col-md-10 text-right">
+            <input type="submit" value="Submit" class="btn btn-primary" style="border: transparent" />
+            <a asp-area="Gallery" asp-controller="PhotoAlbum" asp-action="Index" class="btn btn-danger">Cancel</a>
+        </div>
+    </div>
+</form>
+
+@section Scripts
+    {
+    <script src="~/js/bs-filestyle.js"></script>
+
+    <script>
+        var loadFile = function (event) {
+            var output = document.getElementById('coverpreview');
+            if (event.target.files.length !== 0) {
+
+                var oldstring = "";
+                if (output === null) {
+                    oldstring = "/images/placeholders/img_475x320.jpg";
+                } else {
+                    oldstring = output.src;
+                }
+
+                var url = "/Home/CropImage?cropUrl=" + URL.createObjectURL(event.target.files[0]) + "&originalUrl=" + oldstring + "&width=" + 475 + "&height=" + 320
+                    + "&aspectRatio=475/320";
+
+                $("#CropModal").load(url,
+                    function () {
+                        $("#CropModal").modal("show");
+                    });
+            }
+        };
+        function removeImageFromObject(image_id) {
+            $.ajax({
+                url: "/Gallery/PhotoAlbum/RemoveImageAjax",
+                type: "POST",
+                data: { id: image_id },
+                async: false,
+                dataType: "json",
+                success: function (data) {
+                    $('#' + image_id).empty();
+                },
+                error: function (xhr, textStatus, err) {
+                    alert("An error with the following detials occured : "
+                        + "\r\n == readyState: " + xhr.readyState
+                        + "\r\n == responseText: " + xhr.responseText
+                        + "\r\n == status: " + xhr.status
+                        + "\r\n == text status: " + textStatus
+                        + "\r\n == error: " + err);
+                    $("#loaderDiv").hide();
+                }
+            });
+        };
+    </script>
+}

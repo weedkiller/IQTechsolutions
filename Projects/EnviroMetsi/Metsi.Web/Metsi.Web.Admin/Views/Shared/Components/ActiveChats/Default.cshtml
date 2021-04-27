@@ -1,0 +1,29 @@
+﻿@model IEnumerable<Messaging.Base.Entities.Chat>
+
+@using Iqt.Base.Extensions
+
+<div class="panel panel-inverse" data-sortable-id="ui-media-object-2">
+    <div class="panel-body">
+        <ul class="media-list">
+            @foreach (var chat in Model)
+            {
+                <li class="media media-sm">
+                    <a asp-area="Chats" asp-controller="Home" asp-action="Chat" asp-route-id="@chat.Id">
+                        <div class="media-left">
+                            <img src="@chat.ImageUrl" alt="" class="media-object rounded-corner" />
+                        </div>
+                        <div class="media-body">
+                            <h4 class="media-heading">@chat.Name</h4>
+                            <p>@chat.Description.TruncateLongString(100)</p>
+                        </div>
+                    </a>
+                </li>
+            }
+
+        </ul>
+    </div>
+    <div class="panel-footer">
+        <a class="btn btn-primary btn-labeled fa fa-plus btn-block" href="javascript:;" onclick="ShowCreateChatModal()">Add New Chat</a>
+    </div>
+</div>
+

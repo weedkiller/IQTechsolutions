@@ -1,0 +1,16 @@
+﻿@{
+    Layout = "Layouts/_Layout";
+}
+
+@section Styles
+    {
+    <!--page injected css-->
+    @RenderSection("Styles", required: false)
+}
+
+            @RenderBody()
+
+@section Scripts
+    {
+    @RenderSection("Scripts", required: false)
+}

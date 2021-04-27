@@ -1,0 +1,49 @@
+/*!
+ * Start Bootstrap - One Page Wonder (https://startbootstrap.com/template-overviews/one-page-wonder)
+ * Copyright 2013-2017 Start Bootstrap
+ * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-one-page-wonder/blob/master/LICENSE)
+ */
+
+/* === introduction === */
+
+#introduction {
+  background: url('../img/user-profile-background.jpg') no-repeat center
+    center scroll;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+  color: #333;
+  position: relative;
+  text-align: center;
+}
+
+#olympia-introduction, #video-introduction {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+}
+
+#introduction h1 {
+  font-family: 'Cinzel', serif;
+}
+
+#introduction p {
+  color: #555;
+  font-family: 'Roboto', sans-serif;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#introduction .logo-wrapper {
+  margin-bottom: 8px;
+}
+
+#introduction .video-wrapper {
+  border: 15px solid rgba(255, 255, 255, 0.2);
+  border-radius: 15px;
+  box-shadow: 0 15px 15px #333;
+}

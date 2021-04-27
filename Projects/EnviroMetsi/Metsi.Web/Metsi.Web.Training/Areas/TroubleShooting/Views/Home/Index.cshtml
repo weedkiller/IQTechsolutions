@@ -1,0 +1,54 @@
+﻿@using Filing.Base.Enums
+@model IEnumerable<Grouping.Base.Models.CategoryModel>
+
+@{
+    ViewData["Title"] = $"Troubleshooting Categories";
+}
+
+
+<partial name="Sliders/_DefaultSliderPartialView" />
+
+<section id="features" class="container services">
+    <div class="row">
+        <div class="col-sm-12 text-center to_animate">
+            <h2 class="section_header">
+                <span class="highlight"><i class="fa fa-exclamation-triangle"></i></span>
+                Trouble Shooting
+            </h2>
+            <p>Solve all your problems by using our extensive trouble shooting manual</p>
+        </div>
+
+    </div>
+</section>
+
+
+<section id="features" class="container services">
+        <div class="row">
+            @foreach (var item in Model)
+            {
+                <div class="col-md-3 col-sm-6">
+                    <img src="@item.ImageUrl" alt="Trouble shooting" style="width: 100%" />
+                    <h2>@item.Name</h2>
+                    <p>@item.Description.HtmlToPlainText().TruncateLongString(150)</p>
+                    <a class="btn btn-primary btn-block" asp-area="Troubleshooting" asp-controller="Categories" asp-action="Index" asp-route-id="@item.Id">Troubleshoot</a>
+                </div>
+            }
+        </div>
+    </section>
+
+@section Scripts
+{
+
+    @await Html.PartialAsync("_ValidationScriptsPartial")
+
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script>
+        var j = jQuery.noConflict();
+        j(document).ready(function () {
+            j('#SearchText').autocomplete({
+                source: 'https://api.metsi.co.za/api/v1/problems/getProblemAutoComplete'
+            });
+        });
+    </script>
+}

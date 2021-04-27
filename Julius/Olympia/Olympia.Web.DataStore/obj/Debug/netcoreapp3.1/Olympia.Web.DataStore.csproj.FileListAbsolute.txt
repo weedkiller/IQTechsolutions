@@ -1,0 +1,16 @@
+G:\Julius\Olympia\Olympia.Web.DataStore\bin\Debug\netcoreapp3.1\Olympia.Web.DataStore.deps.json
+G:\Julius\Olympia\Olympia.Web.DataStore\bin\Debug\netcoreapp3.1\Olympia.Web.DataStore.dll
+G:\Julius\Olympia\Olympia.Web.DataStore\bin\Debug\netcoreapp3.1\Olympia.Web.DataStore.pdb
+G:\Julius\Olympia\Olympia.Web.DataStore\obj\Debug\netcoreapp3.1\Olympia.Web.DataStore.csprojAssemblyReference.cache
+G:\Julius\Olympia\Olympia.Web.DataStore\obj\Debug\netcoreapp3.1\Olympia.Web.DataStore.AssemblyInfoInputs.cache
+G:\Julius\Olympia\Olympia.Web.DataStore\obj\Debug\netcoreapp3.1\Olympia.Web.DataStore.AssemblyInfo.cs
+G:\Julius\Olympia\Olympia.Web.DataStore\obj\Debug\netcoreapp3.1\Olympia.Web.DataStore.csproj.CoreCompileInputs.cache
+G:\Julius\Olympia\Olympia.Web.DataStore\obj\Debug\netcoreapp3.1\Olympia.Web.DataStore.dll
+G:\Julius\Olympia\Olympia.Web.DataStore\obj\Debug\netcoreapp3.1\Olympia.Web.DataStore.pdb
+G:\Julius\Olympia\Olympia.Web.DataStore\bin\Debug\netcoreapp3.1\Filing.Base.dll
+G:\Julius\Olympia\Olympia.Web.DataStore\bin\Debug\netcoreapp3.1\Identity.Base.dll
+G:\Julius\Olympia\Olympia.Web.DataStore\bin\Debug\netcoreapp3.1\Iqt.Base.dll
+G:\Julius\Olympia\Olympia.Web.DataStore\bin\Debug\netcoreapp3.1\Identity.Base.pdb
+G:\Julius\Olympia\Olympia.Web.DataStore\bin\Debug\netcoreapp3.1\Filing.Base.pdb
+G:\Julius\Olympia\Olympia.Web.DataStore\bin\Debug\netcoreapp3.1\Iqt.Base.pdb
+G:\Julius\Olympia\Olympia.Web.DataStore\obj\Debug\netcoreapp3.1\Olympia.Web.DataStore.csproj.CopyComplete

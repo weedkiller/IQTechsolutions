@@ -1,0 +1,161 @@
+﻿@model ProjectAddEditModel
+
+@{
+    ViewData["Title"] = "Create New Project";
+}
+
+@section Styles
+    {
+    <link rel="stylesheet" href="~/css/summernote.css">
+    <link rel="stylesheet" href="~/css/bs-filestyle.css">
+}
+
+<form asp-area="Projects" asp-controller="Home" asp-action="Create" enctype="multipart/form-data" method="post">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <input type="hidden" asp-for="Entity.Id" />
+    <h4>Project Details</h4>
+    <hr />
+    <div class="row form-horizontal">
+        <div class="col-md-4">
+            <div class="previewd" style="overflow: hidden">
+                <img id="preview" style="width: 100%" class="product-image-zoom" src="~/images/placeholders/MetsiPlaceholder-800x533.jpg" alt="Cover Image" /><br>
+            </div>
+            <div style="padding-bottom: 20px" class="text-right">
+                <input asp-for="CoverUpload" class="file" type="file" data-show-preview="false" onchange="loadFile(event)" />
+                <input type="hidden" asp-for="CoverCropSettings.X" />
+                <input type="hidden" asp-for="CoverCropSettings.Y" />
+                <input type="hidden" asp-for="CoverCropSettings.Width" />
+                <input type="hidden" asp-for="CoverCropSettings.Height" />
+                <input type="hidden" asp-for="CoverCropSettings.Rotate" />
+                <input type="hidden" asp-for="CoverCropSettings.ScaleX" />
+                <input type="hidden" asp-for="CoverCropSettings.ScaleY" />
+            </div>
+        </div>
+        <div class="col-md-8">
+
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Entity.ProjectName" class="control-label col-md-2"></label>
+                <div class="col-md-10">
+                    <input asp-for="Entity.ProjectName" class="form-control" />
+                    <span asp-validation-for="Entity.ProjectName" class="text-danger"></span>
+                </div>
+            </div>
+            @*<div class="form-group">
+                <label asp-for="Entity.Customer.ApplicationUser.DisplayName" class="control-label col-md-2"></label>
+                <div class="col-md-10">
+                    <input asp-for="Entity.Customer.ApplicationUser.DisplayName" class="form-control" />
+                    <span asp-validation-for="Entity.Customer.ApplicationUser.DisplayName" class="text-danger"></span>
+                </div>
+            </div>*@
+            <div class="form-group">
+                <label asp-for="Entity.Location" class="control-label col-md-2"></label>
+                <div class="col-md-10">
+                    <input asp-for="Entity.Location" class="form-control" />
+                    <span asp-validation-for="Entity.Location" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group text-center">
+                <div class="checkbox">
+                    <label>
+                        <input asp-for="Entity.Featured" class="form-control" /> @Html.DisplayNameFor(model => model.Entity.Featured)
+                    </label>
+                </div>
+            </div>
+        </div>
+        <hr />
+        <div class="row" style="padding: 0 30px">
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label asp-for="Entity.ShortDescription" class="control-label"></label>
+                    <textarea asp-for="Entity.ShortDescription" class="form-control"></textarea>
+                    <span asp-validation-for="Entity.ShortDescription" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Entity.LongDescription" class="control-label"></label>
+                    <textarea asp-for="Entity.LongDescription" class="form-control"></textarea>
+                    <span asp-validation-for="Entity.LongDescription" class="text-danger"></span>
+                </div>
+
+
+            </div>
+        </div>
+        <hr />
+        <div class="row" style="padding-bottom: 20px;">
+            <div class="col-md-12 bottommargin text-center">
+                <h5>Select your Images:</h5><br>
+                <input asp-for="ImagesUpload" id="input-3" type="file" class="file" multiple data-show-upload="false" data-show-caption="true" data-show-preview="true">
+            </div>
+        </div>
+        <hr />
+        <div class="col-md-6">
+            <input name="finnish" id="main" type="submit" value="Add New Project" class="btn btn-block btn-info" />
+        </div>
+        <div class="col-md-6">
+            <a asp-area="Projects" asp-controller="Home" asp-action="List" class="btn btn-danger btn-block">Cancel</a>
+        </div>
+    </div>
+
+</form>
+
+
+    @section Scripts{
+
+        <script>
+            var loadFile = function (event) {
+                var output = document.getElementById('preview');
+                if (event.target.files.length !== 0) {
+
+                    var oldstring = "";
+                    if (output === null) {
+                        oldstring = "/images/placeholders/MetsiPlaceholder-800x533.jpg";
+                    } else {
+                        oldstring = output.src;
+                    }
+
+                    var url = "/Home/CropImage?cropUrl=" + URL.createObjectURL(event.target.files[0]) + "&originalUrl=" + oldstring + "&width=" + 800 + "&height=" + 533
+                        + "&previewClass=previewd" + "&uploadProperty=CoverUpload" + "&xTag=CoverCropSettings_X" + "&yTag=CoverCropSettings_Y"
+                        + "&widthTag=CoverCropSettings_Width" + "&heightTag=CoverCropSettings_Height" + "&rotateTag=CoverCropSettings_Rotate" + "&scaleXTag=CoverCropSettings_ScaleX"
+                        + "&scaleYTag=CoverCropSettings_ScaleY";
+
+                    $("#CropModal").load(url,
+                        function () {
+                            $("#CropModal").modal("show");
+                        });
+                }
+            };
+        </script>
+
+        <!-- Summer Note JS -->
+        <script src="~/js/summernote/summernote.js"></script>
+
+        <!-- Summer Note JS -->
+        <script src="~/js/bs-filestyle.js"></script>
+
+        <script type="text/javascript">
+            // Default
+            $(document).ready(function () {
+                var HomeIndex = function () {
+
+                    var $this = this;
+                    function initialize() {
+                        $('#Entity_LongDescription').summernote({
+                            height: 250,
+                            codemirror: { // codemirror options
+                                theme: 'monokai'
+                            }
+                        });
+                    }
+
+                    $this.init = function () {
+                        initialize();
+                    }
+                };
+                var self = new HomeIndex();
+                self.init();
+            });
+
+
+        </script>
+    }
+

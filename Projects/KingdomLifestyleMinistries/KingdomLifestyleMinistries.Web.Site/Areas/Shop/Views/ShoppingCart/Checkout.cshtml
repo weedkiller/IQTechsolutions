@@ -1,0 +1,207 @@
+﻿@inject ShoppingCart ShoppingCart
+
+@model CheckOutModel
+
+@{
+    ViewData["Title"] = "Checkout";
+    Layout = "Layouts/_Layout";
+}
+
+<section>
+    <div class="container">
+        <div class="section-content">
+            <div class="row mt-30">
+                <form asp-area="Shop" asp-controller="ShoppingCart" asp-action="Checkout" enctype="multipart/form-data" method="post">
+                    <div class="col-md-6">
+                        <div class="billing-details">
+                            <h3 class="mb-30">Billing Details</h3>
+                            <div class="row">
+                                <div class="form-group col-md-6">
+                                    <label for="checkuot-form-fname">First Name</label>
+                                    <input asp-for="Name" type="text" class="form-control" placeholder="First Name">
+                                    <span asp-validation-for="Name" class="text-danger"></span>
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label for="checkuot-form-lname">Last Name</label>
+                                    <input asp-for="Surname" type="text" class="form-control" placeholder="Last Name" required="">
+                                    <span asp-validation-for="Surname" class="text-danger"></span>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label for="checkuot-form-cname">Company Name</label>
+                                        <input asp-for="CompanyName" type="text" class="form-control" placeholder="Company Name" required="">
+                                        <span asp-validation-for="CompanyName" class="text-danger"></span>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="checkuot-form-email">Phone Nr</label>
+                                        <input asp-for="Cell" type="text" class="form-control" placeholder="Phone Nr" required="">
+                                        <span asp-validation-for="Cell" class="text-danger"></span>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="checkuot-form-email">Email Address</label>
+                                        <input asp-for="Email" type="email" class="form-control" placeholder="Email Address" required="">
+                                        <span asp-validation-for="Email" class="text-danger"></span>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label for="checkuot-form-address">Address</label>
+                                        <input asp-for="AddressLine1" type="text" class="form-control" placeholder="Street address" required="">
+                                        <span asp-validation-for="AddressLine1" class="text-danger"></span>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="checkuot-form-address">Suburb</label>
+                                        <input asp-for="Suburb" type="text" class="form-control" placeholder="Suburb" required="">
+                                        <span asp-validation-for="Suburb" class="text-danger"></span>
+                                    </div>
+                                </div>
+                                    <div class="form-group col-md-6">
+                                        <label for="checkuot-form-address">City</label>
+                                        <input asp-for="City" type="text" class="form-control" placeholder="City" required="">
+                                        <span asp-validation-for="City" class="text-danger"></span>
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label for="checkuot-form-zip">Zip/Postal Code</label>
+                                        <input asp-for="PostalCode" type="text" class="form-control" placeholder="Postal Code" required="">
+                                        <span asp-validation-for="PostalCode" class="text-danger"></span>
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label for="checkuot-form-zip">Province</label>
+                                        <input asp-for="Province" type="text" class="form-control" placeholder="Province" required="">
+                                        <span asp-validation-for="Province" class="text-danger"></span>
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label for="checkuot-form-zip">Country</label>
+                                        <input asp-for="Country" type="text" class="form-control" placeholder="Country" required="">
+                                        <span asp-validation-for="Country" class="text-danger"></span>
+                                    </div>
+                                </div>
+                            </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="shipping-details">
+                            <h3 class="mb-30">
+                                Ship to a different address?
+                                <span class="checkbox pull-right flip mt-0">
+                                    <label>
+                                        <input type="checkbox" id="checkbox-ship-to-different-address" value="option1" aria-label="...">
+                                    </label>
+                                </span>
+                            </h3>
+                            <div id="checkout-shipping-address">
+                                <div class="row">
+                                    <div class="form-group">
+                                        <label for="checkuot-form-address2">Address</label>
+                                        <input asp-for="ShippingAddressLine1" type="text" class="form-control" placeholder="Shipping Address">
+                                        <span asp-validation-for="ShippingAddressLine1" class="text-danger"></span>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="checkuot-form-address">Suburb</label>
+                                        <input asp-for="ShippingSuburb" type="text" class="form-control" placeholder="Suburb">
+                                        <span asp-validation-for="ShippingSuburb" class="text-danger"></span>
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label for="checkuot-form-address">City</label>
+                                        <input asp-for="ShippingCity" type="text" class="form-control" placeholder="City">
+                                        <span asp-validation-for="ShippingCity" class="text-danger"></span>
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label for="checkuot-form-zip">Zip/Postal Code</label>
+                                        <input asp-for="ShippingPostalCode" type="text" class="form-control" placeholder="Postal Code">
+                                        <span asp-validation-for="ShippingPostalCode" class="text-danger"></span>
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label for="checkuot-form-zip">Province</label>
+                                        <input asp-for="ShippingProvince" type="text" class="form-control" placeholder="Province">
+                                        <span asp-validation-for="ShippingProvince" class="text-danger"></span>
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label for="checkuot-form-zip">Country</label>
+                                        <input asp-for="ShippingCountry" type="text" class="form-control" placeholder="Country">
+                                        <span asp-validation-for="ShippingCountry" class="text-danger"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Order Notes</label>
+                                <textarea asp-for="Comments" class="form-control" placeholder="Notes about your order, e.g. special notes for delivery." rows="3"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <h3>Your order</h3>
+                        <table class="table table-striped table-bordered tbl-shopping-cart">
+                            <thead>
+                                <tr>
+                                    <th>Photo</th>
+                                    <th>Product Name</th>
+                                    <th>Total</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in await ShoppingCart.GetCartItems())
+                                    {
+                                        <tr id="row_@item.Product.Id" class="row_@item.Product.Id">
+                                            <td class="product-thumbnail"><a asp-area="Products" asp-controller="Home" asp-action="Details" asp-route-id="@item.Product.Id"><img alt="member" src="@item.Product.GetImage().GetImagePathFromAnotherWebsite(FrameworkDI.Configuration["Company:WebUrl"],FrameworkDI.Configuration["Placeholders:CoverImage"])"></a></td>
+                                            <td><a asp-area="Products" asp-controller="Home" asp-action="Details" asp-route-id="@item.Product.Id">@item.Product.Name</a> x @item.Qty</td>
+                                            <td><span class="amount">@item.TotalDue.Value.ToString("c")</span></td>
+                                        </tr>
+                                    }
+                                <tr>
+                                    <td>Cart Subtotal</td>
+                                    <td>&nbsp;</td>
+                                    <td>
+                                        @{
+                                                var sotot = await ShoppingCart.GetTotalDue();
+                                                @sotot.ToString("C")
+                                            }
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Shipping and Handling</td>
+                                    <td>&nbsp;</td>
+                                    <td>Free Shipping</td>
+                                </tr>
+                                <tr>
+                                    <td>Order Total</td>
+                                    <td>&nbsp;</td>
+                                    <td>
+                                        @{
+                                                var otot = await ShoppingCart.GetTotalDue();
+                                                @otot.ToString("C")
+                                            }
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="col-md-12">
+                    <h3>Payment Information</h3>
+                    <div class="payment-method">
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="PaymentGateway" name="optionsRadios" value="PayFast" checked="checked">
+                                Pay Fast
+                            </label>
+                            <p>Please use your Order ID as the payment reference. Your order won’t be shipped until the funds have cleared in our account.</p>
+                        </div>
+                        <div class="radio">
+                            <label>
+                                <input name="PaymentGateway" type="radio" name="optionsRadios" value="DirectTransfer">
+                                Direct Bank Transfer
+                            </label>
+                            <p>Make your payment directly into our bank account. Please use your Order ID as the payment reference. Your order won’t be shipped until the funds have cleared in our account.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <div class="text-right">
+                        <input type="submit" value="Place Order" class="btn btn-default"/>
+                        <a asp-area="Products" asp-controller="Home" asp-action="Index" class="btn btn-default">Back to Shop</a>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+</section>

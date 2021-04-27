@@ -1,0 +1,74 @@
+﻿@model ShareFileFolderModel
+<!-- Modal -->
+
+<div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h4 class="modal-title">Please choose employee share width!</h4>
+            <button type="button" class="close" data-dismiss="modal">
+                <span aria-hidden="true">×</span>
+                <span class="sr-only">close</span>
+            </button>
+        </div>
+        <div class="modal-body">
+            <div class="row">
+
+                <div class="col-md-3">
+                    <label asp-for="EmailAddress" class="control-label">Application User</label>
+                </div>
+                <div class="col-md-9">
+                    <input type="hidden" asp-for="SelectedFiles.Count" />
+                    <input type="hidden" asp-for="FolderPath" />
+                    <select asp-for="SelectedEmployee" asp-items="Model.Employees" class="form-control">
+                        <option value="0">Please select Employee to share with</option>
+                    </select>
+                    <div style="text-align: center">
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="modal-footer">
+            <a href="javascript:;" class="btn btn-sm btn-white" data-dismiss="modal">Cancel</a>
+            <a href="javascript:;" onclick="ConfirmShare()" class="btn btn-sm btn-primary">Accept</a>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+
+    function ConfirmShare() {
+        
+        var obj = @Html.Raw(Json.Serialize(Model.SelectedFiles));
+
+        
+            alert(JSON.stringify(obj));
+            $.ajax({
+                type: "POST",
+                contentType: "application/json; charset=utf-8",
+                // Custom method the data passed
+                url: "/FileManager/Home/DoShareFileFolder/" + $("#SelectedEmployee").val(),
+                data: JSON.stringify(obj),
+                dataType: "json",
+                success: function (data) {
+                    alert("worked");
+                },
+                error: function (xhr, textStatus, err) {
+                    alert("An error with the following detials occured : " +
+                        "\r\n == readyState: " +
+                        xhr.readyState +
+                        "\r\n == status: " +
+                        xhr.status +
+                        "\r\n == text status: " +
+                        textStatus +
+                        "\r\n == error: " +
+                        err);
+                }
+            });
+        
+
+
+
+        $("#ModalPlaceHolder").modal("hide");
+    }
+</script>

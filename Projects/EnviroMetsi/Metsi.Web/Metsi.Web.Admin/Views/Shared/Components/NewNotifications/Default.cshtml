@@ -1,0 +1,36 @@
+﻿@model ICollection<Messaging.Base.Entities.Notification>
+
+<h4 class="title">New Notifications <small>@Model.Count new notifications</small></h4>
+<!-- begin scrollbar -->
+<div data-scrollbar="true" data-height="280px" class="bg-silver">
+    <!-- begin chats -->
+    <ul class="chats">
+        @if (Model.Any())
+        {
+            foreach (var item in Model)
+            {
+                <li class="left">
+                    <a asp-area="Notifications" asp-controller="Home" asp-action="Index" asp-route-id="@item.Id">
+                        <span class="date-time">@item.CreatedDateString</span>
+                        <div class="name">@item.Name</div>
+                        <div class="image">
+                            <img alt="@item.Name Profile Image" src="">
+                        </div>
+                        <div class="message">
+                            @item.MessageString
+                        </div>
+                    </a>
+
+                </li>
+            }
+        }
+        else
+        {
+            <li class="active">
+                <div class="todolist-title">No new notifications</div>
+            </li>
+        }
+    </ul>
+    <!-- end chats -->
+</div>
+<!-- end scrollbar -->

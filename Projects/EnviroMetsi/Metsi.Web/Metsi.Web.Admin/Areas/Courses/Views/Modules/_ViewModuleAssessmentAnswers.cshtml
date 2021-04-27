@@ -1,0 +1,103 @@
+﻿
+@model ModuleAssessmentElementAnswerListModel
+
+<div class="modal-dialog">
+    <div class="modal-content">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+            <h4 class="modal-title">Create New Form Element</h4>
+        </div>
+        <div class="modal-body" id="addContactNumberModelBodyDiv">
+            <div  style="overflow:auto; max-height: 500px">
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <td>Question</td>
+                        <td>Is Correct</td>
+                        <td></td>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    @if(Model.Answers.Any())
+                    {
+                        foreach (var item in Model.Answers)
+                        {
+                            <tr>
+                                <td>@item.Answer</td>
+                                <td><input class="checkbox" asp-for="@item.IsCorrect"/></td>
+                                <td>
+                                    <a href="javascript:;" onclick="ShowEditAssessmentAnswerModal('@item.Id')" class="btn btn-primary btn-xs btn-circle"><i class="fa fa-edit"></i></a>
+                                    <a href="javascript:;" onclick="ShowDeleteAssessmentAnswerModal('@item.Id')" class="btn btn-danger btn-xs btn-circle"><i class="fa fa-trash"></i></a>
+                                </td>
+                            </tr>
+                        }
+                    }
+                    else
+                    {
+                        <tr>
+                            <td colspan="3">This question currently do not have any answers listed, check back later or <a href="javascript:;" onclick="ShowCreateAssessmentAnswerModal('@Model.AssessmentElementId')">add a new answer</a></td>
+                        </tr>
+                    }
+
+                    </tbody>
+                    <tfoot>
+                    <tr>
+                        <td colspan="3">
+                            <a href="javascript:;" onclick="ShowCreateAssessmentAnswerModal('@Model.AssessmentElementId')" class="btn btn-primary btn-xs btn-block">Create New Answer</a>
+                        </td>
+                    </tr>
+                    
+                    </tfoot>
+                </table>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <!-- ================== FORM BUTTON ================== -->
+            <div class="row" style="padding-bottom: 50px">
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10 text-right">
+                        <button type="submit" class="btn btn-sm btn-primary">Save Changes</button>
+                        <a href="javascript:;" class="btn btn-sm btn-danger" data-dismiss="modal">Close</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- ================== END FORM BUTTON ================== -->
+        <div style="text-align: center; display: none" id="EmailAddressAddEditloaderDiv">
+            <img src="~/images/loader2.gif" />
+        </div>
+    </div>
+</div>
+
+<script>
+    function ShowCreateAssessmentAnswerModal(parentId) {
+
+        var url = "/Courses/Modules/CreateModuleAssessmentElementAnswer?parentId=" + parentId;
+
+        $("#ModalPlaceHolder").load(url,
+            function () {
+                $("#ModalPlaceHolder").modal("show");
+            });
+    }
+
+    function ShowEditAssessmentAnswerModal(id) {
+
+        var url = "/Courses/Modules/EditModuleAssessmentElementAnswer?id=" + id;
+
+        $("#ModalPlaceHolder").load(url,
+            function () {
+                $("#ModalPlaceHolder").modal("show");
+            });
+    }
+
+    function ShowDeleteAssessmentAnswerModal(id) {
+
+        var url = "/Courses/Modules/DeleteAssessmentElementAnswer?id=" + id;
+
+        $("#ModalPlaceHolder").load(url,
+            function () {
+                $("#ModalPlaceHolder").modal("show");
+            });
+    }
+
+</script>

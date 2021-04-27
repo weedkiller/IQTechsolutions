@@ -1,0 +1,33 @@
+﻿<!-- begin breadcrumb -->
+<ul class="breadcrumb">
+    <li class="breadcrumb-item">
+        <a href="@Url.Action("Index", "Home")">
+            <i class="ti ti-home"></i>
+        </a>
+    </li>
+    @if (ViewContext.RouteData.Values["area"] != null && ViewContext.RouteData.Values["area"].ToString().ToLower() != "")
+    {
+        <li class="breadcrumb-item">
+            <a href="@Url.Action(ViewContext.RouteData.Values["action"].ToString(), ViewContext.RouteData.Values["controller"].ToString(), new {area = ViewContext.RouteData.Values["area"].ToString()})">
+                @ViewContext.RouteData.Values["area"].ToString()
+            </a>
+        </li>
+    }
+    @if (ViewContext.RouteData.Values["controller"].ToString() != "Home")
+    {
+        <li class="breadcrumb-item">
+            <a href="@Url.Action("List", ViewContext.RouteData.Values["controller"].ToString())">
+                @ViewContext.RouteData.Values["controller"].ToString()
+            </a>
+        </li>
+    }
+    @if (ViewContext.RouteData.Values["action"].ToString() != "Index")
+    {
+        <li class="breadcrumb-item active">
+            <a href="@Url.Action(ViewContext.RouteData.Values["action"].ToString(), ViewContext.RouteData.Values["controller"].ToString())">
+                @ViewContext.RouteData.Values["action"].ToString()
+            </a>
+        </li>
+    }
+</ul>
+<!-- end breadcrumb -->

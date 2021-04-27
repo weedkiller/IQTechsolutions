@@ -1,0 +1,92 @@
+﻿
+    <div class="responsive so-megamenu ">
+        <nav class="navbar-default">
+            <div class=" container-megamenu  horizontal">
+                <div class="navbar-header">
+                    <button type="button" id="show-megamenu" data-toggle="collapse" class="navbar-toggle">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    Navigation
+                </div>
+
+                <div class="megamenu-wrapper">
+                    <span id="remove-megamenu" class="fa fa-times"></span>
+                    <div class="megamenu-pattern">
+                        <div class="container">
+                            <ul class="megamenu " data-transition="slide" data-animationtime="250">
+                                <li class="">
+                                    <p class="close-menu"></p>
+                                    <a asp-area="" asp-controller="Home" asp-action="Index" class="clearfix">
+                                        <strong>Home</strong>
+                                        <span class="label"></span>
+                                    </a>
+                                </li>
+                                    <!-- Products -->
+                                    <li class="">
+                                        <p class="close-menu"></p>
+                                        <a asp-area="Products" asp-controller="Home" asp-action="Index" class="clearfix">
+                                            <strong>Shop</strong>
+                                            <span class="label"></span>
+                                        </a>
+                                    </li>
+                                    <li class="">
+                                        <p class="close-menu"></p>
+                                        <a asp-area="Services" asp-controller="Home" asp-action="Index" class="clearfix">
+                                            <strong>Services</strong>
+                                            <span class="label"></span>
+                                        </a>
+                                    </li>
+                                    <!-- Support -->
+                                    <li class="">
+                                        <p class="close-menu"></p>
+                                        <a asp-area="Support" asp-controller="Home" asp-action="Create" class="clearfix">
+                                            <strong>Contact Us</strong>
+                                            <span class="label"></span>
+                                        </a>
+                                    </li>
+                                    @if (User.Identity.IsAuthenticated)
+                                    {
+                                        <!-- My Account -->
+                                        <li class="hidden-md">
+                                            <p class="close-menu"></p>
+                                            <a asp-area="Identity" asp-controller="Profile" asp-action="Index" class="clearfix">
+                                                <strong>My Account</strong>
+                                            </a>
+                                        </li>
+                                        @if (User.IsInRole("Seller") || User.IsInRole("Admin"))
+                                        {
+                                            <!-- Affiliates -->
+                                            <li class="home hover">
+                                                <p class="close-menu"></p>
+                                                <a asp-area="Dashboard" asp-controller="Home" asp-action="Index" class="clearfix">
+                                                    <strong>Seller Panel</strong>
+                                                    <span class="label"></span>
+                                                </a>
+                                            </li>
+                                        }
+                                        else
+                                        {
+                                            <!-- Affiliates -->
+                                            <li class="home hover">
+                                                <p class="close-menu"></p>
+                                                <a asp-area="Sellers" asp-controller="Home" asp-action="Create" class="clearfix">
+                                                    <strong>Register<small> as Seller</small></strong>
+                                                    <span class="label"></span>
+                                                </a>
+                                            </li>
+                                        }
+
+                                    }
+                                    
+                                    <li class="pull-right"><a asp-area="Products" asp-controller="Home" asp-action="Index" asp-route-spec="1" title="Special Offer!"><strong>Special Offers!</strong></a></li>
+                                    
+                            </ul>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </div>

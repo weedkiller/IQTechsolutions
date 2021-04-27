@@ -1,0 +1,22 @@
+﻿@{
+    Layout = "Layouts/_Layout";
+}
+
+@section Styles
+    {
+    <!--page injected css-->
+    @RenderSection("Styles", required: false)
+}
+
+<div class="row flex-row">
+    <div class="col-12">
+        
+            @RenderBody()
+
+        </div>
+    </div>
+
+@section Scripts
+        {
+        @RenderSection("Scripts", required: false)
+    }

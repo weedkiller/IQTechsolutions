@@ -1,0 +1,26 @@
+﻿@{
+    Layout = "Layouts/_Layout";
+}
+
+@section Styles
+{
+    @RenderSection("Styles", required: false)
+}
+
+<partial name="Breadcrumbs/_BreadcrumbsDefault" />
+
+<div id="page-content">
+
+    @RenderBody()
+
+</div>
+
+
+@section Scripts
+{
+    <script>
+        var containter = document.getElementById("container");
+        containter.classList.add("mainnav-lg");
+    </script>
+    @RenderSection("Scripts", required: false)
+}

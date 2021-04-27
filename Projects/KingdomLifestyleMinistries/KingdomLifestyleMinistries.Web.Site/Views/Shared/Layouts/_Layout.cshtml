@@ -1,0 +1,39 @@
+﻿
+@inject SignInManager<ApplicationUser> SignInManager
+
+@{
+    Layout = "Layouts/_DefaultLayout";
+}
+
+@section Styles
+{
+    <!-- Revolution Slider 5.x CSS settings -->
+    <link href="~/js/revolution-slider/css/settings.css" rel="stylesheet" type="text/css" />
+    <link href="~/js/revolution-slider/css/layers.css" rel="stylesheet" type="text/css" />
+    <link href="~/js/revolution-slider/css/navigation.css" rel="stylesheet" type="text/css" />
+
+    <!-- CSS | Theme Color -->
+    <link href="~/css/colors/theme-skin-megenta.css" rel="stylesheet" type="text/css">
+        
+    <!-- Revolution Slider 5.x SCRIPTS -->
+    <script src="~/js/revolution-slider/js/jquery.themepunch.tools.min.js"></script>
+    <script src="~/js/revolution-slider/js/jquery.themepunch.revolution.min.js"></script>
+
+    <!--page injected css-->
+    @RenderSection("Styles", required: false)
+}
+
+
+<partial name="_HeaderPartial" />
+
+<div class="main-content">
+        @RenderBody()
+    </div>
+
+    <partial name="_FooterPartial" />
+
+@section Scripts
+{
+    @RenderSection("Scripts", required: false)
+}
+

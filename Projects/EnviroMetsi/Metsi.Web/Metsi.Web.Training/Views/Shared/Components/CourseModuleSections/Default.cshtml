@@ -1,0 +1,37 @@
+﻿@using Iqt.Base.Extensions
+@model IEnumerable<Education.Base.ApiModels.SectionApiModel>
+
+<div class="ibox float-e-margins">
+    <div class="ibox-title">
+        <h5>Training Sections</h5>
+        <div class="ibox-tools">
+            <a class="collapse-link">
+                <i class="fa fa-chevron-up"></i>
+            </a>
+            <a class="close-link">
+                <i class="fa fa-times"></i>
+            </a>
+        </div>
+    </div>
+    <div class="ibox-content">
+        <p>
+            This is basic example of Step
+        </p>
+        <div id="wizard">
+            
+            @foreach (var item in Model)
+            {
+                <h1>@item.Name</h1>
+                <div class="step-content">
+                    <div class="text-center m-t-md">
+                        <h2>@item.Name</h2>
+                        <p>
+                            @item.Description.HtmlToPlainText()
+                        </p>
+                    </div>
+                </div>
+            }
+        </div>
+
+    </div>
+</div>

@@ -1,0 +1,201 @@
+﻿@{ 
+    ViewData["Title"] = "Create New Task";
+}
+
+@model ProblemAddEditModel
+
+<link href="~/css/summernote.css" rel="stylesheet" type="text/css" />
+
+<form class="" asp-area="Troubleshooting" asp-controller="Home" asp-action="Create" enctype="multipart/form-data" method="post" style="margin: 0 !important">
+
+    <div class="profile-container">
+
+        <div class="profile-section">
+
+
+            <div class="form-horizontal">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label asp-for="Entity.Heading" class="control-label"></label>
+                            <input asp-for="Entity.Heading" class="form-control" placeholder="Enter your heading here" />
+                            <span asp-validation-for="Entity.Heading" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Entity.Keywords" class="control-label">Keywords <small>(Seperate keywords with comma)</small></label>
+                            <input asp-for="Entity.Keywords" class="form-control" placeholder="Enter you keywords here, sperate each keyword with a comma" />
+                            <span asp-validation-for="Entity.Keywords" class="text-danger"></span>
+                        </div>
+                        <input type="hidden" asp-for="Entity.Id" />
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="row">
+        <ul class="nav nav-pills">
+            <li class="active"><a href="#nav-pills-tab-1" data-toggle="tab" style="font-size: 16px">Description</a></li>
+            <li><a href="#nav-pills-tab-2" data-toggle="tab" style="font-size: 16px">Categories</a></li>
+            <li><a href="#nav-pills-tab-3" data-toggle="tab" style="font-size: 16px">Causes for Problem</a></li>
+        </ul>
+        <div class="tab-content">
+            <div class="tab-pane fade active in" id="nav-pills-tab-1">
+                <h5 class="m-t-10">Description</h5>
+                <div class="form-group">
+                    <textarea asp-for="Entity.Description" class="form-control" style="height: 100px" placeholder="Enter your description here"></textarea>
+                    <span asp-validation-for="Entity.Description" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="nav-pills-tab-2">
+                <h5 class="m-t-10">Categories</h5>
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <label asp-for="Entity.Categories" class="control-label">Select the appropriate Categories:</label>
+                            <input type="hidden" asp-for="Entity.Categories" />
+                            <hr />
+                            <div class="col-md-12">
+                                <div class="panel-group" id="accordion">
+                                    <div class="panel panel-inverse overflow-hidden">
+                                        <partial name="_CategorySelectionPartial" for="@Model.AvailableCategories" />
+                                    </div>
+                                </div>
+                            </div>
+                            <hr />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="nav-pills-tab-3">
+                <h5 class="m-t-10">Causes</h5>
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <table id="CauseList" class="table">
+                                <thead>
+                                    <tr>
+                                        <th>
+                                            Possible causes for this problem:
+                                        </th>
+                                        <th>
+                                            <a asp-area="Troubleshooting" asp-controller="Causes" asp-action="Create" asp-route-parentId="@Model.Entity.Id" class="btn btn-default" style="float: right"><strong>Add New Cause</strong></a>
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @if (Model.Entity.Causes.Any())
+                                    {
+                                        foreach (var item in Model.Entity.Causes)
+                                        {
+                                            <tr id="row_@item.Id" class="row_@item.Id">
+                                                <td class="replaceme">
+                                                    @Html.Raw(item.Description)
+                                                </td>
+                                                <td>
+                                                    <a asp-area="Troubleshooting" asp-controller="Causes" asp-action="Edit" asp-route-id="@item.Id" class="btn btn-success btn-icon btn-circle"><i class="fa fa-edit"></i></a>
+                                                    <a href="javascript:;" onclick="ShowDeleteCauseModal('@item.Id')" class="btn btn-warning btn-icon btn-circle"><i class="fa fa-trash"></i></a>
+                                                </td>
+                                            </tr>
+                                            <tr id="row2_@item.Id" class="row_@item.Id">
+                                                <td colspan="2">
+                                                    <table id="CorrectiveActionList_@item.Id" class="table" style="padding-left: 50px !important;">
+                                                        <thead>
+                                                            <tr>
+                                                                <th>
+                                                                    Corrective Actions to be taken:>
+                                                                </th>
+                                                                <th>
+                                                                    <a asp-area="Troubleshooting" asp-controller="CorrectiveActions" asp-action="Create" asp-route-problemId="@Model.Entity.Id" asp-route-causeId="@item.Id" class="btn btn-default" style="float: right"><strong>Add New Corrective Action</strong></a>
+                                                                </th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            @if (Model.Entity.Causes.Any())
+                                                            {
+                                                                foreach (var action in item.CorrectiveActions)
+                                                                {
+                                                                    <tr id="row_@action.Id" class="row_@action.Id">
+                                                                        <td class="col_@action.Id" id="col_@action.Id">
+                                                                            @Html.Raw(action.Description)
+                                                                        </td>
+                                                                        <td>
+                                                                            <a asp-area="Troubleshooting" asp-controller="CorrectiveActions" asp-action="Edit" asp-route-id="@action.Id" class="btn btn-success btn-icon btn-circle"><i class="fa fa-edit"></i></a>
+                                                                            <a href="javascript:;" onclick="ShowDeleteActionModal('@action.Id')" class="btn btn-warning btn-icon btn-circle"><i class="fa fa-trash"></i></a>
+                                                                        </td>
+                                                                    </tr>
+                                                                }
+                                                            }
+                                                        </tbody>
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                        }
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row" style="padding-bottom: 50px">
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10 text-right">
+                <a asp-area="Troubleshooting" asp-controller="Home" asp-action="List" class="btn btn-sm btn-danger" data-dismiss="modal">Close</a>
+                <input name="main" type="submit" value="Save" class="btn btn-primary" />
+                <input name="finnish" type="submit" value="Submit & Exit" class="btn btn-primary" />
+            </div>
+        </div>
+    </div>
+
+</form>
+
+@section Scripts
+{
+
+    <script src="~/js/summernote/summernote.js"></script>
+
+    <script type="text/javascript">
+        // Default
+        $(document).ready(function () {
+            var HomeIndex = function () {
+
+                var $this = this;
+
+                function initialize() {
+                    $('#Entity_Description').summernote({
+                        height: 250,
+                        codemirror: { // codemirror options
+                            theme: 'monokai'
+                        }
+                    });
+                }
+
+                $this.init = function () {
+                    initialize();
+                }
+            };
+            var self = new HomeIndex();
+            self.init();
+        });
+
+    </script>
+
+    <script type="text/javascript">
+
+        function ShowCreateCauseModal(ff) {
+
+            var url = "/Troubleshooting/Causes/Create?parentId=" + ff;
+
+            $("#ModalPlaceHolder").load(url,
+                function () {
+                    $("#ModalPlaceHolder").modal("show");
+                });
+        }
+
+    </script>
+}

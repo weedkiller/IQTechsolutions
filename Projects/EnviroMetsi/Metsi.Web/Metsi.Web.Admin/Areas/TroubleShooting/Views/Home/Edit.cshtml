@@ -1,0 +1,253 @@
+﻿@model ProblemAddEditModel
+@{
+    ViewData["Title"] = "Edit ";
+}
+
+@section styles
+    {
+    <link href='~/css/summernote.css' rel='stylesheet' type='text/css' />
+}
+
+<form class="" asp-area="Troubleshooting" asp-controller="Home" asp-action="Edit" enctype="multipart/form-data" method="post">
+
+    <div class="form-horizontal">
+        <div class="panel panel-success" data-sortable-id="ui-widget-11">
+            <div class="panel-heading">
+                <div class="panel-heading-btn">
+                    <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-default" data-click="panel-expand"><i class="fa fa-expand"></i></a>
+                    <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-success" data-click="panel-reload"><i class="fa fa-repeat"></i></a>
+                    <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-warning" data-click="panel-collapse"><i class="fa fa-minus"></i></a>
+                </div>
+                <h4 class="panel-title">Problem Details</h4>
+            </div>
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-md-12" style="padding: 20px;">
+                        <div class="form-group">
+                            <label asp-for="Entity.Heading" class="control-label"></label>
+                            <input asp-for="Entity.Heading" class="form-control" placeholder="Enter your heading here"/>
+                            <span asp-validation-for="Entity.Heading" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Entity.Keywords" class="control-label">Keywords <small>(Seperate keywords with comma)</small></label>
+                            <input asp-for="Entity.Keywords" class="form-control" placeholder="Enter you keywords here, sperate each keyword with a comma"/>
+                            <span asp-validation-for="Entity.Keywords" class="text-danger"></span>
+                        </div>
+                        <input type="hidden" asp-for="Entity.Id"/>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <ul class="nav nav-pills">
+            <li class="active"><a href="#nav-pills-tab-1" data-toggle="tab" style="font-size: 16px">Description</a></li>
+            <li><a href="#nav-pills-tab-2" data-toggle="tab" style="font-size: 16px">Categories</a></li>
+            <li><a href="#nav-pills-tab-3" data-toggle="tab" style="font-size: 16px">Causes for Problem</a></li>
+        </ul>
+        <div class="tab-content">
+            <div class="tab-pane fade active in" id="nav-pills-tab-1">
+                <h5 class="m-t-10">Description</h5>
+                <div class="form-group">
+                    <textarea asp-for="Entity.Description" class="form-control" style="height: 100px" placeholder="Enter your description here"></textarea>
+                    <span asp-validation-for="Entity.Description" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="nav-pills-tab-2">
+                <h5 class="m-t-10">Categories</h5>
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <label asp-for="Entity.Categories" class="control-label">Select the appropriate Categories:</label>
+                            <input type="hidden" asp-for="Entity.Categories" />
+                            <hr />
+                            <div class="col-md-12">
+                                <div class="panel-group" id="accordion">
+                                    <div class="panel panel-inverse overflow-hidden">
+                                        <partial name="_CategorySelectionPartial" for="@Model.AvailableCategories" />
+                                    </div>
+                                </div>
+                            </div>
+                            <hr />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="nav-pills-tab-3">
+                <h5 class="m-t-10">Causes</h5>
+                <div class="form-group">
+                    @if (Model.Entity.Causes.Any())
+                    {
+                        foreach (var item in Model.Entity.Causes)
+                        {
+                            <div class="row row_@item.Id">
+                                <div class="col-md-1">
+                                    @{
+                                        var className = item.Id + "_icon";
+                                    }
+                                    <h5><i id="@className" class="fa fa-plus"></i></h5>
+                                </div>
+                                <div class="col-md-11">
+                                    <div class="col-md-10">
+                                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#dropdown_@item.Id" onclick="changeicon('@item.Id')">
+                                            <h5>@item.Description.HtmlToPlainText().TruncateLongString(150)</h5>
+                                        </a>
+                                        <div id="dropdown_@item.Id" class="panel-collapse collapse">
+                                            @if (item.CorrectiveActions.Any())
+                                            {
+                                                <div class="row">
+                                                    <table id="CorrectiveActionList_@item.Id" class="table-dark" style="padding-left: 50px !important; width: 100%">
+                                                        <thead>
+                                                        <tr>
+                                                            <th colspan="2">
+                                                                <h5><strong>Corrective Actions to be taken</strong></h5>
+                                                                <hr/>
+                                                            </th>
+                                                        </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                        @foreach (var action in item.CorrectiveActions)
+                                                        {
+                                                            <tr id="row_@action.Id" class="row_@action.Id">
+                                                                <td class="col_@action.Id" id="col_@action.Id">
+                                                                    <h5>@Html.Raw(action.Description)</h5>
+                                                                </td>
+                                                                <td style="float: right">
+                                                                    <a asp-area="Troubleshooting" asp-controller="CorrectiveActions" asp-action="Edit" asp-route-id="@action.Id" asp-route-returnUrl="@Url.Action("Edit", "Home", new {area="TroubleShooting", id = Model.Entity.Id})" class="btn btn-success btn-icon btn-circle"><i class="fa fa-edit"></i></a>
+                                                                    <a href="javascript:;" onclick="ShowDeleteActionModal('@action.Id')" class="btn btn-warning btn-icon btn-circle"><i class="fa fa-trash"></i></a>
+                                                                </td>
+                                                            </tr>
+                                                        }
+                                                        </tbody>
+                                                        <tfoot>
+                                                        <tr>
+                                                            <td colspan="2">
+                                                                <hr/>
+                                                                <a asp-area="Troubleshooting" asp-controller="CorrectiveActions" asp-action="Create" asp-route-problemId="@Model.Entity.Id" asp-route-causeId="@item.Id" asp-route-returnUrl="@Url.Action("Edit", "Home", new {area="TroubleShooting", id = Model.Entity.Id})" class="btn btn-primary btn-block"><strong>Add New Corrective Action</strong></a>
+                                                            </td>
+                                                        </tr>
+                                                        </tfoot>
+                                                    </table>
+                                                </div>
+                                            }
+                                            else
+                                            {
+                                                <div class="row">
+                                                    <h5>No corrective actions associated with this cause, please check back later.</h5>
+                                                    <hr/>
+                                                    <a asp-area="Troubleshooting" asp-controller="CorrectiveActions" asp-action="Create" asp-route-problemId="@Model.Entity.Id" asp-route-causeId="@item.Id" asp-route-returnUrl="@Url.Action("Edit", "Home", new {area="TroubleShooting", id = Model.Entity.Id})" class="btn btn-primary btn-block"><strong>Add New Corrective Action</strong></a>
+                                                </div>
+                                            }
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2" style="float: right">
+                                        <a class="accordion-toggle btn btn-info btn-icon btn-circle" data-toggle="collapse" data-parent="#accordion" href="#dropdown_@item.Id" onclick="changeicon('@item.Id')">
+                                            <i class="fa fa-eye"></i>
+                                        </a>
+                                        <a asp-area="Troubleshooting" asp-controller="Causes" asp-action="Edit" asp-route-id="@item.Id" asp-route-returnUrl="@Url.Action("Edit", "Home", new {area="TroubleShooting", id = Model.Entity.Id})" class="btn btn-success btn-icon btn-circle"><i class="fa fa-edit"></i></a>
+                                        <a href="javascript:;" onclick="ShowDeleteCauseModal('@item.Id')" class="btn btn-warning btn-icon btn-circle"><i class="fa fa-trash"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <hr/>
+                        }
+                    }
+                    else
+                    {
+                        <div class="row">
+                            <h5>No causes associated with this problem, please check back later.</h5>
+                        </div>
+                    }
+                    <div class="row">
+                        <a asp-area="Troubleshooting" asp-controller="Causes" asp-action="Create" asp-route-parentId="@Model.Entity.Id" asp-route-returnUrl="@Url.Action("Edit", "Home", new {area="TroubleShooting", id = Model.Entity.Id})" class="btn btn-primary btn-block"><strong>Add New Cause</strong></a>
+                    </div>
+
+
+
+
+
+                    
+                </div>
+                </div>
+            </div>
+        </div>
+
+    <!-- ================== FORM BUTTON ================== -->
+    <div class="row" style="padding-bottom: 50px">
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10 text-right">
+                <a asp-area="Troubleshooting" asp-controller="Home" asp-action="List" class="btn btn-danger">Cancel</a>
+                <input name="main" type="submit" value="Edit" class="btn btn-primary"/>
+                <input name="finnish" type="submit" value="Submit & Exit" class="btn btn-primary"/>
+
+            </div>
+        </div>
+    </div>
+    <!-- ================== END FORM BUTTON ================== -->
+
+
+</form>
+
+
+@section Scripts
+    {
+    <!-- Summer Note JS -->
+    <script src="~/js/summernote/summernote.js"></script>
+
+    <script type="text/javascript">
+        // Default
+        $(document).ready(function () {
+            var HomeIndex = function () {
+
+                var $this = this;
+                function initialize() {
+                    $('#Entity_Description').summernote({
+                        height: 250,
+                        codemirror: { // codemirror options
+                            theme: 'monokai'
+                        }
+                    });
+                }
+
+                $this.init = function () {
+                    initialize();
+                }
+            };
+            var self = new HomeIndex();
+            self.init();
+        });
+
+
+        function ShowDeleteCauseModal(ff) {
+
+            var url = "/Troubleshooting/Causes/Delete?id=" + ff;
+
+            $("#ModalPlaceHolder").load(url,
+                function () {
+                    $("#ModalPlaceHolder").modal("show");
+                });
+        }
+
+        function ShowCreateActionModal(problemId, causeId) {
+
+            var url = "/Troubleshooting/CorrectiveActions/Create?problemId=" + problemId + "&causeId=" + causeId;
+
+            $("#ModalPlaceHolder").load(url,
+                function () {
+                    $("#ModalPlaceHolder").modal("show");
+                });
+        }
+
+        function ShowDeleteActionModal(ff) {
+
+            var url = "/Troubleshooting/CorrectiveActions/Delete?id=" + ff;
+
+            $("#ModalPlaceHolder").load(url,
+                function () {
+                    $("#ModalPlaceHolder").modal("show");
+                });
+        }
+
+    </script>
+}

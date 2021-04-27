@@ -1,0 +1,203 @@
+﻿@using Iqt.Base.Interfaces
+@model BlogPostAddEditModel
+
+@inject IApplicationConfiguration Configuration
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+@section Styles
+{
+    <link href="~/css/summernote.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="~/css/bs-filestyle.css">
+}
+<form asp-area="Blog" asp-controller="Home" asp-action="Create" enctype="multipart/form-data" method="post" style="padding-bottom: 50px;"  class="form-horizontal">
+    <input type="hidden" asp-for="Entity.Id" />
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <div class="row">
+        <div class="col-md-4">
+            <div class="form-group">
+                <label asp-for="CoverUpload" class="control-label"></label>
+                <div class="previewd" style="overflow: hidden">
+                    <img id="preview" style="width: 100%" src="@Model.Entity.GetPath(Configuration.BaseImageUrl, ImageType.Cover ,"/images/placeholders/NoImage.jpg")" alt="@Model.Entity.Title" />
+                </div>
+                <input asp-for="CoverUpload" class="form-control" onchange="loadFile(event)" />
+                <input type="hidden" asp-for="CoverCropSettings.X" />
+                <input type="hidden" asp-for="CoverCropSettings.Y" />
+                <input type="hidden" asp-for="CoverCropSettings.Width" />
+                <input type="hidden" asp-for="CoverCropSettings.Height" />
+                <input type="hidden" asp-for="CoverCropSettings.Rotate" />
+                <input type="hidden" asp-for="CoverCropSettings.ScaleX" />
+                <input type="hidden" asp-for="CoverCropSettings.ScaleY" />
+            </div>
+            <div class="form-group">
+                <label asp-for="Author" class="control-label"></label>
+                <input asp-for="Author" class="form-control" placeholder="Please add author name if this is a quote" />
+                <span asp-validation-for="Author" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="col-md-8">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                    <label asp-for="Entity.Title" class="control-label"></label>
+                    <input asp-for="Entity.Title" class="form-control" />
+                    <span asp-validation-for="Entity.Title" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="AudioUpload" class="control-label"></label>
+                    <input asp-for="AudioUpload" class="form-control" />
+                    <span asp-validation-for="AudioUpload" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="VideoUpload" class="control-label"></label>
+                    <input asp-for="VideoUpload" class="form-control" />
+                    <span asp-validation-for="VideoUpload" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Author" class="control-label"></label>
+                    <input asp-for="Author" class="form-control" placeholder="Please add author name if this is a quote" />
+                    <span asp-validation-for="Author" class="text-danger"></span>
+                </div>
+        </div>
+    </div>
+
+    <div class="widget has-shadow">
+        <div class="widget-body">
+            <ul class="nav nav-tabs nav-fill" role="tablist">
+                <li class="nav-item">
+                    <a class="nav-link active" id="just-tab-1" data-toggle="tab" href="#j-tab-1" role="tab" aria-controls="j-tab-1" aria-selected="true">Article</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="just-tab-2" data-toggle="tab" href="#j-tab-2" role="tab" aria-controls="j-tab-2" aria-selected="false">Categories</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="just-tab-3" data-toggle="tab" href="#j-tab-3" role="tab" aria-controls="j-tab-3" aria-selected="false">Images</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="just-tab-4" data-toggle="tab" href="#j-tab-4" role="tab" aria-controls="j-tab-4" aria-selected="false">Settings</a>
+                </li>
+            </ul>
+            <div class="tab-content pt-3">
+                <div class="tab-pane fade show active" id="j-tab-1" role="tabpanel" aria-labelledby="just-tab-1">
+                    <div class="form-group">
+                        <label asp-for="Entity.Description" class="control-label"></label>
+                        <textarea asp-for="Entity.Description" class="form-control"></textarea>
+                        <span asp-validation-for="Entity.Description" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="j-tab-2" role="tabpanel" aria-labelledby="just-tab-2">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="form-group">
+                                <label asp-for="Entity.Categories" class="control-label">Select the appropriate Categories:</label>
+                                <input type="hidden" asp-for="Entity.Categories" />
+                                <hr />
+                                <div class="col-md-12">
+                                    <div class="panel-group" id="accordion">
+                                        <div class="panel panel-inverse overflow-hidden">
+                                            <partial name="_CategorySelectionPartial" for="@Model.AvailableCategories" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="j-tab-3" role="tabpanel" aria-labelledby="just-tab-3">
+                    <div class="col-md-12 bottommargin text-center">
+                        <div class="row">
+                            @foreach (var item in Model.Entity.Images)
+                            {
+                                <img id="@item" style="width: 20%;" title="@Model.Entity.Title" alt="@Model.Entity.Title" src="@item.GetPath(Configuration.BaseImageUrl)">
+                            }
+                        </div>
+                    </div>
+                    <div class="col-md-12 bottommargin text-center">
+                        <h5>Select Project Images:</h5><br>
+                        <input id="input-3" asp-for="ImagesUpload" type="file" class="file" multiple data-show-upload="false" data-show-caption="true" data-show-preview="true">
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="j-tab-4" role="tabpanel" aria-labelledby="just-tab-4">
+                    <div class="row">
+                        <div class="col-md-6 styled-checkbox">
+                            <label asp-for="Entity.Featured" class="control-label"></label>
+                            <input type="checkbox" asp-for="Entity.Featured" class="form-control checkbox" />
+                        </div>
+                        <div class="col-md-6 styled-checkbox">
+                            <label asp-for="Entity.Active" class="control-label"></label>
+                            <input type="checkbox" asp-for="Entity.Active" class="form-control" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="form-group text-right">
+            <input name="main" type="submit" value="Save" class="btn btn-primary" />
+            <input name="finnish" type="submit" value="Publish" class="btn btn-primary" />
+            <a asp-area="Blog" asp-controller="Home" asp-action="List" class="btn btn-danger">Cancel</a>
+        </div>
+    </div>
+</form>
+
+@section Scripts
+{
+    <script src="~/js/summernote/summernote.js"></script>
+    <script src="~/js/bs-filestyle.js"></script>
+
+    <script>
+        var loadFile = function (event) {
+            var output = document.getElementById('preview');
+            if (event.target.files.length !== 0) {
+
+                var oldstring = "";
+                if (output === null) {
+                    oldstring = "/images/placeholders/NoImage.jpg";
+                } else {
+                    oldstring = output.src;
+                }
+
+                var url = "/Home/CropImage?cropUrl=" + URL.createObjectURL(event.target.files[0]) + "&originalUrl=" + oldstring + "&width=" + 475 + "&height=" + 320
+                    + "&previewClass=previewd" + "&uploadProperty=CoverUpload" + "&xTag=CoverCropSettings_X" + "&yTag=CoverCropSettings_Y"
+                    + "&widthTag=CoverCropSettings_Width" + "&heightTag=CoverCropSettings_Height" + "&rotateTag=CoverCropSettings_Rotate" + "&scaleXTag=CoverCropSettings_ScaleX"
+                    + "&scaleYTag=CoverCropSettings_ScaleY";
+
+                $("#CropModal").load(url,
+                    function () {
+                        $("#CropModal").modal("show");
+                    });
+            }
+        };
+    </script>
+
+    <script type="text/javascript">
+        // Default
+        $(document).ready(function () {
+            var HomeIndex = function () {
+
+                var $this = this;
+
+                function initialize() {
+                    $('#Entity_Description').summernote({
+                        height: 250,
+                        codemirror: { // codemirror options
+                            theme: 'monokai'
+                        }
+                    });
+                }
+
+                $this.init = function () {
+                    initialize();
+                }
+            };
+            var self = new HomeIndex();
+            self.init();
+        });
+
+
+    </script>
+}

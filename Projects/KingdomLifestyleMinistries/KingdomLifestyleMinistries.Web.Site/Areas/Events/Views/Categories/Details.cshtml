@@ -1,0 +1,35 @@
+﻿@model CategoryDetailsModel<Category<Event>>
+
+@{
+    ViewData["Title"] = $"{Model.Entity.Name} Details";
+}
+
+@*<partial name="Breadcrumbs/_BreadcrumPartial" />
+
+<partial name="ContentSections/_WhoWeAre" />
+
+<partial name="ContentSections/_WhatWeDo" />*@
+
+@*@if (Model.Entity.Events.Any())
+{
+    <section class="section_offset p_bottom_0">
+        <div class="container">
+            <h3 class="color_dark fw_light m_bottom_15 heading_1 t_align_c">More Services</h3>
+            <p class="m_bottom_35 heading_2 t_align_c">Here are more services offered by IQ Tech Solutions. If you can dream it we can develop it. </p>
+            <div class="row">
+                @foreach (var item in Model.Entity.Events)
+                {
+                    <div class="col-lg-4 col-md-4 col-sm-4 m_xs_bottom_30 t_xs_align_c">
+                        <div class="r_corners wrapper m_bottom_20 d_xs_inline_b d_mxs_block">
+                            <img src="@item.Category.CoverImage.GetImage(ImageSettings.StandardImage)" alt="@item.Category.Name">
+                        </div>
+                        <h4 class="m_bottom_10 t_xs_align_l"><a asp-area="Services" asp-controller="Home" asp-action="Details" asp-route-id="@item.Id" class="color_dark tr_all">@item.Category.Name</a></h4>
+                        <p class="t_xs_align_l">@item.Category.Description.HtmlToPlainText().TruncateLongString(150) </p>
+                    </div>
+                }
+            </div>
+        </div>
+    </section>
+}*@
+
+@*<partial name="_ContactUsBanner" />*@

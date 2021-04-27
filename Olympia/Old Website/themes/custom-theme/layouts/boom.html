@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Olympia Holdings</title>
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet"
+        type="text/css">
+    <!-- Font Awesome -->
+    <link href="vendor/font-awesome-4.7.0/css/font-awesome.min.css"
+        rel="stylesheet" type="text/css">
+    <!-- Custom styles for this template -->
+    {{ if ne .Site.Params.env "production" }}
+    {{   $style := resources.Match "css/*.css" }}
+    {{   range $style }}
+    {{     $style = . | resources.ToCSS }}
+    <link rel="stylesheet" href="{{ $style.Permalink }}" type="text/css">
+    {{   end }}
+    {{ end }}
+    {{ if eq .Site.Params.env "production" }}
+    {{   $style := resources.Match "css/*.css" | resources.Concat "index.css" | resources.ToCSS | resources.Minify | resources.Fingerprint }}
+    <link rel="stylesheet" href="{{ $style.Permalink }}" type="text/css"
+        integrity="{{ $style.Data.Integrity }}">
+    {{ end }}
+</head>
+
+<body style="position: relative" data-spy="scroll"
+    data-target="#navbarResponsive">
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#"> <img src="./img/diamond-logo.svg"
+                    width="30" height="30" class="d-inline-block align-top"
+                    alt=""> Olympia
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse"
+                data-target="#navbarResponsive" aria-controls="navbarResponsive"
+                aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item"><a class="nav-link"
+                            href="#introduction">Introduction <span
+                                class="sr-only">(current)</span>
+                        </a></li>
+                    <li class="nav-item"><a class="nav-link"
+                            href="#benefits">Benefits</a></li>
+                    <li class="nav-item"><a class="nav-link"
+                            href="#leaderboards">Features</a></li>
+                    <li class="nav-item"><a class="nav-link"
+                            href="#sign-up">Sign Up</a>
+                        {{ if eq .Site.Params.env "development" }}
+                    <li class="nav-item"><a class="nav-link"
+                            href="#press">Press</a>
+                        {{ end }}
+                    <li class="nav-item"><a class="nav-link"
+                            href="#contact-us">Contact Us</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <section id="introduction">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <div id="olympia-introduction">
+                        <div>
+                            <div class="logo-wrapper">
+                                <img class="logo" style="max-height: 33vh"
+                                    src="img/diamond-logo.svg" alt="" />
+                            </div>
+                            <h1>Olympia</h1>
+                            <p>
+                                Designed for the team, <strong>Olympia</strong>
+                                is a team
+                                engagement platform the leverages gamification
+                                to increase team
+                                member performance, recognition and engagement.
+                            </p>
+                            <p class="text-center">
+                                <a
+                                    href='https://play.google.com/store/apps/details?id=com.olympiahld.v1'>
+                                    <img style="height: 46px"
+                                        alt='Get it on Google Play'
+                                        src="img/play-store.png" />
+                                </a> <img
+                                    style="height: 46px; cursor: not-allowed;"
+                                    src="img/app-store.svg" class=""
+                                    title="Coming Soon ..." />
+                            </p>
+                        </div>
+                        <a class="next-section-btn d-block d-md-none"
+                            href="#video-introduction"><i
+                                class="fa fa-chevron-down"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div id="video-introduction">
+                        <div>
+                            <div class="video-wrapper">
+                                <div
+                                    class="embed-responsive embed-responsive-16by9">
+                                    <iframe class="embed-responsive-item"
+                                        src="https://www.youtube.com/embed/ESdc4ruF07c"
+                                        allowfullscreen></iframe>
+                                </div>
+                            </div>
+                        </div>
+                        <a class="next-section-btn d-block d-md-none"
+                            href="#benefits"><i
+                                class="fa fa-chevron-down"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <a class="next-section-btn d-none d-md-block" href="#benefits"><i
+                class="fa fa-chevron-down"></i></a>
+    </section>
+    <section id="benefits">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <div id="company-benefits">
+                        <div>
+                            <div class="logo">
+                                <i class="fa fa-bank"></i>
+                            </div>
+                            <h3>Company Benefits</h3>
+                            <div class="mini-logo-wrapper">
+                                <span class="mini-logo bg-success text-white"><i
+                                        class="fa fa-line-chart"></i></span>
+                            </div>
+                            <h5>Improved Revenue</h5>
+                            <div class="mini-logo-wrapper">
+                                <span class="mini-logo bg-success text-white"><i
+                                        class="fa fa-user-plus"></i></span>
+                            </div>
+                            <h5>Longer Employee Retention</h5>
+                            <div class="mini-logo-wrapper">
+                                <span class="mini-logo bg-success text-white"><i
+                                        class="fa fa-shopping-basket"></i></span>
+                            </div>
+                            <h5>More Satisfied Customers</h5>
+                        </div>
+                        <a class="next-section-btn d-block d-md-none"
+                            href="#team-benefits"><i
+                                class="fa fa-chevron-down"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div id="team-benefits">
+                        <div>
+                            <div class="logo">
+                                <i class="fa fa-users"></i>
+                            </div>
+                            <h3>Team Benefits</h3>
+                            <div class="mini-logo-wrapper">
+                                <span class="mini-logo bg-success text-white"><i
+                                        class="fa fa-handshake-o"></i></span>
+                            </div>
+                            <h5>Improved Collaboration</h5>
+                            <div class="mini-logo-wrapper">
+                                <span class="mini-logo bg-success text-white"><i
+                                        class="fa fa-graduation-cap"></i></span>
+                            </div>
+                            <h5>Encourage Mentorship</h5>
+                            <div class="mini-logo-wrapper">
+                                <span class="mini-logo bg-success text-white"><i
+                                        class="fa fa-thumbs-o-up"></i></span>
+                            </div>
+                            <h5>Better Team Spirit</h5>
+                        </div>
+                        <a class="next-section-btn d-block d-md-none"
+                            href="#employee-benefits"><i
+                                class="fa fa-chevron-down"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div id="employee-benefits">
+                        <div>
+                            <div class="logo">
+                                <i class="fa fa-user"></i>
+                            </div>
+                            <h3>Employee Benefits</h3>
+                            <div class="mini-logo-wrapper">
+                                <span class="mini-logo bg-success text-white"><i
+                                        class="fa fa-key"></i></span>
+                            </div>
+                            <h5>More Engaged</h5>
+                            <div class="mini-logo-wrapper">
+                                <span class="mini-logo bg-success text-white"><i
+                                        class="fa fa-flag"></i></span>
+                            </div>
+                            <h5>Highly Motivated</h5>
+                            <div class="mini-logo-wrapper">
+                                <span class="mini-logo bg-success text-white"><i
+                                        class="fa fa-futbol-o"></i></span>
+                            </div>
+                            <h5>Goal Orientated</h5>
+                        </div>
+                        <a class="next-section-btn d-block d-md-none"
+                            href="#leaderboards"><i
+                                class="fa fa-chevron-down"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <a class="next-section-btn d-none d-md-block" href="#leaderboards"><i
+                class="fa fa-chevron-down"></i></a>
+    </section>
+    <section id="leaderboards">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="description">
+                        <article>
+                            <h2>Leaderboards</h2>
+                            <p>Leaderboards correlates with your company visions
+                                and
+                                goals, and makes them highly visible, attainable
+                                and also to
+                                regularly confirm them.</p>
+                            <p style="color: #888">
+                                <i class="fa fa-eye"></i> Vision &bull; <i
+                                    class="fa fa-futbol-o"></i> Goals &bull; <i
+                                    class="fa fa-sun-o"></i>
+                                Daily, Weekly and
+                                All Time Rankings
+                            </p>
+                            <h3>Milestones</h3>
+                            <p>Celebrate long term and short term achievements
+                                with
+                                milestones, you can choose to use the popular
+                                Bronze, Silver and
+                                Gold milestones, or create your own custom
+                                milestones.
+                                <p style="color: #888">
+                                    <i class="fa fa-paint-brush"></i> Custom
+                                    Colours &bull; <i class="fa fa-archive"></i>
+                                    Predefined Bouquets
+                                </p>
+                                <h3>Ad Hoc Points</h3>
+                                <p>Recognise long term loyalty, exceptional
+                                    performances and
+                                    other achievements.</p>
+                                <p style="color: #888">
+                                    <i class="fa fa-history"></i> Explicit
+                                    History of Changes
+                                </p>
+                        </article>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="visualization">
+                        <div>
+                            <div class="track-lables">
+                                <div>Start</div>
+                                <div>Bronze</div>
+                                <div>Silver</div>
+                                <div>Gold</div>
+                            </div>
+                            <div class="track">
+                                <div class="lane lane-1">
+                                    <span class="user user-1"><img
+                                            src="../img/user-1.png" /></span>
+                                </div>
+                                <div class="lane lane-2">
+                                    <span class="user user-2"><img
+                                            src="../img/user-2.png" /></span>
+                                </div>
+                                <div class="lane lane-3">
+                                    <span class="user user-3"><img
+                                            src="../img/user-3.png" /></span>
+                                </div>
+                                <div class="lane lane-4">
+                                    <span class="user user-4"><img
+                                            src="../img/user-4.png" /></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <a class="next-section-btn d-none d-md-block" href="#activities"><i
+                class="fa fa-chevron-down"></i></a>
+    </section>
+    <section id="activities">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 order-md-2">
+                    <div class="description">
+                        <article>
+                            <h2>Activities</h2>
+                            <p>
+                                Users earn <a
+                                    href="#leaderboards">Leaderboard</a> points
+                                by
+                                completing their activities.
+                            </p>
+                            <p style="color: #888">
+                                <i class="fa fa-eye"></i> Real Time Leaderboard
+                                Points &bull; <i class="fa fa-futbol-o"></i>
+                                Long Term Archives for Referencing
+                            </p>
+                            <h3>Once-off Activities</h3>
+                            <p>Once-off activities are ideal for employees who
+                                are not
+                                involved in repetitive tasks, for example those
+                                employees
+                                working on projects.</p>
+                            <h3>Recurring Activities</h3>
+                            <p>Recurring activities makes it easy for users to
+                                earn points
+                                who might be involved with repetitive tasks and
+                                is also a nice
+                                way to change old habits.</p>
+                            <p style="color: #888">
+                                <i class="fa fa-repeat"></i> Daily, Weekly, On
+                                Demand, Birthday,
+                                Anniversary and Onboarding Activities
+                            </p>
+                            <h3>Workflows</h3>
+                            <p>
+                                Olympia supports from simple <em>Todo Done</em>
+                                workflows to
+                                more complex workflows that includes multiples
+                                stages, manager
+                                or peer checks and/or form attachments.
+                            </p>
+                            <p style="color: #888">
+                                <i class="fa fa-ellipsis-h"></i> Multiple Stages
+                                &bull; <i class="fa fa-check-circle"></i>
+                                Manager Checks &bull; <i
+                                    class="fa fa-file-text-o"></i>
+                                Attach Forms
+                            </p>
+                        </article>
+                    </div>
+                </div>
+                <div class="col-md-6 order-md-1">
+                    <div class="visualization">
+                        <div class="activity activity-1">
+                            <div class="user user-1">
+                                <img src="../img/user-1.png" />
+                            </div>
+                            <div class="details">
+                                <div class="row-1">
+                                    <span></span><span></span>
+                                </div>
+                                <div class="row-2">
+                                    <span></span><span></span>
+                                </div>
+                                <div class="progress">
+                                    <div
+                                        class="progress-bar progress-bar-animated progress-bar-striped">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="activity activity-2">
+                            <div class="user user-2">
+                                <img src="../img/user-2.png" />
+                            </div>
+                            <div class="details">
+                                <div class="row-1">
+                                    <span></span><span></span>
+                                </div>
+                                <div class="row-2">
+                                    <span></span><span></span>
+                                </div>
+                                <div class="progress">
+                                    <div
+                                        class="progress-bar progress-bar-animated progress-bar-striped">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="activity activity-3">
+                            <div class="user user-3">
+                                <img src="../img/user-3.png" />
+                            </div>
+                            <div class="details">
+                                <div class="row-1">
+                                    <span></span><span></span>
+                                </div>
+                                <div class="row-2">
+                                    <span></span><span></span>
+                                </div>
+                                <div class="progress">
+                                    <div
+                                        class="progress-bar progress-bar-animated progress-bar-striped">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="activity activity-4">
+                            <div class="user user-4">
+                                <img src="../img/user-4.png" />
+                            </div>
+                            <div class="details">
+                                <div class="row-1">
+                                    <span></span><span></span>
+                                </div>
+                                <div class="row-2">
+                                    <span></span><span></span>
+                                </div>
+                                <div class="progress">
+                                    <div
+                                        class="progress-bar progress-bar-animated progress-bar-striped">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <a class="next-section-btn d-none d-md-block" href="#sign-up"><i
+                class="fa fa-chevron-down"></i></a>
+    </section>
+    <section id="sign-up">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="description">
+                        <article>
+                            <h2>Sign Up</h2>
+                            <p style="color: #888">
+                                <i class="fa fa-music"></i> Free for 7 Days
+                                &bull; <i class="fa fa-credit-card"></i> No
+                                Credit Card Required &bull;
+                                <i class="fa fa-fighter-jet"></i> Quick To Sign
+                                Up
+                            </p>
+                        </article>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="registration">
+                        <form>
+                            <div class="form-group">
+                                <label id="instanceNameLabel"
+                                    for="instanceName"><span
+                                        class="badge badge-warning">1</span>
+                                    Select a unique instance name</label>
+                                <div class="input-group">
+                                    <div class="input-group-addon">https://
+                                    </div>
+                                    <input type="text" class="form-control"
+                                        id="instanceName"
+                                        aria-describedby="instanceNameHelp"
+                                        placeholder="your-instance-name" />
+                                    <div class="input-group-addon">.olympia.team
+                                    </div>
+                                </div>
+                                <p id="instanceNameHelp"
+                                    class="form-text text-muted">Tip: make it
+                                    memorable if
+                                    possible.</p>
+                            </div>
+                            <div class="form-group">
+                                <label id="emailAddressLabel"
+                                    for="emailAddress"><span
+                                        class="badge badge-warning">2</span>
+                                    Enter your email address</label> <input
+                                    type="email" class="form-control"
+                                    id="emailAddress"
+                                    aria-describedby="emailAddressHelp"
+                                    placeholder="Enter your email address" />
+                                <p id="emailAddressHelp"
+                                    class="form-text text-muted">We'll never
+                                    share your email
+                                    address with anyone else.
+                            </div>
+                            <div>
+                                <label id="reserveInstanceBtnLabel"
+                                    for="reserveInstanceBtn"><span
+                                        class="badge badge-warning">3</span>
+                                    Click this
+                                    button</label>
+                                <button id="reserveInstanceBtn"
+                                    class="btn btn-success btn-block"
+                                    type="button" disabled="disabled">
+                                    <i class="fa fa-envelope"></i> Send My
+                                    Activation Key
+                                </button>
+                                <p id="reserveInstanceBtnHelp"
+                                    class="form-text text-muted"></p>
+                            </div>
+                            <div class="coming-soon">EASY PEASY!</div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <img class="cloud cloud-1" src="../img/cloudy.svg" /> <img
+            class="cloud cloud-2" src="../img/cloudy.svg" /> <img
+            class="cloud cloud-3" src="../img/cloudy.svg" /> <img
+            class="cloud cloud-4" src="../img/cloudy.svg" /> <a
+            class="next-section-btn d-none d-md-block" href="#contact"><i
+                class="fa fa-chevron-down"></i></a>
+    </section>
+    {{ if eq .Site.Params.env "development" }}
+    <section id="press">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <div id="blog-feed">
+                        <h2>Olympia Blog</h2>
+                        <hr>
+                        <ul>
+                            <!-- orders content according to the "publishdate" field in front matter -->
+                            {{ range (.Site.GetPage "/posts").RegularPages }}
+                            <li>
+                                <div>
+                                    <a href="{{ .Permalink }}">{{ .Title }}</a>
+                                    <span style="color: #888">
+                                        {{ with .Params.author }}
+                                        by <i>{{ . }}</i>
+                                        {{ end }}
+                                    </span>
+                                </div>
+                                <time>{{ .Date.Format "Mon, Jan 2, 2006" }}</time>
+                            </li>
+                            {{ end }}
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div id="news-feed">
+                        <h2>Olympia News</h2>
+                        <hr>
+                        <ul>
+                            <!-- orders content according to the "publishdate" field in front matter -->
+                            {{ range (.Site.GetPage "/news").RegularPages }}
+                            <li>
+                                <div>
+                                    <a href="{{ .Permalink }}">{{ .Title }}</a>
+                                    <span style="color: #888">
+                                        {{ with .Params.author }}
+                                        by <i>{{ . }}</i>
+                                        {{ end }}
+                                    </span>
+                                </div>
+                                <time>{{ .Date.Format "Mon, Jan 2, 2006" }}</time>
+                            </li>
+                            {{ end }}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    {{ end }}
+    <section id="contact-us">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6 order-2 text-center">
+                    <div class="video-wrapper">
+                        <div class="embed-responsive embed-responsive-16by9">
+                            <iframe
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3313.327291462064!2d18.62342955135751!3d-33.85545512570387!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1dcc57517431becf%3A0xb602e69f03fc6860!2s99+Jip+De+Jager+Dr%2C+De+Bron%2C+Cape+Town%2C+7530!5e0!3m2!1sen!2sza!4v1523022461478"
+                                frameborder="0" style="border: 0"
+                                allowfullscreen></iframe>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 order-1">
+                    <div class="p-5">
+                        <h2 class="display-4">Contact Us</h2>
+                        <table class="table">
+                            <tbody>
+                                <tr>
+                                    <td style="width: 1%"><i
+                                            class="fa fa-phone"></i></td>
+                                    <td><a href="tel:0027730082739">+27 73 008
+                                            2739</a></td>
+                                </tr>
+                                <tr>
+                                    <td style="width: 1%"><i
+                                            class="fa fa-envelope"></i></td>
+                                    <td><a
+                                            href="email:info@olympiahld.com">info@olympiahld.com</a>
+                                        &bull; <a
+                                            href="email:support@olympiahld.com">support@olympiahld.com</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="width: 1%"><i
+                                            class="fa fa-map-marker"></i></td>
+                                    <td>Olympia Holdings<br />The Vineyards
+                                        Office Estate<br />99
+                                        Jip De Jager<br />Bellville<br />Cape
+                                        Town<br />7530<br />South
+                                        Africa
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Footer -->
+    <footer class="py-5 bg-dark">
+        <div class="container">
+            <p class="text-center text-white">Copyright &copy; Olympia Holdings
+                2017 - 2020</p>
+        </div>
+        <!-- /.container -->
+    </footer>
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <!-- <script src="vendor/popper/popper.min.js"></script> -->
+    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+    <!-- Custom scripts for this template -->
+    {{ if ne .Site.Params.env "production" }}
+    {{   $script := resources.Match "js/*.js" }}
+    {{   range $script }}
+    <script src="{{ .Permalink }} "></script>
+    {{   end }}
+    {{ end }}
+    {{ if eq .Site.Params.env "production" }}
+    {{   $script := resources.Match "js/*.js" | resources.Concat "index.js" | resources.Minify | resources.Fingerprint }}
+    <script src="{{ $script.Permalink }} "></script>
+    {{ end }}
+</body>
+
+</html>

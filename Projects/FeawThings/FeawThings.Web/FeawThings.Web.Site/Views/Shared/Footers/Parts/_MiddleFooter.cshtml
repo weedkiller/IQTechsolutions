@@ -1,0 +1,66 @@
+﻿@using Iqt.Base.Interfaces
+@inject IApplicationConfiguration Configuration
+
+<section class="footer-center">
+    <div class=" container">
+        <div class="row">
+            <div class="col-sm-6 col-md-3 box-information">
+                <div class="module clearfix">
+                    <h3 class="modtitle">Information</h3>
+                    <div class="modcontent">
+                        <ul class="menu">
+                            <li><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
+                            <li><a asp-area="Faqs" asp-controller="Home" asp-action="Index">FAQ</a></li>
+                            <li><a asp-area="Orders" asp-controller="Home" asp-action="Index">Order history</a></li>
+                            <li><a asp-area="" asp-controller="Home" asp-action="CommingSoon">Order information</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-md-3 box-service">
+                <div class="module clearfix">
+                    <h3 class="modtitle">Customer Service</h3>
+                    <div class="modcontent">
+                        <ul class="menu">
+                            <li><a asp-area="Support" asp-controller="Home" asp-action="Create">Contact Us</a></li>
+                            <li><a asp-area="" asp-controller="Home" asp-action="CommingSoon">Returns</a></li>
+                            <li><a asp-area="" asp-controller="Home" asp-action="CommingSoon">Site Map</a></li>
+                            <li><a asp-area="" asp-controller="Home" asp-action="CommingSoon">My Account</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-md-3 box-account">
+                <div class="module clearfix">
+                    <h3 class="modtitle">My Account</h3>
+                    <div class="modcontent">
+                        <ul class="menu">
+                            <li><a asp-area="Products" asp-controller="Brands" asp-action="Index">Brands</a></li>
+                            <li><a asp-area="" asp-controller="Home" asp-action="CommingSoon">Gift Vouchers</a></li>
+                            <li><a asp-area="" asp-controller="Home" asp-action="CommingSoon">Affiliates</a></li>
+                            <li><a asp-area="" asp-controller="Home" asp-action="CommingSoon">Specials</a></li>
+                            <li><a asp-area="Blog" asp-controller="Home" asp-action="Index">Our Blog</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-md-3 collapsed-block ">
+                <div class="module clearfix">
+                    <h3 class="modtitle">Contact Us	</h3>
+                    <div class="modcontent">
+                        <ul class="contact-address">
+                            <li><span class="fa fa-map-marker"></span> @Configuration.PhysicalAddress</li>
+                            <li><span class="fa fa-envelope-o"></span> Email: <a href="mailto:@Configuration.InfoEmailAddress"> @Configuration.InfoEmailAddress</a></li>
+                            <li><span class="fa fa-phone">&nbsp;</span> Phone 1: @Configuration.PhoneNr <br>Phone 2: @Configuration.PhoneNr</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <hr class="footer-lines no-margin-bottom">
+        </div>
+    </div>
+</section>

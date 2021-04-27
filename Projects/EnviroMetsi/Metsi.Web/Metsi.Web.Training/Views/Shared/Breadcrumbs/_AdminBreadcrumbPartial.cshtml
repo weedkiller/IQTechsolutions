@@ -1,0 +1,41 @@
+﻿<div class="row wrapper border-bottom white-bg page-heading">
+    <div class="col-lg-10">
+        <h2>@ViewData["Title"]</h2>
+        <ol class="breadcrumb">
+            <li>
+                <a asp-area="Dashboard" asp-controller="Home" asp-action="Index">Dashboard</a>
+            </li>
+        @if (ViewContext.RouteData.Values["area"] != null && ViewContext.RouteData.Values["area"].ToString().ToLower() != "")
+        {
+            <li>
+                <a href="@Url.Action(ViewContext.RouteData.Values["action"].ToString(), ViewContext.RouteData.Values["controller"].ToString(), new {area = ViewContext.RouteData.Values["area"].ToString()})"> @ViewContext.RouteData.Values["area"].ToString() </a>
+            </li>
+        }
+        @if (ViewContext.RouteData.Values["controller"].ToString().ToLower() != "home")
+        {
+            if (ViewContext.RouteData.Values["action"].ToString().ToLower() == "index")
+            {
+                <li>
+                    <a href="@Url.Action("Index", ViewContext.RouteData.Values["controller"].ToString())"> @ViewContext.RouteData.Values["controller"].ToString() </a>
+                </li>
+            }
+            else
+            {
+                <li>
+                    <a href="@Url.Action("Index", ViewContext.RouteData.Values["controller"].ToString())"> @ViewContext.RouteData.Values["controller"].ToString() </a>
+                </li>
+            }
+
+        }
+        @if (ViewContext.RouteData.Values["action"].ToString().ToLower() != "index")
+        {
+            <li class="active">
+                <a href="@Url.Action(ViewContext.RouteData.Values["action"].ToString(), ViewContext.RouteData.Values["controller"].ToString())"> @ViewContext.RouteData.Values["action"].ToString() </a>
+            </li>
+        }
+        </ol>
+    </div>
+    <div class="col-lg-2">
+
+    </div>
+</div>

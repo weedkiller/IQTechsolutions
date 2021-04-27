@@ -1,0 +1,113 @@
+﻿
+@{
+    ViewData["Title"] = "Route List";
+}
+
+@model IndexModelBase<Route>
+
+<div class="row">
+    <div class="col-lg-12">
+        <div class="panel panel-inverse">
+            <div class="panel-heading">
+                <div class="panel-heading-btn">
+                    <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-default" data-click="panel-expand"><i class="fa fa-expand"></i></a>
+                    <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-success" data-click="panel-reload"><i class="fa fa-repeat"></i></a>
+                    <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-warning" data-click="panel-collapse"><i class="fa fa-minus"></i></a>
+                    <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-danger" data-click="panel-remove"><i class="fa fa-times"></i></a>
+                </div>
+                <h4 class="panel-title">@ViewData["Title"]</h4>
+            </div>
+            <div class="panel-body p-0">
+                <div class="row">
+                    <div class="col-md-12">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>
+                                        Name
+                                    </th>
+                                    <th>
+                                        Description
+                                    </th>
+                                    <th>
+                                        Location Count
+                                    </th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @if (Model.All.Any())
+                                {
+                                    foreach (var item in Model.All)
+                                    {
+                                        <tr id="row_@item.Id" class="row_@item.Id">
+                                            <td>
+                                                @item.Name
+                                            </td>
+                                            <td>
+                                                @item.Description.TruncateLongString(150)
+                                            </td>
+                                            <td>
+                                                @item.RouteLocations.Count
+                                            </td>
+                                            <td style="width: 100px;">
+                                                <a asp-area="Calendar" asp-controller="Routes" asp-action="Edit" asp-route-id="@item.Id" class="btn btn-success btn-icon btn-circle"><i class="fa fa-edit"></i></a>
+                                                <a href="javascript:;" onclick="ShowDeleteModal('@item.Id')" class="btn btn-warning btn-icon btn-circle"><i class="fa fa-trash"></i></a>
+                                            </td>
+                                        </tr>
+                                    }
+                                }
+                                else
+                                {
+                                    <tr>
+                                        <td colspan="6">
+                                            <h3>No Routes currently available, please check back later or <a asp-area="Calendar" asp-controller="Routes" asp-action="Create">create a New Route</a></h3>
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <td colspan="4">
+                                        <a asp-area="Calendar" asp-controller="Routes" asp-action="Create" class="btn btn-danger btn-block">Create New Route</a>
+                                    </td>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+@section Scripts
+{
+    <script src="~/js/apps.min.js"></script>
+    <script type="text/javascript">
+
+        function ShowDeleteModal(ff) {
+
+            var url = "/Calendar/Routes/Delete?id=" + ff;
+
+            $("#ModalPlaceHolder").load(url,
+                function () {
+                    $("#ModalPlaceHolder").modal("show");
+                });
+        }
+
+
+
+    </script>
+
+    <script>
+        $(document).ready(function () {
+            App.init();
+        });
+    </script>
+}

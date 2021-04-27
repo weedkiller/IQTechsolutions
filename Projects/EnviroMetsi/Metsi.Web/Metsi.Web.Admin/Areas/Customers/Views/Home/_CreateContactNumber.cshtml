@@ -1,0 +1,140 @@
+﻿@model ContactNumber<Customer>
+<div class="modal-dialog">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h4 class="modal-title">Add Contact Number to a Contact</h4>
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        </div>
+        <div class="modal-body">
+            <form id="CreateContactNrForm">
+                <input type="hidden" asp-for="Id" />
+                <input type="hidden" asp-for="EntityId" />
+                <div class="form-group">
+                    <label asp-for="Name" class="control-label"></label>
+                    <input asp-for="Name" class="form-control" />
+                    <span asp-validation-for="Name" class="text-danger"></span>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label asp-for="InternationalCode" class="control-label"></label>
+                        <input asp-for="InternationalCode" class="form-control" />
+                        <span asp-validation-for="InternationalCode" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label asp-for="AreaCode" class="control-label"></label>
+                        <input asp-for="AreaCode" class="form-control" />
+                        <span asp-validation-for="AreaCode" class="text-danger"></span>
+                    </div>
+                </div>
+                    <div class="form-group">
+                        <label asp-for="Number" class="control-label"></label>
+                        <input asp-for="Number" class="form-control" />
+                        <span asp-validation-for="Number" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <div class="checkbox">
+                            <label>
+                                <input asp-for="Default" /> @Html.DisplayNameFor(model => model.Default)
+                            </label>
+                        </div>
+                    </div>
+            </form>
+        </div>
+        <div class="modal-footer">
+            <a href="javascript:;" class="btn btn-sm btn-white" data-dismiss="modal">Close</a>
+            <a href="javascript:;" onclick="ConfirmContact()" class="btn btn-sm btn-primary">Submit & Add</a>
+        </div>
+    </div>
+</div>
+
+<script>
+
+    function ConfirmContact() {
+
+        var myformdata = $("#CreateContactNrForm").serialize();
+        var url = "@Url.Action("CreateContactNumber", "Home", new{area= "Customers" })";
+
+        $.ajax({
+            type: "POST",
+            data: myformdata,
+            url: url,
+            success: function(data) {
+
+                $("#ModalPlaceHolder").modal("hide");
+
+                var tableBody = document.getElementById("contactNrTableBody");
+
+                var tableRow = document.createElement("tr");
+
+                var tableAddressColumn = document.createElement("td");
+                var tableAddressDefaultColumn = document.createElement("td");
+                var tableAddressButtonColumn = document.createElement("td");
+                
+                var defaultIcon = document.createElement("i");
+
+                var tableAddressEditButton = document.createElement("a");
+                var tableAddressDeleteButton = document.createElement("a");
+
+                var tableAddressEditButtonIcon = document.createElement("i");
+                var tableAddressDeleteButtonIcon = document.createElement("i");
+                
+
+                tableBody.append(tableRow);
+                tableRow.append(tableAddressColumn);
+                tableRow.append(tableAddressDefaultColumn);
+                tableRow.append(tableAddressDefaultColumn);
+                tableRow.append(tableAddressButtonColumn);
+                tableAddressDefaultColumn.append(defaultIcon);
+                tableAddressButtonColumn.append(tableAddressEditButton);
+                tableAddressEditButton.append(tableAddressEditButtonIcon);
+                tableAddressButtonColumn.append(tableAddressDeleteButton);
+                tableAddressDeleteButton.append(tableAddressDeleteButtonIcon);
+               
+
+                tableRow.id = "row_" + data.id;
+                tableRow.classList.add("row_" + data.id);
+                
+                tableAddressColumn.id = "contactNr_" + data.id;
+                tableAddressColumn.innerHTML = data.number;
+
+                
+                tableAddressColumn.id = "contactDefault_" + data.id;
+
+                defaultIcon.classList.add("fa");
+                if (data.defaultEntry) {
+                    defaultIcon.classList.add("fa-check");
+                } else {
+                    defaultIcon.classList.add("fa-close");
+                }
+                
+                tableAddressEditButton.href = "javascript:;";
+                tableAddressEditButton.onclick = function () { ShowEditContactNumberModel(data.id ) };
+
+                tableAddressEditButtonIcon.classList.add("fa", "fa-edit");
+                
+                tableAddressDeleteButton.href = "javascript:;";
+                tableAddressDeleteButton.onclick = function(){ ShowDeleteContactNumberModel(data.id) };
+
+               
+                tableAddressDeleteButtonIcon.classList.add("fa", "fa-trash");
+                tableAddressDeleteButtonIcon.style.paddingLeft = "5px";
+
+            },
+            error: function(xhr, textStatus, err) {
+                alert("An error with the following detials occured : " +
+                    "\r\n == readyState: " +
+                    xhr.readyState +
+                    "\r\n == responseText: " +
+                    xhr.responseText +
+                    "\r\n == status: " +
+                    xhr.status +
+                    "\r\n == text status: " +
+                    textStatus +
+                    "\r\n == error: " +
+                    err);
+            }
+        });
+    }
+</script>

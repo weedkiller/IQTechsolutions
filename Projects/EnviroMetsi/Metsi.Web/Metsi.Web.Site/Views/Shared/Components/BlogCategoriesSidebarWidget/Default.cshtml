@@ -1,0 +1,24 @@
+﻿@using Iqt.Base.Interfaces
+
+@inject IApplicationConfiguration Configuration
+
+@model Iqt.Base.Models.PagedResult<Blogging.Base.ApiModels.BlogCategoryModel>
+
+@if (Model.Results.Any())
+{
+    <div class="widget widget_categories">
+        <h3 class="widget-title">Categories</h3>
+        <ul>
+            <li>
+                <a asp-area="Blog" asp-controller="Home" asp-action="Index" title="">All</a>
+            </li>
+            @foreach (var item in Model.Results)
+            {
+                <li>
+                    <a asp-area="Blog" asp-controller="Home" asp-action="Index" asp-route-category="@item.Id" title="">@item.Name</a> <span>(@item.CollectionCount)</span>
+                </li>
+            }
+        </ul>
+    </div>
+}
+

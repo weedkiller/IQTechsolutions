@@ -1,0 +1,121 @@
+﻿
+@inject SignInManager<ApplicationUser> SignInManager
+
+@inject UserManager<ApplicationUser> UserManager
+
+<!-- Header -->
+<header id="header" class="header">
+    <div class="header-top sticky-top bg-theme-colored sm-text-center p-0">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="widget no-border m-0">
+                        <ul class="list-inline font-13 sm-text-center mt-5">
+                            <li>
+                                <a class="text-white" asp-area="Faqs" asp-controller="Home" asp-action="Index">FAQ</a>
+                            </li>
+                            <li class="text-white">|</li>
+                            @if (!SignInManager.IsSignedIn(User))
+                            {
+                                <li>
+                                    <a class="text-white" asp-area="Identity" asp-page="/Account/Register">Register</a>
+                                </li>
+                                <li class="text-white">|</li>
+                                <li>
+                                    <a class="text-white" asp-area="Identity" asp-page="/Account/Login">Login</a>
+                                </li>
+                            }
+                            else
+                            {
+                                <li>
+                                    <a class="text-white" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy Policy</a>
+                                </li>
+                                <li class="text-white">|</li>
+                                <li>
+                                    <a class="text-white" href="javascript:document.getElementById('logoutForm').submit()"><strong>@UserManager.GetUserName(User) Logout</strong></a>
+                                </li>
+                            }
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-8">
+                    <div class="widget m-0 pull-right flip sm-pull-none sm-text-center">
+                        <ul class="list-inline pull-right flip">
+                            <li class="mb-0 pb-0">
+                                <partial name="~/Areas/Shop/Views/ShoppingCart/_ShoppingCartHeaderPartial.cshtml" />
+                            </li>
+                            <li class="mb-0 pb-0">
+                                <div class="top-dropdown-outer pt-5 pb-10">
+                                    <a class="top-search-box has-dropdown text-white"><i class="fa fa-search font-13"></i> &nbsp;</a>
+                                    <ul class="dropdown">
+                                        <li>
+                                            <div class="search-form-wrapper">
+                                                <form method="get" class="mt-10">
+                                                    <input type="text" onfocus="if (this.value == 'Enter your search') { this.value = ''; }" onblur="if (this.value == '') { this.value = 'Enter your search'; }" value="Enter your search" id="searchinput" name="s" class="">
+                                                    <label><input type="submit" name="submit" value=""></label>
+                                                </form>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="widget no-border m-0 mr-15 pull-right flip sm-pull-none sm-text-center">
+                        <ul class="styled-icons icon-circled icon-sm pull-right flip sm-pull-none sm-text-center mt-sm-15">
+                            <li><a href="@FrameworkDI.Configuration["Facebook:Url"]"><i class="fa fa-facebook text-white"></i></a></li>
+                            <li><a href="@FrameworkDI.Configuration["Twitter:Url"]"><i class="fa fa-twitter text-white"></i></a></li>
+                            <li><a href="@FrameworkDI.Configuration["Google:Url"]"><i class="fa fa-google-plus text-white"></i></a></li>
+                            <li><a href="@FrameworkDI.Configuration["Instagram:Url"]"><i class="fa fa-instagram text-white"></i></a></li>
+                            <li><a href="@FrameworkDI.Configuration["Linkin:Url"]"><i class="fa fa-linkedin text-white"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="header-middle p-0 xs-text-center">
+        <div class="container pt-0 pb-0">
+            <div class="row">
+                <div class="col-xs-12 col-sm-3 col-md-6">
+                    <div class="widget no-border m-0">
+                        <a asp-area="" asp-controller="Home" asp-action="Index" class="menuzord-brand pull-left flip xs-pull-center mt-20 mb-10"><img alt="" src="~/images/logo-wide.png"></a>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-3 col-md-2">
+                    <div class="widget no-border m-0">
+                        <div class="mt-15 mb-10 text-right flip sm-text-center">
+                            <div class="font-15 text-black-333 mb-5 font-weight-600"><i class="fa fa-envelope text-theme-colored font-18"></i> Mail Us Today</div>
+                            <a href="mailto:@FrameworkDI.Configuration["EmailSettings:InfoAddress"]" class="font-12 text-gray"> @FrameworkDI.Configuration["EmailSettings:InfoAddress"]</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-3 col-md-2">
+                    <div class="widget no-border m-0">
+                        <div class="mt-15 mb-10 text-right flip sm-text-center">
+                            <div class="font-15 text-black-333 mb-5 font-weight-600"><i class="fa fa-map-marker text-theme-colored font-18"></i> Company Location</div>
+                            <a href="#" class="font-12 text-gray"> @FrameworkDI.Configuration["Address:Line1"] @FrameworkDI.Configuration["Address:Suburb"] @FrameworkDI.Configuration["Address:City"]</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-3 col-md-2">
+                    <div class="widget no-border m-0">
+                        <div class="mt-15 mb-10 text-right flip sm-text-center">
+                            <div class="font-15 text-black-333 mb-5 font-weight-600"><i class="fa fa-phone-square text-theme-colored font-18"></i> @FrameworkDI.Configuration["Company:Tel"]</div>
+                            <a href="#" class="font-12 text-gray"> Call us for more details</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="header-nav">
+        <div class="header-nav-wrapper navbar-scrolltofixed bg-lighter">
+            <div class="container">
+                <partial name="Menus/_DefaultMenu"/>
+            </div>
+        </div>
+    </div>
+</header>
+
+<form asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })" method="post" id="logoutForm" class="navbar-right"></form>
