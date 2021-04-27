@@ -1,0 +1,12 @@
+G:\IQTechSolutions\Modules\Mailing\Mailing.Base\bin\Debug\netstandard2.1\Mailing.Base.deps.json
+G:\IQTechSolutions\Modules\Mailing\Mailing.Base\bin\Debug\netstandard2.1\Mailing.Base.dll
+G:\IQTechSolutions\Modules\Mailing\Mailing.Base\bin\Debug\netstandard2.1\Mailing.Base.pdb
+G:\IQTechSolutions\Modules\Mailing\Mailing.Base\bin\Debug\netstandard2.1\Iqt.Base.dll
+G:\IQTechSolutions\Modules\Mailing\Mailing.Base\bin\Debug\netstandard2.1\Iqt.Base.pdb
+G:\IQTechSolutions\Modules\Mailing\Mailing.Base\obj\Debug\netstandard2.1\Mailing.Base.csprojAssemblyReference.cache
+G:\IQTechSolutions\Modules\Mailing\Mailing.Base\obj\Debug\netstandard2.1\Mailing.Base.AssemblyInfoInputs.cache
+G:\IQTechSolutions\Modules\Mailing\Mailing.Base\obj\Debug\netstandard2.1\Mailing.Base.AssemblyInfo.cs
+G:\IQTechSolutions\Modules\Mailing\Mailing.Base\obj\Debug\netstandard2.1\Mailing.Base.csproj.CoreCompileInputs.cache
+G:\IQTechSolutions\Modules\Mailing\Mailing.Base\obj\Debug\netstandard2.1\Mailing.Base.csproj.CopyComplete
+G:\IQTechSolutions\Modules\Mailing\Mailing.Base\obj\Debug\netstandard2.1\Mailing.Base.dll
+G:\IQTechSolutions\Modules\Mailing\Mailing.Base\obj\Debug\netstandard2.1\Mailing.Base.pdb

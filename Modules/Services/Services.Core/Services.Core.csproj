@@ -9,7 +9,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\Calendar\Calendar.Base\Calendar.Base.csproj" />
     <ProjectReference Include="..\..\Feedback\Feedback.Base\Feedback.Base.csproj" />
     <ProjectReference Include="..\..\Filing\Filing.Core\Filing.Core.csproj" />
     <ProjectReference Include="..\Services.Base\Services.Base.csproj" />

@@ -1,0 +1,16 @@
+G:\IQTechSolutions\Modules\Employment\Employment.Base\bin\Debug\netstandard2.1\Employment.Base.deps.json
+G:\IQTechSolutions\Modules\Employment\Employment.Base\bin\Debug\netstandard2.1\Employment.Base.dll
+G:\IQTechSolutions\Modules\Employment\Employment.Base\bin\Debug\netstandard2.1\Employment.Base.pdb
+G:\IQTechSolutions\Modules\Employment\Employment.Base\bin\Debug\netstandard2.1\Filing.Base.dll
+G:\IQTechSolutions\Modules\Employment\Employment.Base\bin\Debug\netstandard2.1\Identity.Base.dll
+G:\IQTechSolutions\Modules\Employment\Employment.Base\bin\Debug\netstandard2.1\Iqt.Base.dll
+G:\IQTechSolutions\Modules\Employment\Employment.Base\bin\Debug\netstandard2.1\Filing.Base.pdb
+G:\IQTechSolutions\Modules\Employment\Employment.Base\bin\Debug\netstandard2.1\Identity.Base.pdb
+G:\IQTechSolutions\Modules\Employment\Employment.Base\bin\Debug\netstandard2.1\Iqt.Base.pdb
+G:\IQTechSolutions\Modules\Employment\Employment.Base\obj\Debug\netstandard2.1\Employment.Base.csprojAssemblyReference.cache
+G:\IQTechSolutions\Modules\Employment\Employment.Base\obj\Debug\netstandard2.1\Employment.Base.AssemblyInfoInputs.cache
+G:\IQTechSolutions\Modules\Employment\Employment.Base\obj\Debug\netstandard2.1\Employment.Base.AssemblyInfo.cs
+G:\IQTechSolutions\Modules\Employment\Employment.Base\obj\Debug\netstandard2.1\Employment.Base.csproj.CoreCompileInputs.cache
+G:\IQTechSolutions\Modules\Employment\Employment.Base\obj\Debug\netstandard2.1\Employment.Base.csproj.CopyComplete
+G:\IQTechSolutions\Modules\Employment\Employment.Base\obj\Debug\netstandard2.1\Employment.Base.dll
+G:\IQTechSolutions\Modules\Employment\Employment.Base\obj\Debug\netstandard2.1\Employment.Base.pdb

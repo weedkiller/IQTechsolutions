@@ -1,0 +1,16 @@
+G:\IQTechSolutions\Modules\Customers\Customers.Base\bin\Debug\netstandard2.1\Customers.Base.deps.json
+G:\IQTechSolutions\Modules\Customers\Customers.Base\bin\Debug\netstandard2.1\Customers.Base.dll
+G:\IQTechSolutions\Modules\Customers\Customers.Base\bin\Debug\netstandard2.1\Customers.Base.pdb
+G:\IQTechSolutions\Modules\Customers\Customers.Base\bin\Debug\netstandard2.1\Filing.Base.dll
+G:\IQTechSolutions\Modules\Customers\Customers.Base\bin\Debug\netstandard2.1\Identity.Base.dll
+G:\IQTechSolutions\Modules\Customers\Customers.Base\bin\Debug\netstandard2.1\Iqt.Base.dll
+G:\IQTechSolutions\Modules\Customers\Customers.Base\bin\Debug\netstandard2.1\Filing.Base.pdb
+G:\IQTechSolutions\Modules\Customers\Customers.Base\bin\Debug\netstandard2.1\Identity.Base.pdb
+G:\IQTechSolutions\Modules\Customers\Customers.Base\bin\Debug\netstandard2.1\Iqt.Base.pdb
+G:\IQTechSolutions\Modules\Customers\Customers.Base\obj\Debug\netstandard2.1\Customers.Base.csprojAssemblyReference.cache
+G:\IQTechSolutions\Modules\Customers\Customers.Base\obj\Debug\netstandard2.1\Customers.Base.AssemblyInfoInputs.cache
+G:\IQTechSolutions\Modules\Customers\Customers.Base\obj\Debug\netstandard2.1\Customers.Base.AssemblyInfo.cs
+G:\IQTechSolutions\Modules\Customers\Customers.Base\obj\Debug\netstandard2.1\Customers.Base.csproj.CoreCompileInputs.cache
+G:\IQTechSolutions\Modules\Customers\Customers.Base\obj\Debug\netstandard2.1\Customers.Base.csproj.CopyComplete
+G:\IQTechSolutions\Modules\Customers\Customers.Base\obj\Debug\netstandard2.1\Customers.Base.dll
+G:\IQTechSolutions\Modules\Customers\Customers.Base\obj\Debug\netstandard2.1\Customers.Base.pdb
