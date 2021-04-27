@@ -735,11 +735,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "G:\\Modules\\Mailing\\Mailing.Base\\Mailing.Base.csproj",
+      "projectUniqueName": "G:\\IQTechSolutions\\Modules\\Mailing\\Mailing.Base\\Mailing.Base.csproj",
       "projectName": "Mailing.Base",
-      "projectPath": "G:\\Modules\\Mailing\\Mailing.Base\\Mailing.Base.csproj",
+      "projectPath": "G:\\IQTechSolutions\\Modules\\Mailing\\Mailing.Base\\Mailing.Base.csproj",
       "packagesPath": "C:\\Users\\ivanr\\.nuget\\packages\\",
-      "outputPath": "G:\\Modules\\Mailing\\Mailing.Base\\obj\\",
+      "outputPath": "G:\\IQTechSolutions\\Modules\\Mailing\\Mailing.Base\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\"
@@ -760,8 +760,8 @@
         "netstandard2.1": {
           "targetAlias": "netstandard2.1",
           "projectReferences": {
-            "G:\\IqtFramework\\Iqt.Base\\Iqt.Base.csproj": {
-              "projectPath": "G:\\IqtFramework\\Iqt.Base\\Iqt.Base.csproj"
+            "G:\\IQTechSolutions\\IqtFramework\\Iqt.Base\\Iqt.Base.csproj": {
+              "projectPath": "G:\\IQTechSolutions\\IqtFramework\\Iqt.Base\\Iqt.Base.csproj"
             }
           }
         }

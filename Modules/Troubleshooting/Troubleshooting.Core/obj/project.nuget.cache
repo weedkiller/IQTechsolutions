@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "PaCVcyA8logl0o78rNcPp8plnkTldr4gBu8rm8lkL/AnrJXTgBFqWSIyvq98gy0MsSTOG1r2lh57VrlDPqFodQ==",
+  "dgSpecHash": "Hx3mYrrM0qv74yzJMvh90QVNtCzfUCdpUU0YcSZFLdvOYlU7BOhadB5vQWgGvJDV4v4hHG8k3qH27igcVOK6pA==",
   "success": true,
-  "projectFilePath": "G:\\Modules\\Troubleshooting\\Troubleshooting.Core\\Troubleshooting.Core.csproj",
+  "projectFilePath": "G:\\IQTechSolutions\\Modules\\Troubleshooting\\Troubleshooting.Core\\Troubleshooting.Core.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\ivanr\\.nuget\\packages\\microsoft.aspnetcore.antiforgery\\2.2.0\\microsoft.aspnetcore.antiforgery.2.2.0.nupkg.sha512",
     "C:\\Users\\ivanr\\.nuget\\packages\\microsoft.aspnetcore.authentication.abstractions\\2.2.0\\microsoft.aspnetcore.authentication.abstractions.2.2.0.nupkg.sha512",

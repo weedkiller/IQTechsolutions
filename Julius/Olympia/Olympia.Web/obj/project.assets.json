@@ -753,11 +753,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "G:\\Julius\\Olympia\\Olympia.Web\\Olympia.Web.csproj",
+      "projectUniqueName": "G:\\IQTechSolutions\\Julius\\Olympia\\Olympia.Web\\Olympia.Web.csproj",
       "projectName": "Olympia.Web",
-      "projectPath": "G:\\Julius\\Olympia\\Olympia.Web\\Olympia.Web.csproj",
+      "projectPath": "G:\\IQTechSolutions\\Julius\\Olympia\\Olympia.Web\\Olympia.Web.csproj",
       "packagesPath": "C:\\Users\\ivanr\\.nuget\\packages\\",
-      "outputPath": "G:\\Julius\\Olympia\\Olympia.Web\\obj\\",
+      "outputPath": "G:\\IQTechSolutions\\Julius\\Olympia\\Olympia.Web\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\"
@@ -778,8 +778,8 @@
         "netstandard2.1": {
           "targetAlias": "netstandard2.1",
           "projectReferences": {
-            "G:\\Modules\\Mailing\\Mailing.Base\\Mailing.Base.csproj": {
-              "projectPath": "G:\\Modules\\Mailing\\Mailing.Base\\Mailing.Base.csproj"
+            "G:\\IQTechSolutions\\Modules\\Mailing\\Mailing.Base\\Mailing.Base.csproj": {
+              "projectPath": "G:\\IQTechSolutions\\Modules\\Mailing\\Mailing.Base\\Mailing.Base.csproj"
             }
           }
         }

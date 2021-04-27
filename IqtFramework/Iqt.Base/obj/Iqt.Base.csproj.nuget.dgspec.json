@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "G:\\IqtFramework\\Iqt.Base\\Iqt.Base.csproj": {}
+    "G:\\IQTechSolutions\\IqtFramework\\Iqt.Base\\Iqt.Base.csproj": {}
   },
   "projects": {
-    "G:\\IqtFramework\\Iqt.Base\\Iqt.Base.csproj": {
+    "G:\\IQTechSolutions\\IqtFramework\\Iqt.Base\\Iqt.Base.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "G:\\IqtFramework\\Iqt.Base\\Iqt.Base.csproj",
+        "projectUniqueName": "G:\\IQTechSolutions\\IqtFramework\\Iqt.Base\\Iqt.Base.csproj",
         "projectName": "Iqt.Base",
-        "projectPath": "G:\\IqtFramework\\Iqt.Base\\Iqt.Base.csproj",
+        "projectPath": "G:\\IQTechSolutions\\IqtFramework\\Iqt.Base\\Iqt.Base.csproj",
         "packagesPath": "C:\\Users\\ivanr\\.nuget\\packages\\",
-        "outputPath": "G:\\IqtFramework\\Iqt.Base\\obj\\",
+        "outputPath": "G:\\IQTechSolutions\\IqtFramework\\Iqt.Base\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\"

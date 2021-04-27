@@ -3494,39 +3494,6 @@
           "Microsoft.AspNetCore.App"
         ]
       },
-      "Calendar.Base/1.0.0": {
-        "type": "project",
-        "framework": ".NETStandard,Version=v2.1",
-        "dependencies": {
-          "Filing.Base": "1.0.0",
-          "Grouping.Base": "1.0.0",
-          "Identity.Base": "1.0.0",
-          "Iqt.Base": "1.0.0",
-          "Newtonsoft.Json": "13.0.1"
-        },
-        "compile": {
-          "bin/placeholder/Calendar.Base.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Calendar.Base.dll": {}
-        }
-      },
-      "Calendar.Core/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v5.0",
-        "dependencies": {
-          "Calendar.Base": "1.0.0",
-          "Filing.Core": "1.0.0",
-          "Microsoft.AspNetCore.Http.Features": "5.0.4",
-          "Microsoft.EntityFrameworkCore": "5.0.4"
-        },
-        "compile": {
-          "bin/placeholder/Calendar.Core.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Calendar.Core.dll": {}
-        }
-      },
       "Customers.Base/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.1",
@@ -3609,9 +3576,9 @@
         "dependencies": {
           "Feedback.Base": "1.0.0",
           "Filing.Core": "1.0.0",
+          "G:\\IQTechSolutions\\Projects\\EnviroMetsi\\Metsi.Base\\Metsi.Web\\Metsi.Web.csproj": "1.0.0",
           "GoogleReCaptcha.V3": "1.3.0",
           "Mailing.Base": "1.0.0",
-          "Metsi.Web": "1.0.0",
           "Microsoft.AspNetCore.Http.Features": "5.0.4",
           "Microsoft.EntityFrameworkCore": "5.0.4"
         },
@@ -3722,20 +3689,6 @@
           "bin/placeholder/Mailing.Base.dll": {}
         }
       },
-      "Metsi.Web/1.0.0": {
-        "type": "project",
-        "framework": ".NETStandard,Version=v2.1",
-        "dependencies": {
-          "Iqt.Base": "1.0.0",
-          "Mailing.Base": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/Metsi.Web.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Metsi.Web.dll": {}
-        }
-      },
       "Olympia/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.1",
@@ -3804,9 +3757,9 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v5.0",
         "dependencies": {
-          "Calendar.Base": "1.0.0",
-          "Calendar.Core": "1.0.0",
           "Filing.Core": "1.0.0",
+          "G:\\IQTechSolutions\\Modules\\Calendar\\Calendar.Base\\Calendar.Base.csproj": "1.0.0",
+          "G:\\IQTechSolutions\\Modules\\Calendar\\Calendar.Core\\Calendar.Core.csproj": "1.0.0",
           "Grouping.Core": "1.0.0",
           "Microsoft.EntityFrameworkCore": "5.0.4",
           "Projects.Base": "1.0.0"
@@ -3822,9 +3775,9 @@
         "type": "project",
         "framework": ".NETStandard,Version=v2.1",
         "dependencies": {
-          "Calendar.Base": "1.0.0",
           "Feedback.Base": "1.0.0",
           "Filing.Base": "1.0.0",
+          "G:\\IQTechSolutions\\Modules\\Calendar\\Calendar.Base\\Calendar.Base.csproj": "1.0.0",
           "Grouping.Base": "1.0.0"
         },
         "compile": {
@@ -3838,9 +3791,9 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v5.0",
         "dependencies": {
-          "Calendar.Base": "1.0.0",
           "Feedback.Base": "1.0.0",
           "Filing.Core": "1.0.0",
+          "G:\\IQTechSolutions\\Modules\\Calendar\\Calendar.Base\\Calendar.Base.csproj": "1.0.0",
           "Microsoft.EntityFrameworkCore": "5.0.4",
           "Services.Base": "1.0.0"
         },
@@ -10976,16 +10929,6 @@
       "path": "../../../Modules/Blogging/Blogging.Core/Blogging.Core.csproj",
       "msbuildProject": "../../../Modules/Blogging/Blogging.Core/Blogging.Core.csproj"
     },
-    "Calendar.Base/1.0.0": {
-      "type": "project",
-      "path": "../../../Modules/Calendar/Calendar.Base/Calendar.Base.csproj",
-      "msbuildProject": "../../../Modules/Calendar/Calendar.Base/Calendar.Base.csproj"
-    },
-    "Calendar.Core/1.0.0": {
-      "type": "project",
-      "path": "../../../Modules/Calendar/Calendar.Core/Calendar.Core.csproj",
-      "msbuildProject": "../../../Modules/Calendar/Calendar.Core/Calendar.Core.csproj"
-    },
     "Customers.Base/1.0.0": {
       "type": "project",
       "path": "../../../Modules/Customers/Customers.Base/Customers.Base.csproj",
@@ -11050,11 +10993,6 @@
       "type": "project",
       "path": "../../../Modules/Mailing/Mailing.Base/Mailing.Base.csproj",
       "msbuildProject": "../../../Modules/Mailing/Mailing.Base/Mailing.Base.csproj"
-    },
-    "Metsi.Web/1.0.0": {
-      "type": "project",
-      "path": "../../../Projects/EnviroMetsi/Metsi.Base/Metsi.Web/Metsi.Web.csproj",
-      "msbuildProject": "../../../Projects/EnviroMetsi/Metsi.Base/Metsi.Web/Metsi.Web.csproj"
     },
     "Olympia/1.0.0": {
       "type": "project",
@@ -11129,11 +11067,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "G:\\Julius\\Olympia\\Olympia.Web.Site\\Olympia.Web.Site.csproj",
+      "projectUniqueName": "G:\\IQTechSolutions\\Julius\\Olympia\\Olympia.Web.Site\\Olympia.Web.Site.csproj",
       "projectName": "Olympia.Web.Site",
-      "projectPath": "G:\\Julius\\Olympia\\Olympia.Web.Site\\Olympia.Web.Site.csproj",
+      "projectPath": "G:\\IQTechSolutions\\Julius\\Olympia\\Olympia.Web.Site\\Olympia.Web.Site.csproj",
       "packagesPath": "C:\\Users\\ivanr\\.nuget\\packages\\",
-      "outputPath": "G:\\Julius\\Olympia\\Olympia.Web.Site\\obj\\",
+      "outputPath": "G:\\IQTechSolutions\\Julius\\Olympia\\Olympia.Web.Site\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\"
@@ -11154,32 +11092,32 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "G:\\Julius\\Olympia\\Olympia.Web.DataStore\\Olympia.Web.DataStore.csproj": {
-              "projectPath": "G:\\Julius\\Olympia\\Olympia.Web.DataStore\\Olympia.Web.DataStore.csproj"
+            "G:\\IQTechSolutions\\Julius\\Olympia\\Olympia.Web.DataStore\\Olympia.Web.DataStore.csproj": {
+              "projectPath": "G:\\IQTechSolutions\\Julius\\Olympia\\Olympia.Web.DataStore\\Olympia.Web.DataStore.csproj"
             },
-            "G:\\Julius\\Olympia\\Olympia.Web\\Olympia.Web.csproj": {
-              "projectPath": "G:\\Julius\\Olympia\\Olympia.Web\\Olympia.Web.csproj"
+            "G:\\IQTechSolutions\\Julius\\Olympia\\Olympia.Web\\Olympia.Web.csproj": {
+              "projectPath": "G:\\IQTechSolutions\\Julius\\Olympia\\Olympia.Web\\Olympia.Web.csproj"
             },
-            "G:\\Julius\\Olympia\\Olympia\\Olympia.csproj": {
-              "projectPath": "G:\\Julius\\Olympia\\Olympia\\Olympia.csproj"
+            "G:\\IQTechSolutions\\Julius\\Olympia\\Olympia\\Olympia.csproj": {
+              "projectPath": "G:\\IQTechSolutions\\Julius\\Olympia\\Olympia\\Olympia.csproj"
             },
-            "G:\\Modules\\Blogging\\Blogging.Base\\Blogging.Base.csproj": {
-              "projectPath": "G:\\Modules\\Blogging\\Blogging.Base\\Blogging.Base.csproj"
+            "G:\\IQTechSolutions\\Modules\\Blogging\\Blogging.Base\\Blogging.Base.csproj": {
+              "projectPath": "G:\\IQTechSolutions\\Modules\\Blogging\\Blogging.Base\\Blogging.Base.csproj"
             },
-            "G:\\Modules\\Blogging\\Blogging.Core\\Blogging.Core.csproj": {
-              "projectPath": "G:\\Modules\\Blogging\\Blogging.Core\\Blogging.Core.csproj"
+            "G:\\IQTechSolutions\\Modules\\Blogging\\Blogging.Core\\Blogging.Core.csproj": {
+              "projectPath": "G:\\IQTechSolutions\\Modules\\Blogging\\Blogging.Core\\Blogging.Core.csproj"
             },
-            "G:\\Modules\\Feedback\\Feedback.Core\\Feedback.Core.csproj": {
-              "projectPath": "G:\\Modules\\Feedback\\Feedback.Core\\Feedback.Core.csproj"
+            "G:\\IQTechSolutions\\Modules\\Feedback\\Feedback.Core\\Feedback.Core.csproj": {
+              "projectPath": "G:\\IQTechSolutions\\Modules\\Feedback\\Feedback.Core\\Feedback.Core.csproj"
             },
-            "G:\\Modules\\Grouping\\Grouping.Core\\Grouping.Core.csproj": {
-              "projectPath": "G:\\Modules\\Grouping\\Grouping.Core\\Grouping.Core.csproj"
+            "G:\\IQTechSolutions\\Modules\\Grouping\\Grouping.Core\\Grouping.Core.csproj": {
+              "projectPath": "G:\\IQTechSolutions\\Modules\\Grouping\\Grouping.Core\\Grouping.Core.csproj"
             },
-            "G:\\Modules\\Identity\\Identity.Base\\Identity.Base.csproj": {
-              "projectPath": "G:\\Modules\\Identity\\Identity.Base\\Identity.Base.csproj"
+            "G:\\IQTechSolutions\\Modules\\Identity\\Identity.Base\\Identity.Base.csproj": {
+              "projectPath": "G:\\IQTechSolutions\\Modules\\Identity\\Identity.Base\\Identity.Base.csproj"
             },
-            "G:\\Modules\\Mailing\\Mailing.Base\\Mailing.Base.csproj": {
-              "projectPath": "G:\\Modules\\Mailing\\Mailing.Base\\Mailing.Base.csproj"
+            "G:\\IQTechSolutions\\Modules\\Mailing\\Mailing.Base\\Mailing.Base.csproj": {
+              "projectPath": "G:\\IQTechSolutions\\Modules\\Mailing\\Mailing.Base\\Mailing.Base.csproj"
             }
           }
         }
@@ -11246,5 +11184,34 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.103\\RuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1105",
+      "level": "Error",
+      "message": "Unable to find project information for 'G:\\IQTechSolutions\\Projects\\EnviroMetsi\\Metsi.Base\\Metsi.Web\\Metsi.Web.csproj'. If you are using Visual Studio, this may be because the project is unloaded or not part of the current solution so run a restore from the command-line. Otherwise, the project file may be invalid or missing targets required for restore.",
+      "libraryId": "G:\\IQTechSolutions\\Projects\\EnviroMetsi\\Metsi.Base\\Metsi.Web\\Metsi.Web.csproj",
+      "targetGraphs": [
+        "net5.0"
+      ]
+    },
+    {
+      "code": "NU1105",
+      "level": "Error",
+      "message": "Unable to find project information for 'G:\\IQTechSolutions\\Modules\\Calendar\\Calendar.Base\\Calendar.Base.csproj'. If you are using Visual Studio, this may be because the project is unloaded or not part of the current solution so run a restore from the command-line. Otherwise, the project file may be invalid or missing targets required for restore.",
+      "libraryId": "G:\\IQTechSolutions\\Modules\\Calendar\\Calendar.Base\\Calendar.Base.csproj",
+      "targetGraphs": [
+        "net5.0"
+      ]
+    },
+    {
+      "code": "NU1105",
+      "level": "Error",
+      "message": "Unable to find project information for 'G:\\IQTechSolutions\\Modules\\Calendar\\Calendar.Core\\Calendar.Core.csproj'. If you are using Visual Studio, this may be because the project is unloaded or not part of the current solution so run a restore from the command-line. Otherwise, the project file may be invalid or missing targets required for restore.",
+      "libraryId": "G:\\IQTechSolutions\\Modules\\Calendar\\Calendar.Core\\Calendar.Core.csproj",
+      "targetGraphs": [
+        "net5.0"
+      ]
+    }
+  ]
 }

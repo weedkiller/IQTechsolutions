@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "fSm9JhHjqEqiGNNJdH/VAn11nqXG++g056DQcwHjaTzYbV5kgFwb7hUrkLwfXTw8kYn4Rd4d/RtaWqYAAuiOnA==",
+  "dgSpecHash": "fIdDU7r2HExSgVB7sTt/pX2EWCInr/Apck3ZC4W1RrxBVcq4IkciHuP0+jVrxLOwOyHVRo76Dfocxzorp4r/LQ==",
   "success": true,
-  "projectFilePath": "G:\\Modules\\Troubleshooting\\Troubleshooting.Base\\Troubleshooting.Base.csproj",
+  "projectFilePath": "G:\\IQTechSolutions\\Modules\\Troubleshooting\\Troubleshooting.Base\\Troubleshooting.Base.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\ivanr\\.nuget\\packages\\microsoft.entityframeworkcore\\5.0.4\\microsoft.entityframeworkcore.5.0.4.nupkg.sha512",
     "C:\\Users\\ivanr\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\5.0.4\\microsoft.entityframeworkcore.abstractions.5.0.4.nupkg.sha512",

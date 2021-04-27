@@ -774,11 +774,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "G:\\Modules\\Blogging\\Blogging.Base\\Blogging.Base.csproj",
+      "projectUniqueName": "G:\\IQTechSolutions\\Modules\\Blogging\\Blogging.Base\\Blogging.Base.csproj",
       "projectName": "Blogging.Base",
-      "projectPath": "G:\\Modules\\Blogging\\Blogging.Base\\Blogging.Base.csproj",
+      "projectPath": "G:\\IQTechSolutions\\Modules\\Blogging\\Blogging.Base\\Blogging.Base.csproj",
       "packagesPath": "C:\\Users\\ivanr\\.nuget\\packages\\",
-      "outputPath": "G:\\Modules\\Blogging\\Blogging.Base\\obj\\",
+      "outputPath": "G:\\IQTechSolutions\\Modules\\Blogging\\Blogging.Base\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\"
@@ -799,11 +799,11 @@
         "netstandard2.1": {
           "targetAlias": "netstandard2.1",
           "projectReferences": {
-            "G:\\Modules\\Filing\\Filing.Base\\Filing.Base.csproj": {
-              "projectPath": "G:\\Modules\\Filing\\Filing.Base\\Filing.Base.csproj"
+            "G:\\IQTechSolutions\\Modules\\Filing\\Filing.Base\\Filing.Base.csproj": {
+              "projectPath": "G:\\IQTechSolutions\\Modules\\Filing\\Filing.Base\\Filing.Base.csproj"
             },
-            "G:\\Modules\\Grouping\\Grouping.Base\\Grouping.Base.csproj": {
-              "projectPath": "G:\\Modules\\Grouping\\Grouping.Base\\Grouping.Base.csproj"
+            "G:\\IQTechSolutions\\Modules\\Grouping\\Grouping.Base\\Grouping.Base.csproj": {
+              "projectPath": "G:\\IQTechSolutions\\Modules\\Grouping\\Grouping.Base\\Grouping.Base.csproj"
             }
           }
         }

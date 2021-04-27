@@ -961,11 +961,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "G:\\Modules\\Customers\\Customers.Core\\Customers.Core.csproj",
+      "projectUniqueName": "G:\\IQTechSolutions\\Modules\\Customers\\Customers.Core\\Customers.Core.csproj",
       "projectName": "Customers.Core",
-      "projectPath": "G:\\Modules\\Customers\\Customers.Core\\Customers.Core.csproj",
+      "projectPath": "G:\\IQTechSolutions\\Modules\\Customers\\Customers.Core\\Customers.Core.csproj",
       "packagesPath": "C:\\Users\\ivanr\\.nuget\\packages\\",
-      "outputPath": "G:\\Modules\\Customers\\Customers.Core\\obj\\",
+      "outputPath": "G:\\IQTechSolutions\\Modules\\Customers\\Customers.Core\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\"
@@ -986,11 +986,11 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "G:\\Modules\\Customers\\Customers.Base\\Customers.Base.csproj": {
-              "projectPath": "G:\\Modules\\Customers\\Customers.Base\\Customers.Base.csproj"
+            "G:\\IQTechSolutions\\Modules\\Customers\\Customers.Base\\Customers.Base.csproj": {
+              "projectPath": "G:\\IQTechSolutions\\Modules\\Customers\\Customers.Base\\Customers.Base.csproj"
             },
-            "G:\\Modules\\Filing\\Filing.Core\\Filing.Core.csproj": {
-              "projectPath": "G:\\Modules\\Filing\\Filing.Core\\Filing.Core.csproj"
+            "G:\\IQTechSolutions\\Modules\\Filing\\Filing.Core\\Filing.Core.csproj": {
+              "projectPath": "G:\\IQTechSolutions\\Modules\\Filing\\Filing.Core\\Filing.Core.csproj"
             }
           }
         }

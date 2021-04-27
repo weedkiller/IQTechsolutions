@@ -7678,11 +7678,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "G:\\Modules\\Troubleshooting\\Troubleshooting.Core\\Troubleshooting.Core.csproj",
+      "projectUniqueName": "G:\\IQTechSolutions\\Modules\\Troubleshooting\\Troubleshooting.Core\\Troubleshooting.Core.csproj",
       "projectName": "Troubleshooting.Core",
-      "projectPath": "G:\\Modules\\Troubleshooting\\Troubleshooting.Core\\Troubleshooting.Core.csproj",
+      "projectPath": "G:\\IQTechSolutions\\Modules\\Troubleshooting\\Troubleshooting.Core\\Troubleshooting.Core.csproj",
       "packagesPath": "C:\\Users\\ivanr\\.nuget\\packages\\",
-      "outputPath": "G:\\Modules\\Troubleshooting\\Troubleshooting.Core\\obj\\",
+      "outputPath": "G:\\IQTechSolutions\\Modules\\Troubleshooting\\Troubleshooting.Core\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\"
@@ -7703,11 +7703,11 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "G:\\Modules\\Grouping\\Grouping.Core\\Grouping.Core.csproj": {
-              "projectPath": "G:\\Modules\\Grouping\\Grouping.Core\\Grouping.Core.csproj"
+            "G:\\IQTechSolutions\\Modules\\Grouping\\Grouping.Core\\Grouping.Core.csproj": {
+              "projectPath": "G:\\IQTechSolutions\\Modules\\Grouping\\Grouping.Core\\Grouping.Core.csproj"
             },
-            "G:\\Modules\\Troubleshooting\\Troubleshooting.Base\\Troubleshooting.Base.csproj": {
-              "projectPath": "G:\\Modules\\Troubleshooting\\Troubleshooting.Base\\Troubleshooting.Base.csproj"
+            "G:\\IQTechSolutions\\Modules\\Troubleshooting\\Troubleshooting.Base\\Troubleshooting.Base.csproj": {
+              "projectPath": "G:\\IQTechSolutions\\Modules\\Troubleshooting\\Troubleshooting.Base\\Troubleshooting.Base.csproj"
             }
           }
         }

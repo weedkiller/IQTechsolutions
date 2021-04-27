@@ -962,11 +962,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "G:\\Modules\\Employment\\Employment.Core\\Employment.Core.csproj",
+      "projectUniqueName": "G:\\IQTechSolutions\\Modules\\Employment\\Employment.Core\\Employment.Core.csproj",
       "projectName": "Employment.Core",
-      "projectPath": "G:\\Modules\\Employment\\Employment.Core\\Employment.Core.csproj",
+      "projectPath": "G:\\IQTechSolutions\\Modules\\Employment\\Employment.Core\\Employment.Core.csproj",
       "packagesPath": "C:\\Users\\ivanr\\.nuget\\packages\\",
-      "outputPath": "G:\\Modules\\Employment\\Employment.Core\\obj\\",
+      "outputPath": "G:\\IQTechSolutions\\Modules\\Employment\\Employment.Core\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\"
@@ -987,14 +987,14 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "G:\\Modules\\Employment\\Employment.Base\\Employment.Base.csproj": {
-              "projectPath": "G:\\Modules\\Employment\\Employment.Base\\Employment.Base.csproj"
+            "G:\\IQTechSolutions\\Modules\\Employment\\Employment.Base\\Employment.Base.csproj": {
+              "projectPath": "G:\\IQTechSolutions\\Modules\\Employment\\Employment.Base\\Employment.Base.csproj"
             },
-            "G:\\Modules\\Filing\\Filing.Core\\Filing.Core.csproj": {
-              "projectPath": "G:\\Modules\\Filing\\Filing.Core\\Filing.Core.csproj"
+            "G:\\IQTechSolutions\\Modules\\Filing\\Filing.Core\\Filing.Core.csproj": {
+              "projectPath": "G:\\IQTechSolutions\\Modules\\Filing\\Filing.Core\\Filing.Core.csproj"
             },
-            "G:\\Modules\\Identity\\Identity.Base\\Identity.Base.csproj": {
-              "projectPath": "G:\\Modules\\Identity\\Identity.Base\\Identity.Base.csproj"
+            "G:\\IQTechSolutions\\Modules\\Identity\\Identity.Base\\Identity.Base.csproj": {
+              "projectPath": "G:\\IQTechSolutions\\Modules\\Identity\\Identity.Base\\Identity.Base.csproj"
             }
           }
         }

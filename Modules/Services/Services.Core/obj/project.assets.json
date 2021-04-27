@@ -210,15 +210,6 @@
           }
         }
       },
-      "Newtonsoft.Json/13.0.1": {
-        "type": "package",
-        "compile": {
-          "lib/netstandard2.0/Newtonsoft.Json.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard2.0/Newtonsoft.Json.dll": {}
-        }
-      },
       "System.Collections.Immutable/5.0.0": {
         "type": "package",
         "compile": {
@@ -266,23 +257,6 @@
             "assetType": "runtime",
             "rid": "win"
           }
-        }
-      },
-      "Calendar.Base/1.0.0": {
-        "type": "project",
-        "framework": ".NETStandard,Version=v2.1",
-        "dependencies": {
-          "Filing.Base": "1.0.0",
-          "Grouping.Base": "1.0.0",
-          "Identity.Base": "1.0.0",
-          "Iqt.Base": "1.0.0",
-          "Newtonsoft.Json": "13.0.1"
-        },
-        "compile": {
-          "bin/placeholder/Calendar.Base.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Calendar.Base.dll": {}
         }
       },
       "Feedback.Base/1.0.0": {
@@ -375,9 +349,9 @@
         "type": "project",
         "framework": ".NETStandard,Version=v2.1",
         "dependencies": {
-          "Calendar.Base": "1.0.0",
           "Feedback.Base": "1.0.0",
           "Filing.Base": "1.0.0",
+          "G:\\IQTechSolutions\\Modules\\Calendar\\Calendar.Base\\Calendar.Base.csproj": "1.0.0",
           "Grouping.Base": "1.0.0"
         },
         "compile": {
@@ -724,33 +698,6 @@
         "version.txt"
       ]
     },
-    "Newtonsoft.Json/13.0.1": {
-      "sha512": "ppPFpBcvxdsfUonNcvITKqLl3bqxWbDCZIzDWHzjpdAHRFfZe0Dw9HmA0+za13IdyrgJwpkDTDA9fHaxOrt20A==",
-      "type": "package",
-      "path": "newtonsoft.json/13.0.1",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "LICENSE.md",
-        "lib/net20/Newtonsoft.Json.dll",
-        "lib/net20/Newtonsoft.Json.xml",
-        "lib/net35/Newtonsoft.Json.dll",
-        "lib/net35/Newtonsoft.Json.xml",
-        "lib/net40/Newtonsoft.Json.dll",
-        "lib/net40/Newtonsoft.Json.xml",
-        "lib/net45/Newtonsoft.Json.dll",
-        "lib/net45/Newtonsoft.Json.xml",
-        "lib/netstandard1.0/Newtonsoft.Json.dll",
-        "lib/netstandard1.0/Newtonsoft.Json.xml",
-        "lib/netstandard1.3/Newtonsoft.Json.dll",
-        "lib/netstandard1.3/Newtonsoft.Json.xml",
-        "lib/netstandard2.0/Newtonsoft.Json.dll",
-        "lib/netstandard2.0/Newtonsoft.Json.xml",
-        "newtonsoft.json.13.0.1.nupkg.sha512",
-        "newtonsoft.json.nuspec",
-        "packageIcon.png"
-      ]
-    },
     "System.Collections.Immutable/5.0.0": {
       "sha512": "FXkLXiK0sVVewcso0imKQoOxjoPAj42R8HtjjbSjVPAzwDfzoyoznWxgA3c38LDbN9SJux1xXoXYAhz98j7r2g==",
       "type": "package",
@@ -937,11 +884,6 @@
         "version.txt"
       ]
     },
-    "Calendar.Base/1.0.0": {
-      "type": "project",
-      "path": "../../Calendar/Calendar.Base/Calendar.Base.csproj",
-      "msbuildProject": "../../Calendar/Calendar.Base/Calendar.Base.csproj"
-    },
     "Feedback.Base/1.0.0": {
       "type": "project",
       "path": "../../Feedback/Feedback.Base/Feedback.Base.csproj",
@@ -980,9 +922,9 @@
   },
   "projectFileDependencyGroups": {
     "net5.0": [
-      "Calendar.Base >= 1.0.0",
       "Feedback.Base >= 1.0.0",
       "Filing.Core >= 1.0.0",
+      "G:\\IQTechSolutions\\Modules\\Calendar\\Calendar.Base\\Calendar.Base.csproj",
       "Microsoft.EntityFrameworkCore >= 5.0.4",
       "Services.Base >= 1.0.0"
     ]
@@ -994,11 +936,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "G:\\Modules\\Services\\Services.Core\\Services.Core.csproj",
+      "projectUniqueName": "G:\\IQTechSolutions\\Modules\\Services\\Services.Core\\Services.Core.csproj",
       "projectName": "Services.Core",
-      "projectPath": "G:\\Modules\\Services\\Services.Core\\Services.Core.csproj",
+      "projectPath": "G:\\IQTechSolutions\\Modules\\Services\\Services.Core\\Services.Core.csproj",
       "packagesPath": "C:\\Users\\ivanr\\.nuget\\packages\\",
-      "outputPath": "G:\\Modules\\Services\\Services.Core\\obj\\",
+      "outputPath": "G:\\IQTechSolutions\\Modules\\Services\\Services.Core\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\"
@@ -1019,17 +961,17 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "G:\\Modules\\Calendar\\Calendar.Base\\Calendar.Base.csproj": {
-              "projectPath": "G:\\Modules\\Calendar\\Calendar.Base\\Calendar.Base.csproj"
+            "G:\\IQTechSolutions\\Modules\\Calendar\\Calendar.Base\\Calendar.Base.csproj": {
+              "projectPath": "G:\\IQTechSolutions\\Modules\\Calendar\\Calendar.Base\\Calendar.Base.csproj"
             },
-            "G:\\Modules\\Feedback\\Feedback.Base\\Feedback.Base.csproj": {
-              "projectPath": "G:\\Modules\\Feedback\\Feedback.Base\\Feedback.Base.csproj"
+            "G:\\IQTechSolutions\\Modules\\Feedback\\Feedback.Base\\Feedback.Base.csproj": {
+              "projectPath": "G:\\IQTechSolutions\\Modules\\Feedback\\Feedback.Base\\Feedback.Base.csproj"
             },
-            "G:\\Modules\\Filing\\Filing.Core\\Filing.Core.csproj": {
-              "projectPath": "G:\\Modules\\Filing\\Filing.Core\\Filing.Core.csproj"
+            "G:\\IQTechSolutions\\Modules\\Filing\\Filing.Core\\Filing.Core.csproj": {
+              "projectPath": "G:\\IQTechSolutions\\Modules\\Filing\\Filing.Core\\Filing.Core.csproj"
             },
-            "G:\\Modules\\Services\\Services.Base\\Services.Base.csproj": {
-              "projectPath": "G:\\Modules\\Services\\Services.Base\\Services.Base.csproj"
+            "G:\\IQTechSolutions\\Modules\\Services\\Services.Base\\Services.Base.csproj": {
+              "projectPath": "G:\\IQTechSolutions\\Modules\\Services\\Services.Base\\Services.Base.csproj"
             }
           }
         }
@@ -1067,5 +1009,16 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.103\\RuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1105",
+      "level": "Error",
+      "message": "Unable to find project information for 'G:\\IQTechSolutions\\Modules\\Calendar\\Calendar.Base\\Calendar.Base.csproj'. If you are using Visual Studio, this may be because the project is unloaded or not part of the current solution so run a restore from the command-line. Otherwise, the project file may be invalid or missing targets required for restore.",
+      "libraryId": "G:\\IQTechSolutions\\Modules\\Calendar\\Calendar.Base\\Calendar.Base.csproj",
+      "targetGraphs": [
+        "net5.0"
+      ]
+    }
+  ]
 }

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "thDkl5V7Co443C+bBSzR4Dfb6T5XUXzmMc3eZKgJdI0QHEzUcSli6NHydXB3+g8EsiI8uU0GS8875Hwd2bDx6g==",
+  "dgSpecHash": "BvXc6r/rU/E1B2V+oIsliBoZQrJDmarfLk4w/MQsXzXbiYfVtD3aYSAHkKi1PdJTDEYQQ5GkL3ea7OkCKiUXXQ==",
   "success": true,
-  "projectFilePath": "G:\\Modules\\Mailing\\Mailing.Base\\Mailing.Base.csproj",
+  "projectFilePath": "G:\\IQTechSolutions\\Modules\\Mailing\\Mailing.Base\\Mailing.Base.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\ivanr\\.nuget\\packages\\microsoft.entityframeworkcore\\5.0.4\\microsoft.entityframeworkcore.5.0.4.nupkg.sha512",
     "C:\\Users\\ivanr\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\5.0.4\\microsoft.entityframeworkcore.abstractions.5.0.4.nupkg.sha512",

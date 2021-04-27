@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "d3NX6fNoqj2kB7An0nEomPFovA02HQlK6EztufdKa9B1o6BKMJObiXyGa7k8NlIlUdmn217jFGtP2+sV1scX+Q==",
+  "dgSpecHash": "a+gYKV4hmkGpNGDG87+fqMqw0ALmKSr2uHplRIoBAcaJwmQfMfu6MDt+lshMIBGcP1/LF4qBIRhqyyUg6WtsbQ==",
   "success": true,
-  "projectFilePath": "G:\\Modules\\Filing\\Filing.Base\\Filing.Base.csproj",
+  "projectFilePath": "G:\\IQTechSolutions\\Modules\\Filing\\Filing.Base\\Filing.Base.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\ivanr\\.nuget\\packages\\microsoft.entityframeworkcore\\5.0.4\\microsoft.entityframeworkcore.5.0.4.nupkg.sha512",
     "C:\\Users\\ivanr\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\5.0.4\\microsoft.entityframeworkcore.abstractions.5.0.4.nupkg.sha512",

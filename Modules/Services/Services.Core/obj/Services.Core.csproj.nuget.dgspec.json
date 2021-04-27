@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "G:\\Modules\\Services\\Services.Core\\Services.Core.csproj": {}
+    "G:\\IQTechSolutions\\Modules\\Services\\Services.Core\\Services.Core.csproj": {}
   },
   "projects": {
-    "G:\\IqtFramework\\Iqt.Base\\Iqt.Base.csproj": {
+    "G:\\IQTechSolutions\\IqtFramework\\Iqt.Base\\Iqt.Base.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "G:\\IqtFramework\\Iqt.Base\\Iqt.Base.csproj",
+        "projectUniqueName": "G:\\IQTechSolutions\\IqtFramework\\Iqt.Base\\Iqt.Base.csproj",
         "projectName": "Iqt.Base",
-        "projectPath": "G:\\IqtFramework\\Iqt.Base\\Iqt.Base.csproj",
+        "projectPath": "G:\\IQTechSolutions\\IqtFramework\\Iqt.Base\\Iqt.Base.csproj",
         "packagesPath": "C:\\Users\\ivanr\\.nuget\\packages\\",
-        "outputPath": "G:\\IqtFramework\\Iqt.Base\\obj\\",
+        "outputPath": "G:\\IQTechSolutions\\IqtFramework\\Iqt.Base\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\"
@@ -72,91 +72,14 @@
         }
       }
     },
-    "G:\\Modules\\Calendar\\Calendar.Base\\Calendar.Base.csproj": {
+    "G:\\IQTechSolutions\\Modules\\Feedback\\Feedback.Base\\Feedback.Base.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "G:\\Modules\\Calendar\\Calendar.Base\\Calendar.Base.csproj",
-        "projectName": "Calendar.Base",
-        "projectPath": "G:\\Modules\\Calendar\\Calendar.Base\\Calendar.Base.csproj",
-        "packagesPath": "C:\\Users\\ivanr\\.nuget\\packages\\",
-        "outputPath": "G:\\Modules\\Calendar\\Calendar.Base\\obj\\",
-        "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\"
-        ],
-        "configFilePaths": [
-          "C:\\Users\\ivanr\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
-        ],
-        "originalTargetFrameworks": [
-          "netstandard2.1"
-        ],
-        "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "https://api.nuget.org/v3/index.json": {}
-        },
-        "frameworks": {
-          "netstandard2.1": {
-            "targetAlias": "netstandard2.1",
-            "projectReferences": {
-              "G:\\IqtFramework\\Iqt.Base\\Iqt.Base.csproj": {
-                "projectPath": "G:\\IqtFramework\\Iqt.Base\\Iqt.Base.csproj"
-              },
-              "G:\\Modules\\Filing\\Filing.Base\\Filing.Base.csproj": {
-                "projectPath": "G:\\Modules\\Filing\\Filing.Base\\Filing.Base.csproj"
-              },
-              "G:\\Modules\\Grouping\\Grouping.Base\\Grouping.Base.csproj": {
-                "projectPath": "G:\\Modules\\Grouping\\Grouping.Base\\Grouping.Base.csproj"
-              },
-              "G:\\Modules\\Identity\\Identity.Base\\Identity.Base.csproj": {
-                "projectPath": "G:\\Modules\\Identity\\Identity.Base\\Identity.Base.csproj"
-              }
-            }
-          }
-        },
-        "warningProperties": {
-          "warnAsError": [
-            "NU1605"
-          ]
-        }
-      },
-      "frameworks": {
-        "netstandard2.1": {
-          "targetAlias": "netstandard2.1",
-          "dependencies": {
-            "Newtonsoft.Json": {
-              "target": "Package",
-              "version": "[13.0.1, )"
-            }
-          },
-          "imports": [
-            "net461",
-            "net462",
-            "net47",
-            "net471",
-            "net472",
-            "net48"
-          ],
-          "assetTargetFallback": true,
-          "warn": true,
-          "frameworkReferences": {
-            "NETStandard.Library": {
-              "privateAssets": "all"
-            }
-          },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.103\\RuntimeIdentifierGraph.json"
-        }
-      }
-    },
-    "G:\\Modules\\Feedback\\Feedback.Base\\Feedback.Base.csproj": {
-      "version": "1.0.0",
-      "restore": {
-        "projectUniqueName": "G:\\Modules\\Feedback\\Feedback.Base\\Feedback.Base.csproj",
+        "projectUniqueName": "G:\\IQTechSolutions\\Modules\\Feedback\\Feedback.Base\\Feedback.Base.csproj",
         "projectName": "Feedback.Base",
-        "projectPath": "G:\\Modules\\Feedback\\Feedback.Base\\Feedback.Base.csproj",
+        "projectPath": "G:\\IQTechSolutions\\Modules\\Feedback\\Feedback.Base\\Feedback.Base.csproj",
         "packagesPath": "C:\\Users\\ivanr\\.nuget\\packages\\",
-        "outputPath": "G:\\Modules\\Feedback\\Feedback.Base\\obj\\",
+        "outputPath": "G:\\IQTechSolutions\\Modules\\Feedback\\Feedback.Base\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\"
@@ -177,14 +100,14 @@
           "netstandard2.1": {
             "targetAlias": "netstandard2.1",
             "projectReferences": {
-              "G:\\IqtFramework\\Iqt.Base\\Iqt.Base.csproj": {
-                "projectPath": "G:\\IqtFramework\\Iqt.Base\\Iqt.Base.csproj"
+              "G:\\IQTechSolutions\\IqtFramework\\Iqt.Base\\Iqt.Base.csproj": {
+                "projectPath": "G:\\IQTechSolutions\\IqtFramework\\Iqt.Base\\Iqt.Base.csproj"
               },
-              "G:\\Modules\\Filing\\Filing.Base\\Filing.Base.csproj": {
-                "projectPath": "G:\\Modules\\Filing\\Filing.Base\\Filing.Base.csproj"
+              "G:\\IQTechSolutions\\Modules\\Filing\\Filing.Base\\Filing.Base.csproj": {
+                "projectPath": "G:\\IQTechSolutions\\Modules\\Filing\\Filing.Base\\Filing.Base.csproj"
               },
-              "G:\\Modules\\Identity\\Identity.Base\\Identity.Base.csproj": {
-                "projectPath": "G:\\Modules\\Identity\\Identity.Base\\Identity.Base.csproj"
+              "G:\\IQTechSolutions\\Modules\\Identity\\Identity.Base\\Identity.Base.csproj": {
+                "projectPath": "G:\\IQTechSolutions\\Modules\\Identity\\Identity.Base\\Identity.Base.csproj"
               }
             }
           }
@@ -217,14 +140,14 @@
         }
       }
     },
-    "G:\\Modules\\Filing\\Filing.Base\\Filing.Base.csproj": {
+    "G:\\IQTechSolutions\\Modules\\Filing\\Filing.Base\\Filing.Base.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "G:\\Modules\\Filing\\Filing.Base\\Filing.Base.csproj",
+        "projectUniqueName": "G:\\IQTechSolutions\\Modules\\Filing\\Filing.Base\\Filing.Base.csproj",
         "projectName": "Filing.Base",
-        "projectPath": "G:\\Modules\\Filing\\Filing.Base\\Filing.Base.csproj",
+        "projectPath": "G:\\IQTechSolutions\\Modules\\Filing\\Filing.Base\\Filing.Base.csproj",
         "packagesPath": "C:\\Users\\ivanr\\.nuget\\packages\\",
-        "outputPath": "G:\\Modules\\Filing\\Filing.Base\\obj\\",
+        "outputPath": "G:\\IQTechSolutions\\Modules\\Filing\\Filing.Base\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\"
@@ -245,8 +168,8 @@
           "netstandard2.1": {
             "targetAlias": "netstandard2.1",
             "projectReferences": {
-              "G:\\IqtFramework\\Iqt.Base\\Iqt.Base.csproj": {
-                "projectPath": "G:\\IqtFramework\\Iqt.Base\\Iqt.Base.csproj"
+              "G:\\IQTechSolutions\\IqtFramework\\Iqt.Base\\Iqt.Base.csproj": {
+                "projectPath": "G:\\IQTechSolutions\\IqtFramework\\Iqt.Base\\Iqt.Base.csproj"
               }
             }
           }
@@ -285,14 +208,14 @@
         }
       }
     },
-    "G:\\Modules\\Filing\\Filing.Core\\Filing.Core.csproj": {
+    "G:\\IQTechSolutions\\Modules\\Filing\\Filing.Core\\Filing.Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "G:\\Modules\\Filing\\Filing.Core\\Filing.Core.csproj",
+        "projectUniqueName": "G:\\IQTechSolutions\\Modules\\Filing\\Filing.Core\\Filing.Core.csproj",
         "projectName": "Filing.Core",
-        "projectPath": "G:\\Modules\\Filing\\Filing.Core\\Filing.Core.csproj",
+        "projectPath": "G:\\IQTechSolutions\\Modules\\Filing\\Filing.Core\\Filing.Core.csproj",
         "packagesPath": "C:\\Users\\ivanr\\.nuget\\packages\\",
-        "outputPath": "G:\\Modules\\Filing\\Filing.Core\\obj\\",
+        "outputPath": "G:\\IQTechSolutions\\Modules\\Filing\\Filing.Core\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\"
@@ -313,8 +236,8 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "G:\\Modules\\Filing\\Filing.Base\\Filing.Base.csproj": {
-                "projectPath": "G:\\Modules\\Filing\\Filing.Base\\Filing.Base.csproj"
+              "G:\\IQTechSolutions\\Modules\\Filing\\Filing.Base\\Filing.Base.csproj": {
+                "projectPath": "G:\\IQTechSolutions\\Modules\\Filing\\Filing.Base\\Filing.Base.csproj"
               }
             }
           }
@@ -353,14 +276,14 @@
         }
       }
     },
-    "G:\\Modules\\Grouping\\Grouping.Base\\Grouping.Base.csproj": {
+    "G:\\IQTechSolutions\\Modules\\Grouping\\Grouping.Base\\Grouping.Base.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "G:\\Modules\\Grouping\\Grouping.Base\\Grouping.Base.csproj",
+        "projectUniqueName": "G:\\IQTechSolutions\\Modules\\Grouping\\Grouping.Base\\Grouping.Base.csproj",
         "projectName": "Grouping.Base",
-        "projectPath": "G:\\Modules\\Grouping\\Grouping.Base\\Grouping.Base.csproj",
+        "projectPath": "G:\\IQTechSolutions\\Modules\\Grouping\\Grouping.Base\\Grouping.Base.csproj",
         "packagesPath": "C:\\Users\\ivanr\\.nuget\\packages\\",
-        "outputPath": "G:\\Modules\\Grouping\\Grouping.Base\\obj\\",
+        "outputPath": "G:\\IQTechSolutions\\Modules\\Grouping\\Grouping.Base\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\"
@@ -381,8 +304,8 @@
           "netstandard2.1": {
             "targetAlias": "netstandard2.1",
             "projectReferences": {
-              "G:\\Modules\\Filing\\Filing.Base\\Filing.Base.csproj": {
-                "projectPath": "G:\\Modules\\Filing\\Filing.Base\\Filing.Base.csproj"
+              "G:\\IQTechSolutions\\Modules\\Filing\\Filing.Base\\Filing.Base.csproj": {
+                "projectPath": "G:\\IQTechSolutions\\Modules\\Filing\\Filing.Base\\Filing.Base.csproj"
               }
             }
           }
@@ -421,14 +344,14 @@
         }
       }
     },
-    "G:\\Modules\\Identity\\Identity.Base\\Identity.Base.csproj": {
+    "G:\\IQTechSolutions\\Modules\\Identity\\Identity.Base\\Identity.Base.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "G:\\Modules\\Identity\\Identity.Base\\Identity.Base.csproj",
+        "projectUniqueName": "G:\\IQTechSolutions\\Modules\\Identity\\Identity.Base\\Identity.Base.csproj",
         "projectName": "Identity.Base",
-        "projectPath": "G:\\Modules\\Identity\\Identity.Base\\Identity.Base.csproj",
+        "projectPath": "G:\\IQTechSolutions\\Modules\\Identity\\Identity.Base\\Identity.Base.csproj",
         "packagesPath": "C:\\Users\\ivanr\\.nuget\\packages\\",
-        "outputPath": "G:\\Modules\\Identity\\Identity.Base\\obj\\",
+        "outputPath": "G:\\IQTechSolutions\\Modules\\Identity\\Identity.Base\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\"
@@ -449,8 +372,8 @@
           "netstandard2.1": {
             "targetAlias": "netstandard2.1",
             "projectReferences": {
-              "G:\\Modules\\Filing\\Filing.Base\\Filing.Base.csproj": {
-                "projectPath": "G:\\Modules\\Filing\\Filing.Base\\Filing.Base.csproj"
+              "G:\\IQTechSolutions\\Modules\\Filing\\Filing.Base\\Filing.Base.csproj": {
+                "projectPath": "G:\\IQTechSolutions\\Modules\\Filing\\Filing.Base\\Filing.Base.csproj"
               }
             }
           }
@@ -493,14 +416,14 @@
         }
       }
     },
-    "G:\\Modules\\Services\\Services.Base\\Services.Base.csproj": {
+    "G:\\IQTechSolutions\\Modules\\Services\\Services.Base\\Services.Base.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "G:\\Modules\\Services\\Services.Base\\Services.Base.csproj",
+        "projectUniqueName": "G:\\IQTechSolutions\\Modules\\Services\\Services.Base\\Services.Base.csproj",
         "projectName": "Services.Base",
-        "projectPath": "G:\\Modules\\Services\\Services.Base\\Services.Base.csproj",
+        "projectPath": "G:\\IQTechSolutions\\Modules\\Services\\Services.Base\\Services.Base.csproj",
         "packagesPath": "C:\\Users\\ivanr\\.nuget\\packages\\",
-        "outputPath": "G:\\Modules\\Services\\Services.Base\\obj\\",
+        "outputPath": "G:\\IQTechSolutions\\Modules\\Services\\Services.Base\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\"
@@ -521,17 +444,17 @@
           "netstandard2.1": {
             "targetAlias": "netstandard2.1",
             "projectReferences": {
-              "G:\\Modules\\Calendar\\Calendar.Base\\Calendar.Base.csproj": {
-                "projectPath": "G:\\Modules\\Calendar\\Calendar.Base\\Calendar.Base.csproj"
+              "G:\\IQTechSolutions\\Modules\\Calendar\\Calendar.Base\\Calendar.Base.csproj": {
+                "projectPath": "G:\\IQTechSolutions\\Modules\\Calendar\\Calendar.Base\\Calendar.Base.csproj"
               },
-              "G:\\Modules\\Feedback\\Feedback.Base\\Feedback.Base.csproj": {
-                "projectPath": "G:\\Modules\\Feedback\\Feedback.Base\\Feedback.Base.csproj"
+              "G:\\IQTechSolutions\\Modules\\Feedback\\Feedback.Base\\Feedback.Base.csproj": {
+                "projectPath": "G:\\IQTechSolutions\\Modules\\Feedback\\Feedback.Base\\Feedback.Base.csproj"
               },
-              "G:\\Modules\\Filing\\Filing.Base\\Filing.Base.csproj": {
-                "projectPath": "G:\\Modules\\Filing\\Filing.Base\\Filing.Base.csproj"
+              "G:\\IQTechSolutions\\Modules\\Filing\\Filing.Base\\Filing.Base.csproj": {
+                "projectPath": "G:\\IQTechSolutions\\Modules\\Filing\\Filing.Base\\Filing.Base.csproj"
               },
-              "G:\\Modules\\Grouping\\Grouping.Base\\Grouping.Base.csproj": {
-                "projectPath": "G:\\Modules\\Grouping\\Grouping.Base\\Grouping.Base.csproj"
+              "G:\\IQTechSolutions\\Modules\\Grouping\\Grouping.Base\\Grouping.Base.csproj": {
+                "projectPath": "G:\\IQTechSolutions\\Modules\\Grouping\\Grouping.Base\\Grouping.Base.csproj"
               }
             }
           }
@@ -564,14 +487,14 @@
         }
       }
     },
-    "G:\\Modules\\Services\\Services.Core\\Services.Core.csproj": {
+    "G:\\IQTechSolutions\\Modules\\Services\\Services.Core\\Services.Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "G:\\Modules\\Services\\Services.Core\\Services.Core.csproj",
+        "projectUniqueName": "G:\\IQTechSolutions\\Modules\\Services\\Services.Core\\Services.Core.csproj",
         "projectName": "Services.Core",
-        "projectPath": "G:\\Modules\\Services\\Services.Core\\Services.Core.csproj",
+        "projectPath": "G:\\IQTechSolutions\\Modules\\Services\\Services.Core\\Services.Core.csproj",
         "packagesPath": "C:\\Users\\ivanr\\.nuget\\packages\\",
-        "outputPath": "G:\\Modules\\Services\\Services.Core\\obj\\",
+        "outputPath": "G:\\IQTechSolutions\\Modules\\Services\\Services.Core\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\"
@@ -592,17 +515,17 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "G:\\Modules\\Calendar\\Calendar.Base\\Calendar.Base.csproj": {
-                "projectPath": "G:\\Modules\\Calendar\\Calendar.Base\\Calendar.Base.csproj"
+              "G:\\IQTechSolutions\\Modules\\Calendar\\Calendar.Base\\Calendar.Base.csproj": {
+                "projectPath": "G:\\IQTechSolutions\\Modules\\Calendar\\Calendar.Base\\Calendar.Base.csproj"
               },
-              "G:\\Modules\\Feedback\\Feedback.Base\\Feedback.Base.csproj": {
-                "projectPath": "G:\\Modules\\Feedback\\Feedback.Base\\Feedback.Base.csproj"
+              "G:\\IQTechSolutions\\Modules\\Feedback\\Feedback.Base\\Feedback.Base.csproj": {
+                "projectPath": "G:\\IQTechSolutions\\Modules\\Feedback\\Feedback.Base\\Feedback.Base.csproj"
               },
-              "G:\\Modules\\Filing\\Filing.Core\\Filing.Core.csproj": {
-                "projectPath": "G:\\Modules\\Filing\\Filing.Core\\Filing.Core.csproj"
+              "G:\\IQTechSolutions\\Modules\\Filing\\Filing.Core\\Filing.Core.csproj": {
+                "projectPath": "G:\\IQTechSolutions\\Modules\\Filing\\Filing.Core\\Filing.Core.csproj"
               },
-              "G:\\Modules\\Services\\Services.Base\\Services.Base.csproj": {
-                "projectPath": "G:\\Modules\\Services\\Services.Base\\Services.Base.csproj"
+              "G:\\IQTechSolutions\\Modules\\Services\\Services.Base\\Services.Base.csproj": {
+                "projectPath": "G:\\IQTechSolutions\\Modules\\Services\\Services.Base\\Services.Base.csproj"
               }
             }
           }

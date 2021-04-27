@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "W5RTr16WZ4U8tD2oUfINeZWyLkMopjulItOzBurapvhvKjYn8+3v/iHMXjS39r7NeTPuN3d3FX1c1PN6V3eD2Q==",
+  "dgSpecHash": "9wOpERP6xeoEIOBEcw5shdTvF4cEWUKMizDAnpUXeJiyqOqNxC+lsNtuQAGIUFMRUiOKurhV4pgsa9pZ5kzpSQ==",
   "success": true,
-  "projectFilePath": "G:\\Modules\\Customers\\Customers.Base\\Customers.Base.csproj",
+  "projectFilePath": "G:\\IQTechSolutions\\Modules\\Customers\\Customers.Base\\Customers.Base.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\ivanr\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\5.0.4\\microsoft.aspnetcore.cryptography.internal.5.0.4.nupkg.sha512",
     "C:\\Users\\ivanr\\.nuget\\packages\\microsoft.aspnetcore.cryptography.keyderivation\\5.0.4\\microsoft.aspnetcore.cryptography.keyderivation.5.0.4.nupkg.sha512",
