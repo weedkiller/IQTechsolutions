@@ -1,6 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<parameters>
-  <parameter name="IIS Web Application Name" description="" value="www.metsi.co.za" tags="IisApp">
-    <parameterEntry kind="ProviderPath" scope="IisApp" match="^G:\\Projects\\EnviroMetsi\\Metsi\.Web\\Metsi\.Web\.Site\\obj\\Release\\net5\.0\\PubTmp\\Out\\$" />
-  </parameter>
-</parameters>

@@ -1,9 +1,0 @@
-G:\Projects\KingdomLifestyleMinistries\KingdomLifestyleMinistries.Web\bin\Debug\netstandard2.1\KingdomLifestyleMinistries.Web.deps.json
-G:\Projects\KingdomLifestyleMinistries\KingdomLifestyleMinistries.Web\bin\Debug\netstandard2.1\KingdomLifestyleMinistries.Web.dll
-G:\Projects\KingdomLifestyleMinistries\KingdomLifestyleMinistries.Web\bin\Debug\netstandard2.1\KingdomLifestyleMinistries.Web.pdb
-G:\Projects\KingdomLifestyleMinistries\KingdomLifestyleMinistries.Web\obj\Debug\netstandard2.1\KingdomLifestyleMinistries.Web.csprojAssemblyReference.cache
-G:\Projects\KingdomLifestyleMinistries\KingdomLifestyleMinistries.Web\obj\Debug\netstandard2.1\KingdomLifestyleMinistries.Web.AssemblyInfoInputs.cache
-G:\Projects\KingdomLifestyleMinistries\KingdomLifestyleMinistries.Web\obj\Debug\netstandard2.1\KingdomLifestyleMinistries.Web.AssemblyInfo.cs
-G:\Projects\KingdomLifestyleMinistries\KingdomLifestyleMinistries.Web\obj\Debug\netstandard2.1\KingdomLifestyleMinistries.Web.csproj.CoreCompileInputs.cache
-G:\Projects\KingdomLifestyleMinistries\KingdomLifestyleMinistries.Web\obj\Debug\netstandard2.1\KingdomLifestyleMinistries.Web.dll
-G:\Projects\KingdomLifestyleMinistries\KingdomLifestyleMinistries.Web\obj\Debug\netstandard2.1\KingdomLifestyleMinistries.Web.pdb
