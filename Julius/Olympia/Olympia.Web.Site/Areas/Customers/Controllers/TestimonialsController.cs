@@ -1,14 +1,14 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace Olympia.Web.Site.Areas.Customers.Controllers
 {
     [Area("Customers")]
     [Route("Customers/[controller]/[action]")]
-    public class TestimonialsController : Controller
+    public class TestimonialsController : TestimonialsBaseController
     {
-        public IActionResult Index()
+        public TestimonialsController(DbContext context) : base(context)
         {
-            return View();
         }
     }
 }

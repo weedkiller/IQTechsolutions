@@ -747,20 +747,25 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Admin\\.nuget\\packages\\": {}
+    "C:\\Users\\ivanr\\.nuget\\packages\\": {},
+    "C:\\Microsoft\\Xamarin\\NuGet\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Admin\\Desktop\\New\\IQTechsolutions\\Julius\\Olympia\\Olympia.Web\\Olympia.Web.csproj",
+      "projectUniqueName": "G:\\IQTechSolutions\\Julius\\Olympia\\Olympia.Web\\Olympia.Web.csproj",
       "projectName": "Olympia.Web",
-      "projectPath": "C:\\Users\\Admin\\Desktop\\New\\IQTechsolutions\\Julius\\Olympia\\Olympia.Web\\Olympia.Web.csproj",
-      "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Admin\\Desktop\\New\\IQTechsolutions\\Julius\\Olympia\\Olympia.Web\\obj\\",
+      "projectPath": "G:\\IQTechSolutions\\Julius\\Olympia\\Olympia.Web\\Olympia.Web.csproj",
+      "packagesPath": "C:\\Users\\ivanr\\.nuget\\packages\\",
+      "outputPath": "G:\\IQTechSolutions\\Julius\\Olympia\\Olympia.Web\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Microsoft\\Xamarin\\NuGet\\"
+      ],
       "configFilePaths": [
-        "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Users\\ivanr\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
       "originalTargetFrameworks": [
         "netstandard2.1"
@@ -773,8 +778,8 @@
         "netstandard2.1": {
           "targetAlias": "netstandard2.1",
           "projectReferences": {
-            "C:\\Users\\Admin\\Desktop\\New\\IQTechsolutions\\Modules\\Mailing\\Mailing.Base\\Mailing.Base.csproj": {
-              "projectPath": "C:\\Users\\Admin\\Desktop\\New\\IQTechsolutions\\Modules\\Mailing\\Mailing.Base\\Mailing.Base.csproj"
+            "G:\\IQTechSolutions\\Modules\\Mailing\\Mailing.Base\\Mailing.Base.csproj": {
+              "projectPath": "G:\\IQTechSolutions\\Modules\\Mailing\\Mailing.Base\\Mailing.Base.csproj"
             }
           }
         }
@@ -803,7 +808,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.202\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.103\\RuntimeIdentifierGraph.json"
       }
     }
   }

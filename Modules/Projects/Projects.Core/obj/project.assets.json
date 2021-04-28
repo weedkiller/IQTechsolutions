@@ -1076,20 +1076,25 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Admin\\.nuget\\packages\\": {}
+    "C:\\Users\\ivanr\\.nuget\\packages\\": {},
+    "C:\\Microsoft\\Xamarin\\NuGet\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Admin\\Desktop\\New\\IQTechsolutions\\Modules\\Projects\\Projects.Core\\Projects.Core.csproj",
+      "projectUniqueName": "G:\\IQTechSolutions\\Modules\\Projects\\Projects.Core\\Projects.Core.csproj",
       "projectName": "Projects.Core",
-      "projectPath": "C:\\Users\\Admin\\Desktop\\New\\IQTechsolutions\\Modules\\Projects\\Projects.Core\\Projects.Core.csproj",
-      "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Admin\\Desktop\\New\\IQTechsolutions\\Modules\\Projects\\Projects.Core\\obj\\",
+      "projectPath": "G:\\IQTechSolutions\\Modules\\Projects\\Projects.Core\\Projects.Core.csproj",
+      "packagesPath": "C:\\Users\\ivanr\\.nuget\\packages\\",
+      "outputPath": "G:\\IQTechSolutions\\Modules\\Projects\\Projects.Core\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Microsoft\\Xamarin\\NuGet\\"
+      ],
       "configFilePaths": [
-        "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Users\\ivanr\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net5.0"
@@ -1102,20 +1107,20 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "C:\\Users\\Admin\\Desktop\\New\\IQTechsolutions\\Modules\\Calendar\\Calendar.Base\\Calendar.Base.csproj": {
-              "projectPath": "C:\\Users\\Admin\\Desktop\\New\\IQTechsolutions\\Modules\\Calendar\\Calendar.Base\\Calendar.Base.csproj"
+            "G:\\IQTechSolutions\\Modules\\Calendar\\Calendar.Base\\Calendar.Base.csproj": {
+              "projectPath": "G:\\IQTechSolutions\\Modules\\Calendar\\Calendar.Base\\Calendar.Base.csproj"
             },
-            "C:\\Users\\Admin\\Desktop\\New\\IQTechsolutions\\Modules\\Calendar\\Calendar.Core\\Calendar.Core.csproj": {
-              "projectPath": "C:\\Users\\Admin\\Desktop\\New\\IQTechsolutions\\Modules\\Calendar\\Calendar.Core\\Calendar.Core.csproj"
+            "G:\\IQTechSolutions\\Modules\\Calendar\\Calendar.Core\\Calendar.Core.csproj": {
+              "projectPath": "G:\\IQTechSolutions\\Modules\\Calendar\\Calendar.Core\\Calendar.Core.csproj"
             },
-            "C:\\Users\\Admin\\Desktop\\New\\IQTechsolutions\\Modules\\Filing\\Filing.Core\\Filing.Core.csproj": {
-              "projectPath": "C:\\Users\\Admin\\Desktop\\New\\IQTechsolutions\\Modules\\Filing\\Filing.Core\\Filing.Core.csproj"
+            "G:\\IQTechSolutions\\Modules\\Filing\\Filing.Core\\Filing.Core.csproj": {
+              "projectPath": "G:\\IQTechSolutions\\Modules\\Filing\\Filing.Core\\Filing.Core.csproj"
             },
-            "C:\\Users\\Admin\\Desktop\\New\\IQTechsolutions\\Modules\\Grouping\\Grouping.Core\\Grouping.Core.csproj": {
-              "projectPath": "C:\\Users\\Admin\\Desktop\\New\\IQTechsolutions\\Modules\\Grouping\\Grouping.Core\\Grouping.Core.csproj"
+            "G:\\IQTechSolutions\\Modules\\Grouping\\Grouping.Core\\Grouping.Core.csproj": {
+              "projectPath": "G:\\IQTechSolutions\\Modules\\Grouping\\Grouping.Core\\Grouping.Core.csproj"
             },
-            "C:\\Users\\Admin\\Desktop\\New\\IQTechsolutions\\Modules\\Projects\\Projects.Base\\Projects.Base.csproj": {
-              "projectPath": "C:\\Users\\Admin\\Desktop\\New\\IQTechsolutions\\Modules\\Projects\\Projects.Base\\Projects.Base.csproj"
+            "G:\\IQTechSolutions\\Modules\\Projects\\Projects.Base\\Projects.Base.csproj": {
+              "projectPath": "G:\\IQTechSolutions\\Modules\\Projects\\Projects.Base\\Projects.Base.csproj"
             }
           }
         }
@@ -1150,7 +1155,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.202\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.103\\RuntimeIdentifierGraph.json"
       }
     }
   }

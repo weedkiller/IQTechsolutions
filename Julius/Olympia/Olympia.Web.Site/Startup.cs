@@ -1,6 +1,8 @@
 using System;
 using System.Security.Claims;
 using Blogging.Core.Extensions;
+using Customers.Core.Extensions;
+using Employment.Core.Extensions;
 using Feedback.Core.Extensions;
 using Filing.Core.Factories;
 using GoogleReCaptcha.V3;
@@ -17,6 +19,9 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Olympia.Web.DataStore;
 using Olympia.Web.Email.Extensions;
+using Projects.Core.Extensions;
+using Services.Core.Extensions;
+using Troubleshooting.Core.Extensions;
 
 namespace Olympia.Web.Site
 {
@@ -40,7 +45,16 @@ namespace Olympia.Web.Site
             services.AddTransient<IFileFactory, FileFactory>();
             services.AddHttpClient<ICaptchaValidator, GoogleReCaptchaValidator>();
             
-            services.AddCustomEmailServices().AddSupportTicketSystem().AddGrouping().AddBlogging();
+            //Add modules to the container
+            services.AddCustomEmailServices()
+                .AddSupportTicketSystem()
+                .AddGrouping()
+                .AddBlogging()
+                .AddFaqs()
+                .AddCustomers()
+                .AddEmployment()
+                .AddProjects()
+                .AddServiceModule();
 
             services.AddRazorPages();
             services.AddControllersWithViews().AddRazorRuntimeCompilation();
