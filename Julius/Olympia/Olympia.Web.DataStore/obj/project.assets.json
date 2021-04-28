@@ -3060,10 +3060,7 @@
         },
         "runtime": {
           "bin/placeholder/Blogging.Core.dll": {}
-        },
-        "frameworkReferences": [
-          "Microsoft.AspNetCore.App"
-        ]
+        }
       },
       "Calendar.Base/1.0.0": {
         "type": "project",
@@ -3401,10 +3398,7 @@
         },
         "runtime": {
           "bin/placeholder/Troubleshooting.Core.dll": {}
-        },
-        "frameworkReferences": [
-          "Microsoft.AspNetCore.App"
-        ]
+        }
       }
     }
   },
@@ -9880,25 +9874,20 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\ivanr\\.nuget\\packages\\": {},
-    "C:\\Microsoft\\Xamarin\\NuGet\\": {}
+    "C:\\Users\\Admin\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "G:\\IQTechSolutions\\Julius\\Olympia\\Olympia.Web.DataStore\\Olympia.Web.DataStore.csproj",
+      "projectUniqueName": "C:\\Users\\Admin\\Desktop\\New\\IQTechsolutions\\Julius\\Olympia\\Olympia.Web.DataStore\\Olympia.Web.DataStore.csproj",
       "projectName": "Olympia.Web.DataStore",
-      "projectPath": "G:\\IQTechSolutions\\Julius\\Olympia\\Olympia.Web.DataStore\\Olympia.Web.DataStore.csproj",
-      "packagesPath": "C:\\Users\\ivanr\\.nuget\\packages\\",
-      "outputPath": "G:\\IQTechSolutions\\Julius\\Olympia\\Olympia.Web.DataStore\\obj\\",
+      "projectPath": "C:\\Users\\Admin\\Desktop\\New\\IQTechsolutions\\Julius\\Olympia\\Olympia.Web.DataStore\\Olympia.Web.DataStore.csproj",
+      "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Admin\\Desktop\\New\\IQTechsolutions\\Julius\\Olympia\\Olympia.Web.DataStore\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Microsoft\\Xamarin\\NuGet\\"
-      ],
       "configFilePaths": [
-        "C:\\Users\\ivanr\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net5.0"
@@ -9911,26 +9900,26 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "G:\\IQTechSolutions\\Modules\\Blogging\\Blogging.Core\\Blogging.Core.csproj": {
-              "projectPath": "G:\\IQTechSolutions\\Modules\\Blogging\\Blogging.Core\\Blogging.Core.csproj"
+            "C:\\Users\\Admin\\Desktop\\New\\IQTechsolutions\\Modules\\Blogging\\Blogging.Core\\Blogging.Core.csproj": {
+              "projectPath": "C:\\Users\\Admin\\Desktop\\New\\IQTechsolutions\\Modules\\Blogging\\Blogging.Core\\Blogging.Core.csproj"
             },
-            "G:\\IQTechSolutions\\Modules\\Customers\\Customers.Core\\Customers.Core.csproj": {
-              "projectPath": "G:\\IQTechSolutions\\Modules\\Customers\\Customers.Core\\Customers.Core.csproj"
+            "C:\\Users\\Admin\\Desktop\\New\\IQTechsolutions\\Modules\\Customers\\Customers.Core\\Customers.Core.csproj": {
+              "projectPath": "C:\\Users\\Admin\\Desktop\\New\\IQTechsolutions\\Modules\\Customers\\Customers.Core\\Customers.Core.csproj"
             },
-            "G:\\IQTechSolutions\\Modules\\Employment\\Employment.Core\\Employment.Core.csproj": {
-              "projectPath": "G:\\IQTechSolutions\\Modules\\Employment\\Employment.Core\\Employment.Core.csproj"
+            "C:\\Users\\Admin\\Desktop\\New\\IQTechsolutions\\Modules\\Employment\\Employment.Core\\Employment.Core.csproj": {
+              "projectPath": "C:\\Users\\Admin\\Desktop\\New\\IQTechsolutions\\Modules\\Employment\\Employment.Core\\Employment.Core.csproj"
             },
-            "G:\\IQTechSolutions\\Modules\\Feedback\\Feedback.Core\\Feedback.Core.csproj": {
-              "projectPath": "G:\\IQTechSolutions\\Modules\\Feedback\\Feedback.Core\\Feedback.Core.csproj"
+            "C:\\Users\\Admin\\Desktop\\New\\IQTechsolutions\\Modules\\Feedback\\Feedback.Core\\Feedback.Core.csproj": {
+              "projectPath": "C:\\Users\\Admin\\Desktop\\New\\IQTechsolutions\\Modules\\Feedback\\Feedback.Core\\Feedback.Core.csproj"
             },
-            "G:\\IQTechSolutions\\Modules\\Identity\\Identity.Base\\Identity.Base.csproj": {
-              "projectPath": "G:\\IQTechSolutions\\Modules\\Identity\\Identity.Base\\Identity.Base.csproj"
+            "C:\\Users\\Admin\\Desktop\\New\\IQTechsolutions\\Modules\\Identity\\Identity.Base\\Identity.Base.csproj": {
+              "projectPath": "C:\\Users\\Admin\\Desktop\\New\\IQTechsolutions\\Modules\\Identity\\Identity.Base\\Identity.Base.csproj"
             },
-            "G:\\IQTechSolutions\\Modules\\Services\\Services.Core\\Services.Core.csproj": {
-              "projectPath": "G:\\IQTechSolutions\\Modules\\Services\\Services.Core\\Services.Core.csproj"
+            "C:\\Users\\Admin\\Desktop\\New\\IQTechsolutions\\Modules\\Services\\Services.Core\\Services.Core.csproj": {
+              "projectPath": "C:\\Users\\Admin\\Desktop\\New\\IQTechsolutions\\Modules\\Services\\Services.Core\\Services.Core.csproj"
             },
-            "G:\\IQTechSolutions\\Modules\\Troubleshooting\\Troubleshooting.Core\\Troubleshooting.Core.csproj": {
-              "projectPath": "G:\\IQTechSolutions\\Modules\\Troubleshooting\\Troubleshooting.Core\\Troubleshooting.Core.csproj"
+            "C:\\Users\\Admin\\Desktop\\New\\IQTechsolutions\\Modules\\Troubleshooting\\Troubleshooting.Core\\Troubleshooting.Core.csproj": {
+              "projectPath": "C:\\Users\\Admin\\Desktop\\New\\IQTechsolutions\\Modules\\Troubleshooting\\Troubleshooting.Core\\Troubleshooting.Core.csproj"
             }
           }
         }
@@ -9965,14 +9954,11 @@
         "assetTargetFallback": true,
         "warn": true,
         "frameworkReferences": {
-          "Microsoft.AspNetCore.App": {
-            "privateAssets": "none"
-          },
           "Microsoft.NETCore.App": {
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.103\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.202\\RuntimeIdentifierGraph.json"
       }
     }
   }

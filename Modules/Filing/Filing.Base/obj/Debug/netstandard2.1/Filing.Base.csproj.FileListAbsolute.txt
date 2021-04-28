@@ -10,3 +10,15 @@ G:\IQTechSolutions\Modules\Filing\Filing.Base\obj\Debug\netstandard2.1\Filing.Ba
 G:\IQTechSolutions\Modules\Filing\Filing.Base\obj\Debug\netstandard2.1\Filing.Base.csproj.CopyComplete
 G:\IQTechSolutions\Modules\Filing\Filing.Base\obj\Debug\netstandard2.1\Filing.Base.dll
 G:\IQTechSolutions\Modules\Filing\Filing.Base\obj\Debug\netstandard2.1\Filing.Base.pdb
+C:\Users\Admin\Desktop\New\IQTechsolutions\Modules\Filing\Filing.Base\bin\Debug\netstandard2.1\Filing.Base.deps.json
+C:\Users\Admin\Desktop\New\IQTechsolutions\Modules\Filing\Filing.Base\bin\Debug\netstandard2.1\Filing.Base.dll
+C:\Users\Admin\Desktop\New\IQTechsolutions\Modules\Filing\Filing.Base\bin\Debug\netstandard2.1\Filing.Base.pdb
+C:\Users\Admin\Desktop\New\IQTechsolutions\Modules\Filing\Filing.Base\bin\Debug\netstandard2.1\Iqt.Base.dll
+C:\Users\Admin\Desktop\New\IQTechsolutions\Modules\Filing\Filing.Base\bin\Debug\netstandard2.1\Iqt.Base.pdb
+C:\Users\Admin\Desktop\New\IQTechsolutions\Modules\Filing\Filing.Base\obj\Debug\netstandard2.1\Filing.Base.csprojAssemblyReference.cache
+C:\Users\Admin\Desktop\New\IQTechsolutions\Modules\Filing\Filing.Base\obj\Debug\netstandard2.1\Filing.Base.AssemblyInfoInputs.cache
+C:\Users\Admin\Desktop\New\IQTechsolutions\Modules\Filing\Filing.Base\obj\Debug\netstandard2.1\Filing.Base.AssemblyInfo.cs
+C:\Users\Admin\Desktop\New\IQTechsolutions\Modules\Filing\Filing.Base\obj\Debug\netstandard2.1\Filing.Base.csproj.CoreCompileInputs.cache
+C:\Users\Admin\Desktop\New\IQTechsolutions\Modules\Filing\Filing.Base\obj\Debug\netstandard2.1\Filing.Base.csproj.CopyComplete
+C:\Users\Admin\Desktop\New\IQTechsolutions\Modules\Filing\Filing.Base\obj\Debug\netstandard2.1\Filing.Base.dll
+C:\Users\Admin\Desktop\New\IQTechsolutions\Modules\Filing\Filing.Base\obj\Debug\netstandard2.1\Filing.Base.pdb

@@ -12,3 +12,17 @@ G:\IQTechSolutions\Modules\Grouping\Grouping.Base\obj\Debug\netstandard2.1\Group
 G:\IQTechSolutions\Modules\Grouping\Grouping.Base\obj\Debug\netstandard2.1\Grouping.Base.csproj.CopyComplete
 G:\IQTechSolutions\Modules\Grouping\Grouping.Base\obj\Debug\netstandard2.1\Grouping.Base.dll
 G:\IQTechSolutions\Modules\Grouping\Grouping.Base\obj\Debug\netstandard2.1\Grouping.Base.pdb
+C:\Users\Admin\Desktop\New\IQTechsolutions\Modules\Grouping\Grouping.Base\bin\Debug\netstandard2.1\Grouping.Base.deps.json
+C:\Users\Admin\Desktop\New\IQTechsolutions\Modules\Grouping\Grouping.Base\bin\Debug\netstandard2.1\Grouping.Base.dll
+C:\Users\Admin\Desktop\New\IQTechsolutions\Modules\Grouping\Grouping.Base\bin\Debug\netstandard2.1\Grouping.Base.pdb
+C:\Users\Admin\Desktop\New\IQTechsolutions\Modules\Grouping\Grouping.Base\bin\Debug\netstandard2.1\Filing.Base.dll
+C:\Users\Admin\Desktop\New\IQTechsolutions\Modules\Grouping\Grouping.Base\bin\Debug\netstandard2.1\Iqt.Base.dll
+C:\Users\Admin\Desktop\New\IQTechsolutions\Modules\Grouping\Grouping.Base\bin\Debug\netstandard2.1\Filing.Base.pdb
+C:\Users\Admin\Desktop\New\IQTechsolutions\Modules\Grouping\Grouping.Base\bin\Debug\netstandard2.1\Iqt.Base.pdb
+C:\Users\Admin\Desktop\New\IQTechsolutions\Modules\Grouping\Grouping.Base\obj\Debug\netstandard2.1\Grouping.Base.csprojAssemblyReference.cache
+C:\Users\Admin\Desktop\New\IQTechsolutions\Modules\Grouping\Grouping.Base\obj\Debug\netstandard2.1\Grouping.Base.AssemblyInfoInputs.cache
+C:\Users\Admin\Desktop\New\IQTechsolutions\Modules\Grouping\Grouping.Base\obj\Debug\netstandard2.1\Grouping.Base.AssemblyInfo.cs
+C:\Users\Admin\Desktop\New\IQTechsolutions\Modules\Grouping\Grouping.Base\obj\Debug\netstandard2.1\Grouping.Base.csproj.CoreCompileInputs.cache
+C:\Users\Admin\Desktop\New\IQTechsolutions\Modules\Grouping\Grouping.Base\obj\Debug\netstandard2.1\Grouping.Base.csproj.CopyComplete
+C:\Users\Admin\Desktop\New\IQTechsolutions\Modules\Grouping\Grouping.Base\obj\Debug\netstandard2.1\Grouping.Base.dll
+C:\Users\Admin\Desktop\New\IQTechsolutions\Modules\Grouping\Grouping.Base\obj\Debug\netstandard2.1\Grouping.Base.pdb

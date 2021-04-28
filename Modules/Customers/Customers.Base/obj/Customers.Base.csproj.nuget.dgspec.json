@@ -1,25 +1,21 @@
 {
   "format": 1,
   "restore": {
-    "G:\\IQTechSolutions\\Modules\\Customers\\Customers.Base\\Customers.Base.csproj": {}
+    "C:\\Users\\Admin\\Desktop\\New\\IQTechsolutions\\Modules\\Customers\\Customers.Base\\Customers.Base.csproj": {}
   },
   "projects": {
-    "G:\\IQTechSolutions\\IqtFramework\\Iqt.Base\\Iqt.Base.csproj": {
+    "C:\\Users\\Admin\\Desktop\\New\\IQTechsolutions\\IqtFramework\\Iqt.Base\\Iqt.Base.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "G:\\IQTechSolutions\\IqtFramework\\Iqt.Base\\Iqt.Base.csproj",
+        "projectUniqueName": "C:\\Users\\Admin\\Desktop\\New\\IQTechsolutions\\IqtFramework\\Iqt.Base\\Iqt.Base.csproj",
         "projectName": "Iqt.Base",
-        "projectPath": "G:\\IQTechSolutions\\IqtFramework\\Iqt.Base\\Iqt.Base.csproj",
-        "packagesPath": "C:\\Users\\ivanr\\.nuget\\packages\\",
-        "outputPath": "G:\\IQTechSolutions\\IqtFramework\\Iqt.Base\\obj\\",
+        "projectPath": "C:\\Users\\Admin\\Desktop\\New\\IQTechsolutions\\IqtFramework\\Iqt.Base\\Iqt.Base.csproj",
+        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Admin\\Desktop\\New\\IQTechsolutions\\IqtFramework\\Iqt.Base\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\"
-        ],
         "configFilePaths": [
-          "C:\\Users\\ivanr\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netstandard2.1"
@@ -68,26 +64,22 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.103\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.202\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "G:\\IQTechSolutions\\Modules\\Customers\\Customers.Base\\Customers.Base.csproj": {
+    "C:\\Users\\Admin\\Desktop\\New\\IQTechsolutions\\Modules\\Customers\\Customers.Base\\Customers.Base.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "G:\\IQTechSolutions\\Modules\\Customers\\Customers.Base\\Customers.Base.csproj",
+        "projectUniqueName": "C:\\Users\\Admin\\Desktop\\New\\IQTechsolutions\\Modules\\Customers\\Customers.Base\\Customers.Base.csproj",
         "projectName": "Customers.Base",
-        "projectPath": "G:\\IQTechSolutions\\Modules\\Customers\\Customers.Base\\Customers.Base.csproj",
-        "packagesPath": "C:\\Users\\ivanr\\.nuget\\packages\\",
-        "outputPath": "G:\\IQTechSolutions\\Modules\\Customers\\Customers.Base\\obj\\",
+        "projectPath": "C:\\Users\\Admin\\Desktop\\New\\IQTechsolutions\\Modules\\Customers\\Customers.Base\\Customers.Base.csproj",
+        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Admin\\Desktop\\New\\IQTechsolutions\\Modules\\Customers\\Customers.Base\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\"
-        ],
         "configFilePaths": [
-          "C:\\Users\\ivanr\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netstandard2.1"
@@ -100,11 +92,11 @@
           "netstandard2.1": {
             "targetAlias": "netstandard2.1",
             "projectReferences": {
-              "G:\\IQTechSolutions\\Modules\\Filing\\Filing.Base\\Filing.Base.csproj": {
-                "projectPath": "G:\\IQTechSolutions\\Modules\\Filing\\Filing.Base\\Filing.Base.csproj"
+              "C:\\Users\\Admin\\Desktop\\New\\IQTechsolutions\\Modules\\Filing\\Filing.Base\\Filing.Base.csproj": {
+                "projectPath": "C:\\Users\\Admin\\Desktop\\New\\IQTechsolutions\\Modules\\Filing\\Filing.Base\\Filing.Base.csproj"
               },
-              "G:\\IQTechSolutions\\Modules\\Identity\\Identity.Base\\Identity.Base.csproj": {
-                "projectPath": "G:\\IQTechSolutions\\Modules\\Identity\\Identity.Base\\Identity.Base.csproj"
+              "C:\\Users\\Admin\\Desktop\\New\\IQTechsolutions\\Modules\\Identity\\Identity.Base\\Identity.Base.csproj": {
+                "projectPath": "C:\\Users\\Admin\\Desktop\\New\\IQTechsolutions\\Modules\\Identity\\Identity.Base\\Identity.Base.csproj"
               }
             }
           }
@@ -133,26 +125,22 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.103\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.202\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "G:\\IQTechSolutions\\Modules\\Filing\\Filing.Base\\Filing.Base.csproj": {
+    "C:\\Users\\Admin\\Desktop\\New\\IQTechsolutions\\Modules\\Filing\\Filing.Base\\Filing.Base.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "G:\\IQTechSolutions\\Modules\\Filing\\Filing.Base\\Filing.Base.csproj",
+        "projectUniqueName": "C:\\Users\\Admin\\Desktop\\New\\IQTechsolutions\\Modules\\Filing\\Filing.Base\\Filing.Base.csproj",
         "projectName": "Filing.Base",
-        "projectPath": "G:\\IQTechSolutions\\Modules\\Filing\\Filing.Base\\Filing.Base.csproj",
-        "packagesPath": "C:\\Users\\ivanr\\.nuget\\packages\\",
-        "outputPath": "G:\\IQTechSolutions\\Modules\\Filing\\Filing.Base\\obj\\",
+        "projectPath": "C:\\Users\\Admin\\Desktop\\New\\IQTechsolutions\\Modules\\Filing\\Filing.Base\\Filing.Base.csproj",
+        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Admin\\Desktop\\New\\IQTechsolutions\\Modules\\Filing\\Filing.Base\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\"
-        ],
         "configFilePaths": [
-          "C:\\Users\\ivanr\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netstandard2.1"
@@ -165,8 +153,8 @@
           "netstandard2.1": {
             "targetAlias": "netstandard2.1",
             "projectReferences": {
-              "G:\\IQTechSolutions\\IqtFramework\\Iqt.Base\\Iqt.Base.csproj": {
-                "projectPath": "G:\\IQTechSolutions\\IqtFramework\\Iqt.Base\\Iqt.Base.csproj"
+              "C:\\Users\\Admin\\Desktop\\New\\IQTechsolutions\\IqtFramework\\Iqt.Base\\Iqt.Base.csproj": {
+                "projectPath": "C:\\Users\\Admin\\Desktop\\New\\IQTechsolutions\\IqtFramework\\Iqt.Base\\Iqt.Base.csproj"
               }
             }
           }
@@ -201,26 +189,22 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.103\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.202\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "G:\\IQTechSolutions\\Modules\\Identity\\Identity.Base\\Identity.Base.csproj": {
+    "C:\\Users\\Admin\\Desktop\\New\\IQTechsolutions\\Modules\\Identity\\Identity.Base\\Identity.Base.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "G:\\IQTechSolutions\\Modules\\Identity\\Identity.Base\\Identity.Base.csproj",
+        "projectUniqueName": "C:\\Users\\Admin\\Desktop\\New\\IQTechsolutions\\Modules\\Identity\\Identity.Base\\Identity.Base.csproj",
         "projectName": "Identity.Base",
-        "projectPath": "G:\\IQTechSolutions\\Modules\\Identity\\Identity.Base\\Identity.Base.csproj",
-        "packagesPath": "C:\\Users\\ivanr\\.nuget\\packages\\",
-        "outputPath": "G:\\IQTechSolutions\\Modules\\Identity\\Identity.Base\\obj\\",
+        "projectPath": "C:\\Users\\Admin\\Desktop\\New\\IQTechsolutions\\Modules\\Identity\\Identity.Base\\Identity.Base.csproj",
+        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Admin\\Desktop\\New\\IQTechsolutions\\Modules\\Identity\\Identity.Base\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\"
-        ],
         "configFilePaths": [
-          "C:\\Users\\ivanr\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netstandard2.1"
@@ -233,8 +217,8 @@
           "netstandard2.1": {
             "targetAlias": "netstandard2.1",
             "projectReferences": {
-              "G:\\IQTechSolutions\\Modules\\Filing\\Filing.Base\\Filing.Base.csproj": {
-                "projectPath": "G:\\IQTechSolutions\\Modules\\Filing\\Filing.Base\\Filing.Base.csproj"
+              "C:\\Users\\Admin\\Desktop\\New\\IQTechsolutions\\Modules\\Filing\\Filing.Base\\Filing.Base.csproj": {
+                "projectPath": "C:\\Users\\Admin\\Desktop\\New\\IQTechsolutions\\Modules\\Filing\\Filing.Base\\Filing.Base.csproj"
               }
             }
           }
@@ -273,7 +257,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.103\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.202\\RuntimeIdentifierGraph.json"
         }
       }
     }

@@ -3489,10 +3489,7 @@
         },
         "runtime": {
           "bin/placeholder/Blogging.Core.dll": {}
-        },
-        "frameworkReferences": [
-          "Microsoft.AspNetCore.App"
-        ]
+        }
       },
       "Calendar.Base/1.0.0": {
         "type": "project",
@@ -3767,10 +3764,7 @@
         },
         "runtime": {
           "bin/placeholder/Olympia.Web.DataStore.dll": {}
-        },
-        "frameworkReferences": [
-          "Microsoft.AspNetCore.App"
-        ]
+        }
       },
       "Projects.Base/1.0.0": {
         "type": "project",
@@ -3867,10 +3861,7 @@
         },
         "runtime": {
           "bin/placeholder/Troubleshooting.Core.dll": {}
-        },
-        "frameworkReferences": [
-          "Microsoft.AspNetCore.App"
-        ]
+        }
       }
     }
   },
@@ -11103,25 +11094,20 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\ivanr\\.nuget\\packages\\": {},
-    "C:\\Microsoft\\Xamarin\\NuGet\\": {}
+    "C:\\Users\\Admin\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "G:\\IQTechSolutions\\Julius\\Olympia\\Olympia.Web.Site\\Olympia.Web.Site.csproj",
+      "projectUniqueName": "C:\\Users\\Admin\\Desktop\\New\\IQTechsolutions\\Julius\\Olympia\\Olympia.Web.Site\\Olympia.Web.Site.csproj",
       "projectName": "Olympia.Web.Site",
-      "projectPath": "G:\\IQTechSolutions\\Julius\\Olympia\\Olympia.Web.Site\\Olympia.Web.Site.csproj",
-      "packagesPath": "C:\\Users\\ivanr\\.nuget\\packages\\",
-      "outputPath": "G:\\IQTechSolutions\\Julius\\Olympia\\Olympia.Web.Site\\obj\\",
+      "projectPath": "C:\\Users\\Admin\\Desktop\\New\\IQTechsolutions\\Julius\\Olympia\\Olympia.Web.Site\\Olympia.Web.Site.csproj",
+      "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Admin\\Desktop\\New\\IQTechsolutions\\Julius\\Olympia\\Olympia.Web.Site\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Microsoft\\Xamarin\\NuGet\\"
-      ],
       "configFilePaths": [
-        "C:\\Users\\ivanr\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net5.0"
@@ -11134,32 +11120,32 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "G:\\IQTechSolutions\\Julius\\Olympia\\Olympia.Web.DataStore\\Olympia.Web.DataStore.csproj": {
-              "projectPath": "G:\\IQTechSolutions\\Julius\\Olympia\\Olympia.Web.DataStore\\Olympia.Web.DataStore.csproj"
+            "C:\\Users\\Admin\\Desktop\\New\\IQTechsolutions\\Julius\\Olympia\\Olympia.Web.DataStore\\Olympia.Web.DataStore.csproj": {
+              "projectPath": "C:\\Users\\Admin\\Desktop\\New\\IQTechsolutions\\Julius\\Olympia\\Olympia.Web.DataStore\\Olympia.Web.DataStore.csproj"
             },
-            "G:\\IQTechSolutions\\Julius\\Olympia\\Olympia.Web\\Olympia.Web.csproj": {
-              "projectPath": "G:\\IQTechSolutions\\Julius\\Olympia\\Olympia.Web\\Olympia.Web.csproj"
+            "C:\\Users\\Admin\\Desktop\\New\\IQTechsolutions\\Julius\\Olympia\\Olympia.Web\\Olympia.Web.csproj": {
+              "projectPath": "C:\\Users\\Admin\\Desktop\\New\\IQTechsolutions\\Julius\\Olympia\\Olympia.Web\\Olympia.Web.csproj"
             },
-            "G:\\IQTechSolutions\\Julius\\Olympia\\Olympia\\Olympia.csproj": {
-              "projectPath": "G:\\IQTechSolutions\\Julius\\Olympia\\Olympia\\Olympia.csproj"
+            "C:\\Users\\Admin\\Desktop\\New\\IQTechsolutions\\Julius\\Olympia\\Olympia\\Olympia.csproj": {
+              "projectPath": "C:\\Users\\Admin\\Desktop\\New\\IQTechsolutions\\Julius\\Olympia\\Olympia\\Olympia.csproj"
             },
-            "G:\\IQTechSolutions\\Modules\\Blogging\\Blogging.Base\\Blogging.Base.csproj": {
-              "projectPath": "G:\\IQTechSolutions\\Modules\\Blogging\\Blogging.Base\\Blogging.Base.csproj"
+            "C:\\Users\\Admin\\Desktop\\New\\IQTechsolutions\\Modules\\Blogging\\Blogging.Base\\Blogging.Base.csproj": {
+              "projectPath": "C:\\Users\\Admin\\Desktop\\New\\IQTechsolutions\\Modules\\Blogging\\Blogging.Base\\Blogging.Base.csproj"
             },
-            "G:\\IQTechSolutions\\Modules\\Blogging\\Blogging.Core\\Blogging.Core.csproj": {
-              "projectPath": "G:\\IQTechSolutions\\Modules\\Blogging\\Blogging.Core\\Blogging.Core.csproj"
+            "C:\\Users\\Admin\\Desktop\\New\\IQTechsolutions\\Modules\\Blogging\\Blogging.Core\\Blogging.Core.csproj": {
+              "projectPath": "C:\\Users\\Admin\\Desktop\\New\\IQTechsolutions\\Modules\\Blogging\\Blogging.Core\\Blogging.Core.csproj"
             },
-            "G:\\IQTechSolutions\\Modules\\Feedback\\Feedback.Core\\Feedback.Core.csproj": {
-              "projectPath": "G:\\IQTechSolutions\\Modules\\Feedback\\Feedback.Core\\Feedback.Core.csproj"
+            "C:\\Users\\Admin\\Desktop\\New\\IQTechsolutions\\Modules\\Feedback\\Feedback.Core\\Feedback.Core.csproj": {
+              "projectPath": "C:\\Users\\Admin\\Desktop\\New\\IQTechsolutions\\Modules\\Feedback\\Feedback.Core\\Feedback.Core.csproj"
             },
-            "G:\\IQTechSolutions\\Modules\\Grouping\\Grouping.Core\\Grouping.Core.csproj": {
-              "projectPath": "G:\\IQTechSolutions\\Modules\\Grouping\\Grouping.Core\\Grouping.Core.csproj"
+            "C:\\Users\\Admin\\Desktop\\New\\IQTechsolutions\\Modules\\Grouping\\Grouping.Core\\Grouping.Core.csproj": {
+              "projectPath": "C:\\Users\\Admin\\Desktop\\New\\IQTechsolutions\\Modules\\Grouping\\Grouping.Core\\Grouping.Core.csproj"
             },
-            "G:\\IQTechSolutions\\Modules\\Identity\\Identity.Base\\Identity.Base.csproj": {
-              "projectPath": "G:\\IQTechSolutions\\Modules\\Identity\\Identity.Base\\Identity.Base.csproj"
+            "C:\\Users\\Admin\\Desktop\\New\\IQTechsolutions\\Modules\\Identity\\Identity.Base\\Identity.Base.csproj": {
+              "projectPath": "C:\\Users\\Admin\\Desktop\\New\\IQTechsolutions\\Modules\\Identity\\Identity.Base\\Identity.Base.csproj"
             },
-            "G:\\IQTechSolutions\\Modules\\Mailing\\Mailing.Base\\Mailing.Base.csproj": {
-              "projectPath": "G:\\IQTechSolutions\\Modules\\Mailing\\Mailing.Base\\Mailing.Base.csproj"
+            "C:\\Users\\Admin\\Desktop\\New\\IQTechsolutions\\Modules\\Mailing\\Mailing.Base\\Mailing.Base.csproj": {
+              "projectPath": "C:\\Users\\Admin\\Desktop\\New\\IQTechsolutions\\Modules\\Mailing\\Mailing.Base\\Mailing.Base.csproj"
             }
           }
         }
@@ -11223,7 +11209,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.103\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.202\\RuntimeIdentifierGraph.json"
       }
     }
   }

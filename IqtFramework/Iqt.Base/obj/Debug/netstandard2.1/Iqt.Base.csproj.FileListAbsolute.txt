@@ -7,3 +7,12 @@ G:\IQTechSolutions\IqtFramework\Iqt.Base\obj\Debug\netstandard2.1\Iqt.Base.Assem
 G:\IQTechSolutions\IqtFramework\Iqt.Base\obj\Debug\netstandard2.1\Iqt.Base.csproj.CoreCompileInputs.cache
 G:\IQTechSolutions\IqtFramework\Iqt.Base\obj\Debug\netstandard2.1\Iqt.Base.dll
 G:\IQTechSolutions\IqtFramework\Iqt.Base\obj\Debug\netstandard2.1\Iqt.Base.pdb
+C:\Users\Admin\Desktop\New\IQTechsolutions\IqtFramework\Iqt.Base\bin\Debug\netstandard2.1\Iqt.Base.deps.json
+C:\Users\Admin\Desktop\New\IQTechsolutions\IqtFramework\Iqt.Base\bin\Debug\netstandard2.1\Iqt.Base.dll
+C:\Users\Admin\Desktop\New\IQTechsolutions\IqtFramework\Iqt.Base\bin\Debug\netstandard2.1\Iqt.Base.pdb
+C:\Users\Admin\Desktop\New\IQTechsolutions\IqtFramework\Iqt.Base\obj\Debug\netstandard2.1\Iqt.Base.csprojAssemblyReference.cache
+C:\Users\Admin\Desktop\New\IQTechsolutions\IqtFramework\Iqt.Base\obj\Debug\netstandard2.1\Iqt.Base.AssemblyInfoInputs.cache
+C:\Users\Admin\Desktop\New\IQTechsolutions\IqtFramework\Iqt.Base\obj\Debug\netstandard2.1\Iqt.Base.AssemblyInfo.cs
+C:\Users\Admin\Desktop\New\IQTechsolutions\IqtFramework\Iqt.Base\obj\Debug\netstandard2.1\Iqt.Base.csproj.CoreCompileInputs.cache
+C:\Users\Admin\Desktop\New\IQTechsolutions\IqtFramework\Iqt.Base\obj\Debug\netstandard2.1\Iqt.Base.dll
+C:\Users\Admin\Desktop\New\IQTechsolutions\IqtFramework\Iqt.Base\obj\Debug\netstandard2.1\Iqt.Base.pdb

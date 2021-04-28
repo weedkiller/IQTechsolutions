@@ -1115,25 +1115,20 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\ivanr\\.nuget\\packages\\": {},
-    "C:\\Microsoft\\Xamarin\\NuGet\\": {}
+    "C:\\Users\\Admin\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "G:\\IQTechSolutions\\Modules\\Feedback\\Feedback.Core\\Feedback.Core.csproj",
+      "projectUniqueName": "C:\\Users\\Admin\\Desktop\\New\\IQTechsolutions\\Modules\\Feedback\\Feedback.Core\\Feedback.Core.csproj",
       "projectName": "Feedback.Core",
-      "projectPath": "G:\\IQTechSolutions\\Modules\\Feedback\\Feedback.Core\\Feedback.Core.csproj",
-      "packagesPath": "C:\\Users\\ivanr\\.nuget\\packages\\",
-      "outputPath": "G:\\IQTechSolutions\\Modules\\Feedback\\Feedback.Core\\obj\\",
+      "projectPath": "C:\\Users\\Admin\\Desktop\\New\\IQTechsolutions\\Modules\\Feedback\\Feedback.Core\\Feedback.Core.csproj",
+      "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Admin\\Desktop\\New\\IQTechsolutions\\Modules\\Feedback\\Feedback.Core\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Microsoft\\Xamarin\\NuGet\\"
-      ],
       "configFilePaths": [
-        "C:\\Users\\ivanr\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net5.0"
@@ -1146,17 +1141,17 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "G:\\IQTechSolutions\\Julius\\Olympia\\Olympia.Web\\Olympia.Web.csproj": {
-              "projectPath": "G:\\IQTechSolutions\\Julius\\Olympia\\Olympia.Web\\Olympia.Web.csproj"
+            "C:\\Users\\Admin\\Desktop\\New\\IQTechsolutions\\Julius\\Olympia\\Olympia.Web\\Olympia.Web.csproj": {
+              "projectPath": "C:\\Users\\Admin\\Desktop\\New\\IQTechsolutions\\Julius\\Olympia\\Olympia.Web\\Olympia.Web.csproj"
             },
-            "G:\\IQTechSolutions\\Modules\\Feedback\\Feedback.Base\\Feedback.Base.csproj": {
-              "projectPath": "G:\\IQTechSolutions\\Modules\\Feedback\\Feedback.Base\\Feedback.Base.csproj"
+            "C:\\Users\\Admin\\Desktop\\New\\IQTechsolutions\\Modules\\Feedback\\Feedback.Base\\Feedback.Base.csproj": {
+              "projectPath": "C:\\Users\\Admin\\Desktop\\New\\IQTechsolutions\\Modules\\Feedback\\Feedback.Base\\Feedback.Base.csproj"
             },
-            "G:\\IQTechSolutions\\Modules\\Filing\\Filing.Core\\Filing.Core.csproj": {
-              "projectPath": "G:\\IQTechSolutions\\Modules\\Filing\\Filing.Core\\Filing.Core.csproj"
+            "C:\\Users\\Admin\\Desktop\\New\\IQTechsolutions\\Modules\\Filing\\Filing.Core\\Filing.Core.csproj": {
+              "projectPath": "C:\\Users\\Admin\\Desktop\\New\\IQTechsolutions\\Modules\\Filing\\Filing.Core\\Filing.Core.csproj"
             },
-            "G:\\IQTechSolutions\\Modules\\Mailing\\Mailing.Base\\Mailing.Base.csproj": {
-              "projectPath": "G:\\IQTechSolutions\\Modules\\Mailing\\Mailing.Base\\Mailing.Base.csproj"
+            "C:\\Users\\Admin\\Desktop\\New\\IQTechsolutions\\Modules\\Mailing\\Mailing.Base\\Mailing.Base.csproj": {
+              "projectPath": "C:\\Users\\Admin\\Desktop\\New\\IQTechsolutions\\Modules\\Mailing\\Mailing.Base\\Mailing.Base.csproj"
             }
           }
         }
@@ -1199,7 +1194,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.103\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.202\\RuntimeIdentifierGraph.json"
       }
     }
   }
