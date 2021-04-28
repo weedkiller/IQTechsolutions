@@ -18,7 +18,7 @@ mono_crash.*
 
 # Build results
 Debug/
-Modules/Filing/Filing.Core/Debug/
+Modules/Filing/Filing.Core/obj/
 debugPublic/
 release/
 releases/
