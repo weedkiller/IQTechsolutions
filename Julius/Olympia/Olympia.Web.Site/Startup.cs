@@ -64,6 +64,8 @@ namespace Olympia.Web.Site
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env, UserManager<ApplicationUser> userManager, RoleManager<IdentityRole> roleManager, IApplicationConfiguration appConfiguration)
         {
+            Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("NDM3NzgxQDMxMzkyZTMxMmUzMGtUekU5MGU0NFU4bU5oR1BiK3NxUldYdURJb25tTExYMmxPelM1TFMzTms9");
+            
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();

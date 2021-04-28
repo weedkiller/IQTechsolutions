@@ -1,0 +1,88 @@
+﻿@model Iqt.Base.Models.CropModel
+<!-- Modal -->
+
+<link href="~/js/cropper-master/dist/cropper.css" rel="stylesheet" />
+<script type="text/javascript" src="/js/cropper-master/dist/cropper.js"></script>
+
+<style>
+    img {
+        display: block;
+        /* This rule is very important, please don't ignore this */
+        max-width: 100%;
+    }
+</style>
+
+<div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h4 class="modal-title">Please confirm this action!</h4>
+            <button type="button" class="close" data-dismiss="modal">
+                <span aria-hidden="true">×</span>
+                <span class="sr-only">close</span>
+            </button>
+        </div>
+        <div class="modal-body">
+            <div class="row">
+
+                <div class="col-xs-12">
+
+                    <div>
+                        <img id="image" alt="Image To Crop" src="@Model.CropImageUrl">
+                    </div>
+                    <div style="text-align: center">
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="modal-footer">
+            <a href="javascript:;" class="btn btn-sm btn-white" onclick="ConfirmDelete()">Cancel</a>
+            <a href="javascript:;" data-dismiss="modal" class="btn btn-sm btn-primary">Accept</a>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    $(function () {
+        var $image = $('#image');
+        $image.cropper({
+            viewMode: 0,
+            aspectRatio:parseInt(@Model.MinWidth)/parseInt(@Model.MinHeight),
+            dragMode: 'move',
+            responsive: true,
+            center: true,
+            preview:'.@Model.PreviewClass',
+            background: true,
+            minContainerWidth: parseInt(@Model.MinWidth),
+                minContainerHeight: parseInt(@Model.MinHeight),
+            crop: function (event) {
+
+                document.getElementById('@Model.XTag').value = Math.round(event.detail.x);
+                document.getElementById('@Model.YTag').value = Math.round(event.detail.y);
+                document.getElementById('@Model.WidthTag').value = Math.round(event.detail.width);
+                document.getElementById('@Model.HeightTag').value = Math.round(event.detail.height);
+                document.getElementById('@Model.RotateTag').value = Math.round(event.detail.rotate);
+                document.getElementById('@Model.ScaleXTag').value = Math.round(event.detail.scaleX);
+                document.getElementById('@Model.ScaleYTag').value = Math.round(event.detail.scaleY);
+
+                console.log(Math.round(event.detail.x));
+                console.log(Math.round(event.detail.y));
+                console.log(Math.round(event.detail.width));
+                console.log(Math.round(event.detail.height));
+                console.log(Math.round(event.detail.rotate));
+                console.log(Math.round(event.detail.scaleX));
+                console.log(Math.round(event.detail.scaleY));
+            }
+        });
+    });
+
+    function ConfirmDelete() {
+
+        var output = $('.@Model.PreviewClass');
+        output.html('<img id="preview" style="width: 100%" src="@Model.OriginalImageUrl" alt="" />');
+
+        document.getElementById('CoverUpload').value = '';
+
+        $("#CropModal").modal("hide");
+    }
+</script>

@@ -1,0 +1,203 @@
+{
+  "format": 1,
+  "restore": {
+    "G:\\IQTechSolutions\\Projects\\EnviroMetsi\\Metsi.Base\\Metsi.Web\\Metsi.Web.csproj": {}
+  },
+  "projects": {
+    "G:\\IQTechSolutions\\IqtFramework\\Iqt.Base\\Iqt.Base.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "G:\\IQTechSolutions\\IqtFramework\\Iqt.Base\\Iqt.Base.csproj",
+        "projectName": "Iqt.Base",
+        "projectPath": "G:\\IQTechSolutions\\IqtFramework\\Iqt.Base\\Iqt.Base.csproj",
+        "packagesPath": "C:\\Users\\ivanr\\.nuget\\packages\\",
+        "outputPath": "G:\\IQTechSolutions\\IqtFramework\\Iqt.Base\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\ivanr\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.1": {
+            "targetAlias": "netstandard2.1",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.1": {
+          "targetAlias": "netstandard2.1",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.0.4, )"
+            },
+            "System.ComponentModel.Annotations": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "NETStandard.Library": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.103\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "G:\\IQTechSolutions\\Modules\\Mailing\\Mailing.Base\\Mailing.Base.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "G:\\IQTechSolutions\\Modules\\Mailing\\Mailing.Base\\Mailing.Base.csproj",
+        "projectName": "Mailing.Base",
+        "projectPath": "G:\\IQTechSolutions\\Modules\\Mailing\\Mailing.Base\\Mailing.Base.csproj",
+        "packagesPath": "C:\\Users\\ivanr\\.nuget\\packages\\",
+        "outputPath": "G:\\IQTechSolutions\\Modules\\Mailing\\Mailing.Base\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\ivanr\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.1": {
+            "targetAlias": "netstandard2.1",
+            "projectReferences": {
+              "G:\\IQTechSolutions\\IqtFramework\\Iqt.Base\\Iqt.Base.csproj": {
+                "projectPath": "G:\\IQTechSolutions\\IqtFramework\\Iqt.Base\\Iqt.Base.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.1": {
+          "targetAlias": "netstandard2.1",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "NETStandard.Library": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.103\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "G:\\IQTechSolutions\\Projects\\EnviroMetsi\\Metsi.Base\\Metsi.Web\\Metsi.Web.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "G:\\IQTechSolutions\\Projects\\EnviroMetsi\\Metsi.Base\\Metsi.Web\\Metsi.Web.csproj",
+        "projectName": "Metsi.Web",
+        "projectPath": "G:\\IQTechSolutions\\Projects\\EnviroMetsi\\Metsi.Base\\Metsi.Web\\Metsi.Web.csproj",
+        "packagesPath": "C:\\Users\\ivanr\\.nuget\\packages\\",
+        "outputPath": "G:\\IQTechSolutions\\Projects\\EnviroMetsi\\Metsi.Base\\Metsi.Web\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\ivanr\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.1": {
+            "targetAlias": "netstandard2.1",
+            "projectReferences": {
+              "G:\\IQTechSolutions\\IqtFramework\\Iqt.Base\\Iqt.Base.csproj": {
+                "projectPath": "G:\\IQTechSolutions\\IqtFramework\\Iqt.Base\\Iqt.Base.csproj"
+              },
+              "G:\\IQTechSolutions\\Modules\\Mailing\\Mailing.Base\\Mailing.Base.csproj": {
+                "projectPath": "G:\\IQTechSolutions\\Modules\\Mailing\\Mailing.Base\\Mailing.Base.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.1": {
+          "targetAlias": "netstandard2.1",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "NETStandard.Library": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.103\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

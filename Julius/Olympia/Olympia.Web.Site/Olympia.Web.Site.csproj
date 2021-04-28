@@ -24,6 +24,7 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="5.0.2" />
+    <PackageReference Include="Syncfusion.EJ2.AspNet.Core" Version="19.1.0.58" />
   </ItemGroup>
 
   <ItemGroup>
@@ -36,6 +37,10 @@
     <ProjectReference Include="..\Olympia.Web.DataStore\Olympia.Web.DataStore.csproj" />
     <ProjectReference Include="..\Olympia.Web\Olympia.Web.csproj" />
     <ProjectReference Include="..\Olympia\Olympia.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="wwwroot\Files\" />
   </ItemGroup>
 
 </Project>

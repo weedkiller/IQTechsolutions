@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "Me9Om/GtPzriBz6aaULKv8M0xyf8KC1DDNX7QGkfqLwEXxeLJoEAlb0uraZsPUcYNRDK8mVEFqKj8jT13NJwnA==",
+  "dgSpecHash": "uo9ZbMtJ+3SA+cUImOYBmrA9JlUqdaFOQ8mB9AXfw9/CmMRGNYXNhUcjHYG1MUnAzE9As1yP3uLaoxMM2r0QIQ==",
   "success": true,
   "projectFilePath": "G:\\IQTechSolutions\\Julius\\Olympia\\Olympia.Web.Site\\Olympia.Web.Site.csproj",
   "expectedPackageFiles": [
@@ -130,6 +130,8 @@
     "C:\\Microsoft\\Xamarin\\NuGet\\runtime.ubuntu.14.04-x64.runtime.native.system.security.cryptography.openssl\\4.3.0\\runtime.ubuntu.14.04-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",
     "C:\\Microsoft\\Xamarin\\NuGet\\runtime.ubuntu.16.04-x64.runtime.native.system.security.cryptography.openssl\\4.3.0\\runtime.ubuntu.16.04-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",
     "C:\\Microsoft\\Xamarin\\NuGet\\runtime.ubuntu.16.10-x64.runtime.native.system.security.cryptography.openssl\\4.3.0\\runtime.ubuntu.16.10-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",
+    "C:\\Users\\ivanr\\.nuget\\packages\\syncfusion.ej2.aspnet.core\\19.1.0.58\\syncfusion.ej2.aspnet.core.19.1.0.58.nupkg.sha512",
+    "C:\\Users\\ivanr\\.nuget\\packages\\syncfusion.licensing\\19.1.0.58\\syncfusion.licensing.19.1.0.58.nupkg.sha512",
     "C:\\Users\\ivanr\\.nuget\\packages\\system.appcontext\\4.3.0\\system.appcontext.4.3.0.nupkg.sha512",
     "C:\\Users\\ivanr\\.nuget\\packages\\system.buffers\\4.5.0\\system.buffers.4.5.0.nupkg.sha512",
     "C:\\Users\\ivanr\\.nuget\\packages\\system.collections\\4.3.0\\system.collections.4.3.0.nupkg.sha512",
