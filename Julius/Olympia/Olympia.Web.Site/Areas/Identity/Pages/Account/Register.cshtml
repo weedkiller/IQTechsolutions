@@ -4,21 +4,14 @@
     ViewData["Title"] = "Register an Account";
 }
 
-<section class="page-title-section">
-    <div class="container">
-        <div class="row">
-            <div class="col-xl-12 text-center">
-                <div class="page-title-content">
-                    <h3 class="title">@ViewData["Title"]</h3>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
 
-<section class="pdb-110" data-background="/images/content/ContactUs.jpg" data-overlay-dark="8">
+
+<section class="pdb-110" data-background="/images/content/signup.jpg" style="background-repeat:no-repeat; background-size:cover;">
     <div class="section-content">
         <div class="container">
+            <div class="page-title-content">
+                <h3 class="title">@ViewData["Title"]</h3>
+            </div>
             <div class="row">
                 <div class="col-lg-8">
                 </div>
@@ -69,14 +62,18 @@
                             </div>
                             <div class="form-group text-center">
                                 <p>
-                                    <a id="forgot-password" asp-page="./ForgotPassword">Forgot your password?</a>
+                                    <a asp-area="Identity" asp-page="/Account/Login">Don't have an Account<small>(Register as new user)</small></a>
+                                 
                                 </p>
-                                <p>
-                                    <a asp-page="./Register" asp-route-returnUrl="@Model.ReturnUrl">Don't have an Account <small>(Register as new user)</small></a>
-                                </p>
-                                <p>
-                                    <a id="resend-confirmation" asp-page="./ResendEmailConfirmation">Resend email confirmation</a>
-                                </p>
+                                @*<p>
+                                     <a id="forgot-password" asp-page="./ForgotPassword">Forgot your password?</a>
+                                       </p>
+                                  <p>
+                                <a asp-page="./Register" asp-route-returnUrl="@Model.ReturnUrl">Don't have an Account <small>(Register as new user)</small></a>
+                            </p>
+                       <p>
+                                 <a id="resend-confirmation" asp-page="./ResendEmailConfirmation">Resend email confirmation</a>
+                           </p>*@
                             </div>
                         </form>
                     </div>

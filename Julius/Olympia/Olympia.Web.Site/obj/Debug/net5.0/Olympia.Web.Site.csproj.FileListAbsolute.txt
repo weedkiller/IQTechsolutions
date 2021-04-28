@@ -1241,3 +1241,16 @@ G:\IQTechSolutions\Julius\Olympia\Olympia.Web.Site\obj\Debug\net5.0\Razor\Views\
 G:\IQTechSolutions\Julius\Olympia\Olympia.Web.Site\obj\Debug\net5.0\Razor\Views\Shared\Modals\_PleaeSaveFirstModal.cshtml.g.cs
 G:\IQTechSolutions\Julius\Olympia\Olympia.Web.Site\obj\Debug\net5.0\Razor\Views\Shared\Modals\_ShareFileFolderModal.cshtml.g.cs
 G:\IQTechSolutions\Julius\Olympia\Olympia.Web.Site\obj\Debug\net5.0\Razor\Views\Shared\Modals\_ShareFileFolderModalAddress.cshtml.g.cs
+C:\Users\Admin\Desktop\New\IQTechsolutions\Julius\Olympia\Olympia.Web.Site\bin\Debug\net5.0\Syncfusion.EJ2.dll
+C:\Users\Admin\Desktop\New\IQTechsolutions\Julius\Olympia\Olympia.Web.Site\bin\Debug\net5.0\Syncfusion.Licensing.dll
+C:\Users\Admin\Desktop\New\IQTechsolutions\Julius\Olympia\Olympia.Web.Site\obj\Debug\net5.0\Razor\Areas\FileManager\Views\Home\Geust.cshtml.g.cs
+C:\Users\Admin\Desktop\New\IQTechsolutions\Julius\Olympia\Olympia.Web.Site\obj\Debug\net5.0\Razor\Areas\FileManager\Views\Home\Index.cshtml.g.cs
+C:\Users\Admin\Desktop\New\IQTechsolutions\Julius\Olympia\Olympia.Web.Site\obj\Debug\net5.0\Razor\Areas\FileManager\Views\Shared\_Layout.cshtml.g.cs
+C:\Users\Admin\Desktop\New\IQTechsolutions\Julius\Olympia\Olympia.Web.Site\obj\Debug\net5.0\Razor\Areas\FileManager\Views\_ViewImports.cshtml.g.cs
+C:\Users\Admin\Desktop\New\IQTechsolutions\Julius\Olympia\Olympia.Web.Site\obj\Debug\net5.0\Razor\Areas\FileManager\Views\_ViewStart.cshtml.g.cs
+C:\Users\Admin\Desktop\New\IQTechsolutions\Julius\Olympia\Olympia.Web.Site\obj\Debug\net5.0\Razor\Views\Shared\Modals\_CropModal.cshtml.g.cs
+C:\Users\Admin\Desktop\New\IQTechsolutions\Julius\Olympia\Olympia.Web.Site\obj\Debug\net5.0\Razor\Views\Shared\Modals\_DeleteModal.cshtml.g.cs
+C:\Users\Admin\Desktop\New\IQTechsolutions\Julius\Olympia\Olympia.Web.Site\obj\Debug\net5.0\Razor\Views\Shared\Modals\_DeleteObjectModal.cshtml.g.cs
+C:\Users\Admin\Desktop\New\IQTechsolutions\Julius\Olympia\Olympia.Web.Site\obj\Debug\net5.0\Razor\Views\Shared\Modals\_PleaeSaveFirstModal.cshtml.g.cs
+C:\Users\Admin\Desktop\New\IQTechsolutions\Julius\Olympia\Olympia.Web.Site\obj\Debug\net5.0\Razor\Views\Shared\Modals\_ShareFileFolderModal.cshtml.g.cs
+C:\Users\Admin\Desktop\New\IQTechsolutions\Julius\Olympia\Olympia.Web.Site\obj\Debug\net5.0\Razor\Views\Shared\Modals\_ShareFileFolderModalAddress.cshtml.g.cs
