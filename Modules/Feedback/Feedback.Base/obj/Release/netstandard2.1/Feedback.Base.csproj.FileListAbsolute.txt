@@ -1,0 +1,16 @@
+C:\Users\Admin\Desktop\New\IQTechsolutions\Modules\Feedback\Feedback.Base\bin\Release\netstandard2.1\Feedback.Base.deps.json
+C:\Users\Admin\Desktop\New\IQTechsolutions\Modules\Feedback\Feedback.Base\bin\Release\netstandard2.1\Feedback.Base.dll
+C:\Users\Admin\Desktop\New\IQTechsolutions\Modules\Feedback\Feedback.Base\bin\Release\netstandard2.1\Feedback.Base.pdb
+C:\Users\Admin\Desktop\New\IQTechsolutions\Modules\Feedback\Feedback.Base\bin\Release\netstandard2.1\Filing.Base.dll
+C:\Users\Admin\Desktop\New\IQTechsolutions\Modules\Feedback\Feedback.Base\bin\Release\netstandard2.1\Identity.Base.dll
+C:\Users\Admin\Desktop\New\IQTechsolutions\Modules\Feedback\Feedback.Base\bin\Release\netstandard2.1\Iqt.Base.dll
+C:\Users\Admin\Desktop\New\IQTechsolutions\Modules\Feedback\Feedback.Base\bin\Release\netstandard2.1\Iqt.Base.pdb
+C:\Users\Admin\Desktop\New\IQTechsolutions\Modules\Feedback\Feedback.Base\bin\Release\netstandard2.1\Filing.Base.pdb
+C:\Users\Admin\Desktop\New\IQTechsolutions\Modules\Feedback\Feedback.Base\bin\Release\netstandard2.1\Identity.Base.pdb
+C:\Users\Admin\Desktop\New\IQTechsolutions\Modules\Feedback\Feedback.Base\obj\Release\netstandard2.1\Feedback.Base.csprojAssemblyReference.cache
+C:\Users\Admin\Desktop\New\IQTechsolutions\Modules\Feedback\Feedback.Base\obj\Release\netstandard2.1\Feedback.Base.AssemblyInfoInputs.cache
+C:\Users\Admin\Desktop\New\IQTechsolutions\Modules\Feedback\Feedback.Base\obj\Release\netstandard2.1\Feedback.Base.AssemblyInfo.cs
+C:\Users\Admin\Desktop\New\IQTechsolutions\Modules\Feedback\Feedback.Base\obj\Release\netstandard2.1\Feedback.Base.csproj.CoreCompileInputs.cache
+C:\Users\Admin\Desktop\New\IQTechsolutions\Modules\Feedback\Feedback.Base\obj\Release\netstandard2.1\Feedback.Base.csproj.CopyComplete
+C:\Users\Admin\Desktop\New\IQTechsolutions\Modules\Feedback\Feedback.Base\obj\Release\netstandard2.1\Feedback.Base.dll
+C:\Users\Admin\Desktop\New\IQTechsolutions\Modules\Feedback\Feedback.Base\obj\Release\netstandard2.1\Feedback.Base.pdb

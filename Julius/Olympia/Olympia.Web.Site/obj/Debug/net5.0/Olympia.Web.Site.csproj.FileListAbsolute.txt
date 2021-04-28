@@ -1254,3 +1254,4 @@ C:\Users\Admin\Desktop\New\IQTechsolutions\Julius\Olympia\Olympia.Web.Site\obj\D
 C:\Users\Admin\Desktop\New\IQTechsolutions\Julius\Olympia\Olympia.Web.Site\obj\Debug\net5.0\Razor\Views\Shared\Modals\_PleaeSaveFirstModal.cshtml.g.cs
 C:\Users\Admin\Desktop\New\IQTechsolutions\Julius\Olympia\Olympia.Web.Site\obj\Debug\net5.0\Razor\Views\Shared\Modals\_ShareFileFolderModal.cshtml.g.cs
 C:\Users\Admin\Desktop\New\IQTechsolutions\Julius\Olympia\Olympia.Web.Site\obj\Debug\net5.0\Razor\Views\Shared\Modals\_ShareFileFolderModalAddress.cshtml.g.cs
+C:\Users\Admin\Desktop\New\IQTechsolutions\Julius\Olympia\Olympia.Web.Site\obj\Debug\net5.0\Razor\Pages\404.cshtml.g.cs

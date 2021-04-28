@@ -1,0 +1,16 @@
+C:\Users\Admin\Desktop\New\IQTechsolutions\Modules\Customers\Customers.Base\bin\Release\netstandard2.1\Customers.Base.deps.json
+C:\Users\Admin\Desktop\New\IQTechsolutions\Modules\Customers\Customers.Base\bin\Release\netstandard2.1\Customers.Base.dll
+C:\Users\Admin\Desktop\New\IQTechsolutions\Modules\Customers\Customers.Base\bin\Release\netstandard2.1\Customers.Base.pdb
+C:\Users\Admin\Desktop\New\IQTechsolutions\Modules\Customers\Customers.Base\bin\Release\netstandard2.1\Filing.Base.dll
+C:\Users\Admin\Desktop\New\IQTechsolutions\Modules\Customers\Customers.Base\bin\Release\netstandard2.1\Identity.Base.dll
+C:\Users\Admin\Desktop\New\IQTechsolutions\Modules\Customers\Customers.Base\bin\Release\netstandard2.1\Iqt.Base.dll
+C:\Users\Admin\Desktop\New\IQTechsolutions\Modules\Customers\Customers.Base\bin\Release\netstandard2.1\Filing.Base.pdb
+C:\Users\Admin\Desktop\New\IQTechsolutions\Modules\Customers\Customers.Base\bin\Release\netstandard2.1\Identity.Base.pdb
+C:\Users\Admin\Desktop\New\IQTechsolutions\Modules\Customers\Customers.Base\bin\Release\netstandard2.1\Iqt.Base.pdb
+C:\Users\Admin\Desktop\New\IQTechsolutions\Modules\Customers\Customers.Base\obj\Release\netstandard2.1\Customers.Base.csprojAssemblyReference.cache
+C:\Users\Admin\Desktop\New\IQTechsolutions\Modules\Customers\Customers.Base\obj\Release\netstandard2.1\Customers.Base.AssemblyInfoInputs.cache
+C:\Users\Admin\Desktop\New\IQTechsolutions\Modules\Customers\Customers.Base\obj\Release\netstandard2.1\Customers.Base.AssemblyInfo.cs
+C:\Users\Admin\Desktop\New\IQTechsolutions\Modules\Customers\Customers.Base\obj\Release\netstandard2.1\Customers.Base.csproj.CoreCompileInputs.cache
+C:\Users\Admin\Desktop\New\IQTechsolutions\Modules\Customers\Customers.Base\obj\Release\netstandard2.1\Customers.Base.csproj.CopyComplete
+C:\Users\Admin\Desktop\New\IQTechsolutions\Modules\Customers\Customers.Base\obj\Release\netstandard2.1\Customers.Base.dll
+C:\Users\Admin\Desktop\New\IQTechsolutions\Modules\Customers\Customers.Base\obj\Release\netstandard2.1\Customers.Base.pdb
