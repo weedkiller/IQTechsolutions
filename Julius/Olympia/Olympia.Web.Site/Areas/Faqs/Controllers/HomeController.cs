@@ -1,14 +1,15 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Troubleshooting.Core.Context.Services;
+using Troubleshooting.Core.Controllers;
 
 namespace Olympia.Web.Site.Areas.Faqs.Controllers
 {
     [Area("Faqs")]
     [Route("Faqs/[controller]/[action]")]
-    public class HomeController : Controller
+    public class HomeController : QuestionBaseController
     {
-        public IActionResult Index()
+        public HomeController(FaqContext service) : base(service)
         {
-            return View();
         }
     }
 }

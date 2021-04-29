@@ -59,7 +59,8 @@ namespace Olympia.Web.DataStore
             modelBuilder.ApplySupportTicketConfiguration()
                 .ApplyTroubleshootingConfiguration()
                 .ApplyFaqConfiguration().ApplyServiceConfiguration()
-                .ApplyBloggingConfiguration().ApplyProjectConfiguration()
+                .ApplyBloggingConfiguration().ApplyCaseStudyConfiguration()
+                .ApplyProjectConfiguration()
                 .ApplyEmploymentConfiguration().ApplyCustomerConfiguration()
                 .ApplyCalenderConfiguration();
 

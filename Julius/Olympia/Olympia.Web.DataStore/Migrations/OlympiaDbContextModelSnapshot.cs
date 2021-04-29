@@ -19,7 +19,7 @@ namespace Olympia.Web.DataStore.Migrations
                 .HasAnnotation("ProductVersion", "5.0.4")
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("Blogging.Base.Entities.BlogPost", b =>
+            modelBuilder.Entity("Blogging.Base.Entities.CaseStudy", b =>
                 {
                     b.Property<string>("Id")
                         .ValueGeneratedOnAdd()
@@ -52,26 +52,14 @@ namespace Olympia.Web.DataStore.Migrations
                     b.Property<bool>("Featured")
                         .HasColumnType("bit");
 
-                    b.Property<int>("Likes")
-                        .HasColumnType("int");
-
                     b.Property<DateTime?>("Modified")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("ModifiedBy")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("Rating")
-                        .HasColumnType("int");
-
-                    b.Property<bool>("Reply")
-                        .HasColumnType("bit");
-
                     b.Property<string>("ShortDescription")
                         .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("SocialShares")
-                        .HasColumnType("int");
 
                     b.Property<string>("Tags")
                         .HasColumnType("nvarchar(max)");
@@ -91,7 +79,7 @@ namespace Olympia.Web.DataStore.Migrations
 
                     b.HasIndex("AudioFileId");
 
-                    b.ToTable("BlogPost");
+                    b.ToTable("CaseStudy");
                 });
 
             modelBuilder.Entity("Calendar.Base.Entities.Appointment", b =>
@@ -884,7 +872,7 @@ namespace Olympia.Web.DataStore.Migrations
                     b.ToTable("Testimonial");
                 });
 
-            modelBuilder.Entity("Filing.Base.Entities.AudioFile<Blogging.Base.Entities.BlogPost>", b =>
+            modelBuilder.Entity("Filing.Base.Entities.AudioFile<Blogging.Base.Entities.CaseStudy>", b =>
                 {
                     b.Property<string>("Id")
                         .ValueGeneratedOnAdd()
@@ -935,7 +923,7 @@ namespace Olympia.Web.DataStore.Migrations
 
                     b.HasIndex("EntityId");
 
-                    b.ToTable("AudioFile<BlogPost>");
+                    b.ToTable("AudioFile<CaseStudy>");
                 });
 
             modelBuilder.Entity("Filing.Base.Entities.AudioFile<Feedback.Base.Entities.NewsFeed>", b =>
@@ -1100,7 +1088,7 @@ namespace Olympia.Web.DataStore.Migrations
                     b.ToTable("File<SupportTicket>");
                 });
 
-            modelBuilder.Entity("Filing.Base.Entities.ImageFile<Blogging.Base.Entities.BlogPost>", b =>
+            modelBuilder.Entity("Filing.Base.Entities.ImageFile<Blogging.Base.Entities.CaseStudy>", b =>
                 {
                     b.Property<string>("Id")
                         .ValueGeneratedOnAdd()
@@ -1148,7 +1136,7 @@ namespace Olympia.Web.DataStore.Migrations
 
                     b.HasIndex("EntityId");
 
-                    b.ToTable("ImageFile<BlogPost>");
+                    b.ToTable("ImageFile<CaseStudy>");
                 });
 
             modelBuilder.Entity("Filing.Base.Entities.ImageFile<Calendar.Base.Entities.Event>", b =>
@@ -1406,7 +1394,7 @@ namespace Olympia.Web.DataStore.Migrations
                     b.ToTable("ImageFile<Testimonial>");
                 });
 
-            modelBuilder.Entity("Filing.Base.Entities.ImageFile<Grouping.Base.Entities.Category<Blogging.Base.Entities.BlogPost>>", b =>
+            modelBuilder.Entity("Filing.Base.Entities.ImageFile<Grouping.Base.Entities.Category<Blogging.Base.Entities.CaseStudy>>", b =>
                 {
                     b.Property<string>("Id")
                         .ValueGeneratedOnAdd()
@@ -1454,7 +1442,7 @@ namespace Olympia.Web.DataStore.Migrations
 
                     b.HasIndex("EntityId");
 
-                    b.ToTable("ImageFile<Category<BlogPost>>");
+                    b.ToTable("ImageFile<Category<CaseStudy>>");
                 });
 
             modelBuilder.Entity("Filing.Base.Entities.ImageFile<Grouping.Base.Entities.Category<Calendar.Base.Entities.Event>>", b =>
@@ -1712,7 +1700,7 @@ namespace Olympia.Web.DataStore.Migrations
                     b.ToTable("ImageFile<Category<Question>>");
                 });
 
-            modelBuilder.Entity("Filing.Base.Entities.ImageFile<Grouping.Base.Entities.Department<Blogging.Base.Entities.BlogPost>>", b =>
+            modelBuilder.Entity("Filing.Base.Entities.ImageFile<Grouping.Base.Entities.Department<Blogging.Base.Entities.CaseStudy>>", b =>
                 {
                     b.Property<string>("Id")
                         .ValueGeneratedOnAdd()
@@ -1760,7 +1748,7 @@ namespace Olympia.Web.DataStore.Migrations
 
                     b.HasIndex("EntityId");
 
-                    b.ToTable("ImageFile<Department<BlogPost>>");
+                    b.ToTable("ImageFile<Department<CaseStudy>>");
                 });
 
             modelBuilder.Entity("Filing.Base.Entities.ImageFile<Grouping.Base.Entities.Department<Calendar.Base.Entities.Event>>", b =>
@@ -2342,7 +2330,7 @@ namespace Olympia.Web.DataStore.Migrations
                     b.ToTable("Video<NewsFeed>");
                 });
 
-            modelBuilder.Entity("Grouping.Base.Entities.Category<Blogging.Base.Entities.BlogPost>", b =>
+            modelBuilder.Entity("Grouping.Base.Entities.Category<Blogging.Base.Entities.CaseStudy>", b =>
                 {
                     b.Property<string>("Id")
                         .ValueGeneratedOnAdd()
@@ -2393,7 +2381,7 @@ namespace Olympia.Web.DataStore.Migrations
 
                     b.HasIndex("ParentCategoryId");
 
-                    b.ToTable("Category<BlogPost>");
+                    b.ToTable("Category<CaseStudy>");
                 });
 
             modelBuilder.Entity("Grouping.Base.Entities.Category<Calendar.Base.Entities.Event>", b =>
@@ -2700,7 +2688,7 @@ namespace Olympia.Web.DataStore.Migrations
                     b.ToTable("ComboExclusions<Service>");
                 });
 
-            modelBuilder.Entity("Grouping.Base.Entities.Department<Blogging.Base.Entities.BlogPost>", b =>
+            modelBuilder.Entity("Grouping.Base.Entities.Department<Blogging.Base.Entities.CaseStudy>", b =>
                 {
                     b.Property<string>("Id")
                         .ValueGeneratedOnAdd()
@@ -2731,7 +2719,7 @@ namespace Olympia.Web.DataStore.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Department<BlogPost>");
+                    b.ToTable("Department<CaseStudy>");
                 });
 
             modelBuilder.Entity("Grouping.Base.Entities.Department<Calendar.Base.Entities.Event>", b =>
@@ -2904,7 +2892,7 @@ namespace Olympia.Web.DataStore.Migrations
                     b.ToTable("Department<Question>");
                 });
 
-            modelBuilder.Entity("Grouping.Base.Entities.EntityCategory<Blogging.Base.Entities.BlogPost>", b =>
+            modelBuilder.Entity("Grouping.Base.Entities.EntityCategory<Blogging.Base.Entities.CaseStudy>", b =>
                 {
                     b.Property<string>("EntityId")
                         .HasColumnType("nvarchar(450)");
@@ -2916,7 +2904,7 @@ namespace Olympia.Web.DataStore.Migrations
 
                     b.HasIndex("CategoryId");
 
-                    b.ToTable("EntityCategory<BlogPost>");
+                    b.ToTable("EntityCategory<CaseStudy>");
                 });
 
             modelBuilder.Entity("Grouping.Base.Entities.EntityCategory<Calendar.Base.Entities.Event>", b =>
@@ -4415,9 +4403,9 @@ namespace Olympia.Web.DataStore.Migrations
                     b.ToTable("Question");
                 });
 
-            modelBuilder.Entity("Blogging.Base.Entities.BlogPost", b =>
+            modelBuilder.Entity("Blogging.Base.Entities.CaseStudy", b =>
                 {
-                    b.HasOne("Filing.Base.Entities.AudioFile<Blogging.Base.Entities.BlogPost>", "AudioFile")
+                    b.HasOne("Filing.Base.Entities.AudioFile<Blogging.Base.Entities.CaseStudy>", "AudioFile")
                         .WithMany()
                         .HasForeignKey("AudioFileId");
 
@@ -4656,9 +4644,9 @@ namespace Olympia.Web.DataStore.Migrations
                     b.Navigation("ParentTicket");
                 });
 
-            modelBuilder.Entity("Filing.Base.Entities.AudioFile<Blogging.Base.Entities.BlogPost>", b =>
+            modelBuilder.Entity("Filing.Base.Entities.AudioFile<Blogging.Base.Entities.CaseStudy>", b =>
                 {
-                    b.HasOne("Blogging.Base.Entities.BlogPost", "Entity")
+                    b.HasOne("Blogging.Base.Entities.CaseStudy", "Entity")
                         .WithMany()
                         .HasForeignKey("EntityId");
 
@@ -4692,9 +4680,9 @@ namespace Olympia.Web.DataStore.Migrations
                     b.Navigation("Entity");
                 });
 
-            modelBuilder.Entity("Filing.Base.Entities.ImageFile<Blogging.Base.Entities.BlogPost>", b =>
+            modelBuilder.Entity("Filing.Base.Entities.ImageFile<Blogging.Base.Entities.CaseStudy>", b =>
                 {
-                    b.HasOne("Blogging.Base.Entities.BlogPost", "Entity")
+                    b.HasOne("Blogging.Base.Entities.CaseStudy", "Entity")
                         .WithMany("Images")
                         .HasForeignKey("EntityId");
 
@@ -4746,9 +4734,9 @@ namespace Olympia.Web.DataStore.Migrations
                     b.Navigation("Entity");
                 });
 
-            modelBuilder.Entity("Filing.Base.Entities.ImageFile<Grouping.Base.Entities.Category<Blogging.Base.Entities.BlogPost>>", b =>
+            modelBuilder.Entity("Filing.Base.Entities.ImageFile<Grouping.Base.Entities.Category<Blogging.Base.Entities.CaseStudy>>", b =>
                 {
-                    b.HasOne("Grouping.Base.Entities.Category<Blogging.Base.Entities.BlogPost>", "Entity")
+                    b.HasOne("Grouping.Base.Entities.Category<Blogging.Base.Entities.CaseStudy>", "Entity")
                         .WithMany("Images")
                         .HasForeignKey("EntityId");
 
@@ -4800,9 +4788,9 @@ namespace Olympia.Web.DataStore.Migrations
                     b.Navigation("Entity");
                 });
 
-            modelBuilder.Entity("Filing.Base.Entities.ImageFile<Grouping.Base.Entities.Department<Blogging.Base.Entities.BlogPost>>", b =>
+            modelBuilder.Entity("Filing.Base.Entities.ImageFile<Grouping.Base.Entities.Department<Blogging.Base.Entities.CaseStudy>>", b =>
                 {
-                    b.HasOne("Grouping.Base.Entities.Department<Blogging.Base.Entities.BlogPost>", "Entity")
+                    b.HasOne("Grouping.Base.Entities.Department<Blogging.Base.Entities.CaseStudy>", "Entity")
                         .WithMany("Images")
                         .HasForeignKey("EntityId");
 
@@ -4908,13 +4896,13 @@ namespace Olympia.Web.DataStore.Migrations
                     b.Navigation("Entity");
                 });
 
-            modelBuilder.Entity("Grouping.Base.Entities.Category<Blogging.Base.Entities.BlogPost>", b =>
+            modelBuilder.Entity("Grouping.Base.Entities.Category<Blogging.Base.Entities.CaseStudy>", b =>
                 {
-                    b.HasOne("Grouping.Base.Entities.Department<Blogging.Base.Entities.BlogPost>", "Department")
+                    b.HasOne("Grouping.Base.Entities.Department<Blogging.Base.Entities.CaseStudy>", "Department")
                         .WithMany("Categories")
                         .HasForeignKey("DepartmentId");
 
-                    b.HasOne("Grouping.Base.Entities.Category<Blogging.Base.Entities.BlogPost>", "ParentCategory")
+                    b.HasOne("Grouping.Base.Entities.Category<Blogging.Base.Entities.CaseStudy>", "ParentCategory")
                         .WithMany("SubCategories")
                         .HasForeignKey("ParentCategoryId");
 
@@ -5035,15 +5023,15 @@ namespace Olympia.Web.DataStore.Migrations
                     b.Navigation("Exclusion");
                 });
 
-            modelBuilder.Entity("Grouping.Base.Entities.EntityCategory<Blogging.Base.Entities.BlogPost>", b =>
+            modelBuilder.Entity("Grouping.Base.Entities.EntityCategory<Blogging.Base.Entities.CaseStudy>", b =>
                 {
-                    b.HasOne("Grouping.Base.Entities.Category<Blogging.Base.Entities.BlogPost>", "Category")
+                    b.HasOne("Grouping.Base.Entities.Category<Blogging.Base.Entities.CaseStudy>", "Category")
                         .WithMany("EntityCollection")
                         .HasForeignKey("CategoryId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Blogging.Base.Entities.BlogPost", "Entity")
+                    b.HasOne("Blogging.Base.Entities.CaseStudy", "Entity")
                         .WithMany("Categories")
                         .HasForeignKey("EntityId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -5550,7 +5538,7 @@ namespace Olympia.Web.DataStore.Migrations
                     b.Navigation("Problem");
                 });
 
-            modelBuilder.Entity("Blogging.Base.Entities.BlogPost", b =>
+            modelBuilder.Entity("Blogging.Base.Entities.CaseStudy", b =>
                 {
                     b.Navigation("Categories");
 
@@ -5655,7 +5643,7 @@ namespace Olympia.Web.DataStore.Migrations
                     b.Navigation("Images");
                 });
 
-            modelBuilder.Entity("Grouping.Base.Entities.Category<Blogging.Base.Entities.BlogPost>", b =>
+            modelBuilder.Entity("Grouping.Base.Entities.Category<Blogging.Base.Entities.CaseStudy>", b =>
                 {
                     b.Navigation("EntityCollection");
 
@@ -5714,7 +5702,7 @@ namespace Olympia.Web.DataStore.Migrations
                     b.Navigation("Exclusions");
                 });
 
-            modelBuilder.Entity("Grouping.Base.Entities.Department<Blogging.Base.Entities.BlogPost>", b =>
+            modelBuilder.Entity("Grouping.Base.Entities.Department<Blogging.Base.Entities.CaseStudy>", b =>
                 {
                     b.Navigation("Categories");
 

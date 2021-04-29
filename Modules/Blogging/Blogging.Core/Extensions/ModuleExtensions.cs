@@ -13,7 +13,7 @@ namespace Blogging.Core.Extensions
     public static class ModuleExtensions
     {
         /// <summary>
-        /// Adds the training courses services to the application
+        /// Adds the blog entries services to the application
         /// </summary>
         /// <param name="serviceCollection">The injected service collection these services should be added to</param>
         /// <returns>The injected service collection</returns>
@@ -25,6 +25,25 @@ namespace Blogging.Core.Extensions
             var embeddedFileProvider = new EmbeddedFileProvider(
                 assembly
             );
+
+            serviceCollection.Configure<MvcRazorRuntimeCompilationOptions>(options =>
+            {
+                options.FileProviders.Add(embeddedFileProvider);
+            });
+            return serviceCollection;
+        }
+
+        /// <summary>
+        /// Adds the case studies services to the application
+        /// </summary>
+        /// <param name="serviceCollection">The injected service collection these services should be added to</param>
+        /// <returns>The injected service collection</returns>
+        public static IServiceCollection AddCaseStudies(this IServiceCollection serviceCollection)
+        {
+            serviceCollection.AddTransient<CaseStudyContext>();
+
+            var assembly = typeof(CaseStudyCategoryList).GetTypeInfo().Assembly;
+            var embeddedFileProvider = new EmbeddedFileProvider(assembly);
 
             serviceCollection.Configure<MvcRazorRuntimeCompilationOptions>(options =>
             {

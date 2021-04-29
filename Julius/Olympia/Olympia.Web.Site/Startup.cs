@@ -50,6 +50,7 @@ namespace Olympia.Web.Site
                 .AddSupportTicketSystem()
                 .AddGrouping()
                 .AddBlogging()
+                .AddCaseStudies()
                 .AddFaqs()
                 .AddCustomers()
                 .AddEmployment()
