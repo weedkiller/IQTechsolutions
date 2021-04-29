@@ -8,15 +8,17 @@
 
 <div class="row">
     <div class=" control-section">
-        <div class="sample-container">
+        <div class="sample-container" style="margin-left:30vh; padding-left:3vw;">
+        
             <!--  Filemanager element declaration -->
-            <ejs-filemanager id="file" allowMultiSelection="true" view="Details" allowDragAndDrop="true" menuOpen="menuOpen" menuClick="menuClick" toolbarClick="toolbarClick" toolbarCreate="onCreate">
+            <ejs-filemanager id="file" allowMultiSelection="true" view="Details" allowDragAndDrop="true" menuOpen="menuOpen" menuClick="menuClick" toolbarClick="toolbarClick" toolbarCreate="onCreate" style=" padding-right: 30vw; margin: 2vh; display:grid;">
+          
                 <e-filemanager-ajaxsettings url="/FileManager/Home/FileOperations"
                                             downloadUrl="/FileManager/Home/Download"
                                             uploadUrl="/FileManager/Home/Upload"
                                             getImageUrl="/FileManager/Home/GetImage">
                 </e-filemanager-ajaxsettings>
-                <e-filemanager-contextmenusettings visible="true" file="files" folder="folder" layout="layout"></e-filemanager-contextmenusettings>
+                <e-filemanager-contextmenusettings visible="true" file="files" folder="folder" layout="layout" ></e-filemanager-contextmenusettings>
                 <e-filemanager-navigationpanesettings visible="true" file="files" folder="folder" layout="layout"></e-filemanager-navigationpanesettings>
                 <e-filemanager-toolbarsettings visible="true" items="items"></e-filemanager-toolbarsettings>
             </ejs-filemanager>

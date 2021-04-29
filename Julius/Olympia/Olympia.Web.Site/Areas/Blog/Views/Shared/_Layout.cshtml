@@ -4,8 +4,8 @@
 
 @section Styles
 {
-    <link href='/css/summernote.css' rel='stylesheet' type='text/css' />
-    <link rel="stylesheet" href="/css/bs-filestyle.css">
+    <link rel="stylesheet" href="/css/syncfusion/filemanager.css" />
+    <script src="/js/syncfusion/filemanager.js"></script>
 
     @RenderSection("Styles", required: false)
 }
@@ -24,35 +24,6 @@
 
 @section Scripts
     {
-    <!-- Summer Note JS -->
-    <script src="/js/summernote/summernote.js"></script>
-    <script src="/js/bs-filestyle.js"></script>
-
-    <script type="text/javascript">
-        // Default
-        $(document).ready(function () {
-            var HomeIndex = function () {
-
-                var $this = this;
-
-                function initialize() {
-                    $('#Entity_Description').summernote({
-                        height: 250,
-                        codemirror: { // codemirror options
-                            theme: 'monokai'
-                        }
-                    });
-                }
-
-                $this.init = function () {
-                    initialize();
-                }
-            };
-            var self = new HomeIndex();
-            self.init();
-        });
-
-    </script>
-
+    <ejs-scripts></ejs-scripts>
     @RenderSection("Scripts", required: false)
 }

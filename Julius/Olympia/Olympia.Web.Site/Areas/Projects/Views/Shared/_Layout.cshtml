@@ -1,0 +1,29 @@
+﻿@{
+    Layout = "Layouts/_Layout";
+}
+
+@section Styles
+{
+    <link rel="stylesheet" href="/css/syncfusion/filemanager.css" />
+    <script src="/js/syncfusion/filemanager.js"></script>
+
+    @RenderSection("Styles", required: false)
+}
+
+<section class="about-section anim-object pdt-110 pdb-50 pdb-lg-80">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-md-12">
+
+                @RenderBody()
+
+            </div>
+        </div>
+    </div>
+</section>
+
+@section Scripts
+    {
+    <ejs-scripts></ejs-scripts>
+    @RenderSection("Scripts", required: false)
+}
