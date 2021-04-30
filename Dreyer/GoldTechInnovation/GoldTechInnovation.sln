@@ -1,0 +1,38 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31205.134
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Base", "Base", "{6681BAFD-814F-4690-9666-3E97F1BD44F8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Source", "Source", "{1155BCB0-BF7C-40D2-A2E7-F9FF7D44AF16}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Iqt", "Iqt", "{3E72BEED-754C-470B-8D10-4A7A47047363}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Modules", "Modules", "{9F7F62D4-3B8D-49F8-946B-C44D6DAE6B68}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DataStores", "DataStores", "{7E980029-3152-4F13-85DD-80BE040B4C25}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GoldTechInnovation.Web.Site", "GoldTechInnovation.Web.Site\GoldTechInnovation.Web.Site.csproj", "{B2B02907-A342-4CB9-A625-1F30DDF405B2}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B2B02907-A342-4CB9-A625-1F30DDF405B2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B2B02907-A342-4CB9-A625-1F30DDF405B2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B2B02907-A342-4CB9-A625-1F30DDF405B2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B2B02907-A342-4CB9-A625-1F30DDF405B2}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{B2B02907-A342-4CB9-A625-1F30DDF405B2} = {1155BCB0-BF7C-40D2-A2E7-F9FF7D44AF16}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A94561BE-3CDF-41ED-A8D2-C0E1F531E511}
+	EndGlobalSection
+EndGlobal
