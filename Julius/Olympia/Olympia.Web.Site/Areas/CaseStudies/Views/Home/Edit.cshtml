@@ -11,33 +11,36 @@
     <link rel="stylesheet" href="~/css/bs-filestyle.css">
 }
 
-<form asp-area="CaseStudies" asp-controller="Home" asp-action="Edit" enctype="multipart/form-data" method="post">
+<form asp-area="CaseStudies" asp-controller="Home" asp-action="Edit" enctype="multipart/form-data" method="post" style="padding-bottom: 50px;">
     <input type="hidden" asp-for="Entity.Id" />
 
-    <div class="col-md-4">
-        <div class="form-group">
-            <label asp-for="CoverUpload" class="control-label"></label>
-            <div class="previewd" style="overflow: hidden">
-                <img id="preview" style="width: 100%" src="@Model.Entity.GetPath("http://admin.metsi.co.za", ImageType.Cover,"/images/placeholders/MetsiPlaceholder-800x533.jpg" )" alt="@Model.Entity.Title" />
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <div class="row">
+        <div class="col-md-4">
+            <div class="form-group">
+                <label asp-for="CoverUpload" class="control-label"></label>
+                <div class="previewd" style="overflow: hidden">
+                    <img id="preview" style="width: 100%" src="/images/placeholders/profileImage128x128.png" alt="" />
+                </div>
+                <input asp-for="CoverUpload" class="form-control" onchange="loadFile(event)" />
+                <input type="hidden" asp-for="CoverCropSettings.X" />
+                <input type="hidden" asp-for="CoverCropSettings.Y" />
+                <input type="hidden" asp-for="CoverCropSettings.Width" />
+                <input type="hidden" asp-for="CoverCropSettings.Height" />
+                <input type="hidden" asp-for="CoverCropSettings.Rotate" />
+                <input type="hidden" asp-for="CoverCropSettings.ScaleX" />
+                <input type="hidden" asp-for="CoverCropSettings.ScaleY" />
             </div>
-            <input asp-for="CoverUpload" class="form-control" onchange="loadFile(event)" />
-            <input type="hidden" asp-for="CoverCropSettings.X" />
-            <input type="hidden" asp-for="CoverCropSettings.Y" />
-            <input type="hidden" asp-for="CoverCropSettings.Width" />
-            <input type="hidden" asp-for="CoverCropSettings.Height" />
-            <input type="hidden" asp-for="CoverCropSettings.Rotate" />
-            <input type="hidden" asp-for="CoverCropSettings.ScaleX" />
-            <input type="hidden" asp-for="CoverCropSettings.ScaleY" />
-        </div>
+
             <div class="form-group">
                 <label asp-for="Author" class="control-label"></label>
                 <input asp-for="Author" class="form-control" placeholder="Please add author name if this is a quote" />
                 <span asp-validation-for="Author" class="text-danger"></span>
             </div>
         </div>
-    <div class="col-md-8">
-        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-        <div class="row">
+        <div class="col-md-8">
+
+
             <div class="form-group">
                 <label asp-for="Entity.Title" class="control-label"></label>
                 <input asp-for="Entity.Title" class="form-control" />
@@ -48,131 +51,113 @@
                 <textarea asp-for="Entity.Description" class="form-control"></textarea>
                 <span asp-validation-for="Entity.Description" class="text-danger"></span>
             </div>
-            <div class="col-md-6">
-                <label asp-for="Entity.Featured" class="control-label col-md-2"></label>
-                <div class="col-md-10">
-                    <input asp-for="Entity.Featured" class="form-control" />
+
+            <div class="row" style=" align-content:center;">
+                <div class="col-md-6">
+                    <label asp-for="Entity.Featured" class="control-label col-md-2"></label>
+                    <div class="col-md-10">
+                        <input asp-for="Entity.Featured" class="form-control" type="checkbox" style="height:30px;" />
+                    </div>
                 </div>
-            </div>
-            <div class="col-md-6">
-                <label asp-for="Entity.Active" class="control-label col-md-2"></label>
-                <div class="col-md-10">
-                    <input asp-for="Entity.Active" class="form-control" />
+                <div class="col-md-6">
+                    <label asp-for="Entity.Active" class="control-label col-md-2"></label>
+                    <div class="col-md-10">
+                        <input asp-for="Entity.Active" class="form-control" type="checkbox" style="height:30px;" />
+                    </div>
                 </div>
+                <input type="hidden" asp-for="Entity.Id" />
+
             </div>
-        </div>
-        <div class="row">
-            <div class="col-sm-12">
-                <div class="form-group">
-                    <label asp-for="Entity.Categories" class="control-label">Select the appropriate Categories:</label>
-                    <hr />
-                    <div class="col-md-6">
-                        <div class="panel-group" id="accordion">
-                            @{ var cout = Convert.ToInt32(Math.Round((double)Model.AvailableCategories.Count / 2));}
-                            @if (Model.AvailableCategories != null)
-                            {
-                                for (var i = 0; i < cout; i++)
+            <div class="row" style="display:grid;">
+                <div class="col-sm-12">
+                    <div class="form-group">
+                        <label asp-for="Entity.Categories" class="control-label">Select the appropriate Categories:</label>
+                        <hr />
+                        <div class="col-md-6">
+                            <div class="panel-group" id="accordion">
+                                @{ var cout = Convert.ToInt32(Math.Round((double)Model.AvailableCategories.Count / 2));}
+                                @if (Model.AvailableCategories != null)
                                 {
-                                    <div class="panel">
-                                        <div class="row" style="vert-align: middle">
-                                            <div class="col-md-1">
-                                                <input asp-for="@Model.AvailableCategories[i].IsSelected" type="checkbox" class="filled-in" style="opacity: 100 !important; position: relative; left: 0; height: 20px" />
-                                                <input asp-for="@Model.AvailableCategories[i].Identity" type="hidden" />
-                                                <input asp-for="@Model.AvailableCategories[i].Identity" type="hidden" />
-                                            </div>
-                                            <div class="col-md-11">
-                                                <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#@Model.AvailableCategories[i].Identity">@Model.AvailableCategories[i].Name</a>
+                                    for (var i = 0; i < cout; i++)
+                                    {
+                                        <div class="panel">
+                                            <div class="row" style="vert-align: middle">
+                                                <div class="col-md-1">
+                                                    <input asp-for="@Model.AvailableCategories[i].IsSelected" type="checkbox" class="filled-in" style="opacity: 100 !important; position: relative; left: 0; height: 20px" />
+                                                    <input asp-for="@Model.AvailableCategories[i].Identity" type="hidden" />
+                                                    <input asp-for="@Model.AvailableCategories[i].Identity" type="hidden" />
+                                                </div>
+                                                <div class="col-md-11">
+                                                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#@Model.AvailableCategories[i].Identity">@Model.AvailableCategories[i].Name</a>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
+                                    }
                                 }
-                            }
-                            else
-                            {
-                                <p>No categories currently available for this listing</p>
-                            }
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="panel-group" id="accordion">
-                            @if (Model.AvailableCategories != null)
-                            {
-                                for (var i = cout; i < Model.AvailableCategories.Count(); i++)
+                                else
                                 {
-                                    <div class="panel">
-                                        <div class="row" style="vert-align: middle">
-                                            <div class="col-md-1">
-                                                <input asp-for="@Model.AvailableCategories[i].IsSelected" type="checkbox" class="filled-in" style="opacity: 100 !important; position: relative; left: 0; height: 20px" />
-                                                <input asp-for="@Model.AvailableCategories[i].Identity" type="hidden" />
-                                                <input asp-for="@Model.AvailableCategories[i].Identity" type="hidden" />
-                                            </div>
-                                            <div class="col-md-11">
-                                                <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#@Model.AvailableCategories[i].Identity">@Model.AvailableCategories[i].Name</a>
+                                    <p>No categories currently available for this listing</p>
+                                }
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="panel-group" id="accordion">
+                                @if (Model.AvailableCategories != null)
+                                {
+                                    for (var i = cout; i < Model.AvailableCategories.Count(); i++)
+                                    {
+                                        <div class="panel">
+                                            <div class="row" style="vert-align: middle">
+                                                <div class="col-md-1">
+                                                    <input asp-for="@Model.AvailableCategories[i].IsSelected" type="checkbox" class="filled-in" style="opacity: 100 !important; position: relative; left: 0; height: 20px" />
+                                                    <input asp-for="@Model.AvailableCategories[i].Identity" type="hidden" />
+                                                    <input asp-for="@Model.AvailableCategories[i].Identity" type="hidden" />
+                                                </div>
+                                                <div class="col-md-11">
+                                                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#@Model.AvailableCategories[i].Identity">@Model.AvailableCategories[i].Name</a>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
+                                    }
                                 }
-                            }
-                            else
-                            {
-                                <p>No categories currently available for this listing</p>
-                            }
+                                else
+                                {
+                                    <p>No categories currently available for this listing</p>
+                                }
+                            </div>
                         </div>
+                        <hr />
                     </div>
-                    <hr />
                 </div>
             </div>
+
         </div>
-    </div>
-    <div class="row" style="padding-bottom: 20px">
-        <div class="col-md-12 bottommargin text-center">
+        <hr\></hr\>
+
+
+        <div class="col-md-12 bottommargin text-center" style="align-items:center;">
             <h5>Select Project Images:</h5><br>
             <input id="input-3" asp-for="ImagesUpload" type="file" class="file" multiple data-show-upload="false" data-show-caption="true" data-show-preview="true">
         </div>
 
         <div class="col-md-12 bottommargin text-center">
             <div class="row">
-                @foreach (var item in Model.Entity.Images.Where(c => c.ImageType == ImageType.Image))
+                @foreach (var item in Model.Entity.Images)
                 {
-                    <div class="col-md-2" style="padding-bottom: 20px;" id="@item.Id">
-                        <img id="@item.Id" style="width: 100%; padding-bottom: 10px; padding-top: 20px" title="@Model.Entity.Title" alt="@Model.Entity.Title" src="@item.GetPath("http://admin.metsi.co.za", "/images/placeholders/MetsiPlaceholder-370x352.jpg")">
-                        <button type="button" data-toggle="Remote Image" onclick="removeImageFromObject('@item.Id')" title="Remove Image" class="btn btn-block btn-danger btn-sm">Delete</button>
-                    </div>
+                    <img id="@item" style="width: 20%;" title="@Model.Entity.Title" alt="@Model.Entity.Title" src="@item.Entity.GetPath("https://olympia.olympia.team/landlord/api/tenant/status", ImageType.Cover)">
                 }
             </div>
-            @*<div class="row">
-                <label asp-for="AudioUpload" class="control-label"></label>
-                @if (Model.Entity.AudioFile != null)
-                {
-                    <audio controls>
-                        <source src='@Model.Entity.AudioFile.RelativePath' type='@Model.Entity.AudioFile.ContentType'>
-                        Your browser does not support the audio element.
-                    </audio>
-                }
-                <input asp-for="AudioUpload" class="form-control" />
-                <span asp-validation-for="AudioUpload" class="text-danger"></span>
-            </div>*@
-
-            @*<div class="row">
-                <label asp-for="VideoUpload" class="control-label"></label>
-                @if (Model.Entity.Video != null)
-                {
-                    <video controls style="width: 100%;">
-                        <source src="~/videos/uploads/blog/CCNA6269_0b464103-db89-4336-8029-ecd9abd412ec.mp4" type='@Model.Entity.Video.ContentType' />
-                    </video>
-                }
-                <input asp-for="VideoUpload" class="form-control" />
-                <span asp-validation-for="VideoUpload" class="text-danger"></span>
-            </div>*@
         </div>
     </div>
-    <div class="row">
-        <div class="form-group text-right">
-            <input name="main" type="submit" value="Save" class="btn btn-primary" />
+    <div class="row" style=" padding:25px;  align-content:baseline; left:250px;">
+        <div class="form-group col-md-12 text-center">
+            <input name="main" type="submit" value="Save" class="btn btn-primary " />
             <input name="finnish" type="submit" value="Publish" class="btn btn-primary" />
             <a asp-area="CaseStudies" asp-controller="Home" asp-action="List" class="btn btn-danger">Cancel</a>
+
         </div>
     </div>
+
 </form>
 
 @section Scripts    {
