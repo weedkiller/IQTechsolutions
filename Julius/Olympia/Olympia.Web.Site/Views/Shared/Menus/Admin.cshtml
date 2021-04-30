@@ -5,17 +5,32 @@
     
     <div class="side-info mrb-30">
         <div class="side-panel-element mrb-25">
-            <h4 class="mrb-10">Admin Menu</h4>
+            <h4 class="mrb-10">
+
+
+                Admin Menu
+
+                <a  asp-area="" asp-page="/404">
+                    <i class="fa fa-user" style="float:right; margin-top:70px;"></i>
+                </a>
+
+            </h4>
             <hr />
             <nav id="mobile-menu-ff">
                 <ul class="list-items">
-                    <li><a asp-area="FileManager" asp-controller="Home" asp-action="Index">File Manager</a></li>
-                    <li><a asp-area="Blog" asp-controller="Home" asp-action="List">Blog</a></li>
-                    <li><a asp-area="" asp-controller="Home" asp-action="UnderConstruction">Digital</a></li>
+                    <li><a asp-area="" asp-controller="Home" asp-action="UnderConstruction">Home</a></li>
+                    <li><a asp-area="" asp-controller="Home" asp-action="UnderConstruction">Blog</a></li>
                     <li><a asp-area="" asp-controller="Home" asp-action="UnderConstruction">Engage</a>
-                    <li><a asp-area="Support" asp-controller="Home" asp-action="List">Support Tickets</a>
+                    <li><a asp-area="" asp-controller="Home" asp-action="UnderConstruction">Digital</a></li>
                     <li><a asp-area="CaseStudies" asp-controller="Home" asp-action="List">Case Studies</a>
-                    <li><a asp-area="Faqs" asp-controller="Home" asp-action="List">Faqs</a>
+                    <li><a asp-area="FileManager" asp-controller="Home" asp-action="Index">File Manager</a></li>
+                    <li><a asp-area="Support" asp-controller="Home" asp-action="List">Support Tickets</a></li>
+                    <li><a asp-area="Faqs" asp-controller="Home" asp-action="List">Faqs</a></li>
+
+
+
+
+
 
 
                 </ul>
@@ -25,13 +40,15 @@
             <div class="side-panel-logo mrb-30">
                 <a asp-controller="Home" asp-action="Index">
                     <img src="/images/Rectangular_Olympia_Logo_White.png" alt="" />
+
                 </a>
             </div>
             <ul class="list-items">
-                <li><span class="fa fa-map-marker-alt mrr-10 text-primary-color"></span>The Vineyards Office Estate, Manor House, 99 Jip De Jager, Bellville</li>
+                @*<li><span class="fa fa-map-marker-alt mrr-10 text-primary-color"></span>The Vineyards Office Estate, Manor House, 99 Jip De Jager, Bellville</li>*@
                 <li><span class="fas fa-envelope mrr-10 text-primary-color"></span>info@olympiahd.com</li>
                 <li><span class="fas fa-phone-alt mrr-10 text-primary-color"></span>(+27) 73 008 2739</li>
             </ul>
+
         </div>
     </div>
     <h4 class="mrb-15">Social List</h4>
@@ -42,3 +59,7 @@
         <li><a href="https://twitter.com/Olympiateam1" target="_blank"><i class="fab fa-google-plus-g"></i></a></li>
     </ul>
 </div>
+
+
+
+<script src="https://use.fontawesome.com/d9158b7faf.js"></script>
