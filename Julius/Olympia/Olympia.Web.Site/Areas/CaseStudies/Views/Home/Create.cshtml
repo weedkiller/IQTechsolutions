@@ -18,7 +18,7 @@
             <div class="form-group">
                 <label asp-for="CoverUpload" class="control-label"></label>
                 <div class="previewd" style="overflow: hidden">
-                    <img id="preview" style="width: 100%" src="~/images/placeholders/MetsiPlaceholder-800x533.jpg" alt="" />
+                    <img id="preview" style="width: 100%" src="/images/placeholders/profileImage128x128.png" alt="" />
                 </div>
                 <input asp-for="CoverUpload" class="form-control" onchange="loadFile(event)" />
                 <input type="hidden" asp-for="CoverCropSettings.X" />
@@ -29,16 +29,7 @@
                 <input type="hidden" asp-for="CoverCropSettings.ScaleX" />
                 <input type="hidden" asp-for="CoverCropSettings.ScaleY" />
             </div>
-            @*<div class="form-group">
-                <label asp-for="AudioUpload" class="control-label"></label>
-                <input asp-for="AudioUpload" class="form-control" />
-                <span asp-validation-for="AudioUpload" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="VideoUpload" class="control-label"></label>
-                <input asp-for="VideoUpload" class="form-control" />
-                <span asp-validation-for="VideoUpload" class="text-danger"></span>
-            </div>*@
+
             <div class="form-group">
                 <label asp-for="Author" class="control-label"></label>
                 <input asp-for="Author" class="form-control" placeholder="Please add author name if this is a quote" />
@@ -46,6 +37,7 @@
             </div>
         </div>
         <div class="col-md-8">
+
 
             <div class="form-group">
                 <label asp-for="Entity.Title" class="control-label"></label>
@@ -57,21 +49,24 @@
                 <textarea asp-for="Entity.Description" class="form-control"></textarea>
                 <span asp-validation-for="Entity.Description" class="text-danger"></span>
             </div>
-            <div class="col-md-6">
-                <label asp-for="Entity.Featured" class="control-label col-md-2"></label>
-                <div class="col-md-10">
-                    <input asp-for="Entity.Featured" class="form-control" />
-                </div>
-            </div>
-            <div class="col-md-6">
-                <label asp-for="Entity.Active" class="control-label col-md-2"></label>
-                <div class="col-md-10">
-                    <input asp-for="Entity.Active" class="form-control" />
-                </div>
-            </div>
-            <input type="hidden" asp-for="Entity.Id" />
 
-            <div class="row">
+            <div class="row" style=" align-content:center;">
+                <div class="col-md-6">
+                    <label asp-for="Entity.Featured" class="control-label col-md-2"></label>
+                    <div class="col-md-10">
+                        <input asp-for="Entity.Featured" class="form-control" type="checkbox" style="height:30px;" />
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <label asp-for="Entity.Active" class="control-label col-md-2"></label>
+                    <div class="col-md-10">
+                        <input asp-for="Entity.Active" class="form-control" type="checkbox" style="height:30px;" />
+                    </div>
+                </div>
+                <input type="hidden" asp-for="Entity.Id" />
+
+            </div>
+            <div class="row" style="display:grid;">
                 <div class="col-sm-12">
                     <div class="form-group">
                         <label asp-for="Entity.Categories" class="control-label">Select the appropriate Categories:</label>
@@ -135,29 +130,33 @@
             </div>
 
         </div>
-        
-        <div class="row">
-            <div class="col-md-12 bottommargin text-center">
-                <h5>Select Project Images:</h5><br>
-                <input id="input-3" asp-for="ImagesUpload" type="file" class="file" multiple data-show-upload="false" data-show-caption="true" data-show-preview="true">
-            </div>
+        <hr\></hr\>
 
-            <div class="col-md-12 bottommargin text-center">
-                <div class="row">
-                    @foreach (var item in Model.Entity.Images)
-                    {
-                        <img id="@item" style="width: 20%;" title="@Model.Entity.Title" alt="@Model.Entity.Title" src="@item.Entity.GetPath("https://olympia.olympia.team/landlord/api/tenant/status", ImageType.Cover)">
-                    }
-                </div>
-            </div>
+
+        <div class="col-md-12 bottommargin text-center" style="align-items:center;">
+            <h5>Select Project Images:</h5><br>
+            <input id="input-3" asp-for="ImagesUpload" type="file" class="file" multiple data-show-upload="false" data-show-caption="true" data-show-preview="true">
         </div>
 
-        <div class="form-group">
-            <input name="main" type="submit" value="Save" class="btn btn-primary" />
-            <input name="finnish" type="submit" value="Publish" class="btn btn-primary" />
-            <a asp-area="CaseStudies" asp-controller="Home" asp-action="List" class="btn btn-danger">Cancel</a>
+        <div class="col-md-12 bottommargin text-center">
+            <div class="row">
+                @foreach (var item in Model.Entity.Images)
+                {
+                    <img id="@item" style="width: 20%;" title="@Model.Entity.Title" alt="@Model.Entity.Title" src="@item.Entity.GetPath("https://olympia.olympia.team/landlord/api/tenant/status", ImageType.Cover)">
+                }
+            </div>
         </div>
     </div>
+    <div class="row" style=" padding:25px;  align-content:baseline; left:250px;" >
+        <div class="form-group col-md-12 text-center">
+            <input name="main" type="submit" value="Save" class="btn btn-primary " />
+            <input name="finnish" type="submit" value="Publish" class="btn btn-primary" />
+            <a asp-area="CaseStudies" asp-controller="Home" asp-action="List" class="btn btn-danger">Cancel</a>
+
+        </div>
+        </div>
+
+
 </form>
 
 @section Scripts
