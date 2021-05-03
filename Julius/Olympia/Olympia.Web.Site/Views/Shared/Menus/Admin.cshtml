@@ -1,36 +1,41 @@
 ﻿<div class="side-panel-content">
+
     <div class="close-icon">
         <button><i class="webex-icon-cross"></i></button>
     </div>
-    
+
+    @* Home Welcoming Words *@
+    <div>
+        <small>Welcome</small>
+        <i class="fa fa-home" aria-hidden="true"></i>
+    </div>
+
+    <hr />
+
     <div class="side-info mrb-30">
         <div class="side-panel-element mrb-25">
-            <h4 class="mrb-10">
 
-
-                Admin Menu
-
-                <a  asp-area="" asp-page="/404">
-                    <i class="fa fa-user" style="float:right; margin-top:70px;"></i>
-                </a>
-
-            </h4>
-            <hr />
             <nav id="mobile-menu-ff">
                 <ul class="list-items">
-                    <li><a asp-area="" asp-controller="Home" asp-action="UnderConstruction">Home</a></li>
-                    <li><a asp-area="" asp-controller="Home" asp-action="UnderConstruction">Engage</a>
-                    <li><a asp-area="" asp-controller="Home" asp-action="UnderConstruction">Digital</a></li>
-                    <li><a asp-area="CaseStudies" asp-controller="Home" asp-action="List">Case Studies</a>
+                    <li><a asp-area="Home" asp-controller="Home" asp-action="Index">Home</a></li>
+                    <li><a asp-area="Engage" asp-controller="Engage" asp-action="Index">Engage</a>
+                    <li><a asp-area="Digital" asp-controller="Home" asp-action="Index">Digital</a></li>
+                    <li><a asp-area="CaseStudies" asp-controller="Home" asp-action="Index">Case Studies</a>
                     <li><a asp-area="FileManager" asp-controller="Home" asp-action="Index">File Manager</a></li>
-                    <li><a asp-area="Support" asp-controller="Home" asp-action="List">Support Tickets</a></li>
-                    <li><a asp-area="Faqs" asp-controller="Home" asp-action="List">Faqs</a></li>
+                    <li><a asp-area="Support" asp-controller="Home" asp-action="Index">Support Tickets</a></li>
+                    <li><a asp-area="Faqs" asp-controller="Home" asp-action="Index">Faqs</a></li>
+                    @* .User Settings *@
+                    <li><a asp-area="" asp-page="/404" style="float:left; margin-top:-2px; ">
+                            @User.Identity.Name <i class="fa fa-cog fa-spin fa-1x fa-fw"></i>
+                             <span class="sr-only">Loading...</span>
+                    </a></li>
 
                 </ul>
             </nav>
             <hr />
             <h4 class="mrb-10">Office Address</h4>
             <div class="side-panel-logo mrb-30">
+
                 <a asp-controller="Home" asp-action="Index">
                     <img src="/images/Rectangular_Olympia_Logo_White.png" alt="" />
 
