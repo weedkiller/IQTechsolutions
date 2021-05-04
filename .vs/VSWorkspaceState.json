@@ -2,8 +2,15 @@
   "ExpandedNodes": [
     "",
     "\\Julius",
-    "\\Julius\\Olympia"
+    "\\Julius\\Olympia",
+    "\\Julius\\Olympia\\Olympia.Web",
+    "\\Julius\\Olympia\\Olympia.Web.Site",
+    "\\Julius\\Olympia\\Olympia.Web.Site\\Areas",
+    "\\Julius\\Olympia\\Olympia.Web.Site\\Areas\\Blog",
+    "\\Julius\\Olympia\\Olympia.Web.Site\\Areas\\Blog\\Views",
+    "\\Julius\\Olympia\\Olympia.Web.Site\\Areas\\Blog\\Views\\Shared",
+    "\\Julius\\Olympia\\Olympia.Web.Site\\Properties"
   ],
-  "SelectedNode": "\\Julius\\Olympia\\Olympia.sln",
+  "SelectedNode": "\\Julius\\Olympia\\Olympia.Web.Site\\Views\\Shared\\Menus\\Admin.cshtml",
   "PreviewInSolutionExplorer": false
 }
