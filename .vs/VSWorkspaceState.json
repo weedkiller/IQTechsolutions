@@ -3,14 +3,14 @@
     "",
     "\\Julius",
     "\\Julius\\Olympia",
-    "\\Julius\\Olympia\\Olympia.Web",
     "\\Julius\\Olympia\\Olympia.Web.Site",
     "\\Julius\\Olympia\\Olympia.Web.Site\\Areas",
-    "\\Julius\\Olympia\\Olympia.Web.Site\\Areas\\Blog",
-    "\\Julius\\Olympia\\Olympia.Web.Site\\Areas\\Blog\\Views",
-    "\\Julius\\Olympia\\Olympia.Web.Site\\Areas\\Blog\\Views\\Shared",
-    "\\Julius\\Olympia\\Olympia.Web.Site\\Properties"
+    "\\Julius\\Olympia\\Olympia.Web.Site\\Areas\\Who_we_are",
+    "\\Julius\\Olympia\\Olympia.Web.Site\\Areas\\Who_we_are\\Views",
+    "\\Julius\\Olympia\\Olympia.Web.Site\\Areas\\Who_we_are\\Views\\Home",
+    "\\Julius\\Olympia\\Olympia.Web.Site\\Areas\\Who_we_are\\Views\\Shared",
+    "\\Julius\\Olympia\\Olympia.Web.Site\\Controllers"
   ],
-  "SelectedNode": "\\Julius\\Olympia\\Olympia.Web.Site\\Views\\Shared\\Menus\\Admin.cshtml",
+  "SelectedNode": "\\Julius\\Olympia\\Olympia.Web.Site\\Areas\\CaseStudies\\Views\\Home\\Index.cshtml",
   "PreviewInSolutionExplorer": false
 }
