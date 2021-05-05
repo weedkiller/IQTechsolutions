@@ -10,6 +10,7 @@ namespace IQTechSolutions
         public string PhoneNr { get; } = "+27 76 434 8180";
         public string EmailAddress { get; } = "ivanrossouw@iqtechsolutions.co.za";
         public string AdminEmailAddress { get; } = "admin@iqtechsolutions.co.za";
+        public string SupportEmailAddress { get; } = "support@iqtechsolutions.co.za";
         public string AbuseEmailAddress { get; } = "abuse@iqtechsolutions.co.za";
         public string InfoEmailAddress { get; } = "admin@iqtechsolutions.co.za";
 
@@ -22,9 +23,11 @@ namespace IQTechSolutions
         public string InstagramUrl { get; }
         public string SkypeName { get; }
 
-        public string BaseImageUrl { get; } = "https://localhost:44362/";
-        public string BaseApiUrl { get; } = "https://localhost:5001/";
-        public string BaseIdentityUrl { get; } = "https://localhost:4001/";
+        public string BaseImageUrl { get; } = ServerLocations.AdminServer;
+        public string BaseApiUrl { get; } = ServerLocations.ApiServer + "/api/v1";
+        public string BaseIdentityUrl { get; } = ServerLocations.IdentityServer;
+        public string ImageDefaultPlaceholder => "/images/placeholders/NoImageAvailable.jpg";
+        public string ImageProfilePlaceholder => "/images/placeholders/profileImage128x128.png";
 
         public string GetRegistrationReturnUrl(string returnUrl)
         {

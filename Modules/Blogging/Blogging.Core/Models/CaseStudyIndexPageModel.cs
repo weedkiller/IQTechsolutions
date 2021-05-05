@@ -23,17 +23,17 @@ namespace Blogging.Core.Models
         /// <summary>
         /// A list of active case study categories available in this application
         /// </summary>
-        public IEnumerable<Category<CaseStudy>> BlogCategories { get; set; } = new List<Category<CaseStudy>>();
+        public IEnumerable<Category<CaseStudy>> CaseStudyCategories { get; set; } = new List<Category<CaseStudy>>();
 
         /// <summary>
         /// A list of featured case study entries
         /// </summary>
-        public IEnumerable<CaseStudy> FeaturedBlogEntries { get; set; } = new List<CaseStudy>();
+        public IEnumerable<CaseStudy> FeaturedCaseStudyEntries { get; set; } = new List<CaseStudy>();
 
         /// <summary>
         /// A list of the most recent case study entries
         /// </summary>
-        public IEnumerable<CaseStudy> RecentBlogEntries { get; set; } = new List<CaseStudy>();
+        public IEnumerable<CaseStudy> RecentCaseStudyEntries { get; set; } = new List<CaseStudy>();
 
         /// <summary>
         /// A list of web tags associated with the featured blog category

@@ -76,9 +76,9 @@ namespace Blogging.Core.Controllers
             {
                 PageCount = pageNumber,
                 PageSize = pageSize,
-                BlogCategories = categoryList.OrderBy(c => c.Name),
-                FeaturedBlogEntries = caseStudiesList.Take(3),
-                RecentBlogEntries = caseStudiesList.OrderByDescending(c => c.Created).Take(3)
+                CaseStudyCategories = categoryList.OrderBy(c => c.Name),
+                FeaturedCaseStudyEntries = caseStudiesList.Take(3),
+                RecentCaseStudyEntries = caseStudiesList.OrderByDescending(c => c.Created).Take(3)
             };
 
             // Return the view with the model

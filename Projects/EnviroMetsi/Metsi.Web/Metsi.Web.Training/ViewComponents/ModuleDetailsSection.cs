@@ -23,7 +23,7 @@ namespace Metsi.Web.Training.ViewComponents
         {
             try
             {
-                var serverResponse = await WebRequests.GetAsync<ModuleApiModel>(RouteHelpers.GetAbsoluteRoute(_configuration.BaseApiUrl, "getmodule?moduleId=" + moduleId));
+                var serverResponse = await WebRequests.GetAsync<ModuleApiModel>(RouteHelpers.GetAbsoluteRoute(_configuration.BaseApiUrl, $"Modules/GetModule?moduleId={moduleId}"));
                 return View(serverResponse.ServerResponse);
             }
             catch (Exception e)

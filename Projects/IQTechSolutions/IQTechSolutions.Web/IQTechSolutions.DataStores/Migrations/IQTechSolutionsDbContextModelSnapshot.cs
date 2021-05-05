@@ -15,11 +15,11 @@ namespace IQTechSolutions.DataStores.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .UseIdentityColumns()
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
-                .HasAnnotation("ProductVersion", "5.0.0");
+                .HasAnnotation("ProductVersion", "5.0.5")
+                .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("Blogging.Base.Entities.BlogPost", b =>
+            modelBuilder.Entity("Blogging.Base.Entities.CaseStudy", b =>
                 {
                     b.Property<string>("Id")
                         .ValueGeneratedOnAdd()
@@ -52,26 +52,14 @@ namespace IQTechSolutions.DataStores.Migrations
                     b.Property<bool>("Featured")
                         .HasColumnType("bit");
 
-                    b.Property<int>("Likes")
-                        .HasColumnType("int");
-
                     b.Property<DateTime?>("Modified")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("ModifiedBy")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("Rating")
-                        .HasColumnType("int");
-
-                    b.Property<bool>("Reply")
-                        .HasColumnType("bit");
-
                     b.Property<string>("ShortDescription")
                         .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("SocialShares")
-                        .HasColumnType("int");
 
                     b.Property<string>("Tags")
                         .HasColumnType("nvarchar(max)");
@@ -91,7 +79,165 @@ namespace IQTechSolutions.DataStores.Migrations
 
                     b.HasIndex("AudioFileId");
 
-                    b.ToTable("BlogPost");
+                    b.ToTable("CaseStudy");
+                });
+
+            modelBuilder.Entity("Feedback.Base.Entities.Comment<Products.Base.Entities.Product>", b =>
+                {
+                    b.Property<string>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("nvarchar(450)")
+                        .HasColumnName("Id");
+
+                    b.Property<string>("Comment<Product>Id")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("Content")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("Created")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("CreatedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("DisplayIndex")
+                        .HasColumnType("int")
+                        .HasColumnName("DisplayIndex");
+
+                    b.Property<string>("EntityId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("FromDevice")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("Modified")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("ModifiedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("Status")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Subject")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("UserId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("Comment<Product>Id");
+
+                    b.HasIndex("EntityId");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("Comment<Product>");
+                });
+
+            modelBuilder.Entity("Feedback.Base.Entities.EntityFeeling", b =>
+                {
+                    b.Property<string>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("nvarchar(450)")
+                        .HasColumnName("Id");
+
+                    b.Property<string>("Comment<Product>Id")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<DateTime>("Created")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("CreatedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("DisplayIndex")
+                        .HasColumnType("int")
+                        .HasColumnName("DisplayIndex");
+
+                    b.Property<int>("Feeling")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime?>("Modified")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("ModifiedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("NewsFeedId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("UserId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("Comment<Product>Id");
+
+                    b.HasIndex("NewsFeedId");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("EntityFeeling");
+                });
+
+            modelBuilder.Entity("Feedback.Base.Entities.NewsFeed", b =>
+                {
+                    b.Property<string>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("nvarchar(450)")
+                        .HasColumnName("Id");
+
+                    b.Property<string>("Content")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("Created")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("CreatedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("DisplayIndex")
+                        .HasColumnType("int")
+                        .HasColumnName("DisplayIndex");
+
+                    b.Property<string>("FromDevice")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ImageUrl")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("Modified")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("ModifiedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ParentFeedId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<bool>("Private")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Subject")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("UserId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ParentFeedId");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("NewsFeed");
                 });
 
             modelBuilder.Entity("Feedback.Base.Entities.SupportTicket", b =>
@@ -153,7 +299,51 @@ namespace IQTechSolutions.DataStores.Migrations
                     b.ToTable("SupportTicket");
                 });
 
-            modelBuilder.Entity("Filing.Base.Entities.AudioFile<Blogging.Base.Entities.BlogPost>", b =>
+            modelBuilder.Entity("Feedback.Base.Entities.Testimonial", b =>
+                {
+                    b.Property<string>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("nvarchar(450)")
+                        .HasColumnName("Id");
+
+                    b.Property<string>("Company")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("Created")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("CreatedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Description")
+                        .HasMaxLength(1000)
+                        .HasColumnType("nvarchar(1000)");
+
+                    b.Property<int?>("DisplayIndex")
+                        .HasColumnType("int")
+                        .HasColumnName("DisplayIndex");
+
+                    b.Property<string>("Email")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("Modified")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("ModifiedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("Rating")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Testimonial");
+                });
+
+            modelBuilder.Entity("Filing.Base.Entities.AudioFile<Blogging.Base.Entities.CaseStudy>", b =>
                 {
                     b.Property<string>("Id")
                         .ValueGeneratedOnAdd()
@@ -204,7 +394,115 @@ namespace IQTechSolutions.DataStores.Migrations
 
                     b.HasIndex("EntityId");
 
-                    b.ToTable("AudioFile<BlogPost>");
+                    b.ToTable("AudioFile<CaseStudy>");
+                });
+
+            modelBuilder.Entity("Filing.Base.Entities.AudioFile<Feedback.Base.Entities.NewsFeed>", b =>
+                {
+                    b.Property<string>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("nvarchar(450)")
+                        .HasColumnName("Id");
+
+                    b.Property<string>("ContentType")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("Created")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("CreatedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Description")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("DisplayIndex")
+                        .HasColumnType("int")
+                        .HasColumnName("DisplayIndex");
+
+                    b.Property<string>("EntityId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("FileName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("FolderPath")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("Modified")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("ModifiedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("RelativePath")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<long>("Size")
+                        .HasColumnType("bigint");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("EntityId");
+
+                    b.ToTable("AudioFile<NewsFeed>");
+                });
+
+            modelBuilder.Entity("Filing.Base.Entities.File<Feedback.Base.Entities.NewsFeed>", b =>
+                {
+                    b.Property<string>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("nvarchar(450)")
+                        .HasColumnName("Id");
+
+                    b.Property<string>("ContentType")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("Created")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("CreatedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Description")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("DisplayIndex")
+                        .HasColumnType("int")
+                        .HasColumnName("DisplayIndex");
+
+                    b.Property<string>("EntityId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("FileName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("FolderPath")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("Modified")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("ModifiedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("RelativePath")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<long>("Size")
+                        .HasColumnType("bigint");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("EntityId");
+
+                    b.ToTable("File<NewsFeed>");
                 });
 
             modelBuilder.Entity("Filing.Base.Entities.File<Feedback.Base.Entities.SupportTicket>", b =>
@@ -261,7 +559,7 @@ namespace IQTechSolutions.DataStores.Migrations
                     b.ToTable("File<SupportTicket>");
                 });
 
-            modelBuilder.Entity("Filing.Base.Entities.ImageFile", b =>
+            modelBuilder.Entity("Filing.Base.Entities.ImageFile<Blogging.Base.Entities.CaseStudy>", b =>
                 {
                     b.Property<string>("Id")
                         .ValueGeneratedOnAdd()
@@ -277,13 +575,12 @@ namespace IQTechSolutions.DataStores.Migrations
                     b.Property<string>("CreatedBy")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Discriminator")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<int?>("DisplayIndex")
                         .HasColumnType("int")
                         .HasColumnName("DisplayIndex");
+
+                    b.Property<string>("EntityId")
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("FileName")
                         .HasColumnType("nvarchar(max)");
@@ -308,12 +605,735 @@ namespace IQTechSolutions.DataStores.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("ImageFile");
+                    b.HasIndex("EntityId");
 
-                    b.HasDiscriminator<string>("Discriminator").HasValue("ImageFile");
+                    b.ToTable("ImageFile<CaseStudy>");
                 });
 
-            modelBuilder.Entity("Grouping.Base.Entities.Category<Blogging.Base.Entities.BlogPost>", b =>
+            modelBuilder.Entity("Filing.Base.Entities.ImageFile<Feedback.Base.Entities.NewsFeed>", b =>
+                {
+                    b.Property<string>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("nvarchar(450)")
+                        .HasColumnName("Id");
+
+                    b.Property<string>("ContentType")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("Created")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("CreatedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("DisplayIndex")
+                        .HasColumnType("int")
+                        .HasColumnName("DisplayIndex");
+
+                    b.Property<string>("EntityId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("FileName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("FolderPath")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("ImageType")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime?>("Modified")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("ModifiedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("RelativePath")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<long>("Size")
+                        .HasColumnType("bigint");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("EntityId");
+
+                    b.ToTable("ImageFile<NewsFeed>");
+                });
+
+            modelBuilder.Entity("Filing.Base.Entities.ImageFile<Feedback.Base.Entities.Testimonial>", b =>
+                {
+                    b.Property<string>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("nvarchar(450)")
+                        .HasColumnName("Id");
+
+                    b.Property<string>("ContentType")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("Created")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("CreatedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("DisplayIndex")
+                        .HasColumnType("int")
+                        .HasColumnName("DisplayIndex");
+
+                    b.Property<string>("EntityId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("FileName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("FolderPath")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("ImageType")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime?>("Modified")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("ModifiedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("RelativePath")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<long>("Size")
+                        .HasColumnType("bigint");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("EntityId");
+
+                    b.ToTable("ImageFile<Testimonial>");
+                });
+
+            modelBuilder.Entity("Filing.Base.Entities.ImageFile<Grouping.Base.Entities.Category<Blogging.Base.Entities.CaseStudy>>", b =>
+                {
+                    b.Property<string>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("nvarchar(450)")
+                        .HasColumnName("Id");
+
+                    b.Property<string>("ContentType")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("Created")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("CreatedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("DisplayIndex")
+                        .HasColumnType("int")
+                        .HasColumnName("DisplayIndex");
+
+                    b.Property<string>("EntityId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("FileName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("FolderPath")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("ImageType")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime?>("Modified")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("ModifiedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("RelativePath")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<long>("Size")
+                        .HasColumnType("bigint");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("EntityId");
+
+                    b.ToTable("ImageFile<Category<CaseStudy>>");
+                });
+
+            modelBuilder.Entity("Filing.Base.Entities.ImageFile<Grouping.Base.Entities.Category<Products.Base.Entities.Product>>", b =>
+                {
+                    b.Property<string>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("nvarchar(450)")
+                        .HasColumnName("Id");
+
+                    b.Property<string>("ContentType")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("Created")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("CreatedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("DisplayIndex")
+                        .HasColumnType("int")
+                        .HasColumnName("DisplayIndex");
+
+                    b.Property<string>("EntityId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("FileName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("FolderPath")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("ImageType")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime?>("Modified")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("ModifiedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("RelativePath")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<long>("Size")
+                        .HasColumnType("bigint");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("EntityId");
+
+                    b.ToTable("ImageFile<Category<Product>>");
+                });
+
+            modelBuilder.Entity("Filing.Base.Entities.ImageFile<Grouping.Base.Entities.Category<Projects.Base.Entities.Project>>", b =>
+                {
+                    b.Property<string>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("nvarchar(450)")
+                        .HasColumnName("Id");
+
+                    b.Property<string>("ContentType")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("Created")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("CreatedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("DisplayIndex")
+                        .HasColumnType("int")
+                        .HasColumnName("DisplayIndex");
+
+                    b.Property<string>("EntityId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("FileName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("FolderPath")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("ImageType")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime?>("Modified")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("ModifiedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("RelativePath")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<long>("Size")
+                        .HasColumnType("bigint");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("EntityId");
+
+                    b.ToTable("ImageFile<Category<Project>>");
+                });
+
+            modelBuilder.Entity("Filing.Base.Entities.ImageFile<Grouping.Base.Entities.Department<Blogging.Base.Entities.CaseStudy>>", b =>
+                {
+                    b.Property<string>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("nvarchar(450)")
+                        .HasColumnName("Id");
+
+                    b.Property<string>("ContentType")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("Created")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("CreatedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("DisplayIndex")
+                        .HasColumnType("int")
+                        .HasColumnName("DisplayIndex");
+
+                    b.Property<string>("EntityId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("FileName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("FolderPath")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("ImageType")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime?>("Modified")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("ModifiedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("RelativePath")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<long>("Size")
+                        .HasColumnType("bigint");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("EntityId");
+
+                    b.ToTable("ImageFile<Department<CaseStudy>>");
+                });
+
+            modelBuilder.Entity("Filing.Base.Entities.ImageFile<Grouping.Base.Entities.Department<Products.Base.Entities.Product>>", b =>
+                {
+                    b.Property<string>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("nvarchar(450)")
+                        .HasColumnName("Id");
+
+                    b.Property<string>("ContentType")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("Created")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("CreatedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("DisplayIndex")
+                        .HasColumnType("int")
+                        .HasColumnName("DisplayIndex");
+
+                    b.Property<string>("EntityId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("FileName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("FolderPath")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("ImageType")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime?>("Modified")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("ModifiedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("RelativePath")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<long>("Size")
+                        .HasColumnType("bigint");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("EntityId");
+
+                    b.ToTable("ImageFile<Department<Product>>");
+                });
+
+            modelBuilder.Entity("Filing.Base.Entities.ImageFile<Grouping.Base.Entities.Department<Projects.Base.Entities.Project>>", b =>
+                {
+                    b.Property<string>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("nvarchar(450)")
+                        .HasColumnName("Id");
+
+                    b.Property<string>("ContentType")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("Created")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("CreatedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("DisplayIndex")
+                        .HasColumnType("int")
+                        .HasColumnName("DisplayIndex");
+
+                    b.Property<string>("EntityId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("FileName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("FolderPath")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("ImageType")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime?>("Modified")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("ModifiedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("RelativePath")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<long>("Size")
+                        .HasColumnType("bigint");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("EntityId");
+
+                    b.ToTable("ImageFile<Department<Project>>");
+                });
+
+            modelBuilder.Entity("Filing.Base.Entities.ImageFile<Identity.Base.Entities.UserInfo>", b =>
+                {
+                    b.Property<string>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("nvarchar(450)")
+                        .HasColumnName("Id");
+
+                    b.Property<string>("ContentType")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("Created")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("CreatedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("DisplayIndex")
+                        .HasColumnType("int")
+                        .HasColumnName("DisplayIndex");
+
+                    b.Property<string>("EntityId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("FileName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("FolderPath")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("ImageType")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime?>("Modified")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("ModifiedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("RelativePath")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<long>("Size")
+                        .HasColumnType("bigint");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("EntityId");
+
+                    b.ToTable("ImageFile<UserInfo>");
+                });
+
+            modelBuilder.Entity("Filing.Base.Entities.ImageFile<Products.Base.Entities.Brand>", b =>
+                {
+                    b.Property<string>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("nvarchar(450)")
+                        .HasColumnName("Id");
+
+                    b.Property<string>("ContentType")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("Created")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("CreatedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("DisplayIndex")
+                        .HasColumnType("int")
+                        .HasColumnName("DisplayIndex");
+
+                    b.Property<string>("EntityId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("FileName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("FolderPath")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("ImageType")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime?>("Modified")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("ModifiedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("RelativePath")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<long>("Size")
+                        .HasColumnType("bigint");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("EntityId");
+
+                    b.ToTable("ImageFile<Brand>");
+                });
+
+            modelBuilder.Entity("Filing.Base.Entities.ImageFile<Products.Base.Entities.Product>", b =>
+                {
+                    b.Property<string>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("nvarchar(450)")
+                        .HasColumnName("Id");
+
+                    b.Property<string>("ContentType")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("Created")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("CreatedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("DisplayIndex")
+                        .HasColumnType("int")
+                        .HasColumnName("DisplayIndex");
+
+                    b.Property<string>("EntityId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("FileName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("FolderPath")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("ImageType")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime?>("Modified")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("ModifiedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("RelativePath")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<long>("Size")
+                        .HasColumnType("bigint");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("EntityId");
+
+                    b.ToTable("ImageFile<Product>");
+                });
+
+            modelBuilder.Entity("Filing.Base.Entities.ImageFile<Projects.Base.Entities.Project>", b =>
+                {
+                    b.Property<string>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("nvarchar(450)")
+                        .HasColumnName("Id");
+
+                    b.Property<string>("ContentType")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("Created")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("CreatedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("DisplayIndex")
+                        .HasColumnType("int")
+                        .HasColumnName("DisplayIndex");
+
+                    b.Property<string>("EntityId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("FileName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("FolderPath")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("ImageType")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime?>("Modified")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("ModifiedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("RelativePath")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<long>("Size")
+                        .HasColumnType("bigint");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("EntityId");
+
+                    b.ToTable("ImageFile<Project>");
+                });
+
+            modelBuilder.Entity("Filing.Base.Entities.ImageFile<Suppliers.Base.Entities.Supplier>", b =>
+                {
+                    b.Property<string>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("nvarchar(450)")
+                        .HasColumnName("Id");
+
+                    b.Property<string>("ContentType")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("Created")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("CreatedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("DisplayIndex")
+                        .HasColumnType("int")
+                        .HasColumnName("DisplayIndex");
+
+                    b.Property<string>("EntityId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("FileName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("FolderPath")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("ImageType")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime?>("Modified")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("ModifiedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("RelativePath")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<long>("Size")
+                        .HasColumnType("bigint");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("EntityId");
+
+                    b.ToTable("ImageFile<Supplier>");
+                });
+
+            modelBuilder.Entity("Filing.Base.Entities.Video<Feedback.Base.Entities.NewsFeed>", b =>
+                {
+                    b.Property<string>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("nvarchar(450)")
+                        .HasColumnName("Id");
+
+                    b.Property<string>("ContentType")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("Created")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("CreatedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Description")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("DisplayIndex")
+                        .HasColumnType("int")
+                        .HasColumnName("DisplayIndex");
+
+                    b.Property<string>("EntityId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<bool?>("Featured")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("FileName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("FolderPath")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("IFrameString")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("Modified")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("ModifiedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("RelativePath")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<long>("Size")
+                        .HasColumnType("bigint");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("EntityId");
+
+                    b.ToTable("Video<NewsFeed>");
+                });
+
+            modelBuilder.Entity("Grouping.Base.Entities.Category<Blogging.Base.Entities.CaseStudy>", b =>
                 {
                     b.Property<string>("Id")
                         .ValueGeneratedOnAdd()
@@ -364,10 +1384,152 @@ namespace IQTechSolutions.DataStores.Migrations
 
                     b.HasIndex("ParentCategoryId");
 
-                    b.ToTable("Category<BlogPost>");
+                    b.ToTable("Category<CaseStudy>");
                 });
 
-            modelBuilder.Entity("Grouping.Base.Entities.Department<Blogging.Base.Entities.BlogPost>", b =>
+            modelBuilder.Entity("Grouping.Base.Entities.Category<Products.Base.Entities.Product>", b =>
+                {
+                    b.Property<string>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("nvarchar(450)")
+                        .HasColumnName("Id");
+
+                    b.Property<bool>("Active")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime>("Created")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("CreatedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("DepartmentId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("Description")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("DisplayIndex")
+                        .HasColumnType("int")
+                        .HasColumnName("DisplayIndex");
+
+                    b.Property<bool>("Featured")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime?>("Modified")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("ModifiedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ParentCategoryId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("WebTags")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("DepartmentId");
+
+                    b.HasIndex("ParentCategoryId");
+
+                    b.ToTable("Category<Product>");
+                });
+
+            modelBuilder.Entity("Grouping.Base.Entities.Category<Projects.Base.Entities.Project>", b =>
+                {
+                    b.Property<string>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("nvarchar(450)")
+                        .HasColumnName("Id");
+
+                    b.Property<bool>("Active")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime>("Created")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("CreatedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("DepartmentId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("Description")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("DisplayIndex")
+                        .HasColumnType("int")
+                        .HasColumnName("DisplayIndex");
+
+                    b.Property<bool>("Featured")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime?>("Modified")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("ModifiedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ParentCategoryId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("WebTags")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("DepartmentId");
+
+                    b.HasIndex("ParentCategoryId");
+
+                    b.ToTable("Category<Project>");
+                });
+
+            modelBuilder.Entity("Grouping.Base.Entities.ComboCategory<Products.Base.Entities.Product>", b =>
+                {
+                    b.Property<string>("ComboItemId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("ComboRecipyCategoryId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<double>("Qty")
+                        .HasColumnType("float");
+
+                    b.HasKey("ComboItemId", "ComboRecipyCategoryId");
+
+                    b.ToTable("ComboCategory<Product>");
+                });
+
+            modelBuilder.Entity("Grouping.Base.Entities.ComboExclusions<Products.Base.Entities.Product>", b =>
+                {
+                    b.Property<string>("ExclusionId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("ComboCategoryId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("ComboCategoryComboRecipyCategoryId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.HasKey("ExclusionId", "ComboCategoryId");
+
+                    b.HasIndex("ComboCategoryComboRecipyCategoryId");
+
+                    b.ToTable("ComboExclusions<Product>");
+                });
+
+            modelBuilder.Entity("Grouping.Base.Entities.Department<Blogging.Base.Entities.CaseStudy>", b =>
                 {
                     b.Property<string>("Id")
                         .ValueGeneratedOnAdd()
@@ -398,10 +1560,78 @@ namespace IQTechSolutions.DataStores.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Department<BlogPost>");
+                    b.ToTable("Department<CaseStudy>");
                 });
 
-            modelBuilder.Entity("Grouping.Base.Entities.EntityCategory<Blogging.Base.Entities.BlogPost>", b =>
+            modelBuilder.Entity("Grouping.Base.Entities.Department<Products.Base.Entities.Product>", b =>
+                {
+                    b.Property<string>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("nvarchar(450)")
+                        .HasColumnName("Id");
+
+                    b.Property<DateTime>("Created")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("CreatedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Description")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("DisplayIndex")
+                        .HasColumnType("int")
+                        .HasColumnName("DisplayIndex");
+
+                    b.Property<DateTime?>("Modified")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("ModifiedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Department<Product>");
+                });
+
+            modelBuilder.Entity("Grouping.Base.Entities.Department<Projects.Base.Entities.Project>", b =>
+                {
+                    b.Property<string>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("nvarchar(450)")
+                        .HasColumnName("Id");
+
+                    b.Property<DateTime>("Created")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("CreatedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Description")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("DisplayIndex")
+                        .HasColumnType("int")
+                        .HasColumnName("DisplayIndex");
+
+                    b.Property<DateTime?>("Modified")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("ModifiedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Department<Project>");
+                });
+
+            modelBuilder.Entity("Grouping.Base.Entities.EntityCategory<Blogging.Base.Entities.CaseStudy>", b =>
                 {
                     b.Property<string>("EntityId")
                         .HasColumnType("nvarchar(450)");
@@ -413,7 +1643,37 @@ namespace IQTechSolutions.DataStores.Migrations
 
                     b.HasIndex("CategoryId");
 
-                    b.ToTable("EntityCategory<BlogPost>");
+                    b.ToTable("EntityCategory<CaseStudy>");
+                });
+
+            modelBuilder.Entity("Grouping.Base.Entities.EntityCategory<Products.Base.Entities.Product>", b =>
+                {
+                    b.Property<string>("EntityId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("CategoryId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.HasKey("EntityId", "CategoryId");
+
+                    b.HasIndex("CategoryId");
+
+                    b.ToTable("EntityCategory<Product>");
+                });
+
+            modelBuilder.Entity("Grouping.Base.Entities.EntityCategory<Projects.Base.Entities.Project>", b =>
+                {
+                    b.Property<string>("EntityId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("CategoryId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.HasKey("EntityId", "CategoryId");
+
+                    b.HasIndex("CategoryId");
+
+                    b.ToTable("EntityCategory<Project>");
                 });
 
             modelBuilder.Entity("Identity.Base.Entities.ApplicationUser", b =>
@@ -494,15 +1754,326 @@ namespace IQTechSolutions.DataStores.Migrations
                     b.Property<string>("CreatedBy")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("Description")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<int?>("DisplayIndex")
                         .HasColumnType("int")
                         .HasColumnName("DisplayIndex");
 
+                    b.Property<string>("EmployeeId")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("FirstName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("Gender")
+                        .HasColumnType("int");
+
+                    b.Property<string>("IdentityNr")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("LastName")
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("MaritalStatus")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime?>("Modified")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("ModifiedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("MoodStatus")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("ReceiveNewsletters")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("ReceiveNotifications")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("ShowContactInfo")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("StudentId")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("Title")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("UserInfo");
+                });
+
+            modelBuilder.Entity("Iqt.Base.Entities.Address<Identity.Base.Entities.UserInfo>", b =>
+                {
+                    b.Property<string>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("nvarchar(450)")
+                        .HasColumnName("Id");
+
+                    b.Property<string>("AddressLine1")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("AddressType")
+                        .HasColumnType("int");
+
+                    b.Property<string>("City")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Complex")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Country")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("Created")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("CreatedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("Default")
+                        .HasColumnType("bit");
+
+                    b.Property<int?>("DisplayIndex")
+                        .HasColumnType("int")
+                        .HasColumnName("DisplayIndex");
+
+                    b.Property<string>("EntityId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<DateTime?>("Modified")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("ModifiedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PostalCode")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Province")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("Raduis")
+                        .HasColumnType("int");
+
+                    b.Property<string>("StreetNumber")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Suburb")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("UnitNumber")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("EntityId");
+
+                    b.ToTable("Address<UserInfo>");
+                });
+
+            modelBuilder.Entity("Iqt.Base.Entities.Address<Suppliers.Base.Entities.Supplier>", b =>
+                {
+                    b.Property<string>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("nvarchar(450)")
+                        .HasColumnName("Id");
+
+                    b.Property<string>("AddressLine1")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("AddressType")
+                        .HasColumnType("int");
+
+                    b.Property<string>("City")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Complex")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Country")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("Created")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("CreatedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("Default")
+                        .HasColumnType("bit");
+
+                    b.Property<int?>("DisplayIndex")
+                        .HasColumnType("int")
+                        .HasColumnName("DisplayIndex");
+
+                    b.Property<string>("EntityId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<DateTime?>("Modified")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("ModifiedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PostalCode")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Province")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("Raduis")
+                        .HasColumnType("int");
+
+                    b.Property<string>("StreetNumber")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Suburb")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("UnitNumber")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("EntityId");
+
+                    b.ToTable("Address<Supplier>");
+                });
+
+            modelBuilder.Entity("Iqt.Base.Entities.ContactNumber<Identity.Base.Entities.UserInfo>", b =>
+                {
+                    b.Property<string>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("nvarchar(450)")
+                        .HasColumnName("Id");
+
+                    b.Property<string>("AreaCode")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("Created")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("CreatedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("Default")
+                        .HasColumnType("bit");
+
+                    b.Property<int?>("DisplayIndex")
+                        .HasColumnType("int")
+                        .HasColumnName("DisplayIndex");
+
+                    b.Property<string>("EntityId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("InternationalCode")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("Modified")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("ModifiedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Number")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("EntityId");
+
+                    b.ToTable("ContactNumber<UserInfo>");
+                });
+
+            modelBuilder.Entity("Iqt.Base.Entities.ContactNumber<Suppliers.Base.Entities.Supplier>", b =>
+                {
+                    b.Property<string>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("nvarchar(450)")
+                        .HasColumnName("Id");
+
+                    b.Property<string>("AreaCode")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("Created")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("CreatedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("Default")
+                        .HasColumnType("bit");
+
+                    b.Property<int?>("DisplayIndex")
+                        .HasColumnType("int")
+                        .HasColumnName("DisplayIndex");
+
+                    b.Property<string>("EntityId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("InternationalCode")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("Modified")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("ModifiedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Number")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("EntityId");
+
+                    b.ToTable("ContactNumber<Supplier>");
+                });
+
+            modelBuilder.Entity("Iqt.Base.Entities.EmailAddress<Identity.Base.Entities.UserInfo>", b =>
+                {
+                    b.Property<string>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("nvarchar(450)")
+                        .HasColumnName("Id");
+
+                    b.Property<string>("Address")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("Created")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("CreatedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("Default")
+                        .HasColumnType("bit");
+
+                    b.Property<int?>("DisplayIndex")
+                        .HasColumnType("int")
+                        .HasColumnName("DisplayIndex");
+
+                    b.Property<string>("EntityId")
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<DateTime?>("Modified")
                         .HasColumnType("datetime2");
@@ -512,7 +2083,85 @@ namespace IQTechSolutions.DataStores.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("UserInfo");
+                    b.HasIndex("EntityId");
+
+                    b.ToTable("EmailAddress<UserInfo>");
+                });
+
+            modelBuilder.Entity("Iqt.Base.Entities.EmailAddress<Suppliers.Base.Entities.Supplier>", b =>
+                {
+                    b.Property<string>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("nvarchar(450)")
+                        .HasColumnName("Id");
+
+                    b.Property<string>("Address")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("Created")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("CreatedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("Default")
+                        .HasColumnType("bit");
+
+                    b.Property<int?>("DisplayIndex")
+                        .HasColumnType("int")
+                        .HasColumnName("DisplayIndex");
+
+                    b.Property<string>("EntityId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<DateTime?>("Modified")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("ModifiedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("EntityId");
+
+                    b.ToTable("EmailAddress<Supplier>");
+                });
+
+            modelBuilder.Entity("Iqt.Inventory.Entities.IncludedProduct<Products.Base.Entities.Product>", b =>
+                {
+                    b.Property<string>("EntityId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("ProductId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<double>("Qty")
+                        .HasColumnType("float");
+
+                    b.HasKey("EntityId", "ProductId");
+
+                    b.HasIndex("ProductId");
+
+                    b.ToTable("IncludedProduct<Product>");
+                });
+
+            modelBuilder.Entity("Iqt.Inventory.Entities.OptionalProduct<Products.Base.Entities.Product>", b =>
+                {
+                    b.Property<string>("EntityId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("ProductId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<double>("Qty")
+                        .HasColumnType("float");
+
+                    b.HasKey("EntityId", "ProductId");
+
+                    b.HasIndex("ProductId");
+
+                    b.ToTable("OptionalProduct<Product>");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
@@ -547,7 +2196,7 @@ namespace IQTechSolutions.DataStores.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
-                        .UseIdentityColumn();
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("ClaimType")
                         .HasColumnType("nvarchar(max)");
@@ -571,7 +2220,7 @@ namespace IQTechSolutions.DataStores.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
-                        .UseIdentityColumn();
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("ClaimType")
                         .HasColumnType("nvarchar(max)");
@@ -646,51 +2295,333 @@ namespace IQTechSolutions.DataStores.Migrations
                     b.ToTable("AspNetUserTokens");
                 });
 
-            modelBuilder.Entity("Filing.Base.Entities.ImageFile<Blogging.Base.Entities.BlogPost>", b =>
+            modelBuilder.Entity("Products.Base.Entities.Brand", b =>
                 {
-                    b.HasBaseType("Filing.Base.Entities.ImageFile");
+                    b.Property<string>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("nvarchar(450)")
+                        .HasColumnName("Id");
 
-                    b.Property<string>("EntityId")
+                    b.Property<DateTime>("Created")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("CreatedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Description")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("DisplayIndex")
+                        .HasColumnType("int")
+                        .HasColumnName("DisplayIndex");
+
+                    b.Property<DateTime?>("Modified")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("ModifiedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Slogan")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("WebTags")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Brand");
+                });
+
+            modelBuilder.Entity("Products.Base.Entities.Product", b =>
+                {
+                    b.Property<string>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("nvarchar(450)")
+                        .HasColumnName("Id");
+
+                    b.Property<bool>("Active")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("AdditionalInfo")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Barcode")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<double>("CostExcl")
+                        .HasColumnType("float");
+
+                    b.Property<DateTime>("Created")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("CreatedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Description")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<double>("DiscountPercentage")
+                        .HasColumnType("float");
+
+                    b.Property<int?>("DisplayIndex")
+                        .HasColumnType("int")
+                        .HasColumnName("DisplayIndex");
+
+                    b.Property<bool>("Featured")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("ListedItem")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("ModelNr")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("Modified")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("ModifiedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(200)
+                        .HasColumnType("nvarchar(200)");
+
+                    b.Property<string>("PackagingId")
                         .HasColumnType("nvarchar(450)");
 
-                    b.HasIndex("EntityId");
+                    b.Property<double>("PriceIncl")
+                        .HasColumnType("float");
 
-                    b.HasDiscriminator().HasValue("ImageFile<BlogPost>");
+                    b.Property<int>("ProductType")
+                        .HasColumnType("int");
+
+                    b.Property<int>("QtyInStock")
+                        .HasColumnType("int");
+
+                    b.Property<double>("Rating")
+                        .HasColumnType("float");
+
+                    b.Property<int>("RewardPoints")
+                        .HasColumnType("int");
+
+                    b.Property<string>("SerialNumber")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ShortDescription")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("Sold")
+                        .HasColumnType("int");
+
+                    b.Property<string>("StockCode")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Tags")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<double>("VatRate")
+                        .HasColumnType("float");
+
+                    b.Property<int>("Views")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("PackagingId");
+
+                    b.ToTable("Product");
                 });
 
-            modelBuilder.Entity("Filing.Base.Entities.ImageFile<Grouping.Base.Entities.Category<Blogging.Base.Entities.BlogPost>>", b =>
+            modelBuilder.Entity("Products.Base.Entities.ProductBrand", b =>
                 {
-                    b.HasBaseType("Filing.Base.Entities.ImageFile");
+                    b.Property<string>("ProductId")
+                        .HasColumnType("nvarchar(450)");
 
-                    b.Property<string>("EntityId")
+                    b.Property<string>("BrandId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.HasKey("ProductId", "BrandId");
+
+                    b.HasIndex("BrandId");
+
+                    b.ToTable("ProductBrand");
+                });
+
+            modelBuilder.Entity("Projects.Base.Entities.Project", b =>
+                {
+                    b.Property<string>("Id")
+                        .ValueGeneratedOnAdd()
                         .HasColumnType("nvarchar(450)")
-                        .HasColumnName("ImageFile<Category<BlogPost>>_EntityId");
+                        .HasColumnName("Id");
 
-                    b.HasIndex("EntityId");
+                    b.Property<bool>("Completed")
+                        .HasColumnType("bit");
 
-                    b.HasDiscriminator().HasValue("ImageFile<Category<BlogPost>>");
+                    b.Property<DateTime>("Created")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("CreatedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("CustomerId")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("DisplayIndex")
+                        .HasColumnType("int")
+                        .HasColumnName("DisplayIndex");
+
+                    b.Property<DateTime?>("EndDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<bool>("Featured")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Location")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("LongDescription")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("Modified")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("ModifiedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ParentProjectId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("ProjectName")
+                        .IsRequired()
+                        .HasMaxLength(250)
+                        .HasColumnType("nvarchar(250)");
+
+                    b.Property<string>("ProjectUrl")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("SharedProjectFolderPath")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ShortDescription")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("StartDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Tags")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ParentProjectId");
+
+                    b.ToTable("Project");
                 });
 
-            modelBuilder.Entity("Filing.Base.Entities.ImageFile<Grouping.Base.Entities.Department<Blogging.Base.Entities.BlogPost>>", b =>
+            modelBuilder.Entity("Suppliers.Base.Entities.Supplier", b =>
                 {
-                    b.HasBaseType("Filing.Base.Entities.ImageFile");
-
-                    b.Property<string>("EntityId")
+                    b.Property<string>("Id")
+                        .ValueGeneratedOnAdd()
                         .HasColumnType("nvarchar(450)")
-                        .HasColumnName("ImageFile<Department<BlogPost>>_EntityId");
+                        .HasColumnName("Id");
 
-                    b.HasIndex("EntityId");
+                    b.Property<bool>("Active")
+                        .HasColumnType("bit");
 
-                    b.HasDiscriminator().HasValue("ImageFile<Department<BlogPost>>");
+                    b.Property<DateTime>("Created")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("CreatedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Description")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("DisplayIndex")
+                        .HasColumnType("int")
+                        .HasColumnName("DisplayIndex");
+
+                    b.Property<bool>("Featured")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime?>("Modified")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("ModifiedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Supplier");
                 });
 
-            modelBuilder.Entity("Blogging.Base.Entities.BlogPost", b =>
+            modelBuilder.Entity("Blogging.Base.Entities.CaseStudy", b =>
                 {
-                    b.HasOne("Filing.Base.Entities.AudioFile<Blogging.Base.Entities.BlogPost>", "AudioFile")
+                    b.HasOne("Filing.Base.Entities.AudioFile<Blogging.Base.Entities.CaseStudy>", "AudioFile")
                         .WithMany()
                         .HasForeignKey("AudioFileId");
 
                     b.Navigation("AudioFile");
+                });
+
+            modelBuilder.Entity("Feedback.Base.Entities.Comment<Products.Base.Entities.Product>", b =>
+                {
+                    b.HasOne("Feedback.Base.Entities.Comment<Products.Base.Entities.Product>", null)
+                        .WithMany("Comments")
+                        .HasForeignKey("Comment<Product>Id");
+
+                    b.HasOne("Products.Base.Entities.Product", "Entity")
+                        .WithMany("Reviews")
+                        .HasForeignKey("EntityId");
+
+                    b.HasOne("Identity.Base.Entities.UserInfo", "User")
+                        .WithMany()
+                        .HasForeignKey("UserId");
+
+                    b.Navigation("Entity");
+
+                    b.Navigation("User");
+                });
+
+            modelBuilder.Entity("Feedback.Base.Entities.EntityFeeling", b =>
+                {
+                    b.HasOne("Feedback.Base.Entities.Comment<Products.Base.Entities.Product>", null)
+                        .WithMany("FeedFeelings")
+                        .HasForeignKey("Comment<Product>Id");
+
+                    b.HasOne("Feedback.Base.Entities.NewsFeed", null)
+                        .WithMany("FeedFeelings")
+                        .HasForeignKey("NewsFeedId");
+
+                    b.HasOne("Identity.Base.Entities.UserInfo", "User")
+                        .WithMany()
+                        .HasForeignKey("UserId");
+
+                    b.Navigation("User");
+                });
+
+            modelBuilder.Entity("Feedback.Base.Entities.NewsFeed", b =>
+                {
+                    b.HasOne("Feedback.Base.Entities.NewsFeed", "ParentFeed")
+                        .WithMany("Comments")
+                        .HasForeignKey("ParentFeedId");
+
+                    b.HasOne("Identity.Base.Entities.UserInfo", "User")
+                        .WithMany()
+                        .HasForeignKey("UserId");
+
+                    b.Navigation("ParentFeed");
+
+                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("Feedback.Base.Entities.SupportTicket", b =>
@@ -702,10 +2633,28 @@ namespace IQTechSolutions.DataStores.Migrations
                     b.Navigation("ParentTicket");
                 });
 
-            modelBuilder.Entity("Filing.Base.Entities.AudioFile<Blogging.Base.Entities.BlogPost>", b =>
+            modelBuilder.Entity("Filing.Base.Entities.AudioFile<Blogging.Base.Entities.CaseStudy>", b =>
                 {
-                    b.HasOne("Blogging.Base.Entities.BlogPost", "Entity")
+                    b.HasOne("Blogging.Base.Entities.CaseStudy", "Entity")
                         .WithMany()
+                        .HasForeignKey("EntityId");
+
+                    b.Navigation("Entity");
+                });
+
+            modelBuilder.Entity("Filing.Base.Entities.AudioFile<Feedback.Base.Entities.NewsFeed>", b =>
+                {
+                    b.HasOne("Feedback.Base.Entities.NewsFeed", "Entity")
+                        .WithMany("AudioFiles")
+                        .HasForeignKey("EntityId");
+
+                    b.Navigation("Entity");
+                });
+
+            modelBuilder.Entity("Filing.Base.Entities.File<Feedback.Base.Entities.NewsFeed>", b =>
+                {
+                    b.HasOne("Feedback.Base.Entities.NewsFeed", "Entity")
+                        .WithMany("Files")
                         .HasForeignKey("EntityId");
 
                     b.Navigation("Entity");
@@ -720,13 +2669,148 @@ namespace IQTechSolutions.DataStores.Migrations
                     b.Navigation("Entity");
                 });
 
-            modelBuilder.Entity("Grouping.Base.Entities.Category<Blogging.Base.Entities.BlogPost>", b =>
+            modelBuilder.Entity("Filing.Base.Entities.ImageFile<Blogging.Base.Entities.CaseStudy>", b =>
                 {
-                    b.HasOne("Grouping.Base.Entities.Department<Blogging.Base.Entities.BlogPost>", "Department")
+                    b.HasOne("Blogging.Base.Entities.CaseStudy", "Entity")
+                        .WithMany("Images")
+                        .HasForeignKey("EntityId");
+
+                    b.Navigation("Entity");
+                });
+
+            modelBuilder.Entity("Filing.Base.Entities.ImageFile<Feedback.Base.Entities.NewsFeed>", b =>
+                {
+                    b.HasOne("Feedback.Base.Entities.NewsFeed", "Entity")
+                        .WithMany("Images")
+                        .HasForeignKey("EntityId");
+
+                    b.Navigation("Entity");
+                });
+
+            modelBuilder.Entity("Filing.Base.Entities.ImageFile<Feedback.Base.Entities.Testimonial>", b =>
+                {
+                    b.HasOne("Feedback.Base.Entities.Testimonial", "Entity")
+                        .WithMany("Images")
+                        .HasForeignKey("EntityId");
+
+                    b.Navigation("Entity");
+                });
+
+            modelBuilder.Entity("Filing.Base.Entities.ImageFile<Grouping.Base.Entities.Category<Blogging.Base.Entities.CaseStudy>>", b =>
+                {
+                    b.HasOne("Grouping.Base.Entities.Category<Blogging.Base.Entities.CaseStudy>", "Entity")
+                        .WithMany("Images")
+                        .HasForeignKey("EntityId");
+
+                    b.Navigation("Entity");
+                });
+
+            modelBuilder.Entity("Filing.Base.Entities.ImageFile<Grouping.Base.Entities.Category<Products.Base.Entities.Product>>", b =>
+                {
+                    b.HasOne("Grouping.Base.Entities.Category<Products.Base.Entities.Product>", "Entity")
+                        .WithMany("Images")
+                        .HasForeignKey("EntityId");
+
+                    b.Navigation("Entity");
+                });
+
+            modelBuilder.Entity("Filing.Base.Entities.ImageFile<Grouping.Base.Entities.Category<Projects.Base.Entities.Project>>", b =>
+                {
+                    b.HasOne("Grouping.Base.Entities.Category<Projects.Base.Entities.Project>", "Entity")
+                        .WithMany("Images")
+                        .HasForeignKey("EntityId");
+
+                    b.Navigation("Entity");
+                });
+
+            modelBuilder.Entity("Filing.Base.Entities.ImageFile<Grouping.Base.Entities.Department<Blogging.Base.Entities.CaseStudy>>", b =>
+                {
+                    b.HasOne("Grouping.Base.Entities.Department<Blogging.Base.Entities.CaseStudy>", "Entity")
+                        .WithMany("Images")
+                        .HasForeignKey("EntityId");
+
+                    b.Navigation("Entity");
+                });
+
+            modelBuilder.Entity("Filing.Base.Entities.ImageFile<Grouping.Base.Entities.Department<Products.Base.Entities.Product>>", b =>
+                {
+                    b.HasOne("Grouping.Base.Entities.Department<Products.Base.Entities.Product>", "Entity")
+                        .WithMany("Images")
+                        .HasForeignKey("EntityId");
+
+                    b.Navigation("Entity");
+                });
+
+            modelBuilder.Entity("Filing.Base.Entities.ImageFile<Grouping.Base.Entities.Department<Projects.Base.Entities.Project>>", b =>
+                {
+                    b.HasOne("Grouping.Base.Entities.Department<Projects.Base.Entities.Project>", "Entity")
+                        .WithMany("Images")
+                        .HasForeignKey("EntityId");
+
+                    b.Navigation("Entity");
+                });
+
+            modelBuilder.Entity("Filing.Base.Entities.ImageFile<Identity.Base.Entities.UserInfo>", b =>
+                {
+                    b.HasOne("Identity.Base.Entities.UserInfo", "Entity")
+                        .WithMany("Images")
+                        .HasForeignKey("EntityId");
+
+                    b.Navigation("Entity");
+                });
+
+            modelBuilder.Entity("Filing.Base.Entities.ImageFile<Products.Base.Entities.Brand>", b =>
+                {
+                    b.HasOne("Products.Base.Entities.Brand", "Entity")
+                        .WithMany("Images")
+                        .HasForeignKey("EntityId");
+
+                    b.Navigation("Entity");
+                });
+
+            modelBuilder.Entity("Filing.Base.Entities.ImageFile<Products.Base.Entities.Product>", b =>
+                {
+                    b.HasOne("Products.Base.Entities.Product", "Entity")
+                        .WithMany("Images")
+                        .HasForeignKey("EntityId");
+
+                    b.Navigation("Entity");
+                });
+
+            modelBuilder.Entity("Filing.Base.Entities.ImageFile<Projects.Base.Entities.Project>", b =>
+                {
+                    b.HasOne("Projects.Base.Entities.Project", "Entity")
+                        .WithMany("Images")
+                        .HasForeignKey("EntityId");
+
+                    b.Navigation("Entity");
+                });
+
+            modelBuilder.Entity("Filing.Base.Entities.ImageFile<Suppliers.Base.Entities.Supplier>", b =>
+                {
+                    b.HasOne("Suppliers.Base.Entities.Supplier", "Entity")
+                        .WithMany("Images")
+                        .HasForeignKey("EntityId");
+
+                    b.Navigation("Entity");
+                });
+
+            modelBuilder.Entity("Filing.Base.Entities.Video<Feedback.Base.Entities.NewsFeed>", b =>
+                {
+                    b.HasOne("Feedback.Base.Entities.NewsFeed", "Entity")
+                        .WithMany("Videos")
+                        .HasForeignKey("EntityId");
+
+                    b.Navigation("Entity");
+                });
+
+            modelBuilder.Entity("Grouping.Base.Entities.Category<Blogging.Base.Entities.CaseStudy>", b =>
+                {
+                    b.HasOne("Grouping.Base.Entities.Department<Blogging.Base.Entities.CaseStudy>", "Department")
                         .WithMany("Categories")
                         .HasForeignKey("DepartmentId");
 
-                    b.HasOne("Grouping.Base.Entities.Category<Blogging.Base.Entities.BlogPost>", "ParentCategory")
+                    b.HasOne("Grouping.Base.Entities.Category<Blogging.Base.Entities.CaseStudy>", "ParentCategory")
                         .WithMany("SubCategories")
                         .HasForeignKey("ParentCategoryId");
 
@@ -735,15 +2819,120 @@ namespace IQTechSolutions.DataStores.Migrations
                     b.Navigation("ParentCategory");
                 });
 
-            modelBuilder.Entity("Grouping.Base.Entities.EntityCategory<Blogging.Base.Entities.BlogPost>", b =>
+            modelBuilder.Entity("Grouping.Base.Entities.Category<Products.Base.Entities.Product>", b =>
                 {
-                    b.HasOne("Grouping.Base.Entities.Category<Blogging.Base.Entities.BlogPost>", "Category")
+                    b.HasOne("Grouping.Base.Entities.Department<Products.Base.Entities.Product>", "Department")
+                        .WithMany("Categories")
+                        .HasForeignKey("DepartmentId");
+
+                    b.HasOne("Grouping.Base.Entities.Category<Products.Base.Entities.Product>", "ParentCategory")
+                        .WithMany("SubCategories")
+                        .HasForeignKey("ParentCategoryId");
+
+                    b.Navigation("Department");
+
+                    b.Navigation("ParentCategory");
+                });
+
+            modelBuilder.Entity("Grouping.Base.Entities.Category<Projects.Base.Entities.Project>", b =>
+                {
+                    b.HasOne("Grouping.Base.Entities.Department<Projects.Base.Entities.Project>", "Department")
+                        .WithMany("Categories")
+                        .HasForeignKey("DepartmentId");
+
+                    b.HasOne("Grouping.Base.Entities.Category<Projects.Base.Entities.Project>", "ParentCategory")
+                        .WithMany("SubCategories")
+                        .HasForeignKey("ParentCategoryId");
+
+                    b.Navigation("Department");
+
+                    b.Navigation("ParentCategory");
+                });
+
+            modelBuilder.Entity("Grouping.Base.Entities.ComboCategory<Products.Base.Entities.Product>", b =>
+                {
+                    b.HasOne("Products.Base.Entities.Product", "ComboItem")
+                        .WithMany("Combos")
+                        .HasForeignKey("ComboItemId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Grouping.Base.Entities.Category<Products.Base.Entities.Product>", "ComboRecipyCategory")
+                        .WithMany()
+                        .HasForeignKey("ComboRecipyCategoryId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("ComboItem");
+
+                    b.Navigation("ComboRecipyCategory");
+                });
+
+            modelBuilder.Entity("Grouping.Base.Entities.ComboExclusions<Products.Base.Entities.Product>", b =>
+                {
+                    b.HasOne("Grouping.Base.Entities.ComboCategory<Products.Base.Entities.Product>", "ComboCategory")
+                        .WithMany("Exclusions")
+                        .HasForeignKey("ComboCategoryComboRecipyCategoryId")
+                        .HasPrincipalKey("ComboRecipyCategoryId");
+
+                    b.HasOne("Products.Base.Entities.Product", "Exclusion")
+                        .WithMany("Exclusions")
+                        .HasForeignKey("ExclusionId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("ComboCategory");
+
+                    b.Navigation("Exclusion");
+                });
+
+            modelBuilder.Entity("Grouping.Base.Entities.EntityCategory<Blogging.Base.Entities.CaseStudy>", b =>
+                {
+                    b.HasOne("Grouping.Base.Entities.Category<Blogging.Base.Entities.CaseStudy>", "Category")
                         .WithMany("EntityCollection")
                         .HasForeignKey("CategoryId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Blogging.Base.Entities.BlogPost", "Entity")
+                    b.HasOne("Blogging.Base.Entities.CaseStudy", "Entity")
+                        .WithMany("Categories")
+                        .HasForeignKey("EntityId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Category");
+
+                    b.Navigation("Entity");
+                });
+
+            modelBuilder.Entity("Grouping.Base.Entities.EntityCategory<Products.Base.Entities.Product>", b =>
+                {
+                    b.HasOne("Grouping.Base.Entities.Category<Products.Base.Entities.Product>", "Category")
+                        .WithMany("EntityCollection")
+                        .HasForeignKey("CategoryId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Products.Base.Entities.Product", "Entity")
+                        .WithMany("Categories")
+                        .HasForeignKey("EntityId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Category");
+
+                    b.Navigation("Entity");
+                });
+
+            modelBuilder.Entity("Grouping.Base.Entities.EntityCategory<Projects.Base.Entities.Project>", b =>
+                {
+                    b.HasOne("Grouping.Base.Entities.Category<Projects.Base.Entities.Project>", "Category")
+                        .WithMany("EntityCollection")
+                        .HasForeignKey("CategoryId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Projects.Base.Entities.Project", "Entity")
                         .WithMany("Categories")
                         .HasForeignKey("EntityId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -765,15 +2954,138 @@ namespace IQTechSolutions.DataStores.Migrations
                     b.Navigation("UserInfo");
                 });
 
-            modelBuilder.Entity("Identity.Base.Entities.UserInfo", b =>
+            modelBuilder.Entity("Iqt.Base.Entities.Address<Identity.Base.Entities.UserInfo>", b =>
                 {
-                    b.HasOne("Filing.Base.Entities.ImageFile", "Avatar")
-                        .WithOne()
-                        .HasForeignKey("Identity.Base.Entities.UserInfo", "Id")
-                        .OnDelete(DeleteBehavior.Cascade)
+                    b.HasOne("Identity.Base.Entities.UserInfo", "Entity")
+                        .WithMany("Addresses")
+                        .HasForeignKey("EntityId");
+
+                    b.OwnsOne("Iqt.Base.Entities.Location", "Location", b1 =>
+                        {
+                            b1.Property<string>("Address<UserInfo>Id")
+                                .HasColumnType("nvarchar(450)");
+
+                            b1.Property<double>("Latitude")
+                                .HasColumnType("float");
+
+                            b1.Property<double>("Longitude")
+                                .HasColumnType("float");
+
+                            b1.HasKey("Address<UserInfo>Id");
+
+                            b1.ToTable("Address<UserInfo>");
+
+                            b1.WithOwner()
+                                .HasForeignKey("Address<UserInfo>Id");
+                        });
+
+                    b.Navigation("Entity");
+
+                    b.Navigation("Location");
+                });
+
+            modelBuilder.Entity("Iqt.Base.Entities.Address<Suppliers.Base.Entities.Supplier>", b =>
+                {
+                    b.HasOne("Suppliers.Base.Entities.Supplier", "Entity")
+                        .WithMany("Addresses")
+                        .HasForeignKey("EntityId");
+
+                    b.OwnsOne("Iqt.Base.Entities.Location", "Location", b1 =>
+                        {
+                            b1.Property<string>("Address<Supplier>Id")
+                                .HasColumnType("nvarchar(450)");
+
+                            b1.Property<double>("Latitude")
+                                .HasColumnType("float");
+
+                            b1.Property<double>("Longitude")
+                                .HasColumnType("float");
+
+                            b1.HasKey("Address<Supplier>Id");
+
+                            b1.ToTable("Address<Supplier>");
+
+                            b1.WithOwner()
+                                .HasForeignKey("Address<Supplier>Id");
+                        });
+
+                    b.Navigation("Entity");
+
+                    b.Navigation("Location");
+                });
+
+            modelBuilder.Entity("Iqt.Base.Entities.ContactNumber<Identity.Base.Entities.UserInfo>", b =>
+                {
+                    b.HasOne("Identity.Base.Entities.UserInfo", "Entity")
+                        .WithMany("ContactNumbers")
+                        .HasForeignKey("EntityId");
+
+                    b.Navigation("Entity");
+                });
+
+            modelBuilder.Entity("Iqt.Base.Entities.ContactNumber<Suppliers.Base.Entities.Supplier>", b =>
+                {
+                    b.HasOne("Suppliers.Base.Entities.Supplier", "Entity")
+                        .WithMany("ContactNumbers")
+                        .HasForeignKey("EntityId");
+
+                    b.Navigation("Entity");
+                });
+
+            modelBuilder.Entity("Iqt.Base.Entities.EmailAddress<Identity.Base.Entities.UserInfo>", b =>
+                {
+                    b.HasOne("Identity.Base.Entities.UserInfo", "Entity")
+                        .WithMany("EmailAddresses")
+                        .HasForeignKey("EntityId");
+
+                    b.Navigation("Entity");
+                });
+
+            modelBuilder.Entity("Iqt.Base.Entities.EmailAddress<Suppliers.Base.Entities.Supplier>", b =>
+                {
+                    b.HasOne("Suppliers.Base.Entities.Supplier", "Entity")
+                        .WithMany("EmailAddresses")
+                        .HasForeignKey("EntityId");
+
+                    b.Navigation("Entity");
+                });
+
+            modelBuilder.Entity("Iqt.Inventory.Entities.IncludedProduct<Products.Base.Entities.Product>", b =>
+                {
+                    b.HasOne("Products.Base.Entities.Product", "Entity")
+                        .WithMany("IncludedProducts")
+                        .HasForeignKey("EntityId")
+                        .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
-                    b.Navigation("Avatar");
+                    b.HasOne("Products.Base.Entities.Product", "Product")
+                        .WithMany()
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.NoAction)
+                        .IsRequired();
+
+                    b.Navigation("Entity");
+
+                    b.Navigation("Product");
+                });
+
+            modelBuilder.Entity("Iqt.Inventory.Entities.OptionalProduct<Products.Base.Entities.Product>", b =>
+                {
+                    b.HasOne("Products.Base.Entities.Product", "Entity")
+                        .WithMany("OptionalProducts")
+                        .HasForeignKey("EntityId")
+                        .OnDelete(DeleteBehavior.NoAction)
+                        .IsRequired();
+
+                    b.HasOne("Products.Base.Entities.Product", "Product")
+                        .WithMany()
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.NoAction)
+                        .IsRequired();
+
+                    b.Navigation("Entity");
+
+                    b.Navigation("Product");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -827,38 +3139,71 @@ namespace IQTechSolutions.DataStores.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("Filing.Base.Entities.ImageFile<Blogging.Base.Entities.BlogPost>", b =>
+            modelBuilder.Entity("Products.Base.Entities.Product", b =>
                 {
-                    b.HasOne("Blogging.Base.Entities.BlogPost", "Entity")
-                        .WithMany("Images")
-                        .HasForeignKey("EntityId");
+                    b.HasOne("Products.Base.Entities.Product", "Packaging")
+                        .WithMany("PackageItems")
+                        .HasForeignKey("PackagingId")
+                        .OnDelete(DeleteBehavior.NoAction);
 
-                    b.Navigation("Entity");
+                    b.Navigation("Packaging");
                 });
 
-            modelBuilder.Entity("Filing.Base.Entities.ImageFile<Grouping.Base.Entities.Category<Blogging.Base.Entities.BlogPost>>", b =>
+            modelBuilder.Entity("Products.Base.Entities.ProductBrand", b =>
                 {
-                    b.HasOne("Grouping.Base.Entities.Category<Blogging.Base.Entities.BlogPost>", "Entity")
-                        .WithMany("Images")
-                        .HasForeignKey("EntityId");
+                    b.HasOne("Products.Base.Entities.Brand", "Brand")
+                        .WithMany("ProductBrands")
+                        .HasForeignKey("BrandId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
-                    b.Navigation("Entity");
+                    b.HasOne("Products.Base.Entities.Product", "Product")
+                        .WithMany("Brands")
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Brand");
+
+                    b.Navigation("Product");
                 });
 
-            modelBuilder.Entity("Filing.Base.Entities.ImageFile<Grouping.Base.Entities.Department<Blogging.Base.Entities.BlogPost>>", b =>
+            modelBuilder.Entity("Projects.Base.Entities.Project", b =>
                 {
-                    b.HasOne("Grouping.Base.Entities.Department<Blogging.Base.Entities.BlogPost>", "Entity")
-                        .WithMany("Images")
-                        .HasForeignKey("EntityId");
+                    b.HasOne("Projects.Base.Entities.Project", "ParentProject")
+                        .WithMany("LinkedProjects")
+                        .HasForeignKey("ParentProjectId");
 
-                    b.Navigation("Entity");
+                    b.Navigation("ParentProject");
                 });
 
-            modelBuilder.Entity("Blogging.Base.Entities.BlogPost", b =>
+            modelBuilder.Entity("Blogging.Base.Entities.CaseStudy", b =>
                 {
                     b.Navigation("Categories");
 
                     b.Navigation("Images");
+                });
+
+            modelBuilder.Entity("Feedback.Base.Entities.Comment<Products.Base.Entities.Product>", b =>
+                {
+                    b.Navigation("Comments");
+
+                    b.Navigation("FeedFeelings");
+                });
+
+            modelBuilder.Entity("Feedback.Base.Entities.NewsFeed", b =>
+                {
+                    b.Navigation("AudioFiles");
+
+                    b.Navigation("Comments");
+
+                    b.Navigation("FeedFeelings");
+
+                    b.Navigation("Files");
+
+                    b.Navigation("Images");
+
+                    b.Navigation("Videos");
                 });
 
             modelBuilder.Entity("Feedback.Base.Entities.SupportTicket", b =>
@@ -868,7 +3213,12 @@ namespace IQTechSolutions.DataStores.Migrations
                     b.Navigation("Files");
                 });
 
-            modelBuilder.Entity("Grouping.Base.Entities.Category<Blogging.Base.Entities.BlogPost>", b =>
+            modelBuilder.Entity("Feedback.Base.Entities.Testimonial", b =>
+                {
+                    b.Navigation("Images");
+                });
+
+            modelBuilder.Entity("Grouping.Base.Entities.Category<Blogging.Base.Entities.CaseStudy>", b =>
                 {
                     b.Navigation("EntityCollection");
 
@@ -877,9 +3227,105 @@ namespace IQTechSolutions.DataStores.Migrations
                     b.Navigation("SubCategories");
                 });
 
-            modelBuilder.Entity("Grouping.Base.Entities.Department<Blogging.Base.Entities.BlogPost>", b =>
+            modelBuilder.Entity("Grouping.Base.Entities.Category<Products.Base.Entities.Product>", b =>
+                {
+                    b.Navigation("EntityCollection");
+
+                    b.Navigation("Images");
+
+                    b.Navigation("SubCategories");
+                });
+
+            modelBuilder.Entity("Grouping.Base.Entities.Category<Projects.Base.Entities.Project>", b =>
+                {
+                    b.Navigation("EntityCollection");
+
+                    b.Navigation("Images");
+
+                    b.Navigation("SubCategories");
+                });
+
+            modelBuilder.Entity("Grouping.Base.Entities.ComboCategory<Products.Base.Entities.Product>", b =>
+                {
+                    b.Navigation("Exclusions");
+                });
+
+            modelBuilder.Entity("Grouping.Base.Entities.Department<Blogging.Base.Entities.CaseStudy>", b =>
                 {
                     b.Navigation("Categories");
+
+                    b.Navigation("Images");
+                });
+
+            modelBuilder.Entity("Grouping.Base.Entities.Department<Products.Base.Entities.Product>", b =>
+                {
+                    b.Navigation("Categories");
+
+                    b.Navigation("Images");
+                });
+
+            modelBuilder.Entity("Grouping.Base.Entities.Department<Projects.Base.Entities.Project>", b =>
+                {
+                    b.Navigation("Categories");
+
+                    b.Navigation("Images");
+                });
+
+            modelBuilder.Entity("Identity.Base.Entities.UserInfo", b =>
+                {
+                    b.Navigation("Addresses");
+
+                    b.Navigation("ContactNumbers");
+
+                    b.Navigation("EmailAddresses");
+
+                    b.Navigation("Images");
+                });
+
+            modelBuilder.Entity("Products.Base.Entities.Brand", b =>
+                {
+                    b.Navigation("Images");
+
+                    b.Navigation("ProductBrands");
+                });
+
+            modelBuilder.Entity("Products.Base.Entities.Product", b =>
+                {
+                    b.Navigation("Brands");
+
+                    b.Navigation("Categories");
+
+                    b.Navigation("Combos");
+
+                    b.Navigation("Exclusions");
+
+                    b.Navigation("Images");
+
+                    b.Navigation("IncludedProducts");
+
+                    b.Navigation("OptionalProducts");
+
+                    b.Navigation("PackageItems");
+
+                    b.Navigation("Reviews");
+                });
+
+            modelBuilder.Entity("Projects.Base.Entities.Project", b =>
+                {
+                    b.Navigation("Categories");
+
+                    b.Navigation("Images");
+
+                    b.Navigation("LinkedProjects");
+                });
+
+            modelBuilder.Entity("Suppliers.Base.Entities.Supplier", b =>
+                {
+                    b.Navigation("Addresses");
+
+                    b.Navigation("ContactNumbers");
+
+                    b.Navigation("EmailAddresses");
 
                     b.Navigation("Images");
                 });

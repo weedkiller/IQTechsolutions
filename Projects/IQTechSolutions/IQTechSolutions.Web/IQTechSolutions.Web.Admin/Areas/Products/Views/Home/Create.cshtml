@@ -1,0 +1,324 @@
+﻿@model ProductAddEditModel
+
+@{
+    ViewData["Title"] = "Create New Product";
+    Layout = "_Layout";
+}
+
+@section Styles
+{
+    <link href="/css/summernote.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="/css/bs-filestyle.css">
+}
+
+<h2>Create</h2>
+
+<h4>Product</h4>
+<hr />
+<form asp-area="Products" asp-controller="Home" asp-action="Create" enctype="multipart/form-data" method="post">
+    <div asp-validation-summary="All" style="color: #a94442 !important;"></div>
+    <div class="row">
+        <div class="col-md-4">
+            <div class="form-group">
+                <label asp-for="CoverUpload" class="control-label"></label>
+                <img id="preview" style="width: 100%" src="~/images/placeholders/img_475x320.jpg" alt="" />
+                <input asp-for="CoverUpload" class="form-control" onchange="loadFile(event)" />
+                <span asp-validation-for="CoverUpload" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="col-md-8">
+            <div class="form-group">
+                <label asp-for="Entity.Name" class="control-label"></label>
+                <input asp-for="Entity.Name" class="form-control" />
+                <span asp-validation-for="Entity.Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Entity.Barcode" class="control-label"></label>
+                <input asp-for="Entity.Barcode" class="form-control" />
+                <span asp-validation-for="Entity.Barcode" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Entity.SerialNumber" class="control-label"></label>
+                <input asp-for="Entity.SerialNumber" class="form-control" />
+                <span asp-validation-for="Entity.SerialNumber" class="text-danger"></span>
+            </div>
+            <input type="hidden" asp-for="Entity.Id" />
+        </div>
+    </div>
+
+    <div class="widget-body sliding-tabs">
+        <ul class="nav nav-tabs" id="example-one" role="tablist">
+            <li class="nav-item">
+                <a class="nav-link active" id="base-tab-1" data-toggle="tab" href="#packsizes" role="tab" aria-controls="tab-1" aria-selected="true">Packsizes</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="base-tab-2" data-toggle="tab" href="#features" role="tab" aria-controls="tab-2" aria-selected="false">Features</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="base-tab-6" data-toggle="tab" href="#categories" role="tab" aria-controls="tab-6" aria-selected="false">Categories</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="base-tab-3" data-toggle="tab" href="#images" role="tab" aria-controls="tab-3" aria-selected="false">Images</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="base-tab-4" data-toggle="tab" href="#costing" role="tab" aria-controls="tab-4" aria-selected="false">Costing</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="base-tab-5" data-toggle="tab" href="#settings" role="tab" aria-controls="tab-5" aria-selected="false">Settings & Extra Info</a>
+            </li>
+        </ul>
+        <div class="tab-content pt-3">
+            <!-- ================== PACKSIZES TAB ================== -->
+            <div class="tab-pane fade show active" id="packsizes" role="tabpanel" aria-labelledby="base-tab-1">
+                <div class="row" style="padding-left: 15px;">
+                    <h3 class="m-t-10">Entity Packsizes</h3>
+
+
+                    <input name="packsizebutton" type="submit" value="Add New Packsize" class="btn btn-block btn-info" />
+                </div>
+            </div>
+            <!-- ================== END PACKSIZES TAB ================== -->
+            <!-- ================== FEATURES TAB ================== -->
+            <div class="tab-pane fade" id="features" role="tabpanel" aria-labelledby="base-tab-2">
+                <div class="row" style="padding-left: 15px;">
+                    <h3 class="m-t-10">Entity Features</h3>
+                    <hr />
+
+                    <ul style="padding-bottom: 25px">
+                        @*@if (Model.Entity.Features.Any())
+                    {
+                        foreach (var feature in Model.Entity.Features)
+                        {
+                            <li>
+                                <h4>@feature.Feature.Name</h4>
+                                <small>@feature.Feature.Description</small>
+                            </li>
+                        }
+                    }
+                    else
+                    {
+                        <li>
+                            <h4>There are currently no features associated with this product</h4>
+                        </li>
+                    }*@
+                    </ul>
+
+                    <input name="feature" type="submit" value="Add New Feature" class="btn btn-block btn-info" />
+                </div>
+            </div>
+            <!-- ================== END FEATURES TAB ================== -->
+            <!-- ================== CATEGORIES TAB ================== -->
+            <div class="tab-pane fade show" id="categories" role="tabpanel" aria-labelledby="base-tab-6">
+                <div class="row" style="padding-left: 15px;">
+                    
+                    
+                   
+                        <div class="col-sm-12">
+                            <div class="form-group">
+
+                                <h5 class="m-t-10">Categories</h5>
+                                <hr class="m_bottom_10">
+                                <label asp-for="Entity.Categories" class="control-label">Select the appropriate Categories:</label>
+                                <input type="hidden" asp-for="Entity.Categories" />
+                                <hr />
+                                <div class="col-md-12">
+                                    <div class="panel-group" id="accordion">
+                                        <div class="panel panel-inverse overflow-hidden">
+                                            <partial name="_CategorySelectionPartial" for="@Model.AvailableCategories" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr />
+                            </div>
+                        
+                    </div>
+                </div>
+            </div>
+            <!-- ================== END CATEGORIES TAB ================== -->
+            <!-- ================== IMAGES TAB ================== -->
+            <div class="tab-pane fade" id="images" role="tabpanel" aria-labelledby="base-tab-3">
+                <h3 class="m-t-10">Images</h3>
+                <hr class="m_bottom_10">
+                <div class="row" style="padding-left: 15px;">
+                    @if (Model.Entity.Images.Any())
+                    {
+                        foreach (var img in Model.Entity.Images)
+                        {
+                            <div id="@img.Id" class="col-md-2">
+                                <img id="preview" style="width: 100%;" class="thumbnail" title="@img.FileName" alt="@img.FileName" src="~/@img.RelativePath">
+                                <button type="button" data-toggle="Remote Image" onclick="removeImageFromObject('@img.Id')" title="Remove Image" class="btn btn-block btn-danger btn-sm">Delete</button>
+                            </div>
+                        }
+                    }
+                    else
+                    {
+                        <h4>There are currently no images associated with this product</h4>
+                    }
+                </div>
+                <div class="row" style="padding-bottom: 20px;">
+                    <div class="col-md-12 bottommargin text-center">
+                        <h5>Select Project Images:</h5><br>
+                        <input asp-for="ImagesUpload" id="input-3" name="photouploads" type="file" class="file" multiple data-show-upload="false" data-show-caption="true" data-show-preview="true">
+                    </div>
+                </div>
+            </div>
+            <!-- ================== END IMAGES TAB ================== -->
+            <!-- ================== COSTING TAB ================== -->
+            <div class="tab-pane fade" id="costing" role="tabpanel" aria-labelledby="base-tab-4">
+                <h3 class="m-t-10">Costing</h3>
+                <hr class="m_bottom_10">
+                <div class="row" style="padding-left: 15px;">
+                    <div class="form-group">
+                        <label asp-for="Entity.PriceExcl" class="control-label"></label>
+                        <input asp-for="Entity.PriceExcl" class="form-control" />
+                        <span asp-validation-for="Entity.PriceExcl" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Entity.Vat" class="control-label"></label>
+                        <input asp-for="Entity.Vat" class="form-control" />
+                        <span asp-validation-for="Entity.Vat" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Entity.PriceIncl" class="control-label"></label>
+                        <input asp-for="Entity.PriceIncl" class="form-control" />
+                        <span asp-validation-for="Entity.PriceIncl" class="text-danger"></span>
+                    </div>
+                </div>
+            </div>
+            <!-- ================== END COSTING TAB ================== -->
+            <!-- ================== ADDITIONAL INFO TAB ================== -->
+            <div class="tab-pane fade" id="settings" role="tabpanel" aria-labelledby="base-tab-5">
+                <h3 class="m-t-10">Additional Info</h3>
+                <hr class="m_bottom_10">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label asp-for="Entity.AdditionalInfo" class="control-label"></label>
+                            <input asp-for="Entity.AdditionalInfo" class="form-control" />
+                            <span asp-validation-for="Entity.AdditionalInfo" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Entity.Description" class="control-label"></label>
+                            <input asp-for="Entity.Description" class="form-control" />
+                            <span asp-validation-for="Entity.Description" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <div class="checkbox">
+                                <label>
+                                    <input asp-for="Entity.Active" /> @Html.DisplayNameFor(model => model.Entity.Active)
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+
+
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <div class="checkbox">
+                                <label>
+                                    <input asp-for="Entity.Featured" /> @Html.DisplayNameFor(model => model.Entity.Featured)
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- ================== END ADDITIONAL INFO TAB ================== -->
+        </div>
+    </div>
+
+    <!-- ================== FORM BUTTON ================== -->
+<div class="row" style="padding-bottom: 50px">
+    <div class="col-lg-4">
+        <input name="finnish" type="submit" value="Save & Submit" class="btn btn-primary btn-block" />
+    </div>
+    <div class="col-lg-4">
+        <input name="main" type="submit" value="Save" class="btn btn-primary btn-block"/>
+    </div>
+    <div class="col-lg-4">
+        <a asp-area="Products" asp-controller="Home" asp-action="List" class="btn btn-danger btn-block">Cancel</a>
+    </div>
+</div>
+
+    <!-- ================== END FORM BUTTON ================== -->
+
+</form>
+
+
+@section Scripts
+{
+    <script src="/js/summernote/summernote.js"></script>
+    <script src="/js/bs-filestyle.js"></script>
+
+    <script>
+        var loadFile = function (event) {
+            var output = document.getElementById('preview');
+            output.src = URL.createObjectURL(event.target.files[0]);
+        };
+    
+        $(document).ready(function () {
+            var HomeIndex = function () {
+
+                var $this = this;
+                function initialize() {
+                    $('#Entity_Description').summernote({
+                        height: 250,
+                        codemirror: { 
+                            theme: 'monokai'
+                        }
+                    });
+                    $('#Entity_AdditionalInfo').summernote({
+                        height: 250,
+                        codemirror: { 
+                            theme: 'monokai'
+                        }
+                    });
+                }
+
+                $this.init = function () {
+                    initialize();
+                }
+            };
+            var self = new HomeIndex();
+            self.init();
+
+            FillCategory();
+        });
+
+        function FillCategory() {
+            var procemessage = "<option value='0'> Please wait...</option>";
+            $("#SubCategoryIdbb").html(procemessage).show();
+
+            var url = "/Products/Home/GetSubCategoryByCategoryId";
+
+            /**/
+            var identity = $('#CategoryIdbb option:selected').val();;
+            /**/
+            $.ajax({
+                url: url,
+                type: "GET",
+                dataType: "JSON",
+                data: { id: identity },
+                success: function (data) {
+                    $("#SubCategoryIdbb").html(""); // clear before appending new list
+                    var markup = "<option value=''>Select Sub-Category</option>";
+                    $.each(data, function (i, category) {
+                        markup += "<option value=" + data[i].id + ">" + data[i].name + "</option>";
+                    });
+
+                    $("#SubCategoryIdbb").html(markup).show();
+                },
+                error: function (reponse) {
+                    alert("error : " + reponse);
+                }
+            });
+        }
+
+    </script>
+}

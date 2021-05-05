@@ -132,10 +132,10 @@ namespace Customers.Core.Context.Services
             var employee = GetEntity(id);
 
             
-            // Check to see if there any images that should be deleted
+            // Check to see if there any contact numbers that should be deleted
             if (employee.ContactNumbers != null && employee.ContactNumbers.Any())
             {
-                // iterate through the images
+                // iterate through the contact numbers
                 foreach (var skill in employee.ContactNumbers.ToList())
                 {
                     employee.ContactNumbers.Remove(skill);
@@ -143,10 +143,10 @@ namespace Customers.Core.Context.Services
                 }
             }
 
-            // Check to see if there any images that should be deleted
+            // Check to see if there any email addresses that should be deleted
             if (employee.EmailAddresses != null && employee.EmailAddresses.Any())
             {
-                // iterate through the images
+                // iterate through the email addresses
                 foreach (var skill in employee.EmailAddresses.ToList())
                 {
                     employee.EmailAddresses.Remove(skill);
@@ -154,10 +154,10 @@ namespace Customers.Core.Context.Services
                 }
             }
 
-            // Check to see if there any images that should be deleted
+            // Check to see if there any addresses that should be deleted
             if (employee.Addresses != null && employee.Addresses.Any())
             {
-                // iterate through the images
+                // iterate through the addrsses
                 foreach (var skill in employee.Addresses.ToList())
                 {
                     employee.Addresses.Remove(skill);

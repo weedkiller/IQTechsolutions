@@ -5,6 +5,7 @@ using GoogleReCaptcha.V3.Interface;
 using Iqt.Base.Enums;
 using Iqt.Base.Interfaces;
 using Iqt.Base.Models;
+using Mailing.Base.Interfaces;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -33,12 +34,12 @@ namespace Feedback.Core.Controllers
         /// <summary>
         /// The default email template sender
         /// </summary>
-        private DefaultEmailSender _emailSender;
+        private IEmailSender _emailSender;
 
         /// <summary>
         /// The default constructor
         /// </summary>
-        public TicketBaseController(TicketContext<TEntity> service, DefaultEmailSender emailSender, ICaptchaValidator captchaValidator)
+        public TicketBaseController(TicketContext<TEntity> service, IEmailSender emailSender, ICaptchaValidator captchaValidator)
         {
             _service = service;
             _emailSender = emailSender;
@@ -136,8 +137,8 @@ namespace Feedback.Core.Controllers
                 // Create callback-url for the email
                 var callbackUrl = Url.Action("Details", "Home", new { area = "Support", id = entity.Id });
 
-                await _emailSender.SendUserSupportTicketEmailAsync($"{model.FirstName} {model.LastName}", model.EmailAddress, callbackUrl);
-                await _emailSender.SendUserSupportTicketEmailAsync($"{model.FirstName} {model.LastName}", model.EmailAddress, callbackUrl);
+                //await _emailSender.SendUserSupportTicketEmailAsync($"{model.FirstName} {model.LastName}", model.EmailAddress, callbackUrl);
+                //await _emailSender.SendUserSupportTicketEmailAsync($"{model.FirstName} {model.LastName}", model.EmailAddress, callbackUrl);
 
                 ViewBag.Description = "Thank You for Submitting your support ticket.";
                 ViewBag.Message = "A service representative will get back to you shortly!";

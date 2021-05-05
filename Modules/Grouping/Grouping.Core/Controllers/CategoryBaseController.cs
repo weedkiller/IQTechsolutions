@@ -58,7 +58,10 @@ namespace Grouping.Core.Controllers
         public async Task<IActionResult> List()
         {
             // Get a list of the entries
-            var model = (Service.GetAll()).OrderByDescending(c => c.Created);
+            var listByDescending = (Service.GetAll()).OrderByDescending(c => c.Created);
+            var model = new CategoryIndexModel<T>(listByDescending.ToList());
+
+
             // Returns the list view and the model
             return View(model);
         }

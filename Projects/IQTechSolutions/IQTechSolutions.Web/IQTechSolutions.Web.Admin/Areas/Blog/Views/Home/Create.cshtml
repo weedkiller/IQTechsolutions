@@ -9,8 +9,8 @@
 
 @section Styles
 {
-    <link href="~/css/summernote.css" rel="stylesheet" type="text/css" />
-    <link rel="stylesheet" href="~/css/bs-filestyle.css">
+    <link href="/css/summernote.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="/css/bs-filestyle.css">
 }
 <form asp-area="Blog" asp-controller="Home" asp-action="Create" enctype="multipart/form-data" method="post" style="padding-bottom: 50px;"  class="form-horizontal">
     <input type="hidden" asp-for="Entity.Id" />
@@ -146,8 +146,8 @@
 
 @section Scripts
 {
-    <script src="~/js/summernote/summernote.js"></script>
-    <script src="~/js/bs-filestyle.js"></script>
+    <script src="/js/summernote/summernote.js"></script>
+    <script src="/js/bs-filestyle.js"></script>
 
     <script>
         var loadFile = function (event) {
@@ -172,9 +172,7 @@
                     });
             }
         };
-    </script>
 
-    <script type="text/javascript">
         // Default
         $(document).ready(function () {
             var HomeIndex = function () {

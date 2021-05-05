@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="Controllers\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\Modules\Accounting\Accounting.Base\Accounting.Base.csproj" />
+    <ProjectReference Include="..\InventoryManagement.Base\InventoryManagement.Base.csproj" />
+  </ItemGroup>
+
+</Project>

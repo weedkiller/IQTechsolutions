@@ -67,7 +67,7 @@ namespace Products.Core.Context.Services
         public async Task<Brand> UpdateAsync(BrandAddEditModel model)
         {
             var entity = await _context.Set<Brand>().FirstOrDefaultAsync(c => c.Id == model.Entity.Id);
-            entity.Update(model.Entity);
+           // entity.Update(model.Entity);
 
             await _factory.UploadImageAndSaveToDbAsync<Brand>(model.CoverUpload, entity.GetImage()?.Id, "images/uploads/brands/covers", ImageType.Cover, new Point(0,0), new Size(600, 400), model.Entity.Id);
 

@@ -9,6 +9,7 @@ using System.Linq;
 using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
+using Grouping.Base.Entities;
 using Grouping.Core.Context.Services;
 using Identity.Base.Entities;
 using Iqt.Base.Enums;
@@ -240,6 +241,19 @@ namespace Products.Core.Controllers
                 model.Entity.SetCreation(User.FindFirstValue(ClaimTypes.NameIdentifier));
                 await Service.AddAsync(model);
 
+                foreach (var item in model.AvailableCategories)
+                {
+                    if (item.IsSelected)
+                    {
+                        var newCat = new EntityCategory<Product>()
+                        {
+                            CategoryId = item.Identity.ToString(),
+                            EntityId = model.Entity.Id
+                        };
+                        await CategoryService.AddEntityCategory(newCat);
+                    }
+                }
+
                 // if main submit button is clicked
                 if (finnish != null)
                 {
@@ -393,7 +407,67 @@ namespace Products.Core.Controllers
 
         #endregion
 
-        
+        #region Categories
+
+        /// <summary>
+        /// Gets a <see cref="Problem"/> collection from the database that belongs to a specific <see cref="Category{T}"/>
+        /// </summary>
+        /// <param name="categoryId">The identity of the <see cref="Category{T}"/> that the <see cref="Problem"/> collection belongs to</param>
+        /// <returns>A <see cref="Problem"/> collection</returns>
+        public IQueryable<EntityCategory<Product>> GetCategoryProblems(string categoryId)
+        {
+            return CategoryService.GetEntityCategories(categoryId);
+        }
+
+        /// <summary>
+        /// Gets a specific <see cref="EntityCategory{T}"/> category problem
+        /// </summary>
+        /// <param name="problemId">The identity of the <see cref="Problem"/> that belongs to the <see cref="Category{T}"/></param>
+        /// <param name="categoryId">The identity of the <see cref="Category{T}"/> that the problem belongs to</param>
+        /// <returns>The specific <see cref="EntityCategory{T}"/> problem category</returns>
+        public Task<EntityCategory<Product>> GetEntityCategory(string problemId, string categoryId)
+        {
+            return Task.FromResult(CategoryService.GetEntityCategories(categoryId).Where(c => c.EntityId == problemId).FirstOrDefault(c => c.CategoryId == categoryId));
+        }
+
+        /// <summary>
+        /// Processes a <see cref="CheckBoxSelectionModel{T}"/> for addition as a <see cref="EntityCategory{T}"/>
+        /// to add to the database as a problem category
+        /// </summary>
+        /// <param name="parentId">The identity of the parent <see cref="Problem"/></param>
+        /// <param name="item">The identity of the <see cref="Category{T}"/></param>
+        public async Task ProcessAvailableCategories(string parentId, CheckBoxSelectionModel<Category<Product>> item)
+        {
+            if (item.HasChildSelection)
+            {
+                foreach (var ss in item.ChildSelection)
+                {
+                    await ProcessAvailableCategories(parentId, ss);
+                }
+
+            }
+
+            var entityCategory = await GetEntityCategory(parentId, item.Identity);
+
+            if (item.IsSelected && entityCategory == null)
+            {
+                var newCat = new EntityCategory<Product>
+                {
+                    CategoryId = item.Identity,
+                    EntityId = parentId
+                };
+
+                // problem.Categories.Add(newCat);
+                await CategoryService.AddEntityCategory(newCat);
+            }
+
+            if (!item.IsSelected && entityCategory != null)
+            {
+                await CategoryService.RemoveEntityCategory(entityCategory);
+            }
+        }
+
+        #endregion
 
         #region Ajax Actions
 

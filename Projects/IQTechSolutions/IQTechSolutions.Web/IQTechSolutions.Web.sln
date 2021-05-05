@@ -75,17 +75,17 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Products", "Products", "{89
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{6AFCCAA4-6AE7-4A54-A8C8-FBC8553CE7F1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Projects.Base", "..\..\..\Modules\Projects\Projects.Base\Projects.Base.csproj", "{E0AA0718-1B20-4386-8DA3-3E00C1A6795C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Projects.Base", "..\..\..\Modules\Projects\Projects.Base\Projects.Base.csproj", "{E0AA0718-1B20-4386-8DA3-3E00C1A6795C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Projects.Core", "..\..\..\Modules\Projects\Projects.Core\Projects.Core.csproj", "{C2CADEE6-89B8-4B77-9021-289F80A610C9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Projects.Core", "..\..\..\Modules\Projects\Projects.Core\Projects.Core.csproj", "{C2CADEE6-89B8-4B77-9021-289F80A610C9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Services.Base", "..\..\..\Modules\Services\Services.Base\Services.Base.csproj", "{A00D9F58-BEF3-4094-B2AE-E070AA5DE384}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Services.Base", "..\..\..\Modules\Services\Services.Base\Services.Base.csproj", "{A00D9F58-BEF3-4094-B2AE-E070AA5DE384}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Services.Core", "..\..\..\Modules\Services\Services.Core\Services.Core.csproj", "{E705ED49-B171-4947-93E3-C6E443EBB106}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Services.Core", "..\..\..\Modules\Services\Services.Core\Services.Core.csproj", "{E705ED49-B171-4947-93E3-C6E443EBB106}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Products.Base", "..\..\..\Modules\Products\Products.Base\Products.Base.csproj", "{63176FB4-6414-4D08-8ED9-737921E5BE78}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Products.Base", "..\..\..\Modules\Products\Products.Base\Products.Base.csproj", "{63176FB4-6414-4D08-8ED9-737921E5BE78}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Products.Core", "..\..\..\Modules\Products\Products.Core\Products.Core.csproj", "{937F7CB0-09BC-4CE4-A892-333D47563939}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Products.Core", "..\..\..\Modules\Products\Products.Core\Products.Core.csproj", "{937F7CB0-09BC-4CE4-A892-333D47563939}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Troubleshooting.Base", "..\..\..\Modules\Troubleshooting\Troubleshooting.Base\Troubleshooting.Base.csproj", "{8BA7B5E0-F4D5-4DC5-86D0-DCB942A93ECB}"
 EndProject
@@ -93,17 +93,35 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Troubleshooting.Core", "..\
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Customers", "Customers", "{9D499C6C-E06B-4F7E-80FF-ED4A29E48D47}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Customers.Base", "..\..\..\Modules\Customers\Customers.Base\Customers.Base.csproj", "{EE3403EA-41DA-4BCB-829E-A4576F8D36CD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Customers.Base", "..\..\..\Modules\Customers\Customers.Base\Customers.Base.csproj", "{EE3403EA-41DA-4BCB-829E-A4576F8D36CD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Customers.Core", "..\..\..\Modules\Customers\Customers.Core\Customers.Core.csproj", "{F2599BCB-4916-4441-8DDD-9D23FA724D1F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Customers.Core", "..\..\..\Modules\Customers\Customers.Core\Customers.Core.csproj", "{F2599BCB-4916-4441-8DDD-9D23FA724D1F}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Employment", "Employment", "{CE3C206B-864E-4097-AFD3-B243D071C8FF}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Calendar", "Calendar", "{EB780B0F-E8FE-4727-87D3-2263D92ADC77}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Calendar.Base", "..\..\..\Modules\Calendar\Calendar.Base\Calendar.Base.csproj", "{D20F7516-6DEB-4843-9F48-F09917D6B241}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Calendar.Base", "..\..\..\Modules\Calendar\Calendar.Base\Calendar.Base.csproj", "{D20F7516-6DEB-4843-9F48-F09917D6B241}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Calendar.Core", "..\..\..\Modules\Calendar\Calendar.Core\Calendar.Core.csproj", "{9BF34DC4-693A-4628-8E51-F808E1631E3A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Calendar.Core", "..\..\..\Modules\Calendar\Calendar.Core\Calendar.Core.csproj", "{9BF34DC4-693A-4628-8E51-F808E1631E3A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Accounting", "Accounting", "{E235BE8E-9679-4940-95FF-41ED473F9CCE}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Accounting.Base", "..\..\..\Modules\Accounting\Accounting.Base\Accounting.Base.csproj", "{746806B1-6E02-4CF2-B74B-4554527CF2D8}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Accounting.Core", "..\..\..\Modules\Accounting\Accounting.Core\Accounting.Core.csproj", "{49667F32-98C6-4C39-A92E-C1C224E8E7A8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Suppliers", "Suppliers", "{6A6D6DC3-4CF9-40C7-876D-00183647F4AD}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Suppliers.Core", "..\..\..\Modules\Suppliers\Suppliers.Core\Suppliers.Core.csproj", "{CFC141AF-D049-4E19-965E-630ED3F068A8}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Suppliers.Base", "..\..\..\Modules\Suppliers\Suppliers.Base\Suppliers.Base.csproj", "{17DB16F5-DDAF-4EDA-89A7-4206A2891A92}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "InventoryManagement", "InventoryManagement", "{E291574E-1B38-4A5B-978D-A3F1598EE877}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InventoryManagement.Base", "InventoryManagement.Base\InventoryManagement.Base.csproj", "{535B368B-5E98-4A2B-BE30-1A5C95A6F909}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InventoryManagement.Core", "InventoryManagement.Core\InventoryManagement.Core.csproj", "{C5ED00B8-6819-4384-A699-0E64C1EE475E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -243,6 +261,30 @@ Global
 		{9BF34DC4-693A-4628-8E51-F808E1631E3A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9BF34DC4-693A-4628-8E51-F808E1631E3A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9BF34DC4-693A-4628-8E51-F808E1631E3A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{746806B1-6E02-4CF2-B74B-4554527CF2D8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{746806B1-6E02-4CF2-B74B-4554527CF2D8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{746806B1-6E02-4CF2-B74B-4554527CF2D8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{746806B1-6E02-4CF2-B74B-4554527CF2D8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{49667F32-98C6-4C39-A92E-C1C224E8E7A8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{49667F32-98C6-4C39-A92E-C1C224E8E7A8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{49667F32-98C6-4C39-A92E-C1C224E8E7A8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{49667F32-98C6-4C39-A92E-C1C224E8E7A8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CFC141AF-D049-4E19-965E-630ED3F068A8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CFC141AF-D049-4E19-965E-630ED3F068A8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CFC141AF-D049-4E19-965E-630ED3F068A8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CFC141AF-D049-4E19-965E-630ED3F068A8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{17DB16F5-DDAF-4EDA-89A7-4206A2891A92}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{17DB16F5-DDAF-4EDA-89A7-4206A2891A92}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{17DB16F5-DDAF-4EDA-89A7-4206A2891A92}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{17DB16F5-DDAF-4EDA-89A7-4206A2891A92}.Release|Any CPU.Build.0 = Release|Any CPU
+		{535B368B-5E98-4A2B-BE30-1A5C95A6F909}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{535B368B-5E98-4A2B-BE30-1A5C95A6F909}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{535B368B-5E98-4A2B-BE30-1A5C95A6F909}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{535B368B-5E98-4A2B-BE30-1A5C95A6F909}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C5ED00B8-6819-4384-A699-0E64C1EE475E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C5ED00B8-6819-4384-A699-0E64C1EE475E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C5ED00B8-6819-4384-A699-0E64C1EE475E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C5ED00B8-6819-4384-A699-0E64C1EE475E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -294,6 +336,15 @@ Global
 		{EB780B0F-E8FE-4727-87D3-2263D92ADC77} = {FEA89A04-B339-41D3-B4B8-109CDDB792A0}
 		{D20F7516-6DEB-4843-9F48-F09917D6B241} = {EB780B0F-E8FE-4727-87D3-2263D92ADC77}
 		{9BF34DC4-693A-4628-8E51-F808E1631E3A} = {EB780B0F-E8FE-4727-87D3-2263D92ADC77}
+		{E235BE8E-9679-4940-95FF-41ED473F9CCE} = {FEA89A04-B339-41D3-B4B8-109CDDB792A0}
+		{746806B1-6E02-4CF2-B74B-4554527CF2D8} = {E235BE8E-9679-4940-95FF-41ED473F9CCE}
+		{49667F32-98C6-4C39-A92E-C1C224E8E7A8} = {E235BE8E-9679-4940-95FF-41ED473F9CCE}
+		{6A6D6DC3-4CF9-40C7-876D-00183647F4AD} = {FEA89A04-B339-41D3-B4B8-109CDDB792A0}
+		{CFC141AF-D049-4E19-965E-630ED3F068A8} = {6A6D6DC3-4CF9-40C7-876D-00183647F4AD}
+		{17DB16F5-DDAF-4EDA-89A7-4206A2891A92} = {6A6D6DC3-4CF9-40C7-876D-00183647F4AD}
+		{E291574E-1B38-4A5B-978D-A3F1598EE877} = {FEA89A04-B339-41D3-B4B8-109CDDB792A0}
+		{535B368B-5E98-4A2B-BE30-1A5C95A6F909} = {E291574E-1B38-4A5B-978D-A3F1598EE877}
+		{C5ED00B8-6819-4384-A699-0E64C1EE475E} = {E291574E-1B38-4A5B-978D-A3F1598EE877}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {6E1309AB-B6F9-4880-8C27-B0B5DC1E9BF9}

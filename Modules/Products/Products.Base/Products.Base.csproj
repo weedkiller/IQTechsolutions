@@ -8,6 +8,7 @@
     <ProjectReference Include="..\..\..\IqtFramework\Iqt.Web\Iqt.Web.csproj" />
     <ProjectReference Include="..\..\Feedback\Feedback.Base\Feedback.Base.csproj" />
     <ProjectReference Include="..\..\Filing\Filing.Base\Filing.Base.csproj" />
+    <ProjectReference Include="..\..\Grouping\Grouping.Base\Grouping.Base.csproj" />
   </ItemGroup>
 
   <ItemGroup>

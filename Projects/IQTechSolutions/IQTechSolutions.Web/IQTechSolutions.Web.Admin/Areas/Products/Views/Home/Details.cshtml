@@ -1,0 +1,80 @@
+﻿@model Product
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Product</h4>
+    <hr />
+<div class="col-md-4">
+    <div class="form-group">
+        @if (Model.GetImage() != null)
+        {
+            <img id="preview" style="width: 100%" src="~/@Model.GetImage()" alt="" />
+        }
+        else
+        {
+            <img id="preview" style="width: 100%" src="~/images/placeholders/img_475x320.jpg" alt="" />
+        }
+    </div>
+</div>
+<div class="col-md-8">
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Barcode)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Barcode)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.PriceExcl)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.PriceExcl)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Vat)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Vat)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.PriceIncl)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.PriceIncl)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Active)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Active)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Featured)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Featured)
+        </dd>
+    </dl>
+</div>
+<div class="text-right">
+    <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-default">Edit Product</a> |
+    <a asp-action="Index" class="btn btn-danger">Cancel</a>
+</div>
+</div>

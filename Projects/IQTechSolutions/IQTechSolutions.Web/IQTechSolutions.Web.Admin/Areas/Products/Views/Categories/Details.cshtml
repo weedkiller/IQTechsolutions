@@ -1,0 +1,295 @@
+﻿@model CategoryDetailsModel<Category<Product>>
+
+@inject SignInManager<ApplicationUser> SingInManager
+
+@{
+    ViewData["Title"] = @Model.Entity.Name + "Details";
+    ViewData["Description"] = @Model.Entity.Description;
+    ViewData["Keywords"] = "Web Design, Web Desing Cape Town, Web Design Prices, Web Design South Africa, Web Designers, Proffesional Web Design Company, Quality Web Design, Web Design Costs" +
+                           "Web Design Packages, Web Site Design, Website, Designing, Web Design Prices, Web Designer, Web Site Design, Affordable Website Designing, Web Development, Application Development" +
+                           "SEO, Search Engine Optimization, Cheap SEO, SEO Experts, Email Campaigns, Social Media Campaigns, Digital Marketing, Database Development, Database Developer, Database, " +
+                           "Database Architects, Cape Town, South Africa, Websites, E-Commerce, Web Hosting, Website Hosting, Adwords, Google Adwords, ASP.NET, DOTNET Core, SQL Server, Entity Framework, C#"
+                           + "CSharp, C-Sharp, Visual CSharp, Visual CSharp, Code First, Visual Basic, VB.Net, JAVA, JQeury, Ajaq, Razor";
+}
+
+Layout = "Layouts/_Layout";
+}
+@*@if (Model.FeaturedProducts.Count() > 0 && Model.Entity.EntityCollection.Any())
+{
+    <section class="relative iosslider w_full">
+        
+        <div class="slider">
+            @foreach (var slide in Model.FeaturedProducts)
+            {
+                <div class="slide">
+                    <img src="@slide.GetSlider()" alt="">
+                    <div class="item animate_ftr tr_all_medium d_xs_none t_align_c">
+                        <img src="~/img/Logo-Only.png" alt="@slide.Name" style="width: 30%" />
+                        <p class="slider_title_1 fw_ex_bold color_light tt_uppercase lh_ex_small m_bottom_23 m_sm_bottom_5">Save</p>
+                        <a asp-area="Products" asp-controller="Home" asp-action="Details" asp-route-id="@slide.Id" class="button_type_3 d_inline_b color_light transparent color_purple_hover r_corners tr_all tt_uppercase fs_medium d_block">Shop Now!</a>
+                    </div>
+                </div>
+            }
+        </div>
+        
+        <button class="ios_nav_prev"></button>
+        <button class="ios_nav_next"></button>
+    </section>
+}
+else
+{*@
+    
+@*}*@
+<!--content-->
+<section class="section_offset">
+    <div class="container">
+        <!--categories-->
+
+
+        <div class="m_bottom_50 m_xs_bottom_15">
+            @if (Model.Entity.EntityCollection.Any())
+            {
+                <div class="relative">
+                    <div class="row">
+                        <div class="owl-carousel" data-plugin-options='{"singleItem":false,"itemsCustom":[[1210,5],[992,4],[768,3],[450,2],[10,1]]}' data-nav="ln_nav_">
+                            @foreach (var category in Model.Entity.SubCategories)
+                            {
+                                <figure class="col-lg-12 col-md-12 col-sm-12" data-appear-animation="fadeInUp">
+                                    <a asp-area="Products" asp-controller="Categories" asp-action="Details" asp-route-id="@category.Id" class="r_corners category_link w_xs_auto d_xs_inline_b f_xs_none m_xs_bottom_15 d_block f_left wrapper m_right_10 t_align_c">
+                                        <img src="@category.GetImage(ImageType.Cover)" alt="@category.Name">
+                                        <p class="category_title bg_light_2 tr_all color_dark">@category.Name</p>
+                                    </a>
+                                </figure>
+                            }
+                        </div>
+                    </div>
+
+                    <!--carousel nav-->
+                    <button class="icon_wrap_size_4 circle color_grey_light tr_all color_blue_hover ln_nav_prev d_md_none" data-appear-animation="fadeIn">
+                        <i class="icon-left-open-big"></i>
+                    </button>
+                    <button class="icon_wrap_size_4 circle color_grey_light tr_all color_blue_hover ln_nav_next d_md_none" data-appear-animation="fadeIn">
+                        <i class="icon-right-open-big"></i>
+                    </button>
+                </div>
+            }
+            else
+            {
+                <h4>No Products available, please check back later !!!</h4>
+            }
+
+        </div>
+        @*@if (Model.FeaturedProducts.Any())
+        {
+            <h3 class="fw_light color_dark m_bottom_35 t_align_c" data-appear-animation="bounceInLeft">Featured products</h3>
+            <div class="relative m_bottom_70 m_xs_bottom_30">
+
+                <div class="row">
+                    <div class="owl-carousel t_xs_align_c featured_products" data-nav="fproducts_nav_" data-plugin-options='{"singleItem":false,"itemsCustom":[[992,4],[768,3],[600,2],[10,1]]}'>
+                        @foreach (var prod in Model.FeaturedProducts)
+                        {
+                            <partial name="_ShopProductPartial" model="@prod" />
+                        }
+                    </div>
+                </div>
+                <button class="icon_wrap_size_4 circle color_grey_light tr_all color_blue_hover fproducts_nav_prev d_md_none" data-appear-animation="fadeIn">
+                    <i class="icon-left-open-big"></i>
+                </button>
+                <button class="icon_wrap_size_4 circle color_grey_light tr_all color_blue_hover fproducts_nav_next d_md_none" data-appear-animation="fadeIn">
+                    <i class="icon-right-open-big"></i>
+                </button>
+            </div>
+        }*@
+        <!--banners-->
+        <section class="row t_xs_align_c" style="padding-bottom: 0 !important;">
+            <div class="col-lg-4 col-md-4 col-sm-4 m_bottom_12 m_xs_bottom_30" data-appear-animation="fadeInUp">
+                <a asp-area="Products" asp-controller="Home" asp-action="Index" class="d_block d_xs_inline_b d_mxs_block"><img src="~/images/content/banner_1.png" alt=""></a>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-4 m_bottom_12 m_xs_bottom_30" data-appear-animation="fadeInUp" data-appear-animation-delay="200">
+                <a asp-area="Products" asp-controller="Home" asp-action="Create" class="d_block d_xs_inline_b d_mxs_block"><img src="~/images/content/banner_2.png" alt=""></a>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-4 m_bottom_12 m_xs_bottom_0" data-appear-animation="fadeInUp" data-appear-animation-delay="400">
+                <a asp-area="Products" asp-controller="Home" asp-action="Index" class="d_block d_xs_inline_b d_mxs_block"><img src="~/images/content/banner_3.png" alt=""></a>
+            </div>
+        </section>
+    </div>
+</section>
+
+@*@if (Model.FeaturedArticles.Count() > 0)
+{
+    <section class="section_offset bg_light_2">
+        <div class="container">
+            <h3 class="color_dark fw_light m_bottom_15 t_align_c" data-appear-animation="bounceInLeft">Latest Articles</h3>
+            <p class="m_bottom_35 t_align_c" data-appear-animation="bounceInLeft" data-appear-animation-delay="200">View some of the latest articles added to our website. </p>
+            <div class="relative">
+                <div class="row">
+                    <div class="owl-carousel" data-plugin-options='{"singleItem":false,"itemsCustom":[[992,4],[768,3],[450,2],[10,1]]}' data-nav="ln_nav_">
+
+                        @foreach (var article in Model.FeaturedArticles)
+                        {
+                            <figure class="col-lg-12 col-md-12 col-sm-12" data-appear-animation="fadeInUp">
+                                image
+                                <div class="popup_wrap relative r_corners wrapper m_bottom_20 db_xs_centered">
+                                    <img src="@article.GetCover()" alt="">
+                                    <div class="popup_buttons tr_all_long w_md_full t_md_align_c">
+                                        <a href="@article.GetCover()" data-group="latest_news" data-title="Title 1" class="jackbox icon_wrap_size_3 color_light n_sc_hover d_block circle f_left m_right_10 f_md_none d_md_inline_b">
+                                            <i class="icon-plus"></i>
+                                        </a>
+                                        <a asp-area="Blog" asp-controller="Home" asp-action="Details" asp-route-id="@article.Id" class="icon_wrap_size_3 color_light n_sc_hover d_block circle f_left f_md_none d_md_inline_b">
+                                            <i class="icon-link"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                                description
+                                <figcaption>
+                                    <h6 class="lh_large m_bottom_3"><a asp-area="Blog" asp-controller="Home" asp-action="Details" asp-route-id="@article.Id" class="color_dark tr_all">@article.Title</a></h6>
+                                    project's info
+                                    <ul class="dotted_list m_bottom_8 color_grey_light_2 lh_ex_small">
+                                        @if (article.Created != null)
+                                        {
+                                            <li class="m_right_15 relative d_inline_m">
+                                                <a href="#" class="color_grey_light_2 fs_small">
+                                                    <i class="icon-doc-text-inv"></i>
+                                                </a>
+                                            </li>
+                                            <li class="m_right_15 relative d_inline_m">
+                                                <a href="#" class="color_grey fs_small">
+                                                    <i>
+                                                        @article.Created.ToLongDateString()
+                                                    </i>
+                                                </a>
+                                            </li>
+                                        }
+                                        <li class="m_right_15 relative d_inline_m">
+                                            @foreach (var tag in article.Tags)
+                                            {
+                                                <a href="#" class="fs_medium color_grey"><i>@tag.Name</i> </a>
+                                            }
+                                        </li>
+                                        <li class="m_right_15 relative d_inline_m">
+                                            <a href="@Url.Action("UnderConstruction","Home")" class="color_scheme_hover">
+                                                <i class="icon-chat-empty m_right_2 color_grey_light_2 tr_all"></i><i class="fs_medium color_grey tr_all">@article.Posts.Count</i>
+                                            </a>
+                                        </li>
+                                        <li class="m_right_15 relative d_inline_m">
+                                            <a href="#" class="color_red_hover">
+                                                <i class="icon-heart-empty-1 m_right_2 color_grey_light_2 tr_all"></i><i class="fs_medium color_grey tr_all">35</i>
+                                            </a>
+                                        </li>
+                                    </ul>
+
+                                    <p class="m_bottom_12">@article.Description.TruncateLongString(140)</p>
+                                    <div class="clearfix">
+                                        <a asp-area="Blog" asp-controller="Home" asp-action="Details" asp-route-id="@article.Id" class="color_purple color_pink_hover f_left d_block m_right_20 fw_light">
+                                            <span class="d_inline_m m_right_5 icon_wrap_size_0 circle color_grey_light tr_all">
+                                                <i class="icon-angle-right"></i>
+                                            </span>
+                                            Read More
+                                        </a>
+                                    </div>
+                                </figcaption>
+                            </figure>
+                        }
+                    </div>
+                </div>
+                carousel nav
+                <button class="icon_wrap_size_4 circle color_grey_light tr_all color_blue_hover ln_nav_prev d_md_none" data-appear-animation="fadeIn">
+                    <i class="icon-left-open-big"></i>
+                </button>
+                <button class="icon_wrap_size_4 circle color_grey_light tr_all color_blue_hover ln_nav_next d_md_none" data-appear-animation="fadeIn">
+                    <i class="icon-right-open-big"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+}
+@if (Model.FeaturedBrands.Count() > 0)
+{
+    <section class="section_offset relative wrapper">
+        <div class="video_wrap">
+            <video autoplay muted loop>
+                <source src="~/video/1.mp4" type="video/mp4">
+                <source src="~/video/1.webm" type="video/webm">
+            </video>
+        </div>
+        <div class="container">
+            <h3 class="color_grey fw_light t_align_c m_bottom_12" data-appear-animation="bounceInLeft">Our Brands</h3>
+            <p class="m_bottom_40 color_grey t_align_c" data-appear-animation="bounceInLeft" data-appear-animation-delay="150">Brands you can rely on to get the job done!</p>
+            <div class="relative" data-appear-animation="fadeInUp" data-appear-animation-delay="800">
+                <div class="t_xs_align_c">
+                    <div class="owl-carousel clients brands with_video t_align_c" data-plugin-options='{"pagination":true,"transitionStyle" : "backSlide"}' data-nav="c_nav_">
+                        item
+                        <div>
+                            <div class="row">
+                                @foreach (var item in Model.FeaturedBrands.Take(6))
+                                {
+
+                                }
+                            </div>
+                        </div>
+                        item
+                        <div>
+                            <div class="row">
+                                @foreach (var item in Model.FeaturedBrands.Skip(6).Take(6))
+                                {
+
+                                }
+                            </div>
+                        </div>
+                        item
+                        <div>
+                            <div class="row">
+                                @foreach (var item in Model.FeaturedBrands.Skip(12).Take(6))
+                                {
+
+                                }
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            carousel nav
+            <button class="icon_wrap_size_5 circle color_grey tr_all color_blue_hover c_nav_prev nav_type_3 d_md_none">
+                <i class="icon-left-open-big"></i>
+            </button>
+            <button class="icon_wrap_size_5 circle color_grey tr_all color_blue_hover c_nav_next nav_type_3 d_md_none">
+                <i class="icon-right-open-big"></i>
+            </button>
+        </div>
+    </section>
+}*@
+
+@section Scripts {
+    <script src="~/plugins/jquery.iosslider.min.js"></script>
+    <script src="~/plugins/owl-carousel/owl.carousel.min.js"></script>
+    <script src="~/plugins/jquery.iosslider.min.js"></script>
+
+    <script src="~/js/summernote/summernote.js"></script>
+
+    <script type="text/javascript">
+        // Default
+        $(document).ready(function () {
+            var HomeIndex = function () {
+
+                var $this = this;
+
+                function initialize() {
+                    $('#markdown').prop('disabled', true);
+                    $('#markdown').summernote({
+                        disable: true,
+                        height: null,
+                        toolbar: false
+                    });
+                }
+
+                $this.init = function () {
+                    initialize();
+                }
+            };
+            var self = new HomeIndex();
+            self.init();
+        });
+
+
+    </script>
+}

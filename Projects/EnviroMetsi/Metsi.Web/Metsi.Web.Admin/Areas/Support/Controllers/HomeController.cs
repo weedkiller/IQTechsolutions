@@ -2,6 +2,7 @@
 using Feedback.Core.Controllers;
 using GoogleReCaptcha.V3.Interface;
 using Identity.Base.Entities;
+using Mailing.Base.EmailSenders;
 using Metsi.Web.Email;
 using Microsoft.AspNetCore.Mvc;
 
@@ -21,7 +22,7 @@ namespace Metsi.Web.Admin.Areas.Support.Controllers
         /// </summary>
         /// <param name="service">The injected context service</param>
         /// <param name="emailSender">The injected email sender</param>
-        public HomeController(TicketContext<UserInfo> service, DefaultEmailSender emailSender, ICaptchaValidator captchaValidator) : base(service,emailSender, captchaValidator)
+        public HomeController(TicketContext<UserInfo> service, CustomEmailSender emailSender, ICaptchaValidator captchaValidator) : base(service,emailSender, captchaValidator)
         {
         }
     }

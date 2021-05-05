@@ -1,0 +1,79 @@
+﻿
+@model CategoryIndexModel<Product>
+
+@{
+    ViewData["Title"] = "Category List";
+    ViewData["Description"] = "A list of all the product categories for the administrator";
+    ViewData["Keywords"] = "Web Design, Web Desing Cape Town, Web Design Prices, Web Design South Africa, Web Designers, Proffesional Web Design Company, Quality Web Design, Web Design Costs" +
+        "Web Design Packages, Web Site Design, Website, Designing, Web Design Prices, Web Designer, Web Site Design, Affordable Website Designing, Web Development, Application Development" +
+        "SEO, Search Engine Optimization, Cheap SEO, SEO Experts, Email Campaigns, Social Media Campaigns, Digital Marketing, Database Development, Database Developer, Database, " +
+        "Database Architects, Cape Town, South Africa, Websites, E-Commerce, Web Hosting, Website Hosting, Adwords, Google Adwords, ASP.NET, DOTNET Core, SQL Server, Entity Framework, C#"
+        +"CSharp, C-Sharp, Visual CSharp, Visual CSharp, Code First, Visual Basic, VB.Net, JAVA, JQeury, Ajaq, Razor";
+}
+<table class="table">
+    <thead>
+    <tr>
+        <th style="width: 15%">
+            Cover Image
+        </th>
+        <th>
+            Name
+        </th>
+        <th>
+            Description
+        </th>
+        <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    @if (Model.All.Any())
+    {
+         foreach (var item in Model.All)
+         {
+             <tr id="row_@item.Id" class="row_@item.Id">
+                 <td>
+                     <a href="@Url.Action("Details", "Categories", new {area="Products", id = item.Id})">
+                         <img id="preview" style="height: auto;" class="img-thumbnail" title="@item.Name" alt="@item.GetImage()?.FileName" src="@item.GetImage(ImageType.Cover)">
+                     </a>
+                 </td>
+                 <td>
+                     <a asp-action="Details" asp-route-id="@item.Id">@Html.DisplayFor(modelItem => item.Name)</a>
+</td>
+                 <td>
+                     @Html.DisplayFor(modelItem => item.Description)
+                 </td>
+                 <td>
+                     <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-xs btn-info"><i class="fa fa-edit"></i></a>
+                     <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-xs btn-info"><i class="fa fa-eye"></i></a>
+                     <a href="javascript:;" onclick="ShowDeleteModal('@item.Id')" class="btn btn-xs btn-danger"><i class="fa fa-trash"></i></a>
+                 </td>
+             </tr>
+         }
+    }
+    else
+    {
+        <tr>
+            <td colspan="6"><h4>No Categories currently available, please check back later or <a asp-area="Products" asp-controller="Categories" asp-action="Create">create a new Category</a></h4></td>
+        </tr>
+    }
+    
+    </tbody>
+</table>
+<p class="text-right" style="width: 100%">
+    <a asp-area="Products" asp-controller="Categories" asp-action="Create" class="btn btn-danger btn-block">Create New Product Category</a>
+</p>
+
+@section Scripts
+{
+    <script>
+        function ShowDeleteModal(ff) {
+
+            var url = "/Products/Categories/Delete?id=" + ff;
+
+            $("#ModalPlaceHolder").load(url,
+                function () {
+                    $("#ModalPlaceHolder").modal("show");
+                });
+        }
+    </script>
+}

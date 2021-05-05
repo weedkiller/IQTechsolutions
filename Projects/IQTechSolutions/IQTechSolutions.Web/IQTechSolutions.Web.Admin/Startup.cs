@@ -2,14 +2,18 @@ using Blogging.Core.Extensions;
 using Feedback.Core.Extensions;
 using Filing.Core.Factories;
 using Grouping.Core.Extensions;
+using InventoryManagement.Core.Extensions;
 using Iqt.Base.Interfaces;
 using IQTechSolutions.DataStores;
+using IQTechSolutions.Web.Email.Extensions;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Products.Core.Extensions;
+using Suppliers.Core.Extensions;
 
 namespace IQTechSolutions.Web.Admin
 {
@@ -47,9 +51,16 @@ namespace IQTechSolutions.Web.Admin
             services.AddTransient<IFileFactory, FileFactory>();
             services.AddTransient<IApplicationConfiguration, ApplicationConfiguration>();
 
-            services.AddSupportTicketSystem().AddGrouping().AddBlogging();
+            services.AddSupportTicketSystem()
+                .AddGrouping()
+                .AddBlogging()
+                .AddSuppliers()
+                .AddCustomEmailServices()
+                .AddProducts()
+                .AddInventoryManagementModule();
 
-            services.AddControllersWithViews();
+            services.AddControllersWithViews()
+                .AddRazorRuntimeCompilation(); 
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

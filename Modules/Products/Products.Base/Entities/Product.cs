@@ -33,6 +33,12 @@ namespace Products.Base.Entities
         public string Name { get; set; }
 
         /// <summary>
+        /// The barcode of the product
+        /// </summary>
+        [DisplayName(@"Serial Number")]
+        public string SerialNumber { get; set; }
+
+        /// <summary>
         /// Additional Information of the product
         /// </summary>
         [DisplayName(@"Short Description"), DataType(DataType.MultilineText)]

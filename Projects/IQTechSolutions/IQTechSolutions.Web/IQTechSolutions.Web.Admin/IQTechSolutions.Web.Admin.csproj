@@ -12,18 +12,25 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.AspNetCore.Authentication.OpenIdConnect" Version="5.0.0" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="5.0.0" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="5.0.0">
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.OpenIdConnect" Version="5.0.5" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="5.0.5" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="5.0.5">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="5.0.2" />
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\..\..\Modules\Customers\Customers.Core\Customers.Core.csproj" />
     <ProjectReference Include="..\..\..\..\Modules\Identity\Identity.Base\Identity.Base.csproj" />
+    <ProjectReference Include="..\..\..\..\Modules\Products\Products.Base\Products.Base.csproj" />
+    <ProjectReference Include="..\..\..\..\Modules\Products\Products.Core\Products.Core.csproj" />
+    <ProjectReference Include="..\..\..\..\Modules\Suppliers\Suppliers.Core\Suppliers.Core.csproj" />
     <ProjectReference Include="..\..\IQTechSolutions.Base\IQTechSolutions\IQTechSolutions.csproj" />
+    <ProjectReference Include="..\InventoryManagement.Core\InventoryManagement.Core.csproj" />
     <ProjectReference Include="..\IQTechSolutions.DataStores\IQTechSolutions.DataStores.csproj" />
+    <ProjectReference Include="..\IQTechSolutions.Web\IQTechSolutions.Web.csproj" />
   </ItemGroup>
 
   <ItemGroup>
@@ -31,6 +38,14 @@
       <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Areas\Customers\" />
+    <Folder Include="Areas\Inventory\Controllers\" />
+    <Folder Include="Areas\Inventory\Data\" />
+    <Folder Include="Areas\Inventory\Models\" />
+    <Folder Include="Areas\Inventory\Views\" />
   </ItemGroup>
 
 </Project>

@@ -1,0 +1,120 @@
+﻿@using Iqt.Base.Interfaces
+@model CategoryAddEditModel<Product>
+@inject IApplicationConfiguration Configuration
+
+@{
+    ViewData["Title"] = "Edit Category";
+    ViewData["Description"] = "Edit the product category on this page";
+    ViewData["Keywords"] = "Web Design, Web Desing Cape Town, Web Design Prices, Web Design South Africa, Web Designers, Proffesional Web Design Company, Quality Web Design, Web Design Costs" +
+                           "Web Design Packages, Web Site Design, Website, Designing, Web Design Prices, Web Designer, Web Site Design, Affordable Website Designing, Web Development, Application Development" +
+                           "SEO, Search Engine Optimization, Cheap SEO, SEO Experts, Email Campaigns, Social Media Campaigns, Digital Marketing, Database Development, Database Developer, Database, " +
+                           "Database Architects, Cape Town, South Africa, Websites, E-Commerce, Web Hosting, Website Hosting, Adwords, Google Adwords, ASP.NET, DOTNET Core, SQL Server, Entity Framework, C#"
+                           +"CSharp, C-Sharp, Visual CSharp, Visual CSharp, Code First, Visual Basic, VB.Net, JAVA, JQeury, Ajaq, Razor";
+}
+
+<h4>ProductCategory Details</h4>
+<hr />
+<form asp-area="Products" asp-controller="Categories" asp-action="Edit" enctype="multipart/form-data" method="post">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <input type="hidden" asp-for="Entity.Id" />
+    <input type="hidden" asp-for="Entity.ParentCategoryId" />
+    <div class="row">
+        <div class="col-md-4">
+            <div class="form-group">
+                <label asp-for="CoverUpload" class="control-label"></label>
+                <img id="preview" style="width: 100%" src="@Model.Entity.GetPath(ImageType.Cover, @Configuration.ImageDefaultPlaceholder)" alt="@Model.Entity.Name" />
+                <input asp-for="CoverUpload" class="form-control" onchange="loadFile(event)" />
+                <span asp-validation-for="CoverUpload" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="col-md-8">
+            <div class="form-group">
+                <label asp-for="Entity.Name" class="control-label"></label>
+                <input asp-for="Entity.Name" class="form-control" />
+                <span asp-validation-for="Entity.Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Entity.Description" class="control-label"></label>
+                <textarea asp-for="Entity.Description" class="form-control"></textarea>
+                <span asp-validation-for="Entity.Description" class="text-danger"></span>
+            </div>
+            
+            <div class="form-group text-right">
+                <input name="main" type="submit" value="Submit & Create" class="btn btn-primary" />
+                <input name="finnish" type="submit" value="Submit & Finnish" class="btn btn-primary" />
+                @if (Model.Entity.ParentCategoryId == null)
+                {
+                    <a asp-area="Products" asp-controller="Categories" asp-action="List" class="btn btn-danger">Cancel</a>
+                }
+                else
+                {
+                    <a asp-area="Products" asp-controller="Categories" asp-action="Edit" asp-route-id="@Model.Entity.ParentCategoryId" class="btn btn-danger">Cancel</a>
+                }
+            </div>
+        </div>
+    </div>
+
+    <hr />
+
+    <h3 class="m-t-10">Product Sub-Categories</h3>
+    <table class="table">
+
+        <tr>
+            <th>
+                Image
+            </th>
+            <th>
+                Name
+            </th>
+            <th>
+                Description
+            </th>
+            <th></th>
+        </tr>
+
+        @if (Model.Entity.SubCategories.Any())
+        {
+            foreach (var subCategory in Model.Entity.SubCategories)
+            {
+                <tr>
+                    <td style="width: 10%;">
+                        <img id="preview2" style="width: 100%;" class="img-thumbnail" title="@subCategory.Name" alt="@subCategory.Name" src="@subCategory.GetImage()">
+                    </td>
+                    <td>
+                        <strong>@subCategory.Name</strong>
+                    </td>
+                    <td>
+                        @subCategory.Description
+                    </td>
+                    <td>
+                        <a asp-area="Products" asp-controller="Categories" asp-action="Edit" asp-route-id="@subCategory.Id">Edit</a> |
+                        <a asp-area="Products" asp-controller="Categories" asp-action="Delete" asp-route-id="@subCategory.Id">Delete</a>
+                    </td>
+                </tr>
+            }
+        }
+        else
+        {
+            <tr>
+                <td colspan="4">
+                    <h4>
+                        There are currently sub-categories available.
+                    </h4>
+                </td>
+            </tr>
+        }
+    </table>
+    <input name="sub" type="submit" value="Add New Sub-Category" class="btn btn-block btn-info"/>
+
+    <hr />
+</form>
+
+@section Scripts
+    {
+    <script>
+        var loadFile = function (event) {
+            var output = document.getElementById('preview');
+            output.src = URL.createObjectURL(event.target.files[0]);
+        };
+    </script>
+}

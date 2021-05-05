@@ -1,4 +1,5 @@
-using GoldTechInnovation.Web.Site.Data;
+using GoldTechInnovation.Web.Datastores;
+using GoldTechInnovation.Web.Site.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -27,12 +28,28 @@ namespace GoldTechInnovation.Web.Site
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<ApplicationDbContext>(options =>
+            services.AddDbContext<GoldTechInnovationDBContext>(options =>
                 options.UseSqlServer(
                     Configuration.GetConnectionString("DefaultConnection")));
+
+            services.AddControllersWithViews();
+
             services.AddDatabaseDeveloperPageExceptionFilter();
+
             services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
-                .AddEntityFrameworkStores<ApplicationDbContext>();
+                .AddEntityFrameworkStores<GoldTechInnovationDBContext>();
+
+            services.AddScoped<ICategoryRepository, CategoryRepository>();
+
+            services.AddScoped<IProductRepository, ProductRepository>();
+
+            services.AddScoped<ShoppingCart>(sc => ShoppingCart.GetCart(sc));
+
+            services.AddScoped<IOrderRepository, OrderRepository>();
+
+            services.AddHttpContextAccessor();
+            services.AddSession();
+
             services.AddRazorPages();
         }
 
@@ -54,6 +71,8 @@ namespace GoldTechInnovation.Web.Site
             app.UseHttpsRedirection();
             app.UseStaticFiles();
 
+            app.UseSession();
+
             app.UseRouting();
 
             app.UseAuthentication();
@@ -61,7 +80,12 @@ namespace GoldTechInnovation.Web.Site
 
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapRazorPages();
+                endpoints.MapControllerRoute(
+                   name: "default",
+                   pattern: "{controller=Home}/{action=Index}/{id?}"
+                   );
+
+                //endpoints.MapRazorPages();
             });
         }
     }

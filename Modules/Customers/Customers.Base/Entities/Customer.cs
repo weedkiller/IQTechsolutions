@@ -26,7 +26,7 @@ namespace Customers.Base.Entities
         /// <summary>
         /// The flag to indicate if the employee is an active employee
         /// </summary>
-        public bool Active { get; set; }
+        public bool Active { get; set; } = true;
 
         /// <summary>
         /// The name of this customer

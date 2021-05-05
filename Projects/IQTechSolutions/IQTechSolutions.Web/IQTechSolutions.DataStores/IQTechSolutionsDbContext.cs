@@ -3,25 +3,14 @@ using Feedback.Core.Extensions;
 using Identity.Base.Entities;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using Products.Core.Extensions;
+using Projects.Core.Extensions;
+using Suppliers.Core.Extensions;
 
 namespace IQTechSolutions.DataStores
 {
     public class IQTechSolutionsDbContext : IdentityDbContext<ApplicationUser>
     {
-        #region Properties
-
-        /// <summary>
-        /// Generic DataSet to retrieve TEntity
-        /// </summary>
-        /// <typeparam name="TEntity">The Type the dataset returns</typeparam>
-        /// <returns>DataSet of type TEntity</returns>
-        public DbSet<TEntity> DbSet<TEntity>() where TEntity : class
-        {
-            return Set<TEntity>();
-        }
-
-        #endregion
-
         #region Constructor
 
         /// <inheritdoc />
@@ -46,7 +35,7 @@ namespace IQTechSolutions.DataStores
             modelBuilder.Entity<UserInfo>().HasMany(c => c.Images).WithOne(c => c.Entity).HasForeignKey(v => v.EntityId);
 
             modelBuilder.ApplySupportTicketConfiguration()
-                .ApplyBloggingConfiguration();
+                .ApplyBloggingConfiguration().ApplySupplierConfiguration().ApplyProductConfiguration().ApplyProjectConfiguration();
 
             base.OnModelCreating(modelBuilder);
         }

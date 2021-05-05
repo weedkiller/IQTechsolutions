@@ -1,0 +1,60 @@
+﻿@model List<Iqt.Base.Models.CheckBoxSelectionModel<Category<Product>>>
+
+
+
+@if (Model != null)
+{
+
+    @for (var i = 0; i < Model.Count; i++)
+    {
+        @if (!Model[i].ChildSelection.Any())
+        {
+            <div class="row">
+                <div class="col-md-1">
+                    <input asp-for="@Model[i].IsSelected" type="checkbox" class="filled-in" style="opacity: 100 !important; position: relative; left: 0; height: 20px" onchange="RunOnChange()"/>
+                    <input asp-for="@Model[i].Identity" type="hidden"/>
+                </div>
+                <div class="col-md-11">
+                    @Model[i].Name
+                </div>
+            </div>
+        }
+        else
+        {
+            <div class="row">
+                <div class="col-md-1">
+                    @{
+                        var className = Model[i].Identity + "_icon";
+                    }
+                    <h5><i id="@className" class="fa fa-plus"></i></h5>
+                </div>
+                <div class="col-md-11">
+                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#@Model[i].Identity" onclick="changeicon('@Model[i].Identity')">
+                        <h5>@Model[i].Name</h5>
+                    </a>
+                    <hr/>
+                    <div id="@Model[i].Identity" class="panel-collapse collapse">
+                        <div class="panel-body">
+                            <partial name="_CategorySelectionPartial" for="@Model[i].ChildSelection"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    }
+}
+
+<script>
+    function changeicon(id) {
+
+        var element = document.getElementById(id + "_icon");
+
+        if (element.classList.contains("fa-plus")) {
+            element.classList.remove("fa-plus");
+            element.classList.add("fa-minus");
+        } else {
+            element.classList.remove("fa-minus");
+            element.classList.add("fa-plus");
+        }
+    }
+</script>

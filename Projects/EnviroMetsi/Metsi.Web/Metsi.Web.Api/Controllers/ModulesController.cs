@@ -62,7 +62,7 @@ namespace Metsi.Web.Api.Controllers
             {
                 Id = module.Id,
                 Name = module.Name,
-                ImageUrl = module.GetImage(ImageType.Cover).RelativePath,
+                ImageUrl = module.GetImage(ImageType.Cover)?.RelativePath,
                 Description = module.Description,
                 SectionCount = module.Sections.Count,
                 CourseId = module.CourseId

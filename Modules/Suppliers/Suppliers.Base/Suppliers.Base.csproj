@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\IqtFramework\Iqt.Base\Iqt.Base.csproj" />
+    <ProjectReference Include="..\..\Filing\Filing.Base\Filing.Base.csproj" />
+  </ItemGroup>
+
+</Project>
