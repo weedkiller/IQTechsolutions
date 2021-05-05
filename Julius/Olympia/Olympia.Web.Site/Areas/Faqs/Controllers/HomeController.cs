@@ -12,4 +12,6 @@ namespace Olympia.Web.Site.Areas.Faqs.Controllers
         {
         }
     }
+
+   
 }
