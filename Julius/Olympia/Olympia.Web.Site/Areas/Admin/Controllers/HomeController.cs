@@ -14,5 +14,17 @@ namespace Olympia.Web.Site.Areas.Admin.Controllers
         {
             return View();
         }
+
+        
+        public IActionResult AdminSetting()
+        {
+            return View();
+        }
+
+
+        public IActionResult PasswordSetting()
+        {
+            return View();
+        }
     }
 }
