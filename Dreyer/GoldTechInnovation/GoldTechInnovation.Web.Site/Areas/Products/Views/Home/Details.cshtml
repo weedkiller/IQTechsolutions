@@ -1,0 +1,20 @@
+﻿@model Product
+
+<h1>@Model.Name</h1>
+
+<div class="thumbnail">
+    <img alt="@Model.Name" src="/Images/CPU1.jpg" />
+    <div class="caption-full">
+        <h3 class="= pull-right">@Model.PriceIncl</h3>
+        <h3><a href="#">@Model.Name</a></h3>
+        <p>@Model.Categories.FirstOrDefault()?.Category.Description</p>
+    </div>
+    <div class="addToCart">
+        <p class="Button">
+            <a class="btn btn-primary"
+               asp-controller="ShoppingCart"
+               asp-action="AddToShoppingCart"
+               asp-route-productId="@Model.Id">Add to Cart</a>
+        </p>
+    </div>
+</div>

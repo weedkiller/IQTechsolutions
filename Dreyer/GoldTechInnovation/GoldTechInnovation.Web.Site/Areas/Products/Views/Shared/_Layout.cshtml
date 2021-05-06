@@ -1,0 +1,17 @@
+﻿@{
+    Layout = "Layouts/_Layout";
+}
+
+@section Styles
+{
+    @RenderSection("Styles", required: false)
+}
+
+<h1>I am the secondary Layout</h1> 
+
+@RenderBody()
+
+@section Scripts
+{
+    @RenderSection("Scripts", required: false)
+}
