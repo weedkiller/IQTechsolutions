@@ -11,9 +11,6 @@ namespace Olympia.Web.Site.Areas.Home.Controllers
 {
     [Area("Home")]
     [Route("Home/[controller]/[action]")]
-
-
-
     public class HomeController : Controller
     {
         public IActionResult Index()

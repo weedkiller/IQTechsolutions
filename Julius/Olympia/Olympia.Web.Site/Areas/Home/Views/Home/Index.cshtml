@@ -1,47 +1,198 @@
-﻿@page
-@model Olympia.Web.Site.Areas.Home.Views.Home.IndexModel
-@{
-}
+﻿@model Olympia.Web.Site.Areas.Home.Views.Home.IndexModel
 
 
 
-<!-- Team Section Titile Start -->
 
-<<<<<<< Updated upstream
+
+
+<section >
+    
+
 <section class="pdt-110 pdb-150 section-white-typo" data-background="/images/content/slider/Slide1.jpg" data-overlay-dark="8">
-=======
 
 @* Picture Editing Section *@
 <section class="section-title text-center" >
     
->>>>>>> Stashed changes
+
     <div class="section-title text-center">
         <div class="container">
             <div class="row">
                 <div class="col"></div>
                 <div class="col-lg-8 col-xl-6">
                     <div class="section-title-block">
-                        <h5 class="text-primary-color anim-box-objects line-both-side mrb-15">Picture Scrolling Section</h5>
-                        <h2>Coming Soon</h2>
+                        <h5 class="text-primary-color anim-box-objects line-both-side mrb-15">Home</h5>
+
                     </div>
+                    <small>With this section you can update the sliding pictures in Homepage</small>
                 </div>
                 <div class="col"></div>
             </div>
         </div>
-<<<<<<< Updated upstream
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>
+                        First Picture
+                    </th>
+                    <th>
+                        Second Picture
+                    </th>
+                    <th>
+                        Third Picture
+                    </th>
+                    <th>
+                        Fourth Picture
+                    </th>
+
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+
+                <tr>
+                    <td>
+                        <button class="btn btn-success btn-icon btn-circle" type="button" onclick="$('.file-upload-input').trigger( 'click' )"><i class="fa fa-plus"></i></button>
+                        <a class="btn btn-success btn-icon btn-circle" style="padding-right: 10px"><i class="fa fa-eye"></i></a>
+                        <a class="btn btn-success btn-icon btn-circle"><i class="fa fa-edit"></i></a>
+                        <button type="button" onclick="removeUpload()" class="btn btn-warning btn-icon btn-circle"><i class="fa fa-trash"></i></button>
+                    </td>
+                    <td>
+                        <button class="btn btn-success btn-icon btn-circle" type="button" onclick="$('.file-upload-input').trigger( 'click' )"><i class="fa fa-plus"></i></button>
+                        <a class="btn btn-success btn-icon btn-circle" style="padding-right: 10px"><i class="fa fa-eye"></i></a>
+                        <a class="btn btn-success btn-icon btn-circle"><i class="fa fa-edit"></i></a>
+                        <button type="button" onclick="removeUpload()" class="btn btn-warning btn-icon btn-circle"><i class="fa fa-trash"></i></button>
+                    </td>
+                    <td>
+                        <button class="btn btn-success btn-icon btn-circle" type="button" onclick="$('.file-upload-input').trigger( 'click' )"><i class="fa fa-plus"></i></button>
+                        <a class="btn btn-success btn-icon btn-circle" style="padding-right: 10px"><i class="fa fa-eye"></i></a>
+                        <a class="btn btn-success btn-icon btn-circle"><i class="fa fa-edit"></i></a>
+                        <button type="button" onclick="removeUpload()" class="btn btn-warning btn-icon btn-circle"><i class="fa fa-trash"></i></button>
+                    </td>
+                    <td>
+                        <button class="btn btn-success btn-icon btn-circle" type="button" onclick="$('.file-upload-input').trigger( 'click' )"><i class="fa fa-plus"></i></button>
+                        <a class="btn btn-success btn-icon btn-circle" style="padding-right: 10px"><i class="fa fa-eye"></i></a>
+                        <a class="btn btn-success btn-icon btn-circle"><i class="fa fa-edit"></i></a>
+                        <button type="button" onclick="removeUpload()" class="btn btn-warning btn-icon btn-circle"><i class="fa fa-trash"></i></button>
+                    </td>
+
+                    <td>
+                    </td>
+                </tr>
+
+            </tbody>
+
+        </table>
+
+        <br />
+        <br />
+
+        <div class="section-title text-center">
+            <div class="container">
+                <div class="row">
+                    <div class="col"></div>
+                    <div class="col-lg-8 col-xl-6">
+                        
+                        <small>Edit Headers that apper with pictures</small>
+                    </div>
+                    <div class="col"></div>
+                </div>
+            </div>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>
+                            First Picture Header Words
+                        </th>
+                        <th>
+                            Second Picture Header Words
+                        </th>
+                        <th>
+                            Third Picture Header Words
+                        </th>
+                        <th>
+                            Fourth Picture Header Words
+                        </th>
+
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    <tr>
+                        <td>
+                            <textarea rows="1" placeholder="Messages" class="form-control" label="Type Here"> </textarea>
+                        </td>
+                        <td>
+                            <textarea rows="1" placeholder="Messages" class="form-control" label="Type Here"> </textarea>
+                        </td>
+                        <td>
+                            <textarea rows="1" placeholder="Messages" class="form-control" label="Type Here"> </textarea>
+                        </td>
+                        <td>
+                            <textarea rows="1" placeholder="Messages" class="form-control" label="Type Here"> </textarea>
+                        </td>
+
+                        <td>
+                        </td>
+                    </tr>
+
+                </tbody>
+
+            </table>
+            <div class="form-group" style="   position: relative;text-align: center;margin-top:50px;align-content: center;display: flex;justify-content: center;position: relative;-ms-transform: translateY(-50%);transform: translateY(-50%);">
+                <input class="btn btn-primary" name="finnish" type="submit" value="Submit" style="margin:10px;" />
+                <input class="btn btn-primary" name="main" type="submit" value="Save" style="margin:10px;" />
+                <input class="btn btn-primary" name="finnish" type="submit" value="Create" style="margin:10px;" />
+
+                <button class="btn btn-danger" asp-area="Faqs" asp-controller="Home" asp-action="List" style="margin:10px;">Cancel</button>
+            </div>
+
+            <div class="card-columns">
+               
+
+            </div>
+
+            <script class="jsbin" src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+
+
     </div>
+
 </section>
-<!-- Team Section Titile End -->
-<!-- Team Section Start -->
-<section class="pdt-0 pdb-110 pdb-md-110 minus-mrt-130 bg-pos-center-bottom" data-background="/images/content/slider/Slide1.jp">
-    <div class="section-content">
+
+
+
+
+    <section class="about-section anim-object pdt-110 pdb-50 pdb-lg-80">
         <div class="container">
+
+            <div class="row align-items-center">
+                <div class="col-md-12 col-xl-6">
+                    <div class="about-image-block mrb-lg-60">
+                        @*<img class="img-full" src="/images/content/AboutUsImage.png" alt="About Olympia Holdings">*@
+                    </div>
+                </div>
+                <div class="col-md-12 col-xl-6">
+                    <textarea rows="4" placeholder="Messages" class="form-control"></textarea>
+                    <h2 class="title-under-line mrb-70">Software development, testing <span class="f-weight-400"> and implementation</span></h2>
+                    <h5 class="mrb-30 text-primary-color">for companies who are serious about getting things right first time</h5>
+                    <p class="mrb-40">If you’re looking for a team that’s innovative, has extensive knowledge and thinks outside the box, you’ve come to the right place. We offer turn-key software development solutions and leading products that are designed to help your business succeed.</p>
+
+                    <a class="cs-btn-one btn-gradient-color btn-lg" asp-page="/Engage">Read More</a>
+                </div>
+            </div>
+        </div>
+
+
+</section>
+
+
             <div class="row">
                 <div class="col-md-6 col-lg-6 col-xl-3">
                     <div class="team-block mrb-30">
                         <div class="team-upper-part">
                             <img class="img-full" src="http://placehold.it/365x385" alt="">
-=======
+
         @* Picture editing  *@
         <table class="table">
             <thead>
@@ -253,7 +404,27 @@
 
 
 
-@*
+    <section class="pdt-110 pdb-150 section-white-typo" data-background="/images/content/slider/Slide1.jpg" data-overlay-dark="8">
+        <div class="section-title text-center">
+            <div class="container">
+                <div class="row">
+                    <div class="col"></div>
+                    <div class="col-lg-8 col-xl-6">
+                        <div class="section-title-block">
+                            <h5 class="text-primary-color anim-box-objects line-both-side mrb-15">Picture Scrolling Section</h5>
+                            <h2>Coming Soon</h2>
+
+                        </div>
+                        <div class="team-bottom-part">
+                            <h4 class="team-title mrb-5"><a href="page-single-team.html">Section 1  [Pictures]</a></h4>
+                            <h6 class="designation">Upload Pictures</h6>
+                            <ul class="social-list vertical-style list-sm">
+                                <button> Picture 01</button>
+                                <button> Picture 02</button>
+                                <button> Picture 03</button>
+                                <button> Picture 04</button>
+                            </ul>
+
 
     <!-- Team Section Titile Start -->
 
@@ -266,148 +437,167 @@
                         <div class="section-title-block">
                             <h5 class="text-primary-color anim-box-objects line-both-side mrb-15">Picture Scrolling Section</h5>
                             <h2>Coming Soon</h2>
->>>>>>> Stashed changes
-                        </div>
-                        <div class="team-bottom-part">
-                            <h4 class="team-title mrb-5"><a href="page-single-team.html">Section 1  [Pictures]</a></h4>
-                            <h6 class="designation">Upload Pictures</h6>
-                            <ul class="social-list vertical-style list-sm">
-                                <button> Picture 01</button>
-                                <button> Picture 02</button>
-                                <button> Picture 03</button>
-                                <button> Picture 04</button>
-                            </ul>
-
                         </div>
                     </div>
+                    <div class="col"></div>
                 </div>
-                <div class="col-md-6 col-lg-6 col-xl-3">
-                    <div class="team-block mrb-30">
-                        <div class="team-upper-part">
-                            <img class="img-full" src="http://placehold.it/365x385" alt="">
-                        </div>
-                        <div class="team-bottom-part">
-                            <h4 class="team-title mrb-5"><a href="page-single-team.html">Section 2  [Pictures]</a></h4>
-                            <h6 class="designation">Upload Pictures</h6>
-                            <ul class="social-list vertical-style list-sm">
-                                <button> Picture 01</button>
-                                <button> Picture 02</button>
-
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-6 col-xl-3">
-                    <div class="team-block mrb-30">
-                        <div class="team-upper-part">
-                            <img class="img-full" src="http://placehold.it/365x385" alt="">
-                        </div>
-                        <div class="team-bottom-part">
-                            <h4 class="team-title mrb-5"><a href="page-single-team.html">Section 1  [Pictures]</a></h4>
-                            <h6 class="designation">Upload Pictures</h6>
-                            <ul class="social-list vertical-style list-sm">
-                                <button> Picture 01</button>
-                                <button> Picture 02</button>
-                                <button> Picture 03</button>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                @*<div class="col-md-6 col-lg-6 col-xl-3">
-        <div class="team-block mrb-30">
-            <div class="team-upper-part">
-                <img class="img-full" src="http://placehold.it/365x385" alt="">
             </div>
-            <div class="team-bottom-part">
-                <h4 class="team-title mrb-5"><a href="page-single-team.html">Jack Mehoff</a></h4>
-                <h6 class="designation">Engineer</h6>
-                <ul class="social-list vertical-style list-sm">
-                    <li><a href="#"><i class="fab fa-facebook"></i></a></li>
-                    <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                    <li><a href="#"><i class="fab fa-instagram"></i></a></li>
-                    <li><a href="#"><i class="fab fa-google-plus"></i></a></li>
-                </ul>
+        </div>
+    </section>
+    <!-- Team Section Titile End -->
+    <!-- Team Section Start -->
+    <section class="pdt-0 pdb-110 pdb-md-110 minus-mrt-130 bg-pos-center-bottom" data-background="/images/content/slider/Slide1.jp">
+        <div class="section-content">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 col-lg-6 col-xl-3">
+                        <div class="team-block mrb-30">
+                            <div class="team-upper-part">
+                                <img class="img-full" src="http://placehold.it/365x385" alt="">
+                            </div>
+                            <div class="team-bottom-part">
+                                <h4 class="team-title mrb-5"><a href="page-single-team.html">Section 1  [Pictures]</a></h4>
+                                <h6 class="designation">Upload Pictures</h6>
+                                <ul class="social-list vertical-style list-sm">
+                                    <button> Picture 01</button>
+                                    <button> Picture 02</button>
+                                    <button> Picture 03</button>
+                                    <button> Picture 04</button>
+                                </ul>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-6 col-xl-3">
+                        <div class="team-block mrb-30">
+                            <div class="team-upper-part">
+                                <img class="img-full" src="http://placehold.it/365x385" alt="">
+                            </div>
+                            <div class="team-bottom-part">
+                                <h4 class="team-title mrb-5"><a href="page-single-team.html">Section 2  [Pictures]</a></h4>
+                                <h6 class="designation">Upload Pictures</h6>
+                                <ul class="social-list vertical-style list-sm">
+                                    <button> Picture 01</button>
+                                    <button> Picture 02</button>
+
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-6 col-xl-3">
+                        <div class="team-block mrb-30">
+                            <div class="team-upper-part">
+                                <img class="img-full" src="http://placehold.it/365x385" alt="">
+                            </div>
+                            <div class="team-bottom-part">
+                                <h4 class="team-title mrb-5"><a href="page-single-team.html">Section 1  [Pictures]</a></h4>
+                                <h6 class="designation">Upload Pictures</h6>
+                                <ul class="social-list vertical-style list-sm">
+                                    <button> Picture 01</button>
+                                    <button> Picture 02</button>
+                                    <button> Picture 03</button>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Feature Titile Start -->
+    <section class="pdt-110 pdb-150 section-white-typo" data-background="/images/content/slider/Slide5.jpg" data-overlay-dark="8">
+        <div class="section-title text-center wow fadeInUp" data-wow-delay="0ms" data-wow-duration="1500ms">
+            <div class="container">
+                <div class="row">
+                    <div class="col"></div>
+                    <div class="col-lg-8 col-xl-6">
+                        <div class="section-title-block">
+                            <h5 class="text-primary-color anim-box-objects line-both-side mrb-15">Our Special Features</h5>
+                            <h2>Additional Services</h2>
+                        </div>
+                    </div>
+                    <div class="col"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="col-xl-8 col-lg-7">
+        <div class="row">
+            <div class="col-lg-12 col-xl-6">
+                <div class="news-wrapper mrb-30 mrb-sm-40">
+                    <div class="news-thumb">
+                        <img class="img-full" src="http://placehold.it/375x275" alt="">
+                        <div class="news-top-meta">
+                            <span class="entry-category">Business</span>
+                        </div>
+                    </div>
+                    <div class="news-details">
+                        <div class="news-description mb-20">
+                            <h4 class="the-title mrb-30"><a href="#">Tech Entrepreneur Credits Paper For Success</a></h4>
+                            <div class="news-bottom-meta">
+                                <span class="entry-date mrr-20"><i class="far fa-calendar-alt mrr-10 text-primary-color"></i>01 Jan, 2020</span>
+                                <span class="entry-author"><i class="far fa-user mrr-10 text-primary-color"></i>Admin</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-12 col-xl-6">
+                <div class="news-wrapper mrb-30 mrb-sm-40">
+                    <div class="news-thumb">
+                        <img class="img-full" src="http://placehold.it/375x275" alt="">
+                        <div class="news-top-meta">
+                            <span class="entry-category">Business</span>
+                        </div>
+                    </div>
+                    <div class="news-details">
+                        <div class="news-description mb-20">
+                            <h4 class="the-title mrb-30"><a href="#">Tech Entrepreneur Credits Paper For Success</a></h4>
+                            <div class="news-bottom-meta">
+                                <span class="entry-date mrr-20"><i class="far fa-calendar-alt mrr-10 text-primary-color"></i>01 Jan, 2020</span>
+                                <span class="entry-author"><i class="far fa-user mrr-10 text-primary-color"></i>Admin</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-12 col-xl-6">
+                <div class="news-wrapper mrb-30 mrb-sm-40">
+                    <div class="news-thumb">
+                        <img class="img-full" src="http://placehold.it/375x275" alt="">
+                        <div class="news-top-meta">
+                            <span class="entry-category">Business</span>
+                        </div>
+                    </div>
+                    <div class="news-details">
+                        <div class="news-description mb-20">
+                            <h4 class="the-title mrb-30"><a href="#">Tech Entrepreneur Credits Paper For Success</a></h4>
+                            <div class="news-bottom-meta">
+                                <span class="entry-date mrr-20"><i class="far fa-calendar-alt mrr-10 text-primary-color"></i>01 Jan, 2020</span>
+                                <span class="entry-author"><i class="far fa-user mrr-10 text-primary-color"></i>Admin</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-12 col-xl-6">
+                <div class="news-wrapper mrb-30 mrb-sm-40">
+                    <div class="news-thumb">
+                        <img class="img-full" src="http://placehold.it/375x275" alt="">
+                        <div class="news-top-meta">
+                            <span class="entry-category">Business</span>
+                        </div>
+                    </div>
+                    <div class="news-details">
+                        <div class="news-description mb-20">
+                            <h4 class="the-title mrb-30"><a href="#">Tech Entrepreneur Credits Paper For Success</a></h4>
+                            <div class="news-bottom-meta">
+                                <span class="entry-date mrr-20"><i class="far fa-calendar-alt mrr-10 text-primary-color"></i>01 Jan, 2020</span>
+                                <span class="entry-author"><i class="far fa-user mrr-10 text-primary-color"></i>Admin</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>*@
-        </div>
-     </div>
-        </div>
-    </section><div class="col-xl-8 col-lg-7">
-    <div class="row">
-        <div class="col-lg-12 col-xl-6">
-            <div class="news-wrapper mrb-30 mrb-sm-40">
-                <div class="news-thumb">
-                    <img class="img-full" src="http://placehold.it/375x275" alt="">
-                    <div class="news-top-meta">
-                        <span class="entry-category">Business</span>
-                    </div>
-                </div>
-                <div class="news-details">
-                    <div class="news-description mb-20">
-                        <h4 class="the-title mrb-30"><a href="#">Tech Entrepreneur Credits Paper For Success</a></h4>
-                        <div class="news-bottom-meta">
-                            <span class="entry-date mrr-20"><i class="far fa-calendar-alt mrr-10 text-primary-color"></i>01 Jan, 2020</span>
-                            <span class="entry-author"><i class="far fa-user mrr-10 text-primary-color"></i>Admin</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-12 col-xl-6">
-            <div class="news-wrapper mrb-30 mrb-sm-40">
-                <div class="news-thumb">
-                    <img class="img-full" src="http://placehold.it/375x275" alt="">
-                    <div class="news-top-meta">
-                        <span class="entry-category">Business</span>
-                    </div>
-                </div>
-                <div class="news-details">
-                    <div class="news-description mb-20">
-                        <h4 class="the-title mrb-30"><a href="#">Tech Entrepreneur Credits Paper For Success</a></h4>
-                        <div class="news-bottom-meta">
-                            <span class="entry-date mrr-20"><i class="far fa-calendar-alt mrr-10 text-primary-color"></i>01 Jan, 2020</span>
-                            <span class="entry-author"><i class="far fa-user mrr-10 text-primary-color"></i>Admin</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-12 col-xl-6">
-            <div class="news-wrapper mrb-30 mrb-sm-40">
-                <div class="news-thumb">
-                    <img class="img-full" src="http://placehold.it/375x275" alt="">
-                    <div class="news-top-meta">
-                        <span class="entry-category">Business</span>
-                    </div>
-                </div>
-                <div class="news-details">
-                    <div class="news-description mb-20">
-                        <h4 class="the-title mrb-30"><a href="#">Tech Entrepreneur Credits Paper For Success</a></h4>
-                        <div class="news-bottom-meta">
-                            <span class="entry-date mrr-20"><i class="far fa-calendar-alt mrr-10 text-primary-color"></i>01 Jan, 2020</span>
-                            <span class="entry-author"><i class="far fa-user mrr-10 text-primary-color"></i>Admin</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-12 col-xl-6">
-            <div class="news-wrapper mrb-30 mrb-sm-40">
-                <div class="news-thumb">
-                    <img class="img-full" src="http://placehold.it/375x275" alt="">
-                    <div class="news-top-meta">
-                        <span class="entry-category">Business</span>
-                    </div>
-                </div>
-                <div class="news-details">
-                    <div class="news-description mb-20">
-                        <h4 class="the-title mrb-30"><a href="#">Tech Entrepreneur Credits Paper For Success</a></h4>
-                        <div class="news-bottom-meta">
-                            <span class="entry-date mrr-20"><i class="far fa-calendar-alt mrr-10 text-primary-color"></i>01 Jan, 2020</span>
-                            <span class="entry-author"><i class="far fa-user mrr-10 text-primary-color"></i>Admin</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
