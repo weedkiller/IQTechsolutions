@@ -1,5 +1,185 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
+﻿@{
+    ViewData["Title"] = "Get In-Touch";
+}
+
+
+
+
+@model IEnumerable<SupportTicket>
+
 @{
+    ViewData["Title"] = "Support Ticket List";
+}
+
+<!--<div class="row ">
+
+
+
+    <div class="row">
+        <h4  style="        position: relative;
+        text-align: center;
+
+        align-content: center;
+        padding-top: 80px;
+        display: flex;
+        justify-content: center;
+        position: relative;
+       /* top: 50%;*/
+        -ms-transform: translateY(-50%);
+        transform: translateY(-50%);
+        ">
+            Change Get intouch Image
+        </h4>
+
+        <br />
+        <br>
+
+        <div class="form-group" style="        position: relative;
+        text-align: center;
+
+        align-content: center;
+        padding-top: 80px;
+        display: flex;
+        justify-content: center;
+        position: relative;
+       /* top: 50%;*/
+        -ms-transform: translateY(-50%);
+        transform: translateY(-50%);
+        ">
+            <input class="btn btn-primary" name="finnish" type="submit" value="Upload" style="margin:10px;" />
+            <input class="btn btn-primary" name="main" type="submit" value="Save" style="margin:10px;" />
+            <input class="btn btn-primary" name="finnish" type="submit" value="Create" style="margin:10px;" />-->
+            @*<a href="javascript:;"  name="finnish"onclick="ShowCreateAnswerModel('@Model.Entity.Id')" class="btn btn-info" style="float: right">Create Answer</a>*@
+            <!--<button class="btn btn-danger" asp-area="Faqs" asp-controller="Home" asp-action="List" style="margin:10px;">Cancel</button>
+        </div>
+    </div>
+
+</div>-->
+
+
+
+<div class="row">
+
+
+
+    <table class="table">
+        <thead style="position: relative; text-align: center;align-content: center;justify-content: center;  padding-left:30px;">
+            Form Submission
+        </thead>
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.EmailAddress)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.FirstName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.LastName)
+                </th>
+                @*<th>
+                        @Html.DisplayNameFor(model => model.CellNr)
+                    </th>*@
+                <th>
+                    @Html.DisplayNameFor(model => model.Subject)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Content)
+                </th>
+                @*<th>
+                        @Html.DisplayNameFor(model => model.Priority)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.TicketStatus)
+                    </th>*@
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr id="row_@item.Id" class="row_@item.Id">
+                    <td>
+                        @Html.DisplayFor(modelItem => item.EmailAddress)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.FirstName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.LastName)
+                    </td>
+                    @*<td>
+                            @Html.DisplayFor(modelItem => item.CellNr)
+                        </td>*@
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Subject)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Content)
+                    </td>
+                    @*<td>
+                            @Html.DisplayFor(modelItem => item.Priority)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.TicketStatus)
+                        </td>*@
+                    <td>
+                        <a asp-action="Details" asp-route-id="@item.Id" style="padding-right:10px" class="btn btn-primary btn-circle">Reply</a>
+                        <a asp-action="Details" asp-route-id="@item.Id" style="padding-right: 10px" class="btn btn-primary btn-circle"><i class="fa fa-eye"></i></a>
+                        <a href="javascript:;" onclick="ShowDeleteModal('@item.Id')" class="btn btn-danger btn-circle"><i class="fa fa-trash"></i></a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+
+
+
+
+<!--<div class="row ">
+
+
+
+    <div class="row" style="        position: relative;
+        text-align: center;
+
+        align-content: center;
+        padding-top: 80px;
+        display: flex;
+        justify-content: center;
+        position: relative;
+       /* top: 50%;*/
+        -ms-transform: translateY(-50%);
+        transform: translateY(-50%);
+        ">
+        <h4>
+            Change Get intouch Side Words
+        </h4>
+
+        <br />
+        <br>
+
+        <div class="form-group" >
+            <input class="btn btn-primary" name="finnish" type="submit" value="Upload" style="margin:10px;" />
+            <input class="btn btn-primary" name="main" type="submit" value="Save" style="margin:10px;" />-->
+            @*<input class="btn btn-primary" name="finnish" type="submit" value="Create" style="margin:10px;" />*@
+            @*<a href="javascript:;"  name="finnish"onclick="ShowCreateAnswerModel('@Model.Entity.Id')" class="btn btn-info" style="float: right">Create Answer</a>*@
+            <!--<button class="btn btn-danger" asp-area="Faqs" asp-controller="Home" asp-action="List" style="margin:10px;">Cancel</button>
+        </div>
+    </div>
+
+</div>-->
+@section Scripts
+{
+    <script type="text/javascript">
+        function ShowDeleteModal(ff) {
+            var url = "/Support/Home/Delete?id=" + ff;
+            $("#ModalPlaceHolder").load(url,
+                function () {
+                    $("#ModalPlaceHolder").modal("show");
+                });
+        }
+    </script>
 }

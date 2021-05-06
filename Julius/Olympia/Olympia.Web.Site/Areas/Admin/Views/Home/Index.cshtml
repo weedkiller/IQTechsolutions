@@ -1,0 +1,96 @@
+﻿@page
+@model Olympia.Web.Site.Areas.Admin.Views.Home.IndexModel
+@{
+}
+
+
+
+<!-- Team Section Titile Start -->
+<section class="pdt-110 pdb-150 section-white-typo bg-pos-center-bottom" data-background="https://elements-cover-images-0.imgix.net/3246c997-d49f-4321-a2f1-1d98f5851518?auto=compress%2Cformat&fit=max&w=2038&s=5d4d3c8fa10b23c91f1ca4f4e6c36b3d" data-overlay-dark="8">
+    <div class="section-title text-center">
+        <div class="container">
+            <div class="row">
+                <div class="col"></div>
+                <div class="col-lg-8 col-xl-6">
+                    <div class="section-title-block">
+                        <h5 class="text-primary-color anim-box-objects line-both-side mrb-15">Dashboard Settings</h5>
+                        <h2>Welcome @User.Identity.Name!</h2>
+                    </div>
+                </div>
+                <div class="col"></div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Team Section Titile End -->
+<!-- Team Section Start -->
+<section class="pdt-0 pdb-110 pdb-md-110 minus-mrt-130 bg-pos-center-bottom">
+    <div class="section-content">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-lg-6 col-xl-3 ">
+                    <div class="team-block mrb-30">
+
+                        <div class="team-bottom-part">
+                            <div class="team-title mrb-5">
+                                
+                                <a asp-area="Admin" asp-controller="Home" asp-action="AdminSetting">
+                                    <i class="fa fa-cog"></i>
+                                    <h6 class="designation">Setting</h6>
+
+                                </a>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-6 col-xl-3">
+                    <div class="team-block mrb-30">
+
+                        <div class="team-bottom-part">
+                            <div class="team-title mrb-5">
+                                <a asp-area="Admin" asp-controller="Home" asp-action="PasswordSetting">
+                                    <i class="fa fa-user-circle" aria-hidden="true"></i>
+                                    <h6 class="designation">Password Change</h6>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-6 col-xl-3">
+                    <div class="team-block mrb-30">
+
+                        <div class="team-bottom-part">
+                            <div class="team-title mrb-5">
+                                <a asp-area="CaseStudies" asp-controller="Home" asp-action="Index">
+                                    <i class="fa fa-info" aria-hidden="true"></i>
+                                    <h6 class="designation">Case Studies</h6>
+                                </a>
+                            </div>
+                            
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-6 col-xl-3">
+                    <div class="team-block mrb-30">
+
+                        <div class="team-bottom-part">
+                            <div class="team-title mrb-5">
+                                <a asp-area="Faqs" asp-controller="Home" asp-action="Index">
+                                    <i class="fa fa-opencart" aria-hidden="true"></i>
+                                </a>
+                                <h6 class="designation">Faqs</h6>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+<!-- Team Section End -->
+
+<script src="https://use.fontawesome.com/d9158b7faf.js"></script>

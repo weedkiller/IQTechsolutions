@@ -11,5 +11,10 @@ namespace Olympia.Web.Site.Areas.Faqs.Controllers
         public HomeController(FaqContext service) : base(service)
         {
         }
+        public IActionResult Faqs()
+        {
+            return View();
+        }
+
     }
 }
