@@ -1,0 +1,92 @@
+﻿@model InventoryManagement.Core.Models.GoodReceivedVoucherAddEditModel
+
+<div class="row">
+    <div class="col-md-12"><select class="form-control" id="Supplier" asp-for="Supplier" asp-items="@(new SelectList(Model.SupplierList, "Id", "Name"))">
+        <option selected="selected" value="0">
+            Select Supplier
+        </option>
+    </select>
+        </div>
+    <div class="col-md-6" style="padding-top: 10px">
+        <h3>Physical Address</h3>
+        <hr />
+        <hr />
+    </div>
+    <div class="col-md-6" style="padding-top: 10px">
+        <h3>Postal Address</h3>
+        <hr />
+        <hr />
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <table class="table">
+            <thead>
+            <tr>
+                <td colspan="2">
+                    <input id="QtyToAdd" class="form-control"/>
+                </td>
+                <td colspan="4">
+                    <input  id="ProductToAdd" class="form-control"/>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="6">
+                    <hr/>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Qty
+                </td>
+                <td>
+                    Product
+                </td>
+                <td>
+                    Pack
+                </td>
+                <td>
+                    Price Excl
+                </td>
+                <td>
+                    Vat
+                </td>
+                <td>
+                    Price Incl
+                </td>
+            </tr>
+            </thead>
+            <tbody id="GoodsReceivedVoucherDetailsBody">
+            @foreach (var item in Model.Details)
+            {
+                <tr>
+                    <td>@item.Qty</td>
+                    <td>@item.Product.Name</td>
+                    <td>@item.Product.PackageItems.Count</td>
+                    <td>@item.Product.PriceIncl</td>
+                    <td>@item.Product.Vat</td>
+                    <td>@item.Product.PriceExcl</td>
+                </tr>
+            }
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="3"><strong>Totals</strong></td>
+                    <td><strong>@Model.Details.Sum(c => c.PriceExcl)</strong></td>
+                    <td><strong>@Model.Details.Sum(c => c.PriceVat)</strong></td>
+                    <td><strong>@Model.Details.Sum(c => c.PriceIncl)</strong></td>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-6">
+        <input value="Process" type="button" class="btn btn-primary btn-block" />
+    </div>
+    <div class="col-md-6">
+        <input value="Cancel" type="button" class="btn btn-danger btn-block"/>
+    </div>
+</div>

@@ -1,6 +1,7 @@
 ﻿using Blogging.Core.Extensions;
 using Feedback.Core.Extensions;
 using Identity.Base.Entities;
+using InventoryManagement.Core.Extensions;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Products.Core.Extensions;
@@ -34,8 +35,9 @@ namespace IQTechSolutions.DataStores
             modelBuilder.Entity<ApplicationUser>().HasOne(c => c.UserInfo).WithOne().HasForeignKey<ApplicationUser>(v => v.Id);
             modelBuilder.Entity<UserInfo>().HasMany(c => c.Images).WithOne(c => c.Entity).HasForeignKey(v => v.EntityId);
 
-            modelBuilder.ApplySupportTicketConfiguration()
-                .ApplyBloggingConfiguration().ApplySupplierConfiguration().ApplyProductConfiguration().ApplyProjectConfiguration();
+            modelBuilder.ApplySupportTicketConfiguration().ApplyBloggingConfiguration()
+                .ApplyProjectConfiguration().ApplyInventoryManagementConfiguration()
+                .ApplySupplierConfiguration().ApplyProductConfiguration();
 
             base.OnModelCreating(modelBuilder);
         }
