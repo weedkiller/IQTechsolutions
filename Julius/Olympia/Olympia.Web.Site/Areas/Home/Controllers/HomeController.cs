@@ -1,13 +1,10 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Feedback.Core.Context.Services;
-using Feedback.Core.Controllers;
-using GoogleReCaptcha.V3.Interface;
-using Identity.Base.Entities;
-using Olympia.Web.Email;
-
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace Olympia.Web.Site.Areas.Home.Controllers
-
 {
     [Area("Home")]
     [Route("Home/[controller]/[action]")]
@@ -16,20 +13,12 @@ namespace Olympia.Web.Site.Areas.Home.Controllers
         public IActionResult Index()
         {
             return View();
-
-
-
         }
-
-      
+       
+        public string OpenPopup()
+        {
+            return "<h1> This Is Modeless Popup Window</h1>";
+        }
     }
-
-  
-
+   
 }
-
-
-
-
-
-
