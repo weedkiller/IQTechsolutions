@@ -1,11 +1,7 @@
-@model CaseStudyIndexPageModel
-
-@{
+﻿@{
     ViewData["Title"] = "About Olympia";
     Layout = "Layouts/_Layout";
 }
-
-@Html.Partial("PageTitles/Default")
 
 
 <!-- Service Details Section Start -->
@@ -14,28 +10,26 @@
         <div class="row">
             <div class="col-xl-8 col-lg-7">
                 <div class="row">
-                    @foreach (var item in Model.All)
-                    {
-                        <div class="col-lg-12 col-xl-6">
-                            <div class="news-wrapper mrb-30 mrb-sm-40">
-                                <div class="news-thumb">
-                                    <img class="img-full" src="/images/placeholders/MetsiPlaceholder-800x533.jpg" alt="">
-                                    <div class="news-top-meta">
-                                        <span class="entry-category">@item.Categories.FirstOrDefault()?.Category.Name</span>
-                                    </div>
+                    <div class="col-lg-12 col-xl-6">
+                        <div class="news-wrapper mrb-30 mrb-sm-40">
+                            <div class="news-thumb">
+                                <img class="img-full" src="http://placehold.it/375x275" alt="">
+                                <div class="news-top-meta">
+                                    <span class="entry-category">Business</span>
                                 </div>
-                                <div class="news-details">
-                                    <div class="news-description mb-20">
-                                        <h4 class="the-title mrb-30"><a href="#">@item.Title</a></h4>
-                                        <div class="news-bottom-meta">
-                                            <span class="entry-date mrr-20"><i class="far fa-calendar-alt mrr-10 text-primary-color"></i>@item.Created.ToShortDateString()</span>
-                                            <span class="entry-author"><i class="far fa-user mrr-10 text-primary-color"></i>@item.CreatedBy</span>
-                                        </div>
+                            </div>
+                            <div class="news-details">
+                                <div class="news-description mb-20">
+                                    <h4 class="the-title mrb-30"><a href="#">Tech Entrepreneur Credits Paper For Success</a></h4>
+                                    <div class="news-bottom-meta">
+                                        <span class="entry-date mrr-20"><i class="far fa-calendar-alt mrr-10 text-primary-color"></i>01 Jan, 2020</span>
+                                        <span class="entry-author"><i class="far fa-user mrr-10 text-primary-color"></i>Admin</span>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    }
+                    </div>
+                    
                 </div>
                 <div class="row">
                     <div class="col-xl-12">
