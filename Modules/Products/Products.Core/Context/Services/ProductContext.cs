@@ -155,6 +155,18 @@ namespace Products.Core.Context.Services
             return model.Entity;
         }
 
+        /// <summary>
+        /// Update a specific product
+        /// </summary>
+        /// <param name="model">The model to be updated from</param>
+        /// <returns>The product that was updated</returns>
+        public async Task<Product> UpdateAsync(Product model)
+        {
+            _context.Set<Product>().Update(model);
+            await _context.SaveChangesAsync();
+            return model;
+        }
+
         #endregion
 
         #region Delete Product

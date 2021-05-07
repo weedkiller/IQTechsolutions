@@ -1,82 +1,89 @@
 ﻿@model InventoryManagement.Core.Models.GoodReceivedVoucherAddEditModel
 
 <div class="row">
-    <div class="col-md-12"><select class="form-control" id="Supplier" asp-for="Supplier" asp-items="@(new SelectList(Model.SupplierList, "Id", "Name"))">
-        <option selected="selected" value="0">
-            Select Supplier
-        </option>
-    </select>
-        </div>
-    <div class="col-md-6" style="padding-top: 10px">
-        <h3>Physical Address</h3>
-        <hr />
-        <hr />
-    </div>
-    <div class="col-md-6" style="padding-top: 10px">
-        <h3>Postal Address</h3>
-        <hr />
-        <hr />
+    <div class="col-md-12">
+        <select class="form-control" id="Supplier" asp-for="Supplier" asp-items="@(new SelectList(Model.SupplierList, "Id", "Name"))">
+            <option selected="selected" value="0">
+                Select Supplier
+            </option>
+        </select>
     </div>
 </div>
+
 
 <div class="row">
     <div class="col-md-12">
         <table class="table">
             <thead>
+                <tr>
+                    <td colspan="1">
+                        <input id="QtyToAdd" class="form-control" style="width: 100px" value="1"/>
+                    </td>
+                    <td colspan="6">
+                        <select class="form-control" id="Product" asp-for="Product" asp-items="@(new SelectList(Model.ProductList, "Id", "Name"))">
+                            <option selected="selected" value="0">
+                                Select Product
+                            </option>
+                        </select>
+                    </td>
+                    <td colspan="1">
+                        <button type="button" class="btn btn-primary" style="float: right" value="Add" onclick="AddProductToTable()">Add Product</button>
+                    </td>
+                </tr>
             <tr>
-                <td colspan="2">
-                    <input id="QtyToAdd" class="form-control"/>
-                </td>
-                <td colspan="4">
-                    <input  id="ProductToAdd" class="form-control"/>
-                </td>
-            </tr>
-            <tr>
-                <td colspan="6">
+                <td colspan="8">
                     <hr/>
                 </td>
             </tr>
             <tr>
-                <td>
+                <td style="width: 100px">
                     Qty
                 </td>
                 <td>
                     Product
                 </td>
-                <td>
+                <td style="width: 100px">
                     Pack
                 </td>
-                <td>
+                <td style="width: 150px">
+                    Unit Price
+                </td>
+                <td style="width: 150px">
                     Price Excl
                 </td>
-                <td>
+                <td style="width: 150px">
                     Vat
                 </td>
-                <td>
+                <td style="width: 150px">
                     Price Incl
+                </td>
+                <td style="width: 80px">
                 </td>
             </tr>
             </thead>
             <tbody id="GoodsReceivedVoucherDetailsBody">
             @foreach (var item in Model.Details)
             {
-                <tr>
-                    <td>@item.Qty</td>
-                    <td>@item.Product.Name</td>
-                    <td>@item.Product.PackageItems.Count</td>
-                    <td>@item.Product.PriceIncl</td>
-                    <td>@item.Product.Vat</td>
-                    <td>@item.Product.PriceExcl</td>
+                <tr name="rows" id="row_@item.Product.Id" class="row_@item.Product.Id">
+                    <td id="id_@item.Product.Id" style="display:none">@item.Product.Id</td>
+                    <td id="qty_@item.Product.Id">@item.Qty</td>
+                    <td id="name_@item.Product.Id">@item.Product.Name</td>
+                    <td id="pack_@item.Product.Id">@item.Product.PackageItems.Count</td>
+                    <td id="unit_@item.Product.Id">@item.Product.PriceExcl</td>
+                    <td id="excl_@item.Product.Id">@item.Qty * @item.Product.PriceExcl</td>
+                    <td id="vat_@item.Product.Id">@item.Qty * @item.Product.Vat</td>
+                    <td id="incl_@item.Product.Id">@item.Qty * @item.Product.PriceIncl</td>
+                    <td><a href="javascript:;" onclick="ShowDeleteGRVProductModel('@item.Id')"><i class="fa fa-trash"></i></a></td>
                 </tr>
             }
             </tbody>
             <tfoot>
-                <tr>
-                    <td colspan="3"><strong>Totals</strong></td>
-                    <td><strong>@Model.Details.Sum(c => c.PriceExcl)</strong></td>
-                    <td><strong>@Model.Details.Sum(c => c.PriceVat)</strong></td>
-                    <td><strong>@Model.Details.Sum(c => c.PriceIncl)</strong></td>
-                </tr>
+            <tr>
+                <td colspan="4"><strong>Totals</strong></td>
+                <td><strong id="tableExclTotal">@Model.Details.Sum(c => c.PriceExcl).ToString("N")</strong></td>
+                <td><strong id="tableVatTotal">@Model.Details.Sum(c => c.PriceVat).ToString("N")</strong></td>
+                <td><strong id="tableInclTotal">@Model.Details.Sum(c => c.PriceIncl).ToString("N")</strong></td>
+            </tr>
             </tfoot>
         </table>
     </div>
@@ -84,9 +91,224 @@
 
 <div class="row">
     <div class="col-md-6">
-        <input value="Process" type="button" class="btn btn-primary btn-block" />
+        <input value="Process" type="button" class="btn btn-primary btn-block" onclick="ProcessGoodsReceivedVoucher()"/>
     </div>
     <div class="col-md-6">
         <input value="Cancel" type="button" class="btn btn-danger btn-block"/>
     </div>
 </div>
+
+@section Scripts
+{
+    <script>
+
+        var rows = [];
+
+        function AddProductToTable() {
+
+            var url = "/Inventory/GoodsReceived/AddGoodsReceivedProduct";
+            var identity = $('#Product option:selected').val();
+            var quantity = $('#QtyToAdd').val();
+
+            if (quantity === "0") {
+                alert("You cannot accept 0 Products!");
+            }
+            if (identity === "0") {
+                alert("Please select a Product!");
+            }
+
+
+            if (identity !== "0") {
+                $.ajax({
+                    url: url,
+                    type: "GET",
+                    dataType: "JSON",
+                    data: { id: identity, qty: quantity },
+                    success: function(data) {
+
+                        var existingTableRow = document.getElementById("row_" + data.id);
+
+                        if (existingTableRow === null) {
+                            var tableBody = document.getElementById("GoodsReceivedVoucherDetailsBody");
+
+                            var tableRow = document.createElement("tr");
+
+                            var tableIdColumn = document.createElement("td");
+                            var tableQtyColumn = document.createElement("td");
+                            var tableNameColumn = document.createElement("td");
+                            var tablePackColumn = document.createElement("td");
+                            var tablePriceUnitColumn = document.createElement("td");
+                            var tablePriceExclColumn = document.createElement("td");
+                            var tableVatColumn = document.createElement("td");
+                            var tablePriceInclColumn = document.createElement("td");
+
+                            var tableButtonColumn = document.createElement("td");
+
+                            var tableProductDeleteButton = document.createElement("a");
+                            var tableProductDeleteButtonIcon = document.createElement("i");
+
+                            tableBody.append(tableRow);
+
+                            tableRow.append(tableIdColumn);
+                            tableRow.append(tableQtyColumn);
+                            tableRow.append(tableNameColumn);
+                            tableRow.append(tablePackColumn);
+                            tableRow.append(tablePriceUnitColumn);
+                            tableRow.append(tablePriceExclColumn);
+                            tableRow.append(tableVatColumn);
+                            tableRow.append(tablePriceInclColumn);
+                            tableRow.append(tableButtonColumn);
+
+                            tableButtonColumn.append(tableProductDeleteButton);
+                            tableProductDeleteButton.append(tableProductDeleteButtonIcon);
+
+                            tableRow.id = "row_" + data.id;
+                            tableRow.classList.add("row_" + data.id);
+
+                            tableIdColumn.id = "id_" + data.id;
+                            tableIdColumn.style.display = 'none';
+                            tableIdColumn.innerHTML = data.id;
+
+                            tableQtyColumn.id = "qty_" + data.id;
+                            tableQtyColumn.innerHTML = data.qty;
+
+                            tableNameColumn.id = "name_" + data.id;
+                            tableNameColumn.innerHTML = data.name;
+
+                            tablePackColumn.id = "pack_" + data.id;
+                            tablePackColumn.innerHTML = data.pack;
+
+                            tablePriceUnitColumn.id = "unit_" + data.id;
+                            tablePriceUnitColumn.innerHTML = data.excl.toFixed(2);;
+
+                            tablePriceExclColumn.id = "excl_" + data.id;
+                            tablePriceExclColumn.innerHTML = (data.qty * data.excl).toFixed(2);;
+
+                            tableVatColumn.id = "vat_" + data.id;
+                            tableVatColumn.innerHTML = (data.qty * data.vat).toFixed(2);;
+
+                            tablePriceInclColumn.id = "incl_" + data.id;
+                            tablePriceInclColumn.innerHTML = (data.qty * data.incl).toFixed(2);;
+
+                            tableProductDeleteButton.href = "javascript:;";
+                            tableProductDeleteButton.onclick = function() { ShowDeleteGRVProductModel(data.id) };
+
+                            tableProductDeleteButtonIcon.classList.add("fa", "fa-trash");
+                        } else {
+                            var qtyColumn = document.getElementById("qty_" + data.id);
+                            qtyColumn.innerHTML = parseInt(qtyColumn.innerHTML) + data.qty;
+
+                            var exclColumn = document.getElementById("excl_" + data.id);
+                            exclColumn.innerHTML =
+                                (parseFloat(exclColumn.innerHTML) + (data.qty * data.excl)).toFixed(2);
+
+                            var vatColumn = document.getElementById("vat_" + data.id);
+                            vatColumn.innerHTML = (parseFloat(vatColumn.innerHTML) + (data.qty * data.vat)).toFixed(2);
+
+                            var inclColumn = document.getElementById("incl_" + data.id);
+                            inclColumn.innerHTML =
+                                (parseFloat(inclColumn.innerHTML) + (data.qty * data.incl)).toFixed(2);
+                        }
+
+                        var exclTotalColumn = document.getElementById("tableExclTotal");
+                        exclTotalColumn.innerHTML =
+                            (parseFloat(exclTotalColumn.innerHTML) + (data.qty * data.excl)).toFixed(2);
+
+                        var vatTotalColumn = document.getElementById("tableVatTotal");
+                        vatTotalColumn.innerHTML =
+                            (parseFloat(vatTotalColumn.innerHTML) + (data.qty * data.vat)).toFixed(2);
+
+                        var inclTotalColumn = document.getElementById("tableInclTotal");
+                        inclTotalColumn.innerHTML =
+                            (parseFloat(inclTotalColumn.innerHTML) + (data.qty * data.incl)).toFixed(2);
+
+                    },
+                    error: function(xhr, textStatus, err) {
+                        alert("An error with the following detials occured : " +
+                            "\r\n == readyState: " +
+                            xhr.readyState +
+                            "\r\n == responseText: " +
+                            xhr.responseText +
+                            "\r\n == status: " +
+                            xhr.status +
+                            "\r\n == text status: " +
+                            textStatus +
+                            "\r\n == error: " +
+                            err);
+                    }
+                });
+            }
+        }
+
+        function ProcessGoodsReceivedVoucher() {
+            var e = $('#Supplier option:selected').val();;
+            if (e === null || e === '0') {
+                alert("Please select a supplier");
+            } else {
+                var url = "/Inventory/GoodsReceived/ProcessGoodsReceivedVoucher";
+
+                $.ajax({
+                    url: url,
+                    type: "POST",
+                    dataType: "JSON",
+                    data: { supplierId: e },
+                    success: function (data) {
+
+                        var table = document.getElementById("GoodsReceivedVoucherDetailsBody");
+
+                        for (var i = 0, row; row = table.rows[i]; i++) {
+                            ProcessGoodsReceivedVoucherDetails(data.id,
+                                row.cells[0].innerHTML,
+                                row.cells[1].innerHTML);
+                        }
+                    },
+                    error: function(xhr, textStatus, err) {
+                        alert("An error with the following detials occured : " +
+                            "\r\n == readyState: " +
+                            xhr.readyState +
+                            "\r\n == responseText: " +
+                            xhr.responseText +
+                            "\r\n == status: " +
+                            xhr.status +
+                            "\r\n == text status: " +
+                            textStatus +
+                            "\r\n == error: " +
+                            err);
+                    }
+                });
+            }
+
+        }
+
+        function ProcessGoodsReceivedVoucherDetails(parentId, productId, qty) {
+
+
+            var url = "/Inventory/GoodsReceived/ProcessGoodsReceivedVoucherDetail";
+
+            $.ajax({
+                url: url,
+                type: "POST",
+                dataType: "JSON",
+                data: { parentId: parentId, productId: productId, qty: qty },
+                success: function(data) {
+                    window.location.href = '@Url.Action("Index", "Home")';
+                },
+                error: function(xhr, textStatus, err) {
+                    alert("An error with the following detials occured : " +
+                        "\r\n == readyState: " +
+                        xhr.readyState +
+                        "\r\n == responseText: " +
+                        xhr.responseText +
+                        "\r\n == status: " +
+                        xhr.status +
+                        "\r\n == text status: " +
+                        textStatus +
+                        "\r\n == error: " +
+                        err);
+                }
+            });
+        }
+
+
+    </script>
+}

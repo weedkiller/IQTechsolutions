@@ -105,7 +105,7 @@ namespace Products.Base.Entities
         /// <summary>
         /// The Exclusive Price of the item
         /// </summary>
-        public double PriceExcl => PriceIncl - Vat;
+        public double PriceExcl => Math.Round(PriceIncl - Vat,2);
 
         /// <summary>
         /// The vat of a product
@@ -116,7 +116,7 @@ namespace Products.Base.Entities
             {
                 if (Vatable)
                 {
-                    return (PriceIncl * VatRate) / 100;
+                    return Math.Round(PriceIncl - (PriceIncl / (1 + (VatRate/100))),2);
                 }
 
                 return 0;
@@ -237,7 +237,7 @@ namespace Products.Base.Entities
         /// <summary>
         /// Qty of units in stock
         /// </summary>
-        public int QtyInStock { get; set; }
+        public int QtyInStock { get; set; } = 0;
 
         /// <summary>
         /// Message Displayed when Item is out of Stock

@@ -14,6 +14,8 @@ namespace InventoryManagement.Base.Entities
         /// </summary>
         public string Qty { get; set; }
 
+        [ForeignKey(nameof(Product))]
+        public string ProductId { get; set; }
         /// <summary>
         /// Gets or Sets the product that was received
         /// </summary>

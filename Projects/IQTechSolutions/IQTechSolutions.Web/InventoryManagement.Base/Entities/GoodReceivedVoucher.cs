@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using Iqt.Base.BaseTypes;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using Suppliers.Base.Entities;
 
 namespace InventoryManagement.Base.Entities
@@ -15,6 +17,8 @@ namespace InventoryManagement.Base.Entities
         /// </summary>
         public DateTime DateReceived = DateTime.Now;
         
+        [ForeignKey(nameof(Supplier))]
+        public string SupplierId { get; set; }
         /// <summary>
         /// Gets or Sets the supplier that send the order
         /// </summary>

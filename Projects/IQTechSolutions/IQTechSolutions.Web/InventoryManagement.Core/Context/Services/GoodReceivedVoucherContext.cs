@@ -58,15 +58,26 @@ namespace InventoryManagement.Core.Context.Configurations.Services
         /// </summary>
         /// <param name="model">The model to be added from</param>
         /// <returns>The <see cref="GoodReceivedVoucher"/> that was added</returns>
-        public async Task<GoodReceivedVoucher> AddAsync(GoodReceivedVoucherAddEditModel model)
+        public async Task<GoodReceivedVoucher> AddAsync(GoodReceivedVoucher model)
         {
 
             //await model.Entity.Images.AddImages(model.ImagesUpload, new Size(600,400));
-            await _context.Set<GoodReceivedVoucher>().AddAsync(model.GoodReceivedVoucher);
+            await _context.Set<GoodReceivedVoucher>().AddAsync(model);
 
 
             await _context.SaveChangesAsync();
-            return model.GoodReceivedVoucher;
+            return model;
+        }
+
+        public async Task<GoodReceivedVoucherDetails> AddDetailAsync(GoodReceivedVoucherDetails model)
+        {
+
+            //await model.Entity.Images.AddImages(model.ImagesUpload, new Size(600,400));
+            await _context.Set<GoodReceivedVoucherDetails>().AddAsync(model);
+
+
+            await _context.SaveChangesAsync();
+            return model;
         }
 
         #endregion
