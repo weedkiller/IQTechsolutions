@@ -40,16 +40,25 @@ namespace IQTechSolutions.Web.Admin.Areas.Inventory.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> ProcessGoodsReceivedVoucher(string supplierId)
+        public async Task<IActionResult> ProcessGoodsReceivedVoucher(string supplierId, string date)
         {
-            var goodsReceivedVoucher = new GoodReceivedVoucher()
+            try
             {
-                Id = Guid.NewGuid().ToString(),
-                DateReceived = DateTime.Now,
-                SupplierId = supplierId
-            };
-            await _goodReceivedVoucherContext.AddAsync(goodsReceivedVoucher);
-            return Json(new{id=goodsReceivedVoucher.Id});
+                var goodsReceivedVoucher = new GoodReceivedVoucher()
+                {
+                    Id = Guid.NewGuid().ToString(),
+                    DateReceived = Convert.ToDateTime(date),
+                    SupplierId = supplierId
+                };
+                await _goodReceivedVoucherContext.AddAsync(goodsReceivedVoucher);
+                return Json(new { id = goodsReceivedVoucher.Id });
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                throw;
+            }
+            
         }
 
         [HttpPost]
