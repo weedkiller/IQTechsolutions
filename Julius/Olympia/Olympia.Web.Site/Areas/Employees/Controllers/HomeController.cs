@@ -14,5 +14,9 @@ namespace Olympia.Web.Site.Areas.Employees.Controllers
         {
             return View();
         }
+        public IActionResult Office()
+        {
+            return View();
+        }
     }
 }

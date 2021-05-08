@@ -89,43 +89,104 @@
     </table>
 </div>
 
+<br/>
+<br/>
 
 
+<!-- Page Title Start -->
+<section class="page-title-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-12 text-center">
+                <div class="page-title-content">
+                    <h3 class="title text-white">Contact Us</h3>
 
-
-<!--<div class="row ">
-
-
-
-    <div class="row" style="        position: relative;
-        text-align: center;
-
-        align-content: center;
-        padding-top: 80px;
-        display: flex;
-        justify-content: center;
-        position: relative;
-       /* top: 50%;*/
-        -ms-transform: translateY(-50%);
-        transform: translateY(-50%);
-        ">
-        <h4>
-            Change Get intouch Side Words
-        </h4>
-
-        <br />
-        <br>
-
-        <div class="form-group" >
-            <input class="btn btn-primary" name="finnish" type="submit" value="Upload" style="margin:10px;" />
-            <input class="btn btn-primary" name="main" type="submit" value="Save" style="margin:10px;" />-->
-@*<input class="btn btn-primary" name="finnish" type="submit" value="Create" style="margin:10px;" />*@
-@*<a href="javascript:;"  name="finnish"onclick="ShowCreateAnswerModel('@Model.Entity.Id')" class="btn btn-info" style="float: right">Create Answer</a>*@
-<!--<button class="btn btn-danger" asp-area="Faqs" asp-controller="Home" asp-action="List" style="margin:10px;">Cancel</button>
+                </div>
+            </div>
         </div>
     </div>
+</section>
 
-</div>-->
+<div style="display: flex; justify-content: center; position: relative; -ms-transform: translateY(-50%); transform: translateY(-50%);bottom:70px;">
+
+    <input class="btn btn-primary " type="button" id="btnpopu" value="Change Word" onclick="ShowPopup();" style="margin:10px;" />
+    <input class="btn btn-primary " type="button" id="btnpopu" value="Upload Picture" onclick="ShowPopup();" style="margin:10px;" />
+    <input class="btn btn-danger " type="button" id="btnpopu" value="Cancel" onclick="ShowPopup();" style="margin:10px;" />
+    <input class="btn btn-primary " type="button" id="btnpopu" value="Submit" onclick="ShowPopup();" style="margin:10px;" />
+
+</div>
+<!-- Page Title End -->
+<!-- Contact Section Start -->
+<section class="contact-section pdt-110 pdb-95 pdb-lg-90" data-background="images/bg/abs-bg1.png">
+    <div class="container">
+
+        <div class="row">
+            <div class="col-lg-5 col-xl-5">
+                <h5 class="sub-title-side-line text-primary-color mrt-0 mrb-15">Get In Touch</h5>
+                <h2 class="faq-title mrb-30">Have Any Questions?</h2>
+                <p class="mrb-40">Distinctively exploit revolutionary catalysts for chang the Seamlessly optimal rather than just in web &amp; apps development optimal alignments for intuitive.</p>
+                <a asp-area="Faqs" asp-controller="Home" asp-action="Index">
+
+
+                    <h6 class="cs-btn-one btn-md btn-round btn-primary-color element-shadow">Frequently Asked Quesions</h6>
+
+                </a>
+                <br />
+                <br />
+
+                <ul class="social-list list-lg list-primary-color list-flat mrb-md-60 clearfix">
+                    <li><a href="https://www.facebook.com/olympia.team" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+                    <li><a href="https://www.instagram.com/olympia.team" target="_blank"><i class="fab fa-twitter"></i></a></li>
+                    <li><a href="https://www.linkedin.com/company/olympia-team" target="_blank"><i class="fab fa-instagram"></i></a></li>
+                    <li><a href="https://twitter.com/Olympiateam1" target="_blank"><i class="fab fa-google-plus-g"></i></a></li>
+                </ul>
+            </div>
+            <div class="col-lg-7 col-xl-7">
+                <div class="contact-form">
+                    @*<form method="post" id="contactForm">
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <div class="form-group mrb-25">
+                                        <input type="text" placeholder="Name" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="form-group mrb-25">
+                                        <input type="text" placeholder="Phone" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="form-group mrb-25">
+                                        <input type="email" placeholder="Email" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="form-group mrb-25">
+                                        <textarea rows="4" placeholder="Messages" class="form-control"></textarea>
+                                    </div>
+                                </div>
+                                <div class="col-lg-8">
+                                    <div class="form-group">
+                                        <button type="submit" class="cs-btn-one btn-md btn-round btn-primary-color element-shadow">Submit Now</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>*@
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div style="display: flex; justify-content: center; position: relative; -ms-transform: translateY(-50%); transform: translateY(-50%);bottom:70px;">
+
+    <input class="btn btn-primary " type="button" id="btnpopu" value="Change Word" onclick="ShowPopup();" style="margin:10px;" />
+    <input class="btn btn-primary " type="button" id="btnpopu" value="Upload Picture" onclick="ShowPopup();" style="margin:10px;" />
+    <input class="btn btn-danger " type="button" id="btnpopu" value="Cancel" onclick="ShowPopup();" style="margin:10px;" />
+    <input class="btn btn-primary " type="button" id="btnpopu" value="Submit" onclick="ShowPopup();" style="margin:10px;" />
+
+</div>
+
 @section Scripts
 {
     <script type="text/javascript">
