@@ -1,58 +1,60 @@
 ﻿@{
-    ViewData["Title"] = "Olympia Home Page";
+    ViewData["Title"] = "Locate Us";
 }
 
 
-
 <!-- Team Section Start -->
-@*  id="btnpopu" value="Change Word" onclick="ShowPopup();" *@
-<section class="pdt-105 pdb-80 position-relative z-index-2" data-background="/images/bg/abs-bg1.png">
-    <h4> Other Branches</h4>
-    <div class="section-content">
-        <a asp-area="Employees" asp-controller="Home" asp-action="Office">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-6 col-lg-6 col-xl-3">
+@*  id="btnpopu" value="Change Word" onclick="ShowPopup();" *
+    <section class="pdt-105 pdb-80 position-relative z-index-2" data-background="/images/bg/abs-bg1.png">
+        <h4> Other Branches</h4>
+        <a class="section-content">
+            <a  asp-area="Employees" asp-controller="Home" asp-action="UsaOffice">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6 col-lg-6 col-xl-3">
 
-                        <div class="team-block mrb-30">
-                            <div class="team-upper-part">
-                                <img class="img-full" src="https://envato-shoebox-0.imgix.net/e66c/c82b-4d83-45f4-bfd0-ed9b0592cb0a/670.jpg?auto=compress%2Cformat&fit=max&mark=https%3A%2F%2Felements-assets.envato.com%2Fstatic%2Fwatermark2.png&markalign=center%2Cmiddle&markalpha=18&w=1000&s=c61ef942a17fe7346dc45a1f5a6e3d94" alt="">
-                            </div>
-                            <div class="team-bottom-part">
-                                <h4 class="team-title mrb-5"><a asp-area="" asp-page="/Index">South Africa</a></h4>
+                            <div class="team-block mrb-30">
+                                <div class="team-upper-part">
+                                    <img class="img-full" src="https://envato-shoebox-0.imgix.net/e66c/c82b-4d83-45f4-bfd0-ed9b0592cb0a/670.jpg?auto=compress%2Cformat&fit=max&mark=https%3A%2F%2Felements-assets.envato.com%2Fstatic%2Fwatermark2.png&markalign=center%2Cmiddle&markalpha=18&w=1000&s=c61ef942a17fe7346dc45a1f5a6e3d94" alt="">
+                                </div>
+                                <div class="team-bottom-part">
+                                    <h4 class="team-title mrb-5"><a asp-area="" asp-action="Create">South Africa</a></h4>
 
+                                </div>
                             </div>
                         </div>
+                        </div>
                     </div>
+                </a>
 
-        </a>
-        <div class="col-md-6 col-lg-6 col-xl-3">
-            <div class="team-block mrb-30">
-                <div class="team-upper-part">
-                    <img class="img-full" src="https://envato-shoebox-0.imgix.net/46e1/555a-56e8-451e-8789-43d3ab16d3e0/730870.jpg?auto=compress%2Cformat&fit=max&mark=https%3A%2F%2Felements-assets.envato.com%2Fstatic%2Fwatermark2.png&markalign=center%2Cmiddle&markalpha=18&w=1000&s=59aa10b5f1323ed721590b083296b056" alt="">
-                </div>
-                <div class="team-bottom-part">
-                    <h4 class="team-title mrb-5"><a href="#">USA</a></h4>
+            </a>
+            <div class="col-md-6 col-lg-6 col-xl-3">
+                <div class="team-block mrb-30">
+                    <div class="team-upper-part">
+                        <img class="img-full" src="https://envato-shoebox-0.imgix.net/46e1/555a-56e8-451e-8789-43d3ab16d3e0/730870.jpg?auto=compress%2Cformat&fit=max&mark=https%3A%2F%2Felements-assets.envato.com%2Fstatic%2Fwatermark2.png&markalign=center%2Cmiddle&markalpha=18&w=1000&s=59aa10b5f1323ed721590b083296b056" alt="">
+                    </div>
+                    <div class="team-bottom-part">
+                        <h4 class="team-title mrb-5"><a href="#">USA</a></h4>
 
-                </div>
-            </div>
-        </div>
-        <div class="col-md-6 col-lg-6 col-xl-3">
-            <div class="team-block mrb-30">
-                <div class="team-upper-part">
-                    <img class="img-full" src="https://envato-shoebox-0.imgix.net/8eb0/c39c-968e-4f54-85ca-21c96dc7ad67/IMG_1256.jpg?auto=compress%2Cformat&fit=max&mark=https%3A%2F%2Felements-assets.envato.com%2Fstatic%2Fwatermark2.png&markalign=center%2Cmiddle&markalpha=18&w=1000&s=4c1256de5c09e7da7b0521517ced3050" alt="">
-                </div>
-                <div class="team-bottom-part">
-                    <h4 class="team-title mrb-5"><a href="#">NetherLands</a></h4>
-
+                    </div>
                 </div>
             </div>
-        </div>
+            <div class="col-md-6 col-lg-6 col-xl-3">
+                <div class="team-block mrb-30">
+                    <div class="team-upper-part">
+                        <img class="img-full" src="https://envato-shoebox-0.imgix.net/8eb0/c39c-968e-4f54-85ca-21c96dc7ad67/IMG_1256.jpg?auto=compress%2Cformat&fit=max&mark=https%3A%2F%2Felements-assets.envato.com%2Fstatic%2Fwatermark2.png&markalign=center%2Cmiddle&markalpha=18&w=1000&s=4c1256de5c09e7da7b0521517ced3050" alt="">
+                    </div>
+                    <div class="team-bottom-part">
+                        <h4 class="team-title mrb-5"><a href="#">NetherLands</a></h4>
 
-    </div>
-    </div>
-    </div>
-</section>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        </div>
+        </div>
+    </section>*@
 
 <section class="page-title-section">
     <div class="container">
@@ -69,8 +71,8 @@
 
 <div style="display: flex; justify-content: center; position: relative; -ms-transform: translateY(-50%); transform: translateY(-50%);bottom:70px;">
 
-    <input class="btn btn-primary " type="button" id="btnpopu" value="Change Word" onclick="ShowPopup();" style="margin:10px;" />
-    <input class="btn btn-primary " type="button" id="btnpopu" value="Upload Picture" onclick="ShowPopup();" style="margin:10px;" />
+    <input class="btn btn-primary " type="button" id="btnpopu" value="Change Word" onclick="ShowPopup1();" style="margin:10px;" />
+    <input class="btn btn-primary " type="button" id="btnpopu" value="Upload Picture" onclick="ShowPopup2();" style="margin:10px;" />
     <input class="btn btn-danger " type="button" id="btnpopu" value="Cancel" onclick="ShowPopup();" style="margin:10px;" />
     <input class="btn btn-primary " type="button" id="btnpopu" value="Submit" onclick="ShowPopup();" style="margin:10px;" />
 
@@ -106,8 +108,8 @@
 
 <div style="display: flex; justify-content: center; position: relative; -ms-transform: translateY(-50%); transform: translateY(-50%);bottom:70px;">
 
-    <input class="btn btn-primary " type="button" id="btnpopu" value="Change Word" onclick="ShowPopup();" style="margin:10px;" />
-    <input class="btn btn-primary " type="button" id="btnpopu" value="Upload Picture" onclick="ShowPopup();" style="margin:10px;" />
+    <input class="btn btn-primary " type="button" id="btnpopu" value="Change Word" onclick="ShowPopup1();" style="margin:10px;" />
+    <input class="btn btn-primary " type="button" id="btnpopu" value="Upload Picture" onclick="ShowPopup2();" style="margin:10px;" />
     <input class="btn btn-danger " type="button" id="btnpopu" value="Cancel" onclick="ShowPopup();" style="margin:10px;" />
     <input class="btn btn-primary " type="button" id="btnpopu" value="Submit" onclick="ShowPopup();" style="margin:10px;" />
 
@@ -153,8 +155,8 @@
 
 <div style="display: flex; justify-content: center; position: relative; -ms-transform: translateY(-50%); transform: translateY(-50%);bottom:70px;">
 
-    <input class="btn btn-primary " type="button" id="btnpopu" value="Change Word" onclick="ShowPopup();" style="margin:10px;" />
-    <input class="btn btn-primary " type="button" id="btnpopu" value="Upload Picture" onclick="ShowPopup();" style="margin:10px;" />
+    <input class="btn btn-primary " type="button" id="btnpopu" value="Change Word" onclick="ShowPopup1();" style="margin:10px;" />
+    <input class="btn btn-primary " type="button" id="btnpopu" value="Upload Picture" onclick="ShowPopup2();" style="margin:10px;" />
     <input class="btn btn-danger " type="button" id="btnpopu" value="Cancel" onclick="ShowPopup();" style="margin:10px;" />
     <input class="btn btn-primary " type="button" id="btnpopu" value="Submit" onclick="ShowPopup();" style="margin:10px;" />
 
@@ -177,9 +179,22 @@
 
 <div style="display: flex; justify-content: center; position: relative; -ms-transform: translateY(-50%); transform: translateY(-50%);bottom:70px;">
 
-    <input class="btn btn-primary " type="button" id="btnpopu" value="Change Word" onclick="ShowPopup();" style="margin:10px;" />
-    <input class="btn btn-primary " type="button" id="btnpopu" value="Upload Picture" onclick="ShowPopup();" style="margin:10px;" />
+    @*<input class="btn btn-primary " type="button" id="btnpopu" value="Change Word" onclick="ShowPopup1();" style="margin:10px;" />
+    <input class="btn btn-primary " type="button" id="btnpopu" value="Upload Picture" onclick="ShowPopup2();" style="margin:10px;" />*@
     <input class="btn btn-danger " type="button" id="btnpopu" value="Cancel" onclick="ShowPopup();" style="margin:10px;" />
     <input class="btn btn-primary " type="button" id="btnpopu" value="Submit" onclick="ShowPopup();" style="margin:10px;" />
 
 </div>
+
+
+
+@* Scripts *@
+
+<script type="text/javascript">
+    ShowPopup2 = function () {
+        window.open('/Services/Home/Index', "PopupWindow", 'width=1000px,height=500px, bottom=20px,left=20px');
+    }
+    ShowPopup1 = function () {
+        window.open('/CaseStudies/Home/Index', "PopupWindow", 'width=1000px,height=500px, bottom=20px,left=20px');
+    }
+</script>

@@ -14,5 +14,7 @@ namespace Olympia.Web.Site.Areas.CaseStudies.Controllers
         public HomeController(CaseStudyContext service, CategoryContext<CaseStudy> categoryService) : base(service, categoryService)
         {
         }
-    }
+       
+}
+
 }
