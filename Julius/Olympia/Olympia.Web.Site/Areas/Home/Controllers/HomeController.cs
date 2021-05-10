@@ -14,7 +14,11 @@ namespace Olympia.Web.Site.Areas.Home.Controllers
         {
             return View();
         }
-       
+        public IActionResult ChangeWords()
+        {
+            return View();
+        }
+
         public string OpenPopup()
         {
             return "<h1> This Is Modeless Popup Window</h1>";

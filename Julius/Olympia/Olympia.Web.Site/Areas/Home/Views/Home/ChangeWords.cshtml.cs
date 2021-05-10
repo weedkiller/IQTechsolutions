@@ -5,9 +5,9 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace Olympia.Web.Site.Areas.Employees.Views.Home
+namespace Olympia.Web.Site.Areas.Home.Views.Home
 {
-    public class OfficeModel : PageModel
+    public class ChangeWordsModel : PageModel
     {
         public void OnGet()
         {
