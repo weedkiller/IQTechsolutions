@@ -20,5 +20,10 @@ namespace GoldTechInnovation.Web.Site.Controllers
         {
             return View();
         }
+
+        public IActionResult AboutUs()
+        {
+            return View();
+        }
     }
 }
