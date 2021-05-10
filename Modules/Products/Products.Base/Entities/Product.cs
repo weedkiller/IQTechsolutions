@@ -102,6 +102,18 @@ namespace Products.Base.Entities
         /// </summary>
         public double CostExcl { get; set; }
 
+        public double CostVat
+        {
+            get {
+                if (Vatable)
+                {
+                }
+            }
+        }
+
+
+        public double CostIncl { get; set; }
+
         /// <summary>
         /// The Exclusive Price of the item
         /// </summary>

@@ -62,7 +62,7 @@ namespace IQTechSolutions.Web.Admin.Areas.Inventory.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> ProcessGoodsReceivedVoucherDetail(string parentId, string productId, int qty)
+        public async Task<IActionResult> ProcessGoodsReceivedVoucherDetail(string parentId, string productId, int qty, double priceExcl)
         {
             try
             {
@@ -79,6 +79,7 @@ namespace IQTechSolutions.Web.Admin.Areas.Inventory.Controllers
                 };
                 await _goodReceivedVoucherContext.AddDetailAsync(detail);
 
+                product.CostExcl = priceExcl;
                 product.QtyInStock = product.QtyInStock + qty;
                 await _productContext.UpdateAsync(product);
 
