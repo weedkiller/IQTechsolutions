@@ -161,7 +161,7 @@ namespace Filing.Core.Factories
                     return image;
                 
                 // returns nothing if it was not an image file
-                return null;
+                //return null;
             }
             // returns nothing if it was not a file
             return null;

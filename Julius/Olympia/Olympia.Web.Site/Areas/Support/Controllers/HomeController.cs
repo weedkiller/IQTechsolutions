@@ -9,10 +9,17 @@ namespace Olympia.Web.Site.Areas.Support.Controllers
 {
     [Area("Support")]
     [Route("Support/[controller]/[action]")]
-    public class HomeController : TicketBaseController<UserInfo>
-    {
-        public HomeController(TicketContext<UserInfo> service, DefaultEmailSender emailSender, ICaptchaValidator captchaValidator) : base(service, emailSender, captchaValidator)
+    //public class HomeController : TicketBaseController<UserInfo>
+    //{
+    //    //public HomeController(TicketContext<UserInfo> service, DefaultEmailSender emailSender, ICaptchaValidator captchaValidator) : base(service, emailSender, captchaValidator)
+    //    //{
+    //    //}
+        public class HomeController : Controller
         {
+            public IActionResult Index()
+            {
+                return View();
+            }
+
         }
     }
-}

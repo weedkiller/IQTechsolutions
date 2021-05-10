@@ -327,7 +327,7 @@ namespace Grouping.Core.Context.Services
             {
                 foreach (var sub in file.SubCategories)
                 {
-                    RemoveCategory(sub.Id);
+                    await RemoveCategory(sub.Id);
                 }
             }
 
