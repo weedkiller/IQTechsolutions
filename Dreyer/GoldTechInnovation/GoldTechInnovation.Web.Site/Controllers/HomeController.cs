@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace GoldTechInnovation.Web.Site.Controllers
 {
+   
     public class HomeController : Controller
     {
         private readonly IProductRepository _productRepository;
@@ -25,5 +26,11 @@ namespace GoldTechInnovation.Web.Site.Controllers
         {
             return View();
         }
+
+        public IActionResult ContactUs()
+        {
+            return View();
+        }
+
     }
 }
