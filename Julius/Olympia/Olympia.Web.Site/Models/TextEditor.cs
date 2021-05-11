@@ -3,7 +3,7 @@ namespace TextEditor.Models
 {
     public class TextEditorViewModel
     {
-        [RichTextEditor.Models.AllowHtml]
+      
         [Display(Name = "Message")]
         public string Message
         {
