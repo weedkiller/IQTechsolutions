@@ -43,6 +43,7 @@
 
         <div class="newPost">
             <style>
+<<<<<<< Updated upstream
 
                 .newPost {
                     margin: 50px auto;
@@ -77,6 +78,42 @@
                         background: #2E3641;
                     }
 
+=======
+
+                .newPost {
+                    margin: 50px auto;
+                    padding: 50px 40px;
+                    width: 100%;
+                    max-width: 800px;
+                    min-width: 480px;
+                    background: #FFF;
+                    font-family: "Asap", sans-serif;
+                }
+
+                    .newPost h3 {
+                        margin: 0px 0px 20px 0px;
+                        font-size: 30px;
+                        color: #2E3641;
+                    }
+
+                    .newPost input[type=text] {
+                        padding-left: 15px;
+                        width: 100%;
+                        height: 45px;
+                        border: 1px solid #C1CFD9;
+                        box-shadow: inset 0px 0px 3px #C1CFD9;
+                        outline: none;
+                        font-family: "Bree Serif", serif;
+                        font-size: 24px;
+                        color: #C1CFD9;
+                        margin-bottom: 20px;
+                    }
+
+                    .newPost .toolbar {
+                        background: #2E3641;
+                    }
+
+>>>>>>> Stashed changes
                         .newPost .toolbar button {
                             float: left;
                             width: 45px;
@@ -126,6 +163,7 @@
                                 right: 10px;
                                 top: 15px;
                             }
+<<<<<<< Updated upstream
 >>>>>>> Stashed changes
 
                         .newPost .toolbar:after {
@@ -210,6 +248,78 @@
                                 background: #d1dbe3;
                             }
 
+=======
+
+                        .newPost .toolbar:after {
+                            content: "";
+                            display: block;
+                            clear: both;
+                        }
+
+                    .newPost .editor {
+                        min-height: 300px;
+                        width: 100%;
+                        resize: none;
+                        border: 1px solid #C1CFD9;
+                        box-shadow: inset 0px 0px 3px #C1CFD9;
+                        outline: none;
+                        padding: 15px;
+                        margin-bottom: 20px;
+                        position: relative;
+                    }
+
+                        .newPost .editor .saved {
+                            position: absolute;
+                            bottom: 0;
+                            right: 0;
+                            display: block;
+                            width: 45px;
+                            height: 45px;
+                            line-height: 45px;
+                            text-align: center;
+                            color: #FFF;
+                            text-transform: uppercase;
+                            background: #C1CFD9;
+                            font-weight: bold;
+                            border-top-left-radius: 15px;
+                        }
+
+                    .newPost .buttons {
+                        float: right;
+                    }
+
+                        .newPost .buttons button {
+                            float: left;
+                            width: 120px;
+                            height: 45px;
+                            border: none;
+                            color: #FFF;
+                            text-transform: uppercase;
+                            outline: none;
+                            margin-right: 20px;
+                            font-weight: bold;
+                            background: #C1CFD9;
+                            text-decoration: none;
+                        }
+
+                            .newPost .buttons button:last-of-type {
+                                margin-right: 0px;
+                                background: #F97E76;
+                            }
+
+                                .newPost .buttons button:last-of-type:hover {
+                                    background: #fa958e;
+                                }
+
+                            .newPost .buttons button:active {
+                                box-shadow: inset 0px 4px rgba(0, 0, 0, 0.05);
+                            }
+
+                            .newPost .buttons button:hover {
+                                background: #d1dbe3;
+                            }
+
+>>>>>>> Stashed changes
                         .newPost .buttons:after {
                             content: "";
                             display: block;
@@ -276,6 +386,34 @@
         </div>
         
         @*<div id="summernote">
+<<<<<<< Updated upstream
+
+            <textarea cols="80" rows="10" id="content" name="content">
+            &lt;h1&gt;Software <br /> Development&lt;/h1&gt;
+            &lt;p&gt;Turn-key solutions for every need&lt;/p&gt;
+          </textarea>
+        </div>*@
+
+
+        <div class="form-group" style="display: flex; justify-content: center; position: relative; -ms-transform: translateY(-50%); transform: translateY(-50%);top:50px;">
+
+
+            <button class="btn btn-danger" style="margin:10px;">Cancel</button>
+            <input class="btn btn-primary" name="finnish" type="submit" value="Save & Close" style="margin:10px;" />
+
+        </div>
+
+        <script>
+            $('#summernote').summernote({
+                placeholder: 'Software  Development',
+                //placeholder1: 'Turn-key solutions for every need',
+                //placeholder2: 'Get a Quote',
+                tabsize: 3,
+                height: 100
+            });
+
+>>>>>>> Stashed changes
+=======
 
             <textarea cols="80" rows="10" id="content" name="content">
             &lt;h1&gt;Software <br /> Development&lt;/h1&gt;
