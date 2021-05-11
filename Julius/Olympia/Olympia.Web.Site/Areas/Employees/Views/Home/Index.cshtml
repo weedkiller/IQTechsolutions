@@ -69,7 +69,7 @@
     </div>
 </section>
 
-<div style="display: flex; justify-content: center; position: relative; -ms-transform: translateY(-50%); transform: translateY(-50%);bottom:70px;">
+<div style="display: flex; justify-content: center; position: relative; -ms-transform: translateY(-50%); transform: translateY(-50%);bottom:50px;">
 
     <input class="btn btn-primary " type="button" id="btnpopu" value="Change Word" onclick="ShowPopup1();" style="margin:10px;" />
     <input class="btn btn-primary " type="button" id="btnpopu" value="Upload Picture" onclick="ShowPopup2();" style="margin:10px;" />
@@ -153,7 +153,7 @@
 
 </section>
 
-<div style="display: flex; justify-content: center; position: relative; -ms-transform: translateY(-50%); transform: translateY(-50%);bottom:70px;">
+<div style="display: flex; justify-content: center; position: relative; -ms-transform: translateY(-50%); transform: translateY(-50%);bottom:60px;">
 
     <input class="btn btn-primary " type="button" id="btnpopu" value="Change Word" onclick="ShowPopup1();" style="margin:10px;" />
     <input class="btn btn-primary " type="button" id="btnpopu" value="Upload Picture" onclick="ShowPopup2();" style="margin:10px;" />
@@ -165,13 +165,20 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-lg-12 p-0">
-                <!-- Google Map Start -->
+                <!-- Google Map Start --
                 <div class="mapouter fixed-height">
                     <div class="gmap_canvas">
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5060.688008844403!2d18.62342441612275!3d-33.85379642571359!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1dcc57517431becf%3A0xb602e69f03fc6860!2s99%20Jip%20De%20Jager%20Dr%2C%20De%20Bron%2C%20Cape%20Town%2C%207530!5e1!3m2!1sen!2sza!4v1619097379446!5m2!1sen!2sza" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                        <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1CQbDtJl79vGv7diFyY3W48xL3HDOmN6G" width="640" height="480"></iframe>
                     </div>
                     <!-- Google Map End -->
-                </div>
+                <style>
+                    html, body, #maps {
+                        height: 100%;
+                        margin: 0px;
+                        padding: 0px
+                    }
+                </style>
+                <div id="maps"></div>
             </div>
         </div>
     </div>
@@ -179,14 +186,20 @@
 
 <div style="display: flex; justify-content: center; position: relative; -ms-transform: translateY(-50%); transform: translateY(-50%);bottom:70px;">
 
-    @*<input class="btn btn-primary " type="button" id="btnpopu" value="Change Word" onclick="ShowPopup1();" style="margin:10px;" />
-    <input class="btn btn-primary " type="button" id="btnpopu" value="Upload Picture" onclick="ShowPopup2();" style="margin:10px;" />*@
+    <input class="btn btn-primary " type="button" id="btnpopu" value="Add Location" onclick="" style="margin:10px;" />
+    @*<input class="btn btn-primary " type="button" id="btnpopu" value="Upload Picture" onclick="ShowPopup2();" style="margin:10px;" />*@
     <input class="btn btn-danger " type="button" id="btnpopu" value="Cancel" onclick="ShowPopup();" style="margin:10px;" />
     <input class="btn btn-primary " type="button" id="btnpopu" value="Submit" onclick="ShowPopup();" style="margin:10px;" />
 
 </div>
 
+@{
+    ViewBag.Title = "Home Page";
+}
 
+<div id="map_canvas" style="width:750px; height:450px; border: 2px solid #3872ac;"></div>
+
+    
 
 @* Scripts *@
 
@@ -197,4 +210,86 @@
     ShowPopup1 = function () {
         window.open('/CaseStudies/Home/Index', "PopupWindow", 'width=1000px,height=500px, bottom=20px,left=20px');
     }
+    var locations = [
+        ['Location 1 Name', 'New York, NY', 'Location 1 URL'],
+        ['Location 2 Name', 'Newark, NJ', 'Location 2 URL'],
+        ['Location 3 Name', 'Philadelphia, PA', 'Location 3 URL']
+    ];
+
+    var geocoder;
+    var map;
+    var bounds = new google.maps.LatLngBounds();
+
+    function initialize() {
+        map = new google.maps.Map(
+            document.getElementById("map_canvas"), {
+            center: new google.maps.LatLng(37.4419, -122.1419),
+            zoom: 13,
+            mapTypeId: google.maps.MapTypeId.ROADMAP
+        });
+        geocoder = new google.maps.Geocoder();
+
+        for (i = 0; i < locations.length; i++) {
+
+
+            geocodeAddress(locations, i);
+        }
+    }
+    google.maps.event.addDomListener(window, "load", initialize);
+
+    function geocodeAddress(locations, i) {
+        var title = locations[i][0];
+        var address = locations[i][1];
+        var url = locations[i][2];
+        geocoder.geocode({
+            'address': locations[i][1]
+        },
+
+            function (results, status) {
+                if (status == google.maps.GeocoderStatus.OK) {
+                    var marker = new google.maps.Marker({
+                        icon: 'http://maps.google.com/mapfiles/ms/icons/blue.png',
+                        map: map,
+                        position: results[0].geometry.location,
+                        title: title,
+                        animation: google.maps.Animation.DROP,
+                        address: address,
+                        url: url
+                    })
+                    infoWindow(marker, map, title, address, url);
+                    bounds.extend(marker.getPosition());
+                    map.fitBounds(bounds);
+                } else {
+                    alert("geocode of " + address + " failed:" + status);
+                }
+            });
+    }
+
+    function infoWindow(marker, map, title, address, url) {
+        google.maps.event.addListener(marker, 'click', function () {
+            var html = "<div><h3>" + title + "</h3><p>" + address + "<br></div><a href='" + url + "'>View location</a></p></div>";
+            iw = new google.maps.InfoWindow({
+                content: html,
+                maxWidth: 350
+            });
+            iw.open(map, marker);
+        });
+    }
+
+    function createMarker(results) {
+        var marker = new google.maps.Marker({
+            icon: 'http://maps.google.com/mapfiles/ms/icons/blue.png',
+            map: map,
+            position: results[0].geometry.location,
+            title: title,
+            animation: google.maps.Animation.DROP,
+            address: address,
+            url: url
+        })
+        bounds.extend(marker.getPosition());
+        map.fitBounds(bounds);
+        infoWindow(marker, map, title, address, url);
+        return marker;
+    }
+
 </script>
