@@ -2,9 +2,6 @@
     ViewData["Title"] = "Get In-Touch";
 }
 
-
-
-
 @model IEnumerable<SupportTicket>
 
 @{
@@ -12,84 +9,80 @@
 }
 
 
-    <!-- Contact Section Start -->
-    <section class="contact-section pdt-110 pdb-95 pdb-lg-90" data-background="images/bg/abs-bg1.png">
-        <div class="container">
 
-            <div class="row">
-                <div class="col-lg-5 col-xl-5">
-                    <h5 class="sub-title-side-line text-primary-color mrt-0 mrb-15">Get In Touch</h5>
-                    <h2 class="faq-title mrb-30">Have Any Questions?</h2>
-                    <p class="mrb-40">Distinctively exploit revolutionary catalysts for chang the Seamlessly optimal rather than just in web &amp; apps development optimal alignments for intuitive.</p>
-                    <a asp-area="Faqs" asp-controller="Home" asp-action="Index">
+<div class="row">
 
 
-                        <h6 class="cs-btn-one btn-md btn-round btn-primary-color element-shadow">Frequently Asked Quesions</h6>
 
-                    </a>
-                    <br />
-                    <br />
-
-                    <ul class="social-list list-lg list-primary-color list-flat mrb-md-60 clearfix">
-                        <li><a href="https://www.facebook.com/olympia.team" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
-                        <li><a href="https://www.instagram.com/olympia.team" target="_blank"><i class="fab fa-twitter"></i></a></li>
-                        <li><a href="https://www.linkedin.com/company/olympia-team" target="_blank"><i class="fab fa-instagram"></i></a></li>
-                        <li><a href="https://twitter.com/Olympiateam1" target="_blank"><i class="fab fa-google-plus-g"></i></a></li>
-                    </ul>
-                </div>
-                <div class="col-lg-7 col-xl-7">
-                    <div class="contact-form">
-
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <div class="row" style="        position: relative;
-        text-align: center;
-
-        align-content: center;
-        padding-top: 80px;
-        display: flex;
-        justify-content: center;
-        position: relative;
-       /* top: 50%;*/
-        -ms-transform: translateY(-50%);
-        transform: translateY(-50%);
-        ">
-
-
-        <br />
-        <br>
-
-        <div class="form-group">
-            <input class="btn btn-primary " type="button" id="btnpopu" value="Change Word" onclick="ShowPopup1();" style="margin:10px;" />
-
-
-            <input class="btn btn-primary" name="finnish" type="submit" value="Upload" style="margin:10px;" />
-            <input class="btn btn-primary" name="main" type="submit" value="Save" style="margin:10px;" />
-        </div>
-        @section Scripts
-        {
-            <script type="text/javascript">
-                function ShowDeleteModal(ff) {
-                    var url = "/Support/Home/Delete?id=" + ff;
-                    $("#ModalPlaceHolder").load(url,
-                        function () {
-                            $("#ModalPlaceHolder").modal("show");
-                        });
-                }
-            </script>
-        }
-        @* Scripts *@
-
-        <script type="text/javascript">
-            ShowPopup2 = function () {
-                window.open('/Services/Home/Index', "PopupWindow", 'width=1000px,height=500px, bottom=20px,left=20px');
+    <table class="table">
+        <thead style="position: relative; text-align: center;align-content: center;justify-content: center;  padding-left:30px;">
+            Form Submission
+        </thead>
+        <thead>
+            <tr>
+                <th>
+                    @*@Html.DisplayNameFor(model => model.EmailAddress)*@
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.FirstName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.LastName)
+                </th>
+                <th>
+                        @Html.DisplayNameFor(model => model.CellNr)
+                    </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Subject)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Content)
+                </th>
+                <th>
+                        @Html.DisplayNameFor(model => model.Priority)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.TicketStatus)
+                    </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr id="row_@item.Id" class="row_@item.Id">
+                    <td>
+                        @*@Html.DisplayFor(modelItem => item.EmailAddress)*@
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.FirstName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.LastName)
+                    </td>
+                    <td>
+                            @Html.DisplayFor(modelItem => item.CellNr)
+                        </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Subject)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Content)
+                    </td>
+                    <td>
+                            @Html.DisplayFor(modelItem => item.Priority)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.TicketStatus)
+                        </td>
+                    <td>
+                        <a asp-action="Details" asp-route-id="@item.Id" style="padding-right:10px" class="btn btn-primary btn-circle">Reply</a>
+                        <a asp-action="Details" asp-route-id="@item.Id" style="padding-right: 10px" class="btn btn-primary btn-circle"><i class="fa fa-eye"></i></a>
+                        <a href="javascript:;" onclick="ShowDeleteModal('@item.Id')" class="btn btn-danger btn-circle"><i class="fa fa-trash"></i></a>
+                    </td>
+                </tr>
             }
-            ShowPopup1 = function () {
-                window.open('/CaseStudies/Home/Index', "PopupWindow", 'width=1000px,height=500px, bottom=20px,left=20px');
-            }
-        </script>
-      
+        </tbody>
+    </table>
+</div>
+

@@ -14,7 +14,6 @@ namespace Olympia.Web.DataStore
 {
     public class OlympiaDbContext : IdentityDbContext<ApplicationUser>
     {
-
         #region Public Properties
 
         /// <summary>

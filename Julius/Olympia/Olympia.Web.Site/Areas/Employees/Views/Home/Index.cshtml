@@ -1,0 +1,175 @@
+﻿@{
+    ViewData["Title"] = "Locate Us";
+}
+
+
+
+<section class="page-title-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-12 text-center">
+                <div class="page-title-content">
+                    <h3 class="title text-white">Find Continuous Performance Management in your Region   </h3>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div style="display: flex; justify-content: center; position: relative; -ms-transform: translateY(-50%); transform: translateY(-50%);bottom:70px;">
+
+    <input class="btn btn-primary " type="button" id="btnpopu" value="Change Word" onclick="ShowPopup1();" style="margin:10px;" />
+    <input class="btn btn-primary " type="button" id="btnpopu" value="Upload Picture" onclick="ShowPopup2();" style="margin:10px;" />
+    <input class="btn btn-danger " type="button" id="btnpopu" value="Cancel" onclick="ShowPopup();" style="margin:10px;" />
+    <input class="btn btn-primary " type="button" id="btnpopu" value="Submit" onclick="ShowPopup();" style="margin:10px;" />
+
+</div>
+<!-- About Section Start -->
+<section class="about-section pdt-165 pdt-lg-100 pdb-100 ">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-md-12 col-xl-12">
+                <div class="skills mrb-lg-60">
+                    <div class="col-lg-12">
+                        <div class="section-title-left-part mrb-sm-30">
+                            <h1 style="line-height: 30px; font-size: 25px" class="title">No matter where in the world you are, our team is ready to help you with the continuous performance management and employee engagement solution that your business needs </h1>
+
+                        </div>
+                    </div>
+
+
+                    <p class="mrb-40">
+                        Launched in South Africa in 2017, Olympia Engage has helped companies across all industries to engage their employees at the highest level and help drive productivity and self-mastery in the workplace. Designed to engage every employee at every level of the organisation, Olympia Engage allows people to be their best.
+
+                        No matter where you are in the world, Olympia Engage is a global solution and our team of consultants is ready to help you.
+                    </p>
+                    <a class="cs-btn-one btn-gradient-color btn-lg" asp-area="Identity" asp-page="/Account/Register">Sign Up</a>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+<!-- About Section End -->
+
+<div style="display: flex; justify-content: center; position: relative; -ms-transform: translateY(-50%); transform: translateY(-50%);bottom:70px;">
+
+    <input class="btn btn-primary " type="button" id="btnpopu" value="Change Word" onclick="ShowPopup1();" style="margin:10px;" />
+    <input class="btn btn-primary " type="button" id="btnpopu" value="Upload Picture" onclick="ShowPopup2();" style="margin:10px;" />
+    <input class="btn btn-danger " type="button" id="btnpopu" value="Cancel" onclick="ShowPopup();" style="margin:10px;" />
+    <input class="btn btn-primary " type="button" id="btnpopu" value="Submit" onclick="ShowPopup();" style="margin:10px;" />
+
+</div>
+<section>
+    <div class="row mrb-40" style="padding-top:50px;">
+        <div class="col-lg-6 col-xl-4">
+            <div class="contact-block d-flex mrb-30">
+                <div class="contact-icon">
+                    <i class="webex-icon-map1"></i>
+                </div>
+                <div class="contact-details mrl-30">
+                    <h5 class="icon-box-title mrb-10">Our Address</h5>
+                    <p class="mrb-0"> The Vineyards Office Estate, Manor House, 99 Jip De Jager, Bellville</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6 col-xl-4">
+            <div class="contact-block d-flex mrb-30">
+                <div class="contact-icon">
+                    <i class="webex-icon-Phone2"></i>
+                </div>
+                <div class="contact-details mrl-30">
+                    <h5 class="icon-box-title mrb-10">Phone Number</h5>
+                    <p class="mrb-0">(+27) 73 008 2739</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6 col-xl-4">
+            <div class="contact-block d-flex mrb-30">
+                <div class="contact-icon">
+                    <i class="webex-icon-envelope"></i>
+                </div>
+                <div class="contact-details mrl-30">
+                    <h5 class="icon-box-title mrb-10">Email Us</h5>
+                    <p class="mrb-0">info@olympiahd.com</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>
+
+<div style="display: flex; justify-content: center; position: relative; -ms-transform: translateY(-50%); transform: translateY(-50%);bottom:70px;">
+
+    <input class="btn btn-primary " type="button" id="btnpopu" value="Change Word" onclick="ShowPopup1();" style="margin:10px;" />
+    <input class="btn btn-primary " type="button" id="btnpopu" value="Upload Picture" onclick="ShowPopup2();" style="margin:10px;" />
+    <input class="btn btn-danger " type="button" id="btnpopu" value="Cancel" onclick="ShowPopup();" style="margin:10px;" />
+    <input class="btn btn-primary " type="button" id="btnpopu" value="Submit" onclick="ShowPopup();" style="margin:10px;" />
+
+</div>
+<div class="contact-section">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12 p-0">
+                <!-- Google Map Start -->
+                <div class="mapouter fixed-height">
+
+                    <h4>Add Map</h4>
+
+                    <style type="text/css">
+
+                        #map {
+                            height: 400px;
+                            width: 100%;
+                        }
+                    </style>
+                    <script>
+
+                        function initMap() {
+                            // The location of Uluru,
+                            const OlympiaMap = { lat: -33.8536494124353, lng: 18.625570181836018 };
+                               /* { lat: - 36.16373947737447, lng: 174.18778492609414 },*/ 
+                            
+                            // The map, centered at Uluru
+                            const map = new google.maps.Map(document.getElementById("map"), {
+                                zoom: 4,
+                                center: OlympiaMap,
+                            });
+                            // The marker, positioned at Uluru
+                            const marker = new google.maps.Marker({
+                                position: OlympiaMap,
+                                map: map,
+                            });
+                        }
+
+                    </script>
+
+
+                    <div id="map"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div style="display: flex; justify-content: center; position: relative; -ms-transform: translateY(-50%); transform: translateY(-50%);bottom:70px;">
+
+    <input class="btn btn-danger " type="button" id="btnpopu" value="Cancel" onclick="ShowPopup();" style="margin:10px;" />
+    <input class="btn btn-primary " type="button" id="btnpopu" value="Submit" onclick="ShowPopup();" style="margin:10px;" />
+
+</div>
+@* Scripts *@
+
+<script type="text/javascript">
+    ShowPopup2 = function () {
+        window.open('/Services/Home/Index', "PopupWindow", 'width=1000px,height=500px, bottom=20px,left=20px');
+    }
+    ShowPopup1 = function () {
+        window.open('/CaseStudies/Home/Index', "PopupWindow", 'width=1000px,height=500px, bottom=20px,left=20px');
+    }
+
+
+
+</script>
