@@ -14,7 +14,5 @@ namespace Olympia.Web.Site.Areas.Support.Controllers
         public HomeController(TicketContext<UserInfo> service, DefaultEmailSender emailSender, ICaptchaValidator captchaValidator) : base(service, emailSender, captchaValidator)
         {
         }
-      
-
     }
 }
