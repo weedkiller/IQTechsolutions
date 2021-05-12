@@ -107,12 +107,14 @@ namespace Products.Base.Entities
             get {
                 if (Vatable)
                 {
+                    return Math.Round((CostExcl * (1 + (VatRate / 100))) - CostExcl, 2);
                 }
+                return 0;
             }
         }
 
 
-        public double CostIncl { get; set; }
+        public double CostIncl => CostExcl + CostVat;
 
         /// <summary>
         /// The Exclusive Price of the item

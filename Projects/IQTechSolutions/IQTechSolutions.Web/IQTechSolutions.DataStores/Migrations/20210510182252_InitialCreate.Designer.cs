@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace IQTechSolutions.DataStores.Migrations
 {
     [DbContext(typeof(IQTechSolutionsDbContext))]
-    [Migration("20210502044401_AddSerialNrToProduct")]
-    partial class AddSerialNrToProduct
+    [Migration("20210510182252_InitialCreate")]
+    partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -1810,6 +1810,89 @@ namespace IQTechSolutions.DataStores.Migrations
                     b.ToTable("UserInfo");
                 });
 
+            modelBuilder.Entity("InventoryManagement.Base.Entities.GoodReceivedVoucher", b =>
+                {
+                    b.Property<string>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("nvarchar(450)")
+                        .HasColumnName("Id");
+
+                    b.Property<DateTime>("Created")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("CreatedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("DisplayIndex")
+                        .HasColumnType("int")
+                        .HasColumnName("DisplayIndex");
+
+                    b.Property<DateTime?>("Modified")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("ModifiedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("SupplierId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("SupplierId");
+
+                    b.ToTable("GoodReceivedVoucher");
+                });
+
+            modelBuilder.Entity("InventoryManagement.Base.Entities.GoodReceivedVoucherDetails", b =>
+                {
+                    b.Property<string>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("nvarchar(450)")
+                        .HasColumnName("Id");
+
+                    b.Property<DateTime>("Created")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("CreatedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("DisplayIndex")
+                        .HasColumnType("int")
+                        .HasColumnName("DisplayIndex");
+
+                    b.Property<string>("GoodReceivedVoucherId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<DateTime?>("Modified")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("ModifiedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<double>("PriceExcl")
+                        .HasColumnType("float");
+
+                    b.Property<double>("PriceIncl")
+                        .HasColumnType("float");
+
+                    b.Property<double>("PriceVat")
+                        .HasColumnType("float");
+
+                    b.Property<string>("ProductId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("Qty")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("GoodReceivedVoucherId");
+
+                    b.HasIndex("ProductId");
+
+                    b.ToTable("GoodReceivedVoucherDetails");
+                });
+
             modelBuilder.Entity("Iqt.Base.Entities.Address<Identity.Base.Entities.UserInfo>", b =>
                 {
                     b.Property<string>("Id")
@@ -2355,6 +2438,9 @@ namespace IQTechSolutions.DataStores.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<double>("CostExcl")
+                        .HasColumnType("float");
+
+                    b.Property<double>("CostIncl")
                         .HasColumnType("float");
 
                     b.Property<DateTime>("Created")
@@ -2956,6 +3042,30 @@ namespace IQTechSolutions.DataStores.Migrations
                     b.Navigation("UserInfo");
                 });
 
+            modelBuilder.Entity("InventoryManagement.Base.Entities.GoodReceivedVoucher", b =>
+                {
+                    b.HasOne("Suppliers.Base.Entities.Supplier", "Supplier")
+                        .WithMany()
+                        .HasForeignKey("SupplierId");
+
+                    b.Navigation("Supplier");
+                });
+
+            modelBuilder.Entity("InventoryManagement.Base.Entities.GoodReceivedVoucherDetails", b =>
+                {
+                    b.HasOne("InventoryManagement.Base.Entities.GoodReceivedVoucher", "GoodReceivedVoucher")
+                        .WithMany("Details")
+                        .HasForeignKey("GoodReceivedVoucherId");
+
+                    b.HasOne("Products.Base.Entities.Product", "Product")
+                        .WithMany()
+                        .HasForeignKey("ProductId");
+
+                    b.Navigation("GoodReceivedVoucher");
+
+                    b.Navigation("Product");
+                });
+
             modelBuilder.Entity("Iqt.Base.Entities.Address<Identity.Base.Entities.UserInfo>", b =>
                 {
                     b.HasOne("Identity.Base.Entities.UserInfo", "Entity")
@@ -3282,6 +3392,11 @@ namespace IQTechSolutions.DataStores.Migrations
                     b.Navigation("EmailAddresses");
 
                     b.Navigation("Images");
+                });
+
+            modelBuilder.Entity("InventoryManagement.Base.Entities.GoodReceivedVoucher", b =>
+                {
+                    b.Navigation("Details");
                 });
 
             modelBuilder.Entity("Products.Base.Entities.Brand", b =>

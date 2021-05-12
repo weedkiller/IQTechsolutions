@@ -1,4 +1,5 @@
-﻿@model InventoryManagement.Core.Models.GoodReceivedVoucherAddEditModel
+﻿@using System.Web
+@model InventoryManagement.Core.Models.GoodReceivedVoucherAddEditModel
 
 <div class="row">
     <div class="col-md-9">
@@ -29,15 +30,21 @@
                     <td colspan="1">
                         <input id="QtyToAdd" class="form-control" style="width: 100px" value="1" />
                     </td>
-                    <td colspan="6">
+                    <td colspan="3">
                         <select class="form-control" id="Product" asp-for="Product" asp-items="@(new SelectList(Model.ProductList, "Id", "Name"))">
                             <option selected="selected" value="0">
                                 Select Product
                             </option>
                         </select>
                     </td>
+                    <td colspan="2">
+                        <input id="UnitPriceToAdd" class="form-control" style="width: 100px" placeholder="UnitPrice" />
+                    </td>
                     <td colspan="1">
                         <button type="button" class="btn btn-primary" style="float: right" value="Add" onclick="AddProductToTable()">Add Product</button>
+                    </td>
+                    <td colspan="1">
+                        <a class="btn btn-default btn-block" value="Add" asp-area="Products" asp-controller="Home" asp-action="Create" asp-route-returnUrl="/Inventory/GoodsReceived/Create?id=@Model.GoodReceivedVoucher.Id">Create New Product</a>
                     </td>
                 </tr>
                 <tr>
@@ -81,8 +88,8 @@
                         <td id="pack_@item.Product.Id">@item.Product.PackageItems.Count</td>
                         <td id="unit_@item.Product.Id">@item.Product.PriceExcl</td>
                         <td id="excl_@item.Product.Id">@item.Qty * @item.Product.CostExcl</td>
-                        <td id="vat_@item.Product.Id">@item.Qty * @item.Product.Vat</td>
-                        <td id="incl_@item.Product.Id">@item.Qty * @item.Product.PriceIncl</td>
+                        <td id="vat_@item.Product.Id">@item.Qty * @item.Product.CostVat</td>
+                        <td id="incl_@item.Product.Id">@item.Qty * @item.Product.CostIncl</td>
                         <td><a href="javascript:;" onclick="ShowDeleteGRVProductModel('@item.Id')"><i class="fa fa-trash"></i></a></td>
                     </tr>
                 }
@@ -136,7 +143,7 @@
                         for (var i = 0, row; row = table.rows[i]; i++) {
                             ProcessGoodsReceivedVoucherDetails(data.id,
                                 row.cells[0].innerHTML,
-                                row.cells[1].innerHTML);
+                                row.cells[1].innerHTML, row.cells[4].innerHTML);
                         }
                     },
                     error: function(xhr, textStatus, err) {

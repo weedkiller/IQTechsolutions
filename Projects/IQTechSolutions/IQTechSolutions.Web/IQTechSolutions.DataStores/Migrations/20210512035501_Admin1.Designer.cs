@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace IQTechSolutions.DataStores.Migrations
 {
     [DbContext(typeof(IQTechSolutionsDbContext))]
-    [Migration("20210506185652_AddGoodsReceivedVouchers")]
-    partial class AddGoodsReceivedVouchers
+    [Migration("20210512035501_Admin1")]
+    partial class Admin1
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

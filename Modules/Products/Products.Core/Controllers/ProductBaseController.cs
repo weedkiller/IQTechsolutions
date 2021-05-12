@@ -211,12 +211,13 @@ namespace Products.Core.Controllers
         /// Creates a new service
         /// </summary>
         /// <returns>The create view and model</returns>
-        public async Task<IActionResult> Create()
+        public async Task<IActionResult> Create(string returnUrl)
         {
             // Setup the blog entry edit model
             var model = new ProductAddEditModel(new Product(), (CategoryService.GetAll()).Where(c => c.ParentCategoryId == null).ToList())
             {
-                Brands = Service.GetAllBrands().ToList()
+                Brands = Service.GetAllBrands().ToList(),
+                ReturnUrl = returnUrl
             };
 
             // returns the create view with model
@@ -254,6 +255,10 @@ namespace Products.Core.Controllers
                     }
                 }
 
+                if (!string.IsNullOrEmpty(model.ReturnUrl))
+                {
+                    return RedirectToAction(model.ReturnUrl);
+                }
                 // if main submit button is clicked
                 if (finnish != null)
                 {
@@ -272,6 +277,7 @@ namespace Products.Core.Controllers
                     // return the category edit view
                     return RedirectToAction(nameof(Create), "Features", new { area = "Products", productId = model.Entity.Id });
                 }
+                return RedirectToAction(nameof(List));
             }
 
             // Returns the view with the model

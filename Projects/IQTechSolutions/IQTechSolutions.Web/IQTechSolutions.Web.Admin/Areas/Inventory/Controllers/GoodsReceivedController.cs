@@ -28,14 +28,25 @@ namespace IQTechSolutions.Web.Admin.Areas.Inventory.Controllers
             _goodReceivedVoucherContext = goodReceivedVoucherContext;
         }
 
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Create(string id)
         {
             var model = new GoodReceivedVoucherAddEditModel()
             {
                 SupplierList = await _supplierContext.GetAll().Where(c => c.Active).ToListAsync(),
                 ProductList = await _productContext.GetAll().Where(c => c.Active).ToListAsync(),
                 GoodReceivedVoucher = new GoodReceivedVoucher()
+                {
+                    Id = Guid.NewGuid().ToString()
+                }
             };
+
+            if (!string.IsNullOrEmpty(id))
+            {
+                var voucher = await _goodReceivedVoucherContext.GetAsync(id);
+                model.GoodReceivedVoucher = voucher;
+                model.Supplier = voucher.Supplier;
+            }
+            
             return View(model);
         }
 
@@ -62,7 +73,7 @@ namespace IQTechSolutions.Web.Admin.Areas.Inventory.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> ProcessGoodsReceivedVoucherDetail(string parentId, string productId, int qty, double priceExcl)
+        public async Task<IActionResult> ProcessGoodsReceivedVoucherDetail(string parentId, string productId, int qty, double? priceExcl)
         {
             try
             {
@@ -79,7 +90,11 @@ namespace IQTechSolutions.Web.Admin.Areas.Inventory.Controllers
                 };
                 await _goodReceivedVoucherContext.AddDetailAsync(detail);
 
-                product.CostExcl = priceExcl;
+                if (priceExcl != null)
+                {
+                    product.CostExcl = priceExcl.Value;
+                }
+                
                 product.QtyInStock = product.QtyInStock + qty;
                 await _productContext.UpdateAsync(product);
 
@@ -93,7 +108,7 @@ namespace IQTechSolutions.Web.Admin.Areas.Inventory.Controllers
             
         }
 
-        public async Task<IActionResult> AddGoodsReceivedProduct(string id, double qty)
+        public async Task<IActionResult> AddGoodsReceivedProduct(string id, double qty, double priceExcl)
         {
             var product = await _productContext.GetAsync(id);
             var result = new
@@ -102,9 +117,9 @@ namespace IQTechSolutions.Web.Admin.Areas.Inventory.Controllers
                 id = product.Id,
                 name = product.Name,
                 pack = product.PackageItems.Count,
-                excl = product.PriceExcl,
-                vat = product.Vat,
-                incl = product.PriceIncl
+                excl = product.CostExcl,
+                vat = product.CostVat,
+                incl = product.CostIncl
             };
             return Json(result);
         }

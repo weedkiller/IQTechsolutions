@@ -1,16 +1,26 @@
 ﻿var rows = [];
 
+function OnSelectionProductChanged() {
+
+}
+
 function AddProductToTable() {
+
+    
 
     var url = "/Inventory/GoodsReceived/AddGoodsReceivedProduct";
     var identity = $('#Product option:selected').val();
     var quantity = $('#QtyToAdd').val();
+    var unitPrice = $('#UnitPriceToAdd').val();
 
     if (quantity === "0") {
         alert("You cannot accept 0 Products!");
     }
     if (identity === "0") {
         alert("Please select a Product!");
+    }
+    if (unitPrice === null) {
+        alert("Please insert the unit price!");
     }
 
 
@@ -19,7 +29,7 @@ function AddProductToTable() {
             url: url,
             type: "GET",
             dataType: "JSON",
-            data: { id: identity, qty: quantity },
+            data: { id: identity, qty: quantity, priceExcl: unitPrice },
             success: function (data) {
 
                 var existingTableRow = document.getElementById("row_" + data.id);
@@ -118,6 +128,7 @@ function AddProductToTable() {
                 inclTotalColumn.innerHTML =
                     (parseFloat(inclTotalColumn.innerHTML) + (data.qty * data.incl)).toFixed(2);
 
+                $("#Product").find('option[value="0"]').attr('selected', 'selected')
             },
             error: function (xhr, textStatus, err) {
                 alert("An error with the following detials occured : " +
