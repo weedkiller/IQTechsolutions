@@ -1,5 +1,4 @@
-﻿using Iqt.Base.BaseTypes;
-using Iqt.Base.Interfaces;
+﻿using Iqt.Base.Interfaces;
 
 namespace Iqt.Base.Models
 {

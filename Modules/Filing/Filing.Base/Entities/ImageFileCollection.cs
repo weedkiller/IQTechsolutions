@@ -1,8 +1,6 @@
 ﻿using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations.Schema;
 using Filing.Base.Interfaces;
 using Iqt.Base.BaseTypes;
-using Microsoft.EntityFrameworkCore.Metadata.Internal;
 
 namespace Filing.Base.Entities
 {

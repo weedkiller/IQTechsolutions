@@ -1,13 +1,7 @@
-﻿using Entity.Base;
-using GoldTechInnovation.Web.Datastores;
-using Microsoft.AspNetCore.Http;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
-using Products;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace GoldTechInnovation.Web.Site.Models
 {

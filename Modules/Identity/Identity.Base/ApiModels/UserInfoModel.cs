@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Identity.Base.ApiModels
+﻿namespace Identity.Base.ApiModels
 {
     public class UserInfoModel
     {

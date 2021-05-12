@@ -3,7 +3,6 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using Filing.Base.Entities;
 using Identity.Base.Entities;
-using Iqt.Base.BaseTypes;
 
 namespace Feedback.Base.Entities
 {

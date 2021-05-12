@@ -1,0 +1,34 @@
+﻿@using Identity.Base.Entities
+@inject SignInManager<ApplicationUser> SignInManager
+
+<div class="nav-wrapper">
+    <div class="nav-close-layer"></div>
+    <nav>
+        <ul>
+            <li class="active">
+                <a asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+            </li>
+            <li>
+                <a asp-area="" asp-controller="Home" asp-action="AboutUs">About Us</a>
+            </li>
+            @if (!SignInManager.IsSignedIn(User))
+            {
+                <partial name="_DefaultUserMenu"/>
+            }
+            else
+            {
+                <partial name="_DefaultAdminMenu"/>
+            }
+            <li><a asp-action="ContactUs">contact us</a></li>
+
+        </ul>
+        <div class="navigation-title">
+            Navigation
+            <div class="hamburger-icon active">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+</div>

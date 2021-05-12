@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Iqt.Base.Enums.Calendar
+﻿namespace Iqt.Base.Enums.Calendar
 {
     public enum Recurrence
     {

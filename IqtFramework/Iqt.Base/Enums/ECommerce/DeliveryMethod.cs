@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Iqt.Base.Enums.ECommerce
+﻿namespace Iqt.Base.Enums.ECommerce
 {
     /// <summary>
     /// The method of delivery

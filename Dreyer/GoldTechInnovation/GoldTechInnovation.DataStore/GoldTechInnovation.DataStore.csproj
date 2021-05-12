@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="5.0.5" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Modules\Blogging\Blogging.Core\Blogging.Core.csproj" />
+    <ProjectReference Include="..\..\..\Modules\Identity\Identity.Base\Identity.Base.csproj" />
+  </ItemGroup>
+
+</Project>

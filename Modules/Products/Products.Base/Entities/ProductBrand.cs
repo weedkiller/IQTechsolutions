@@ -1,6 +1,4 @@
-﻿using Iqt.Inventory.Entities;
-
-namespace Products.Base.Entities
+﻿namespace Products.Base.Entities
 {
     /// <summary>
     /// The brand of the product

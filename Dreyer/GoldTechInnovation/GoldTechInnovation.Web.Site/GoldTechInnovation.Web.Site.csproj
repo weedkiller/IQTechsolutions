@@ -13,6 +13,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Include="Areas\Blog\Views\Categories\Create.cshtml" />
+    <None Include="Areas\Blog\Views\Categories\Edit.cshtml" />
+    <None Include="Areas\Blog\Views\Categories\List.cshtml" />
+    <None Include="wwwroot\images\placeholders\Thumbs.db" />
     <None Include="wwwroot\lib\bootstrap\dist\css\bootstrap-grid.css.map" />
     <None Include="wwwroot\lib\bootstrap\dist\css\bootstrap-grid.min.css.map" />
     <None Include="wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.css.map" />
@@ -55,7 +59,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\GoldTechInnovation.Web.Datastores\GoldTechInnovation.Web.Datastores.csproj" />
+    <ProjectReference Include="..\..\..\IqtFramework\Iqt.Base\Iqt.Base.csproj" />
+    <ProjectReference Include="..\..\..\Modules\Blogging\Blogging.Base\Blogging.Base.csproj" />
+    <ProjectReference Include="..\..\..\Modules\Blogging\Blogging.Core\Blogging.Core.csproj" />
+    <ProjectReference Include="..\GoldTechInnovation.DataStore\GoldTechInnovation.DataStore.csproj" />
   </ItemGroup>
 
 </Project>

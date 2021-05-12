@@ -2,7 +2,6 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using Iqt.Base.BaseTypes;
-using Iqt.Base.Interfaces;
 
 namespace Iqt.Base.Entities
 {

@@ -1,0 +1,25 @@
+﻿<div class="empty-space col-xs-b15 col-sm-b30"></div>
+<div class="breadcrumbs">
+    <a asp-area="" asp-controller="Home" asp-action="Index">home</a>
+    <a href="#">blog</a>
+    @*@if (ViewContext.RouteData.Values["area"] != null && ViewContext.RouteData.Values["area"].ToString().ToLower() != "")
+        {
+            <a asp-area="@ViewContext.RouteData.Values["area"].ToString()" asp-controller="Home" asp-action="Index">@ViewContext.RouteData.Values["area"].ToString()</a>
+        }
+        @if (ViewContext.RouteData.Values["controller"].ToString().ToLower() != "home")
+        {
+            if (ViewContext.RouteData.Values["action"].ToString().ToLower() == "index")
+            {
+                <a asp-area="" asp-controller="Home" asp-action="Index">home</a>
+            }
+            else
+            {
+
+            }
+        }
+        @if (ViewContext.RouteData.Values["action"].ToString().ToLower() != "index")
+        {
+
+        }*@
+    <a href="#">blog</a>
+</div>

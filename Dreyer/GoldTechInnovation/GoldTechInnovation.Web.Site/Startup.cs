@@ -1,18 +1,14 @@
-using GoldTechInnovation.Web.Datastores;
-using GoldTechInnovation.Web.Site.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Identity.UI;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using Blogging.Core.Extensions;
+using GoldTechInnovation.DataStore;
+using Grouping.Core.Extensions;
+using Identity.Base.Entities;
 
 namespace GoldTechInnovation.Web.Site
 {
@@ -28,28 +24,21 @@ namespace GoldTechInnovation.Web.Site
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<GoldTechInnovationDBContext>(options =>
+            services.AddDbContext<GoldTechInnovationDbContext>(options =>
                 options.UseSqlServer(
                     Configuration.GetConnectionString("DefaultConnection")));
 
-            services.AddControllersWithViews();
-
             services.AddDatabaseDeveloperPageExceptionFilter();
 
-            services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
-                .AddEntityFrameworkStores<GoldTechInnovationDBContext>();
-
-            services.AddScoped<ICategoryRepository, CategoryRepository>();
-
-            services.AddScoped<IProductRepository, ProductRepository>();
-
-            services.AddScoped<ShoppingCart>(sc => ShoppingCart.GetCart(sc));
-
-            services.AddScoped<IOrderRepository, OrderRepository>();
+            services.AddIdentity<ApplicationUser, IdentityRole>(options => options.SignIn.RequireConfirmedAccount = true)
+                .AddEntityFrameworkStores<GoldTechInnovationDbContext>();
 
             services.AddHttpContextAccessor();
             services.AddSession();
 
+            services.AddBlogging().AddGrouping();
+
+            services.AddControllersWithViews();
             services.AddRazorPages();
         }
 
@@ -80,17 +69,8 @@ namespace GoldTechInnovation.Web.Site
 
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapControllerRoute(
-                   name: "default",
-                   pattern: "{controller=Home}/{action=Index}/{id?}"
-                   );
-
-                endpoints.MapControllerRoute(
-                    name: "areas",
-                    pattern: "{area:exists}/{controller=Home}/{action=Index}/{id?}"
-                    );
-
-                //endpoints.MapRazorPages();
+                endpoints.MapDefaultControllerRoute();
+                endpoints.MapRazorPages();
             });
         }
     }

@@ -1,24 +1,18 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using Blogging.Base.Entities;
+using Blogging.Core.Context.Services;
+using Microsoft.AspNetCore.Mvc;
+using Blogging.Core.Controllers;
+using Grouping.Core.Context.Services;
 
 namespace GoldTechInnovation.Web.Site.Areas.Blog.Controllers
 {
 
     [Area("Blog")]
-    [Route("Blog/[controller]/[action]")]
-    public class HomeController : Controller
+    [Route("Blog/{controller=Home}/{action=Index}")]
+    public class HomeController : BlogBaseController
     {
-        public IActionResult Index()
+        public HomeController(BlogContext service, CategoryContext<BlogPost> categoryService) : base(service, categoryService)
         {
-            return View();
-        }
-
-        public IActionResult Details()
-        {
-            return View();
         }
     }
 }

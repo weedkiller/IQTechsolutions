@@ -1,10 +1,4 @@
-﻿using GoldTechInnovation.Web.Datastores;
-using Microsoft.EntityFrameworkCore;
-using Products;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace GoldTechInnovation.Web.Site.Models
 {
