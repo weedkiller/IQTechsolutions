@@ -55,5 +55,7 @@ namespace GoldTechInnovation.Web.Site.Controllers
 
             return View(product);
         }
+
+        
     }
 }

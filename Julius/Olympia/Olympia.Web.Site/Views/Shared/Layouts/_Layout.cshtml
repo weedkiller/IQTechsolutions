@@ -54,6 +54,19 @@
     <!-- Main Stylesheet -->
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="/css/responsive.css">
+
+    <script>
+        //cancel = function () {
+        //    window.open('/CaseStudies/Home/Index', "PopupWindow", 'width=1000px,height=500px, bottom=20px,left=20px');
+        //}
+        $("#cancel").click(function () {
+            //this will find the selected website from the dropdown
+            var go_to_url = $("#websites").find(":selected").val();
+
+            //this will redirect us in same window
+            document.location.href = go_to_url;
+        });
+    </script>
    
     @RenderSection("Styles", required: false)
 
