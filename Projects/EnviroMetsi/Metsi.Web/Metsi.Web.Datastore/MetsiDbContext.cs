@@ -6,7 +6,6 @@ using Education.Core.Extensions;
 using Employment.Core.Extensions;
 using Feedback.Core.Extensions;
 using Identity.Base.Entities;
-using Iqt.Base.Entities;
 using Messaging.Core.Extensions;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
