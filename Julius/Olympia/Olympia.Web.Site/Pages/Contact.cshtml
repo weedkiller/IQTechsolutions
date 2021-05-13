@@ -1,7 +1,11 @@
-﻿@page
-@model ContactModel
+﻿@model ContactModel
+
+@*@model IEnumerable<UsersData>*@
+
+
 @{
     ViewData["Title"] = "Get in Touch";
+
 }
 
 
@@ -12,7 +16,7 @@
             <div class="col-xl-12 text-center">
                 <div class="page-title-content">
                     <h3 class="title text-white">Contact Us</h3>
-                    
+
                 </div>
             </div>
         </div>
@@ -22,13 +26,13 @@
 <!-- Contact Section Start -->
 <section class="contact-section pdt-110 pdb-95 pdb-lg-90" data-background="images/bg/abs-bg1.png">
     <div class="container">
-       
+
         <div class="row">
             <div class="col-lg-5 col-xl-5">
                 <h5 class="sub-title-side-line text-primary-color mrt-0 mrb-15">Get In Touch</h5>
                 <h2 class="faq-title mrb-30">Have Any Questions?</h2>
                 <p class="mrb-40">Distinctively exploit revolutionary catalysts for chang the Seamlessly optimal rather than just in web &amp; apps development optimal alignments for intuitive.</p>
-                <a asp-area="Faqs" asp-controller="Home" asp-action="Index">
+                <a asp-area="Faqs" asp-controller="Home" asp-action="FaqAddEdit">
 
 
                     <h6 class="cs-btn-one btn-md btn-round btn-primary-color element-shadow">Frequently Asked Quesions</h6>
@@ -45,36 +49,67 @@
                 </ul>
             </div>
             <div class="col-lg-7 col-xl-7">
-                <div class="contact-form">
-                    <form method="post" id="contactForm">
-                        <div class="row">
-                            <div class="col-lg-6">
-                                <div class="form-group mrb-25">
-                                    <input type="text" placeholder="Name" class="form-control">
+                @*<div class="contact-form">
+                    <div asp-validation-summary="All" class="text-danger">
+                        <form asp-action="Contant" method="post">
+                            <div class="form-group">
+                                <label>@Html.DisplayNameFor(Views_Shared)</label>
+                                <div><span asp-validation-for="Name" class="text-danger"></span></div>
+                                <input asp-for="Name" class="form-control" />
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="PhoneNr"></label>
+                                <div><span asp-validation-for=" PhoneNr " class="text-danger"></span></div>
+                                <textarea asp-for=" PhoneNr " class="form-control"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="Email"></label>
+                                <div><span asp-validation-for="Email" class="text-danger"></span></div>
+                                <select asp-for="CategoryID" class="form-control" asp-items="ViewBag.CategoryId">
+                                    <option value=""> -- Select Category -- </option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="Message"></label>
+                                <div><span asp-validation-for=" Message " class="text-danger"></span></div>
+                                <input asp-for=" Message " class="form-control" />
+                            </div>
+                            <div class="text-center">
+                                <button class="btn btn-primary" type="submit">Save</button>
+                            </div>
+                        </form>
+
+
+                    </div>*@
+                    @*<form  asp-action="Add" method="post" id="contactForm" >
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <div class="form-group mrb-25">
+                                        <input type="text" placeholder="Name"  class="form-control">
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="form-group mrb-25">
+                                        <input type="text" placeholder="Phone" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="form-group mrb-25">
+                                        <input type="email" placeholder="Email" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="form-group mrb-25">
+                                        <textarea rows="4" placeholder="Messages" class="form-control"></textarea>
+                                    </div>
+                                </div>
+                                <div class="col-lg-8">
+                                    <div class="form-group">
+                                        <button type="submit" class="cs-btn-one btn-md btn-round btn-primary-color element-shadow">Submit Now</button>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="col-lg-6">
-                                <div class="form-group mrb-25">
-                                    <input type="text" placeholder="Phone" class="form-control">
-                                </div>
-                            </div>
-                            <div class="col-lg-12">
-                                <div class="form-group mrb-25">
-                                    <input type="email" placeholder="Email" class="form-control">
-                                </div>
-                            </div>
-                            <div class="col-lg-12">
-                                <div class="form-group mrb-25">
-                                    <textarea rows="4" placeholder="Messages" class="form-control"></textarea>
-                                </div>
-                            </div>
-                            <div class="col-lg-8">
-                                <div class="form-group">
-                                    <button type="submit" class="cs-btn-one btn-md btn-round btn-primary-color element-shadow">Submit Now</button>
-                                </div>
-                            </div>
-                        </div>
-                    </form>
+                        </form>*@
                 </div>
             </div>
         </div>

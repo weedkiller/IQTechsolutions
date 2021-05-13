@@ -21,22 +21,10 @@ namespace Olympia.Web.Site.Areas.Employees.Controllers
         {
             return View(); 
         }
-<<<<<<< HEAD
 
-
-=======
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-=======
         
         
 
->>>>>>> Stashed changes
-=======
-        
-        
 
->>>>>>> Stashed changes
->>>>>>> origin/Olympia-Map-Model-Completed
     }
 }

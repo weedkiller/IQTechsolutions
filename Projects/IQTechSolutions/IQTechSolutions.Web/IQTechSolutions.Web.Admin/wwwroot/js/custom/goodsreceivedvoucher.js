@@ -127,8 +127,6 @@ function AddProductToTable() {
                 var inclTotalColumn = document.getElementById("tableInclTotal");
                 inclTotalColumn.innerHTML =
                     (parseFloat(inclTotalColumn.innerHTML) + (data.qty * data.incl)).toFixed(2);
-
-                $("#Product").find('option[value="0"]').attr('selected', 'selected')
             },
             error: function (xhr, textStatus, err) {
                 alert("An error with the following detials occured : " +

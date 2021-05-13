@@ -17,7 +17,11 @@
     </div>
 </section>
 
+<<<<<<< HEAD
 <div style="display: flex; justify-content: center; position: relative; -ms-transform: translateY(-50%); transform: translateY(-50%);bottom:50px;">
+=======
+<div style="display: flex; justify-content: center; position: relative; -ms-transform: translateY(-50%); transform: translateY(-50%);bottom:70px;">
+>>>>>>> origin/master
 
     <input class="btn btn-primary " type="button" id="btnpopu" value="Change Word" onclick="ShowPopup1();" style="margin:10px;" />
     <input class="btn btn-primary " type="button" id="btnpopu" value="Upload Picture" onclick="ShowPopup2();" style="margin:10px;" />
@@ -101,7 +105,11 @@
 
 </section>
 
+<<<<<<< HEAD
 <div style="display: flex; justify-content: center; position: relative; -ms-transform: translateY(-50%); transform: translateY(-50%);bottom:60px;">
+=======
+<div style="display: flex; justify-content: center; position: relative; -ms-transform: translateY(-50%); transform: translateY(-50%);bottom:70px;">
+>>>>>>> origin/master
 
     <input class="btn btn-primary " type="button" id="btnpopu" value="Change Word" onclick="ShowPopup1();" style="margin:10px;" />
     <input class="btn btn-primary " type="button" id="btnpopu" value="Upload Picture" onclick="ShowPopup2();" style="margin:10px;" />
@@ -113,6 +121,7 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-lg-12 p-0">
+<<<<<<< HEAD
                 <!-- Google Map Start --
                 <div class="mapouter fixed-height">
                     <div class="gmap_canvas">
@@ -144,19 +153,64 @@
 >>>>>>> Stashed changes
                 </div>
 >>>>>>> origin/Olympia-Map-Model-Completed
+=======
+                <!-- Google Map Start -->
+                <div class="mapouter fixed-height">
+
+                    <h4>Add Map</h4>
+
+                    <style type="text/css">
+
+                        #map {
+                            height: 400px;
+                            width: 100%;
+                        }
+                    </style>
+                    <script>
+
+                        function initMap() {
+                            // The location of Uluru,
+                            const OlympiaMap = { lat: -33.8536494124353, lng: 18.625570181836018 };
+                               /* { lat: - 36.16373947737447, lng: 174.18778492609414 },*/ 
+                            
+                            // The map, centered at Uluru
+                            const map = new google.maps.Map(document.getElementById("map"), {
+                                zoom: 4,
+                                center: OlympiaMap,
+                            });
+                            // The marker, positioned at Uluru
+                            const marker = new google.maps.Marker({
+                                position: OlympiaMap,
+                                map: map,
+                            });
+                        }
+
+                    </script>
+
+
+                    <div id="map"></div>
+                </div>
+>>>>>>> origin/master
             </div>
         </div>
     </div>
 </div>
+<<<<<<< HEAD
 <div id="googleMap" style="width:100%;height:400px;"></div>
 <div style="display: flex; justify-content: center; position: relative; -ms-transform: translateY(-50%); transform: translateY(-50%);bottom:70px;">
 
     <input class="btn btn-primary " type="button" id="btnpopu" value="Add Location" onclick="" style="margin:10px;" />
     @*<input class="btn btn-primary " type="button" id="btnpopu" value="Upload Picture" onclick="ShowPopup2();" style="margin:10px;" />*@
+=======
+
+<div style="display: flex; justify-content: center; position: relative; -ms-transform: translateY(-50%); transform: translateY(-50%);bottom:70px;">
+
+>>>>>>> origin/master
     <input class="btn btn-danger " type="button" id="btnpopu" value="Cancel" onclick="ShowPopup();" style="margin:10px;" />
     <input class="btn btn-primary " type="button" id="btnpopu" value="Submit" onclick="ShowPopup();" style="margin:10px;" />
 
 </div>
+<<<<<<< HEAD
 
 <<<<<<< HEAD
 @{
@@ -176,6 +230,8 @@
 >>>>>>> Stashed changes
 >>>>>>> origin/Olympia-Map-Model-Completed
 
+=======
+>>>>>>> origin/master
 @* Scripts *@
 
 <script type="text/javascript">
@@ -185,6 +241,7 @@
     ShowPopup1 = function () {
         window.open('/CaseStudies/Home/Index', "PopupWindow", 'width=1000px,height=500px, bottom=20px,left=20px');
     }
+<<<<<<< HEAD
 <<<<<<< HEAD
     var locations = [
         ['Location 1 Name', 'New York, NY', 'Location 1 URL'],
@@ -286,4 +343,9 @@
 =======
 >>>>>>> Stashed changes
 >>>>>>> origin/Olympia-Map-Model-Completed
+=======
+
+
+
+>>>>>>> origin/master
 </script>
