@@ -27,12 +27,11 @@ namespace Identity.Base.Entities
         public bool ReceiveNotifications { get; set; }
         public bool ReceiveNewsletters { get; set; }
         public bool ShowContactInfo { get; set; }
-
-
+        
         public string StudentId { get; set; }
+
         public string EmployeeId { get; set; }
-
-
+        
         public ICollection<ContactNumber<UserInfo>> ContactNumbers { get; set; } = new List<ContactNumber<UserInfo>>();
         public ICollection<EmailAddress<UserInfo>> EmailAddresses { get; set; } = new List<EmailAddress<UserInfo>>();
         public ICollection<Address<UserInfo>> Addresses { get; set; } = new List<Address<UserInfo>>();

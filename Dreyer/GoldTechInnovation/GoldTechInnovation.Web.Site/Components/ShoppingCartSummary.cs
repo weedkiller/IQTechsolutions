@@ -1,28 +1,20 @@
-﻿using GoldTechInnovation.Web.Site.Models;
-using GoldTechInnovation.Web.Site.ViewModels;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
+using Shopping.Core.Context.Services;
 
 namespace GoldTechInnovation.Web.Site.Components
 {
     public class ShoppingCartSummary : ViewComponent
     {
-        private readonly ShoppingCart _shoppingCart;
+        private readonly ShoppingCartContext _shoppingCart;
 
-        public ShoppingCartSummary(ShoppingCart shoppingCart)
+        public ShoppingCartSummary(ShoppingCartContext shoppingCart)
         {
             _shoppingCart = shoppingCart;
         }
 
         public IViewComponentResult Invoke()
         {
-            _shoppingCart.ShoppingCartItems = _shoppingCart.GetShoppingCartItems();
-
-            var shoppingCartViewModel = new ShoppingCartViewModel
-            {
-                ShoppingCart = _shoppingCart,
-                ShoppingCartTotal = _shoppingCart.GetShoppingCartTotal()
-            };
-            return View(shoppingCartViewModel);
+            return View();
         }
 
     }

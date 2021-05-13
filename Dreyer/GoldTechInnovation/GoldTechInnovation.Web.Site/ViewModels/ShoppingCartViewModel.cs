@@ -1,4 +1,4 @@
-﻿using GoldTechInnovation.Web.Site.Models;
+﻿using Shopping.Base.Entities;
 
 namespace GoldTechInnovation.Web.Site.ViewModels
 {

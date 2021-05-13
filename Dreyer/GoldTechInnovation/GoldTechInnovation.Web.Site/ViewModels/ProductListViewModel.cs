@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using Products.Base.Entities;
 
 namespace GoldTechInnovation.Web.Site.ViewModels
 {

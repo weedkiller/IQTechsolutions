@@ -20,7 +20,8 @@
             <div class="previewd" style="overflow: hidden">
                 <img id="preview" style="width: 100%" src="@Model.Entity.GetPath("http://admin.metsi.co.za", ImageType.Cover,"/images/placeholders/MetsiPlaceholder-800x533.jpg" )" alt="@Model.Entity.Title" />
             </div>
-            <input asp-for="CoverUpload" class="form-control" onchange="loadFile(event)" />
+            <input asp-for="CoverUpload" class="form-control" onchange="loadFile(event)" type="file" />
+            <a for="coverUpload" onclick="getImageFile()" class="btn btn-warning btn-block btn-sm">Edit Profile Image</a>
             <input type="hidden" asp-for="CoverCropSettings.X" />
             <input type="hidden" asp-for="CoverCropSettings.Y" />
             <input type="hidden" asp-for="CoverCropSettings.Width" />

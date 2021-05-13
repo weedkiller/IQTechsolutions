@@ -1,14 +1,15 @@
-﻿using GoldTechInnovation.Web.Site.Models;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using System.Linq;
+using Grouping.Core.Context.Services;
+using Products.Base.Entities;
 
 namespace GoldTechInnovation.Web.Site.Components
 {
     public class CategoryMenu : ViewComponent
     {
-        private readonly ICategoryRepository _categoryRepository;
+        private readonly CategoryContext<Product> _categoryRepository;
 
-        public CategoryMenu(ICategoryRepository categoryRepository)
+        public CategoryMenu(CategoryContext<Product> categoryRepository)
         {
             _categoryRepository = categoryRepository;
         }
@@ -16,7 +17,7 @@ namespace GoldTechInnovation.Web.Site.Components
         public IViewComponentResult Invoke()
         {
             // Get all categories and order them by name
-            var categories = _categoryRepository.GetAllCategories.OrderBy(c => c.Name);
+            var categories = _categoryRepository.GetAllCategories().OrderBy(c => c.Name);
 
             // Return View with categories in it
             return View(categories);

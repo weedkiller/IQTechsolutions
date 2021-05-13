@@ -13,11 +13,11 @@
             </li>
             @if (!SignInManager.IsSignedIn(User))
             {
-                <partial name="_DefaultUserMenu"/>
+                <partial name="Menus/_DefaultUserMenu"/>
             }
             else
             {
-                <partial name="_DefaultAdminMenu"/>
+                <partial name="Menus/_DefaultAdminMenu"/>
             }
             <li><a asp-action="ContactUs">contact us</a></li>
 

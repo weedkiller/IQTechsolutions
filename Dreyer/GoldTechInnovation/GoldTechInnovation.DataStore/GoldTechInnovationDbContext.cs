@@ -29,8 +29,7 @@ namespace GoldTechInnovation.DataStore
             modelBuilder.Entity<UserInfo>().HasMany(c => c.ContactNumbers).WithOne(c => c.Entity).HasForeignKey(v => v.EntityId);
             modelBuilder.Entity<UserInfo>().HasMany(c => c.EmailAddresses).WithOne(c => c.Entity).HasForeignKey(v => v.EntityId);
             modelBuilder.Entity<UserInfo>().HasMany(c => c.Addresses).WithOne(c => c.Entity).HasForeignKey(v => v.EntityId);
-
-
+            
             modelBuilder.ApplyBloggingConfiguration();
 
             base.OnModelCreating(modelBuilder);

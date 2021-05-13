@@ -16,7 +16,41 @@
     <None Include="Areas\Blog\Views\Categories\Create.cshtml" />
     <None Include="Areas\Blog\Views\Categories\Edit.cshtml" />
     <None Include="Areas\Blog\Views\Categories\List.cshtml" />
+    <None Include="Views\Shared\Modals\_CropModal.cshtml" />
+    <None Include="Views\Shared\Modals\_DeleteModal.cshtml" />
+    <None Include="Views\Shared\Modals\_DeleteObjectModal.cshtml" />
+    <None Include="Views\Shared\Modals\_PleaeSaveFirstModal.cshtml" />
     <None Include="wwwroot\images\placeholders\Thumbs.db" />
+    <None Include="wwwroot\js\cropper-master\.editorconfig" />
+    <None Include="wwwroot\js\cropper-master\.eslintrc" />
+    <None Include="wwwroot\js\cropper-master\.gitattributes" />
+    <None Include="wwwroot\js\cropper-master\.github\CODE_OF_CONDUCT.md" />
+    <None Include="wwwroot\js\cropper-master\.github\CONTRIBUTING.md" />
+    <None Include="wwwroot\js\cropper-master\.github\ISSUE_TEMPLATE\bug_report.md" />
+    <None Include="wwwroot\js\cropper-master\.github\PULL_REQUEST_TEMPLATE.md" />
+    <None Include="wwwroot\js\cropper-master\.gitignore" />
+    <None Include="wwwroot\js\cropper-master\.stylelintrc" />
+    <None Include="wwwroot\js\cropper-master\.travis.yml" />
+    <None Include="wwwroot\js\cropper-master\babel.config.js" />
+    <None Include="wwwroot\js\cropper-master\CHANGELOG.md" />
+    <None Include="wwwroot\js\cropper-master\dist\cropper.common.js" />
+    <None Include="wwwroot\js\cropper-master\dist\cropper.esm.js" />
+    <None Include="wwwroot\js\cropper-master\dist\cropper.js" />
+    <None Include="wwwroot\js\cropper-master\dist\cropper.min.js" />
+    <None Include="wwwroot\js\cropper-master\docs\js\cropper.js" />
+    <None Include="wwwroot\js\cropper-master\docs\js\main.js" />
+    <None Include="wwwroot\js\cropper-master\docs\v2.3.4\js\cropper.js" />
+    <None Include="wwwroot\js\cropper-master\docs\v2.3.4\js\main.js" />
+    <None Include="wwwroot\js\cropper-master\docs\v3.1.6\js\cropper.js" />
+    <None Include="wwwroot\js\cropper-master\docs\v3.1.6\js\main.js" />
+    <None Include="wwwroot\js\cropper-master\karma.conf.js" />
+    <None Include="wwwroot\js\cropper-master\LICENSE" />
+    <None Include="wwwroot\js\cropper-master\postcss.config.js" />
+    <None Include="wwwroot\js\cropper-master\README.md" />
+    <None Include="wwwroot\js\cropper-master\rollup.config.js" />
+    <None Include="wwwroot\js\cropper-master\src\index.js" />
+    <None Include="wwwroot\js\cropper-master\test\index.js" />
+    <None Include="wwwroot\js\summernote\summernote.js" />
     <None Include="wwwroot\lib\bootstrap\dist\css\bootstrap-grid.css.map" />
     <None Include="wwwroot\lib\bootstrap\dist\css\bootstrap-grid.min.css.map" />
     <None Include="wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.css.map" />
@@ -45,13 +79,12 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="5.0.5" />
-    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="5.0.5" />
-    <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="5.0.5" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="5.0.5" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="5.0.5" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="5.0.5" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="5.0.5">
+    <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="5.0.6" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="5.0.6" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="5.0.6" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="5.0.6" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="5.0.6" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="5.0.6">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
@@ -62,7 +95,15 @@
     <ProjectReference Include="..\..\..\IqtFramework\Iqt.Base\Iqt.Base.csproj" />
     <ProjectReference Include="..\..\..\Modules\Blogging\Blogging.Base\Blogging.Base.csproj" />
     <ProjectReference Include="..\..\..\Modules\Blogging\Blogging.Core\Blogging.Core.csproj" />
+    <ProjectReference Include="..\..\..\Modules\Products\Products.Base\Products.Base.csproj" />
+    <ProjectReference Include="..\..\..\Modules\Shopping\Shopping.Core\Shopping.Core.csproj" />
     <ProjectReference Include="..\GoldTechInnovation.DataStore\GoldTechInnovation.DataStore.csproj" />
+    <ProjectReference Include="..\GoldTechInnovation.Web\GoldTechInnovation.Web.csproj" />
+    <ProjectReference Include="..\GoldTechInnovation\GoldTechInnovation.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Areas\Identity\" />
   </ItemGroup>
 
 </Project>

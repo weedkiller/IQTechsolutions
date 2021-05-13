@@ -1,4 +1,9 @@
-﻿<header>
+﻿@using System.Security.Claims
+@using Identity.Base.Entities
+@inject SignInManager<ApplicationUser> SignInManager
+@inject UserManager<ApplicationUser> UserManager
+
+<header>
     <div class="header-top">
         <div class="content-margins">
             <div class="row">
@@ -7,14 +12,22 @@
                     <div class="entry"><b>email:</b> <a href="mailto:office@exzo.com">office@exzo.com</a></div>
                 </div>
                 <div class="col-md-7 col-md-text-right">
-                    <div class="entry"><a class="open-popup" data-rel="1"><b>login</b></a>&nbsp; or &nbsp;<a class="open-popup" data-rel="2"><b>register</b></a></div>
+
+                    <div class="entry">
+                        @if (!SignInManager.IsSignedIn(User))
+                        {
+                            <a asp-area="Identity" asp-page="/Account/Login"><b>login</b></a><span>&nbsp; or &nbsp;</span>
+                            <a asp-area="Identity" asp-page="/Account/Register"><b>register</b></a>
+                        }
+                        else
+                        {
+                            <a asp-area="" asp-controller="Home" asp-action="UnderContruction"><b>Welcome, @UserManager.GetUserName(User)</b></a>
+                        }
+                    </div>
                     <div class="entry language">
                         <div class="title"><b>en</b></div>
                         <div class="language-toggle header-toggle-animation">
-                            <a href="index1.html">fr</a>
-                            <a href="index1.html">ru</a>
-                            <a href="index1.html">it</a>
-                            <a href="index1.html">sp</a>
+                            <a href="#">en</a>
                         </div>
                     </div>
                     <div class="entry hidden-xs hidden-sm"><a href="#"><i class="fa fa-heart-o" aria-hidden="true"></i></a></div>
@@ -133,8 +146,8 @@
                     <a id="logo" href="index1.html"><img src="img/logo-2.png" alt="" /></a>
                 </div>
                 <div class="col-xs-9 col-sm-11 text-right">
-                    
-                    <partial name="Menus/_Default"/>
+
+                    <partial name="Menus/_Default" />
 
                     <div class="header-bottom-icon toggle-search"><i class="fa fa-search" aria-hidden="true"></i></div>
                     <div class="header-bottom-icon visible-rd"><i class="fa fa-heart-o" aria-hidden="true"></i></div>

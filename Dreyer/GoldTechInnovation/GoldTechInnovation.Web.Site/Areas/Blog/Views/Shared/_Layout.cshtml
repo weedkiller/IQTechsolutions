@@ -1,5 +1,6 @@
 ﻿@{
     Layout = "Layouts/_Layout";
+    ViewBag.Title = "Create New Blog Entry";
 }
 
 @section Styles
@@ -7,7 +8,25 @@
     @RenderSection("Styles", false)
 }
 
-@RenderBody()
+<div class="container">
+
+    <partial name="Breadcrumbs/_Default" />
+
+    <div class="text-center" style="padding-top: 20px; margin-bottom: -20px">
+        <div class="h3">@ViewBag.Title</div>
+        <div class="title-underline center" ><span></span></div>
+    </div>
+</div>
+
+<div class="empty-space col-xs-b35 "></div>
+
+<div class="container" style="padding-bottom: 50px;">
+    <div class="row">
+        <div class="col-sm-12">
+            @RenderBody()
+        </div>
+    </div>
+</div>
 
 @section Scripts
 {

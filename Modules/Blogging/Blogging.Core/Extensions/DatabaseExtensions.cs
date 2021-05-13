@@ -7,8 +7,8 @@ namespace Blogging.Core.Extensions
     {
         public static ModelBuilder ApplyBloggingConfiguration(this ModelBuilder modelBuilder)
         {
-            modelBuilder.ApplyConfiguration(new CaseStucyConfiguration())
-                .ApplyConfiguration(new CaseStudyCategoryConfiguration());
+            modelBuilder.ApplyConfiguration(new BlogPostConfiguration())
+                .ApplyConfiguration(new BlogCategoryConfiguration());
             return modelBuilder;
         }
 

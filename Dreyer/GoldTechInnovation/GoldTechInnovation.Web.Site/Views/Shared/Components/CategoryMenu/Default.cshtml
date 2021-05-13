@@ -1,4 +1,4 @@
-﻿@model IEnumerable<Category>
+﻿@model IEnumerable<Grouping.Base.Entities.Category<Products.Base.Entities.Product>>
 
 <li class="dropdown">
     <a class="dropdown-toggle" data-toggle="dropdown">Categories<b class="caret"></b></a>
@@ -6,12 +6,12 @@
         @foreach (var category in Model)
         {
             <li>
-                <a asp-controller="Product" asp-action="List" asp-route-category="@category.Name">@category.Name</a>
+                <a asp-area="Products" asp-controller="Home" asp-action="List" asp-route-category="@category.Name">@category.Name</a>
             </li>
         }
         <li class="divider"></li>
         <li>
-            <a asp-controller="Product" asp-action="List" asp-route-category="">View all Products</a>
+            <a asp-area="Products" asp-controller="Home" asp-action="List" asp-route-category="">View all Products</a>
         </li>
     </ul>
 </li>
