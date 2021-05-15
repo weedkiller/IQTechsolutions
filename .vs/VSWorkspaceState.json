@@ -1,15 +1,17 @@
 {
   "ExpandedNodes": [
     "",
-    "\\CryptoWeb",
-    "\\CryptoWeb\\CryptoWeb",
-    "\\CryptoWeb\\CryptoWeb\\Views",
-    "\\CryptoWeb\\CryptoWeb\\Views\\Home",
-    "\\CryptoWeb\\CryptoWeb\\Views\\Shared",
-    "\\CryptoWeb\\CryptoWeb\\Views\\Shared\\Footer",
-    "\\CryptoWeb\\CryptoWeb\\Views\\Shared\\Header",
-    "\\CryptoWeb\\CryptoWeb\\Views\\Shared\\Layout"
+    "\\Julius",
+    "\\Julius\\CryptoWeb",
+    "\\Julius\\CryptoWeb\\CryptoWeb",
+    "\\Julius\\CryptoWeb\\CryptoWeb\\Areas",
+    "\\Julius\\CryptoWeb\\CryptoWeb\\Areas\\Prices",
+    "\\Julius\\CryptoWeb\\CryptoWeb\\Areas\\Prices\\Views",
+    "\\Julius\\CryptoWeb\\CryptoWeb\\Areas\\Prices\\Views\\Shared",
+    "\\Julius\\CryptoWeb\\CryptoWeb\\Views",
+    "\\Julius\\CryptoWeb\\CryptoWeb\\Views\\Shared",
+    "\\Julius\\CryptoWeb\\CryptoWeb\\Views\\Shared\\Layout"
   ],
-  "SelectedNode": "\\CryptoWeb\\CryptoWeb\\Views\\Shared\\Layout\\_Layout.cshtml",
+  "SelectedNode": "\\Julius\\CryptoWeb\\CryptoWeb\\Areas\\Prices\\Views\\Shared\\_Layout.cshtml",
   "PreviewInSolutionExplorer": false
 }
