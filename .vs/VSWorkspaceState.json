@@ -1,14 +1,15 @@
 {
   "ExpandedNodes": [
     "",
-    "\\Julius",
-    "\\Julius\\Olympia",
-    "\\Julius\\Olympia\\Olympia.Web.Site\\Areas",
-    "\\Julius\\Olympia\\Olympia.Web.Site\\Areas\\FileManager",
-    "\\Julius\\Olympia\\Olympia.Web.Site\\Areas\\FileManager\\Controllers",
-    "\\Julius\\Olympia\\Olympia.Web.Site\\Areas\\ViewModels",
-    "\\Julius\\Olympia\\Olympia.Web.Site\\Models"
+    "\\CryptoWeb",
+    "\\CryptoWeb\\CryptoWeb",
+    "\\CryptoWeb\\CryptoWeb\\Views",
+    "\\CryptoWeb\\CryptoWeb\\Views\\Home",
+    "\\CryptoWeb\\CryptoWeb\\Views\\Shared",
+    "\\CryptoWeb\\CryptoWeb\\Views\\Shared\\Footer",
+    "\\CryptoWeb\\CryptoWeb\\Views\\Shared\\Header",
+    "\\CryptoWeb\\CryptoWeb\\Views\\Shared\\Layout"
   ],
-  "SelectedNode": "\\Julius\\Olympia\\Olympia.sln",
+  "SelectedNode": "\\CryptoWeb\\CryptoWeb\\Views\\Shared\\Layout\\_Layout.cshtml",
   "PreviewInSolutionExplorer": false
 }

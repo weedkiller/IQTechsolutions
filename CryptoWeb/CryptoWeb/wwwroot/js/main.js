@@ -371,25 +371,25 @@ function windowLoadInit() {
 					});
 				}
 			}
-		}
-	//1st level
-	}).on('mouseover', '> li', function(){
-		if(MainWindowWidth > 991) {
-			var $this = jQuery(this);
-			var subMenuExist = $this.find('ul').length;
-			if( subMenuExist > 0){
-				var subMenuWidth = $this.find('ul').width();
-				var subMenuOffset = $this.find('ul').parent().offset().left - (jQuery(window).width() / 2 - boxWrapperWidth / 2);
-				// if sub menu is off screen, give new position
-				if((subMenuOffset + subMenuWidth) > boxWrapperWidth){
-					var newSubMenuPosition = boxWrapperWidth - (subMenuOffset + subMenuWidth);
-					$this.find('ul').first().css({
-						left: newSubMenuPosition,
-					});
-				} 
-			}
-		}
-	});
+	//	}
+	////1st level
+	//}).on('mouseover', '> li', function(){
+	//	if(MainWindowWidth > 991) {
+	//		var $this = jQuery(this);
+	//		var subMenuExist = $this.find('ul').length;
+	//		if( subMenuExist > 0){
+	//			var subMenuWidth = $this.find('ul').width();
+	//			var subMenuOffset = $this.find('ul').parent().offset().left - (jQuery(window).width() / 2 - boxWrapperWidth / 2);
+	//			// if sub menu is off screen, give new position
+	//			if((subMenuOffset + subMenuWidth) > boxWrapperWidth){
+	//				var newSubMenuPosition = boxWrapperWidth - (subMenuOffset + subMenuWidth);
+	//				$this.find('ul').first().css({
+	//					left: newSubMenuPosition,
+	//				});
+	//			} 
+	//		}
+	//	}
+	//});
 	
 	/////////////////////////////////////////
 	//single page localscroll and scrollspy//
