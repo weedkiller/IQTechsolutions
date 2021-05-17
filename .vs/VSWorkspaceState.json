@@ -5,13 +5,12 @@
     "\\Julius\\CryptoWeb",
     "\\Julius\\CryptoWeb\\CryptoWeb",
     "\\Julius\\CryptoWeb\\CryptoWeb\\Areas",
-    "\\Julius\\CryptoWeb\\CryptoWeb\\Areas\\Prices",
-    "\\Julius\\CryptoWeb\\CryptoWeb\\Areas\\Prices\\Views",
-    "\\Julius\\CryptoWeb\\CryptoWeb\\Areas\\Prices\\Views\\Shared",
+    "\\Julius\\CryptoWeb\\CryptoWeb\\Areas\\Faqs",
+    "\\Julius\\CryptoWeb\\CryptoWeb\\Areas\\Faqs\\Views",
+    "\\Julius\\CryptoWeb\\CryptoWeb\\Areas\\Faqs\\Views\\Home",
     "\\Julius\\CryptoWeb\\CryptoWeb\\Views",
-    "\\Julius\\CryptoWeb\\CryptoWeb\\Views\\Shared",
-    "\\Julius\\CryptoWeb\\CryptoWeb\\Views\\Shared\\Layout"
+    "\\Julius\\CryptoWeb\\CryptoWeb\\Views\\Home"
   ],
-  "SelectedNode": "\\Julius\\CryptoWeb\\CryptoWeb\\Areas\\Prices\\Views\\Shared\\_Layout.cshtml",
+  "SelectedNode": "\\Julius\\CryptoWeb\\CryptoWeb\\Views\\Home\\Index.cshtml",
   "PreviewInSolutionExplorer": false
 }
