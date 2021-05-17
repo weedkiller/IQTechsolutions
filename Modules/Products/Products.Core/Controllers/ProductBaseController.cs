@@ -254,7 +254,7 @@ namespace Products.Core.Controllers
 
                 if (!string.IsNullOrEmpty(model.ReturnUrl))
                 {
-                    return RedirectToAction(model.ReturnUrl);
+                    return Redirect(model.ReturnUrl);
                 }
                 // if main submit button is clicked
                 if (finnish != null)

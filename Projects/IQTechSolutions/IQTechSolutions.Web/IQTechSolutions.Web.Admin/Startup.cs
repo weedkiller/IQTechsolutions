@@ -41,7 +41,7 @@ namespace IQTechSolutions.Web.Admin
                 .AddCookie("CookieAdmin")
                 .AddOpenIdConnect("oidc", config =>
                 {
-                    config.Authority = "https://localhost:4001/";
+                    config.Authority = ServerLocations.IdentityServer;
                     config.ClientId = "Website_Admin";
                     config.ClientSecret = "089e63c9-b451-4a23-8d94-81891cdcfe8d";
                     config.SaveTokens = true;

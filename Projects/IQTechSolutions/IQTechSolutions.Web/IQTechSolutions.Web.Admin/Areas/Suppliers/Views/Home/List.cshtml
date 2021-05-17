@@ -1,4 +1,8 @@
-﻿@model IEnumerable<Supplier>
+﻿@using Iqt.Base.Interfaces
+
+@model IEnumerable<Supplier>
+
+@inject IApplicationConfiguration ApplicationConfiguration
 
 @{
     ViewData["Title"] = "Supplier List";
@@ -31,7 +35,7 @@
             {
                 <tr id="row_@item.Id" class="row_@item.Id">
                     <td>
-                        <img style="width:100px" id="preview" class="img-thumbnail" title="@item.Name" alt="@item.GetImage()?.FileName" src="@item.GetPath("http://admin.metsi.co.za", ImageType.Cover, "/images/placeholders/profileImage128x128.png" )">
+                        <img style="width:100px" id="preview" class="img-thumbnail" title="@item.Name" alt="@item.GetImage()?.FileName" src="@item.GetPath(ImageType.Cover, ApplicationConfiguration.ImageDefaultPlaceholder )">
                     </td>
                     <td>
                         @Html.DisplayFor(modelItem => item.Name)
@@ -46,7 +50,7 @@
                         @Html.DisplayFor(modelItem => item.Featured)
                     </td>
                     <td style="width: 100px">
-                        <a asp-action="Edit" asp-route-id="@item.Id"><i class="fa fa-edit"></i></a>
+                        <a asp-area="Suppliers" asp-controller="Home" asp-action="Edit" asp-route-id="@item.Id"><i class="fa fa-edit"></i></a>
                         <a href="javascript:;" onclick="ShowDeleteModal('@item.Id')"><i class="fa fa-trash"></i></a>
                     </td>
                 </tr>
@@ -67,7 +71,10 @@
 {
     <script>
         function ShowDeleteModal(ff) {
-            var url = "/Customers/Home/Delete?id=" + ff;
+
+            var areaName = '@ViewContext.RouteData.Values["Area"].ToString()';
+            var controllerName = '@ViewContext.RouteData.Values["Controller"].ToString()';
+            var url = "/" + areaName + "/" + controllerName + "/Delete?id=" + ff;
 
             $("#ModalPlaceHolder").load(url,
                 function() {

@@ -1,5 +1,8 @@
-﻿
+﻿@using Iqt.Base.Interfaces
+
 @model ProductIndexModel
+
+@inject IApplicationConfiguration ApplicationConfiguration
 
 @{
     ViewData["Title"] = "Product List";
@@ -32,7 +35,7 @@
                 <tr>
                     <td>
                         <a asp-area="Products" asp-controller="Categories" asp-action="Details" asp-route-id="@item.Id">
-                            <img id="preview" style="height: auto;" class="img-thumbnail" title="@item.Name" alt="@item.GetImage()?.FileName" src="@item.GetImage()">
+                            <img id="preview" style="height: auto;" class="img-thumbnail" title="@item.Name" alt="@item.GetImage()?.FileName" src="@item.GetPath(ImageType.Cover, ApplicationConfiguration.ImageDefaultPlaceholder )">
                         </a>
                     </td>
                     <td>
@@ -73,7 +76,9 @@
     <script>
         function ShowDeleteModal(ff) {
 
-            var url = "/Products/Home/Delete?id=" + ff;
+            var areaName = '@ViewContext.RouteData.Values["Area"].ToString()';
+            var controllerName = '@ViewContext.RouteData.Values["Controller"].ToString()';
+            var url = "/" + areaName + "/" + controllerName + "/Delete?id=" + ff;
 
             $("#ModalPlaceHolder").load(url,
                 function () {

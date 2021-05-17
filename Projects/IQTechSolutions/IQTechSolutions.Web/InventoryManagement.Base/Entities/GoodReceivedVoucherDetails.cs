@@ -37,6 +37,11 @@ namespace InventoryManagement.Base.Entities
         public double PriceIncl { get; set; }
 
         /// <summary>
+        /// Gets or Sets the flag that indicates if a detail has been processed
+        /// </summary>
+        public bool Processed { get; set; } = false;
+
+        /// <summary>
         /// The parent <see cref="GoodReceivedVoucher"/>
         /// </summary>
         [ForeignKey(nameof(GoodReceivedVoucher))]

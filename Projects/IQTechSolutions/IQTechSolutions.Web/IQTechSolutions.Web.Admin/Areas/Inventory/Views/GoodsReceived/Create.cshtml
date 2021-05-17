@@ -3,10 +3,36 @@
 
 <div class="row">
     <div class="col-md-9">
-        <select class="form-control" id="Supplier" asp-for="Supplier" asp-items="@(new SelectList(Model.SupplierList, "Id", "Name"))">
-            <option selected="selected" value="0">
-                Select Supplier
-            </option>
+        <select class="form-control" id="Supplier" asp-for="Supplier" >
+            @if (Model.Supplier == null)
+            {
+                <option selected="selected" value="0">
+                    Select Supplier
+                </option>
+            }
+            else
+            {
+                <option value="0">
+                    Select Supplier
+                </option>
+            }
+            
+            @foreach (var item in Model.SupplierList)
+            {
+                @if (Model.Supplier != null && Model.Supplier.Id == item.Id)
+                {
+                    <option selected="selected" value="@item.Id">
+                        @item.Name
+                    </option>
+                }
+                else
+                {
+                    <option value="@item.Id">
+                        @item.Name
+                    </option>
+                }
+                
+            }
         </select>
     </div>
     <div class="col-md-3">
@@ -24,83 +50,85 @@
 
 <div class="row">
     <div class="col-md-12">
+        <input type="hidden" asp-for="GoodReceivedVoucher.Id"/>
+
         <table class="table">
             <thead>
-                <tr>
-                    <td colspan="1">
-                        <input id="QtyToAdd" class="form-control" style="width: 100px" value="1" />
-                    </td>
-                    <td colspan="3">
-                        <select class="form-control" id="Product" asp-for="Product" asp-items="@(new SelectList(Model.ProductList, "Id", "Name"))">
-                            <option selected="selected" value="0">
-                                Select Product
-                            </option>
-                        </select>
-                    </td>
-                    <td colspan="2">
-                        <input id="UnitPriceToAdd" class="form-control" style="width: 100px" placeholder="UnitPrice" />
-                    </td>
-                    <td colspan="1">
-                        <button type="button" class="btn btn-primary" style="float: right" value="Add" onclick="AddProductToTable()">Add Product</button>
-                    </td>
-                    <td colspan="1">
-                        <a class="btn btn-default btn-block" value="Add" asp-area="Products" asp-controller="Home" asp-action="Create" asp-route-returnUrl="/Inventory/GoodsReceived/Create?id=@Model.GoodReceivedVoucher.Id">Create New Product</a>
-                    </td>
-                </tr>
-                <tr>
-                    <td colspan="8">
-                        <hr />
-                    </td>
-                </tr>
-                <tr>
-                    <td style="width: 100px">
-                        Qty
-                    </td>
-                    <td>
-                        Product
-                    </td>
-                    <td style="width: 100px">
-                        Pack
-                    </td>
-                    <td style="width: 150px">
-                        Unit Price
-                    </td>
-                    <td style="width: 150px">
-                        Price Excl
-                    </td>
-                    <td style="width: 150px">
-                        Vat
-                    </td>
-                    <td style="width: 150px">
-                        Price Incl
-                    </td>
-                    <td style="width: 80px">
-                    </td>
-                </tr>
+            <tr>
+                <td colspan="1">
+                    <input id="QtyToAdd" class="form-control" style="width: 100px" value="1"/>
+                </td>
+                <td colspan="3">
+                    <select class="form-control" id="Product" asp-for="Product" asp-items="@(new SelectList(Model.ProductList, "Id", "Name"))" onchange="OnSelectionProductChanged()">
+                        <option selected="selected" value="0">
+                            Select Product
+                        </option>
+                    </select>
+                </td>
+                <td colspan="2">
+                    <input id="UnitPriceToAdd" class="form-control" style="width: 100px" placeholder="UnitPrice"/>
+                </td>
+                <td colspan="1">
+                    <button type="button" class="btn btn-primary" style="float: right" value="Add" onclick="ProcessGoodsReceivedVoucherProductAddition()">Add Product</button>
+                </td>
+                <td colspan="1">
+                    <a class="btn btn-default btn-block" value="Add" asp-area="Products" asp-controller="Home" asp-action="Create" asp-route-returnUrl="/Inventory/GoodsReceived/Create?id=@Model.GoodReceivedVoucher.Id">Create New Product</a>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="8">
+                    <hr/>
+                </td>
+            </tr>
+            <tr>
+                <td style="width: 100px">
+                    Qty
+                </td>
+                <td>
+                    Product
+                </td>
+                <td style="width: 100px">
+                    Pack
+                </td>
+                <td style="width: 150px">
+                    Unit Price
+                </td>
+                <td style="width: 150px">
+                    Price Excl
+                </td>
+                <td style="width: 150px">
+                    Vat
+                </td>
+                <td style="width: 150px">
+                    Price Incl
+                </td>
+                <td style="width: 80px">
+                </td>
+            </tr>
             </thead>
             <tbody id="GoodsReceivedVoucherDetailsBody">
-                @foreach (var item in Model.Details)
-                {
-                    <tr name="rows" id="row_@item.Product.Id" class="row_@item.Product.Id">
-                        <td id="id_@item.Product.Id" style="display:none">@item.Product.Id</td>
-                        <td id="qty_@item.Product.Id">@item.Qty</td>
-                        <td id="name_@item.Product.Id">@item.Product.Name</td>
-                        <td id="pack_@item.Product.Id">@item.Product.PackageItems.Count</td>
-                        <td id="unit_@item.Product.Id">@item.Product.PriceExcl</td>
-                        <td id="excl_@item.Product.Id">@item.Qty * @item.Product.CostExcl</td>
-                        <td id="vat_@item.Product.Id">@item.Qty * @item.Product.CostVat</td>
-                        <td id="incl_@item.Product.Id">@item.Qty * @item.Product.CostIncl</td>
-                        <td><a href="javascript:;" onclick="ShowDeleteGRVProductModel('@item.Id')"><i class="fa fa-trash"></i></a></td>
-                    </tr>
-                }
+            @foreach (var item in Model.Details)
+            {
+                <tr name="rows" id="row_@item.Product.Id" class="row_@item.Product.Id">
+                    <td id="id_@item.Product.Id" style="display: none">@item.Product.Id</td>
+                    <td id="qty_@item.Product.Id">@item.Qty</td>
+                    <td id="name_@item.Product.Id">@item.Product.Name</td>
+                    <td id="pack_@item.Product.Id">@item.Product.PackageItems.Count</td>
+                    <td id="unit_@item.Product.Id">@item.PriceExcl</td>
+                    <td id="excl_@item.Product.Id"> @(Convert.ToDouble(item.Qty) * item.PriceExcl)</td>
+                    <td id="vat_@item.Product.Id">@(Convert.ToDouble(item.Qty) * item.PriceVat)</td>
+                    <td id="incl_@item.Product.Id">@(Convert.ToDouble(item.Qty) * item.PriceIncl)</td>
+                    <td><a href="javascript:;" onclick="ShowDeleteGRVProductModel('@item.Product.Id')"><i class="fa fa-trash"></i></a></td>
+                </tr>
+            }
             </tbody>
             <tfoot>
-                <tr>
-                    <td colspan="4"><strong>Totals</strong></td>
-                    <td><strong id="tableExclTotal">@Model.Details.Sum(c => c.PriceExcl).ToString("N")</strong></td>
-                    <td><strong id="tableVatTotal">@Model.Details.Sum(c => c.PriceVat).ToString("N")</strong></td>
-                    <td><strong id="tableInclTotal">@Model.Details.Sum(c => c.PriceIncl).ToString("N")</strong></td>
-                </tr>
+            <tr>
+                <td colspan="4"><strong>Totals</strong></td>
+                <td><strong id="tableExclTotal">@Model.Details.Sum(c => c.PriceExcl).ToString("N")</strong></td>
+                <td><strong id="tableVatTotal">@Model.Details.Sum(c => c.PriceVat).ToString("N")</strong></td>
+                <td><strong id="tableInclTotal">@Model.Details.Sum(c => c.PriceIncl).ToString("N")</strong></td>
+            </tr>
             </tfoot>
         </table>
     </div>
@@ -111,90 +139,12 @@
         <input value="Process" type="button" class="btn btn-primary btn-block" onclick="ProcessGoodsReceivedVoucher()" />
     </div>
     <div class="col-md-6">
-        <input value="Cancel" type="button" class="btn btn-danger btn-block" />
+        <input value="Cancel" type="button" class="btn btn-danger btn-block" onclick="CancelGoodsReceivedVoucher()" />
     </div>
 </div>
 
 @section Scripts
 {
-    <script>
-
-
-
-        function ProcessGoodsReceivedVoucher() {
-            var e = $('#Supplier option:selected').val();
-            var f = $('#date').val();
-            if (e === null || e === '0') {
-                alert("Please select a supplier");
-            } else if (f === null || f === '') {
-                alert("Please select a date");
-            } else {
-                var url = "/Inventory/GoodsReceived/ProcessGoodsReceivedVoucher";
-
-                $.ajax({
-                    url: url,
-                    type: "POST",
-                    dataType: "JSON",
-                    data: { supplierId: e, date: f},
-                    success: function (data) {
-
-                        var table = document.getElementById("GoodsReceivedVoucherDetailsBody");
-
-                        for (var i = 0, row; row = table.rows[i]; i++) {
-                            ProcessGoodsReceivedVoucherDetails(data.id,
-                                row.cells[0].innerHTML,
-                                row.cells[1].innerHTML, row.cells[4].innerHTML);
-                        }
-                    },
-                    error: function(xhr, textStatus, err) {
-                        alert("An error with the following detials occured : " +
-                            "\r\n == readyState: " +
-                            xhr.readyState +
-                            "\r\n == responseText: " +
-                            xhr.responseText +
-                            "\r\n == status: " +
-                            xhr.status +
-                            "\r\n == text status: " +
-                            textStatus +
-                            "\r\n == error: " +
-                            err);
-                    }
-                });
-            }
-
-        }
-
-        function ProcessGoodsReceivedVoucherDetails(parentId, productId, qty) {
-
-
-            var url = "/Inventory/GoodsReceived/ProcessGoodsReceivedVoucherDetail";
-
-            $.ajax({
-                url: url,
-                type: "POST",
-                dataType: "JSON",
-                data: { parentId: parentId, productId: productId, qty: qty },
-                success: function(data) {
-                    window.location.href = '@Url.Action("Index", "Home")';
-                },
-                error: function(xhr, textStatus, err) {
-                    alert("An error with the following detials occured : " +
-                        "\r\n == readyState: " +
-                        xhr.readyState +
-                        "\r\n == responseText: " +
-                        xhr.responseText +
-                        "\r\n == status: " +
-                        xhr.status +
-                        "\r\n == text status: " +
-                        textStatus +
-                        "\r\n == error: " +
-                        err);
-                }
-            });
-        }
-
-
-    </script>
     <script src="/js/custom/goodsreceivedvoucher.js"></script>
     <script src="/vendors/js/datepicker/daterangepicker.js"></script>
     <script src="/js/components/datepicker/datepicker.js"></script>

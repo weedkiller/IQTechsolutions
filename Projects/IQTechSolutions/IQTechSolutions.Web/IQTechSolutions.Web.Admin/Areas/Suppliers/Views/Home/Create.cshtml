@@ -1,120 +1,122 @@
-﻿@model SupplierAddEditModel
+﻿@using Iqt.Base.Interfaces
+@model SupplierAddEditModel
+
+@inject IApplicationConfiguration Configuration
 
 @{
     ViewData["Title"] = "Create New Supplier";
 }
 
 <form asp-action="Create" enctype="multipart/form-data" method="post">
-    
 
-                    <div class="row">
-                        <div class="col-md-3">
-                            <!-- begin profile-image -->
-                            <div class="previewd" style="overflow: hidden">
-                                <img id="preview" src="@Model.Supplier.GetPath("http://admin.metsi.co.za", ImageType.Cover, "/images/placeholders/profileImage128x128.png")" style="width: 100%;" />
-                            </div>
-                            <!-- end profile-image -->
-                            <div class="m-b-10" style="padding-top: 10px;">
-                                <a for="coverUpload" onclick="getImageFile()" class="btn btn-warning btn-block btn-sm">Edit Profile Image</a>
-                                <input asp-for="CoverUpload" style="display: none;" onchange="loadFile(event)" accept="image/*" type="file" />
-                                <input type="hidden" asp-for="CoverCropSettings.X" />
-                                <input type="hidden" asp-for="CoverCropSettings.Y" />
-                                <input type="hidden" asp-for="CoverCropSettings.Width" />
-                                <input type="hidden" asp-for="CoverCropSettings.Height" />
-                                <input type="hidden" asp-for="CoverCropSettings.Rotate" />
-                                <input type="hidden" asp-for="CoverCropSettings.ScaleX" />
-                                <input type="hidden" asp-for="CoverCropSettings.ScaleY" />
-                            </div>
-                        </div>
-                        <div class="col-md-9">
-                            <!-- begin profile-info -->
-                            <div class="profile-info">
-                                <!-- begin table -->
-                                <div class="table-responsive" style="overflow-x:unset">
-                                    <table class="table table-profile">
-                                        <thead>
-                                        <tr>
-                                            <th colspan="4">
-                                                <h4>@Model.Supplier.Name</h4>
-                                            </th>
-                                        </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td class="field"><label asp-for="Supplier.Name" class="control-label">Company Name</label></td>
-                                                <td colspan="3"><input asp-for="Supplier.Name" type="text" class="form-control" placeholder="Enter your first name" required /></td>
-                                            </tr>
-                                            <tr>
-                                                <td class="field"><label asp-for="PhoneNr" class="control-label">Phone Nr</label></td>
-                                                <td><input asp-for="PhoneNr" type="text" class="form-control" placeholder="Enter your phone nr" /></td>
-                                                <td class="field"><label asp-for="Email" class="control-label">Email Address</label></td>
-                                                <td><input asp-for="Email" type="text" class="form-control" placeholder="Enter your email address" /></td>
-                                            </tr>
-                                            <tr class="divider">
-                                                <td colspan="4"></td>
-                                            </tr>
-                                            <tr>
-                                                <td class="field"><label asp-for="StreetNumber" class="control-label">Address</label></td>
-                                                <td colspan="3">
-                                                    <div class="row">
-                                                        <div class="col-md-2">
-                                                            <input asp-for="StreetNumber" type="text" class="form-control" placeholder="Street Number" />
-                                                        </div>
-                                                        <div class="col-md-10">
-                                                            <input asp-for="AddressLine1" type="text" class="form-control" placeholder="Street Name" />
-                                                        </div>
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                        <tr>
-                                            <td class="field"></td>
-                                            <td colspan="3">
-                                                <div class="row">
-                                                    <div class="col-md-4">
-                                                        <input asp-for="Suburb" type="text" class="form-control" placeholder="Suburb" />
-                                                    </div>
-                                                    <div class="col-md-4">
-                                                        <input asp-for="City" type="text" class="form-control" placeholder="City" />
-                                                    </div>
-                                                    <div class="col-md-4">
-                                                        <input asp-for="PostalCode" type="text" class="form-control" placeholder="Postal Code" />
-                                                    </div>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td class="field"></td>
-                                            <td colspan="3">
-                                                <div class="row">
-                                                    <div class="col-md-6">
-                                                        <input asp-for="Province" type="text" class="form-control" placeholder="Province" />
-                                                    </div>
-                                                    <div class="col-md-6">
-                                                        <input asp-for="Country" type="text" class="form-control" placeholder="Country" />
-                                                    </div>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                            <tr class="divider">
-                                                <td colspan="4"></td>
-                                            </tr>
-                                            <tr class="highlight">
-                                                <td class="field"><label asp-for="Supplier.Description" class="control-label">Description</label></td>
-                                                <td colspan="3"><textarea asp-for="Supplier.Description" class="form-control" placeholder="Add personal description" rows="4"></textarea></td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
+    <div class="row">
+        <div class="col-md-3">
+            <!-- begin profile-image -->
+            <div class="previewd" style="overflow: hidden">
+                <img id="preview" src="@Model.Supplier.GetPath("http://admin.metsi.co.za", ImageType.Cover, "/images/placeholders/img_475x320.jpg")" style="width: 100%;" />
+            </div>
+            <!-- end profile-image -->
+            <div class="m-b-10" style="padding-top: 10px;">
+                <a for="coverUpload" onclick="getImageFile()" class="btn btn-warning btn-block btn-sm">Edit Profile Image</a>
+                <input asp-for="CoverUpload" style="display: none;" onchange="loadFile(event)" accept="image/*" type="file" />
+                <input type="hidden" asp-for="CoverCropSettings.X" />
+                <input type="hidden" asp-for="CoverCropSettings.Y" />
+                <input type="hidden" asp-for="CoverCropSettings.Width" />
+                <input type="hidden" asp-for="CoverCropSettings.Height" />
+                <input type="hidden" asp-for="CoverCropSettings.Rotate" />
+                <input type="hidden" asp-for="CoverCropSettings.ScaleX" />
+                <input type="hidden" asp-for="CoverCropSettings.ScaleY" />
+            </div>
+        </div>
+        <div class="col-md-9">
+            <!-- begin profile-info -->
+            <div class="profile-info">
+                <!-- begin table -->
+                <div class="table-responsive" style="overflow-x:unset">
+                    <table class="table table-profile">
+                        <thead>
+                        <tr>
+                            <th colspan="4">
+                                <h4>@Model.Supplier.Name</h4>
+                            </th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td class="field"><label asp-for="Supplier.Name" class="control-label">Company Name</label></td>
+                            <td colspan="3"><input asp-for="Supplier.Name" type="text" class="form-control" placeholder="Enter your first name" required /></td>
+                        </tr>
+                        <tr>
+                            <td class="field"><label asp-for="PhoneNr" class="control-label">Phone Nr</label></td>
+                            <td><input asp-for="PhoneNr" type="text" class="form-control" placeholder="Enter your phone nr" /></td>
+                            <td class="field"><label asp-for="Email" class="control-label">Email Address</label></td>
+                            <td><input asp-for="Email" type="text" class="form-control" placeholder="Enter your email address" /></td>
+                        </tr>
+                        <tr class="divider">
+                            <td colspan="4"></td>
+                        </tr>
+                        <tr>
+                            <td class="field"><label asp-for="StreetNumber" class="control-label">Address</label></td>
+                            <td colspan="3">
+                                <div class="row">
+                                    <div class="col-md-2">
+                                        <input asp-for="StreetNumber" type="text" class="form-control" placeholder="Street Number" />
+                                    </div>
+                                    <div class="col-md-10">
+                                        <input asp-for="AddressLine1" type="text" class="form-control" placeholder="Street Name" />
+                                    </div>
                                 </div>
-                                <!-- end table -->
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="field"></td>
+                            <td colspan="3">
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <input asp-for="Suburb" type="text" class="form-control" placeholder="Suburb" />
+                                    </div>
+                                    <div class="col-md-4">
+                                        <input asp-for="City" type="text" class="form-control" placeholder="City" />
+                                    </div>
+                                    <div class="col-md-4">
+                                        <input asp-for="PostalCode" type="text" class="form-control" placeholder="Postal Code" />
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="field"></td>
+                            <td colspan="3">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <input asp-for="Province" type="text" class="form-control" placeholder="Province" />
+                                    </div>
+                                    <div class="col-md-6">
+                                        <input asp-for="Country" type="text" class="form-control" placeholder="Country" />
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr class="divider">
+                            <td colspan="4"></td>
+                        </tr>
+                        <tr class="highlight">
+                            <td class="field"><label asp-for="Supplier.Description" class="control-label">Description</label></td>
+                            <td colspan="3"><textarea asp-for="Supplier.Description" class="form-control" placeholder="Add personal description" rows="4"></textarea></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <!-- end table -->
 
-                            </div>
-                            <!-- end profile-info -->
-                        </div>
-                    </div>
-                    <div class="row" style="padding-top: 50px;">
-                        <div class="col-lg-6"><input name="finnish" type="submit" value="Create" class="btn btn-primary btn-block" /></div>
-                        <div class="col-lg-6"><a asp-area="Suppliers" asp-controller="Home" asp-action="List" class="btn btn-danger btn-block">Cancel</a></div>
-                    </div>
+            </div>
+            <!-- end profile-info -->
+        </div>
+    </div>
+    <div class="row" style="padding-top: 50px;">
+        <div class="col-lg-6"><input name="finnish" type="submit" value="Create" class="btn btn-primary btn-block" /></div>
+        <div class="col-lg-6"><a asp-area="Suppliers" asp-controller="Home" asp-action="List" class="btn btn-danger btn-block">Cancel</a></div>
+    </div>
     
 </form>
 

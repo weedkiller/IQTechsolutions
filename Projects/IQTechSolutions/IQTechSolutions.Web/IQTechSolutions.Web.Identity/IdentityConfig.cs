@@ -38,10 +38,8 @@ namespace IQTechSolutions.Web.Identity
                 ClientSecrets = { new Secret("c495bd54-4cac-4a48-bc66-d85fca033294".ToSha256()) },
 
                 AllowedGrantTypes = GrantTypes.Code,
-                RedirectUris =
-                {
-                    "https://localhost:7001/signin-oidc"
-                },
+                RedirectUris = { ServerLocations.WebServer + "/signin-oidc" },
+                PostLogoutRedirectUris = { ServerLocations.WebServer + "/Home/Index" },
                 AllowedScopes = { "MainApi", IdentityServer4.IdentityServerConstants.StandardScopes.OpenId, IdentityServer4.IdentityServerConstants.StandardScopes.Profile }
             },
             new Client()
@@ -50,10 +48,8 @@ namespace IQTechSolutions.Web.Identity
                 ClientSecrets = { new Secret("089e63c9-b451-4a23-8d94-81891cdcfe8d".ToSha256()) },
 
                 AllowedGrantTypes = GrantTypes.Code,
-                RedirectUris =
-                {
-                    "https://localhost:6001/signin-oidc"
-                },
+                RedirectUris = { ServerLocations.AdminServer + "/signin-oidc" },
+                PostLogoutRedirectUris = { ServerLocations.AdminServer + "/Home/Index" },
                 AllowedScopes = { "MainApi", IdentityServer4.IdentityServerConstants.StandardScopes.OpenId, IdentityServer4.IdentityServerConstants.StandardScopes.Profile }
             }
         };

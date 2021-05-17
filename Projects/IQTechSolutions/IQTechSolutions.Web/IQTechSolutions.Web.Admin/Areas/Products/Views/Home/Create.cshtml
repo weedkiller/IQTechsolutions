@@ -16,7 +16,8 @@
 <h4>Product</h4>
 <hr />
 <form asp-area="Products" asp-controller="Home" asp-action="Create" enctype="multipart/form-data" method="post">
-    <div asp-validation-summary="All" style="color: #a94442 !important;"></div>
+<div asp-validation-summary="All" style="color: #a94442 !important;"></div>
+<input type="hidden" asp-for="ReturnUrl"/>
     <div class="row">
         <div class="col-md-4">
             <div class="form-group">

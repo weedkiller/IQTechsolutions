@@ -23,6 +23,11 @@ namespace InventoryManagement.Base.Entities
         /// Gets or Sets the supplier that send the order
         /// </summary>
         public Supplier Supplier { get; set; }
+
+        /// <summary>
+        /// Gets or Sets the flag that indicates if a <see cref="GoodReceivedVoucher"/> has been archived
+        /// </summary>
+        public bool Archived { get; set; } = false;
         
         /// <summary>
         /// Gets or Sets the Details List of the Voucher

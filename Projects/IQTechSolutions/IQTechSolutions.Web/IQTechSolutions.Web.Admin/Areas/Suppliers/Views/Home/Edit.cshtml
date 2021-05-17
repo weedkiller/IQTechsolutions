@@ -1,4 +1,7 @@
-﻿@model SupplierAddEditModel
+﻿@using Iqt.Base.Interfaces
+@model SupplierAddEditModel
+
+@inject IApplicationConfiguration Configuration
 
 @{
     ViewData["Title"] = "Edit Customer";
@@ -15,7 +18,7 @@
                     <input asp-for="Supplier.Id"/>
                     <!-- begin profile-image -->
                     <div class="previewd" style="overflow: hidden">
-                        <img src="@Model.Supplier.GetPath("http://admin.metsi.co.za", ImageType.Cover, "/images/placeholders/profileImage128x128.png")" style="width: 100%;"/>
+                        <img src="@Model.Supplier.GetPath("http://admin.metsi.co.za", ImageType.Cover, "/images/placeholders/img_475x320.jpg")" style="width: 100%;"/>
                         <i class="fa fa-user hide"></i>
                     </div>
                     <!-- end profile-image -->

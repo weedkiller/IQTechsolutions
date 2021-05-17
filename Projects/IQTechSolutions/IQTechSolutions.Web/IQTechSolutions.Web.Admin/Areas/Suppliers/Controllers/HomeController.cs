@@ -218,7 +218,7 @@ namespace IQTechSolutions.Web.Admin.Areas.Suppliers.Controllers
             {
                 HeaderString = "Are you sure you want to delete problem ? " +
                                $"with id {entity.Name} details",
-                ControllerUrl = "/Customers/Home/Delete",
+                ControllerUrl = $"/{ControllerContext.RouteData.Values["area"].ToString()}/{ControllerContext.RouteData.Values["controller"].ToString()}/Delete",
                 EntityId = id
             };
 
@@ -234,9 +234,7 @@ namespace IQTechSolutions.Web.Admin.Areas.Suppliers.Controllers
         public async Task<IActionResult> DeleteConfirmed(string id)
         {
             await _context.DeleteAsync(id);
-            // Get a list of all the blog sub-categories in json format
             var y = Json(true);
-            // Return the Json
             return y;
         }
 

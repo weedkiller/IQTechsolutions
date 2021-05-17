@@ -1,5 +1,4 @@
-﻿using FeawThings;
-using Iqt.Base.Interfaces;
+﻿using Iqt.Base.Interfaces;
 
 namespace IQTechSolutions
 {
@@ -23,10 +22,10 @@ namespace IQTechSolutions
         public string InstagramUrl { get; }
         public string SkypeName { get; }
 
-        public string BaseImageUrl { get; } = ServerLocations.AdminServer;
-        public string BaseApiUrl { get; } = ServerLocations.ApiServer + "/api/v1";
-        public string BaseIdentityUrl { get; } = ServerLocations.IdentityServer;
-        public string ImageDefaultPlaceholder => "/images/placeholders/NoImageAvailable.jpg";
+        public string BaseImageUrl => ServerLocations.AdminServer;
+        public string BaseApiUrl => ServerLocations.ApiServer + "/api/v1";
+        public string BaseIdentityUrl => ServerLocations.IdentityServer;
+        public string ImageDefaultPlaceholder => "/images/placeholders/NoImage.jpg";
         public string ImageProfilePlaceholder => "/images/placeholders/profileImage128x128.png";
 
         public string GetRegistrationReturnUrl(string returnUrl)

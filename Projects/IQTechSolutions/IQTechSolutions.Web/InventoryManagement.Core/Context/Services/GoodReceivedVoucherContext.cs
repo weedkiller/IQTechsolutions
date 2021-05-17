@@ -1,8 +1,10 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 using System.Threading.Tasks;
 using InventoryManagement.Base.Entities;
 using InventoryManagement.Core.Models;
 using Microsoft.EntityFrameworkCore;
+using Products.Base.Entities;
 
 namespace InventoryManagement.Core.Context.Configurations.Services
 {
@@ -30,8 +32,6 @@ namespace InventoryManagement.Core.Context.Configurations.Services
         }
 
         #endregion
-
-        #region Add Goods Received Voucher
 
         /// <summary>
         /// Gets all the Goods Received Vouchers in the database
@@ -69,15 +69,70 @@ namespace InventoryManagement.Core.Context.Configurations.Services
             return model;
         }
 
-        public async Task<GoodReceivedVoucherDetails> AddDetailAsync(GoodReceivedVoucherDetails model)
+        public async Task<GoodReceivedVoucher> RemoveAsync(string id)
         {
+            var voucher = await GetAsync(id);
+            foreach (var detail in voucher.Details)
+            {
+                _context.Set<GoodReceivedVoucherDetails>().Remove(detail);
+            }
+            _context.Set<GoodReceivedVoucher>().Remove(voucher);
+            await _context.SaveChangesAsync();
+            return voucher;
+        }
 
-            //await model.Entity.Images.AddImages(model.ImagesUpload, new Size(600,400));
-            await _context.Set<GoodReceivedVoucherDetails>().AddAsync(model);
+        #region Goods Received Voucher Details
 
+        public async Task<GoodReceivedVoucherDetails> GetDetailAsync(string voucherId, string productId)
+        {
+            var detail = await _context.Set<GoodReceivedVoucherDetails>().Where(c => c.GoodReceivedVoucherId == voucherId).FirstOrDefaultAsync(c => c.ProductId == productId);
 
+            return detail;
+        }
+
+        /// <summary>
+        /// Adds or updates the <see cref="GoodReceivedVoucherDetails"/>
+        /// </summary>
+        /// <param name="voucherId">The <see cref="GoodReceivedVoucherDetails"/> identity</param>
+        /// <param name="model">The <see cref="GoodReceivedVoucherDetails"/> to be added or updated</param>
+        /// <returns></returns>
+        public async Task<GoodReceivedVoucherDetails> AddUpdateDetailAsync(string voucherId, GoodReceivedVoucherDetails model)
+        {
+            var detail = await GetDetailAsync(voucherId, model.ProductId);
+
+            if (detail == null)
+            {
+                model.GoodReceivedVoucherId = voucherId;
+                await _context.Set<GoodReceivedVoucherDetails>().AddAsync(model);
+            }
+            else
+            {
+                detail.Qty = detail.Qty + model.Qty;
+                _context.Set<GoodReceivedVoucherDetails>().Update(detail);
+            }
+            
             await _context.SaveChangesAsync();
             return model;
+        }
+
+        public async Task<GoodReceivedVoucherDetails> RemoveDetailAsync(string voucherId, string productId)
+        {
+            var detail = await GetDetailAsync(voucherId, productId);
+            var qty = Convert.ToDouble(detail.Qty.Replace(".", ","));
+
+            if (qty > 1)
+            {
+                detail.Qty = (qty - 1).ToString("N");
+                _context.Set<GoodReceivedVoucherDetails>().Update(detail);
+            }
+            else
+            {
+                _context.Set<GoodReceivedVoucherDetails>().Remove(detail);
+            }
+
+            await _context.SaveChangesAsync();
+
+            return detail;
         }
 
         #endregion
