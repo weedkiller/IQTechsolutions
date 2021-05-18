@@ -1,76 +1,9 @@
-﻿var rows = [];
-
-
-
-function ProcessGoodsReceivedVoucher() {
+﻿function ProcessGoodsReceivedVoucher() {
 
     var supplierId = ValidateSupplier();
     var date = ValidateDate();
 
     AddGoodsReceivedVoucherAndProcess(supplierId, date);
-}
-
-function AddGoodsReceivedVoucherAndProcess(supplierId, date) {
-
-    $.ajax({
-        url: "/Inventory/GoodsReceived/AddGoodsReceivedVoucherProduct",
-        type: "POST",
-        dataType: "JSON",
-        data: { supplierId: supplierId, date: date },
-        success: function (data) {
-
-            var table = document.getElementById("GoodsReceivedVoucherDetailsBody");
-
-            for (var i = 0, row; row === table.rows[i]; i++) {
-                ProcessGoodsReceivedVoucherDetails(data.id,
-                    row.cells[0].innerHTML,
-                    row.cells[1].innerHTML, row.cells[4].innerHTML);
-            }
-        },
-        error: function (xhr, textStatus, err) {
-            alert("An error with the following detials occured : " +
-                "\r\n == readyState: " +
-                xhr.readyState +
-                "\r\n == responseText: " +
-                xhr.responseText +
-                "\r\n == status: " +
-                xhr.status +
-                "\r\n == text status: " +
-                textStatus +
-                "\r\n == error: " +
-                err);
-        }
-    });
-}
-
-function ProcessGoodsReceivedVoucherDetails(parentId, productId, qty) {
-
-    var areaName = '@ViewContext.RouteData.Values["Area"].ToString()';
-    var controllerName = '@ViewContext.RouteData.Values["Controller"].ToString()';
-    var url = "/" + areaName + "/" + controllerName + "/ProcessGoodsReceivedVoucherDetail";
-
-    $.ajax({
-        url: url,
-        type: "POST",
-        dataType: "JSON",
-        data: { parentId: parentId, productId: productId, qty: qty },
-        success: function (data) {
-            window.location.href = '@Url.Action("Index", "Home")';
-        },
-        error: function (xhr, textStatus, err) {
-            alert("An error with the following detials occured : " +
-                "\r\n == readyState: " +
-                xhr.readyState +
-                "\r\n == responseText: " +
-                xhr.responseText +
-                "\r\n == status: " +
-                xhr.status +
-                "\r\n == text status: " +
-                textStatus +
-                "\r\n == error: " +
-                err);
-        }
-    });
 }
 
 function CancelGoodsReceivedVoucher() {
