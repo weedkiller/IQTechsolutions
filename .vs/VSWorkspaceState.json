@@ -1,7 +1,6 @@
 {
   "ExpandedNodes": [
     "",
-    "\\Julius",
     "\\Julius\\CryptoWeb",
     "\\Julius\\CryptoWeb\\CryptoWeb",
     "\\Julius\\CryptoWeb\\CryptoWeb\\Areas",
@@ -9,8 +8,10 @@
     "\\Julius\\CryptoWeb\\CryptoWeb\\Areas\\Faqs\\Views",
     "\\Julius\\CryptoWeb\\CryptoWeb\\Areas\\Faqs\\Views\\Home",
     "\\Julius\\CryptoWeb\\CryptoWeb\\Views",
-    "\\Julius\\CryptoWeb\\CryptoWeb\\Views\\Home"
+    "\\Julius\\CryptoWeb\\CryptoWeb\\Views\\Home",
+    "\\Julius\\CryptoWeb\\CryptoWeb\\Views\\Shared",
+    "\\Julius\\CryptoWeb\\CryptoWeb\\Views\\Shared\\Header"
   ],
-  "SelectedNode": "\\Julius\\CryptoWeb\\CryptoWeb\\Views\\Home\\Index.cshtml",
+  "SelectedNode": "\\Julius",
   "PreviewInSolutionExplorer": false
 }
