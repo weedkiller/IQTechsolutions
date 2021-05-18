@@ -13,14 +13,17 @@ namespace IQTechSolutions
         public string AbuseEmailAddress { get; } = "abuse@iqtechsolutions.co.za";
         public string InfoEmailAddress { get; } = "admin@iqtechsolutions.co.za";
 
-        public string PhysicalAddress { get; } = "Clarendon Hills Unit6, Saronsberg Close, Buh-Rein Estates, Cape Town";
-        public string FacebookUrl { get; }
-        public string TwitterUrl { get; }
-        public string LinkedInUrl { get; }
-        public string YouTubeUrl { get; }
-        public string PrinterestUrl { get; }
-        public string InstagramUrl { get; }
-        public string SkypeName { get; }
+        public string PhysicalAddress { get; } = "29 Lucullus Street, Joostenberg Vlakte, Cape Town, WP 7646";
+        public string PhysicalAddressLine1 { get; } = "29 Lucullus Street, Joostenberg Vlakte";
+        public string PhysicalAddressLine2 { get; } = "Cape Town, WP 7646";
+        public string DefaultWebsiteAddress { get; } = "www.iqtechsolutions.co.za";
+        public string FacebookUrl { get; } = "#";
+        public string TwitterUrl { get; } = "#";
+        public string LinkedInUrl { get; } = "#";
+        public string YouTubeUrl { get; } = "#";
+        public string PrinterestUrl { get; } = "#";
+        public string InstagramUrl { get; } = "#";
+        public string SkypeName { get; } = "#";
 
         public string BaseImageUrl => ServerLocations.AdminServer;
         public string BaseApiUrl => ServerLocations.ApiServer + "/api/v1";

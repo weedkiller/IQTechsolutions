@@ -246,12 +246,12 @@ namespace Products.Base.Entities
         /// <summary>
         /// Qty of units in stock
         /// </summary>
-        public int Sold { get; set; } = 0;
+        public double Sold { get; set; } = 0;
 
         /// <summary>
         /// Qty of units in stock
         /// </summary>
-        public int QtyInStock { get; set; } = 0;
+        public double QtyInStock { get; set; } = 0;
 
         /// <summary>
         /// Message Displayed when Item is out of Stock

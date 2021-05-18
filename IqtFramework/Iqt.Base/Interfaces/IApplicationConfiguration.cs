@@ -14,6 +14,12 @@
         string InfoEmailAddress { get; }
         string PhysicalAddress { get; }
 
+        string PhysicalAddressLine1 { get; }
+
+        string PhysicalAddressLine2 { get; }
+
+        string DefaultWebsiteAddress { get; }
+
         string FacebookUrl { get; }
         string TwitterUrl { get; }
         string LinkedInUrl { get; }

@@ -118,11 +118,11 @@ namespace InventoryManagement.Core.Context.Configurations.Services
         public async Task<GoodReceivedVoucherDetails> RemoveDetailAsync(string voucherId, string productId)
         {
             var detail = await GetDetailAsync(voucherId, productId);
-            var qty = Convert.ToDouble(detail.Qty.Replace(".", ","));
+            var qty = detail.Qty;
 
             if (qty > 1)
             {
-                detail.Qty = (qty - 1).ToString("N");
+                detail.Qty = qty - 1;
                 _context.Set<GoodReceivedVoucherDetails>().Update(detail);
             }
             else

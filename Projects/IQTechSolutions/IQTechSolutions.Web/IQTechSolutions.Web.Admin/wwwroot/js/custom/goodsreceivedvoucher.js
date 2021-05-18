@@ -1,11 +1,23 @@
-﻿function ProcessGoodsReceivedVoucher() {
+﻿// Runs when the process voucher button is pressed
+function ProcessGoodsReceivedVoucher() {
 
-    var supplierId = ValidateSupplier();
-    var date = ValidateDate();
+    var voucherId = $('#GoodReceivedVoucher_Id').val();
 
-    AddGoodsReceivedVoucherAndProcess(supplierId, date);
+    $.ajax({
+        url: "/Inventory/GoodsReceived/ProcessGoodsReceivedVoucher",
+        type: "POST",
+        dataType: "JSON",
+        data: { voucherId: voucherId },
+        success: function (data) {
+            window.location.href = `/Inventory/GoodsReceived/Report?id=${voucherId}`;
+        },
+        error: function (xhr, textStatus, err) {
+            AjaxError(xhr, textStatus, err);
+        }
+    });
 }
 
+// Runs when the cancel voucher button is pressed
 function CancelGoodsReceivedVoucher() {
 
     var voucherId = $('#GoodReceivedVoucher_Id').val();
@@ -24,6 +36,7 @@ function CancelGoodsReceivedVoucher() {
     });
 }
 
+// Runs when the selected product is changed
 function OnSelectionProductChanged() {
 
     var productId = $('#Product option:selected').val();
@@ -45,6 +58,7 @@ function OnSelectionProductChanged() {
     }
 }
 
+// Removes a Goods Received Voucher Detail from a Goods Received Voucher
 function ShowDeleteGRVProductModel(productId) {
 
     var voucherId = $('#GoodReceivedVoucher_Id').val();
@@ -90,6 +104,7 @@ function ShowDeleteGRVProductModel(productId) {
     });
 }
 
+// Runs when a new Goods Received Voucher Detail is added to a Goods Received Voucher
 function ProcessGoodsReceivedVoucherProductAddition() {
 
     var voucherId = $('#GoodReceivedVoucher_Id').val();
@@ -114,6 +129,9 @@ function ProcessGoodsReceivedVoucherProductAddition() {
     });
 }
 
+// Adds a new Goods Received Voucher Detail to a Goods Received Voucher
+// if a detail with a specific Product does not exist otherwise updates 
+// the existing detail
 function AddUpdateGoodsReceivedVoucherProduct(voucherId) {
 
     const productId = ValidateProduct();
@@ -160,6 +178,7 @@ function AddUpdateGoodsReceivedVoucherProduct(voucherId) {
     });
 }
 
+// Adds a new Goods Received Voucher Detail to a Goods Received Voucher
 function AddGRVDetailsRow(id, qty, name, pack, excl, vat, incl) {
 
     const tableBody = document.getElementById("GoodsReceivedVoucherDetailsBody");
@@ -203,6 +222,7 @@ function AddGRVDetailsRow(id, qty, name, pack, excl, vat, incl) {
     tableProductDeleteButton.append(tableProductDeleteButtonIcon);
 }
 
+// Updates an existing Goods Received Voucher Detail 
 function EditGRVDetailsRow(id, qty, excl, vat, incl) {
 
     var qtyColumn = document.getElementById("qty_" + id);
@@ -218,6 +238,7 @@ function EditGRVDetailsRow(id, qty, excl, vat, incl) {
     inclColumn.innerHTML = (parseFloat(inclColumn.innerHTML) + (qty * incl)).toFixed(2);
 }
 
+// Validates the Supplier Entry
 function ValidateSupplier() {
     var e = $('#Supplier option:selected').val();
     if (e === null || e === '0') {
@@ -227,6 +248,7 @@ function ValidateSupplier() {
     return e;
 }
 
+// Validates the Date Entry
 function ValidateDate() {
     var d = $('#date').val();
     if (d === null || d === '') {
@@ -236,6 +258,7 @@ function ValidateDate() {
     return d;
 }
 
+// Validates the Qty of the Product Recieved
 function ValidateQty() {
     var e = $('#QtyToAdd').val();
     if (e === null || e === '0') {
@@ -245,6 +268,7 @@ function ValidateQty() {
     return e;
 }
 
+// Validates the Selected Product
 function ValidateProduct() {
     var e = $('#Product option:selected').val();
     if (e === null || e === "0") {
@@ -254,6 +278,7 @@ function ValidateProduct() {
     return e;
 }
 
+// Validates the Product Unit Price
 function ValidateUnitPrice() {
     var e = $('#UnitPriceToAdd').val();
     if (e === null || e === '0') {

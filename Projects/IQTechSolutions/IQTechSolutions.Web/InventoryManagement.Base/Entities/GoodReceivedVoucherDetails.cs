@@ -12,7 +12,7 @@ namespace InventoryManagement.Base.Entities
         /// <summary>
         /// Gets or Sets the quantity that was received
         /// </summary>
-        public string Qty { get; set; }
+        public double Qty { get; set; }
 
         [ForeignKey(nameof(Product))]
         public string ProductId { get; set; }
@@ -35,6 +35,11 @@ namespace InventoryManagement.Base.Entities
         /// Gets or Sets the including price it was when it was received
         /// </summary>
         public double PriceIncl { get; set; }
+
+        /// <summary>
+        /// Gets or Sets the including price it was when it was received
+        /// </summary>
+        public double TotalPriceIncl => Qty * PriceIncl;
 
         /// <summary>
         /// Gets or Sets the flag that indicates if a detail has been processed

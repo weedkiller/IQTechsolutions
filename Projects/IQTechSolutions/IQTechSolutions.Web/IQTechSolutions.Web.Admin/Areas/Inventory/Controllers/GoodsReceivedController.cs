@@ -52,6 +52,21 @@ namespace IQTechSolutions.Web.Admin.Areas.Inventory.Controllers
             return View(model);
         }
 
+        public async Task<IActionResult> Report(string id)
+        {
+            var voucher = await _goodReceivedVoucherContext.GetAsync(id);
+            var model = new GoodReceivedVoucherAddEditModel()
+            {
+                SupplierList = await _supplierContext.GetAll().Where(c => c.Active).ToListAsync(),
+                ProductList = await _productContext.GetAll().Where(c => c.Active).ToListAsync(),
+                Supplier = voucher.Supplier,
+                GoodReceivedVoucher = voucher,
+                Details = voucher.Details
+            };
+
+            return View(model);
+        }
+
         [HttpPost]
         public async Task<IActionResult> GetGoodsReceivedVoucher(string voucherId, string supplierId, string date)
         {
@@ -80,29 +95,26 @@ namespace IQTechSolutions.Web.Admin.Areas.Inventory.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> ProcessGoodsReceivedVoucher(string voucherId, string supplierId, string date)
+        public async Task<IActionResult> ProcessGoodsReceivedVoucher(string voucherId)
         {
-            try
-            {
+          //  try
+        //    {
                 var goodsReceivedVoucher = await _goodReceivedVoucherContext.GetAsync(voucherId);
-                if (goodsReceivedVoucher == null)
+                foreach (var voucher in goodsReceivedVoucher.Details)
                 {
-                    goodsReceivedVoucher = new GoodReceivedVoucher()
-                    {
-                        Id = voucherId,
-                        DateReceived = Convert.ToDateTime(date),
-                        SupplierId = supplierId
-                    };
-                    await _goodReceivedVoucherContext.AddAsync(goodsReceivedVoucher);
+                    var product = await _productContext.GetAsync(voucher.ProductId);
+                    product.QtyInStock += voucher.Qty;
+                    product.CostExcl = voucher.PriceExcl;
+                    await _productContext.UpdateAsync(product);
                 }
                 
                 return Json(new { id = goodsReceivedVoucher.Id });
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine(e);
-                throw;
-            }
+       //   }
+       //   catch (Exception e)
+       //   {
+       //       Console.WriteLine(e);
+       //       throw;
+       //   }
             
         }
 
@@ -127,7 +139,7 @@ namespace IQTechSolutions.Web.Admin.Areas.Inventory.Controllers
 
                 var goodReceivedVoucherDetail = new GoodReceivedVoucherDetails()
                 {
-                    Qty = qty.ToString("N"),
+                    Qty = qty,
                     ProductId = product.Id,
                     PriceExcl = price,
                     PriceVat = vat,
