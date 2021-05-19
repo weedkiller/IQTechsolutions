@@ -57,9 +57,28 @@ namespace Products.Core.Models
                 if (Entity.Categories.Any(c => c.CategoryId == category.Id))
                     checkboxModel.IsSelected = true;
 
+                if (category.HasSubCategories)
+                {
+                    AddToAvailableCategoriesChildCollection(category.SubCategories, checkboxModel);
+                }
                 AvailableCategories.Add(checkboxModel);
+            }
+        }
+        public void AddToAvailableCategoriesChildCollection(ICollection<Category<Product>> list, CheckBoxSelectionModel<Category<Product>> parent)
+        {
+            foreach (var sub in list)
+            {
+                var childCheckboxModel = new CheckBoxSelectionModel<Category<Product>>(sub.Id, sub.ParentCategoryId, sub.Name, sub.GetPath(), sub.Description);
+                if (Entity.Categories.Any(c => c.CategoryId == sub.Id))
+                    childCheckboxModel.IsSelected = true;
 
-                AddToAvailableCategories(category.SubCategories);
+                parent.ChildSelection.Add(childCheckboxModel);
+
+                if (sub.HasSubCategories)
+                {
+                    AddToAvailableCategoriesChildCollection(sub.SubCategories, childCheckboxModel);
+                }
+
             }
         }
 

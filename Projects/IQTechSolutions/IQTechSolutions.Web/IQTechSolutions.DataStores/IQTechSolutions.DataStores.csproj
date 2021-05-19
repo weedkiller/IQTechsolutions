@@ -18,9 +18,9 @@
     <ProjectReference Include="..\..\..\..\Modules\Feedback\Feedback.Core\Feedback.Core.csproj" />
     <ProjectReference Include="..\..\..\..\Modules\Filing\Filing.Core\Filing.Core.csproj" />
     <ProjectReference Include="..\..\..\..\Modules\Identity\Identity.Base\Identity.Base.csproj" />
+    <ProjectReference Include="..\..\..\..\Modules\InventoryManagement\InventoryManagement.Core\InventoryManagement.Core.csproj" />
     <ProjectReference Include="..\..\..\..\Modules\Products\Products.Core\Products.Core.csproj" />
     <ProjectReference Include="..\..\..\..\Modules\Suppliers\Suppliers.Core\Suppliers.Core.csproj" />
-    <ProjectReference Include="..\InventoryManagement.Core\InventoryManagement.Core.csproj" />
   </ItemGroup>
 
 </Project>

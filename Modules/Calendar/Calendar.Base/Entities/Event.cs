@@ -5,10 +5,8 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using Calendar.Base.Enums;
 using Filing.Base.Entities;
-using Filing.Base.Interfaces;
 using Grouping.Base.Entities;
 using Iqt.Base.Entities;
-using Newtonsoft.Json;
 
 namespace Calendar.Base.Entities
 {

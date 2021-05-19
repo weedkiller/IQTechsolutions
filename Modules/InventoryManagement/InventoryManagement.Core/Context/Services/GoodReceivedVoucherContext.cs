@@ -1,10 +1,7 @@
-﻿using System;
-using System.Linq;
+﻿using System.Linq;
 using System.Threading.Tasks;
 using InventoryManagement.Base.Entities;
-using InventoryManagement.Core.Models;
 using Microsoft.EntityFrameworkCore;
-using Products.Base.Entities;
 
 namespace InventoryManagement.Core.Context.Configurations.Services
 {

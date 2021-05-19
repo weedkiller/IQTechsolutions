@@ -17,11 +17,12 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="wwwroot\" />
+    <Folder Include="Views\Shared\Menus\" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\..\..\Modules\Identity\Identity.Base\Identity.Base.csproj" />
+    <ProjectReference Include="..\..\..\Modules\Products\Products.Core\Products.Core.csproj" />
     <ProjectReference Include="..\GoldTechInnovation.DataStore\GoldTechInnovation.DataStore.csproj" />
     <ProjectReference Include="..\GoldTechInnovation\GoldTechInnovation.csproj" />
   </ItemGroup>

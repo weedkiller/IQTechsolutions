@@ -1,8 +1,6 @@
-﻿using System.Collections.Generic;
-using System.ComponentModel;
+﻿using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using Filing.Base.Entities;
-using Iqt.Base.Entities;
 using Microsoft.AspNetCore.Http;
 using Suppliers.Base.Entities;
 

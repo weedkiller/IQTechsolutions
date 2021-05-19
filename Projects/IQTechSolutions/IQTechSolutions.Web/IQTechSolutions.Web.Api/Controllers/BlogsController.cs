@@ -6,7 +6,6 @@ using Blogging.Core.Context.Services;
 using Iqt.Base.Enums;
 using Iqt.Base.Extensions;
 using Iqt.Base.Models;
-using Microsoft.AspNetCore.Authorization;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 

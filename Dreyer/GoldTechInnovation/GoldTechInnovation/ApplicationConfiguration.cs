@@ -13,6 +13,9 @@ namespace GoldTechInnovation
         public string AbuseEmailAddress { get; } = "abuse@goldtechinnovation.co.za";
         public string InfoEmailAddress { get; } = "info@goldtechinnovation.co.za";
         public string PhysicalAddress { get; } = "20 Strawberry Fields Goedemoed Durbanville";
+        public string PhysicalAddressLine1 { get; } = "20 Strawberry Fields";
+        public string PhysicalAddressLine2 { get; } = "Goedemoed Durbanville";
+        public string DefaultWebsiteAddress { get; } = "www.goldtechinnovation.co.za";
         public string FacebookUrl { get; }
         public string TwitterUrl { get; }
         public string LinkedInUrl { get; }

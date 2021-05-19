@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using Iqt.Base.BaseTypes;
+﻿using Iqt.Base.BaseTypes;
 
 namespace Accounting.Base.Entities
 {

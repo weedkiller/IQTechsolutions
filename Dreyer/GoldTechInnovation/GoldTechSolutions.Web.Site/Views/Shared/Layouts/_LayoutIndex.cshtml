@@ -26,9 +26,13 @@
 <body>
    
     <main role="main" class="pb-3">
-        <partial name="Headers/_Default" />
+
+        <partial name="Headers/_IndexHeader" />
+        
         @RenderBody()
+
         <partial name="Footers/_Default" />
+
     </main>
   
 
@@ -78,9 +82,11 @@
     <script src="/js/components/hs.show-animation.js"></script>
     <script src="/js/components/hs.svg-injector.js"></script>
     <script src="/js/components/hs.go-to.js"></script>
-    <script src="/js/components/hs.selectpicker.js"></script>
+<script src="/js/components/hs.selectpicker.js"></script>
 
-    <!-- JS Plugins Init. -->
+<script type="text/javascript" src="/js/custom/shopping.js"></script>
+
+<!-- JS Plugins Init. -->
     <script>
         $(window).on('load', function () {
             // initialization of HSMegaMenu component

@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using Mailing.Base.EmailSenders;
+﻿using Mailing.Base.EmailSenders;
 using Mailing.Base.Interfaces;
 using Microsoft.Extensions.DependencyInjection;
 

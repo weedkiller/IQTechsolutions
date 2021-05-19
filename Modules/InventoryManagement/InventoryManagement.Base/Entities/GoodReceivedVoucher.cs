@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 using Iqt.Base.BaseTypes;
-using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using Suppliers.Base.Entities;
 
 namespace InventoryManagement.Base.Entities

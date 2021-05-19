@@ -4,7 +4,6 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using Filing.Base.Entities;
 using Grouping.Base.Entities;
-using Iqt.Base.BaseTypes;
 
 namespace Projects.Base.Entities
 {

@@ -1,5 +1,3 @@
-using System;
-
 namespace IQTechSolutions.Web.Social.Models
 {
     public class ErrorViewModel

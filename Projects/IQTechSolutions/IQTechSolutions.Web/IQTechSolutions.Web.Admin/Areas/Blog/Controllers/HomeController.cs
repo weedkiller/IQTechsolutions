@@ -2,8 +2,6 @@
 using Blogging.Core.Context.Services;
 using Blogging.Core.Controllers;
 using Grouping.Core.Context.Services;
-using Identity.Base.Entities;
-using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 
 namespace IQTechSolutions.Web.Admin.Areas.Blog.Controllers

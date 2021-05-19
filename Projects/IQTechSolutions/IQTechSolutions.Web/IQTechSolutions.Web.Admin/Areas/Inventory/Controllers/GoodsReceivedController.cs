@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using InventoryManagement.Base.Entities;
@@ -97,8 +96,8 @@ namespace IQTechSolutions.Web.Admin.Areas.Inventory.Controllers
         [HttpPost]
         public async Task<IActionResult> ProcessGoodsReceivedVoucher(string voucherId)
         {
-          //  try
-        //    {
+            try
+            {
                 var goodsReceivedVoucher = await _goodReceivedVoucherContext.GetAsync(voucherId);
                 foreach (var voucher in goodsReceivedVoucher.Details)
                 {
@@ -107,15 +106,14 @@ namespace IQTechSolutions.Web.Admin.Areas.Inventory.Controllers
                     product.CostExcl = voucher.PriceExcl;
                     await _productContext.UpdateAsync(product);
                 }
-                
-                return Json(new { id = goodsReceivedVoucher.Id });
-       //   }
-       //   catch (Exception e)
-       //   {
-       //       Console.WriteLine(e);
-       //       throw;
-       //   }
-            
+
+                return Json(new {id = goodsReceivedVoucher.Id});
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                throw;
+            }
         }
 
         /// <summary>

@@ -6,7 +6,6 @@ using Calendar.Base.Enums;
 using Identity.Base.Entities;
 using Iqt.Base.BaseTypes;
 using Iqt.Base.Enums;
-using Newtonsoft.Json;
 
 namespace Calendar.Base.Entities
 {

@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Customers.Base.ApiModels
+﻿namespace Customers.Base.ApiModels
 {
     public class CustomerModel
     {

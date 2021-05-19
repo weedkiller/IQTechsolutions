@@ -5,9 +5,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\Projects\IQTechSolutions\IQTechSolutions.Web\InventoryManagement.Base\InventoryManagement.Base.csproj" />
+    <ProjectReference Include="..\..\InventoryManagement\InventoryManagement.Base\InventoryManagement.Base.csproj" />
     <ProjectReference Include="..\..\Products\Products.Base\Products.Base.csproj" />
-    <ProjectReference Include="..\..\Suppliers\Suppliers.Base\Suppliers.Base.csproj" />
     <ProjectReference Include="..\Accounting.Base\Accounting.Base.csproj" />
   </ItemGroup>
 

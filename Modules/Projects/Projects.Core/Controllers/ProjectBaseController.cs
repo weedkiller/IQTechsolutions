@@ -1,14 +1,10 @@
-﻿using System;
-using System.Linq;
+﻿using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Grouping.Base.Entities;
 using Grouping.Core.Context.Services;
 using Iqt.Base.Models;
-using Iqt.Calender.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Projects.Base.Entities;
 using Projects.Core.Context.Services;

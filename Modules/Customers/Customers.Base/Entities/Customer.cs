@@ -1,7 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using Filing.Base.Entities;
-using Identity.Base.Entities;
 using Iqt.Base.Entities;
 
 namespace Customers.Base.Entities

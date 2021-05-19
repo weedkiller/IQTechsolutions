@@ -1,10 +1,4 @@
 ﻿using System.Diagnostics;
-using System.Net.Http;
-using System.Net.Http.Json;
-using System.Threading.Tasks;
-using Feedback.Core.Models;
-using Iqt.Base.Models;
-using IQTechSolutions.Web.Email;
 using Microsoft.AspNetCore.Mvc;
 using IQTechSolutions.Web.Site.Models;
 

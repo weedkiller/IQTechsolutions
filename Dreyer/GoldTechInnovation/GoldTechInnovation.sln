@@ -73,7 +73,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GoldTechInnovation.DataStor
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GoldTechInnovation.Web", "GoldTechInnovation.Web\GoldTechInnovation.Web.csproj", "{C2C49CAE-8E5F-4D7E-9118-F7D645120AA0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GoldTechSolutions.Web.Site", "GoldTechSolutions.Web.Site\GoldTechSolutions.Web.Site.csproj", "{FB9FD607-0F81-433C-80AC-27C38B60920B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GoldTechSolutions.Web.Site", "GoldTechSolutions.Web.Site\GoldTechSolutions.Web.Site.csproj", "{FB9FD607-0F81-433C-80AC-27C38B60920B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

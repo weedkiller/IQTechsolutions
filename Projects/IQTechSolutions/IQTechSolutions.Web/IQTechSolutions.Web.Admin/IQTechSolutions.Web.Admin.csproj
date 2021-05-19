@@ -25,11 +25,12 @@
   <ItemGroup>
     <ProjectReference Include="..\..\..\..\Modules\Customers\Customers.Core\Customers.Core.csproj" />
     <ProjectReference Include="..\..\..\..\Modules\Identity\Identity.Base\Identity.Base.csproj" />
+    <ProjectReference Include="..\..\..\..\Modules\InventoryManagement\InventoryManagement.Base\InventoryManagement.Base.csproj" />
+    <ProjectReference Include="..\..\..\..\Modules\InventoryManagement\InventoryManagement.Core\InventoryManagement.Core.csproj" />
     <ProjectReference Include="..\..\..\..\Modules\Products\Products.Base\Products.Base.csproj" />
     <ProjectReference Include="..\..\..\..\Modules\Products\Products.Core\Products.Core.csproj" />
     <ProjectReference Include="..\..\..\..\Modules\Suppliers\Suppliers.Core\Suppliers.Core.csproj" />
     <ProjectReference Include="..\..\IQTechSolutions.Base\IQTechSolutions\IQTechSolutions.csproj" />
-    <ProjectReference Include="..\InventoryManagement.Core\InventoryManagement.Core.csproj" />
     <ProjectReference Include="..\IQTechSolutions.DataStores\IQTechSolutions.DataStores.csproj" />
     <ProjectReference Include="..\IQTechSolutions.Web\IQTechSolutions.Web.csproj" />
   </ItemGroup>
@@ -47,6 +48,11 @@
     <Folder Include="Areas\Expenses\Data\" />
     <Folder Include="Areas\Expenses\Models\" />
     <Folder Include="Areas\Expenses\Views\" />
+    <Folder Include="Areas\Sales\Controllers\" />
+    <Folder Include="Areas\Sales\Views\" />
+    <Folder Include="ViewComponents\" />
+    <Folder Include="Views\Shared\Components\" />
+    <Folder Include="Views\Shared\Headers\" />
   </ItemGroup>
 
 </Project>

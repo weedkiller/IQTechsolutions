@@ -43,7 +43,7 @@ namespace Products.Core.Context.Services
 
         public IQueryable<Product> GetAll()
         {
-            var bb = _context.Set<Product>().Include(c => c.Images);
+            var bb = _context.Set<Product>().Include(c => c.Images).Include(c => c.Categories);
             return bb;
         }
 

@@ -1,5 +1,3 @@
-using System;
-
 namespace IQTechSolutions.Web.Site.Models
 {
     public class ErrorViewModel

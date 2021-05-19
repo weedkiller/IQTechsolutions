@@ -1,12 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Mailing.Base.Entities;
 using Mailing.Base.Interfaces;
-using Microsoft.Extensions.DependencyInjection;
 
 namespace IQTechSolutions.Web.Email
 {

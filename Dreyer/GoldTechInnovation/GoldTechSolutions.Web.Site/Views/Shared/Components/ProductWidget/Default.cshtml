@@ -1,0 +1,34 @@
+﻿@using Filing.Base.Enums
+@using Filing.Base.Extensions
+@using Iqt.Base.Interfaces
+@model GoldTechSolutions.Web.Site.Models.ProductComponentModel
+
+@inject IApplicationConfiguration Configuration
+
+@if (Model.Products.Any())
+{
+
+    <div class="border-bottom border-color-1 mb-5">
+        <h3 class="section-title section-title__sm mb-0 pb-2 font-size-18">@Model.WidgetTitle</h3>
+    </div>
+    <ul class="list-unstyled products-group">
+        @foreach (var product in Model.Products)
+        {
+            <li class="product-item product-item__list row no-gutters mb-6 remove-divider">
+                <div class="col-auto">
+                    <a asp-area="Products" asp-controller="Home" asp-action="Details" asp-route-id="@product.Id" class="d-block width-75 text-center"><img class="img-fluid" src="@product.GetPath(ImageType.Cover, Configuration.ImageDefaultPlaceholder)" alt="@product.Name Cover Image"></a>
+                </div>
+                <div class="col pl-4 d-flex flex-column">
+                    <h5 class="product-item__title mb-0"><a asp-area="Products" asp-controller="Home" asp-action="Details" asp-route-id="@product.Id" class="text-blue font-weight-bold">@product.Name</a></h5>
+                    <div class="prodcut-price mt-auto">
+                        <div class="font-size-15">R @product.PriceIncl</div>
+                    </div>
+                </div>
+            </li>
+        }
+    </ul>
+}
+
+@section Scripts{
+
+}
