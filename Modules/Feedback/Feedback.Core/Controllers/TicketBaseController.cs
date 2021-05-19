@@ -1,6 +1,7 @@
 ﻿using System.Threading.Tasks;
 using Feedback.Core.Context.Services;
 using Feedback.Core.Models;
+using GoldTechInnovation.Web.Email;
 using GoogleReCaptcha.V3.Interface;
 using Identity.Base.Entities;
 using Iqt.Base.Enums;
@@ -10,7 +11,6 @@ using Mailing.Base.Interfaces;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using Olympia.Web.Email;
 
 // ReSharper disable Mvc.ActionNotResolved
 // ReSharper disable Mvc.ControllerNotResolved
