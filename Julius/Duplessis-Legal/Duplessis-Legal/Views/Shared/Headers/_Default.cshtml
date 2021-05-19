@@ -1,0 +1,144 @@
+﻿<header class="gdlr-header-wrapper" id="gdlr-header-wrapper">
+    <!-- top navigation -->
+    <div class="top-navigation-wrapper">
+        <div class="top-navigation-container container">
+            <div class="top-navigation-left">
+                <div class="top-social-wrapper">
+                    <div class="social-icon">
+                        <a href="#" target="_blank">
+                            <i class="fa fa-facebook"></i>
+                        </a>
+                    </div>
+                    <div class="social-icon">
+                        <a href="#" target="_blank">
+                            <i class="fa fa-flickr"></i>
+                        </a>
+                    </div>
+                    <div class="social-icon">
+                        <a href="#" target="_blank">
+                            <i class="fa fa-linkedin"></i>
+                        </a>
+                    </div>
+                    <div class="social-icon">
+                        <a href="#" target="_blank">
+                            <i class="fa fa-pinterest-p"></i>
+                        </a>
+                    </div>
+                    <div class="social-icon">
+                        <a href="#" target="_blank">
+                            <i class="fa fa-twitter"></i>
+                        </a>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+            </div>
+            <div class="top-navigation-right">
+                <div class="top-navigation-right-text">
+                    <div class="gdlr-text-block"><i class="fa fa-clock-o"></i>Mon - Fri : 09:00 - 17:00</div>
+                    <div class="gdlr-text-block"><i class="fa fa-envelope"></i>contact@DuplesisLegal.com</div>
+                    <div class="gdlr-text-block"><i class="fa fa-phone"></i>1800-222-222</div>
+                </div>
+            </div>
+            <div class="clear"></div>
+        </div>
+    </div>
+
+    <!-- logo -->
+
+    <div id="gdlr-header-substitute"></div>
+    <div class="gdlr-header-inner">
+        <div class="gdlr-header-container container">
+
+            <!-- logo -->
+            <div class="gdlr-logo">
+                <a class="gdlr-solid-logo" asp-page="/Index">
+                    <img src="/images/Capture.png" alt="Logo"  style="height:100px; width:100px;" />
+                </a>
+                <div class="gdlr-responsive-navigation dl-menuwrapper" id="gdlr-responsive-navigation">
+                    <button class="dl-trigger">Open Menu</button>
+                    <ul id="menu-main-menu" class="dl-menu gdlr-main-mobile-menu">
+                        <li class="menu-item menu-item-home current-menu-item ">
+                            <a asp-page="/Index">Home</a>
+
+                        </li>
+                        @*  asp-area="Pages" asp-controller="Home" asp-action="Index" *@
+                        <li class="menu-item menu-item-has-children ">
+
+                            <a asp-page="/Index">Pages</a>
+
+
+                           <a  asp-area="About" asp-controller="Home" asp-action="Index">Pages</a>
+                           
+
+                        </li>
+                   
+                        <li class="menu-item menu-item-has-children ">
+
+                         
+
+                            <a asp-area="WhoWeAre" asp-controller="Home" asp-action="Index">Who We Are</a>
+                            
+
+                        </li>
+               
+                        <li class="menu-item menu-item-has-children ">
+
+                            <a asp-page="/Index">Blog</a>
+
+
+                        </li>
+                        <li class="menu-item menu-item-has-children ">
+
+                            <a asp-area="Contact" asp-controller="Home" asp-action="Index">Contact</a>
+
+
+                         
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+
+            <!-- navigation -->
+            <div class="gdlr-navigation-wrapper">
+                <nav class="gdlr-navigation" id="gdlr-main-navigation" role="navigation">
+                    <ul id="menu-main-menu-1" class="sf-menu gdlr-main-menu">
+                        <li class="menu-item menu-item-home current-menu-item menu-item menu-item-home current-menu-item  gdlr-normal-menu">
+                            <a asp-page="/Index" class="sf-with-ul-pre">Home</a>
+
+                        </li>
+                        <li class="menu-item menu-item-has-children menu-item menu-item-has-children  gdlr-normal-menu">
+
+                            <a asp-area="About" asp-controller="Home" asp-action="Index" class="sf-with-ul-pre"><i class="fa fa-bank"></i>Pages</a>
+
+                        </li>
+                        <li class="menu-item menu-item-has-children menu-item menu-item-has-children  gdlr-mega-menu">
+                            <a asp-area="WhoWeAre" asp-controller="Home" asp-action="Index" class="sf-with-ul-pre"><i class="fa fa-briefcase"></i>Who We Are</a>
+
+                        </li>
+
+                        <li class="menu-item menu-item-has-children menu-item menu-item-has-children  gdlr-mega-menu">
+                            <a asp-area="Contact" asp-controller="Home" asp-action="Index" class="sf-with-ul-pre"><i class="fa fa-bullhorn"></i>Contact</a>
+
+                        </li>
+
+
+                    </ul><span class="gdlr-nav-separator"></span>
+                    <img id="gdlr-menu-search-button" src="images/magnifier-dark.png" alt="" width="58" height="59" />
+                    <div class="gdlr-menu-search" id="gdlr-menu-search">
+                        <form method="get" action="#">
+                            <div class="search-text">
+                                <input type="text" value="Type Keywords" name="s" autocomplete="off" data-default="Type Keywords" />
+                            </div>
+                            <input type="submit" value="" />
+                            <div class="clear"></div>
+                        </form>
+                    </div>
+                </nav>
+                <div class="gdlr-navigation-gimmick" id="gdlr-navigation-gimmick"></div>
+                <div class="clear"></div>
+            </div>
+            <div class="clear"></div>
+        </div>
+    </div>
+</header>
