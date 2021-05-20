@@ -6,6 +6,29 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Areas\Expenses\**" />
+    <Compile Remove="Areas\Sales\**" />
+    <Compile Remove="ViewComponents\**" />
+    <Compile Remove="Views\Shared\Components\**" />
+    <Compile Remove="Views\Shared\Headers\**" />
+    <Content Remove="Areas\Expenses\**" />
+    <Content Remove="Areas\Sales\**" />
+    <Content Remove="ViewComponents\**" />
+    <Content Remove="Views\Shared\Components\**" />
+    <Content Remove="Views\Shared\Headers\**" />
+    <EmbeddedResource Remove="Areas\Expenses\**" />
+    <EmbeddedResource Remove="Areas\Sales\**" />
+    <EmbeddedResource Remove="ViewComponents\**" />
+    <EmbeddedResource Remove="Views\Shared\Components\**" />
+    <EmbeddedResource Remove="Views\Shared\Headers\**" />
+    <None Remove="Areas\Expenses\**" />
+    <None Remove="Areas\Sales\**" />
+    <None Remove="ViewComponents\**" />
+    <None Remove="Views\Shared\Components\**" />
+    <None Remove="Views\Shared\Headers\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Include="wwwroot\js\cropper-master\.github\CODE_OF_CONDUCT.md" />
     <None Include="wwwroot\js\cropper-master\.github\CONTRIBUTING.md" />
     <None Include="wwwroot\js\cropper-master\.github\ISSUE_TEMPLATE\bug_report.md" />
@@ -43,15 +66,6 @@
 
   <ItemGroup>
     <Folder Include="Areas\Customers\" />
-    <Folder Include="Areas\Expenses\Controllers\" />
-    <Folder Include="Areas\Expenses\Data\" />
-    <Folder Include="Areas\Expenses\Models\" />
-    <Folder Include="Areas\Expenses\Views\" />
-    <Folder Include="Areas\Sales\Controllers\" />
-    <Folder Include="Areas\Sales\Views\" />
-    <Folder Include="ViewComponents\" />
-    <Folder Include="Views\Shared\Components\" />
-    <Folder Include="Views\Shared\Headers\" />
   </ItemGroup>
 
 </Project>
