@@ -11,7 +11,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\Julius\Olympia\Olympia.Web\Olympia.Web.csproj" />
+    <ProjectReference Include="..\..\..\Dreyer\GoldTechInnovation\GoldTechInnovation.Web\GoldTechInnovation.Web.csproj" />
     <ProjectReference Include="..\..\Filing\Filing.Core\Filing.Core.csproj" />
     <ProjectReference Include="..\..\Mailing\Mailing.Base\Mailing.Base.csproj" />
     <ProjectReference Include="..\Feedback.Base\Feedback.Base.csproj" />

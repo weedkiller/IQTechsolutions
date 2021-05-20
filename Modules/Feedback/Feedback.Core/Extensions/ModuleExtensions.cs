@@ -1,6 +1,6 @@
 ﻿using Feedback.Core.Context.Services;
+using GoldTechInnovation.Web.Email.Extensions;
 using Microsoft.Extensions.DependencyInjection;
-using Olympia.Web.Email.Extensions;
 
 namespace Feedback.Core.Extensions
 {

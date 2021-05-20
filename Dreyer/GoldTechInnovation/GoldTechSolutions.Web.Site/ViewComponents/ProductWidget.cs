@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using GoldTechSolutions.Web.Site.Models;
 using Microsoft.AspNetCore.Mvc;
 using Products.Core.Context.Services;
 using Products.Core.Models;
@@ -23,24 +24,37 @@ namespace GoldTechSolutions.Web.Site.ViewComponents
             try
             {
                 var products = _productContext.GetAll();
+                var model = new ProductComponentModel()
+                {
+                    Products = products.Take(10).ToList()
+                };
+
                 if (sorting == "toprated")
                 {
-                    products = products.OrderBy(c => c.Sold);
+                    model.Products = products.OrderBy(c => c.Sold);
+                    model.WidgetTitle = "Top Rated Products";
                 }
                 else if (sorting == "popular")
                 {
-                    products = products.OrderBy(c => c.Views);
+                    model.Products = products.OrderBy(c => c.Views);
+                    model.WidgetTitle = "Propular Products";
                 }
                 else if (sorting == "featured")
                 {
-                    products = products.Where(c => c.Featured);
+                    model.Products = products.Where(c => c.Featured);
+                    model.WidgetTitle = "Featured Products";
                 }
                 else if (sorting == "sale")
                 {
-                    products = products.Where(c => c.Discount > 0);
+                    model.Products = products.Where(c => c.Discount > 0);
+                    model.WidgetTitle = "Products On Sale";
+                }
+                else if (sorting == "new")
+                {
+                    model.Products = products.Where(c => c.Created > DateTime.Now.AddMonths(2));
+                    model.WidgetTitle = "New Arrivals";
                 }
 
-                var model = new ProductIndexModel(products.ToList());
                 return View(model);
             }
             catch (Exception e)

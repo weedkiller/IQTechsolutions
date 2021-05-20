@@ -255,7 +255,7 @@
                                                                 <li><a class="u-header-collapse__submenu-nav-link" href="../home/store-directory.html">Store Directory</a></li>
                                                                 <!-- End Store Directory -->
                                                                 <!-- Terms and Conditions -->
-                                                                <li><a class="u-header-collapse__submenu-nav-link" href="../home/terms-and-conditions.html">Terms and Conditions</a></li>
+                                                                <li><a class="u-header-collapse__submenu-nav-link" asp-controller="Home" asp-action="Terms">Terms and Conditions</a></li>
                                                                 <!-- End Terms and Conditions -->
                                                                 <!-- 404 -->
                                                                 <li><a class="u-header-collapse__submenu-nav-link" href="../home/404.html">404</a></li>
@@ -490,12 +490,12 @@
                                                         <li><a href="home-v5.html" class="nav-link u-header__sub-menu-nav-link">Home v5</a></li>
                                                         <li><a href="home-v6.html" class="nav-link u-header__sub-menu-nav-link">Home v6</a></li>
                                                         <li><a href="home-v7.html" class="nav-link u-header__sub-menu-nav-link">Home v7</a></li>
-                                                        <li><a href="about.html" class="nav-link u-header__sub-menu-nav-link">About</a></li>
+                                                        <li><a asp-controller="Home" asp-action="About" class="nav-link u-header__sub-menu-nav-link">About</a></li>
                                                         <li><a href="contact-v1.html" class="nav-link u-header__sub-menu-nav-link">Contact v1</a></li>
-                                                        <li><a href="contact-v2.html" class="nav-link u-header__sub-menu-nav-link">Contact v2</a></li>
+                                                        <li><a asp-controller="Home" asp-action="Contact" class="nav-link u-header__sub-menu-nav-link">Contact v2</a></li>
                                                         <li><a href="faq.html" class="nav-link u-header__sub-menu-nav-link">FAQ</a></li>
                                                         <li><a href="store-directory.html" class="nav-link u-header__sub-menu-nav-link">Store Directory</a></li>
-                                                        <li><a href="terms-and-conditions.html" class="nav-link u-header__sub-menu-nav-link">Terms and Conditions</a></li>
+                                                        <li><a asp-controller="Home" asp-action="Terms" class="nav-link u-header__sub-menu-nav-link">Terms and Conditions</a></li>
                                                         <li><a href="404.html" class="nav-link u-header__sub-menu-nav-link">404</a></li>
                                                     </ul>
                                                 </div>
@@ -578,7 +578,7 @@
                                     <!-- End Blog -->
                                     <!-- About us -->
                                     <li class="nav-item u-header__nav-item">
-                                        <a class="nav-link u-header__nav-link" href="about.html">About us</a>
+                                        <a class="nav-link u-header__nav-link" asp-controller="Home" asp-action="About">About us</a>
                                     </li>
                                     <!-- End About us -->
                                     <!-- FAQs -->
@@ -588,7 +588,7 @@
                                     <!-- End FAQs -->
                                     <!-- Contact Us -->
                                     <li class="nav-item u-header__nav-item">
-                                        <a class="nav-link u-header__nav-link" href="contact-v1.html">Contact Us</a>
+                                        <a class="nav-link u-header__nav-link" asp-controller="Home" asp-action="Contact">Contact Us</a>
                                     </li>
                                     <!-- End Contact Us -->
                                 </ul>
