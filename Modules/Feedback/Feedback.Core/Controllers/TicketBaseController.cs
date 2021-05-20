@@ -7,7 +7,6 @@ using Iqt.Base.Enums;
 using Iqt.Base.Interfaces;
 using Iqt.Base.Models;
 using Mailing.Base.Interfaces;
-using Metsi.Web.Email;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -38,7 +37,7 @@ namespace Feedback.Core.Controllers
         private IEmailSender _emailSender;
 
         public TicketContext<UserInfo> Service { get; }
-        public DefaultEmailSender EmailSender { get; }
+        public IEmailSender EmailSender { get; }
         public ICaptchaValidator CaptchaValidator { get; }
 
         /// <summary>
@@ -51,7 +50,7 @@ namespace Feedback.Core.Controllers
             _captchaValidator = captchaValidator;
         }
 
-        public TicketBaseController(TicketContext<UserInfo> service, DefaultEmailSender emailSender, ICaptchaValidator captchaValidator)
+        public TicketBaseController(TicketContext<UserInfo> service, IEmailSender emailSender, ICaptchaValidator captchaValidator)
         {
             Service = service;
             EmailSender = emailSender;
