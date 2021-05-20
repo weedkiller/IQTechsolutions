@@ -857,9 +857,6 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Dreyer\\GoldTechInnovation\\GoldTechInnovation.Web\\GoldTechInnovation.Web.csproj": {
-                "projectPath": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Dreyer\\GoldTechInnovation\\GoldTechInnovation.Web\\GoldTechInnovation.Web.csproj"
-              },
               "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Feedback\\Feedback.Base\\Feedback.Base.csproj": {
                 "projectPath": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Feedback\\Feedback.Base\\Feedback.Base.csproj"
               },
@@ -868,6 +865,9 @@
               },
               "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Mailing\\Mailing.Base\\Mailing.Base.csproj": {
                 "projectPath": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Mailing\\Mailing.Base\\Mailing.Base.csproj"
+              },
+              "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Projects\\EnviroMetsi\\Metsi.Base\\Metsi.Web\\Metsi.Web.csproj": {
+                "projectPath": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Projects\\EnviroMetsi\\Metsi.Base\\Metsi.Web\\Metsi.Web.csproj"
               }
             }
           }
@@ -2012,11 +2012,8 @@
               "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Grouping\\Grouping.Core\\Grouping.Core.csproj": {
                 "projectPath": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Grouping\\Grouping.Core\\Grouping.Core.csproj"
               },
-              "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Messaging\\Messaging.Base\\Messaging.Base.csproj": {
-                "projectPath": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Messaging\\Messaging.Base\\Messaging.Base.csproj"
-              },
-              "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Messaging\\Messaging.Core\\Messaging.Core.csproj": {
-                "projectPath": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Messaging\\Messaging.Core\\Messaging.Core.csproj"
+              "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Identity\\Identity.Base\\Identity.Base.csproj": {
+                "projectPath": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Identity\\Identity.Base\\Identity.Base.csproj"
               },
               "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Projects\\Projects.Core\\Projects.Core.csproj": {
                 "projectPath": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Projects\\Projects.Core\\Projects.Core.csproj"
@@ -2027,8 +2024,8 @@
               "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Troubleshooting\\Troubleshooting.Core\\Troubleshooting.Core.csproj": {
                 "projectPath": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Troubleshooting\\Troubleshooting.Core\\Troubleshooting.Core.csproj"
               },
-              "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Projects\\EnviroMetsi\\Metsi.Base\\Metsi\\Metsi.csproj": {
-                "projectPath": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Projects\\EnviroMetsi\\Metsi.Base\\Metsi\\Metsi.csproj"
+              "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Projects\\EnviroMetsi\\Metsi.Web\\Metsi.Web.Api\\Metsi.Web.Api.csproj": {
+                "projectPath": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Projects\\EnviroMetsi\\Metsi.Web\\Metsi.Web.Api\\Metsi.Web.Api.csproj"
               },
               "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Projects\\EnviroMetsi\\Metsi.Web\\Metsi.Web.Datastore\\Metsi.Web.Datastore.csproj": {
                 "projectPath": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Projects\\EnviroMetsi\\Metsi.Web\\Metsi.Web.Datastore\\Metsi.Web.Datastore.csproj"
@@ -2067,6 +2064,118 @@
             "Syncfusion.EJ2.AspNet.Core": {
               "target": "Package",
               "version": "[19.1.0.63, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.202\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Projects\\EnviroMetsi\\Metsi.Web\\Metsi.Web.Api\\Metsi.Web.Api.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Projects\\EnviroMetsi\\Metsi.Web\\Metsi.Web.Api\\Metsi.Web.Api.csproj",
+        "projectName": "Metsi.Web.Api",
+        "projectPath": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Projects\\EnviroMetsi\\Metsi.Web\\Metsi.Web.Api\\Metsi.Web.Api.csproj",
+        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Projects\\EnviroMetsi\\Metsi.Web\\Metsi.Web.Api\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\IqtFramework\\Iqt.Base\\Iqt.Base.csproj": {
+                "projectPath": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\IqtFramework\\Iqt.Base\\Iqt.Base.csproj"
+              },
+              "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Feedback\\Feedback.Core\\Feedback.Core.csproj": {
+                "projectPath": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Feedback\\Feedback.Core\\Feedback.Core.csproj"
+              },
+              "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Grouping\\Grouping.Base\\Grouping.Base.csproj": {
+                "projectPath": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Grouping\\Grouping.Base\\Grouping.Base.csproj"
+              },
+              "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Grouping\\Grouping.Core\\Grouping.Core.csproj": {
+                "projectPath": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Grouping\\Grouping.Core\\Grouping.Core.csproj"
+              },
+              "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Troubleshooting\\Troubleshooting.Base\\Troubleshooting.Base.csproj": {
+                "projectPath": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Troubleshooting\\Troubleshooting.Base\\Troubleshooting.Base.csproj"
+              },
+              "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Troubleshooting\\Troubleshooting.Core\\Troubleshooting.Core.csproj": {
+                "projectPath": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Troubleshooting\\Troubleshooting.Core\\Troubleshooting.Core.csproj"
+              },
+              "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Projects\\EnviroMetsi\\Metsi.Base\\Metsi\\Metsi.csproj": {
+                "projectPath": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Projects\\EnviroMetsi\\Metsi.Base\\Metsi\\Metsi.csproj"
+              },
+              "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Projects\\EnviroMetsi\\Metsi.Web\\Metsi.Web.Datastore\\Metsi.Web.Datastore.csproj": {
+                "projectPath": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Projects\\EnviroMetsi\\Metsi.Web\\Metsi.Web.Datastore\\Metsi.Web.Datastore.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[5.0.6, )",
+              "noWarn": [
+                "NU1605"
+              ]
+            },
+            "Microsoft.AspNetCore.Authentication.OpenIdConnect": {
+              "target": "Package",
+              "version": "[5.0.6, )",
+              "noWarn": [
+                "NU1605"
+              ]
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[5.0.6, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[5.0.6, )"
+            },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[6.1.4, )"
             }
           },
           "imports": [

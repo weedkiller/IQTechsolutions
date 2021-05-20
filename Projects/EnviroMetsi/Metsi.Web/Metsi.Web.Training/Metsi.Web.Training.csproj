@@ -25,8 +25,8 @@
     <ProjectReference Include="..\..\..\..\Modules\Identity\Identity.Base\Identity.Base.csproj" />
     <ProjectReference Include="..\..\..\..\Modules\Troubleshooting\Troubleshooting.Base\Troubleshooting.Base.csproj" />
     <ProjectReference Include="..\..\..\..\Modules\Troubleshooting\Troubleshooting.Core\Troubleshooting.Core.csproj" />
-    <ProjectReference Include="..\..\Metsi.Base\Metsi.Web\Metsi.Web.csproj" />
-    <ProjectReference Include="..\..\Metsi.Base\Metsi\Metsi.csproj" />
+    <ProjectReference Include="..\Metsi.Web.Api\Metsi.Web.Api.csproj" />
+    <ProjectReference Include="..\Metsi.Web.Datastore\Metsi.Web.Datastore.csproj" />
   </ItemGroup>
 
   <ItemGroup>

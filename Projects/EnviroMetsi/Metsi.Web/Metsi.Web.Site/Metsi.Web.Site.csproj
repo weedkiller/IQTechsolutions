@@ -22,6 +22,7 @@
     <ProjectReference Include="..\..\..\..\Modules\Troubleshooting\Troubleshooting.Base\Troubleshooting.Base.csproj" />
     <ProjectReference Include="..\..\Metsi.Base\Metsi.Web\Metsi.Web.csproj" />
     <ProjectReference Include="..\..\Metsi.Base\Metsi\Metsi.csproj" />
+    
   </ItemGroup>
 
 </Project>

@@ -3395,11 +3395,11 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v5.0",
         "dependencies": {
-          "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Dreyer\\GoldTechInnovation\\GoldTechInnovation.Web\\GoldTechInnovation.Web.csproj": "1.0.0",
           "Feedback.Base": "1.0.0",
           "Filing.Core": "1.0.0",
           "GoogleReCaptcha.V3": "1.3.0",
           "Mailing.Base": "1.0.0",
+          "Metsi.Web": "1.0.0",
           "Microsoft.AspNetCore.Http.Features": "5.0.6",
           "Microsoft.EntityFrameworkCore": "5.0.6"
         },
@@ -10585,16 +10585,5 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.202\\RuntimeIdentifierGraph.json"
       }
     }
-  },
-  "logs": [
-    {
-      "code": "NU1105",
-      "level": "Error",
-      "message": "Unable to find project information for 'C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Dreyer\\GoldTechInnovation\\GoldTechInnovation.Web\\GoldTechInnovation.Web.csproj'. If you are using Visual Studio, this may be because the project is unloaded or not part of the current solution so run a restore from the command-line. Otherwise, the project file may be invalid or missing targets required for restore.",
-      "libraryId": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Dreyer\\GoldTechInnovation\\GoldTechInnovation.Web\\GoldTechInnovation.Web.csproj",
-      "targetGraphs": [
-        "net5.0"
-      ]
-    }
-  ]
+  }
 }
