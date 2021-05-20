@@ -26,7 +26,6 @@
     <ProjectReference Include="..\..\..\..\Modules\Customers\Customers.Core\Customers.Core.csproj" />
     <ProjectReference Include="..\..\..\..\Modules\Identity\Identity.Base\Identity.Base.csproj" />
     <ProjectReference Include="..\..\..\..\Modules\InventoryManagement\InventoryManagement.Base\InventoryManagement.Base.csproj" />
-    <ProjectReference Include="..\..\..\..\Modules\InventoryManagement\InventoryManagement.Core\InventoryManagement.Core.csproj" />
     <ProjectReference Include="..\..\..\..\Modules\Products\Products.Base\Products.Base.csproj" />
     <ProjectReference Include="..\..\..\..\Modules\Products\Products.Core\Products.Core.csproj" />
     <ProjectReference Include="..\..\..\..\Modules\Suppliers\Suppliers.Core\Suppliers.Core.csproj" />

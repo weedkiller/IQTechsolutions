@@ -1,5 +1,4 @@
 ﻿using Feedback.Core.Context.Services;
-using GoldTechInnovation.Web.Email.Extensions;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace Feedback.Core.Extensions
@@ -12,7 +11,6 @@ namespace Feedback.Core.Extensions
         public static IServiceCollection AddSupportTicketSystem(this IServiceCollection serviceCollection)
         {
             serviceCollection.AddScoped(typeof(TicketContext<>));
-            serviceCollection.AddCustomEmailServices();
             return serviceCollection;
         }
     }
