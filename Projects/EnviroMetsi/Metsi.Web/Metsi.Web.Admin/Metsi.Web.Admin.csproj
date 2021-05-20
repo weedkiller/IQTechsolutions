@@ -96,12 +96,11 @@
     <ProjectReference Include="..\..\..\..\Modules\Feedback\Feedback.Core\Feedback.Core.csproj" />
     <ProjectReference Include="..\..\..\..\Modules\Filing\Filing.Core\Filing.Core.csproj" />
     <ProjectReference Include="..\..\..\..\Modules\Grouping\Grouping.Core\Grouping.Core.csproj" />
-    <ProjectReference Include="..\..\..\..\Modules\Messaging\Messaging.Base\Messaging.Base.csproj" />
-    <ProjectReference Include="..\..\..\..\Modules\Messaging\Messaging.Core\Messaging.Core.csproj" />
+    <ProjectReference Include="..\..\..\..\Modules\Identity\Identity.Base\Identity.Base.csproj" />
     <ProjectReference Include="..\..\..\..\Modules\Projects\Projects.Core\Projects.Core.csproj" />
     <ProjectReference Include="..\..\..\..\Modules\Services\Services.Core\Services.Core.csproj" />
     <ProjectReference Include="..\..\..\..\Modules\Troubleshooting\Troubleshooting.Core\Troubleshooting.Core.csproj" />
-    <ProjectReference Include="..\..\Metsi.Base\Metsi\Metsi.csproj" />
+    <ProjectReference Include="..\Metsi.Web.Api\Metsi.Web.Api.csproj" />
     <ProjectReference Include="..\Metsi.Web.Datastore\Metsi.Web.Datastore.csproj" />
   </ItemGroup>
 

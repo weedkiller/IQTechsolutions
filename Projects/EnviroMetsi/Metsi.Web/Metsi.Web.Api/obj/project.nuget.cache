@@ -1,7 +1,7 @@
 {
   "version": 2,
-  "dgSpecHash": "0TEyaEcYCgx9TAS5Po9w+RAHjXAeFhgL24dlhY4gbrG4LLVvOEuW+s6hrDcao0vldNgpK2nqJ75meTY/+jUvdQ==",
-  "success": false,
+  "dgSpecHash": "VovfCCzQFz+7mRkMYhAY/uM5189JfAAlsErMREnDnzeIPbaFlP3xpGhCRxubEW1OVvfPpbm8953ufDdvxI1SbQ==",
+  "success": true,
   "projectFilePath": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Projects\\EnviroMetsi\\Metsi.Web\\Metsi.Web.Api\\Metsi.Web.Api.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Admin\\.nuget\\packages\\google.apis\\1.51.0\\google.apis.1.51.0.nupkg.sha512",
@@ -216,15 +216,5 @@
     "C:\\Users\\Admin\\.nuget\\packages\\system.xml.xmldocument\\4.3.0\\system.xml.xmldocument.4.3.0.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\system.xml.xmlserializer\\4.3.0\\system.xml.xmlserializer.4.3.0.nupkg.sha512"
   ],
-  "logs": [
-    {
-      "code": "NU1105",
-      "level": "Error",
-      "message": "Unable to find project information for 'C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Dreyer\\GoldTechInnovation\\GoldTechInnovation.Web\\GoldTechInnovation.Web.csproj'. If you are using Visual Studio, this may be because the project is unloaded or not part of the current solution so run a restore from the command-line. Otherwise, the project file may be invalid or missing targets required for restore.",
-      "libraryId": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Dreyer\\GoldTechInnovation\\GoldTechInnovation.Web\\GoldTechInnovation.Web.csproj",
-      "targetGraphs": [
-        "net5.0"
-      ]
-    }
-  ]
+  "logs": []
 }
