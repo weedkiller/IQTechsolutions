@@ -1,6 +1,7 @@
 {
   "ExpandedNodes": [
     "",
+<<<<<<< Updated upstream
     "\\Julius\\CryptoWeb",
     "\\Julius\\CryptoWeb\\CryptoWeb",
     "\\Julius\\CryptoWeb\\CryptoWeb\\Areas",
@@ -13,5 +14,18 @@
     "\\Julius\\CryptoWeb\\CryptoWeb\\Views\\Shared\\Header"
   ],
   "SelectedNode": "\\Julius",
+=======
+    "\\Julius",
+    "\\Julius\\Olympia",
+    "\\Julius\\Olympia\\Olympia",
+    "\\Julius\\Olympia\\Olympia.Web.Site",
+    "\\Modules",
+    "\\Modules\\Feedback",
+    "\\Modules\\Feedback\\Feedback.Core",
+    "\\Modules\\Feedback\\Feedback.Core\\Controllers",
+    "\\Modules\\Feedback\\Feedback.Core\\Extensions"
+  ],
+  "SelectedNode": "\\Julius\\Olympia\\Olympia.Web.Site\\Olympia.Web.Site.csproj",
+>>>>>>> Stashed changes
   "PreviewInSolutionExplorer": false
 }

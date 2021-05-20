@@ -3112,10 +3112,7 @@
         },
         "runtime": {
           "bin/placeholder/Blogging.Core.dll": {}
-        },
-        "frameworkReferences": [
-          "Microsoft.AspNetCore.App"
-        ]
+        }
       },
       "Calendar.Base/1.0.0": {
         "type": "project",
@@ -3262,13 +3259,13 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v5.0",
         "dependencies": {
+          "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Dreyer\\GoldTechInnovation\\GoldTechInnovation.Web\\GoldTechInnovation.Web.csproj": "1.0.0",
           "Feedback.Base": "1.0.0",
           "Filing.Core": "1.0.0",
           "GoogleReCaptcha.V3": "1.3.0",
           "Mailing.Base": "1.0.0",
           "Microsoft.AspNetCore.Http.Features": "5.0.6",
-          "Microsoft.EntityFrameworkCore": "5.0.6",
-          "Olympia.Web": "1.0.0"
+          "Microsoft.EntityFrameworkCore": "5.0.6"
         },
         "compile": {
           "bin/placeholder/Feedback.Core.dll": {}
@@ -3418,19 +3415,6 @@
           "bin/placeholder/Metsi.Web.dll": {}
         }
       },
-      "Olympia.Web/1.0.0": {
-        "type": "project",
-        "framework": ".NETStandard,Version=v2.1",
-        "dependencies": {
-          "Mailing.Base": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/Olympia.Web.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Olympia.Web.dll": {}
-        }
-      },
       "Projects.Base/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.1",
@@ -3526,10 +3510,7 @@
         },
         "runtime": {
           "bin/placeholder/Troubleshooting.Core.dll": {}
-        },
-        "frameworkReferences": [
-          "Microsoft.AspNetCore.App"
-        ]
+        }
       }
     }
   },
@@ -10078,11 +10059,6 @@
       "path": "../../Metsi.Base/Metsi.Web/Metsi.Web.csproj",
       "msbuildProject": "../../Metsi.Base/Metsi.Web/Metsi.Web.csproj"
     },
-    "Olympia.Web/1.0.0": {
-      "type": "project",
-      "path": "../../../../Julius/Olympia/Olympia.Web/Olympia.Web.csproj",
-      "msbuildProject": "../../../../Julius/Olympia/Olympia.Web/Olympia.Web.csproj"
-    },
     "Projects.Base/1.0.0": {
       "type": "project",
       "path": "../../../../Modules/Projects/Projects.Base/Projects.Base.csproj",
@@ -10134,25 +10110,20 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\ivanr\\.nuget\\packages\\": {},
-    "C:\\Microsoft\\Xamarin\\NuGet\\": {}
+    "C:\\Users\\Admin\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "G:\\IQTechSolutions\\Projects\\EnviroMetsi\\Metsi.Web\\Metsi.Web.Datastore\\Metsi.Web.Datastore.csproj",
+      "projectUniqueName": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Projects\\EnviroMetsi\\Metsi.Web\\Metsi.Web.Datastore\\Metsi.Web.Datastore.csproj",
       "projectName": "Metsi.Web.Datastore",
-      "projectPath": "G:\\IQTechSolutions\\Projects\\EnviroMetsi\\Metsi.Web\\Metsi.Web.Datastore\\Metsi.Web.Datastore.csproj",
-      "packagesPath": "C:\\Users\\ivanr\\.nuget\\packages\\",
-      "outputPath": "G:\\IQTechSolutions\\Projects\\EnviroMetsi\\Metsi.Web\\Metsi.Web.Datastore\\obj\\",
+      "projectPath": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Projects\\EnviroMetsi\\Metsi.Web\\Metsi.Web.Datastore\\Metsi.Web.Datastore.csproj",
+      "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Projects\\EnviroMetsi\\Metsi.Web\\Metsi.Web.Datastore\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Microsoft\\Xamarin\\NuGet\\"
-      ],
       "configFilePaths": [
-        "C:\\Users\\ivanr\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net5.0"
@@ -10165,35 +10136,35 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "G:\\IQTechSolutions\\Modules\\Blogging\\Blogging.Core\\Blogging.Core.csproj": {
-              "projectPath": "G:\\IQTechSolutions\\Modules\\Blogging\\Blogging.Core\\Blogging.Core.csproj"
+            "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Blogging\\Blogging.Core\\Blogging.Core.csproj": {
+              "projectPath": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Blogging\\Blogging.Core\\Blogging.Core.csproj"
             },
-            "G:\\IQTechSolutions\\Modules\\Customers\\Customers.Core\\Customers.Core.csproj": {
-              "projectPath": "G:\\IQTechSolutions\\Modules\\Customers\\Customers.Core\\Customers.Core.csproj"
+            "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Customers\\Customers.Core\\Customers.Core.csproj": {
+              "projectPath": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Customers\\Customers.Core\\Customers.Core.csproj"
             },
-            "G:\\IQTechSolutions\\Modules\\Education\\Education.Core\\Education.Core.csproj": {
-              "projectPath": "G:\\IQTechSolutions\\Modules\\Education\\Education.Core\\Education.Core.csproj"
+            "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Education\\Education.Core\\Education.Core.csproj": {
+              "projectPath": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Education\\Education.Core\\Education.Core.csproj"
             },
-            "G:\\IQTechSolutions\\Modules\\Employment\\Employment.Core\\Employment.Core.csproj": {
-              "projectPath": "G:\\IQTechSolutions\\Modules\\Employment\\Employment.Core\\Employment.Core.csproj"
+            "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Employment\\Employment.Core\\Employment.Core.csproj": {
+              "projectPath": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Employment\\Employment.Core\\Employment.Core.csproj"
             },
-            "G:\\IQTechSolutions\\Modules\\Feedback\\Feedback.Core\\Feedback.Core.csproj": {
-              "projectPath": "G:\\IQTechSolutions\\Modules\\Feedback\\Feedback.Core\\Feedback.Core.csproj"
+            "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Feedback\\Feedback.Core\\Feedback.Core.csproj": {
+              "projectPath": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Feedback\\Feedback.Core\\Feedback.Core.csproj"
             },
-            "G:\\IQTechSolutions\\Modules\\Identity\\Identity.Base\\Identity.Base.csproj": {
-              "projectPath": "G:\\IQTechSolutions\\Modules\\Identity\\Identity.Base\\Identity.Base.csproj"
+            "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Identity\\Identity.Base\\Identity.Base.csproj": {
+              "projectPath": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Identity\\Identity.Base\\Identity.Base.csproj"
             },
-            "G:\\IQTechSolutions\\Modules\\Messaging\\Messaging.Core\\Messaging.Core.csproj": {
-              "projectPath": "G:\\IQTechSolutions\\Modules\\Messaging\\Messaging.Core\\Messaging.Core.csproj"
+            "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Messaging\\Messaging.Core\\Messaging.Core.csproj": {
+              "projectPath": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Messaging\\Messaging.Core\\Messaging.Core.csproj"
             },
-            "G:\\IQTechSolutions\\Modules\\Projects\\Projects.Core\\Projects.Core.csproj": {
-              "projectPath": "G:\\IQTechSolutions\\Modules\\Projects\\Projects.Core\\Projects.Core.csproj"
+            "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Projects\\Projects.Core\\Projects.Core.csproj": {
+              "projectPath": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Projects\\Projects.Core\\Projects.Core.csproj"
             },
-            "G:\\IQTechSolutions\\Modules\\Services\\Services.Core\\Services.Core.csproj": {
-              "projectPath": "G:\\IQTechSolutions\\Modules\\Services\\Services.Core\\Services.Core.csproj"
+            "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Services\\Services.Core\\Services.Core.csproj": {
+              "projectPath": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Services\\Services.Core\\Services.Core.csproj"
             },
-            "G:\\IQTechSolutions\\Modules\\Troubleshooting\\Troubleshooting.Core\\Troubleshooting.Core.csproj": {
-              "projectPath": "G:\\IQTechSolutions\\Modules\\Troubleshooting\\Troubleshooting.Core\\Troubleshooting.Core.csproj"
+            "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Troubleshooting\\Troubleshooting.Core\\Troubleshooting.Core.csproj": {
+              "projectPath": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Troubleshooting\\Troubleshooting.Core\\Troubleshooting.Core.csproj"
             }
           }
         }
@@ -10240,15 +10211,23 @@
         "assetTargetFallback": true,
         "warn": true,
         "frameworkReferences": {
-          "Microsoft.AspNetCore.App": {
-            "privateAssets": "none"
-          },
           "Microsoft.NETCore.App": {
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.103\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.202\\RuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1105",
+      "level": "Error",
+      "message": "Unable to find project information for 'C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Dreyer\\GoldTechInnovation\\GoldTechInnovation.Web\\GoldTechInnovation.Web.csproj'. If you are using Visual Studio, this may be because the project is unloaded or not part of the current solution so run a restore from the command-line. Otherwise, the project file may be invalid or missing targets required for restore.",
+      "libraryId": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Dreyer\\GoldTechInnovation\\GoldTechInnovation.Web\\GoldTechInnovation.Web.csproj",
+      "targetGraphs": [
+        "net5.0"
+      ]
+    }
+  ]
 }
