@@ -46,7 +46,7 @@ namespace GoldTechSolutions.Web.Site.ViewComponents
                 }
                 else if (sorting == "sale")
                 {
-                    model.Products = products.Where(c => c.Discount > 0);
+                    model.Products = products.Where(c => c.DiscountPercentage > 0);
                     model.WidgetTitle = "Products On Sale";
                 }
                 else if (sorting == "new")
