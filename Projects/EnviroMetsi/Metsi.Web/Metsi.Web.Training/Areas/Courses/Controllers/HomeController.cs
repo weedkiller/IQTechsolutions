@@ -10,6 +10,7 @@ using Iqt.Web;
 using Iqt.Web.Helpers;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Bson;
+using Syncfusion.EJ2.ProgressBar;
 
 namespace Metsi.Web.Training.Areas.Courses.Controllers
 {
@@ -56,4 +57,6 @@ namespace Metsi.Web.Training.Areas.Courses.Controllers
         public int SkuAliasTypeId { get; set; }
         public string SkuAlias { get; set; }
     }
+
+
 }
