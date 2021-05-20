@@ -11,7 +11,13 @@
   </ItemGroup>
 
   <ItemGroup>
+<<<<<<< Updated upstream
     <ProjectReference Include="..\..\..\Dreyer\GoldTechInnovation\GoldTechInnovation.Web\GoldTechInnovation.Web.csproj" />
+=======
+
+    <ProjectReference Include="..\..\..\Julius\Olympia\Olympia.Web\Olympia.Web.csproj" />
+
+>>>>>>> Stashed changes
     <ProjectReference Include="..\..\Filing\Filing.Core\Filing.Core.csproj" />
     <ProjectReference Include="..\..\Mailing\Mailing.Base\Mailing.Base.csproj" />
     <ProjectReference Include="..\Feedback.Base\Feedback.Base.csproj" />

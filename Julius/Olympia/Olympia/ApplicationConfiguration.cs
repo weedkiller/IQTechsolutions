@@ -30,6 +30,12 @@ namespace Olympia
         public string ImageDefaultPlaceholder => "/images/placeholders/NoImageAvailable.jpg";
         public string ImageProfilePlaceholder => "/images/placeholders/profileImage128x128.png";
 
+        public string PhysicalAddressLine1 => throw new NotImplementedException();
+
+        public string PhysicalAddressLine2 => throw new NotImplementedException();
+
+        public string DefaultWebsiteAddress => throw new NotImplementedException();
+
         public string GetRegistrationReturnUrl(string returnUrl)
         {
             throw new System.NotImplementedException();

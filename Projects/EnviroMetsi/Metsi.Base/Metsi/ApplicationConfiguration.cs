@@ -13,6 +13,12 @@ namespace Metsi
         public string AbuseEmailAddress { get; } = "abuse@metsi.co.za";
         public string InfoEmailAddress { get; } = "info@metsi.co.za";
         public string PhysicalAddress { get; } = "4 Taaibos Close, Brackenfell, Cape Town";
+
+        public string PhysicalAddressLine1 => "4 Taaibos Close, Brackenfell";
+
+        public string PhysicalAddressLine2 => "Cape Town, WP, 7550";
+
+        public string DefaultWebsiteAddress => "www.metsi.co.za";
         public string FacebookUrl { get; }
         public string TwitterUrl { get; }
         public string LinkedInUrl { get; }
@@ -27,6 +33,8 @@ namespace Metsi
 
         public string ImageDefaultPlaceholder => "/images/placeholders/NoImageAvailable.jpg";
         public string ImageProfilePlaceholder => "/images/placeholders/profileImage128x128.png";
+
+        
 
         public string GetRegistrationReturnUrl(string returnUrl)
         {
