@@ -17,6 +17,7 @@
     <ProjectReference Include="..\..\..\Modules\Blogging\Blogging.Core\Blogging.Core.csproj" />
     <ProjectReference Include="..\..\..\Modules\Identity\Identity.Base\Identity.Base.csproj" />
     <ProjectReference Include="..\..\..\Modules\Products\Products.Core\Products.Core.csproj" />
+    <ProjectReference Include="..\..\..\Modules\Troubleshooting\Troubleshooting.Core\Troubleshooting.Core.csproj" />
   </ItemGroup>
 
 </Project>

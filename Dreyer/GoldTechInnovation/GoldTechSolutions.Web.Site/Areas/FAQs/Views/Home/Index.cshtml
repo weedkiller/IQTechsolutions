@@ -1,0 +1,38 @@
+﻿@model FaqIndexModel
+
+@{
+    ViewData["Title"] = "Frequently Asked Questions";
+}
+
+<table class="table">
+    <h4>A list of all our frequently asked questions</h4>
+    <tbody>
+        @if (Model.All.Any())
+        {
+            foreach (var item in Model.All)
+            {
+                <tr>
+                    <td>
+                        <strong>@Html.DisplayFor(modelItem => item.QuestionString)</strong>
+                        <ul>
+                            @foreach (var answer in @item.Answers)
+                            {
+                                <li>@Html.Raw(answer.AnswerString)</li>
+
+                            }
+                        </ul>
+                    </td>
+                    @*<td>
+                            @Html.DisplayFor(modelItem => item.ApplicationUser.DisplayName)
+                        </td>*@
+                </tr>
+            }
+        }
+        else
+        {
+            <tr>
+                <td colspan="6"><h3>No Faq's currently available</h3></td>
+            </tr>
+        }
+    </tbody>
+</table>

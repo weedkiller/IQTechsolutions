@@ -1,0 +1,109 @@
+﻿@model Answer
+
+<link href="~/css/summernote.css" rel="stylesheet" type="text/css" />
+
+<div class="modal-dialog">
+    <div class="modal-content">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+            <h4 class="modal-title">Create new answer</h4>
+        </div>
+        <div class="modal-body" id="addContactNumberModelBodyDiv" style="margin: 25px;">
+            <form id="CreateAnswerForm">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-horizontal">
+                    <div class="row">
+                        <div class="form-group">
+                            <label asp-for="AnswerString" class="control-label"></label>
+                            <textarea asp-for="AnswerString" class="form-control"></textarea>
+                            <span asp-validation-for="AnswerString" class="text-danger"></span>
+                        </div>
+                        <input type="hidden" asp-for="QuestionId" />
+                        <input type="hidden" asp-for="Id" />
+
+                    </div>
+                </div>
+                <!-- ================== FORM BUTTON ================== -->
+                <div class="row" style="padding-bottom: 50px">
+                    <div class="form-group">
+                        <div class="col-md-offset-2 col-md-10 text-right">
+                            <a href="javascript:;" onclick="ConfirmCreateAnswer()" class="btn btn-sm btn-primary">Save Changes</a>
+                            <a href="javascript:;" class="btn btn-sm btn-danger" data-dismiss="modal">Close</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- ================== END FORM BUTTON ================== -->
+
+            </form>
+            <div style="text-align: center; display: none" id="EmailAddressAddEditloaderDiv">
+                <img src="~/images/loader2.gif" />
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Summer Note JS -->
+<script src="~/js/summernote/summernote.js"></script>
+
+<script type="text/javascript">
+    // Default
+    $(document).ready(function () {
+        var HomeIndex = function () {
+
+            var $this = this;
+            function initialize() {
+                $('#Answer').summernote({
+                    height: 250,
+                    codemirror: { // codemirror options
+                        theme: 'monokai'
+                    }
+                });
+            }
+
+            $this.init = function () {
+                initialize();
+            }
+        };
+        var self = new HomeIndex();
+        self.init();
+    });
+
+    function ConfirmCreateAnswer() {
+
+        var code2 = $('#Answer').code();
+        var myformdata2 = $("#CreateAnswerForm").serializeArray();
+        myformdata2.find(item => item.name === 'Answer').value = code2;
+
+        var url = "/Faqs/Answers/Create";
+
+        $.ajax({
+            type: "POST",
+            data: $.param(myformdata2),
+            url: url,
+            success: function (data) {
+
+                $("#ModalPlaceHolder").modal("hide");
+
+                var markup = "<tr id='row_" + data.id + "' class='row_" + data.id + "'>" +
+                    "<td>" + data.answer + "</td>" +
+                    "<td style='width: 100px;'>" +
+                    "<a href='javascript:;' onclick='ShowEditCauseModal('" + data.id + "')'><i class='fa fa-edit' style='padding-right: 5px;'></i></a>" +
+                    "<a href='javascript:;' onclick='ShowDeleteCauseModal('" + data.id + "')'><i class='fa fa-trash'></i></a> " +
+                    "</td>" +
+                    "</tr>";
+
+                $("#AnswersList").append(markup);
+                $("#row_no_data").remove();
+            },
+            error: function (xhr, textStatus, err) {
+                alert("An error with the following details occured : "
+                    + "\r\n == readyState: " + xhr.readyState
+                    + "\r\n == responseText: " + xhr.responseText
+                    + "\r\n == status: " + xhr.status
+                    + "\r\n == text status: " + textStatus
+                    + "\r\n == error: " + err);
+            }
+        });
+    }
+
+</script>
