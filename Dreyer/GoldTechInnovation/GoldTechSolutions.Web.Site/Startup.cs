@@ -13,6 +13,7 @@ using Grouping.Core.Extensions;
 using Iqt.Base.Interfaces;
 using GoldTechInnovation;
 using Products.Core.Extensions;
+using Troubleshooting.Core.Extensions;
 
 namespace GoldTechSolutions.Web.Site
 {
@@ -38,7 +39,8 @@ namespace GoldTechSolutions.Web.Site
             services.AddScoped<DbContext, GoldTechInnovationDbContext>();
             services.AddScoped<IApplicationConfiguration, ApplicationConfiguration>();
             services.AddScoped<IFileFactory, FileFactory>();
-            services.AddBlogging().AddGrouping().AddProducts();
+            services.AddBlogging().AddGrouping().AddProducts().AddFaqs()
+                .AddTroubleshooting();
             
             services.AddControllersWithViews();
         }
