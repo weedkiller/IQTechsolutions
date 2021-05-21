@@ -1,0 +1,66 @@
+﻿@model FaqIndexModel
+
+@{
+    ViewData["Title"] = "Question List";
+}
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Question
+            </th>
+            @*<th>
+                    Create By
+                </th>*@
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model.All.Any())
+        {
+            foreach (var item in Model.All)
+            {
+                <tr id="row_@item.Id" class="row_@item.Id">
+                    <td>
+                        @Html.DisplayFor(modelItem => item.QuestionString)
+                    </td>
+                    @*<td>
+                            @Html.DisplayFor(modelItem => item.ApplicationUser.DisplayName)
+                        </td>*@
+                    <td style="width:100px;">
+                        <a asp-action="Edit" asp-route-id="@item.Id" style="padding-right:5px"><i class="fa fa-edit"></i></a>
+                        <a href="javascript:;" onclick="ShowDeleteModal('@item.Id')"><i class="fa fa-trash"></i></a>
+                    </td>
+                </tr>
+            }
+        }
+        else
+        {
+            <tr>
+                <td colspan="6" id="row_no_data"><h3>No Faq's currently available, please check back later or <a asp-area="Faqs" asp-controller="Home" asp-action="Create">create a new question</a></h3></td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<p class="text-right">
+    <a asp-area="Faqs" asp-controller="Home" asp-action="Create" class="btn btn-danger btn-block">Create New Faq Entry</a>
+</p>
+
+@section Scripts
+{
+    <script type="text/javascript">
+
+        function ShowDeleteModal(ff) {
+
+            var url = "/Faqs/Home/Delete?id=" + ff;
+
+            $("#ModalPlaceHolder").load(url,
+                function () {
+                    $("#ModalPlaceHolder").modal("show");
+                });
+        }
+
+    </script>
+}
