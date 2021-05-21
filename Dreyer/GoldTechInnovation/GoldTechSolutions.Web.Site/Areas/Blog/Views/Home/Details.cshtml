@@ -1,0 +1,179 @@
+﻿@using Iqt.Base.Interfaces
+
+@model Blogging.Base.ApiModels.BlogPostModel
+@inject IApplicationConfiguration Configuration
+
+@{
+    ViewData["Title"] = "Blog Post";
+}
+
+<section id="content" class="light_section blog right-sidebar">
+    <div class="container">
+        <div class="row">
+            <!-- content -->
+            <div class="col-sm-8 col-md-8 col-lg-9">
+                <article class="post type-post">
+                    <header class="entry-header">
+                        <h1 class="entry-title">@Model.Title</h1>
+                        <div class="entry-meta">
+                            <span class="author">
+                                @Model.BlogAuthor
+                            </span>
+                            <span class="date">
+                                Posted
+                                <time datetime="2014-06-08T15:05:23+00:00" class="entry-date">@Model.Created.ToLongDateString()</time>
+                            </span>
+                            <span class="comments-link">
+                                <a href="#comments">@*@Model.Comments.Count()*@ comments</a>
+                            </span>
+                        </div>
+                        <!-- .entry-meta -->
+                        <div class="entry-thumbnail">
+                            <img alt="@Model.Title" src="@Model.ImageUrl">
+                        </div>
+                    </header>
+                    <!-- .entry-header -->
+
+                    <div class="entry-content">
+                        @Html.Raw(Model.Content)
+                    </div>
+                    <!-- .entry-content -->
+
+                    <footer class="bottom-entry-meta">
+                        <div class="table_section entry-tags">
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    @foreach (var item in Model.Tags)
+                                    {
+                                        <span class="tags-links">
+                                            @Model.Tags
+                                        </span>
+                                    }
+                                </div>
+                                <div class="col-sm-6">
+                                    <span class='st_facebook_hcount'></span>
+                                    <span class='st_twitter_hcount'></span>
+                                    <span class='st_googleplus_hcount'></span>
+                                </div>
+                            </div>
+                        </div>
+                    </footer>
+
+                </article>
+
+                <div class="author-meta table_section">
+                    <div class="row">
+                        <div class="col-sm-2">
+                            <img src="@Model.AuthorImage" alt="">
+                        </div>
+                        <div class="col-sm-10">
+                            <h3>Administrator, <span class="highlight">@Model.AuthorEmail</span></h3>
+                            <p>
+                                @Model.AuthorDescription
+                            </p>
+                            <span class="author-social">
+                                <a class="socialico-twitter" href="@Model.AuthorTwitterUrl" title="Twitter" data-toggle="tooltip">#</a>
+                                <a class="socialico-facebook" href="@Model.AuthorFacebookUrl" title="Facebook" data-toggle="tooltip">#</a>
+                                <a class="socialico-linkedin" href="@Model.AuthorLinkInUrl" title="LinkedIn" data-toggle="tooltip">#</a>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                @*@if (Model.Entity.Comments.Any())
+                    {*@
+                <!--<div class="comments-area" id="comments">
+                    <h2 class="comments-title">Showing 5 comments</h2>
+                    <ol class="comment-list">
+                        foreach (var comment in Model.Entity.Comments)
+                        {
+                            <li class="comment even thread-even depth-1 parent">
+                                <article class="comment-body media">
+                                    <a class="pull-left" href="#">
+                                        <img class="media-object" alt="" src="UserManager.Users.FirstOrDefault(c => c.Id == comment.ApplicationUserId).GetImage(ImageType.Icon).GetImagePathFromAnotherWebsite("http://admin.metsi.co.za")">
+                                    </a>
+                                    <div class="media-body">
+                                        <div class="comment-meta">
+                                            <a class="author_url" rel="external nofollow" asp-area="" asp-controller="Home" asp-action="ComingSoon" asp-route-id="comment.ApplicationUserId">UserManager.Users.FirstOrDefault(c => c.Id == comment.ApplicationUserId).DisplayName</a>
+                                            <span class="date">
+                                                Posted
+                                                <time datetime="2014-06-08T15:05:23+00:00" class="entry-date">comment.Created.ToLongDateString()</time>
+                                            </span>
+                                            <span class="reply"><a asp-area="Comments" asp-controller="Home" asp-action="Create" asp-route-commentId="comment.Id">Reply</a></span>
+                                        </div>
+                                        <p>comment.Description</p>
+                                    </div>
+                                </article>-->
+                <!-- .comment-body -->
+                <!--if (comment.Posts.Any())
+                {
+                    <ol class="children">
+                        foreach (var child in comment.Posts)
+                        {
+                            <li class="comment byuser odd alt depth-2 parent">
+                                <article class="comment-body media">
+                                    <a class="pull-left" href="#">
+                                        <img class="media-object" alt="" src="UserManager.Users.FirstOrDefault(c => c.Id == child.ApplicationUserId).GetImage().GetImagePathFromAnotherWebsite("http://admin.metsi.co.za")">
+                                    </a>
+                                    <div class="media-body">
+                                        <div class="comment-meta">
+                                            <a class="author_url" rel="external nofollow" asp-area="" asp-controller="Home" asp-action="ComingSoon">UserManager.Users.FirstOrDefault(c => c.Id == child.ApplicationUserId).DisplayName</a>
+                                            <span class="date">
+                                                Posted
+                                                <time datetime="2014-06-08T15:05:23+00:00" class="entry-date">child.Created.ToLongDateString()</time>
+                                            </span>
+                                            <span class="reply"><a asp-area="Comments" asp-controller="Home" asp-action="Create" asp-route-commentId="child.Id">Reply</a></span>
+                                        </div>
+                                        <p>comment.Description</p>
+                                    </div>
+                                </article>-->
+                <!-- .comment-body -->
+                <!--</li>
+                }-->
+                <!-- #comment-## -->
+                <!--</ol>
+                }-->
+                <!-- .children -->
+                <!--</li>-->
+                <!-- #comment-## -->
+                <!--}
+                </ol>-->
+                <!-- .comment-list -->
+                <!--</div>-->
+                @*}*@
+                <!-- #comments -->
+                @*<div class="comment-respond" id="respond">
+                        <h3>Leave a Comment</h3>
+                        <form class="comment-form" asp-area="Comments" asp-controller="Home" asp-action="Create">
+                            <input type="hidden" asp-for="CommentModel.Comment.ApplicationUserId" />
+                            <input type="hidden" asp-for="CommentModel.Comment.Id" />
+                            <input type="hidden" asp-for="CommentModel.ItemCommentedOn.Id" />
+
+                            <p class="comment-form-author">
+                                <label for="author">Name <span class="required">*</span></label>
+                                <input type="text" aria-required="true" size="30" asp-for="CommentModel.Names" name="author" class="form-control" placeholder="Name">
+                            </p>
+                            <p class="comment-form-email">
+                                <label for="email">Email <span class="required">*</span></label>
+                                <input type="email" aria-required="true" size="30" asp-for="CommentModel.Email" name="email" class="form-control" placeholder="Enter email">
+                            </p>
+                            <p class="comment-form-comment">
+                                <label for="comment">Comment</label>
+                                <textarea aria-required="true" rows="8" cols="45" name="comment" asp-for="CommentModel.Comment.CommentString" class="form-control" placeholder="Comment"></textarea>
+                            </p>
+                            <p class="form-submit">
+                                <button type="submit" id="submit" name="submit" class="theme_button">Submit this</button>
+                            </p>
+                        </form>
+                    </div>*@
+                <!-- #respond -->
+
+
+            </div>
+            <!-- eof content -->
+
+            <partial name="SideBars/_SidebarDefault" />
+
+        </div>
+    </div>
+</section>
