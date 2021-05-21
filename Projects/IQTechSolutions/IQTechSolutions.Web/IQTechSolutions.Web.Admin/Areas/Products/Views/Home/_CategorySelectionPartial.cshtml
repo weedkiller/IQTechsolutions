@@ -26,7 +26,9 @@
                     @{
                         var className = Model[i].Identity + "_icon";
                     }
-                    <h5><i id="@className" class="fa fa-plus"></i></h5>
+                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#@Model[i].Identity" onclick="changeicon('@Model[i].Identity')">
+                        <h5><i id="@className" class="fa fa-plus"></i></h5>
+                    </a>
                 </div>
                 <div class="col-md-11">
                     <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#@Model[i].Identity" onclick="changeicon('@Model[i].Identity')">

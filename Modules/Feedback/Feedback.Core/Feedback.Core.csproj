@@ -11,9 +11,6 @@
   </ItemGroup>
 
   <ItemGroup>
-
-    <ProjectReference Include="..\..\..\Projects\EnviroMetsi\Metsi.Base\Metsi.Web\Metsi.Web.csproj" />
-
     <ProjectReference Include="..\..\Filing\Filing.Core\Filing.Core.csproj" />
     <ProjectReference Include="..\..\Mailing\Mailing.Base\Mailing.Base.csproj" />
     <ProjectReference Include="..\Feedback.Base\Feedback.Base.csproj" />

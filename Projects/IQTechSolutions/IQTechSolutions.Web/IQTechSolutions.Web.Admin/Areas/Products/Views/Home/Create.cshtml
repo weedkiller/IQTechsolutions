@@ -22,11 +22,19 @@
         <div class="col-md-4">
             <div class="form-group">
                 <label asp-for="CoverUpload" class="control-label"></label>
-                <img id="preview" style="width: 100%" src="~/images/placeholders/img_475x320.jpg" alt="" />
-                <input asp-for="CoverUpload" class="form-control" onchange="loadFile(event)" />
-                <span asp-validation-for="CoverUpload" class="text-danger"></span>
+                <div class="previewd" style="overflow: hidden">
+                    <img id="preview" style="width: 100%" src="~/images/placeholders/iqtechsolutionsBanner475x320.jpg" alt="Product Cover Image" />
+                </div>
+                    <input asp-for="CoverUpload" class="form-control" onchange="loadFile(event)" />
+                    <input type="hidden" asp-for="CoverCropSettings.X" />
+                    <input type="hidden" asp-for="CoverCropSettings.Y" />
+                    <input type="hidden" asp-for="CoverCropSettings.Width" />
+                    <input type="hidden" asp-for="CoverCropSettings.Height" />
+                    <input type="hidden" asp-for="CoverCropSettings.Rotate" />
+                    <input type="hidden" asp-for="CoverCropSettings.ScaleX" />
+                    <input type="hidden" asp-for="CoverCropSettings.ScaleY" />
+                </div>
             </div>
-        </div>
         <div class="col-md-8">
             <div class="form-group">
                 <label asp-for="Entity.Name" class="control-label"></label>
