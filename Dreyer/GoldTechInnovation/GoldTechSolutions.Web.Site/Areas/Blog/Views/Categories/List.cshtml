@@ -1,0 +1,29 @@
+﻿@using Blogging.Core.ViewComponents
+@model IEnumerable<Category<BlogPost>>
+
+@{
+    ViewData["Title"] = "Category List";
+    ViewData["Description"] = "A list of all the blog categories for the administrator";
+}
+
+
+<div class="table-responsive">
+    @await Component.InvokeAsync(nameof(BlogCategoryList))
+</div>
+
+
+
+@section Scripts
+    {
+    <script>
+        function ShowDeleteBlogCategoryModal(numberId) {
+
+            var url = "/Blog/Categories/Delete?id=" + numberId;
+
+            $("#ModalPlaceHolder").load(url,
+                function () {
+                    $("#ModalPlaceHolder").modal("show");
+                });
+        }
+    </script>
+}
