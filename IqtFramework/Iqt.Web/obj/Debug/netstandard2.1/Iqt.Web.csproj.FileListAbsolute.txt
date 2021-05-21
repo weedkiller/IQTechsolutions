@@ -1,0 +1,12 @@
+G:\IQTechSolutions\IqtFramework\Iqt.Web\bin\Debug\netstandard2.1\Iqt.Web.deps.json
+G:\IQTechSolutions\IqtFramework\Iqt.Web\bin\Debug\netstandard2.1\Iqt.Web.dll
+G:\IQTechSolutions\IqtFramework\Iqt.Web\bin\Debug\netstandard2.1\Iqt.Web.pdb
+G:\IQTechSolutions\IqtFramework\Iqt.Web\bin\Debug\netstandard2.1\Microsoft.Extensions.Logging.Abstractions.dll
+G:\IQTechSolutions\IqtFramework\Iqt.Web\bin\Debug\netstandard2.1\Microsoft.Extensions.Logging.Abstractions.xml
+G:\IQTechSolutions\IqtFramework\Iqt.Web\obj\Debug\netstandard2.1\Iqt.Web.csprojAssemblyReference.cache
+G:\IQTechSolutions\IqtFramework\Iqt.Web\obj\Debug\netstandard2.1\Iqt.Web.AssemblyInfoInputs.cache
+G:\IQTechSolutions\IqtFramework\Iqt.Web\obj\Debug\netstandard2.1\Iqt.Web.AssemblyInfo.cs
+G:\IQTechSolutions\IqtFramework\Iqt.Web\obj\Debug\netstandard2.1\Iqt.Web.csproj.CoreCompileInputs.cache
+G:\IQTechSolutions\IqtFramework\Iqt.Web\obj\Debug\netstandard2.1\Iqt.Web.csproj.CopyComplete
+G:\IQTechSolutions\IqtFramework\Iqt.Web\obj\Debug\netstandard2.1\Iqt.Web.dll
+G:\IQTechSolutions\IqtFramework\Iqt.Web\obj\Debug\netstandard2.1\Iqt.Web.pdb

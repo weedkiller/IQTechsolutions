@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "UR5SK1nk3bIIKb86xqp7BwoCGgggJmSNXLvg1NuUHXXiRtt7NlH/W97eq3nb0uNNAOGeuBTfu+x6OxOVOmXxmg==",
+  "success": true,
+  "projectFilePath": "G:\\IQTechSolutions\\IqtFramework\\Iqt.Web\\Iqt.Web.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\ivanr\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512"
+  ],
+  "logs": []
+}
