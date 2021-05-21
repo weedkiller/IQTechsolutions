@@ -1,0 +1,16 @@
+G:\IQTechSolutions\Modules\Troubleshooting\Troubleshooting.Base\bin\Debug\netstandard2.1\Troubleshooting.Base.deps.json
+G:\IQTechSolutions\Modules\Troubleshooting\Troubleshooting.Base\bin\Debug\netstandard2.1\Troubleshooting.Base.dll
+G:\IQTechSolutions\Modules\Troubleshooting\Troubleshooting.Base\bin\Debug\netstandard2.1\Troubleshooting.Base.pdb
+G:\IQTechSolutions\Modules\Troubleshooting\Troubleshooting.Base\bin\Debug\netstandard2.1\Filing.Base.dll
+G:\IQTechSolutions\Modules\Troubleshooting\Troubleshooting.Base\bin\Debug\netstandard2.1\Grouping.Base.dll
+G:\IQTechSolutions\Modules\Troubleshooting\Troubleshooting.Base\bin\Debug\netstandard2.1\Iqt.Base.dll
+G:\IQTechSolutions\Modules\Troubleshooting\Troubleshooting.Base\bin\Debug\netstandard2.1\Filing.Base.pdb
+G:\IQTechSolutions\Modules\Troubleshooting\Troubleshooting.Base\bin\Debug\netstandard2.1\Grouping.Base.pdb
+G:\IQTechSolutions\Modules\Troubleshooting\Troubleshooting.Base\bin\Debug\netstandard2.1\Iqt.Base.pdb
+G:\IQTechSolutions\Modules\Troubleshooting\Troubleshooting.Base\obj\Debug\netstandard2.1\Troubleshooting.Base.csprojAssemblyReference.cache
+G:\IQTechSolutions\Modules\Troubleshooting\Troubleshooting.Base\obj\Debug\netstandard2.1\Troubleshooting.Base.AssemblyInfoInputs.cache
+G:\IQTechSolutions\Modules\Troubleshooting\Troubleshooting.Base\obj\Debug\netstandard2.1\Troubleshooting.Base.AssemblyInfo.cs
+G:\IQTechSolutions\Modules\Troubleshooting\Troubleshooting.Base\obj\Debug\netstandard2.1\Troubleshooting.Base.csproj.CoreCompileInputs.cache
+G:\IQTechSolutions\Modules\Troubleshooting\Troubleshooting.Base\obj\Debug\netstandard2.1\Troubleshooting.Base.csproj.CopyComplete
+G:\IQTechSolutions\Modules\Troubleshooting\Troubleshooting.Base\obj\Debug\netstandard2.1\Troubleshooting.Base.dll
+G:\IQTechSolutions\Modules\Troubleshooting\Troubleshooting.Base\obj\Debug\netstandard2.1\Troubleshooting.Base.pdb

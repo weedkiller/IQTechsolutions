@@ -10,7 +10,7 @@
                            + "CSharp, C-Sharp, Visual CSharp, Visual CSharp, Code First, Visual Basic, VB.Net, JAVA, JQeury, Ajaq, Razor";
 }
 
-<h2>Create New Blog Category</h2>
+<h2>Create New Category</h2>
 <hr />
 <form asp-area="Products" asp-controller="Categories" asp-action="Create" enctype="multipart/form-data" method="post">
     <div asp-validation-summary="ModelOnly" class="text-danger"></div>
@@ -20,7 +20,7 @@
         <div class="col-md-4">
             <div class="form-group">
                 <label asp-for="CoverUpload" class="control-label"></label>
-                <img id="preview" style="width: 100%" src="~/images/placeholders/img_475x320.jpg" alt="" />
+                <img id="preview" style="width: 100%" src="~/images/placeholders/iqtechsolutionsBanner475x320.jpg" alt="" />
                 <input asp-for="CoverUpload" class="form-control" onchange="loadFile(event)"/>
                 <span asp-validation-for="CoverUpload" class="text-danger"></span>
             </div>

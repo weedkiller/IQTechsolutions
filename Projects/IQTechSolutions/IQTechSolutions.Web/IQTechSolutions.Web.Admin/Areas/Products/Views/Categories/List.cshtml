@@ -1,5 +1,7 @@
-﻿
+﻿@using Iqt.Base.Interfaces
 @model CategoryIndexModel<Product>
+
+@inject IApplicationConfiguration Configuration
 
 @{
     ViewData["Title"] = "Category List";
@@ -33,7 +35,7 @@
              <tr id="row_@item.Id" class="row_@item.Id">
                  <td>
                      <a href="@Url.Action("Details", "Categories", new {area="Products", id = item.Id})">
-                         <img id="preview" style="height: auto;" class="img-thumbnail" title="@item.Name" alt="@item.GetImage()?.FileName" src="@item.GetImage(ImageType.Cover)">
+                         <img id="preview" style="height: auto;" class="img-thumbnail" title="@item.Name" alt="@item.GetImage()?.FileName" src="@item.GetPath(ImageType.Cover, Configuration.ImageDefaultPlaceholder)">
                      </a>
                  </td>
                  <td>

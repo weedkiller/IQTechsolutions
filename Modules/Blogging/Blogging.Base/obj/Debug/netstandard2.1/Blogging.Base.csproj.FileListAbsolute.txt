@@ -1,0 +1,16 @@
+G:\IQTechSolutions\Modules\Blogging\Blogging.Base\bin\Debug\netstandard2.1\Blogging.Base.deps.json
+G:\IQTechSolutions\Modules\Blogging\Blogging.Base\bin\Debug\netstandard2.1\Blogging.Base.dll
+G:\IQTechSolutions\Modules\Blogging\Blogging.Base\bin\Debug\netstandard2.1\Blogging.Base.pdb
+G:\IQTechSolutions\Modules\Blogging\Blogging.Base\bin\Debug\netstandard2.1\Filing.Base.dll
+G:\IQTechSolutions\Modules\Blogging\Blogging.Base\bin\Debug\netstandard2.1\Grouping.Base.dll
+G:\IQTechSolutions\Modules\Blogging\Blogging.Base\bin\Debug\netstandard2.1\Iqt.Base.dll
+G:\IQTechSolutions\Modules\Blogging\Blogging.Base\bin\Debug\netstandard2.1\Filing.Base.pdb
+G:\IQTechSolutions\Modules\Blogging\Blogging.Base\bin\Debug\netstandard2.1\Grouping.Base.pdb
+G:\IQTechSolutions\Modules\Blogging\Blogging.Base\bin\Debug\netstandard2.1\Iqt.Base.pdb
+G:\IQTechSolutions\Modules\Blogging\Blogging.Base\obj\Debug\netstandard2.1\Blogging.Base.csprojAssemblyReference.cache
+G:\IQTechSolutions\Modules\Blogging\Blogging.Base\obj\Debug\netstandard2.1\Blogging.Base.AssemblyInfoInputs.cache
+G:\IQTechSolutions\Modules\Blogging\Blogging.Base\obj\Debug\netstandard2.1\Blogging.Base.AssemblyInfo.cs
+G:\IQTechSolutions\Modules\Blogging\Blogging.Base\obj\Debug\netstandard2.1\Blogging.Base.csproj.CoreCompileInputs.cache
+G:\IQTechSolutions\Modules\Blogging\Blogging.Base\obj\Debug\netstandard2.1\Blogging.Base.csproj.CopyComplete
+G:\IQTechSolutions\Modules\Blogging\Blogging.Base\obj\Debug\netstandard2.1\Blogging.Base.dll
+G:\IQTechSolutions\Modules\Blogging\Blogging.Base\obj\Debug\netstandard2.1\Blogging.Base.pdb

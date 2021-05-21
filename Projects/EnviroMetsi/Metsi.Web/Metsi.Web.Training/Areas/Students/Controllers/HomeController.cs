@@ -121,5 +121,11 @@ namespace Metsi.Web.Training.Areas.Students.Controllers
                 return View();
             }
         }
+
+        public IActionResult List()
+        {
+            return View();
+        }
+           
     }
 }

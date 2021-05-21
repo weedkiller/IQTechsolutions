@@ -9,23 +9,15 @@
     <Compile Remove="Areas\Expenses\**" />
     <Compile Remove="Areas\Sales\**" />
     <Compile Remove="ViewComponents\**" />
-    <Compile Remove="Views\Shared\Components\**" />
-    <Compile Remove="Views\Shared\Headers\**" />
     <Content Remove="Areas\Expenses\**" />
     <Content Remove="Areas\Sales\**" />
     <Content Remove="ViewComponents\**" />
-    <Content Remove="Views\Shared\Components\**" />
-    <Content Remove="Views\Shared\Headers\**" />
     <EmbeddedResource Remove="Areas\Expenses\**" />
     <EmbeddedResource Remove="Areas\Sales\**" />
     <EmbeddedResource Remove="ViewComponents\**" />
-    <EmbeddedResource Remove="Views\Shared\Components\**" />
-    <EmbeddedResource Remove="Views\Shared\Headers\**" />
     <None Remove="Areas\Expenses\**" />
     <None Remove="Areas\Sales\**" />
     <None Remove="ViewComponents\**" />
-    <None Remove="Views\Shared\Components\**" />
-    <None Remove="Views\Shared\Headers\**" />
   </ItemGroup>
 
   <ItemGroup>
@@ -49,6 +41,7 @@
     <ProjectReference Include="..\..\..\..\Modules\Customers\Customers.Core\Customers.Core.csproj" />
     <ProjectReference Include="..\..\..\..\Modules\Identity\Identity.Base\Identity.Base.csproj" />
     <ProjectReference Include="..\..\..\..\Modules\InventoryManagement\InventoryManagement.Base\InventoryManagement.Base.csproj" />
+    <ProjectReference Include="..\..\..\..\Modules\InventoryManagement\InventoryManagement.Core\InventoryManagement.Core.csproj" />
     <ProjectReference Include="..\..\..\..\Modules\Products\Products.Base\Products.Base.csproj" />
     <ProjectReference Include="..\..\..\..\Modules\Products\Products.Core\Products.Core.csproj" />
     <ProjectReference Include="..\..\..\..\Modules\Suppliers\Suppliers.Core\Suppliers.Core.csproj" />
@@ -66,6 +59,8 @@
 
   <ItemGroup>
     <Folder Include="Areas\Customers\" />
+    <Folder Include="Views\Shared\Components\" />
+    <Folder Include="Views\Shared\Headers\" />
   </ItemGroup>
 
 </Project>

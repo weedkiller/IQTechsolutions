@@ -1,8 +1,16 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Iqt.Base.Interfaces;
+using Iqt.Base.Models;
+using Iqt.Web.Exceptions;
+using Iqt.Web.Helpers;
+using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
+using System.Net.Http;
 using System.Threading.Tasks;
+using Troubleshooting.Base.ApiModels;
 using Troubleshooting.Core.Context.Services;
 using Troubleshooting.Core.Controllers;
 

@@ -24,10 +24,13 @@
 
     @RenderSection("Styles", required: false)
 </head>
+
+@RenderSection("Styles", required: false)
+
 <body>
-   
+
     <main id="content" role="main">
-        
+
         <partial name="Headers/_Default" />
         <div class="container">
             @RenderBody()
@@ -251,12 +254,12 @@
             <!-- End Brand Carousel -->
         </div>
 
-            <partial name="Footers/_Default" />
+        <partial name="Footers/_Default" />
 
-</main>
-  
+    </main>
 
- 
+
+
     <!-- ========== END SECONDARY CONTENTS ========== -->
     <!-- Go to Top -->
     <a class="js-go-to u-go-to" href="#"
@@ -302,11 +305,11 @@
     <script src="/js/components/hs.show-animation.js"></script>
     <script src="/js/components/hs.svg-injector.js"></script>
     <script src="/js/components/hs.go-to.js"></script>
-<script src="/js/components/hs.selectpicker.js"></script>
+    <script src="/js/components/hs.selectpicker.js"></script>
 
-<script type="text/javascript" src="/js/custom/shopping.js"></script>
+    <script type="text/javascript" src="/js/custom/shopping.js"></script>
 
-<!-- JS Plugins Init. -->
+    <!-- JS Plugins Init. -->
     <script>
         $(window).on('load', function () {
             // initialization of HSMegaMenu component

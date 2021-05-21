@@ -1,0 +1,16 @@
+C:\Users\Admin\Desktop\Work\IqTechSolution\Modules\Blogging\Blogging.Base\bin\Release\netstandard2.1\Blogging.Base.deps.json
+C:\Users\Admin\Desktop\Work\IqTechSolution\Modules\Blogging\Blogging.Base\bin\Release\netstandard2.1\Blogging.Base.dll
+C:\Users\Admin\Desktop\Work\IqTechSolution\Modules\Blogging\Blogging.Base\bin\Release\netstandard2.1\Blogging.Base.pdb
+C:\Users\Admin\Desktop\Work\IqTechSolution\Modules\Blogging\Blogging.Base\bin\Release\netstandard2.1\Filing.Base.dll
+C:\Users\Admin\Desktop\Work\IqTechSolution\Modules\Blogging\Blogging.Base\bin\Release\netstandard2.1\Grouping.Base.dll
+C:\Users\Admin\Desktop\Work\IqTechSolution\Modules\Blogging\Blogging.Base\bin\Release\netstandard2.1\Iqt.Base.dll
+C:\Users\Admin\Desktop\Work\IqTechSolution\Modules\Blogging\Blogging.Base\bin\Release\netstandard2.1\Filing.Base.pdb
+C:\Users\Admin\Desktop\Work\IqTechSolution\Modules\Blogging\Blogging.Base\bin\Release\netstandard2.1\Grouping.Base.pdb
+C:\Users\Admin\Desktop\Work\IqTechSolution\Modules\Blogging\Blogging.Base\bin\Release\netstandard2.1\Iqt.Base.pdb
+C:\Users\Admin\Desktop\Work\IqTechSolution\Modules\Blogging\Blogging.Base\obj\Release\netstandard2.1\Blogging.Base.csprojAssemblyReference.cache
+C:\Users\Admin\Desktop\Work\IqTechSolution\Modules\Blogging\Blogging.Base\obj\Release\netstandard2.1\Blogging.Base.AssemblyInfoInputs.cache
+C:\Users\Admin\Desktop\Work\IqTechSolution\Modules\Blogging\Blogging.Base\obj\Release\netstandard2.1\Blogging.Base.AssemblyInfo.cs
+C:\Users\Admin\Desktop\Work\IqTechSolution\Modules\Blogging\Blogging.Base\obj\Release\netstandard2.1\Blogging.Base.csproj.CoreCompileInputs.cache
+C:\Users\Admin\Desktop\Work\IqTechSolution\Modules\Blogging\Blogging.Base\obj\Release\netstandard2.1\Blogging.Base.csproj.CopyComplete
+C:\Users\Admin\Desktop\Work\IqTechSolution\Modules\Blogging\Blogging.Base\obj\Release\netstandard2.1\Blogging.Base.dll
+C:\Users\Admin\Desktop\Work\IqTechSolution\Modules\Blogging\Blogging.Base\obj\Release\netstandard2.1\Blogging.Base.pdb

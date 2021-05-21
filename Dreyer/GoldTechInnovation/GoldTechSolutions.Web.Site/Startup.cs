@@ -39,9 +39,10 @@ namespace GoldTechSolutions.Web.Site
             services.AddScoped<DbContext, GoldTechInnovationDbContext>();
             services.AddScoped<IApplicationConfiguration, ApplicationConfiguration>();
             services.AddScoped<IFileFactory, FileFactory>();
-            services.AddBlogging().AddGrouping().AddProducts().AddFaqs()
-                .AddTroubleshooting();
-            
+
+            services.AddBlogging().AddGrouping().AddProducts().AddTroubleshooting().AddFaqs();
+
+            //services.AddHttpClient();
             services.AddControllersWithViews();
         }
 

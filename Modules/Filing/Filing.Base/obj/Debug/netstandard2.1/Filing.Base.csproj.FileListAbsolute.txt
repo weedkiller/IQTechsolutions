@@ -1,0 +1,12 @@
+G:\IQTechSolutions\Modules\Filing\Filing.Base\bin\Debug\netstandard2.1\Filing.Base.deps.json
+G:\IQTechSolutions\Modules\Filing\Filing.Base\bin\Debug\netstandard2.1\Filing.Base.dll
+G:\IQTechSolutions\Modules\Filing\Filing.Base\bin\Debug\netstandard2.1\Filing.Base.pdb
+G:\IQTechSolutions\Modules\Filing\Filing.Base\bin\Debug\netstandard2.1\Iqt.Base.dll
+G:\IQTechSolutions\Modules\Filing\Filing.Base\bin\Debug\netstandard2.1\Iqt.Base.pdb
+G:\IQTechSolutions\Modules\Filing\Filing.Base\obj\Debug\netstandard2.1\Filing.Base.csprojAssemblyReference.cache
+G:\IQTechSolutions\Modules\Filing\Filing.Base\obj\Debug\netstandard2.1\Filing.Base.AssemblyInfoInputs.cache
+G:\IQTechSolutions\Modules\Filing\Filing.Base\obj\Debug\netstandard2.1\Filing.Base.AssemblyInfo.cs
+G:\IQTechSolutions\Modules\Filing\Filing.Base\obj\Debug\netstandard2.1\Filing.Base.csproj.CoreCompileInputs.cache
+G:\IQTechSolutions\Modules\Filing\Filing.Base\obj\Debug\netstandard2.1\Filing.Base.csproj.CopyComplete
+G:\IQTechSolutions\Modules\Filing\Filing.Base\obj\Debug\netstandard2.1\Filing.Base.dll
+G:\IQTechSolutions\Modules\Filing\Filing.Base\obj\Debug\netstandard2.1\Filing.Base.pdb

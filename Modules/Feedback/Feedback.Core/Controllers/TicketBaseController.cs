@@ -1,6 +1,7 @@
 ﻿using System.Threading.Tasks;
 using Feedback.Core.Context.Services;
 using Feedback.Core.Models;
+using GoldTechInnovation.Web.Email;
 using GoogleReCaptcha.V3.Interface;
 using Identity.Base.Entities;
 using Iqt.Base.Enums;
@@ -38,7 +39,6 @@ namespace Feedback.Core.Controllers
 
         public TicketContext<UserInfo> Service { get; }
         public IEmailSender EmailSender { get; }
-        public ICaptchaValidator CaptchaValidator { get; }
 
         /// <summary>
         /// The default constructor
@@ -48,13 +48,6 @@ namespace Feedback.Core.Controllers
             _service = service;
             _emailSender = emailSender;
             _captchaValidator = captchaValidator;
-        }
-
-        public TicketBaseController(TicketContext<UserInfo> service, IEmailSender emailSender, ICaptchaValidator captchaValidator)
-        {
-            Service = service;
-            EmailSender = emailSender;
-            CaptchaValidator = captchaValidator;
         }
 
         /// <summary>

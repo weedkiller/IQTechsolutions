@@ -1,0 +1,16 @@
+G:\IQTechSolutions\Modules\Feedback\Feedback.Base\bin\Debug\netstandard2.1\Feedback.Base.deps.json
+G:\IQTechSolutions\Modules\Feedback\Feedback.Base\bin\Debug\netstandard2.1\Feedback.Base.dll
+G:\IQTechSolutions\Modules\Feedback\Feedback.Base\bin\Debug\netstandard2.1\Feedback.Base.pdb
+G:\IQTechSolutions\Modules\Feedback\Feedback.Base\bin\Debug\netstandard2.1\Filing.Base.dll
+G:\IQTechSolutions\Modules\Feedback\Feedback.Base\bin\Debug\netstandard2.1\Identity.Base.dll
+G:\IQTechSolutions\Modules\Feedback\Feedback.Base\bin\Debug\netstandard2.1\Iqt.Base.dll
+G:\IQTechSolutions\Modules\Feedback\Feedback.Base\bin\Debug\netstandard2.1\Iqt.Base.pdb
+G:\IQTechSolutions\Modules\Feedback\Feedback.Base\bin\Debug\netstandard2.1\Filing.Base.pdb
+G:\IQTechSolutions\Modules\Feedback\Feedback.Base\bin\Debug\netstandard2.1\Identity.Base.pdb
+G:\IQTechSolutions\Modules\Feedback\Feedback.Base\obj\Debug\netstandard2.1\Feedback.Base.csprojAssemblyReference.cache
+G:\IQTechSolutions\Modules\Feedback\Feedback.Base\obj\Debug\netstandard2.1\Feedback.Base.AssemblyInfoInputs.cache
+G:\IQTechSolutions\Modules\Feedback\Feedback.Base\obj\Debug\netstandard2.1\Feedback.Base.AssemblyInfo.cs
+G:\IQTechSolutions\Modules\Feedback\Feedback.Base\obj\Debug\netstandard2.1\Feedback.Base.csproj.CoreCompileInputs.cache
+G:\IQTechSolutions\Modules\Feedback\Feedback.Base\obj\Debug\netstandard2.1\Feedback.Base.csproj.CopyComplete
+G:\IQTechSolutions\Modules\Feedback\Feedback.Base\obj\Debug\netstandard2.1\Feedback.Base.dll
+G:\IQTechSolutions\Modules\Feedback\Feedback.Base\obj\Debug\netstandard2.1\Feedback.Base.pdb

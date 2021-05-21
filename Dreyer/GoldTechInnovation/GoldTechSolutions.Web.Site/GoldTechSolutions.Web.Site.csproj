@@ -27,6 +27,7 @@
   <ItemGroup>
     <ProjectReference Include="..\..\..\Modules\Identity\Identity.Base\Identity.Base.csproj" />
     <ProjectReference Include="..\..\..\Modules\Products\Products.Core\Products.Core.csproj" />
+    <ProjectReference Include="..\..\..\Modules\Troubleshooting\Troubleshooting.Base\Troubleshooting.Base.csproj" />
     <ProjectReference Include="..\..\..\Modules\Troubleshooting\Troubleshooting.Core\Troubleshooting.Core.csproj" />
     <ProjectReference Include="..\GoldTechInnovation.DataStore\GoldTechInnovation.DataStore.csproj" />
     <ProjectReference Include="..\GoldTechInnovation\GoldTechInnovation.csproj" />

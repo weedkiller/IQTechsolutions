@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "fMPeJX+D+n/OR0hL9owEgp5BEL/hZRE4I3yog2+tyEYpAEy2kj3bPSw6xId24HiYi0I3gTzWGhXaxv4RpqF0fA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Dreyer\\GoldTechInnovation\\Entity.Base\\Entity.Base.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Admin\\.nuget\\packages\\system.componentmodel.annotations\\5.0.0\\system.componentmodel.annotations.5.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}

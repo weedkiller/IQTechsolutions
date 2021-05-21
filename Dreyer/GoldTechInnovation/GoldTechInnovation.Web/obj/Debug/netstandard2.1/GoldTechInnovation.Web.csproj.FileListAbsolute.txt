@@ -1,0 +1,14 @@
+G:\IQTechSolutions\Dreyer\GoldTechInnovation\GoldTechInnovation.Web\bin\Debug\netstandard2.1\GoldTechInnovation.Web.deps.json
+G:\IQTechSolutions\Dreyer\GoldTechInnovation\GoldTechInnovation.Web\bin\Debug\netstandard2.1\GoldTechInnovation.Web.dll
+G:\IQTechSolutions\Dreyer\GoldTechInnovation\GoldTechInnovation.Web\bin\Debug\netstandard2.1\GoldTechInnovation.Web.pdb
+G:\IQTechSolutions\Dreyer\GoldTechInnovation\GoldTechInnovation.Web\bin\Debug\netstandard2.1\Iqt.Base.dll
+G:\IQTechSolutions\Dreyer\GoldTechInnovation\GoldTechInnovation.Web\bin\Debug\netstandard2.1\Mailing.Base.dll
+G:\IQTechSolutions\Dreyer\GoldTechInnovation\GoldTechInnovation.Web\bin\Debug\netstandard2.1\Mailing.Base.pdb
+G:\IQTechSolutions\Dreyer\GoldTechInnovation\GoldTechInnovation.Web\bin\Debug\netstandard2.1\Iqt.Base.pdb
+G:\IQTechSolutions\Dreyer\GoldTechInnovation\GoldTechInnovation.Web\obj\Debug\netstandard2.1\GoldTechInnovation.Web.csprojAssemblyReference.cache
+G:\IQTechSolutions\Dreyer\GoldTechInnovation\GoldTechInnovation.Web\obj\Debug\netstandard2.1\GoldTechInnovation.Web.AssemblyInfoInputs.cache
+G:\IQTechSolutions\Dreyer\GoldTechInnovation\GoldTechInnovation.Web\obj\Debug\netstandard2.1\GoldTechInnovation.Web.AssemblyInfo.cs
+G:\IQTechSolutions\Dreyer\GoldTechInnovation\GoldTechInnovation.Web\obj\Debug\netstandard2.1\GoldTechInnovation.Web.csproj.CoreCompileInputs.cache
+G:\IQTechSolutions\Dreyer\GoldTechInnovation\GoldTechInnovation.Web\obj\Debug\netstandard2.1\GoldTechInnovation.Web.csproj.CopyComplete
+G:\IQTechSolutions\Dreyer\GoldTechInnovation\GoldTechInnovation.Web\obj\Debug\netstandard2.1\GoldTechInnovation.Web.dll
+G:\IQTechSolutions\Dreyer\GoldTechInnovation\GoldTechInnovation.Web\obj\Debug\netstandard2.1\GoldTechInnovation.Web.pdb

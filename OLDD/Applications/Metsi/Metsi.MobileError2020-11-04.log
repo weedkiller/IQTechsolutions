@@ -1,9 +1,0 @@
-
-
-Date:2020-11-04 19:51:15,590
-Thread:[1]
-Level:ERROR
-Logger:Syncfusion.Xamarin.UI.WizardImplementation                         [(null)]
-Message:System.Runtime.InteropServices.COMException (0x80004005): Unable to add 'Pin.png'. A file with that name already exists.
-   at EnvDTE.ProjectItems.AddFromDirectory(String Directory)
-   at Syncfusion.Xamarin.UI.WizardImplementation.AddProjectItemsForIOS(String ProjectFile, String[] fileName)
