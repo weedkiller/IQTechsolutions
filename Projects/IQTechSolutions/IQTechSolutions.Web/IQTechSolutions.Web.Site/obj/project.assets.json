@@ -2616,10 +2616,7 @@
         },
         "runtime": {
           "bin/placeholder/Blogging.Core.dll": {}
-        },
-        "frameworkReferences": [
-          "Microsoft.AspNetCore.App"
-        ]
+        }
       },
       "Calendar.Base/1.0.0": {
         "type": "project",
@@ -8371,25 +8368,28 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\ivanr\\.nuget\\packages\\": {},
-    "C:\\Microsoft\\Xamarin\\NuGet\\": {}
+    "C:\\Users\\Admin\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
+<<<<<<< Updated upstream:Projects/IQTechSolutions/IQTechSolutions.Web/IQTechSolutions.Web.Site/obj/project.assets.json
       "projectUniqueName": "G:\\IQTechSolutions\\Projects\\IQTechSolutions\\IQTechSolutions.Web\\IQTechSolutions.Web.Site\\IQTechSolutions.Web.Site.csproj",
       "projectName": "IQTechSolutions.Web.Site",
       "projectPath": "G:\\IQTechSolutions\\Projects\\IQTechSolutions\\IQTechSolutions.Web\\IQTechSolutions.Web.Site\\IQTechSolutions.Web.Site.csproj",
       "packagesPath": "C:\\Users\\ivanr\\.nuget\\packages\\",
       "outputPath": "G:\\IQTechSolutions\\Projects\\IQTechSolutions\\IQTechSolutions.Web\\IQTechSolutions.Web.Site\\obj\\",
+=======
+      "projectUniqueName": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Projects\\EnviroMetsi\\Metsi.Web\\Metsi.Web.Site\\Metsi.Web.Site.csproj",
+      "projectName": "Metsi.Web.Site",
+      "projectPath": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Projects\\EnviroMetsi\\Metsi.Web\\Metsi.Web.Site\\Metsi.Web.Site.csproj",
+      "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Projects\\EnviroMetsi\\Metsi.Web\\Metsi.Web.Site\\obj\\",
+>>>>>>> Stashed changes:Projects/EnviroMetsi/Metsi.Web/Metsi.Web.Site/obj/project.assets.json
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Microsoft\\Xamarin\\NuGet\\"
-      ],
       "configFilePaths": [
-        "C:\\Users\\ivanr\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net5.0"
@@ -8402,18 +8402,19 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "G:\\IQTechSolutions\\IqtFramework\\Iqt.Base\\Iqt.Base.csproj": {
-              "projectPath": "G:\\IQTechSolutions\\IqtFramework\\Iqt.Base\\Iqt.Base.csproj"
+            "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\IqtFramework\\Iqt.Base\\Iqt.Base.csproj": {
+              "projectPath": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\IqtFramework\\Iqt.Base\\Iqt.Base.csproj"
             },
-            "G:\\IQTechSolutions\\IqtFramework\\Iqt.Web\\Iqt.Web.csproj": {
-              "projectPath": "G:\\IQTechSolutions\\IqtFramework\\Iqt.Web\\Iqt.Web.csproj"
+            "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\IqtFramework\\Iqt.Web\\Iqt.Web.csproj": {
+              "projectPath": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\IqtFramework\\Iqt.Web\\Iqt.Web.csproj"
             },
-            "G:\\IQTechSolutions\\Modules\\Blogging\\Blogging.Base\\Blogging.Base.csproj": {
-              "projectPath": "G:\\IQTechSolutions\\Modules\\Blogging\\Blogging.Base\\Blogging.Base.csproj"
+            "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Blogging\\Blogging.Base\\Blogging.Base.csproj": {
+              "projectPath": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Blogging\\Blogging.Base\\Blogging.Base.csproj"
             },
-            "G:\\IQTechSolutions\\Modules\\Blogging\\Blogging.Core\\Blogging.Core.csproj": {
-              "projectPath": "G:\\IQTechSolutions\\Modules\\Blogging\\Blogging.Core\\Blogging.Core.csproj"
+            "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Blogging\\Blogging.Core\\Blogging.Core.csproj": {
+              "projectPath": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Blogging\\Blogging.Core\\Blogging.Core.csproj"
             },
+<<<<<<< Updated upstream:Projects/IQTechSolutions/IQTechSolutions.Web/IQTechSolutions.Web.Site/obj/project.assets.json
             "G:\\IQTechSolutions\\Modules\\Feedback\\Feedback.Core\\Feedback.Core.csproj": {
               "projectPath": "G:\\IQTechSolutions\\Modules\\Feedback\\Feedback.Core\\Feedback.Core.csproj"
             },
@@ -8428,6 +8429,25 @@
             },
             "G:\\IQTechSolutions\\Projects\\IQTechSolutions\\IQTechSolutions.Web\\IQTechSolutions.Web\\IQTechSolutions.Web.csproj": {
               "projectPath": "G:\\IQTechSolutions\\Projects\\IQTechSolutions\\IQTechSolutions.Web\\IQTechSolutions.Web\\IQTechSolutions.Web.csproj"
+=======
+            "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Customers\\Customers.Base\\Customers.Base.csproj": {
+              "projectPath": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Customers\\Customers.Base\\Customers.Base.csproj"
+            },
+            "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Feedback\\Feedback.Core\\Feedback.Core.csproj": {
+              "projectPath": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Feedback\\Feedback.Core\\Feedback.Core.csproj"
+            },
+            "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Services\\Services.Base\\Services.Base.csproj": {
+              "projectPath": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Services\\Services.Base\\Services.Base.csproj"
+            },
+            "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Troubleshooting\\Troubleshooting.Base\\Troubleshooting.Base.csproj": {
+              "projectPath": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Troubleshooting\\Troubleshooting.Base\\Troubleshooting.Base.csproj"
+            },
+            "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Projects\\EnviroMetsi\\Metsi.Base\\Metsi.Web\\Metsi.Web.csproj": {
+              "projectPath": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Projects\\EnviroMetsi\\Metsi.Base\\Metsi.Web\\Metsi.Web.csproj"
+            },
+            "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Projects\\EnviroMetsi\\Metsi.Base\\Metsi\\Metsi.csproj": {
+              "projectPath": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Projects\\EnviroMetsi\\Metsi.Base\\Metsi\\Metsi.csproj"
+>>>>>>> Stashed changes:Projects/EnviroMetsi/Metsi.Web/Metsi.Web.Site/obj/project.assets.json
             }
           }
         }
@@ -8473,7 +8493,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.103\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.202\\RuntimeIdentifierGraph.json"
       }
     }
   }

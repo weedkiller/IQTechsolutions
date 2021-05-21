@@ -1,0 +1,14 @@
+C:\Users\Admin\Desktop\Work\IqTechSolution\Projects\EnviroMetsi\Metsi.Base\Metsi.Web\bin\Debug\netstandard2.1\Metsi.Web.deps.json
+C:\Users\Admin\Desktop\Work\IqTechSolution\Projects\EnviroMetsi\Metsi.Base\Metsi.Web\bin\Debug\netstandard2.1\Metsi.Web.dll
+C:\Users\Admin\Desktop\Work\IqTechSolution\Projects\EnviroMetsi\Metsi.Base\Metsi.Web\bin\Debug\netstandard2.1\Metsi.Web.pdb
+C:\Users\Admin\Desktop\Work\IqTechSolution\Projects\EnviroMetsi\Metsi.Base\Metsi.Web\bin\Debug\netstandard2.1\Iqt.Base.dll
+C:\Users\Admin\Desktop\Work\IqTechSolution\Projects\EnviroMetsi\Metsi.Base\Metsi.Web\bin\Debug\netstandard2.1\Mailing.Base.dll
+C:\Users\Admin\Desktop\Work\IqTechSolution\Projects\EnviroMetsi\Metsi.Base\Metsi.Web\bin\Debug\netstandard2.1\Iqt.Base.pdb
+C:\Users\Admin\Desktop\Work\IqTechSolution\Projects\EnviroMetsi\Metsi.Base\Metsi.Web\bin\Debug\netstandard2.1\Mailing.Base.pdb
+C:\Users\Admin\Desktop\Work\IqTechSolution\Projects\EnviroMetsi\Metsi.Base\Metsi.Web\obj\Debug\netstandard2.1\Metsi.Web.csprojAssemblyReference.cache
+C:\Users\Admin\Desktop\Work\IqTechSolution\Projects\EnviroMetsi\Metsi.Base\Metsi.Web\obj\Debug\netstandard2.1\Metsi.Web.AssemblyInfoInputs.cache
+C:\Users\Admin\Desktop\Work\IqTechSolution\Projects\EnviroMetsi\Metsi.Base\Metsi.Web\obj\Debug\netstandard2.1\Metsi.Web.AssemblyInfo.cs
+C:\Users\Admin\Desktop\Work\IqTechSolution\Projects\EnviroMetsi\Metsi.Base\Metsi.Web\obj\Debug\netstandard2.1\Metsi.Web.csproj.CoreCompileInputs.cache
+C:\Users\Admin\Desktop\Work\IqTechSolution\Projects\EnviroMetsi\Metsi.Base\Metsi.Web\obj\Debug\netstandard2.1\Metsi.Web.csproj.CopyComplete
+C:\Users\Admin\Desktop\Work\IqTechSolution\Projects\EnviroMetsi\Metsi.Base\Metsi.Web\obj\Debug\netstandard2.1\Metsi.Web.dll
+C:\Users\Admin\Desktop\Work\IqTechSolution\Projects\EnviroMetsi\Metsi.Base\Metsi.Web\obj\Debug\netstandard2.1\Metsi.Web.pdb

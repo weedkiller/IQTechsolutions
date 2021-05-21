@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 using Troubleshooting.Core.Context.Services;
 using Troubleshooting.Core.Controllers;
 
-namespace GoldTechSolutions.Web.Site.Areas.Faqs.Controllers
+namespace GoldTechSolutions.Web.Site.Areas.AdminFaqs.Controllers
 {
-    [Area("Faqs")]
-    [Route("Faqs/[controller]/[action]")]
+    [Area("AdminFaqs")]
+    [Route("AdminFaqs/[controller]/[action]")]
     public class AnswersController : AnswerBaseController
     {
         /// <inheritdoc />
@@ -17,6 +17,7 @@ namespace GoldTechSolutions.Web.Site.Areas.Faqs.Controllers
         /// The default constructor 
         /// </summary>
         /// <param name="service">The injected context service</param>
+        /// <param name="fileFactory">The injected file factory</param>
         public AnswersController(FaqContext service) : base(service) { }
     }
 }

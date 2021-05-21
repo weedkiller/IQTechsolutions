@@ -1,25 +1,25 @@
 {
   "format": 1,
   "restore": {
+<<<<<<< Updated upstream:Modules/Shopping/Shopping.Core/obj/Shopping.Core.csproj.nuget.dgspec.json
     "G:\\IQTechSolutions\\Modules\\Shopping\\Shopping.Core\\Shopping.Core.csproj": {}
+=======
+    "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Education\\Education.Core\\Education.Core.csproj": {}
+>>>>>>> Stashed changes:Modules/Education/Education.Core/obj/Education.Core.csproj.nuget.dgspec.json
   },
   "projects": {
-    "G:\\IQTechSolutions\\IqtFramework\\Iqt.Base\\Iqt.Base.csproj": {
+    "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\IqtFramework\\Iqt.Base\\Iqt.Base.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "G:\\IQTechSolutions\\IqtFramework\\Iqt.Base\\Iqt.Base.csproj",
+        "projectUniqueName": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\IqtFramework\\Iqt.Base\\Iqt.Base.csproj",
         "projectName": "Iqt.Base",
-        "projectPath": "G:\\IQTechSolutions\\IqtFramework\\Iqt.Base\\Iqt.Base.csproj",
-        "packagesPath": "C:\\Users\\ivanr\\.nuget\\packages\\",
-        "outputPath": "G:\\IQTechSolutions\\IqtFramework\\Iqt.Base\\obj\\",
+        "projectPath": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\IqtFramework\\Iqt.Base\\Iqt.Base.csproj",
+        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\IqtFramework\\Iqt.Base\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\"
-        ],
         "configFilePaths": [
-          "C:\\Users\\ivanr\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netstandard2.1"
@@ -68,10 +68,11 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.103\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.202\\RuntimeIdentifierGraph.json"
         }
       }
     },
+<<<<<<< Updated upstream:Modules/Shopping/Shopping.Core/obj/Shopping.Core.csproj.nuget.dgspec.json
     "G:\\IQTechSolutions\\IqtFramework\\Iqt.Web\\Iqt.Web.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -80,14 +81,20 @@
         "projectPath": "G:\\IQTechSolutions\\IqtFramework\\Iqt.Web\\Iqt.Web.csproj",
         "packagesPath": "C:\\Users\\ivanr\\.nuget\\packages\\",
         "outputPath": "G:\\IQTechSolutions\\IqtFramework\\Iqt.Web\\obj\\",
+=======
+    "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Education\\Education.Base\\Education.Base.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Education\\Education.Base\\Education.Base.csproj",
+        "projectName": "Education.Base",
+        "projectPath": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Education\\Education.Base\\Education.Base.csproj",
+        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Education\\Education.Base\\obj\\",
+>>>>>>> Stashed changes:Modules/Education/Education.Core/obj/Education.Core.csproj.nuget.dgspec.json
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\"
-        ],
         "configFilePaths": [
-          "C:\\Users\\ivanr\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netstandard2.1"
@@ -99,7 +106,21 @@
         "frameworks": {
           "netstandard2.1": {
             "targetAlias": "netstandard2.1",
+<<<<<<< Updated upstream:Modules/Shopping/Shopping.Core/obj/Shopping.Core.csproj.nuget.dgspec.json
             "projectReferences": {}
+=======
+            "projectReferences": {
+              "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Filing\\Filing.Base\\Filing.Base.csproj": {
+                "projectPath": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Filing\\Filing.Base\\Filing.Base.csproj"
+              },
+              "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Grouping\\Grouping.Base\\Grouping.Base.csproj": {
+                "projectPath": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Grouping\\Grouping.Base\\Grouping.Base.csproj"
+              },
+              "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Identity\\Identity.Base\\Identity.Base.csproj": {
+                "projectPath": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Identity\\Identity.Base\\Identity.Base.csproj"
+              }
+            }
+>>>>>>> Stashed changes:Modules/Education/Education.Core/obj/Education.Core.csproj.nuget.dgspec.json
           }
         },
         "warningProperties": {
@@ -132,10 +153,11 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.103\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.202\\RuntimeIdentifierGraph.json"
         }
       }
     },
+<<<<<<< Updated upstream:Modules/Shopping/Shopping.Core/obj/Shopping.Core.csproj.nuget.dgspec.json
     "G:\\IQTechSolutions\\Modules\\Feedback\\Feedback.Base\\Feedback.Base.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -144,14 +166,20 @@
         "projectPath": "G:\\IQTechSolutions\\Modules\\Feedback\\Feedback.Base\\Feedback.Base.csproj",
         "packagesPath": "C:\\Users\\ivanr\\.nuget\\packages\\",
         "outputPath": "G:\\IQTechSolutions\\Modules\\Feedback\\Feedback.Base\\obj\\",
+=======
+    "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Education\\Education.Core\\Education.Core.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Education\\Education.Core\\Education.Core.csproj",
+        "projectName": "Education.Core",
+        "projectPath": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Education\\Education.Core\\Education.Core.csproj",
+        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Education\\Education.Core\\obj\\",
+>>>>>>> Stashed changes:Modules/Education/Education.Core/obj/Education.Core.csproj.nuget.dgspec.json
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\"
-        ],
         "configFilePaths": [
-          "C:\\Users\\ivanr\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netstandard2.1"
@@ -164,6 +192,7 @@
           "netstandard2.1": {
             "targetAlias": "netstandard2.1",
             "projectReferences": {
+<<<<<<< Updated upstream:Modules/Shopping/Shopping.Core/obj/Shopping.Core.csproj.nuget.dgspec.json
               "G:\\IQTechSolutions\\IqtFramework\\Iqt.Base\\Iqt.Base.csproj": {
                 "projectPath": "G:\\IQTechSolutions\\IqtFramework\\Iqt.Base\\Iqt.Base.csproj"
               },
@@ -172,6 +201,19 @@
               },
               "G:\\IQTechSolutions\\Modules\\Identity\\Identity.Base\\Identity.Base.csproj": {
                 "projectPath": "G:\\IQTechSolutions\\Modules\\Identity\\Identity.Base\\Identity.Base.csproj"
+=======
+              "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Education\\Education.Base\\Education.Base.csproj": {
+                "projectPath": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Education\\Education.Base\\Education.Base.csproj"
+              },
+              "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Filing\\Filing.Core\\Filing.Core.csproj": {
+                "projectPath": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Filing\\Filing.Core\\Filing.Core.csproj"
+              },
+              "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Identity\\Identity.Base\\Identity.Base.csproj": {
+                "projectPath": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Identity\\Identity.Base\\Identity.Base.csproj"
+              },
+              "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Projects\\EnviroMetsi\\Metsi.Base\\Metsi.Web\\Metsi.Web.csproj": {
+                "projectPath": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Projects\\EnviroMetsi\\Metsi.Base\\Metsi.Web\\Metsi.Web.csproj"
+>>>>>>> Stashed changes:Modules/Education/Education.Core/obj/Education.Core.csproj.nuget.dgspec.json
               }
             }
           }
@@ -200,26 +242,22 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.103\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.202\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "G:\\IQTechSolutions\\Modules\\Filing\\Filing.Base\\Filing.Base.csproj": {
+    "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Filing\\Filing.Base\\Filing.Base.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "G:\\IQTechSolutions\\Modules\\Filing\\Filing.Base\\Filing.Base.csproj",
+        "projectUniqueName": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Filing\\Filing.Base\\Filing.Base.csproj",
         "projectName": "Filing.Base",
-        "projectPath": "G:\\IQTechSolutions\\Modules\\Filing\\Filing.Base\\Filing.Base.csproj",
-        "packagesPath": "C:\\Users\\ivanr\\.nuget\\packages\\",
-        "outputPath": "G:\\IQTechSolutions\\Modules\\Filing\\Filing.Base\\obj\\",
+        "projectPath": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Filing\\Filing.Base\\Filing.Base.csproj",
+        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Filing\\Filing.Base\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\"
-        ],
         "configFilePaths": [
-          "C:\\Users\\ivanr\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netstandard2.1"
@@ -232,8 +270,8 @@
           "netstandard2.1": {
             "targetAlias": "netstandard2.1",
             "projectReferences": {
-              "G:\\IQTechSolutions\\IqtFramework\\Iqt.Base\\Iqt.Base.csproj": {
-                "projectPath": "G:\\IQTechSolutions\\IqtFramework\\Iqt.Base\\Iqt.Base.csproj"
+              "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\IqtFramework\\Iqt.Base\\Iqt.Base.csproj": {
+                "projectPath": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\IqtFramework\\Iqt.Base\\Iqt.Base.csproj"
               }
             }
           }
@@ -268,10 +306,11 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.103\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.202\\RuntimeIdentifierGraph.json"
         }
       }
     },
+<<<<<<< Updated upstream:Modules/Shopping/Shopping.Core/obj/Shopping.Core.csproj.nuget.dgspec.json
     "G:\\IQTechSolutions\\Modules\\Grouping\\Grouping.Base\\Grouping.Base.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -280,14 +319,20 @@
         "projectPath": "G:\\IQTechSolutions\\Modules\\Grouping\\Grouping.Base\\Grouping.Base.csproj",
         "packagesPath": "C:\\Users\\ivanr\\.nuget\\packages\\",
         "outputPath": "G:\\IQTechSolutions\\Modules\\Grouping\\Grouping.Base\\obj\\",
+=======
+    "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Filing\\Filing.Core\\Filing.Core.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Filing\\Filing.Core\\Filing.Core.csproj",
+        "projectName": "Filing.Core",
+        "projectPath": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Filing\\Filing.Core\\Filing.Core.csproj",
+        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Filing\\Filing.Core\\obj\\",
+>>>>>>> Stashed changes:Modules/Education/Education.Core/obj/Education.Core.csproj.nuget.dgspec.json
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\"
-        ],
         "configFilePaths": [
-          "C:\\Users\\ivanr\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netstandard2.1"
@@ -300,8 +345,8 @@
           "netstandard2.1": {
             "targetAlias": "netstandard2.1",
             "projectReferences": {
-              "G:\\IQTechSolutions\\Modules\\Filing\\Filing.Base\\Filing.Base.csproj": {
-                "projectPath": "G:\\IQTechSolutions\\Modules\\Filing\\Filing.Base\\Filing.Base.csproj"
+              "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Filing\\Filing.Base\\Filing.Base.csproj": {
+                "projectPath": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Filing\\Filing.Base\\Filing.Base.csproj"
               }
             }
           }
@@ -336,10 +381,11 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.103\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.202\\RuntimeIdentifierGraph.json"
         }
       }
     },
+<<<<<<< Updated upstream:Modules/Shopping/Shopping.Core/obj/Shopping.Core.csproj.nuget.dgspec.json
     "G:\\IQTechSolutions\\Modules\\Identity\\Identity.Base\\Identity.Base.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -348,14 +394,20 @@
         "projectPath": "G:\\IQTechSolutions\\Modules\\Identity\\Identity.Base\\Identity.Base.csproj",
         "packagesPath": "C:\\Users\\ivanr\\.nuget\\packages\\",
         "outputPath": "G:\\IQTechSolutions\\Modules\\Identity\\Identity.Base\\obj\\",
+=======
+    "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Grouping\\Grouping.Base\\Grouping.Base.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Grouping\\Grouping.Base\\Grouping.Base.csproj",
+        "projectName": "Grouping.Base",
+        "projectPath": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Grouping\\Grouping.Base\\Grouping.Base.csproj",
+        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Grouping\\Grouping.Base\\obj\\",
+>>>>>>> Stashed changes:Modules/Education/Education.Core/obj/Education.Core.csproj.nuget.dgspec.json
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\"
-        ],
         "configFilePaths": [
-          "C:\\Users\\ivanr\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netstandard2.1"
@@ -368,8 +420,8 @@
           "netstandard2.1": {
             "targetAlias": "netstandard2.1",
             "projectReferences": {
-              "G:\\IQTechSolutions\\Modules\\Filing\\Filing.Base\\Filing.Base.csproj": {
-                "projectPath": "G:\\IQTechSolutions\\Modules\\Filing\\Filing.Base\\Filing.Base.csproj"
+              "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Filing\\Filing.Base\\Filing.Base.csproj": {
+                "projectPath": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Filing\\Filing.Base\\Filing.Base.csproj"
               }
             }
           }
@@ -408,10 +460,11 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.103\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.202\\RuntimeIdentifierGraph.json"
         }
       }
     },
+<<<<<<< Updated upstream:Modules/Shopping/Shopping.Core/obj/Shopping.Core.csproj.nuget.dgspec.json
     "G:\\IQTechSolutions\\Modules\\Products\\Products.Base\\Products.Base.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -420,14 +473,20 @@
         "projectPath": "G:\\IQTechSolutions\\Modules\\Products\\Products.Base\\Products.Base.csproj",
         "packagesPath": "C:\\Users\\ivanr\\.nuget\\packages\\",
         "outputPath": "G:\\IQTechSolutions\\Modules\\Products\\Products.Base\\obj\\",
+=======
+    "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Identity\\Identity.Base\\Identity.Base.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Identity\\Identity.Base\\Identity.Base.csproj",
+        "projectName": "Identity.Base",
+        "projectPath": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Identity\\Identity.Base\\Identity.Base.csproj",
+        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Identity\\Identity.Base\\obj\\",
+>>>>>>> Stashed changes:Modules/Education/Education.Core/obj/Education.Core.csproj.nuget.dgspec.json
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\"
-        ],
         "configFilePaths": [
-          "C:\\Users\\ivanr\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netstandard2.1"
@@ -440,6 +499,7 @@
           "netstandard2.1": {
             "targetAlias": "netstandard2.1",
             "projectReferences": {
+<<<<<<< Updated upstream:Modules/Shopping/Shopping.Core/obj/Shopping.Core.csproj.nuget.dgspec.json
               "G:\\IQTechSolutions\\IqtFramework\\Iqt.Web\\Iqt.Web.csproj": {
                 "projectPath": "G:\\IQTechSolutions\\IqtFramework\\Iqt.Web\\Iqt.Web.csproj"
               },
@@ -451,6 +511,10 @@
               },
               "G:\\IQTechSolutions\\Modules\\Grouping\\Grouping.Base\\Grouping.Base.csproj": {
                 "projectPath": "G:\\IQTechSolutions\\Modules\\Grouping\\Grouping.Base\\Grouping.Base.csproj"
+=======
+              "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Filing\\Filing.Base\\Filing.Base.csproj": {
+                "projectPath": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Filing\\Filing.Base\\Filing.Base.csproj"
+>>>>>>> Stashed changes:Modules/Education/Education.Core/obj/Education.Core.csproj.nuget.dgspec.json
               }
             }
           }
@@ -479,10 +543,11 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.103\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.202\\RuntimeIdentifierGraph.json"
         }
       }
     },
+<<<<<<< Updated upstream:Modules/Shopping/Shopping.Core/obj/Shopping.Core.csproj.nuget.dgspec.json
     "G:\\IQTechSolutions\\Modules\\Shopping\\Shopping.Base\\Shopping.Base.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -491,14 +556,20 @@
         "projectPath": "G:\\IQTechSolutions\\Modules\\Shopping\\Shopping.Base\\Shopping.Base.csproj",
         "packagesPath": "C:\\Users\\ivanr\\.nuget\\packages\\",
         "outputPath": "G:\\IQTechSolutions\\Modules\\Shopping\\Shopping.Base\\obj\\",
+=======
+    "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Mailing\\Mailing.Base\\Mailing.Base.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Mailing\\Mailing.Base\\Mailing.Base.csproj",
+        "projectName": "Mailing.Base",
+        "projectPath": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Mailing\\Mailing.Base\\Mailing.Base.csproj",
+        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Mailing\\Mailing.Base\\obj\\",
+>>>>>>> Stashed changes:Modules/Education/Education.Core/obj/Education.Core.csproj.nuget.dgspec.json
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\"
-        ],
         "configFilePaths": [
-          "C:\\Users\\ivanr\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netstandard2.1"
@@ -511,11 +582,16 @@
           "netstandard2.1": {
             "targetAlias": "netstandard2.1",
             "projectReferences": {
+<<<<<<< Updated upstream:Modules/Shopping/Shopping.Core/obj/Shopping.Core.csproj.nuget.dgspec.json
               "G:\\IQTechSolutions\\IqtFramework\\Iqt.Base\\Iqt.Base.csproj": {
                 "projectPath": "G:\\IQTechSolutions\\IqtFramework\\Iqt.Base\\Iqt.Base.csproj"
               },
               "G:\\IQTechSolutions\\Modules\\Products\\Products.Base\\Products.Base.csproj": {
                 "projectPath": "G:\\IQTechSolutions\\Modules\\Products\\Products.Base\\Products.Base.csproj"
+=======
+              "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\IqtFramework\\Iqt.Base\\Iqt.Base.csproj": {
+                "projectPath": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\IqtFramework\\Iqt.Base\\Iqt.Base.csproj"
+>>>>>>> Stashed changes:Modules/Education/Education.Core/obj/Education.Core.csproj.nuget.dgspec.json
               }
             }
           }
@@ -544,10 +620,11 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.103\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.202\\RuntimeIdentifierGraph.json"
         }
       }
     },
+<<<<<<< Updated upstream:Modules/Shopping/Shopping.Core/obj/Shopping.Core.csproj.nuget.dgspec.json
     "G:\\IQTechSolutions\\Modules\\Shopping\\Shopping.Core\\Shopping.Core.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -556,14 +633,20 @@
         "projectPath": "G:\\IQTechSolutions\\Modules\\Shopping\\Shopping.Core\\Shopping.Core.csproj",
         "packagesPath": "C:\\Users\\ivanr\\.nuget\\packages\\",
         "outputPath": "G:\\IQTechSolutions\\Modules\\Shopping\\Shopping.Core\\obj\\",
+=======
+    "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Projects\\EnviroMetsi\\Metsi.Base\\Metsi.Web\\Metsi.Web.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Projects\\EnviroMetsi\\Metsi.Base\\Metsi.Web\\Metsi.Web.csproj",
+        "projectName": "Metsi.Web",
+        "projectPath": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Projects\\EnviroMetsi\\Metsi.Base\\Metsi.Web\\Metsi.Web.csproj",
+        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Projects\\EnviroMetsi\\Metsi.Base\\Metsi.Web\\obj\\",
+>>>>>>> Stashed changes:Modules/Education/Education.Core/obj/Education.Core.csproj.nuget.dgspec.json
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\"
-        ],
         "configFilePaths": [
-          "C:\\Users\\ivanr\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
@@ -576,11 +659,16 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "G:\\IQTechSolutions\\IqtFramework\\Iqt.Base\\Iqt.Base.csproj": {
-                "projectPath": "G:\\IQTechSolutions\\IqtFramework\\Iqt.Base\\Iqt.Base.csproj"
+              "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\IqtFramework\\Iqt.Base\\Iqt.Base.csproj": {
+                "projectPath": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\IqtFramework\\Iqt.Base\\Iqt.Base.csproj"
               },
+<<<<<<< Updated upstream:Modules/Shopping/Shopping.Core/obj/Shopping.Core.csproj.nuget.dgspec.json
               "G:\\IQTechSolutions\\Modules\\Shopping\\Shopping.Base\\Shopping.Base.csproj": {
                 "projectPath": "G:\\IQTechSolutions\\Modules\\Shopping\\Shopping.Base\\Shopping.Base.csproj"
+=======
+              "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Mailing\\Mailing.Base\\Mailing.Base.csproj": {
+                "projectPath": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Mailing\\Mailing.Base\\Mailing.Base.csproj"
+>>>>>>> Stashed changes:Modules/Education/Education.Core/obj/Education.Core.csproj.nuget.dgspec.json
               }
             }
           }
@@ -615,7 +703,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.103\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.202\\RuntimeIdentifierGraph.json"
         }
       }
     }

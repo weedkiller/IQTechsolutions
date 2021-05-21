@@ -1,0 +1,5 @@
+C:\Users\Admin\Desktop\Work\IqTechSolution\Julius\Duplessis-Legal\DuplessisLegal.Web.DataStores\obj\Release\net5.0\DuplessisLegal.Web.DataStores.csprojAssemblyReference.cache
+C:\Users\Admin\Desktop\Work\IqTechSolution\Julius\Duplessis-Legal\DuplessisLegal.Web.DataStores\obj\Release\net5.0\DuplessisLegal.Web.DataStores.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Admin\Desktop\Work\IqTechSolution\Julius\Duplessis-Legal\DuplessisLegal.Web.DataStores\obj\Release\net5.0\DuplessisLegal.Web.DataStores.AssemblyInfoInputs.cache
+C:\Users\Admin\Desktop\Work\IqTechSolution\Julius\Duplessis-Legal\DuplessisLegal.Web.DataStores\obj\Release\net5.0\DuplessisLegal.Web.DataStores.AssemblyInfo.cs
+C:\Users\Admin\Desktop\Work\IqTechSolution\Julius\Duplessis-Legal\DuplessisLegal.Web.DataStores\obj\Release\net5.0\DuplessisLegal.Web.DataStores.csproj.CoreCompileInputs.cache

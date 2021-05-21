@@ -1,6 +1,7 @@
 {
   "format": 1,
   "restore": {
+<<<<<<< Updated upstream:Projects/IQTechSolutions/IQTechSolutions.Web/IQTechSolutions.Web.Api/obj/IQTechSolutions.Web.Api.csproj.nuget.dgspec.json
     "G:\\IQTechSolutions\\Projects\\IQTechSolutions\\IQTechSolutions.Web\\IQTechSolutions.Web.Api\\IQTechSolutions.Web.Api.csproj": {}
   },
   "projects": {
@@ -80,14 +81,23 @@
         "projectPath": "G:\\IQTechSolutions\\IqtFramework\\Iqt.Web\\Iqt.Web.csproj",
         "packagesPath": "C:\\Users\\ivanr\\.nuget\\packages\\",
         "outputPath": "G:\\IQTechSolutions\\IqtFramework\\Iqt.Web\\obj\\",
+=======
+    "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Projects\\EnviroMetsi\\Metsi.Web\\Metsi.Web.Api\\Metsi.Web.Api.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\IqtFramework\\Iqt.Base\\Iqt.Base.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\IqtFramework\\Iqt.Base\\Iqt.Base.csproj",
+        "projectName": "Iqt.Base",
+        "projectPath": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\IqtFramework\\Iqt.Base\\Iqt.Base.csproj",
+        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\IqtFramework\\Iqt.Base\\obj\\",
+>>>>>>> Stashed changes:Projects/EnviroMetsi/Metsi.Web/Metsi.Web.Api/obj/Metsi.Web.Api.csproj.nuget.dgspec.json
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\"
-        ],
         "configFilePaths": [
-          "C:\\Users\\ivanr\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netstandard2.1"
@@ -132,26 +142,22 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.103\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.202\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "G:\\IQTechSolutions\\Modules\\Blogging\\Blogging.Base\\Blogging.Base.csproj": {
+    "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Blogging\\Blogging.Base\\Blogging.Base.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "G:\\IQTechSolutions\\Modules\\Blogging\\Blogging.Base\\Blogging.Base.csproj",
+        "projectUniqueName": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Blogging\\Blogging.Base\\Blogging.Base.csproj",
         "projectName": "Blogging.Base",
-        "projectPath": "G:\\IQTechSolutions\\Modules\\Blogging\\Blogging.Base\\Blogging.Base.csproj",
-        "packagesPath": "C:\\Users\\ivanr\\.nuget\\packages\\",
-        "outputPath": "G:\\IQTechSolutions\\Modules\\Blogging\\Blogging.Base\\obj\\",
+        "projectPath": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Blogging\\Blogging.Base\\Blogging.Base.csproj",
+        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Blogging\\Blogging.Base\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\"
-        ],
         "configFilePaths": [
-          "C:\\Users\\ivanr\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netstandard2.1"
@@ -164,11 +170,11 @@
           "netstandard2.1": {
             "targetAlias": "netstandard2.1",
             "projectReferences": {
-              "G:\\IQTechSolutions\\Modules\\Filing\\Filing.Base\\Filing.Base.csproj": {
-                "projectPath": "G:\\IQTechSolutions\\Modules\\Filing\\Filing.Base\\Filing.Base.csproj"
+              "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Filing\\Filing.Base\\Filing.Base.csproj": {
+                "projectPath": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Filing\\Filing.Base\\Filing.Base.csproj"
               },
-              "G:\\IQTechSolutions\\Modules\\Grouping\\Grouping.Base\\Grouping.Base.csproj": {
-                "projectPath": "G:\\IQTechSolutions\\Modules\\Grouping\\Grouping.Base\\Grouping.Base.csproj"
+              "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Grouping\\Grouping.Base\\Grouping.Base.csproj": {
+                "projectPath": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Grouping\\Grouping.Base\\Grouping.Base.csproj"
               }
             }
           }
@@ -197,26 +203,22 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.103\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.202\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "G:\\IQTechSolutions\\Modules\\Blogging\\Blogging.Core\\Blogging.Core.csproj": {
+    "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Blogging\\Blogging.Core\\Blogging.Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "G:\\IQTechSolutions\\Modules\\Blogging\\Blogging.Core\\Blogging.Core.csproj",
+        "projectUniqueName": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Blogging\\Blogging.Core\\Blogging.Core.csproj",
         "projectName": "Blogging.Core",
-        "projectPath": "G:\\IQTechSolutions\\Modules\\Blogging\\Blogging.Core\\Blogging.Core.csproj",
-        "packagesPath": "C:\\Users\\ivanr\\.nuget\\packages\\",
-        "outputPath": "G:\\IQTechSolutions\\Modules\\Blogging\\Blogging.Core\\obj\\",
+        "projectPath": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Blogging\\Blogging.Core\\Blogging.Core.csproj",
+        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Blogging\\Blogging.Core\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\"
-        ],
         "configFilePaths": [
-          "C:\\Users\\ivanr\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
@@ -229,20 +231,20 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "G:\\IQTechSolutions\\Modules\\Blogging\\Blogging.Base\\Blogging.Base.csproj": {
-                "projectPath": "G:\\IQTechSolutions\\Modules\\Blogging\\Blogging.Base\\Blogging.Base.csproj"
+              "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Blogging\\Blogging.Base\\Blogging.Base.csproj": {
+                "projectPath": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Blogging\\Blogging.Base\\Blogging.Base.csproj"
               },
-              "G:\\IQTechSolutions\\Modules\\Grouping\\Grouping.Base\\Grouping.Base.csproj": {
-                "projectPath": "G:\\IQTechSolutions\\Modules\\Grouping\\Grouping.Base\\Grouping.Base.csproj"
+              "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Grouping\\Grouping.Base\\Grouping.Base.csproj": {
+                "projectPath": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Grouping\\Grouping.Base\\Grouping.Base.csproj"
               },
-              "G:\\IQTechSolutions\\Modules\\Grouping\\Grouping.Core\\Grouping.Core.csproj": {
-                "projectPath": "G:\\IQTechSolutions\\Modules\\Grouping\\Grouping.Core\\Grouping.Core.csproj"
+              "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Grouping\\Grouping.Core\\Grouping.Core.csproj": {
+                "projectPath": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Grouping\\Grouping.Core\\Grouping.Core.csproj"
               },
-              "G:\\IQTechSolutions\\Modules\\Identity\\Identity.Base\\Identity.Base.csproj": {
-                "projectPath": "G:\\IQTechSolutions\\Modules\\Identity\\Identity.Base\\Identity.Base.csproj"
+              "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Identity\\Identity.Base\\Identity.Base.csproj": {
+                "projectPath": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Identity\\Identity.Base\\Identity.Base.csproj"
               },
-              "G:\\IQTechSolutions\\Modules\\Projects\\Projects.Core\\Projects.Core.csproj": {
-                "projectPath": "G:\\IQTechSolutions\\Modules\\Projects\\Projects.Core\\Projects.Core.csproj"
+              "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Projects\\Projects.Core\\Projects.Core.csproj": {
+                "projectPath": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Projects\\Projects.Core\\Projects.Core.csproj"
               }
             }
           }
@@ -289,33 +291,26 @@
           "assetTargetFallback": true,
           "warn": true,
           "frameworkReferences": {
-            "Microsoft.AspNetCore.App": {
-              "privateAssets": "none"
-            },
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.103\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.202\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "G:\\IQTechSolutions\\Modules\\Calendar\\Calendar.Base\\Calendar.Base.csproj": {
+    "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Calendar\\Calendar.Base\\Calendar.Base.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "G:\\IQTechSolutions\\Modules\\Calendar\\Calendar.Base\\Calendar.Base.csproj",
+        "projectUniqueName": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Calendar\\Calendar.Base\\Calendar.Base.csproj",
         "projectName": "Calendar.Base",
-        "projectPath": "G:\\IQTechSolutions\\Modules\\Calendar\\Calendar.Base\\Calendar.Base.csproj",
-        "packagesPath": "C:\\Users\\ivanr\\.nuget\\packages\\",
-        "outputPath": "G:\\IQTechSolutions\\Modules\\Calendar\\Calendar.Base\\obj\\",
+        "projectPath": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Calendar\\Calendar.Base\\Calendar.Base.csproj",
+        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Calendar\\Calendar.Base\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\"
-        ],
         "configFilePaths": [
-          "C:\\Users\\ivanr\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netstandard2.1"
@@ -328,17 +323,17 @@
           "netstandard2.1": {
             "targetAlias": "netstandard2.1",
             "projectReferences": {
-              "G:\\IQTechSolutions\\IqtFramework\\Iqt.Base\\Iqt.Base.csproj": {
-                "projectPath": "G:\\IQTechSolutions\\IqtFramework\\Iqt.Base\\Iqt.Base.csproj"
+              "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\IqtFramework\\Iqt.Base\\Iqt.Base.csproj": {
+                "projectPath": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\IqtFramework\\Iqt.Base\\Iqt.Base.csproj"
               },
-              "G:\\IQTechSolutions\\Modules\\Filing\\Filing.Base\\Filing.Base.csproj": {
-                "projectPath": "G:\\IQTechSolutions\\Modules\\Filing\\Filing.Base\\Filing.Base.csproj"
+              "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Filing\\Filing.Base\\Filing.Base.csproj": {
+                "projectPath": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Filing\\Filing.Base\\Filing.Base.csproj"
               },
-              "G:\\IQTechSolutions\\Modules\\Grouping\\Grouping.Base\\Grouping.Base.csproj": {
-                "projectPath": "G:\\IQTechSolutions\\Modules\\Grouping\\Grouping.Base\\Grouping.Base.csproj"
+              "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Grouping\\Grouping.Base\\Grouping.Base.csproj": {
+                "projectPath": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Grouping\\Grouping.Base\\Grouping.Base.csproj"
               },
-              "G:\\IQTechSolutions\\Modules\\Identity\\Identity.Base\\Identity.Base.csproj": {
-                "projectPath": "G:\\IQTechSolutions\\Modules\\Identity\\Identity.Base\\Identity.Base.csproj"
+              "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Identity\\Identity.Base\\Identity.Base.csproj": {
+                "projectPath": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Identity\\Identity.Base\\Identity.Base.csproj"
               }
             }
           }
@@ -373,26 +368,22 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.103\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.202\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "G:\\IQTechSolutions\\Modules\\Calendar\\Calendar.Core\\Calendar.Core.csproj": {
+    "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Calendar\\Calendar.Core\\Calendar.Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "G:\\IQTechSolutions\\Modules\\Calendar\\Calendar.Core\\Calendar.Core.csproj",
+        "projectUniqueName": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Calendar\\Calendar.Core\\Calendar.Core.csproj",
         "projectName": "Calendar.Core",
-        "projectPath": "G:\\IQTechSolutions\\Modules\\Calendar\\Calendar.Core\\Calendar.Core.csproj",
-        "packagesPath": "C:\\Users\\ivanr\\.nuget\\packages\\",
-        "outputPath": "G:\\IQTechSolutions\\Modules\\Calendar\\Calendar.Core\\obj\\",
+        "projectPath": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Calendar\\Calendar.Core\\Calendar.Core.csproj",
+        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Calendar\\Calendar.Core\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\"
-        ],
         "configFilePaths": [
-          "C:\\Users\\ivanr\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
@@ -405,11 +396,11 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "G:\\IQTechSolutions\\Modules\\Calendar\\Calendar.Base\\Calendar.Base.csproj": {
-                "projectPath": "G:\\IQTechSolutions\\Modules\\Calendar\\Calendar.Base\\Calendar.Base.csproj"
+              "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Calendar\\Calendar.Base\\Calendar.Base.csproj": {
+                "projectPath": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Calendar\\Calendar.Base\\Calendar.Base.csproj"
               },
-              "G:\\IQTechSolutions\\Modules\\Filing\\Filing.Core\\Filing.Core.csproj": {
-                "projectPath": "G:\\IQTechSolutions\\Modules\\Filing\\Filing.Core\\Filing.Core.csproj"
+              "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Filing\\Filing.Core\\Filing.Core.csproj": {
+                "projectPath": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Filing\\Filing.Core\\Filing.Core.csproj"
               }
             }
           }
@@ -448,26 +439,25 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.103\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.202\\RuntimeIdentifierGraph.json"
         }
       }
     },
+<<<<<<< Updated upstream:Projects/IQTechSolutions/IQTechSolutions.Web/IQTechSolutions.Web.Api/obj/IQTechSolutions.Web.Api.csproj.nuget.dgspec.json
     "G:\\IQTechSolutions\\Modules\\Feedback\\Feedback.Base\\Feedback.Base.csproj": {
+=======
+    "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Customers\\Customers.Base\\Customers.Base.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "G:\\IQTechSolutions\\Modules\\Feedback\\Feedback.Base\\Feedback.Base.csproj",
-        "projectName": "Feedback.Base",
-        "projectPath": "G:\\IQTechSolutions\\Modules\\Feedback\\Feedback.Base\\Feedback.Base.csproj",
-        "packagesPath": "C:\\Users\\ivanr\\.nuget\\packages\\",
-        "outputPath": "G:\\IQTechSolutions\\Modules\\Feedback\\Feedback.Base\\obj\\",
+        "projectUniqueName": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Customers\\Customers.Base\\Customers.Base.csproj",
+        "projectName": "Customers.Base",
+        "projectPath": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Customers\\Customers.Base\\Customers.Base.csproj",
+        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Customers\\Customers.Base\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\"
-        ],
         "configFilePaths": [
-          "C:\\Users\\ivanr\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netstandard2.1"
@@ -480,14 +470,11 @@
           "netstandard2.1": {
             "targetAlias": "netstandard2.1",
             "projectReferences": {
-              "G:\\IQTechSolutions\\IqtFramework\\Iqt.Base\\Iqt.Base.csproj": {
-                "projectPath": "G:\\IQTechSolutions\\IqtFramework\\Iqt.Base\\Iqt.Base.csproj"
+              "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Filing\\Filing.Base\\Filing.Base.csproj": {
+                "projectPath": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Filing\\Filing.Base\\Filing.Base.csproj"
               },
-              "G:\\IQTechSolutions\\Modules\\Filing\\Filing.Base\\Filing.Base.csproj": {
-                "projectPath": "G:\\IQTechSolutions\\Modules\\Filing\\Filing.Base\\Filing.Base.csproj"
-              },
-              "G:\\IQTechSolutions\\Modules\\Identity\\Identity.Base\\Identity.Base.csproj": {
-                "projectPath": "G:\\IQTechSolutions\\Modules\\Identity\\Identity.Base\\Identity.Base.csproj"
+              "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Identity\\Identity.Base\\Identity.Base.csproj": {
+                "projectPath": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Identity\\Identity.Base\\Identity.Base.csproj"
               }
             }
           }
@@ -516,26 +503,22 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.103\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.202\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "G:\\IQTechSolutions\\Modules\\Feedback\\Feedback.Core\\Feedback.Core.csproj": {
+    "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Customers\\Customers.Core\\Customers.Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "G:\\IQTechSolutions\\Modules\\Feedback\\Feedback.Core\\Feedback.Core.csproj",
-        "projectName": "Feedback.Core",
-        "projectPath": "G:\\IQTechSolutions\\Modules\\Feedback\\Feedback.Core\\Feedback.Core.csproj",
-        "packagesPath": "C:\\Users\\ivanr\\.nuget\\packages\\",
-        "outputPath": "G:\\IQTechSolutions\\Modules\\Feedback\\Feedback.Core\\obj\\",
+        "projectUniqueName": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Customers\\Customers.Core\\Customers.Core.csproj",
+        "projectName": "Customers.Core",
+        "projectPath": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Customers\\Customers.Core\\Customers.Core.csproj",
+        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Customers\\Customers.Core\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\"
-        ],
         "configFilePaths": [
-          "C:\\Users\\ivanr\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
@@ -548,14 +531,427 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
+              "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Customers\\Customers.Base\\Customers.Base.csproj": {
+                "projectPath": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Customers\\Customers.Base\\Customers.Base.csproj"
+              },
+              "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Filing\\Filing.Core\\Filing.Core.csproj": {
+                "projectPath": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Filing\\Filing.Core\\Filing.Core.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.Http.Features": {
+              "target": "Package",
+              "version": "[5.0.6, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.0.6, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.202\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Education\\Education.Base\\Education.Base.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Education\\Education.Base\\Education.Base.csproj",
+        "projectName": "Education.Base",
+        "projectPath": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Education\\Education.Base\\Education.Base.csproj",
+        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Education\\Education.Base\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.1": {
+            "targetAlias": "netstandard2.1",
+            "projectReferences": {
+              "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Filing\\Filing.Base\\Filing.Base.csproj": {
+                "projectPath": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Filing\\Filing.Base\\Filing.Base.csproj"
+              },
+              "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Grouping\\Grouping.Base\\Grouping.Base.csproj": {
+                "projectPath": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Grouping\\Grouping.Base\\Grouping.Base.csproj"
+              },
+              "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Identity\\Identity.Base\\Identity.Base.csproj": {
+                "projectPath": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Identity\\Identity.Base\\Identity.Base.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.1": {
+          "targetAlias": "netstandard2.1",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "NETStandard.Library": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.202\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Education\\Education.Core\\Education.Core.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Education\\Education.Core\\Education.Core.csproj",
+        "projectName": "Education.Core",
+        "projectPath": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Education\\Education.Core\\Education.Core.csproj",
+        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Education\\Education.Core\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Education\\Education.Base\\Education.Base.csproj": {
+                "projectPath": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Education\\Education.Base\\Education.Base.csproj"
+              },
+              "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Filing\\Filing.Core\\Filing.Core.csproj": {
+                "projectPath": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Filing\\Filing.Core\\Filing.Core.csproj"
+              },
+              "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Identity\\Identity.Base\\Identity.Base.csproj": {
+                "projectPath": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Identity\\Identity.Base\\Identity.Base.csproj"
+              },
+              "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Projects\\EnviroMetsi\\Metsi.Base\\Metsi.Web\\Metsi.Web.csproj": {
+                "projectPath": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Projects\\EnviroMetsi\\Metsi.Base\\Metsi.Web\\Metsi.Web.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.Http.Features": {
+              "target": "Package",
+              "version": "[5.0.6, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.202\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Employment\\Employment.Base\\Employment.Base.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Employment\\Employment.Base\\Employment.Base.csproj",
+        "projectName": "Employment.Base",
+        "projectPath": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Employment\\Employment.Base\\Employment.Base.csproj",
+        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Employment\\Employment.Base\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.1": {
+            "targetAlias": "netstandard2.1",
+            "projectReferences": {
+              "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Filing\\Filing.Base\\Filing.Base.csproj": {
+                "projectPath": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Filing\\Filing.Base\\Filing.Base.csproj"
+              },
+              "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Identity\\Identity.Base\\Identity.Base.csproj": {
+                "projectPath": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Identity\\Identity.Base\\Identity.Base.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.1": {
+          "targetAlias": "netstandard2.1",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "NETStandard.Library": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.202\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Employment\\Employment.Core\\Employment.Core.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Employment\\Employment.Core\\Employment.Core.csproj",
+        "projectName": "Employment.Core",
+        "projectPath": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Employment\\Employment.Core\\Employment.Core.csproj",
+        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Employment\\Employment.Core\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Employment\\Employment.Base\\Employment.Base.csproj": {
+                "projectPath": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Employment\\Employment.Base\\Employment.Base.csproj"
+              },
+              "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Filing\\Filing.Core\\Filing.Core.csproj": {
+                "projectPath": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Filing\\Filing.Core\\Filing.Core.csproj"
+              },
+              "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Identity\\Identity.Base\\Identity.Base.csproj": {
+                "projectPath": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Identity\\Identity.Base\\Identity.Base.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.Http.Features": {
+              "target": "Package",
+              "version": "[5.0.6, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.0.6, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.202\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Feedback\\Feedback.Base\\Feedback.Base.csproj": {
+>>>>>>> Stashed changes:Projects/EnviroMetsi/Metsi.Web/Metsi.Web.Api/obj/Metsi.Web.Api.csproj.nuget.dgspec.json
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Feedback\\Feedback.Base\\Feedback.Base.csproj",
+        "projectName": "Feedback.Base",
+        "projectPath": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Feedback\\Feedback.Base\\Feedback.Base.csproj",
+        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Feedback\\Feedback.Base\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.1": {
+            "targetAlias": "netstandard2.1",
+            "projectReferences": {
+              "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\IqtFramework\\Iqt.Base\\Iqt.Base.csproj": {
+                "projectPath": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\IqtFramework\\Iqt.Base\\Iqt.Base.csproj"
+              },
+              "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Filing\\Filing.Base\\Filing.Base.csproj": {
+                "projectPath": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Filing\\Filing.Base\\Filing.Base.csproj"
+              },
+              "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Identity\\Identity.Base\\Identity.Base.csproj": {
+                "projectPath": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Identity\\Identity.Base\\Identity.Base.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.1": {
+          "targetAlias": "netstandard2.1",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "NETStandard.Library": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.202\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Feedback\\Feedback.Core\\Feedback.Core.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Feedback\\Feedback.Core\\Feedback.Core.csproj",
+        "projectName": "Feedback.Core",
+        "projectPath": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Feedback\\Feedback.Core\\Feedback.Core.csproj",
+        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Feedback\\Feedback.Core\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+<<<<<<< Updated upstream:Projects/IQTechSolutions/IQTechSolutions.Web/IQTechSolutions.Web.Api/obj/IQTechSolutions.Web.Api.csproj.nuget.dgspec.json
               "G:\\IQTechSolutions\\Modules\\Feedback\\Feedback.Base\\Feedback.Base.csproj": {
                 "projectPath": "G:\\IQTechSolutions\\Modules\\Feedback\\Feedback.Base\\Feedback.Base.csproj"
+=======
+              "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Feedback\\Feedback.Base\\Feedback.Base.csproj": {
+                "projectPath": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Feedback\\Feedback.Base\\Feedback.Base.csproj"
+>>>>>>> Stashed changes:Projects/EnviroMetsi/Metsi.Web/Metsi.Web.Api/obj/Metsi.Web.Api.csproj.nuget.dgspec.json
               },
-              "G:\\IQTechSolutions\\Modules\\Filing\\Filing.Core\\Filing.Core.csproj": {
-                "projectPath": "G:\\IQTechSolutions\\Modules\\Filing\\Filing.Core\\Filing.Core.csproj"
+              "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Filing\\Filing.Core\\Filing.Core.csproj": {
+                "projectPath": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Filing\\Filing.Core\\Filing.Core.csproj"
               },
-              "G:\\IQTechSolutions\\Modules\\Mailing\\Mailing.Base\\Mailing.Base.csproj": {
-                "projectPath": "G:\\IQTechSolutions\\Modules\\Mailing\\Mailing.Base\\Mailing.Base.csproj"
+              "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Mailing\\Mailing.Base\\Mailing.Base.csproj": {
+                "projectPath": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Mailing\\Mailing.Base\\Mailing.Base.csproj"
               }
             }
           }
@@ -598,26 +994,22 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.103\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.202\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "G:\\IQTechSolutions\\Modules\\Filing\\Filing.Base\\Filing.Base.csproj": {
+    "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Filing\\Filing.Base\\Filing.Base.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "G:\\IQTechSolutions\\Modules\\Filing\\Filing.Base\\Filing.Base.csproj",
+        "projectUniqueName": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Filing\\Filing.Base\\Filing.Base.csproj",
         "projectName": "Filing.Base",
-        "projectPath": "G:\\IQTechSolutions\\Modules\\Filing\\Filing.Base\\Filing.Base.csproj",
-        "packagesPath": "C:\\Users\\ivanr\\.nuget\\packages\\",
-        "outputPath": "G:\\IQTechSolutions\\Modules\\Filing\\Filing.Base\\obj\\",
+        "projectPath": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Filing\\Filing.Base\\Filing.Base.csproj",
+        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Filing\\Filing.Base\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\"
-        ],
         "configFilePaths": [
-          "C:\\Users\\ivanr\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netstandard2.1"
@@ -630,8 +1022,8 @@
           "netstandard2.1": {
             "targetAlias": "netstandard2.1",
             "projectReferences": {
-              "G:\\IQTechSolutions\\IqtFramework\\Iqt.Base\\Iqt.Base.csproj": {
-                "projectPath": "G:\\IQTechSolutions\\IqtFramework\\Iqt.Base\\Iqt.Base.csproj"
+              "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\IqtFramework\\Iqt.Base\\Iqt.Base.csproj": {
+                "projectPath": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\IqtFramework\\Iqt.Base\\Iqt.Base.csproj"
               }
             }
           }
@@ -666,26 +1058,22 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.103\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.202\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "G:\\IQTechSolutions\\Modules\\Filing\\Filing.Core\\Filing.Core.csproj": {
+    "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Filing\\Filing.Core\\Filing.Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "G:\\IQTechSolutions\\Modules\\Filing\\Filing.Core\\Filing.Core.csproj",
+        "projectUniqueName": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Filing\\Filing.Core\\Filing.Core.csproj",
         "projectName": "Filing.Core",
-        "projectPath": "G:\\IQTechSolutions\\Modules\\Filing\\Filing.Core\\Filing.Core.csproj",
-        "packagesPath": "C:\\Users\\ivanr\\.nuget\\packages\\",
-        "outputPath": "G:\\IQTechSolutions\\Modules\\Filing\\Filing.Core\\obj\\",
+        "projectPath": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Filing\\Filing.Core\\Filing.Core.csproj",
+        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Filing\\Filing.Core\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\"
-        ],
         "configFilePaths": [
-          "C:\\Users\\ivanr\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
@@ -698,8 +1086,8 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "G:\\IQTechSolutions\\Modules\\Filing\\Filing.Base\\Filing.Base.csproj": {
-                "projectPath": "G:\\IQTechSolutions\\Modules\\Filing\\Filing.Base\\Filing.Base.csproj"
+              "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Filing\\Filing.Base\\Filing.Base.csproj": {
+                "projectPath": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Filing\\Filing.Base\\Filing.Base.csproj"
               }
             }
           }
@@ -734,26 +1122,22 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.103\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.202\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "G:\\IQTechSolutions\\Modules\\Grouping\\Grouping.Base\\Grouping.Base.csproj": {
+    "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Grouping\\Grouping.Base\\Grouping.Base.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "G:\\IQTechSolutions\\Modules\\Grouping\\Grouping.Base\\Grouping.Base.csproj",
+        "projectUniqueName": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Grouping\\Grouping.Base\\Grouping.Base.csproj",
         "projectName": "Grouping.Base",
-        "projectPath": "G:\\IQTechSolutions\\Modules\\Grouping\\Grouping.Base\\Grouping.Base.csproj",
-        "packagesPath": "C:\\Users\\ivanr\\.nuget\\packages\\",
-        "outputPath": "G:\\IQTechSolutions\\Modules\\Grouping\\Grouping.Base\\obj\\",
+        "projectPath": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Grouping\\Grouping.Base\\Grouping.Base.csproj",
+        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Grouping\\Grouping.Base\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\"
-        ],
         "configFilePaths": [
-          "C:\\Users\\ivanr\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netstandard2.1"
@@ -766,8 +1150,8 @@
           "netstandard2.1": {
             "targetAlias": "netstandard2.1",
             "projectReferences": {
-              "G:\\IQTechSolutions\\Modules\\Filing\\Filing.Base\\Filing.Base.csproj": {
-                "projectPath": "G:\\IQTechSolutions\\Modules\\Filing\\Filing.Base\\Filing.Base.csproj"
+              "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Filing\\Filing.Base\\Filing.Base.csproj": {
+                "projectPath": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Filing\\Filing.Base\\Filing.Base.csproj"
               }
             }
           }
@@ -802,26 +1186,22 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.103\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.202\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "G:\\IQTechSolutions\\Modules\\Grouping\\Grouping.Core\\Grouping.Core.csproj": {
+    "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Grouping\\Grouping.Core\\Grouping.Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "G:\\IQTechSolutions\\Modules\\Grouping\\Grouping.Core\\Grouping.Core.csproj",
+        "projectUniqueName": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Grouping\\Grouping.Core\\Grouping.Core.csproj",
         "projectName": "Grouping.Core",
-        "projectPath": "G:\\IQTechSolutions\\Modules\\Grouping\\Grouping.Core\\Grouping.Core.csproj",
-        "packagesPath": "C:\\Users\\ivanr\\.nuget\\packages\\",
-        "outputPath": "G:\\IQTechSolutions\\Modules\\Grouping\\Grouping.Core\\obj\\",
+        "projectPath": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Grouping\\Grouping.Core\\Grouping.Core.csproj",
+        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Grouping\\Grouping.Core\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\"
-        ],
         "configFilePaths": [
-          "C:\\Users\\ivanr\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
@@ -834,14 +1214,14 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "G:\\IQTechSolutions\\IqtFramework\\Iqt.Base\\Iqt.Base.csproj": {
-                "projectPath": "G:\\IQTechSolutions\\IqtFramework\\Iqt.Base\\Iqt.Base.csproj"
+              "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\IqtFramework\\Iqt.Base\\Iqt.Base.csproj": {
+                "projectPath": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\IqtFramework\\Iqt.Base\\Iqt.Base.csproj"
               },
-              "G:\\IQTechSolutions\\Modules\\Filing\\Filing.Core\\Filing.Core.csproj": {
-                "projectPath": "G:\\IQTechSolutions\\Modules\\Filing\\Filing.Core\\Filing.Core.csproj"
+              "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Filing\\Filing.Core\\Filing.Core.csproj": {
+                "projectPath": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Filing\\Filing.Core\\Filing.Core.csproj"
               },
-              "G:\\IQTechSolutions\\Modules\\Grouping\\Grouping.Base\\Grouping.Base.csproj": {
-                "projectPath": "G:\\IQTechSolutions\\Modules\\Grouping\\Grouping.Base\\Grouping.Base.csproj"
+              "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Grouping\\Grouping.Base\\Grouping.Base.csproj": {
+                "projectPath": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Grouping\\Grouping.Base\\Grouping.Base.csproj"
               }
             }
           }
@@ -876,26 +1256,22 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.103\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.202\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "G:\\IQTechSolutions\\Modules\\Identity\\Identity.Base\\Identity.Base.csproj": {
+    "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Identity\\Identity.Base\\Identity.Base.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "G:\\IQTechSolutions\\Modules\\Identity\\Identity.Base\\Identity.Base.csproj",
+        "projectUniqueName": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Identity\\Identity.Base\\Identity.Base.csproj",
         "projectName": "Identity.Base",
-        "projectPath": "G:\\IQTechSolutions\\Modules\\Identity\\Identity.Base\\Identity.Base.csproj",
-        "packagesPath": "C:\\Users\\ivanr\\.nuget\\packages\\",
-        "outputPath": "G:\\IQTechSolutions\\Modules\\Identity\\Identity.Base\\obj\\",
+        "projectPath": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Identity\\Identity.Base\\Identity.Base.csproj",
+        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Identity\\Identity.Base\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\"
-        ],
         "configFilePaths": [
-          "C:\\Users\\ivanr\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netstandard2.1"
@@ -908,8 +1284,8 @@
           "netstandard2.1": {
             "targetAlias": "netstandard2.1",
             "projectReferences": {
-              "G:\\IQTechSolutions\\Modules\\Filing\\Filing.Base\\Filing.Base.csproj": {
-                "projectPath": "G:\\IQTechSolutions\\Modules\\Filing\\Filing.Base\\Filing.Base.csproj"
+              "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Filing\\Filing.Base\\Filing.Base.csproj": {
+                "projectPath": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Filing\\Filing.Base\\Filing.Base.csproj"
               }
             }
           }
@@ -948,10 +1324,11 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.103\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.202\\RuntimeIdentifierGraph.json"
         }
       }
     },
+<<<<<<< Updated upstream:Projects/IQTechSolutions/IQTechSolutions.Web/IQTechSolutions.Web.Api/obj/IQTechSolutions.Web.Api.csproj.nuget.dgspec.json
     "G:\\IQTechSolutions\\Modules\\InventoryManagement\\InventoryManagement.Base\\InventoryManagement.Base.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -960,14 +1337,20 @@
         "projectPath": "G:\\IQTechSolutions\\Modules\\InventoryManagement\\InventoryManagement.Base\\InventoryManagement.Base.csproj",
         "packagesPath": "C:\\Users\\ivanr\\.nuget\\packages\\",
         "outputPath": "G:\\IQTechSolutions\\Modules\\InventoryManagement\\InventoryManagement.Base\\obj\\",
+=======
+    "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Mailing\\Mailing.Base\\Mailing.Base.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Mailing\\Mailing.Base\\Mailing.Base.csproj",
+        "projectName": "Mailing.Base",
+        "projectPath": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Mailing\\Mailing.Base\\Mailing.Base.csproj",
+        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Mailing\\Mailing.Base\\obj\\",
+>>>>>>> Stashed changes:Projects/EnviroMetsi/Metsi.Web/Metsi.Web.Api/obj/Metsi.Web.Api.csproj.nuget.dgspec.json
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\"
-        ],
         "configFilePaths": [
-          "C:\\Users\\ivanr\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netstandard2.1"
@@ -980,6 +1363,7 @@
           "netstandard2.1": {
             "targetAlias": "netstandard2.1",
             "projectReferences": {
+<<<<<<< Updated upstream:Projects/IQTechSolutions/IQTechSolutions.Web/IQTechSolutions.Web.Api/obj/IQTechSolutions.Web.Api.csproj.nuget.dgspec.json
               "G:\\IQTechSolutions\\IqtFramework\\Iqt.Base\\Iqt.Base.csproj": {
                 "projectPath": "G:\\IQTechSolutions\\IqtFramework\\Iqt.Base\\Iqt.Base.csproj"
               },
@@ -988,6 +1372,10 @@
               },
               "G:\\IQTechSolutions\\Modules\\Suppliers\\Suppliers.Base\\Suppliers.Base.csproj": {
                 "projectPath": "G:\\IQTechSolutions\\Modules\\Suppliers\\Suppliers.Base\\Suppliers.Base.csproj"
+=======
+              "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\IqtFramework\\Iqt.Base\\Iqt.Base.csproj": {
+                "projectPath": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\IqtFramework\\Iqt.Base\\Iqt.Base.csproj"
+>>>>>>> Stashed changes:Projects/EnviroMetsi/Metsi.Web/Metsi.Web.Api/obj/Metsi.Web.Api.csproj.nuget.dgspec.json
               }
             }
           }
@@ -1022,10 +1410,11 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.103\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.202\\RuntimeIdentifierGraph.json"
         }
       }
     },
+<<<<<<< Updated upstream:Projects/IQTechSolutions/IQTechSolutions.Web/IQTechSolutions.Web.Api/obj/IQTechSolutions.Web.Api.csproj.nuget.dgspec.json
     "G:\\IQTechSolutions\\Modules\\InventoryManagement\\InventoryManagement.Core\\InventoryManagement.Core.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -1034,14 +1423,20 @@
         "projectPath": "G:\\IQTechSolutions\\Modules\\InventoryManagement\\InventoryManagement.Core\\InventoryManagement.Core.csproj",
         "packagesPath": "C:\\Users\\ivanr\\.nuget\\packages\\",
         "outputPath": "G:\\IQTechSolutions\\Modules\\InventoryManagement\\InventoryManagement.Core\\obj\\",
+=======
+    "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Messaging\\Messaging.Base\\Messaging.Base.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Messaging\\Messaging.Base\\Messaging.Base.csproj",
+        "projectName": "Messaging.Base",
+        "projectPath": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Messaging\\Messaging.Base\\Messaging.Base.csproj",
+        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Messaging\\Messaging.Base\\obj\\",
+>>>>>>> Stashed changes:Projects/EnviroMetsi/Metsi.Web/Metsi.Web.Api/obj/Metsi.Web.Api.csproj.nuget.dgspec.json
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\"
-        ],
         "configFilePaths": [
-          "C:\\Users\\ivanr\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
@@ -1054,8 +1449,13 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
+<<<<<<< Updated upstream:Projects/IQTechSolutions/IQTechSolutions.Web/IQTechSolutions.Web.Api/obj/IQTechSolutions.Web.Api.csproj.nuget.dgspec.json
               "G:\\IQTechSolutions\\Modules\\InventoryManagement\\InventoryManagement.Base\\InventoryManagement.Base.csproj": {
                 "projectPath": "G:\\IQTechSolutions\\Modules\\InventoryManagement\\InventoryManagement.Base\\InventoryManagement.Base.csproj"
+=======
+              "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Identity\\Identity.Base\\Identity.Base.csproj": {
+                "projectPath": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Identity\\Identity.Base\\Identity.Base.csproj"
+>>>>>>> Stashed changes:Projects/EnviroMetsi/Metsi.Web/Metsi.Web.Api/obj/Metsi.Web.Api.csproj.nuget.dgspec.json
               }
             }
           }
@@ -1084,10 +1484,11 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.103\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.202\\RuntimeIdentifierGraph.json"
         }
       }
     },
+<<<<<<< Updated upstream:Projects/IQTechSolutions/IQTechSolutions.Web/IQTechSolutions.Web.Api/obj/IQTechSolutions.Web.Api.csproj.nuget.dgspec.json
     "G:\\IQTechSolutions\\Modules\\Mailing\\Mailing.Base\\Mailing.Base.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -1096,14 +1497,20 @@
         "projectPath": "G:\\IQTechSolutions\\Modules\\Mailing\\Mailing.Base\\Mailing.Base.csproj",
         "packagesPath": "C:\\Users\\ivanr\\.nuget\\packages\\",
         "outputPath": "G:\\IQTechSolutions\\Modules\\Mailing\\Mailing.Base\\obj\\",
+=======
+    "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Messaging\\Messaging.Core\\Messaging.Core.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Messaging\\Messaging.Core\\Messaging.Core.csproj",
+        "projectName": "Messaging.Core",
+        "projectPath": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Messaging\\Messaging.Core\\Messaging.Core.csproj",
+        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Messaging\\Messaging.Core\\obj\\",
+>>>>>>> Stashed changes:Projects/EnviroMetsi/Metsi.Web/Metsi.Web.Api/obj/Metsi.Web.Api.csproj.nuget.dgspec.json
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\"
-        ],
         "configFilePaths": [
-          "C:\\Users\\ivanr\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netstandard2.1"
@@ -1116,8 +1523,13 @@
           "netstandard2.1": {
             "targetAlias": "netstandard2.1",
             "projectReferences": {
+<<<<<<< Updated upstream:Projects/IQTechSolutions/IQTechSolutions.Web/IQTechSolutions.Web.Api/obj/IQTechSolutions.Web.Api.csproj.nuget.dgspec.json
               "G:\\IQTechSolutions\\IqtFramework\\Iqt.Base\\Iqt.Base.csproj": {
                 "projectPath": "G:\\IQTechSolutions\\IqtFramework\\Iqt.Base\\Iqt.Base.csproj"
+=======
+              "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Messaging\\Messaging.Base\\Messaging.Base.csproj": {
+                "projectPath": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Messaging\\Messaging.Base\\Messaging.Base.csproj"
+>>>>>>> Stashed changes:Projects/EnviroMetsi/Metsi.Web/Metsi.Web.Api/obj/Metsi.Web.Api.csproj.nuget.dgspec.json
               }
             }
           }
@@ -1146,10 +1558,11 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.103\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.202\\RuntimeIdentifierGraph.json"
         }
       }
     },
+<<<<<<< Updated upstream:Projects/IQTechSolutions/IQTechSolutions.Web/IQTechSolutions.Web.Api/obj/IQTechSolutions.Web.Api.csproj.nuget.dgspec.json
     "G:\\IQTechSolutions\\Modules\\Products\\Products.Base\\Products.Base.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -1158,14 +1571,20 @@
         "projectPath": "G:\\IQTechSolutions\\Modules\\Products\\Products.Base\\Products.Base.csproj",
         "packagesPath": "C:\\Users\\ivanr\\.nuget\\packages\\",
         "outputPath": "G:\\IQTechSolutions\\Modules\\Products\\Products.Base\\obj\\",
+=======
+    "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Projects\\Projects.Base\\Projects.Base.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Projects\\Projects.Base\\Projects.Base.csproj",
+        "projectName": "Projects.Base",
+        "projectPath": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Projects\\Projects.Base\\Projects.Base.csproj",
+        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Projects\\Projects.Base\\obj\\",
+>>>>>>> Stashed changes:Projects/EnviroMetsi/Metsi.Web/Metsi.Web.Api/obj/Metsi.Web.Api.csproj.nuget.dgspec.json
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\"
-        ],
         "configFilePaths": [
-          "C:\\Users\\ivanr\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netstandard2.1"
@@ -1178,6 +1597,7 @@
           "netstandard2.1": {
             "targetAlias": "netstandard2.1",
             "projectReferences": {
+<<<<<<< Updated upstream:Projects/IQTechSolutions/IQTechSolutions.Web/IQTechSolutions.Web.Api/obj/IQTechSolutions.Web.Api.csproj.nuget.dgspec.json
               "G:\\IQTechSolutions\\IqtFramework\\Iqt.Web\\Iqt.Web.csproj": {
                 "projectPath": "G:\\IQTechSolutions\\IqtFramework\\Iqt.Web\\Iqt.Web.csproj"
               },
@@ -1186,9 +1606,13 @@
               },
               "G:\\IQTechSolutions\\Modules\\Filing\\Filing.Base\\Filing.Base.csproj": {
                 "projectPath": "G:\\IQTechSolutions\\Modules\\Filing\\Filing.Base\\Filing.Base.csproj"
+=======
+              "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Filing\\Filing.Base\\Filing.Base.csproj": {
+                "projectPath": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Filing\\Filing.Base\\Filing.Base.csproj"
+>>>>>>> Stashed changes:Projects/EnviroMetsi/Metsi.Web/Metsi.Web.Api/obj/Metsi.Web.Api.csproj.nuget.dgspec.json
               },
-              "G:\\IQTechSolutions\\Modules\\Grouping\\Grouping.Base\\Grouping.Base.csproj": {
-                "projectPath": "G:\\IQTechSolutions\\Modules\\Grouping\\Grouping.Base\\Grouping.Base.csproj"
+              "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Grouping\\Grouping.Base\\Grouping.Base.csproj": {
+                "projectPath": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Grouping\\Grouping.Base\\Grouping.Base.csproj"
               }
             }
           }
@@ -1217,10 +1641,11 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.103\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.202\\RuntimeIdentifierGraph.json"
         }
       }
     },
+<<<<<<< Updated upstream:Projects/IQTechSolutions/IQTechSolutions.Web/IQTechSolutions.Web.Api/obj/IQTechSolutions.Web.Api.csproj.nuget.dgspec.json
     "G:\\IQTechSolutions\\Modules\\Products\\Products.Core\\Products.Core.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -1229,14 +1654,20 @@
         "projectPath": "G:\\IQTechSolutions\\Modules\\Products\\Products.Core\\Products.Core.csproj",
         "packagesPath": "C:\\Users\\ivanr\\.nuget\\packages\\",
         "outputPath": "G:\\IQTechSolutions\\Modules\\Products\\Products.Core\\obj\\",
+=======
+    "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Projects\\Projects.Core\\Projects.Core.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Projects\\Projects.Core\\Projects.Core.csproj",
+        "projectName": "Projects.Core",
+        "projectPath": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Projects\\Projects.Core\\Projects.Core.csproj",
+        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Projects\\Projects.Core\\obj\\",
+>>>>>>> Stashed changes:Projects/EnviroMetsi/Metsi.Web/Metsi.Web.Api/obj/Metsi.Web.Api.csproj.nuget.dgspec.json
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\"
-        ],
         "configFilePaths": [
-          "C:\\Users\\ivanr\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
@@ -1249,17 +1680,33 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
+<<<<<<< Updated upstream:Projects/IQTechSolutions/IQTechSolutions.Web/IQTechSolutions.Web.Api/obj/IQTechSolutions.Web.Api.csproj.nuget.dgspec.json
               "G:\\IQTechSolutions\\IqtFramework\\Iqt.Base\\Iqt.Base.csproj": {
                 "projectPath": "G:\\IQTechSolutions\\IqtFramework\\Iqt.Base\\Iqt.Base.csproj"
               },
               "G:\\IQTechSolutions\\Modules\\Grouping\\Grouping.Base\\Grouping.Base.csproj": {
                 "projectPath": "G:\\IQTechSolutions\\Modules\\Grouping\\Grouping.Base\\Grouping.Base.csproj"
+=======
+              "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Calendar\\Calendar.Base\\Calendar.Base.csproj": {
+                "projectPath": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Calendar\\Calendar.Base\\Calendar.Base.csproj"
               },
-              "G:\\IQTechSolutions\\Modules\\Grouping\\Grouping.Core\\Grouping.Core.csproj": {
-                "projectPath": "G:\\IQTechSolutions\\Modules\\Grouping\\Grouping.Core\\Grouping.Core.csproj"
+              "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Calendar\\Calendar.Core\\Calendar.Core.csproj": {
+                "projectPath": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Calendar\\Calendar.Core\\Calendar.Core.csproj"
               },
+              "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Filing\\Filing.Core\\Filing.Core.csproj": {
+                "projectPath": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Filing\\Filing.Core\\Filing.Core.csproj"
+>>>>>>> Stashed changes:Projects/EnviroMetsi/Metsi.Web/Metsi.Web.Api/obj/Metsi.Web.Api.csproj.nuget.dgspec.json
+              },
+              "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Grouping\\Grouping.Core\\Grouping.Core.csproj": {
+                "projectPath": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Grouping\\Grouping.Core\\Grouping.Core.csproj"
+              },
+<<<<<<< Updated upstream:Projects/IQTechSolutions/IQTechSolutions.Web/IQTechSolutions.Web.Api/obj/IQTechSolutions.Web.Api.csproj.nuget.dgspec.json
               "G:\\IQTechSolutions\\Modules\\Products\\Products.Base\\Products.Base.csproj": {
                 "projectPath": "G:\\IQTechSolutions\\Modules\\Products\\Products.Base\\Products.Base.csproj"
+=======
+              "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Projects\\Projects.Base\\Projects.Base.csproj": {
+                "projectPath": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Projects\\Projects.Base\\Projects.Base.csproj"
+>>>>>>> Stashed changes:Projects/EnviroMetsi/Metsi.Web/Metsi.Web.Api/obj/Metsi.Web.Api.csproj.nuget.dgspec.json
               }
             }
           }
@@ -1294,10 +1741,11 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.103\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.202\\RuntimeIdentifierGraph.json"
         }
       }
     },
+<<<<<<< Updated upstream:Projects/IQTechSolutions/IQTechSolutions.Web/IQTechSolutions.Web.Api/obj/IQTechSolutions.Web.Api.csproj.nuget.dgspec.json
     "G:\\IQTechSolutions\\Modules\\Projects\\Projects.Base\\Projects.Base.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -1306,14 +1754,20 @@
         "projectPath": "G:\\IQTechSolutions\\Modules\\Projects\\Projects.Base\\Projects.Base.csproj",
         "packagesPath": "C:\\Users\\ivanr\\.nuget\\packages\\",
         "outputPath": "G:\\IQTechSolutions\\Modules\\Projects\\Projects.Base\\obj\\",
+=======
+    "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Services\\Services.Base\\Services.Base.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Services\\Services.Base\\Services.Base.csproj",
+        "projectName": "Services.Base",
+        "projectPath": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Services\\Services.Base\\Services.Base.csproj",
+        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Services\\Services.Base\\obj\\",
+>>>>>>> Stashed changes:Projects/EnviroMetsi/Metsi.Web/Metsi.Web.Api/obj/Metsi.Web.Api.csproj.nuget.dgspec.json
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\"
-        ],
         "configFilePaths": [
-          "C:\\Users\\ivanr\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netstandard2.1"
@@ -1326,11 +1780,22 @@
           "netstandard2.1": {
             "targetAlias": "netstandard2.1",
             "projectReferences": {
+<<<<<<< Updated upstream:Projects/IQTechSolutions/IQTechSolutions.Web/IQTechSolutions.Web.Api/obj/IQTechSolutions.Web.Api.csproj.nuget.dgspec.json
               "G:\\IQTechSolutions\\Modules\\Filing\\Filing.Base\\Filing.Base.csproj": {
                 "projectPath": "G:\\IQTechSolutions\\Modules\\Filing\\Filing.Base\\Filing.Base.csproj"
+=======
+              "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Calendar\\Calendar.Base\\Calendar.Base.csproj": {
+                "projectPath": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Calendar\\Calendar.Base\\Calendar.Base.csproj"
               },
-              "G:\\IQTechSolutions\\Modules\\Grouping\\Grouping.Base\\Grouping.Base.csproj": {
-                "projectPath": "G:\\IQTechSolutions\\Modules\\Grouping\\Grouping.Base\\Grouping.Base.csproj"
+              "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Feedback\\Feedback.Base\\Feedback.Base.csproj": {
+                "projectPath": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Feedback\\Feedback.Base\\Feedback.Base.csproj"
+              },
+              "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Filing\\Filing.Base\\Filing.Base.csproj": {
+                "projectPath": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Filing\\Filing.Base\\Filing.Base.csproj"
+>>>>>>> Stashed changes:Projects/EnviroMetsi/Metsi.Web/Metsi.Web.Api/obj/Metsi.Web.Api.csproj.nuget.dgspec.json
+              },
+              "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Grouping\\Grouping.Base\\Grouping.Base.csproj": {
+                "projectPath": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Grouping\\Grouping.Base\\Grouping.Base.csproj"
               }
             }
           }
@@ -1359,10 +1824,11 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.103\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.202\\RuntimeIdentifierGraph.json"
         }
       }
     },
+<<<<<<< Updated upstream:Projects/IQTechSolutions/IQTechSolutions.Web/IQTechSolutions.Web.Api/obj/IQTechSolutions.Web.Api.csproj.nuget.dgspec.json
     "G:\\IQTechSolutions\\Modules\\Projects\\Projects.Core\\Projects.Core.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -1371,14 +1837,20 @@
         "projectPath": "G:\\IQTechSolutions\\Modules\\Projects\\Projects.Core\\Projects.Core.csproj",
         "packagesPath": "C:\\Users\\ivanr\\.nuget\\packages\\",
         "outputPath": "G:\\IQTechSolutions\\Modules\\Projects\\Projects.Core\\obj\\",
+=======
+    "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Services\\Services.Core\\Services.Core.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Services\\Services.Core\\Services.Core.csproj",
+        "projectName": "Services.Core",
+        "projectPath": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Services\\Services.Core\\Services.Core.csproj",
+        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Services\\Services.Core\\obj\\",
+>>>>>>> Stashed changes:Projects/EnviroMetsi/Metsi.Web/Metsi.Web.Api/obj/Metsi.Web.Api.csproj.nuget.dgspec.json
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\"
-        ],
         "configFilePaths": [
-          "C:\\Users\\ivanr\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
@@ -1391,20 +1863,30 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
+<<<<<<< Updated upstream:Projects/IQTechSolutions/IQTechSolutions.Web/IQTechSolutions.Web.Api/obj/IQTechSolutions.Web.Api.csproj.nuget.dgspec.json
               "G:\\IQTechSolutions\\Modules\\Calendar\\Calendar.Base\\Calendar.Base.csproj": {
                 "projectPath": "G:\\IQTechSolutions\\Modules\\Calendar\\Calendar.Base\\Calendar.Base.csproj"
               },
               "G:\\IQTechSolutions\\Modules\\Calendar\\Calendar.Core\\Calendar.Core.csproj": {
                 "projectPath": "G:\\IQTechSolutions\\Modules\\Calendar\\Calendar.Core\\Calendar.Core.csproj"
+=======
+              "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Feedback\\Feedback.Base\\Feedback.Base.csproj": {
+                "projectPath": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Feedback\\Feedback.Base\\Feedback.Base.csproj"
+>>>>>>> Stashed changes:Projects/EnviroMetsi/Metsi.Web/Metsi.Web.Api/obj/Metsi.Web.Api.csproj.nuget.dgspec.json
               },
-              "G:\\IQTechSolutions\\Modules\\Filing\\Filing.Core\\Filing.Core.csproj": {
-                "projectPath": "G:\\IQTechSolutions\\Modules\\Filing\\Filing.Core\\Filing.Core.csproj"
+              "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Filing\\Filing.Core\\Filing.Core.csproj": {
+                "projectPath": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Filing\\Filing.Core\\Filing.Core.csproj"
               },
+<<<<<<< Updated upstream:Projects/IQTechSolutions/IQTechSolutions.Web/IQTechSolutions.Web.Api/obj/IQTechSolutions.Web.Api.csproj.nuget.dgspec.json
               "G:\\IQTechSolutions\\Modules\\Grouping\\Grouping.Core\\Grouping.Core.csproj": {
                 "projectPath": "G:\\IQTechSolutions\\Modules\\Grouping\\Grouping.Core\\Grouping.Core.csproj"
               },
               "G:\\IQTechSolutions\\Modules\\Projects\\Projects.Base\\Projects.Base.csproj": {
                 "projectPath": "G:\\IQTechSolutions\\Modules\\Projects\\Projects.Base\\Projects.Base.csproj"
+=======
+              "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Services\\Services.Base\\Services.Base.csproj": {
+                "projectPath": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Services\\Services.Base\\Services.Base.csproj"
+>>>>>>> Stashed changes:Projects/EnviroMetsi/Metsi.Web/Metsi.Web.Api/obj/Metsi.Web.Api.csproj.nuget.dgspec.json
               }
             }
           }
@@ -1439,10 +1921,11 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.103\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.202\\RuntimeIdentifierGraph.json"
         }
       }
     },
+<<<<<<< Updated upstream:Projects/IQTechSolutions/IQTechSolutions.Web/IQTechSolutions.Web.Api/obj/IQTechSolutions.Web.Api.csproj.nuget.dgspec.json
     "G:\\IQTechSolutions\\Modules\\Suppliers\\Suppliers.Base\\Suppliers.Base.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -1451,14 +1934,20 @@
         "projectPath": "G:\\IQTechSolutions\\Modules\\Suppliers\\Suppliers.Base\\Suppliers.Base.csproj",
         "packagesPath": "C:\\Users\\ivanr\\.nuget\\packages\\",
         "outputPath": "G:\\IQTechSolutions\\Modules\\Suppliers\\Suppliers.Base\\obj\\",
+=======
+    "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Troubleshooting\\Troubleshooting.Base\\Troubleshooting.Base.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Troubleshooting\\Troubleshooting.Base\\Troubleshooting.Base.csproj",
+        "projectName": "Troubleshooting.Base",
+        "projectPath": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Troubleshooting\\Troubleshooting.Base\\Troubleshooting.Base.csproj",
+        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Troubleshooting\\Troubleshooting.Base\\obj\\",
+>>>>>>> Stashed changes:Projects/EnviroMetsi/Metsi.Web/Metsi.Web.Api/obj/Metsi.Web.Api.csproj.nuget.dgspec.json
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\"
-        ],
         "configFilePaths": [
-          "C:\\Users\\ivanr\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netstandard2.1"
@@ -1471,11 +1960,19 @@
           "netstandard2.1": {
             "targetAlias": "netstandard2.1",
             "projectReferences": {
+<<<<<<< Updated upstream:Projects/IQTechSolutions/IQTechSolutions.Web/IQTechSolutions.Web.Api/obj/IQTechSolutions.Web.Api.csproj.nuget.dgspec.json
               "G:\\IQTechSolutions\\IqtFramework\\Iqt.Base\\Iqt.Base.csproj": {
                 "projectPath": "G:\\IQTechSolutions\\IqtFramework\\Iqt.Base\\Iqt.Base.csproj"
               },
               "G:\\IQTechSolutions\\Modules\\Filing\\Filing.Base\\Filing.Base.csproj": {
                 "projectPath": "G:\\IQTechSolutions\\Modules\\Filing\\Filing.Base\\Filing.Base.csproj"
+=======
+              "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Filing\\Filing.Base\\Filing.Base.csproj": {
+                "projectPath": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Filing\\Filing.Base\\Filing.Base.csproj"
+              },
+              "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Grouping\\Grouping.Base\\Grouping.Base.csproj": {
+                "projectPath": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Grouping\\Grouping.Base\\Grouping.Base.csproj"
+>>>>>>> Stashed changes:Projects/EnviroMetsi/Metsi.Web/Metsi.Web.Api/obj/Metsi.Web.Api.csproj.nuget.dgspec.json
               }
             }
           }
@@ -1504,10 +2001,11 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.103\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.202\\RuntimeIdentifierGraph.json"
         }
       }
     },
+<<<<<<< Updated upstream:Projects/IQTechSolutions/IQTechSolutions.Web/IQTechSolutions.Web.Api/obj/IQTechSolutions.Web.Api.csproj.nuget.dgspec.json
     "G:\\IQTechSolutions\\Modules\\Suppliers\\Suppliers.Core\\Suppliers.Core.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -1516,14 +2014,20 @@
         "projectPath": "G:\\IQTechSolutions\\Modules\\Suppliers\\Suppliers.Core\\Suppliers.Core.csproj",
         "packagesPath": "C:\\Users\\ivanr\\.nuget\\packages\\",
         "outputPath": "G:\\IQTechSolutions\\Modules\\Suppliers\\Suppliers.Core\\obj\\",
+=======
+    "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Troubleshooting\\Troubleshooting.Core\\Troubleshooting.Core.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Troubleshooting\\Troubleshooting.Core\\Troubleshooting.Core.csproj",
+        "projectName": "Troubleshooting.Core",
+        "projectPath": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Troubleshooting\\Troubleshooting.Core\\Troubleshooting.Core.csproj",
+        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Troubleshooting\\Troubleshooting.Core\\obj\\",
+>>>>>>> Stashed changes:Projects/EnviroMetsi/Metsi.Web/Metsi.Web.Api/obj/Metsi.Web.Api.csproj.nuget.dgspec.json
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\"
-        ],
         "configFilePaths": [
-          "C:\\Users\\ivanr\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
@@ -1536,11 +2040,19 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
+<<<<<<< Updated upstream:Projects/IQTechSolutions/IQTechSolutions.Web/IQTechSolutions.Web.Api/obj/IQTechSolutions.Web.Api.csproj.nuget.dgspec.json
               "G:\\IQTechSolutions\\Modules\\Filing\\Filing.Core\\Filing.Core.csproj": {
                 "projectPath": "G:\\IQTechSolutions\\Modules\\Filing\\Filing.Core\\Filing.Core.csproj"
               },
               "G:\\IQTechSolutions\\Modules\\Suppliers\\Suppliers.Base\\Suppliers.Base.csproj": {
                 "projectPath": "G:\\IQTechSolutions\\Modules\\Suppliers\\Suppliers.Base\\Suppliers.Base.csproj"
+=======
+              "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Grouping\\Grouping.Core\\Grouping.Core.csproj": {
+                "projectPath": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Grouping\\Grouping.Core\\Grouping.Core.csproj"
+              },
+              "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Troubleshooting\\Troubleshooting.Base\\Troubleshooting.Base.csproj": {
+                "projectPath": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Troubleshooting\\Troubleshooting.Base\\Troubleshooting.Base.csproj"
+>>>>>>> Stashed changes:Projects/EnviroMetsi/Metsi.Web/Metsi.Web.Api/obj/Metsi.Web.Api.csproj.nuget.dgspec.json
               }
             }
           }
@@ -1579,10 +2091,11 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.103\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.202\\RuntimeIdentifierGraph.json"
         }
       }
     },
+<<<<<<< Updated upstream:Projects/IQTechSolutions/IQTechSolutions.Web/IQTechSolutions.Web.Api/obj/IQTechSolutions.Web.Api.csproj.nuget.dgspec.json
     "G:\\IQTechSolutions\\Projects\\IQTechSolutions\\IQTechSolutions.Base\\IQTechSolutions\\IQTechSolutions.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -1591,14 +2104,19 @@
         "projectPath": "G:\\IQTechSolutions\\Projects\\IQTechSolutions\\IQTechSolutions.Base\\IQTechSolutions\\IQTechSolutions.csproj",
         "packagesPath": "C:\\Users\\ivanr\\.nuget\\packages\\",
         "outputPath": "G:\\IQTechSolutions\\Projects\\IQTechSolutions\\IQTechSolutions.Base\\IQTechSolutions\\obj\\",
+=======
+    "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Projects\\EnviroMetsi\\Metsi.Base\\Metsi.Web\\Metsi.Web.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Projects\\EnviroMetsi\\Metsi.Base\\Metsi.Web\\Metsi.Web.csproj",
+        "projectName": "Metsi.Web",
+        "projectPath": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Projects\\EnviroMetsi\\Metsi.Base\\Metsi.Web\\Metsi.Web.csproj",
+        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Projects\\EnviroMetsi\\Metsi.Base\\Metsi.Web\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\"
-        ],
         "configFilePaths": [
-          "C:\\Users\\ivanr\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netstandard2.1"
@@ -1611,8 +2129,11 @@
           "netstandard2.1": {
             "targetAlias": "netstandard2.1",
             "projectReferences": {
-              "G:\\IQTechSolutions\\IqtFramework\\Iqt.Base\\Iqt.Base.csproj": {
-                "projectPath": "G:\\IQTechSolutions\\IqtFramework\\Iqt.Base\\Iqt.Base.csproj"
+              "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\IqtFramework\\Iqt.Base\\Iqt.Base.csproj": {
+                "projectPath": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\IqtFramework\\Iqt.Base\\Iqt.Base.csproj"
+              },
+              "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Mailing\\Mailing.Base\\Mailing.Base.csproj": {
+                "projectPath": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Mailing\\Mailing.Base\\Mailing.Base.csproj"
               }
             }
           }
@@ -1641,10 +2162,70 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.103\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.202\\RuntimeIdentifierGraph.json"
         }
       }
     },
+    "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Projects\\EnviroMetsi\\Metsi.Base\\Metsi\\Metsi.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Projects\\EnviroMetsi\\Metsi.Base\\Metsi\\Metsi.csproj",
+        "projectName": "Metsi",
+        "projectPath": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Projects\\EnviroMetsi\\Metsi.Base\\Metsi\\Metsi.csproj",
+        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Projects\\EnviroMetsi\\Metsi.Base\\Metsi\\obj\\",
+>>>>>>> Stashed changes:Projects/EnviroMetsi/Metsi.Web/Metsi.Web.Api/obj/Metsi.Web.Api.csproj.nuget.dgspec.json
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.1": {
+            "targetAlias": "netstandard2.1",
+            "projectReferences": {
+              "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\IqtFramework\\Iqt.Base\\Iqt.Base.csproj": {
+                "projectPath": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\IqtFramework\\Iqt.Base\\Iqt.Base.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.1": {
+          "targetAlias": "netstandard2.1",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "NETStandard.Library": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.202\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+<<<<<<< Updated upstream:Projects/IQTechSolutions/IQTechSolutions.Web/IQTechSolutions.Web.Api/obj/IQTechSolutions.Web.Api.csproj.nuget.dgspec.json
     "G:\\IQTechSolutions\\Projects\\IQTechSolutions\\IQTechSolutions.Web\\IQTechSolutions.DataStores\\IQTechSolutions.DataStores.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -1653,14 +2234,20 @@
         "projectPath": "G:\\IQTechSolutions\\Projects\\IQTechSolutions\\IQTechSolutions.Web\\IQTechSolutions.DataStores\\IQTechSolutions.DataStores.csproj",
         "packagesPath": "C:\\Users\\ivanr\\.nuget\\packages\\",
         "outputPath": "G:\\IQTechSolutions\\Projects\\IQTechSolutions\\IQTechSolutions.Web\\IQTechSolutions.DataStores\\obj\\",
+=======
+    "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Projects\\EnviroMetsi\\Metsi.Web\\Metsi.Web.Api\\Metsi.Web.Api.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Projects\\EnviroMetsi\\Metsi.Web\\Metsi.Web.Api\\Metsi.Web.Api.csproj",
+        "projectName": "Metsi.Web.Api",
+        "projectPath": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Projects\\EnviroMetsi\\Metsi.Web\\Metsi.Web.Api\\Metsi.Web.Api.csproj",
+        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Projects\\EnviroMetsi\\Metsi.Web\\Metsi.Web.Api\\obj\\",
+>>>>>>> Stashed changes:Projects/EnviroMetsi/Metsi.Web/Metsi.Web.Api/obj/Metsi.Web.Api.csproj.nuget.dgspec.json
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\"
-        ],
         "configFilePaths": [
-          "C:\\Users\\ivanr\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
@@ -1673,12 +2260,18 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
+<<<<<<< Updated upstream:Projects/IQTechSolutions/IQTechSolutions.Web/IQTechSolutions.Web.Api/obj/IQTechSolutions.Web.Api.csproj.nuget.dgspec.json
               "G:\\IQTechSolutions\\Modules\\Blogging\\Blogging.Core\\Blogging.Core.csproj": {
                 "projectPath": "G:\\IQTechSolutions\\Modules\\Blogging\\Blogging.Core\\Blogging.Core.csproj"
+=======
+              "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\IqtFramework\\Iqt.Base\\Iqt.Base.csproj": {
+                "projectPath": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\IqtFramework\\Iqt.Base\\Iqt.Base.csproj"
+>>>>>>> Stashed changes:Projects/EnviroMetsi/Metsi.Web/Metsi.Web.Api/obj/Metsi.Web.Api.csproj.nuget.dgspec.json
               },
-              "G:\\IQTechSolutions\\Modules\\Feedback\\Feedback.Core\\Feedback.Core.csproj": {
-                "projectPath": "G:\\IQTechSolutions\\Modules\\Feedback\\Feedback.Core\\Feedback.Core.csproj"
+              "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Feedback\\Feedback.Core\\Feedback.Core.csproj": {
+                "projectPath": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Feedback\\Feedback.Core\\Feedback.Core.csproj"
               },
+<<<<<<< Updated upstream:Projects/IQTechSolutions/IQTechSolutions.Web/IQTechSolutions.Web.Api/obj/IQTechSolutions.Web.Api.csproj.nuget.dgspec.json
               "G:\\IQTechSolutions\\Modules\\Filing\\Filing.Core\\Filing.Core.csproj": {
                 "projectPath": "G:\\IQTechSolutions\\Modules\\Filing\\Filing.Core\\Filing.Core.csproj"
               },
@@ -1693,6 +2286,25 @@
               },
               "G:\\IQTechSolutions\\Modules\\Suppliers\\Suppliers.Core\\Suppliers.Core.csproj": {
                 "projectPath": "G:\\IQTechSolutions\\Modules\\Suppliers\\Suppliers.Core\\Suppliers.Core.csproj"
+=======
+              "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Grouping\\Grouping.Base\\Grouping.Base.csproj": {
+                "projectPath": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Grouping\\Grouping.Base\\Grouping.Base.csproj"
+              },
+              "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Grouping\\Grouping.Core\\Grouping.Core.csproj": {
+                "projectPath": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Grouping\\Grouping.Core\\Grouping.Core.csproj"
+              },
+              "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Troubleshooting\\Troubleshooting.Base\\Troubleshooting.Base.csproj": {
+                "projectPath": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Troubleshooting\\Troubleshooting.Base\\Troubleshooting.Base.csproj"
+              },
+              "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Troubleshooting\\Troubleshooting.Core\\Troubleshooting.Core.csproj": {
+                "projectPath": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Troubleshooting\\Troubleshooting.Core\\Troubleshooting.Core.csproj"
+              },
+              "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Projects\\EnviroMetsi\\Metsi.Base\\Metsi\\Metsi.csproj": {
+                "projectPath": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Projects\\EnviroMetsi\\Metsi.Base\\Metsi\\Metsi.csproj"
+              },
+              "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Projects\\EnviroMetsi\\Metsi.Web\\Metsi.Web.Datastore\\Metsi.Web.Datastore.csproj": {
+                "projectPath": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Projects\\EnviroMetsi\\Metsi.Web\\Metsi.Web.Datastore\\Metsi.Web.Datastore.csproj"
+>>>>>>> Stashed changes:Projects/EnviroMetsi/Metsi.Web/Metsi.Web.Api/obj/Metsi.Web.Api.csproj.nuget.dgspec.json
               }
             }
           }
@@ -1740,10 +2352,11 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.103\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.202\\RuntimeIdentifierGraph.json"
         }
       }
     },
+<<<<<<< Updated upstream:Projects/IQTechSolutions/IQTechSolutions.Web/IQTechSolutions.Web.Api/obj/IQTechSolutions.Web.Api.csproj.nuget.dgspec.json
     "G:\\IQTechSolutions\\Projects\\IQTechSolutions\\IQTechSolutions.Web\\IQTechSolutions.Web.Api\\IQTechSolutions.Web.Api.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -1752,14 +2365,20 @@
         "projectPath": "G:\\IQTechSolutions\\Projects\\IQTechSolutions\\IQTechSolutions.Web\\IQTechSolutions.Web.Api\\IQTechSolutions.Web.Api.csproj",
         "packagesPath": "C:\\Users\\ivanr\\.nuget\\packages\\",
         "outputPath": "G:\\IQTechSolutions\\Projects\\IQTechSolutions\\IQTechSolutions.Web\\IQTechSolutions.Web.Api\\obj\\",
+=======
+    "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Projects\\EnviroMetsi\\Metsi.Web\\Metsi.Web.Datastore\\Metsi.Web.Datastore.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Projects\\EnviroMetsi\\Metsi.Web\\Metsi.Web.Datastore\\Metsi.Web.Datastore.csproj",
+        "projectName": "Metsi.Web.Datastore",
+        "projectPath": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Projects\\EnviroMetsi\\Metsi.Web\\Metsi.Web.Datastore\\Metsi.Web.Datastore.csproj",
+        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Projects\\EnviroMetsi\\Metsi.Web\\Metsi.Web.Datastore\\obj\\",
+>>>>>>> Stashed changes:Projects/EnviroMetsi/Metsi.Web/Metsi.Web.Api/obj/Metsi.Web.Api.csproj.nuget.dgspec.json
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\"
-        ],
         "configFilePaths": [
-          "C:\\Users\\ivanr\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
@@ -1772,9 +2391,10 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "G:\\IQTechSolutions\\Modules\\Blogging\\Blogging.Core\\Blogging.Core.csproj": {
-                "projectPath": "G:\\IQTechSolutions\\Modules\\Blogging\\Blogging.Core\\Blogging.Core.csproj"
+              "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Blogging\\Blogging.Core\\Blogging.Core.csproj": {
+                "projectPath": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Blogging\\Blogging.Core\\Blogging.Core.csproj"
               },
+<<<<<<< Updated upstream:Projects/IQTechSolutions/IQTechSolutions.Web/IQTechSolutions.Web.Api/obj/IQTechSolutions.Web.Api.csproj.nuget.dgspec.json
               "G:\\IQTechSolutions\\Modules\\Feedback\\Feedback.Core\\Feedback.Core.csproj": {
                 "projectPath": "G:\\IQTechSolutions\\Modules\\Feedback\\Feedback.Core\\Feedback.Core.csproj"
               },
@@ -1783,6 +2403,34 @@
               },
               "G:\\IQTechSolutions\\Projects\\IQTechSolutions\\IQTechSolutions.Web\\IQTechSolutions.DataStores\\IQTechSolutions.DataStores.csproj": {
                 "projectPath": "G:\\IQTechSolutions\\Projects\\IQTechSolutions\\IQTechSolutions.Web\\IQTechSolutions.DataStores\\IQTechSolutions.DataStores.csproj"
+=======
+              "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Customers\\Customers.Core\\Customers.Core.csproj": {
+                "projectPath": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Customers\\Customers.Core\\Customers.Core.csproj"
+              },
+              "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Education\\Education.Core\\Education.Core.csproj": {
+                "projectPath": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Education\\Education.Core\\Education.Core.csproj"
+              },
+              "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Employment\\Employment.Core\\Employment.Core.csproj": {
+                "projectPath": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Employment\\Employment.Core\\Employment.Core.csproj"
+              },
+              "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Feedback\\Feedback.Core\\Feedback.Core.csproj": {
+                "projectPath": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Feedback\\Feedback.Core\\Feedback.Core.csproj"
+              },
+              "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Identity\\Identity.Base\\Identity.Base.csproj": {
+                "projectPath": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Identity\\Identity.Base\\Identity.Base.csproj"
+              },
+              "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Messaging\\Messaging.Core\\Messaging.Core.csproj": {
+                "projectPath": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Messaging\\Messaging.Core\\Messaging.Core.csproj"
+              },
+              "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Projects\\Projects.Core\\Projects.Core.csproj": {
+                "projectPath": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Projects\\Projects.Core\\Projects.Core.csproj"
+              },
+              "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Services\\Services.Core\\Services.Core.csproj": {
+                "projectPath": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Services\\Services.Core\\Services.Core.csproj"
+              },
+              "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Troubleshooting\\Troubleshooting.Core\\Troubleshooting.Core.csproj": {
+                "projectPath": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Troubleshooting\\Troubleshooting.Core\\Troubleshooting.Core.csproj"
+>>>>>>> Stashed changes:Projects/EnviroMetsi/Metsi.Web/Metsi.Web.Api/obj/Metsi.Web.Api.csproj.nuget.dgspec.json
               }
             }
           }
@@ -1831,14 +2479,11 @@
           "assetTargetFallback": true,
           "warn": true,
           "frameworkReferences": {
-            "Microsoft.AspNetCore.App": {
-              "privateAssets": "none"
-            },
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.103\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.202\\RuntimeIdentifierGraph.json"
         }
       }
     }

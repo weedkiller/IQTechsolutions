@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit https://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA4sQNkQxOUEq2wXQZ6XLq1wAAAAACAAAAAAAQZgAAAAEAACAAAADHYbgn8XH4fdpFmqw5Eh221Y0mY1AYTuFt2kHOgq83yQAAAAAOgAAAAAIAACAAAABZd1RN9C71jcL9J0s8pUAM47/eJENZghNjuWPMbGDJUDAAAACcnFTuL69WQKP+evPc7GXyW5wwdvP+YEhao3bkHVFTv0Noacd92JWCrZ3XS9PNn0lAAAAAI79+LVMPwRyR+LE0ZcQWPg5mQ6LPg7v9bKve6fqSGPYIZgx4gO9IdzVLf9Wmb64WpZ15b//3x1VCw5E29+XZbQ==</EncryptedPassword>
+    <History>True|2021-05-20T12:13:10.0815506Z;False|2021-05-20T13:51:51.8364035+02:00;False|2021-05-20T10:45:44.1478625+02:00;False|2021-05-19T22:05:33.5496408+02:00;True|2021-05-19T12:51:23.9542422+02:00;True|2021-05-19T12:47:56.8614364+02:00;True|2021-05-19T12:47:21.2016503+02:00;True|2021-05-19T12:46:31.1875032+02:00;True|2021-05-19T12:29:43.3878779+02:00;True|2021-05-19T12:09:47.5643592+02:00;True|2021-05-19T11:45:55.3636834+02:00;True|2021-05-19T11:06:28.0076277+02:00;True|2021-05-19T11:04:41.0887766+02:00;</History>
+  </PropertyGroup>
+  <ItemGroup>
+    <DestinationConnectionStrings Include="DefaultConnection">
+      <Value>Server=129.232.205.3%3bDatabase=DuplesisLegal%3bUser ID=sa%3bPassword=Is19790419!%3bMultipleActiveResultSets=true</Value>
+    </DestinationConnectionStrings>
+  </ItemGroup>
+</Project>

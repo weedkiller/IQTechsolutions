@@ -1,0 +1,12 @@
+C:\Users\Admin\Desktop\Work\IqTechSolution\Julius\Olympia\Olympia\bin\Debug\netstandard2.1\Olympia.deps.json
+C:\Users\Admin\Desktop\Work\IqTechSolution\Julius\Olympia\Olympia\bin\Debug\netstandard2.1\Olympia.dll
+C:\Users\Admin\Desktop\Work\IqTechSolution\Julius\Olympia\Olympia\bin\Debug\netstandard2.1\Olympia.pdb
+C:\Users\Admin\Desktop\Work\IqTechSolution\Julius\Olympia\Olympia\bin\Debug\netstandard2.1\Iqt.Base.dll
+C:\Users\Admin\Desktop\Work\IqTechSolution\Julius\Olympia\Olympia\bin\Debug\netstandard2.1\Iqt.Base.pdb
+C:\Users\Admin\Desktop\Work\IqTechSolution\Julius\Olympia\Olympia\obj\Debug\netstandard2.1\Olympia.csprojAssemblyReference.cache
+C:\Users\Admin\Desktop\Work\IqTechSolution\Julius\Olympia\Olympia\obj\Debug\netstandard2.1\Olympia.AssemblyInfoInputs.cache
+C:\Users\Admin\Desktop\Work\IqTechSolution\Julius\Olympia\Olympia\obj\Debug\netstandard2.1\Olympia.AssemblyInfo.cs
+C:\Users\Admin\Desktop\Work\IqTechSolution\Julius\Olympia\Olympia\obj\Debug\netstandard2.1\Olympia.csproj.CoreCompileInputs.cache
+C:\Users\Admin\Desktop\Work\IqTechSolution\Julius\Olympia\Olympia\obj\Debug\netstandard2.1\Olympia.csproj.CopyComplete
+C:\Users\Admin\Desktop\Work\IqTechSolution\Julius\Olympia\Olympia\obj\Debug\netstandard2.1\Olympia.dll
+C:\Users\Admin\Desktop\Work\IqTechSolution\Julius\Olympia\Olympia\obj\Debug\netstandard2.1\Olympia.pdb

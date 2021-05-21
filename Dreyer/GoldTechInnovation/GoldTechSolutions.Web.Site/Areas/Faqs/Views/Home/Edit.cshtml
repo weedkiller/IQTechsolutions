@@ -4,7 +4,6 @@
     ViewData["Title"] = $"Edit {Model.Entity.QuestionString}";
 }
 
-<br />
 <div class="row">
     <div class="col-md-12">
         <form asp-action="Edit">
@@ -47,7 +46,7 @@
             <input type="hidden" asp-for="Entity.Id" /> @*ApplicationUserId*@
             <input type="hidden" asp-for="Entity.Id" />
             <div class="form-group">
-                <input name="finish" type="submit" value="Submit" class="btn btn-primary" />
+                <input name="finnish" type="submit" value="Submit" class="btn btn-primary" />
                 <input name="main" type="submit" value="Save" class="btn btn-primary" />
                 <a href="javascript:;" onclick="ShowCreateAnswerModel('@Model.Entity.Id')" class="btn btn-info" style="float: right">Create Answer</a>
                 <a asp-area="Faqs" asp-controller="Home" asp-action="List" class="btn btn-danger">Cancel</a>

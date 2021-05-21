@@ -1,0 +1,8 @@
+C:\Users\Admin\Desktop\Work\IqTechSolution\Julius\Duplessis-Legal\Duplessis-Legal\obj\Release\net5.0\Duplessis-Legal.Web.Site.csprojAssemblyReference.cache
+C:\Users\Admin\Desktop\Work\IqTechSolution\Julius\Duplessis-Legal\Duplessis-Legal\obj\Release\net5.0\Duplessis-Legal.Web.Site.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Admin\Desktop\Work\IqTechSolution\Julius\Duplessis-Legal\Duplessis-Legal\obj\Release\net5.0\Duplessis-Legal.Web.Site.AssemblyInfoInputs.cache
+C:\Users\Admin\Desktop\Work\IqTechSolution\Julius\Duplessis-Legal\Duplessis-Legal\obj\Release\net5.0\Duplessis-Legal.Web.Site.AssemblyInfo.cs
+C:\Users\Admin\Desktop\Work\IqTechSolution\Julius\Duplessis-Legal\Duplessis-Legal\obj\Release\net5.0\Duplessis-Legal.Web.Site.csproj.CoreCompileInputs.cache
+C:\Users\Admin\Desktop\Work\IqTechSolution\Julius\Duplessis-Legal\Duplessis-Legal\obj\Release\net5.0\Duplessis-Legal.Web.Site.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Admin\Desktop\Work\IqTechSolution\Julius\Duplessis-Legal\Duplessis-Legal\obj\Release\net5.0\Duplessis-Legal.Web.Site.RazorAssemblyInfo.cache
+C:\Users\Admin\Desktop\Work\IqTechSolution\Julius\Duplessis-Legal\Duplessis-Legal\obj\Release\net5.0\Duplessis-Legal.Web.Site.RazorAssemblyInfo.cs

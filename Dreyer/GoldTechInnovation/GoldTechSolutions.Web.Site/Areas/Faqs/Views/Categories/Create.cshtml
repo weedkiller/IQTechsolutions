@@ -4,8 +4,7 @@
     ViewData["Title"] = "Create New FAQ Category";
 }
 
-
-<h2>Create New FAQ Category</h2>
+<h2>Create New Product Category</h2>
 <hr />
 <form asp-area="Faqs" asp-controller="Categories" asp-action="Create" enctype="multipart/form-data" method="post">
     <div asp-validation-summary="ModelOnly" class="text-danger"></div>
@@ -41,7 +40,7 @@
 @section Scripts
 {
     <script>
-        var loadFile = function(event) {
+        var loadFile = function (event) {
             var output = document.getElementById('preview');
             output.src = URL.createObjectURL(event.target.files[0]);
         };

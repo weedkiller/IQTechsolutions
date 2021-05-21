@@ -3158,10 +3158,7 @@
         },
         "runtime": {
           "bin/placeholder/Blogging.Core.dll": {}
-        },
-        "frameworkReferences": [
-          "Microsoft.AspNetCore.App"
-        ]
+        }
       },
       "Calendar.Base/1.0.0": {
         "type": "project",
@@ -3389,11 +3386,16 @@
           "bin/placeholder/IQTechSolutions.DataStores.dll": {}
         },
         "runtime": {
+<<<<<<< Updated upstream:Projects/IQTechSolutions/IQTechSolutions.Web/IQTechSolutions.Web.Api/obj/project.assets.json
           "bin/placeholder/IQTechSolutions.DataStores.dll": {}
         },
         "frameworkReferences": [
           "Microsoft.AspNetCore.App"
         ]
+=======
+          "bin/placeholder/Metsi.Web.Datastore.dll": {}
+        }
+>>>>>>> Stashed changes:Projects/EnviroMetsi/Metsi.Web/Metsi.Web.Api/obj/project.assets.json
       },
       "Mailing.Base/1.0.0": {
         "type": "project",
@@ -3500,7 +3502,11 @@
           "bin/placeholder/Suppliers.Core.dll": {}
         },
         "runtime": {
+<<<<<<< Updated upstream:Projects/IQTechSolutions/IQTechSolutions.Web/IQTechSolutions.Web.Api/obj/project.assets.json
           "bin/placeholder/Suppliers.Core.dll": {}
+=======
+          "bin/placeholder/Troubleshooting.Core.dll": {}
+>>>>>>> Stashed changes:Projects/EnviroMetsi/Metsi.Web/Metsi.Web.Api/obj/project.assets.json
         }
       }
     }
@@ -10098,25 +10104,28 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\ivanr\\.nuget\\packages\\": {},
-    "C:\\Microsoft\\Xamarin\\NuGet\\": {}
+    "C:\\Users\\Admin\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
+<<<<<<< Updated upstream:Projects/IQTechSolutions/IQTechSolutions.Web/IQTechSolutions.Web.Api/obj/project.assets.json
       "projectUniqueName": "G:\\IQTechSolutions\\Projects\\IQTechSolutions\\IQTechSolutions.Web\\IQTechSolutions.Web.Api\\IQTechSolutions.Web.Api.csproj",
       "projectName": "IQTechSolutions.Web.Api",
       "projectPath": "G:\\IQTechSolutions\\Projects\\IQTechSolutions\\IQTechSolutions.Web\\IQTechSolutions.Web.Api\\IQTechSolutions.Web.Api.csproj",
       "packagesPath": "C:\\Users\\ivanr\\.nuget\\packages\\",
       "outputPath": "G:\\IQTechSolutions\\Projects\\IQTechSolutions\\IQTechSolutions.Web\\IQTechSolutions.Web.Api\\obj\\",
+=======
+      "projectUniqueName": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Projects\\EnviroMetsi\\Metsi.Web\\Metsi.Web.Api\\Metsi.Web.Api.csproj",
+      "projectName": "Metsi.Web.Api",
+      "projectPath": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Projects\\EnviroMetsi\\Metsi.Web\\Metsi.Web.Api\\Metsi.Web.Api.csproj",
+      "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Projects\\EnviroMetsi\\Metsi.Web\\Metsi.Web.Api\\obj\\",
+>>>>>>> Stashed changes:Projects/EnviroMetsi/Metsi.Web/Metsi.Web.Api/obj/project.assets.json
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Microsoft\\Xamarin\\NuGet\\"
-      ],
       "configFilePaths": [
-        "C:\\Users\\ivanr\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net5.0"
@@ -10129,17 +10138,42 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
+<<<<<<< Updated upstream:Projects/IQTechSolutions/IQTechSolutions.Web/IQTechSolutions.Web.Api/obj/project.assets.json
             "G:\\IQTechSolutions\\Modules\\Blogging\\Blogging.Core\\Blogging.Core.csproj": {
               "projectPath": "G:\\IQTechSolutions\\Modules\\Blogging\\Blogging.Core\\Blogging.Core.csproj"
+=======
+            "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\IqtFramework\\Iqt.Base\\Iqt.Base.csproj": {
+              "projectPath": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\IqtFramework\\Iqt.Base\\Iqt.Base.csproj"
+>>>>>>> Stashed changes:Projects/EnviroMetsi/Metsi.Web/Metsi.Web.Api/obj/project.assets.json
             },
-            "G:\\IQTechSolutions\\Modules\\Feedback\\Feedback.Core\\Feedback.Core.csproj": {
-              "projectPath": "G:\\IQTechSolutions\\Modules\\Feedback\\Feedback.Core\\Feedback.Core.csproj"
+            "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Feedback\\Feedback.Core\\Feedback.Core.csproj": {
+              "projectPath": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Feedback\\Feedback.Core\\Feedback.Core.csproj"
             },
+<<<<<<< Updated upstream:Projects/IQTechSolutions/IQTechSolutions.Web/IQTechSolutions.Web.Api/obj/project.assets.json
             "G:\\IQTechSolutions\\Projects\\IQTechSolutions\\IQTechSolutions.Base\\IQTechSolutions\\IQTechSolutions.csproj": {
               "projectPath": "G:\\IQTechSolutions\\Projects\\IQTechSolutions\\IQTechSolutions.Base\\IQTechSolutions\\IQTechSolutions.csproj"
             },
             "G:\\IQTechSolutions\\Projects\\IQTechSolutions\\IQTechSolutions.Web\\IQTechSolutions.DataStores\\IQTechSolutions.DataStores.csproj": {
               "projectPath": "G:\\IQTechSolutions\\Projects\\IQTechSolutions\\IQTechSolutions.Web\\IQTechSolutions.DataStores\\IQTechSolutions.DataStores.csproj"
+=======
+            "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Grouping\\Grouping.Base\\Grouping.Base.csproj": {
+              "projectPath": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Grouping\\Grouping.Base\\Grouping.Base.csproj"
+            },
+            "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Grouping\\Grouping.Core\\Grouping.Core.csproj": {
+              "projectPath": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Grouping\\Grouping.Core\\Grouping.Core.csproj"
+            },
+            "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Troubleshooting\\Troubleshooting.Base\\Troubleshooting.Base.csproj": {
+              "projectPath": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Troubleshooting\\Troubleshooting.Base\\Troubleshooting.Base.csproj"
+            },
+            "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Troubleshooting\\Troubleshooting.Core\\Troubleshooting.Core.csproj": {
+              "projectPath": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Troubleshooting\\Troubleshooting.Core\\Troubleshooting.Core.csproj"
+            },
+            "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Projects\\EnviroMetsi\\Metsi.Base\\Metsi\\Metsi.csproj": {
+              "projectPath": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Projects\\EnviroMetsi\\Metsi.Base\\Metsi\\Metsi.csproj"
+            },
+            "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Projects\\EnviroMetsi\\Metsi.Web\\Metsi.Web.Datastore\\Metsi.Web.Datastore.csproj": {
+              "projectPath": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Projects\\EnviroMetsi\\Metsi.Web\\Metsi.Web.Datastore\\Metsi.Web.Datastore.csproj"
+>>>>>>> Stashed changes:Projects/EnviroMetsi/Metsi.Web/Metsi.Web.Api/obj/project.assets.json
             }
           }
         }
@@ -10195,7 +10229,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.103\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.202\\RuntimeIdentifierGraph.json"
       }
     }
   }

@@ -1,0 +1,9 @@
+C:\Users\Admin\Desktop\Work\IqTechSolution\Julius\HashCoin\HashCOin\HashCOin\obj\Debug\net5.0\HashCOin.csprojAssemblyReference.cache
+C:\Users\Admin\Desktop\Work\IqTechSolution\Julius\HashCoin\HashCOin\HashCOin\obj\Debug\net5.0\HashCOin.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Admin\Desktop\Work\IqTechSolution\Julius\HashCoin\HashCOin\HashCOin\obj\Debug\net5.0\HashCOin.AssemblyInfoInputs.cache
+C:\Users\Admin\Desktop\Work\IqTechSolution\Julius\HashCoin\HashCOin\HashCOin\obj\Debug\net5.0\HashCOin.AssemblyInfo.cs
+C:\Users\Admin\Desktop\Work\IqTechSolution\Julius\HashCoin\HashCOin\HashCOin\obj\Debug\net5.0\HashCOin.csproj.CoreCompileInputs.cache
+C:\Users\Admin\Desktop\Work\IqTechSolution\Julius\HashCoin\HashCOin\HashCOin\obj\Debug\net5.0\HashCOin.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\Admin\Desktop\Work\IqTechSolution\Julius\HashCoin\HashCOin\HashCOin\obj\Debug\net5.0\HashCOin.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Admin\Desktop\Work\IqTechSolution\Julius\HashCoin\HashCOin\HashCOin\obj\Debug\net5.0\HashCOin.RazorAssemblyInfo.cache
+C:\Users\Admin\Desktop\Work\IqTechSolution\Julius\HashCoin\HashCOin\HashCOin\obj\Debug\net5.0\HashCOin.RazorAssemblyInfo.cs

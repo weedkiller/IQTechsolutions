@@ -1,0 +1,12 @@
+C:\Users\Admin\Desktop\Work\IqTechSolution\Julius\Duplessis-Legal\DuplessisLegal\bin\Release\netstandard2.1\DuplessisLegal.deps.json
+C:\Users\Admin\Desktop\Work\IqTechSolution\Julius\Duplessis-Legal\DuplessisLegal\bin\Release\netstandard2.1\DuplessisLegal.dll
+C:\Users\Admin\Desktop\Work\IqTechSolution\Julius\Duplessis-Legal\DuplessisLegal\bin\Release\netstandard2.1\DuplessisLegal.pdb
+C:\Users\Admin\Desktop\Work\IqTechSolution\Julius\Duplessis-Legal\DuplessisLegal\obj\Release\netstandard2.1\DuplessisLegal.csprojAssemblyReference.cache
+C:\Users\Admin\Desktop\Work\IqTechSolution\Julius\Duplessis-Legal\DuplessisLegal\obj\Release\netstandard2.1\DuplessisLegal.AssemblyInfoInputs.cache
+C:\Users\Admin\Desktop\Work\IqTechSolution\Julius\Duplessis-Legal\DuplessisLegal\obj\Release\netstandard2.1\DuplessisLegal.AssemblyInfo.cs
+C:\Users\Admin\Desktop\Work\IqTechSolution\Julius\Duplessis-Legal\DuplessisLegal\obj\Release\netstandard2.1\DuplessisLegal.csproj.CoreCompileInputs.cache
+C:\Users\Admin\Desktop\Work\IqTechSolution\Julius\Duplessis-Legal\DuplessisLegal\obj\Release\netstandard2.1\DuplessisLegal.dll
+C:\Users\Admin\Desktop\Work\IqTechSolution\Julius\Duplessis-Legal\DuplessisLegal\obj\Release\netstandard2.1\DuplessisLegal.pdb
+C:\Users\Admin\Desktop\Work\IqTechSolution\Julius\Duplessis-Legal\DuplessisLegal\bin\Release\netstandard2.1\Iqt.Base.dll
+C:\Users\Admin\Desktop\Work\IqTechSolution\Julius\Duplessis-Legal\DuplessisLegal\bin\Release\netstandard2.1\Iqt.Base.pdb
+C:\Users\Admin\Desktop\Work\IqTechSolution\Julius\Duplessis-Legal\DuplessisLegal\obj\Release\netstandard2.1\DuplessisLegal.csproj.CopyComplete
