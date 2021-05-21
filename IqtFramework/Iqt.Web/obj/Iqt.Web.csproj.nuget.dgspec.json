@@ -1,25 +1,21 @@
 {
   "format": 1,
   "restore": {
-    "G:\\IQTechSolutions\\IqtFramework\\Iqt.Web\\Iqt.Web.csproj": {}
+    "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\IqtFramework\\Iqt.Web\\Iqt.Web.csproj": {}
   },
   "projects": {
-    "G:\\IQTechSolutions\\IqtFramework\\Iqt.Web\\Iqt.Web.csproj": {
+    "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\IqtFramework\\Iqt.Web\\Iqt.Web.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "G:\\IQTechSolutions\\IqtFramework\\Iqt.Web\\Iqt.Web.csproj",
+        "projectUniqueName": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\IqtFramework\\Iqt.Web\\Iqt.Web.csproj",
         "projectName": "Iqt.Web",
-        "projectPath": "G:\\IQTechSolutions\\IqtFramework\\Iqt.Web\\Iqt.Web.csproj",
-        "packagesPath": "C:\\Users\\ivanr\\.nuget\\packages\\",
-        "outputPath": "G:\\IQTechSolutions\\IqtFramework\\Iqt.Web\\obj\\",
+        "projectPath": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\IqtFramework\\Iqt.Web\\Iqt.Web.csproj",
+        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\IqtFramework\\Iqt.Web\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\"
-        ],
         "configFilePaths": [
-          "C:\\Users\\ivanr\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netstandard2.1"
@@ -64,7 +60,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.103\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.202\\RuntimeIdentifierGraph.json"
         }
       }
     }
