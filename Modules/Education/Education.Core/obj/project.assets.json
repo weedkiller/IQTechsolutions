@@ -1013,19 +1013,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Admin\\.nuget\\packages\\": {}
+    "C:\\Users\\dreyer\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Education\\Education.Core\\Education.Core.csproj",
+      "projectUniqueName": "C:\\Work\\IQTechsolutions\\Modules\\Education\\Education.Core\\Education.Core.csproj",
       "projectName": "Education.Core",
-      "projectPath": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Education\\Education.Core\\Education.Core.csproj",
-      "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Education\\Education.Core\\obj\\",
+      "projectPath": "C:\\Work\\IQTechsolutions\\Modules\\Education\\Education.Core\\Education.Core.csproj",
+      "packagesPath": "C:\\Users\\dreyer\\.nuget\\packages\\",
+      "outputPath": "C:\\Work\\IQTechsolutions\\Modules\\Education\\Education.Core\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\dreyer\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -1039,17 +1039,17 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Education\\Education.Base\\Education.Base.csproj": {
-              "projectPath": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Education\\Education.Base\\Education.Base.csproj"
+            "C:\\Work\\IQTechsolutions\\Modules\\Education\\Education.Base\\Education.Base.csproj": {
+              "projectPath": "C:\\Work\\IQTechsolutions\\Modules\\Education\\Education.Base\\Education.Base.csproj"
             },
-            "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Filing\\Filing.Core\\Filing.Core.csproj": {
-              "projectPath": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Filing\\Filing.Core\\Filing.Core.csproj"
+            "C:\\Work\\IQTechsolutions\\Modules\\Filing\\Filing.Core\\Filing.Core.csproj": {
+              "projectPath": "C:\\Work\\IQTechsolutions\\Modules\\Filing\\Filing.Core\\Filing.Core.csproj"
             },
-            "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Identity\\Identity.Base\\Identity.Base.csproj": {
-              "projectPath": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Modules\\Identity\\Identity.Base\\Identity.Base.csproj"
+            "C:\\Work\\IQTechsolutions\\Modules\\Identity\\Identity.Base\\Identity.Base.csproj": {
+              "projectPath": "C:\\Work\\IQTechsolutions\\Modules\\Identity\\Identity.Base\\Identity.Base.csproj"
             },
-            "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Projects\\EnviroMetsi\\Metsi.Base\\Metsi.Web\\Metsi.Web.csproj": {
-              "projectPath": "C:\\Users\\Admin\\Desktop\\Work\\IqTechSolution\\Projects\\EnviroMetsi\\Metsi.Base\\Metsi.Web\\Metsi.Web.csproj"
+            "C:\\Work\\IQTechsolutions\\Projects\\EnviroMetsi\\Metsi.Base\\Metsi.Web\\Metsi.Web.csproj": {
+              "projectPath": "C:\\Work\\IQTechsolutions\\Projects\\EnviroMetsi\\Metsi.Base\\Metsi.Web\\Metsi.Web.csproj"
             }
           }
         }
@@ -1084,7 +1084,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.202\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.203\\RuntimeIdentifierGraph.json"
       }
     }
   }

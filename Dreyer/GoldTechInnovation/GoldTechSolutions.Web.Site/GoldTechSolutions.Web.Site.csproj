@@ -6,6 +6,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Views\Shared\Menus\**" />
+    <Content Remove="Views\Shared\Menus\**" />
+    <EmbeddedResource Remove="Views\Shared\Menus\**" />
+    <None Remove="Views\Shared\Menus\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="5.0.6" />
     <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="5.0.6" />
     <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="5.0.6" />
@@ -18,12 +25,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Views\Shared\Menus\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\..\..\Modules\Identity\Identity.Base\Identity.Base.csproj" />
     <ProjectReference Include="..\..\..\Modules\Products\Products.Core\Products.Core.csproj" />
+    <ProjectReference Include="..\..\..\Modules\Troubleshooting\Troubleshooting.Base\Troubleshooting.Base.csproj" />
+    <ProjectReference Include="..\..\..\Modules\Troubleshooting\Troubleshooting.Core\Troubleshooting.Core.csproj" />
     <ProjectReference Include="..\GoldTechInnovation.DataStore\GoldTechInnovation.DataStore.csproj" />
     <ProjectReference Include="..\GoldTechInnovation\GoldTechInnovation.csproj" />
   </ItemGroup>

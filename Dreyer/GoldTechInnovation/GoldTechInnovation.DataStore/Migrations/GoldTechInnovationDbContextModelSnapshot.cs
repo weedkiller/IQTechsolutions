@@ -399,6 +399,108 @@ namespace GoldTechInnovation.DataStore.Migrations
                     b.ToTable("ImageFile<Category<Product>>");
                 });
 
+            modelBuilder.Entity("Filing.Base.Entities.ImageFile<Grouping.Base.Entities.Category<Troubleshooting.Base.Entities.Problem>>", b =>
+                {
+                    b.Property<string>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("nvarchar(450)")
+                        .HasColumnName("Id");
+
+                    b.Property<string>("ContentType")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("Created")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("CreatedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("DisplayIndex")
+                        .HasColumnType("int")
+                        .HasColumnName("DisplayIndex");
+
+                    b.Property<string>("EntityId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("FileName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("FolderPath")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("ImageType")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime?>("Modified")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("ModifiedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("RelativePath")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<long>("Size")
+                        .HasColumnType("bigint");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("EntityId");
+
+                    b.ToTable("ImageFile<Category<Problem>>");
+                });
+
+            modelBuilder.Entity("Filing.Base.Entities.ImageFile<Grouping.Base.Entities.Category<Troubleshooting.Base.Entities.Question>>", b =>
+                {
+                    b.Property<string>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("nvarchar(450)")
+                        .HasColumnName("Id");
+
+                    b.Property<string>("ContentType")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("Created")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("CreatedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("DisplayIndex")
+                        .HasColumnType("int")
+                        .HasColumnName("DisplayIndex");
+
+                    b.Property<string>("EntityId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("FileName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("FolderPath")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("ImageType")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime?>("Modified")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("ModifiedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("RelativePath")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<long>("Size")
+                        .HasColumnType("bigint");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("EntityId");
+
+                    b.ToTable("ImageFile<Category<Question>>");
+                });
+
             modelBuilder.Entity("Filing.Base.Entities.ImageFile<Grouping.Base.Entities.Department<Blogging.Base.Entities.BlogPost>>", b =>
                 {
                     b.Property<string>("Id")
@@ -499,6 +601,108 @@ namespace GoldTechInnovation.DataStore.Migrations
                     b.HasIndex("EntityId");
 
                     b.ToTable("ImageFile<Department<Product>>");
+                });
+
+            modelBuilder.Entity("Filing.Base.Entities.ImageFile<Grouping.Base.Entities.Department<Troubleshooting.Base.Entities.Problem>>", b =>
+                {
+                    b.Property<string>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("nvarchar(450)")
+                        .HasColumnName("Id");
+
+                    b.Property<string>("ContentType")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("Created")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("CreatedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("DisplayIndex")
+                        .HasColumnType("int")
+                        .HasColumnName("DisplayIndex");
+
+                    b.Property<string>("EntityId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("FileName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("FolderPath")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("ImageType")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime?>("Modified")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("ModifiedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("RelativePath")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<long>("Size")
+                        .HasColumnType("bigint");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("EntityId");
+
+                    b.ToTable("ImageFile<Department<Problem>>");
+                });
+
+            modelBuilder.Entity("Filing.Base.Entities.ImageFile<Grouping.Base.Entities.Department<Troubleshooting.Base.Entities.Question>>", b =>
+                {
+                    b.Property<string>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("nvarchar(450)")
+                        .HasColumnName("Id");
+
+                    b.Property<string>("ContentType")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("Created")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("CreatedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("DisplayIndex")
+                        .HasColumnType("int")
+                        .HasColumnName("DisplayIndex");
+
+                    b.Property<string>("EntityId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("FileName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("FolderPath")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("ImageType")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime?>("Modified")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("ModifiedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("RelativePath")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<long>("Size")
+                        .HasColumnType("bigint");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("EntityId");
+
+                    b.ToTable("ImageFile<Department<Question>>");
                 });
 
             modelBuilder.Entity("Filing.Base.Entities.ImageFile<Identity.Base.Entities.UserInfo>", b =>
@@ -654,6 +858,57 @@ namespace GoldTechInnovation.DataStore.Migrations
                     b.ToTable("ImageFile<Product>");
                 });
 
+            modelBuilder.Entity("Filing.Base.Entities.ImageFile<Troubleshooting.Base.Entities.Question>", b =>
+                {
+                    b.Property<string>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("nvarchar(450)")
+                        .HasColumnName("Id");
+
+                    b.Property<string>("ContentType")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("Created")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("CreatedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("DisplayIndex")
+                        .HasColumnType("int")
+                        .HasColumnName("DisplayIndex");
+
+                    b.Property<string>("EntityId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("FileName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("FolderPath")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("ImageType")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime?>("Modified")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("ModifiedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("RelativePath")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<long>("Size")
+                        .HasColumnType("bigint");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("EntityId");
+
+                    b.ToTable("ImageFile<Question>");
+                });
+
             modelBuilder.Entity("Grouping.Base.Entities.Category<Blogging.Base.Entities.BlogPost>", b =>
                 {
                     b.Property<string>("Id")
@@ -762,6 +1017,114 @@ namespace GoldTechInnovation.DataStore.Migrations
                     b.ToTable("Category<Product>");
                 });
 
+            modelBuilder.Entity("Grouping.Base.Entities.Category<Troubleshooting.Base.Entities.Problem>", b =>
+                {
+                    b.Property<string>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("nvarchar(450)")
+                        .HasColumnName("Id");
+
+                    b.Property<bool>("Active")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime>("Created")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("CreatedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("DepartmentId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("Description")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("DisplayIndex")
+                        .HasColumnType("int")
+                        .HasColumnName("DisplayIndex");
+
+                    b.Property<bool>("Featured")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime?>("Modified")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("ModifiedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ParentCategoryId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("WebTags")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("DepartmentId");
+
+                    b.HasIndex("ParentCategoryId");
+
+                    b.ToTable("Category<Problem>");
+                });
+
+            modelBuilder.Entity("Grouping.Base.Entities.Category<Troubleshooting.Base.Entities.Question>", b =>
+                {
+                    b.Property<string>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("nvarchar(450)")
+                        .HasColumnName("Id");
+
+                    b.Property<bool>("Active")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime>("Created")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("CreatedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("DepartmentId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("Description")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("DisplayIndex")
+                        .HasColumnType("int")
+                        .HasColumnName("DisplayIndex");
+
+                    b.Property<bool>("Featured")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime?>("Modified")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("ModifiedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ParentCategoryId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("WebTags")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("DepartmentId");
+
+                    b.HasIndex("ParentCategoryId");
+
+                    b.ToTable("Category<Question>");
+                });
+
             modelBuilder.Entity("Grouping.Base.Entities.ComboCategory<Products.Base.Entities.Product>", b =>
                 {
                     b.Property<string>("ComboItemId")
@@ -864,6 +1227,74 @@ namespace GoldTechInnovation.DataStore.Migrations
                     b.ToTable("Department<Product>");
                 });
 
+            modelBuilder.Entity("Grouping.Base.Entities.Department<Troubleshooting.Base.Entities.Problem>", b =>
+                {
+                    b.Property<string>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("nvarchar(450)")
+                        .HasColumnName("Id");
+
+                    b.Property<DateTime>("Created")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("CreatedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Description")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("DisplayIndex")
+                        .HasColumnType("int")
+                        .HasColumnName("DisplayIndex");
+
+                    b.Property<DateTime?>("Modified")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("ModifiedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Department<Problem>");
+                });
+
+            modelBuilder.Entity("Grouping.Base.Entities.Department<Troubleshooting.Base.Entities.Question>", b =>
+                {
+                    b.Property<string>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("nvarchar(450)")
+                        .HasColumnName("Id");
+
+                    b.Property<DateTime>("Created")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("CreatedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Description")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("DisplayIndex")
+                        .HasColumnType("int")
+                        .HasColumnName("DisplayIndex");
+
+                    b.Property<DateTime?>("Modified")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("ModifiedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Department<Question>");
+                });
+
             modelBuilder.Entity("Grouping.Base.Entities.EntityCategory<Blogging.Base.Entities.BlogPost>", b =>
                 {
                     b.Property<string>("EntityId")
@@ -892,6 +1323,36 @@ namespace GoldTechInnovation.DataStore.Migrations
                     b.HasIndex("CategoryId");
 
                     b.ToTable("EntityCategory<Product>");
+                });
+
+            modelBuilder.Entity("Grouping.Base.Entities.EntityCategory<Troubleshooting.Base.Entities.Problem>", b =>
+                {
+                    b.Property<string>("EntityId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("CategoryId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.HasKey("EntityId", "CategoryId");
+
+                    b.HasIndex("CategoryId");
+
+                    b.ToTable("EntityCategory<Problem>");
+                });
+
+            modelBuilder.Entity("Grouping.Base.Entities.EntityCategory<Troubleshooting.Base.Entities.Question>", b =>
+                {
+                    b.Property<string>("EntityId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("CategoryId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.HasKey("EntityId", "CategoryId");
+
+                    b.HasIndex("CategoryId");
+
+                    b.ToTable("EntityCategory<Question>");
                 });
 
             modelBuilder.Entity("Identity.Base.Entities.ApplicationUser", b =>
@@ -1510,6 +1971,195 @@ namespace GoldTechInnovation.DataStore.Migrations
                     b.ToTable("ProductBrand");
                 });
 
+            modelBuilder.Entity("Troubleshooting.Base.Entities.Answer", b =>
+                {
+                    b.Property<string>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("nvarchar(450)")
+                        .HasColumnName("Id");
+
+                    b.Property<string>("AnswerString")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("Created")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("CreatedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("DisplayIndex")
+                        .HasColumnType("int")
+                        .HasColumnName("DisplayIndex");
+
+                    b.Property<DateTime?>("Modified")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("ModifiedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("QuestionId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("QuestionId");
+
+                    b.ToTable("Answer");
+                });
+
+            modelBuilder.Entity("Troubleshooting.Base.Entities.Cause", b =>
+                {
+                    b.Property<string>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("nvarchar(450)")
+                        .HasColumnName("Id");
+
+                    b.Property<DateTime>("Created")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("CreatedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Description")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("DisplayIndex")
+                        .HasColumnType("int")
+                        .HasColumnName("DisplayIndex");
+
+                    b.Property<DateTime?>("Modified")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("ModifiedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ProblemId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ProblemId");
+
+                    b.ToTable("Cause");
+                });
+
+            modelBuilder.Entity("Troubleshooting.Base.Entities.CorrectiveAction", b =>
+                {
+                    b.Property<string>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("nvarchar(450)")
+                        .HasColumnName("Id");
+
+                    b.Property<string>("CauseId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<DateTime>("Created")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("CreatedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Description")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("DisplayIndex")
+                        .HasColumnType("int")
+                        .HasColumnName("DisplayIndex");
+
+                    b.Property<DateTime?>("Modified")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("ModifiedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ProblemId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CauseId");
+
+                    b.HasIndex("ProblemId");
+
+                    b.ToTable("CorrectiveAction");
+                });
+
+            modelBuilder.Entity("Troubleshooting.Base.Entities.Problem", b =>
+                {
+                    b.Property<string>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("nvarchar(450)")
+                        .HasColumnName("Id");
+
+                    b.Property<DateTime>("Created")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("CreatedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Description")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("DisplayIndex")
+                        .HasColumnType("int")
+                        .HasColumnName("DisplayIndex");
+
+                    b.Property<string>("Heading")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Keywords")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("Modified")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("ModifiedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("UseCustomPage")
+                        .HasColumnType("bit");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Problem");
+                });
+
+            modelBuilder.Entity("Troubleshooting.Base.Entities.Question", b =>
+                {
+                    b.Property<string>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("nvarchar(450)")
+                        .HasColumnName("Id");
+
+                    b.Property<DateTime>("Created")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("CreatedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("DisplayIndex")
+                        .HasColumnType("int")
+                        .HasColumnName("DisplayIndex");
+
+                    b.Property<DateTime?>("Modified")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("ModifiedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("QuestionString")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Tags")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Question");
+                });
+
             modelBuilder.Entity("Blogging.Base.Entities.BlogPost", b =>
                 {
                     b.HasOne("Filing.Base.Entities.AudioFile<Blogging.Base.Entities.BlogPost>", "AudioFile")
@@ -1587,6 +2237,24 @@ namespace GoldTechInnovation.DataStore.Migrations
                     b.Navigation("Entity");
                 });
 
+            modelBuilder.Entity("Filing.Base.Entities.ImageFile<Grouping.Base.Entities.Category<Troubleshooting.Base.Entities.Problem>>", b =>
+                {
+                    b.HasOne("Grouping.Base.Entities.Category<Troubleshooting.Base.Entities.Problem>", "Entity")
+                        .WithMany("Images")
+                        .HasForeignKey("EntityId");
+
+                    b.Navigation("Entity");
+                });
+
+            modelBuilder.Entity("Filing.Base.Entities.ImageFile<Grouping.Base.Entities.Category<Troubleshooting.Base.Entities.Question>>", b =>
+                {
+                    b.HasOne("Grouping.Base.Entities.Category<Troubleshooting.Base.Entities.Question>", "Entity")
+                        .WithMany("Images")
+                        .HasForeignKey("EntityId");
+
+                    b.Navigation("Entity");
+                });
+
             modelBuilder.Entity("Filing.Base.Entities.ImageFile<Grouping.Base.Entities.Department<Blogging.Base.Entities.BlogPost>>", b =>
                 {
                     b.HasOne("Grouping.Base.Entities.Department<Blogging.Base.Entities.BlogPost>", "Entity")
@@ -1599,6 +2267,24 @@ namespace GoldTechInnovation.DataStore.Migrations
             modelBuilder.Entity("Filing.Base.Entities.ImageFile<Grouping.Base.Entities.Department<Products.Base.Entities.Product>>", b =>
                 {
                     b.HasOne("Grouping.Base.Entities.Department<Products.Base.Entities.Product>", "Entity")
+                        .WithMany("Images")
+                        .HasForeignKey("EntityId");
+
+                    b.Navigation("Entity");
+                });
+
+            modelBuilder.Entity("Filing.Base.Entities.ImageFile<Grouping.Base.Entities.Department<Troubleshooting.Base.Entities.Problem>>", b =>
+                {
+                    b.HasOne("Grouping.Base.Entities.Department<Troubleshooting.Base.Entities.Problem>", "Entity")
+                        .WithMany("Images")
+                        .HasForeignKey("EntityId");
+
+                    b.Navigation("Entity");
+                });
+
+            modelBuilder.Entity("Filing.Base.Entities.ImageFile<Grouping.Base.Entities.Department<Troubleshooting.Base.Entities.Question>>", b =>
+                {
+                    b.HasOne("Grouping.Base.Entities.Department<Troubleshooting.Base.Entities.Question>", "Entity")
                         .WithMany("Images")
                         .HasForeignKey("EntityId");
 
@@ -1632,6 +2318,15 @@ namespace GoldTechInnovation.DataStore.Migrations
                     b.Navigation("Entity");
                 });
 
+            modelBuilder.Entity("Filing.Base.Entities.ImageFile<Troubleshooting.Base.Entities.Question>", b =>
+                {
+                    b.HasOne("Troubleshooting.Base.Entities.Question", "Entity")
+                        .WithMany("Images")
+                        .HasForeignKey("EntityId");
+
+                    b.Navigation("Entity");
+                });
+
             modelBuilder.Entity("Grouping.Base.Entities.Category<Blogging.Base.Entities.BlogPost>", b =>
                 {
                     b.HasOne("Grouping.Base.Entities.Department<Blogging.Base.Entities.BlogPost>", "Department")
@@ -1654,6 +2349,36 @@ namespace GoldTechInnovation.DataStore.Migrations
                         .HasForeignKey("DepartmentId");
 
                     b.HasOne("Grouping.Base.Entities.Category<Products.Base.Entities.Product>", "ParentCategory")
+                        .WithMany("SubCategories")
+                        .HasForeignKey("ParentCategoryId");
+
+                    b.Navigation("Department");
+
+                    b.Navigation("ParentCategory");
+                });
+
+            modelBuilder.Entity("Grouping.Base.Entities.Category<Troubleshooting.Base.Entities.Problem>", b =>
+                {
+                    b.HasOne("Grouping.Base.Entities.Department<Troubleshooting.Base.Entities.Problem>", "Department")
+                        .WithMany("Categories")
+                        .HasForeignKey("DepartmentId");
+
+                    b.HasOne("Grouping.Base.Entities.Category<Troubleshooting.Base.Entities.Problem>", "ParentCategory")
+                        .WithMany("SubCategories")
+                        .HasForeignKey("ParentCategoryId");
+
+                    b.Navigation("Department");
+
+                    b.Navigation("ParentCategory");
+                });
+
+            modelBuilder.Entity("Grouping.Base.Entities.Category<Troubleshooting.Base.Entities.Question>", b =>
+                {
+                    b.HasOne("Grouping.Base.Entities.Department<Troubleshooting.Base.Entities.Question>", "Department")
+                        .WithMany("Categories")
+                        .HasForeignKey("DepartmentId");
+
+                    b.HasOne("Grouping.Base.Entities.Category<Troubleshooting.Base.Entities.Question>", "ParentCategory")
                         .WithMany("SubCategories")
                         .HasForeignKey("ParentCategoryId");
 
@@ -1727,6 +2452,44 @@ namespace GoldTechInnovation.DataStore.Migrations
                         .IsRequired();
 
                     b.HasOne("Products.Base.Entities.Product", "Entity")
+                        .WithMany("Categories")
+                        .HasForeignKey("EntityId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Category");
+
+                    b.Navigation("Entity");
+                });
+
+            modelBuilder.Entity("Grouping.Base.Entities.EntityCategory<Troubleshooting.Base.Entities.Problem>", b =>
+                {
+                    b.HasOne("Grouping.Base.Entities.Category<Troubleshooting.Base.Entities.Problem>", "Category")
+                        .WithMany("EntityCollection")
+                        .HasForeignKey("CategoryId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Troubleshooting.Base.Entities.Problem", "Entity")
+                        .WithMany("Categories")
+                        .HasForeignKey("EntityId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Category");
+
+                    b.Navigation("Entity");
+                });
+
+            modelBuilder.Entity("Grouping.Base.Entities.EntityCategory<Troubleshooting.Base.Entities.Question>", b =>
+                {
+                    b.HasOne("Grouping.Base.Entities.Category<Troubleshooting.Base.Entities.Question>", "Category")
+                        .WithMany("EntityCollection")
+                        .HasForeignKey("CategoryId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Troubleshooting.Base.Entities.Question", "Entity")
                         .WithMany("Categories")
                         .HasForeignKey("EntityId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -1914,6 +2677,39 @@ namespace GoldTechInnovation.DataStore.Migrations
                     b.Navigation("Product");
                 });
 
+            modelBuilder.Entity("Troubleshooting.Base.Entities.Answer", b =>
+                {
+                    b.HasOne("Troubleshooting.Base.Entities.Question", "Question")
+                        .WithMany("Answers")
+                        .HasForeignKey("QuestionId");
+
+                    b.Navigation("Question");
+                });
+
+            modelBuilder.Entity("Troubleshooting.Base.Entities.Cause", b =>
+                {
+                    b.HasOne("Troubleshooting.Base.Entities.Problem", "Problem")
+                        .WithMany("Causes")
+                        .HasForeignKey("ProblemId");
+
+                    b.Navigation("Problem");
+                });
+
+            modelBuilder.Entity("Troubleshooting.Base.Entities.CorrectiveAction", b =>
+                {
+                    b.HasOne("Troubleshooting.Base.Entities.Cause", "Cause")
+                        .WithMany("CorrectiveActions")
+                        .HasForeignKey("CauseId");
+
+                    b.HasOne("Troubleshooting.Base.Entities.Problem", "Problem")
+                        .WithMany("CorrectiveActions")
+                        .HasForeignKey("ProblemId");
+
+                    b.Navigation("Cause");
+
+                    b.Navigation("Problem");
+                });
+
             modelBuilder.Entity("Blogging.Base.Entities.BlogPost", b =>
                 {
                     b.Navigation("Categories");
@@ -1946,6 +2742,24 @@ namespace GoldTechInnovation.DataStore.Migrations
                     b.Navigation("SubCategories");
                 });
 
+            modelBuilder.Entity("Grouping.Base.Entities.Category<Troubleshooting.Base.Entities.Problem>", b =>
+                {
+                    b.Navigation("EntityCollection");
+
+                    b.Navigation("Images");
+
+                    b.Navigation("SubCategories");
+                });
+
+            modelBuilder.Entity("Grouping.Base.Entities.Category<Troubleshooting.Base.Entities.Question>", b =>
+                {
+                    b.Navigation("EntityCollection");
+
+                    b.Navigation("Images");
+
+                    b.Navigation("SubCategories");
+                });
+
             modelBuilder.Entity("Grouping.Base.Entities.ComboCategory<Products.Base.Entities.Product>", b =>
                 {
                     b.Navigation("Exclusions");
@@ -1959,6 +2773,20 @@ namespace GoldTechInnovation.DataStore.Migrations
                 });
 
             modelBuilder.Entity("Grouping.Base.Entities.Department<Products.Base.Entities.Product>", b =>
+                {
+                    b.Navigation("Categories");
+
+                    b.Navigation("Images");
+                });
+
+            modelBuilder.Entity("Grouping.Base.Entities.Department<Troubleshooting.Base.Entities.Problem>", b =>
+                {
+                    b.Navigation("Categories");
+
+                    b.Navigation("Images");
+                });
+
+            modelBuilder.Entity("Grouping.Base.Entities.Department<Troubleshooting.Base.Entities.Question>", b =>
                 {
                     b.Navigation("Categories");
 
@@ -2002,6 +2830,29 @@ namespace GoldTechInnovation.DataStore.Migrations
                     b.Navigation("PackageItems");
 
                     b.Navigation("Reviews");
+                });
+
+            modelBuilder.Entity("Troubleshooting.Base.Entities.Cause", b =>
+                {
+                    b.Navigation("CorrectiveActions");
+                });
+
+            modelBuilder.Entity("Troubleshooting.Base.Entities.Problem", b =>
+                {
+                    b.Navigation("Categories");
+
+                    b.Navigation("Causes");
+
+                    b.Navigation("CorrectiveActions");
+                });
+
+            modelBuilder.Entity("Troubleshooting.Base.Entities.Question", b =>
+                {
+                    b.Navigation("Answers");
+
+                    b.Navigation("Categories");
+
+                    b.Navigation("Images");
                 });
 #pragma warning restore 612, 618
         }

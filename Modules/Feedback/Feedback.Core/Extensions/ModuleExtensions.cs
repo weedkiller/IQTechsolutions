@@ -1,5 +1,5 @@
 ﻿using Feedback.Core.Context.Services;
-using Metsi.Web.Email.Extensions;
+using GoldTechInnovation.Web.Email.Extensions;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace Feedback.Core.Extensions

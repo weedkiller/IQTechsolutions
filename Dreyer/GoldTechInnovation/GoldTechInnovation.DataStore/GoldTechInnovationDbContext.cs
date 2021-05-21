@@ -3,6 +3,7 @@ using Identity.Base.Entities;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Products.Core.Extensions;
+using Troubleshooting.Core.Extensions;
 
 namespace GoldTechInnovation.DataStore
 {
@@ -31,7 +32,8 @@ namespace GoldTechInnovation.DataStore
             modelBuilder.Entity<UserInfo>().HasMany(c => c.EmailAddresses).WithOne(c => c.Entity).HasForeignKey(v => v.EntityId);
             modelBuilder.Entity<UserInfo>().HasMany(c => c.Addresses).WithOne(c => c.Entity).HasForeignKey(v => v.EntityId);
             
-            modelBuilder.ApplyBloggingConfiguration().ApplyProductConfiguration();
+            modelBuilder.ApplyBloggingConfiguration().ApplyProductConfiguration().ApplyTroubleshootingConfiguration()
+                .ApplyFaqConfiguration();
 
             base.OnModelCreating(modelBuilder);
         }
